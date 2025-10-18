@@ -1,1 +1,1 @@
-# lod-pathways-community
+# LOD-pathways-community
