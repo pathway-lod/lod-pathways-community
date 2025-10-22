@@ -5,6 +5,7 @@ This file serves as a reference for establishing a community of collaborators ar
 ## Overall aim and objectives
 
 ## Milestones 
+- Write a collaborative whitepaper/opinion paper/review to agree on the vision 
 
 ## Collaborators (confirmed) 
 - Elena Del Pup, Wageningen University, elena.delpup@wur.nl
