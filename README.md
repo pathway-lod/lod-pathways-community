@@ -2,6 +2,10 @@
 
 This file serves as a reference for establishing a community of collaborators around a knowledge base to annotate pathway. 
 
+## Overall aim and objectives
+
+## Milestones 
+
 ## Collaborators (confirmed) 
 - Elena Del Pup, Wageningen University, elena.delpup@wur.nl
 - Marnix Medema 
