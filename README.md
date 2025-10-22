@@ -2,10 +2,10 @@
 
 This file serves as a reference for establishing a community of collaborators around a knowledge base to annotate pathway. 
 
-## Collaborators 
+## Collaborators (confirmed) 
 - Elena Del Pup, Wageningen University, elena.delpup@wur.nl
 - Marnix Medema 
-- Justin van der Hoooft
+- Justin van der Hooft
 - Mitja Zdouc
 - Tito Damiani
 - Adriano Rutz
@@ -15,8 +15,11 @@ This file serves as a reference for establishing a community of collaborators ar
 - Louis Felix Nothias
 - Daniel Probst 
 
-## Other potential collaborators 
-- 
+## Other potential collaborators (to be confirmed) 
+- Yasin El Abiead
+
+## Targeted Brainstorming - 14 October 
+[Google doc notes](https://docs.google.com/document/d/15J9CHluMGA2IqFc5C-PF6YFRhbDHEHFe0tTbf9sYd4U/edit?tab=t.0)
 
 ## Mermaid plot for rendering of the knowledge graph 
 
