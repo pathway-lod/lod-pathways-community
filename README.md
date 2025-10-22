@@ -21,6 +21,7 @@ This file serves as a reference for establishing a community of collaborators ar
 
 ## Other potential collaborators (to be confirmed) 
 - Yasin El Abiead
+- Fabien Gandon at the INRIA
 
 ## Targeted Brainstorming - 14 October 
 [Google doc notes](https://docs.google.com/document/d/15J9CHluMGA2IqFc5C-PF6YFRhbDHEHFe0tTbf9sYd4U/edit?tab=t.0)
