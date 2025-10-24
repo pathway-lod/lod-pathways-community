@@ -30,35 +30,53 @@ This file serves as a reference for establishing a community of collaborators ar
 ## Mermaid plot for rendering of the knowledge graph 
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "16px"}}}%%
 
-flowchart LR
-  S[Substrate] --> R((Reaction))
-  R --> P[Product]
+flowchart TD
 
-  %% Enzymes in plantiSMASH clusters
-  E1[Enzyme A] --> R
-  E2[Enzyme B] --> R
+%% =========================
+%%   GENOMICS / ENZYMES (TOP)
+%% =========================
+subgraph A[Genomics & Enzymes]
+direction LR
+  E1[Enzyme A]:::genomic --> R
+  E2[Enzyme B]:::genomic --> R
+  E1 --- O1[Orthologs]:::genomic
+  E1 --- B1[BGC]:::reaction
+  E1 --- T1[Transcriptomics]:::genomic
+  E2 --- O2[Orthologs]:::genomic
+  E2 --- T2[Transcriptomics]:::genomic
+end
 
-  %% Per-enzyme context
-  E1 --- O1[Orthologs]
-  E1 --- B1[MIBiG BGC]
-  E1 --- B2[plantiSMASH-detected BGC]
-  E1 --- T1[Transcriptomics]
-  E2 --- O2[Orthologs]
-  E2 --- T2[Transcriptomics]
+%% =========================
+%%   REACTION / PATHWAY (MIDDLE)
+%% =========================
+subgraph B[Reaction / Pathway]
+direction LR
+  S[Substrate]:::chemical --> R((Reaction)):::reaction --> P[Product]:::chemical
+  R --- WP[WikiPathways]:::reaction
+end
 
-  %% Evidence for substrate
-  S --- SS[Spectral data]
-  S --- SM[Metabolomics]
-  S --- SN[LOTUS / Wikidata]
+%% =========================
+%%   METABOLOMICS / EVIDENCE (BOTTOM)
+%% =========================
+subgraph C[Metabolomics & Databases]
+direction LR
+  S --- SS[Spectral data]:::chemical
+  S --- SM[Metabolomics]:::chemical
+  S --- SN[LOTUS / Wikidata]:::chemical
 
-  %% Evidence for product
-  P --- PS1[Spectral data]
-  P --- PM[Metabolomics]
-  P --- PN[LOTUS / Wikidata]
+  P --- PS1[Spectral data]:::chemical
+  P --- PM[Metabolomics]:::chemical
+  P --- PN[LOTUS / Wikidata]:::chemical
+end
 
-  %% Curated knowledge
-  R --- WP[WikiPathways]
+%% =========================
+%%   COLORS
+%% =========================
+classDef reaction fill:#fca5a5,stroke:#b91c1c,stroke-width:2px,color:#7f1d1d;
+classDef genomic  fill:#86efac,stroke:#15803d,stroke-width:2px,color:#064e3b;
+classDef chemical fill:#d8b4fe,stroke:#7e22ce,stroke-width:2px,color:#3b0764;
 ```
 
 
