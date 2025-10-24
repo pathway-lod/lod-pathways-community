@@ -38,11 +38,12 @@ flowchart RL
 %%   GENOMICS / ENZYMES (TOP)
 %% =========================
 subgraph A[Genomics & Enzymes]
-direction LR
-  E1 --- O1[Orthologs]:::genomic
+direction RL
+  E1 --- O1[Orthologs/other species]:::genomic
   E1 --- T1[Transcriptomics]:::genomic
-  E2 --- O2[Orthologs]:::genomic
   E2 --- T2[Transcriptomics]:::genomic
+  B1[BGC MIBiG/antiSMASH]:::reaction --- E1
+  B1[BGC MIBiG/antiSMASH]:::reaction --- E2
 end
 
 %% =========================
@@ -52,8 +53,7 @@ subgraph B[Reaction / Pathway]
 direction LR
   E1[Enzyme A]:::genomic --> R
   E2[Enzyme B]:::genomic --> R
-  E1 --- B1[BGC]:::reaction
-  R --- WP[WikiPathways]:::reaction
+  WP[WikiPathways]:::reaction --- R
 end
 
 %% =========================
