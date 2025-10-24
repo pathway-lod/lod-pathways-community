@@ -42,7 +42,7 @@ flowchart LR
   %% Per-enzyme context
   E1 --- O1[Orthologs]
   E1 --- B1[MIBiG BGC]
-  E1 --- B2[(p)lantiSMASH-detected BGC]
+  E1 --- B2[plantiSMASH-detected BGC]
   E1 --- T1[Transcriptomics]
   E2 --- O2[Orthologs]
   E2 --- T2[Transcriptomics]
@@ -59,7 +59,6 @@ flowchart LR
 
   %% Curated knowledge
   R --- WP[WikiPathways]
-
 ```
 
 
