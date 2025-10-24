@@ -32,17 +32,14 @@ This file serves as a reference for establishing a community of collaborators ar
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"fontSize": "16px"}}}%%
 
-flowchart TD
+flowchart RL
 
 %% =========================
 %%   GENOMICS / ENZYMES (TOP)
 %% =========================
 subgraph A[Genomics & Enzymes]
 direction LR
-  E1[Enzyme A]:::genomic --> R
-  E2[Enzyme B]:::genomic --> R
   E1 --- O1[Orthologs]:::genomic
-  E1 --- B1[BGC]:::reaction
   E1 --- T1[Transcriptomics]:::genomic
   E2 --- O2[Orthologs]:::genomic
   E2 --- T2[Transcriptomics]:::genomic
@@ -53,7 +50,9 @@ end
 %% =========================
 subgraph B[Reaction / Pathway]
 direction LR
-  S[Substrate]:::chemical --> R((Reaction)):::reaction --> P[Product]:::chemical
+  E1[Enzyme A]:::genomic --> R
+  E2[Enzyme B]:::genomic --> R
+  E1 --- B1[BGC]:::reaction
   R --- WP[WikiPathways]:::reaction
 end
 
@@ -62,9 +61,11 @@ end
 %% =========================
 subgraph C[Metabolomics & Databases]
 direction LR
+  S[Substrate]:::chemical --> R((Reaction)):::reaction --> P[Product]:::chemical
   S --- SS[Spectral data]:::chemical
   S --- SM[Metabolomics]:::chemical
   S --- SN[LOTUS / Wikidata]:::chemical
+  SN[LOTUS / Wikidata] --- WP[WikiPathways]
 
   P --- PS1[Spectral data]:::chemical
   P --- PM[Metabolomics]:::chemical
