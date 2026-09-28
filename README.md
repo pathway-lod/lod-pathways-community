@@ -81,3 +81,5 @@ classDef chemical fill:#d8b4fe,stroke:#7e22ce,stroke-width:2px,color:#3b0764;
 ```
 
 
+# Git track 
+Committed to GitHub with https://github.com/Vinzent03/obsidian-git 
