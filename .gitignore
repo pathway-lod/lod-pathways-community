@@ -1,0 +1,11 @@
+# Obsidian: personal/UI state and locally installed plugins
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/community-plugins.json
+.obsidian/plugins/
+
+# Claudian (Claude in Obsidian) chat sessions and settings
+.claudian/
+
+# macOS
+.DS_Store
