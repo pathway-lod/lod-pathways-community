@@ -1,0 +1,5 @@
+# plantiSMASH per-genome cache (~430 files), re-created by match_plantismash.py
+data/plantismash_v2/
+.venv/
+.ipynb_checkpoints/
+__pycache__/

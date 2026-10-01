@@ -100,7 +100,7 @@ Every case below is modelled the same way, so they can be queried together:
 
 | # | Case | Test data | Evidence ontology status |
 |---|---|---|---|
-| 1 | BGC predictions (plantiSMASH) | plantiSMASH 2.0 precalculated database, ~30,400 BGCs in 430 genomes ([pilot, in progress](pilots/plantismash_overlap/)) | The tools use no ontology → mapped below; detection rules need a small local vocabulary |
+| 1 | BGC predictions (plantiSMASH) | plantiSMASH 2.0 precalculated database, ~30,400 BGCs in 430 genomes ([pilot](pilots/plantismash_overlap/)) | The tools use no ontology → mapped below; detection rules need a small local vocabulary |
 | 2 | Paired-omics metabolite–transcript (M-T) correlations (MEANtools) | Tomato data from the [MEANtools paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003307) | Only a close ECO term exists; ECO has no metabolite–transcript correlation term |
 | 3 | Consensus annotation from MS/MS tools (SIRIUS, MS2Query, DreaMS) | Brassicaceae tables and code from Felicia Wolters ([GitHub](https://github.com/capsicumbaccatum/Metabolic_fingerprinting_consensus_annotation), [Zenodo](https://doi.org/10.5281/zenodo.19391098)) | ECO and PSI-MS terms exist; identification confidence level not yet modelled |
 | 4 | Computational predictions from the extended PlantCyc | PlantCyc | Has its own `EV-` codes → proposed mapping to ECO (see below) |
@@ -121,6 +121,8 @@ Statements we want to express, with candidate terms:
 Open questions:
 - [ ] Do any BGC tools (antiSMASH, plantiSMASH, MIBiG) already export evidence terms? As far as we know, antiSMASH/plantiSMASH outputs don't use ECO. MIBiG has its own controlled vocabulary for how a BGC–compound link was shown (e.g. heterologous expression, knock-out), which could be mapped to ECO.
 - [x] Where do the BGC predictions come from for the prototype? The plantiSMASH 2.0 precalculated database (`plantismash.bioinformatics.nl/precalc/v2/`), starting with *A. thaliana*, where BGC genes and PlantCyc genes share TAIR IDs.
+
+Pilot: [pilots/plantismash_overlap](pilots/plantismash_overlap/) links all plantiSMASH 2.0 BGCs to PlantMetWiki genes and pathways and collects the evidence points above.
 
 #### 2. Paired-omics M-T correlations (MEANtools)
 
