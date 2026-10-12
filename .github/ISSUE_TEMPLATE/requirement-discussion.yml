@@ -1,0 +1,39 @@
+name: Discuss a requirement
+description: Ask a question or comment on one requirement of the ontology-term specification.
+title: "[REQ-ID] Discussion: "
+labels: ["ontology-terms"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One issue per requirement keeps the discussion findable. The requirements and the candidate terms are in
+        [`specification/SPECIFICATION.md`](https://github.com/pathway-lod/lod-pathways-community/blob/main/specification/SPECIFICATION.md) and
+        [`specification/ontology_terms.csv`](https://github.com/pathway-lod/lod-pathways-community/blob/main/specification/ontology_terms.csv).
+        Keep the requirement ID at the start of the title (for example `[PMN-03]`): the status dashboard uses it to
+        show this issue next to the requirement.
+  - type: input
+    id: req_id
+    attributes:
+      label: Requirement ID
+      description: For example PMN-03, BGC-12 or MET-04.
+      placeholder: PMN-03
+    validations:
+      required: true
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Requirement
+      description: Copy of the requirement text, filled in by the dashboard link.
+  - type: textarea
+    id: comment
+    attributes:
+      label: Question or comment
+      description: What should be decided, or what is unclear? Link terms by their ID, for example ECO:0000314.
+    validations:
+      required: true
+  - type: checkboxes
+    id: ownership
+    attributes:
+      label: Ownership
+      options:
+        - label: I volunteer to follow this requirement up (assign the issue to me)

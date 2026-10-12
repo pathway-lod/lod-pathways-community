@@ -1,0 +1,82 @@
+name: Suggest an ontology term
+description: Propose a term for a requirement of the specification, or an alternative to a term already listed.
+title: "[REQ-ID] Suggested term: "
+labels: ["ontology-terms", "term-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A suggestion becomes a row in [`specification/ontology_terms.csv`](https://github.com/pathway-lod/lod-pathways-community/blob/main/specification/ontology_terms.csv)
+        once a maintainer has checked it. Keep the requirement ID at the start of the title (for example `[PMN-03]`).
+  - type: input
+    id: req_id
+    attributes:
+      label: Requirement ID
+      description: The requirement the term is meant for.
+      placeholder: PMN-03
+    validations:
+      required: true
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Requirement
+      description: Copy of the requirement text, filled in by the dashboard link.
+  - type: input
+    id: term
+    attributes:
+      label: Term ID
+      description: The ID as the Ontology Lookup Service shows it, for example ECO:0000314 or EDAM:operation_3801. Add a link if the term is not in the Ontology Lookup Service.
+      placeholder: ECO:0000314
+    validations:
+      required: true
+  - type: dropdown
+    id: ontology
+    attributes:
+      label: Ontology
+      options:
+        - ECO (evidence)
+        - SO (sequence)
+        - SIO (semanticscience)
+        - STATO (statistics)
+        - OBI (investigations)
+        - RO (relations)
+        - BFO (upper level)
+        - EDAM (analysis methods)
+        - SWO (software)
+        - PSI-MS (mass spectrometry)
+        - CHEMINF (chemical information)
+        - SEPIO (evidence and provenance)
+        - NCIT
+        - AIO (artificial intelligence)
+        - PO (plant structures)
+        - EFO (experimental factors)
+        - INO (interactions)
+        - AGRO (agronomy)
+        - PROV-O, SKOS or Dublin Core
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: How well does it fit?
+      options:
+        - Best fit (exact)
+        - Alternative (partial fit)
+        - Stand-in (used for lack of a better term)
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why this term
+      description: Definition of the term, why it fits the requirement, and where it is already used.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The term exists in the Ontology Lookup Service, or a link to its source is given above
+        - label: I volunteer to follow this suggestion up (assign the issue to me)
