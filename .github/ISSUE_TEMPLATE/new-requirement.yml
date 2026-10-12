@@ -1,0 +1,41 @@
+name: Propose a new requirement
+description: Add something that a use case needs to be able to say about its data.
+title: "[NEW] Requirement: "
+labels: ["ontology-terms", "new-requirement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A maintainer gives the requirement an ID and adds it to
+        [`specification/ontology_terms.csv`](https://github.com/pathway-lod/lod-pathways-community/blob/main/specification/ontology_terms.csv). The ID is then added to the title.
+  - type: dropdown
+    id: use_case
+    attributes:
+      label: Use case
+      options:
+        - "PMN - PlantCyc computationally inferred"
+        - "BGC - plantiSMASH BGCs"
+        - "MET - Metabolomics data"
+        - "PO - Paired omics data"
+        - "UN - Unsupervised predictions"
+        - "TX - Transcriptomics data"
+        - "COM - Shared by all use cases"
+    validations:
+      required: true
+  - type: textarea
+    id: new_requirement
+    attributes:
+      label: Requirement
+      description: One statement the knowledge graph should be able to make, for example "The BGC was detected by rule X".
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data to test it on
+      description: Dataset, file or link that contains an example.
+  - type: textarea
+    id: candidates
+    attributes:
+      label: Candidate terms, if any
+      description: Term IDs from existing ontologies that could express it.

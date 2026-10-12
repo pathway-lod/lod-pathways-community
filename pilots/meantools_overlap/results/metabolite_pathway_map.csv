@@ -1,0 +1,209 @@
+feature,mz,adduct,key14,neutral_mass,ppm_error,pmw_names,plantcyc_id,pathway
+M147T671,147.04307859999997,[M+H]+,ZYGHJZDHTFUPRJ,146.036779432,-6.64,coumarin,PWY-5319,coumarin metabolism (to melilotic acid)
+M147T671,147.04307859999997,[M+H]+,ZYGHJZDHTFUPRJ,146.036779432,-6.64,coumarin,PWY-5176,coumarin biosynthesis (via 2-coumarate)
+M241T1547,241.0858145,[M+H]+,ZZBWSNKBZKPGAK,240.078644244,-0.44,chrysophanol-9-anthrone,PWY-6312,aloin biosynthesis
+M284T1010,284.1262999,[M+H]+,PFBSOANQDDTNGJ,283.12084340399997,-6.4,morphinone,PWY-5270,morphine biosynthesis
+M284T1010,284.1262999,[M+H]+,RXGUTQNKCXHALN,283.12084340399997,-6.4,(4-coumaroyl)tyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M284T765,284.1259355,[M+H]+,PFBSOANQDDTNGJ,283.12084340399997,-7.69,morphinone,PWY-5270,morphine biosynthesis
+M284T765,284.1259355,[M+H]+,RXGUTQNKCXHALN,283.12084340399997,-7.69,(4-coumaroyl)tyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M284T892,284.1273478,[M+H]+,PFBSOANQDDTNGJ,283.12084340399997,-2.72,morphinone,PWY-5270,morphine biosynthesis
+M284T892,284.1273478,[M+H]+,RXGUTQNKCXHALN,283.12084340399997,-2.72,(4-coumaroyl)tyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M301T764,301.1265278,[M+H]+,ILRCGYURZSFMEG,300.12090298,-5.48,salidroside,PWY-6802,salidroside biosynthesis
+M301T887,301.1258504,[M+H]+,ILRCGYURZSFMEG,300.12090298,-7.73,salidroside,PWY-6802,salidroside biosynthesis
+M322T631,322.1047422,[M+H]+,HKBNQXMLSMKLJV,321.099456328,-6.18,homoglutathione,PWY-6840,homoglutathione biosynthesis
+M322T631,322.1047422,[M+H]+,HKBNQXMLSMKLJV,321.099456328,-6.18,homoglutathione,PWY-6841,homophytochelatin biosynthesis
+M322T761,322.104984,[M+H]+,HKBNQXMLSMKLJV,321.099456328,-5.43,homoglutathione,PWY-6840,homoglutathione biosynthesis
+M322T761,322.104984,[M+H]+,HKBNQXMLSMKLJV,321.099456328,-5.43,homoglutathione,PWY-6841,homophytochelatin biosynthesis
+M338T671,338.0992018,[M+H]+,PIUSLWSYOYFRFR,337.094370948,-7.23,S-(hydroxymethyl)glutathione,PWY-1801,formaldehyde oxidation II (glutathione-dependent)
+M344T1055,344.148683,[M+H]+,IEDBNTAKVGBZEP,343.141972772,-1.64,sinapoyltyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M345T1054,345.1527666,[M+H]+,QFYFLJZBZITPGX,344.147117728,-4.71,dihydroconiferyl alcohol glucoside,PWY-83,monolignol glucosides biosynthesis
+M375T654,375.1449264,[M+H]+,FMVYKFXTOXIOFV,374.136553044,2.93,(-)-thujaplicatin,PWY-7629,yatein biosynthesis II
+M521T1217,521.2710206,[M+H]+,CNURLWAZNDLNMK,520.26723286,-6.69,7β-hydroxytaxusin,PWY-7065,"2α,7β-dihydroxylation of taxusin"
+M545T1437,545.2406242000001,[M+H]+,YWLXLRUDGLRYDR,544.230847352,4.59,10-deacetylbaccatin III,PWY-5660,paclitaxel biosynthesis
+M147T671,147.04307859999997,[M+Na]+,CQRYARSYNCAZFO,124.052429496,9.73,salicyl alcohol,PWY-6766,salicin biosynthesis
+M147T671,147.04307859999997,[M+Na]+,CQRYARSYNCAZFO,124.052429496,9.73,salicyl alcohol,PWY-6763,salicortin biosynthesis
+M147T671,147.04307859999997,[M+Na]+,OIPPWFOQEKKFEE,124.052429496,9.73,orcinol,PWY-7076,"3,5-dimethoxytoluene biosynthesis"
+M147T671,147.04307859999997,[M+Na]+,LHGVFZTZFXWLCP,124.052429496,9.73,guaiacol,PWY18C3-23,guaiacol biosynthesis
+M147T671,147.04307859999997,[M+Na]+,LHGVFZTZFXWLCP,124.052429496,9.73,guaiacol,PWY18C3-21,phenylpropanoid volatiles glycoconjugation (tomato)
+M181T760,181.0462529,[M+Na]+,NJMGRJLQRLFQQX,158.0579088,-4.83,2-isopropylmaleate,LEUSYN-PWY,L-leucine biosynthesis
+M181T760,181.0462529,[M+Na]+,NJMGRJLQRLFQQX,158.0579088,-4.83,2-isopropylmaleate,BRANCHED-CHAIN-AA-SYN-PWY,superpathway of branched chain amino acid biosynthesis
+M263T1547,263.06779680000005,[M+Na]+,ZZBWSNKBZKPGAK,240.078644244,-0.25,chrysophanol-9-anthrone,PWY-6312,aloin biosynthesis
+M282T632,282.11188460000005,[M+Na]+,YJYUDTAJVLORNV,259.12084340399997,6.46,norbelladine,PWY-7826,Amaryllidacea alkaloids biosynthesis
+M282T761,282.11222260000005,[M+Na]+,YJYUDTAJVLORNV,259.12084340399997,7.66,norbelladine,PWY-7826,Amaryllidacea alkaloids biosynthesis
+M299T513,299.1461415,[M+Na]+,AKIHYQWCLCDMMI,276.15862588,-5.69,4-coumaroylagmatine,PWY-6448,hordatine biosynthesis
+M306T1012,306.10830560000005,[M+Na]+,PFBSOANQDDTNGJ,283.12084340399997,-5.74,morphinone,PWY-5270,morphine biosynthesis
+M306T1012,306.10830560000005,[M+Na]+,RXGUTQNKCXHALN,283.12084340399997,-5.74,(4-coumaroyl)tyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M306T892,306.1094032,[M+Na]+,PFBSOANQDDTNGJ,283.12084340399997,-2.15,morphinone,PWY-5270,morphine biosynthesis
+M306T892,306.1094032,[M+Na]+,RXGUTQNKCXHALN,283.12084340399997,-2.15,(4-coumaroyl)tyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M360T818,360.1079918,[M+Na]+,XUACNUJFOIKYPQ,337.116151948,7.28,1D-1-O-(indol-3-yl)acetyl-myo-inositol,PWY-1782,superpathway of indole-3-acetate conjugate biosynthesis
+M360T818,360.1079918,[M+Na]+,XUACNUJFOIKYPQ,337.116151948,7.28,1D-1-O-(indol-3-yl)acetyl-myo-inositol,PWY-1921,indole-3-acetate activation II
+M360T818,360.1079918,[M+Na]+,XUACNUJFOIKYPQ,337.116151948,7.28,1D-1-O-(indol-3-yl)acetyl-myo-inositol,PWY-1741,indole-3-acetate inactivation IX
+M360T818,360.1079918,[M+Na]+,HHDMMUWDSFASNB,337.116151948,7.28,1-O-(indol-3-ylacetyl)-β-D-glucose,PWY-1782,superpathway of indole-3-acetate conjugate biosynthesis
+M360T818,360.1079918,[M+Na]+,HHDMMUWDSFASNB,337.116151948,7.28,1-O-(indol-3-ylacetyl)-β-D-glucose,PWY-1921,indole-3-acetate activation II
+M360T818,360.1079918,[M+Na]+,HHDMMUWDSFASNB,337.116151948,7.28,1-O-(indol-3-ylacetyl)-β-D-glucose,PWY-1741,indole-3-acetate inactivation IX
+M360T818,360.1079918,[M+Na]+,XSNPKRVRWPBMKE,337.116151948,7.28,4-O-(indol-3-ylacetyl)-β-D-glucose,PWY-1921,indole-3-acetate activation II
+M360T818,360.1079918,[M+Na]+,DKHLXGMLDJKOFU,337.116151948,7.28,6-O-(indol-3-ylacetyl)-β-D-glucose,PWY-1921,indole-3-acetate activation II
+M366T1055,366.130742,[M+Na]+,IEDBNTAKVGBZEP,343.141972772,-1.23,sinapoyltyramine,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+M367T1055,367.1347225,[M+Na]+,QFYFLJZBZITPGX,344.147117728,-4.39,dihydroconiferyl alcohol glucoside,PWY-83,monolignol glucosides biosynthesis
+M375T654,375.1449264,[M+Na]+,QUCQEUCGKKTEBI,352.15488318399997,2.2,palmatine,PWY-7507,chelerythrine biosynthesis
+M375T654,375.1449264,[M+Na]+,QUCQEUCGKKTEBI,352.15488318399997,2.2,palmatine,PWY-7138,noscapine biosynthesis
+M375T654,375.1449264,[M+Na]+,QUCQEUCGKKTEBI,352.15488318399997,2.2,palmatine,PWY-3901,berberine biosynthesis
+M375T654,375.1449264,[M+Na]+,QUCQEUCGKKTEBI,352.15488318399997,2.2,palmatine,PWY-5470,palmatine biosynthesis
+M180T321,180.10098180000003,[M+NH4]+,CCRCUPLGCSFEDV,162.06807956,-5.11,methylcinnamate,PWY-4201,volatile cinnamoic ester biosynthesis
+M180T321,180.10098180000003,[M+NH4]+,OCNIKEFATSKIBE,162.06807956,-5.11,4-hydroxybenzalacetone,PWY-5393,raspberry ketone biosynthesis
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5717,superpathway of formononetin derivative biosynthesis
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-2343,daidzein conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-2904,formononetin conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-2861,biochanin A conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-1042,glycolysis IV
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5484,glycolysis II (from fructose 6-phosphate)
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,GLUCONEO-PWY,gluconeogenesis I
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5723,Rubisco shunt
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-6549,nitrogen remobilization from senescing leaves
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5172,acetyl-CoA biosynthesis from citrate
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate)
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWYQT-4481,TCA cycle variation V (plant)
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5173,superpathway of acetyl-CoA biosynthesis
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,CALVIN-PWY,Calvin-Benson-Bassham cycle
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-7345,superpathway of anaerobic sucrose degradation
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,GLYOXYLATE-BYPASS,glyoxylate cycle
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-2561,medicarpin conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-2701,maackiain conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-2345,genistein conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,P23-PWY,reductive TCA cycle I
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle"
+M210T1547,210.0629005,[M+NH4]+,KRKNYBCHXYNGOX,192.027002596,9.88,citrate,PWY-5690,TCA cycle II (plants and fungi)
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-6549,nitrogen remobilization from senescing leaves
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWYQT-4481,TCA cycle variation V (plant)
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,GLYOXYLATE-BYPASS,glyoxylate cycle
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,P23-PWY,reductive TCA cycle I
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle"
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-5690,TCA cycle II (plants and fungi)
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-5717,superpathway of formononetin derivative biosynthesis
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-2343,daidzein conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-2904,formononetin conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-2861,biochanin A conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-2561,medicarpin conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-2701,maackiain conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,ODBLHEXUDAPZAU,192.027002596,9.88,D-isocitrate | D-threo-isocitrate,PWY-2345,genistein conjugates interconversion
+M210T1547,210.0629005,[M+NH4]+,YLKFQNUGXOLRNI,192.027002596,9.88,"D-glucaro-1,5-lactone",PWY-7461,hydroxycinnamate sugar acid ester biosynthesis
+M276T882,276.23098849999997,[M+NH4]+,UBTNVRPIHJRBCI,258.198365452,-4.34,13-apo-β-carotenone,PWY-6806,carotenoid cleavage
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-5041,S-adenosyl-L-methionine salvage II
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-2841,cytokinins degradation
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-6619,adenine and adenosine salvage VI
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,P165-PWY,superpathway of purines degradation in plants
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-6606,guanosine nucleotides degradation II
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,METHIONINE-DEG1-PWY,L-methionine degradation I (to L-homocysteine)
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-6596,adenosine nucleotides degradation I
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-6607,guanosine nucleotides degradation I
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-6595,superpathway of guanosine nucleotides degradation (plants)
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-6605,adenine and adenosine salvage II
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-5044,purine nucleotides degradation I (plants)
+M285T1011,285.12881410000006,[M+NH4]+,OIRDTQYFTABQOQ,267.096753896,-6.18,adenosine,PWY-5043,purine nucleosides salvage II (plant)
+M285T1011,285.12881410000006,[M+NH4]+,YKBGVTZYEHREMT,267.096753896,-6.18,2'-deoxyguanosine,PWY-7224,purine deoxyribonucleosides salvage
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-5717,superpathway of formononetin derivative biosynthesis
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-2904,formononetin conjugates interconversion
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-2229,superpathway of pterocarpan biosynthesis (via formononetin)
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-2463,(-)-medicarpin biosynthesis
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-6427,rot-2'-enonate biosynthesis
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-2464,(-)-maackiain biosynthesis
+M286T680,286.10926939999996,[M+NH4]+,HKQYGTCOTHHOMP,268.073558864,6.6,formononetin,PWY-2321,formononetin biosynthesis
+M286T680,286.10926939999996,[M+NH4]+,LNIQZRIHAMVRJA,268.073558864,6.6,isoformononetin,PWY-2002,isoflavonoid biosynthesis I
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,P165-PWY,superpathway of purines degradation in plants
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-6606,guanosine nucleotides degradation II
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-6607,guanosine nucleotides degradation I
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-6595,superpathway of guanosine nucleotides degradation (plants)
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-6599,guanine and guanosine salvage II
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-5044,purine nucleotides degradation I (plants)
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-6618,guanine and guanosine salvage III
+M301T764,301.1265278,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,3.44,guanosine,PWY-5043,purine nucleosides salvage II (plant)
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,P165-PWY,superpathway of purines degradation in plants
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-6606,guanosine nucleotides degradation II
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-6607,guanosine nucleotides degradation I
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-6595,superpathway of guanosine nucleotides degradation (plants)
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-6599,guanine and guanosine salvage II
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-5044,purine nucleotides degradation I (plants)
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-6618,guanine and guanosine salvage III
+M301T887,301.1258504,[M+NH4]+,NYHBQMYGNKIUIF,283.091668516,1.19,guanosine,PWY-5043,purine nucleosides salvage II (plant)
+M316T672,316.118929,[M+NH4]+,VFZIJLPRJAQGFO,298.084123548,3.11,7-hydroxy-4'5'-dimethoxyisoflavone,PWY-6427,rot-2'-enonate biosynthesis
+M316T672,316.118929,[M+NH4]+,LZERJKGWTQYMBB,298.084123548,3.11,"apigenin-7,4'-dimethyl ether",PWY-7325,salvigenin biosynthesis
+M316T672,316.118929,[M+NH4]+,KJGPBYUQZLUKLL,298.084123548,3.11,afrormosin,PWY-5926,afrormosin conjugates interconversion
+M316T772,316.1207914,[M+NH4]+,VFZIJLPRJAQGFO,298.084123548,9.0,7-hydroxy-4'5'-dimethoxyisoflavone,PWY-6427,rot-2'-enonate biosynthesis
+M316T772,316.1207914,[M+NH4]+,LZERJKGWTQYMBB,298.084123548,9.0,"apigenin-7,4'-dimethyl ether",PWY-7325,salvigenin biosynthesis
+M316T772,316.1207914,[M+NH4]+,KJGPBYUQZLUKLL,298.084123548,9.0,afrormosin,PWY-5926,afrormosin conjugates interconversion
+M346T718,346.1307657,[M+NH4]+,QCDYOIZVELGOLZ,328.094688232,6.51,salvigenin,PWY-7298,nevadensin biosynthesis
+M346T718,346.1307657,[M+NH4]+,QCDYOIZVELGOLZ,328.094688232,6.51,salvigenin,PWY-7325,salvigenin biosynthesis
+M346T718,346.1307657,[M+NH4]+,WXQDWUQQAGHKOV,328.094688232,6.51,9-demethylmunduserone,PWY-6427,rot-2'-enonate biosynthesis
+M346T718,346.1307657,[M+NH4]+,IXZYJZHCXHSCDY,328.094688232,6.51,"7-hydroxy-2',4',5'-trimethoxyisoflavone",PWY-6427,rot-2'-enonate biosynthesis
+M360T818,360.1079918,[M+NH4]+,GYUPEJCNVAKZSU,342.073952788,0.6,dalpatein,PWY-5825,dalpatein and dalnigrein biosynthesis
+M382T711,382.1255893,[M+NH4]+,RTDRYYULUYRTAN,364.094688232,-7.65,justicidin B,PWY-6820,diphyllin biosynthesis
+M382T711,382.1255893,[M+NH4]+,RTDRYYULUYRTAN,364.094688232,-7.65,justicidin B,PWY-6824,justicidin B biosynthesis
+M462T635,462.17567919999993,[M+NH4]+,PDQAOYGENRRPQO,444.142032348,-0.38,6-methoxypodophyllotoxin,PWY-5479,6-methoxypodophyllotoxin biosynthesis
+M462T635,462.17567919999993,[M+NH4]+,PDQAOYGENRRPQO,444.142032348,-0.38,6-methoxypodophyllotoxin,PWY-7491,podophyllotoxin glucosides metabolism
+M462T669,462.17608039999993,[M+NH4]+,PDQAOYGENRRPQO,444.142032348,0.49,6-methoxypodophyllotoxin,PWY-5479,6-methoxypodophyllotoxin biosynthesis
+M462T669,462.17608039999993,[M+NH4]+,PDQAOYGENRRPQO,444.142032348,0.49,6-methoxypodophyllotoxin,PWY-7491,podophyllotoxin glucosides metabolism
+M462T775,462.1757232,[M+NH4]+,PDQAOYGENRRPQO,444.142032348,-0.29,6-methoxypodophyllotoxin,PWY-5479,6-methoxypodophyllotoxin biosynthesis
+M462T775,462.1757232,[M+NH4]+,PDQAOYGENRRPQO,444.142032348,-0.29,6-methoxypodophyllotoxin,PWY-7491,podophyllotoxin glucosides metabolism
+M478T449,478.1131507,[M+NH4]+,RSPRLQAZJOAGFP,460.076030784,6.9,CDP-N-methylethanolamine,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants)
+M478T449,478.1131507,[M+NH4]+,RSPRLQAZJOAGFP,460.076030784,6.9,CDP-N-methylethanolamine,PWY4FS-3,phosphatidylcholine biosynthesis III
+M478T561,478.1692239,[M+NH4]+,YLYJXNTZVUEFJZ,460.136946968,-3.23,afrormosin-7-O-glucoside,PWY-5926,afrormosin conjugates interconversion
+M478T602,478.1705944,[M+NH4]+,YLYJXNTZVUEFJZ,460.136946968,-0.37,afrormosin-7-O-glucoside,PWY-5926,afrormosin conjugates interconversion
+M263T1547,263.06779680000005,[M+K]+,SXFKFRRXJUJGSS,224.104858992,-0.84,olivetolate,PWY-5140,cannabinoid biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-7507,chelerythrine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-7363,papaverine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-7138,noscapine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-5471,laudanine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-5876,magnoflorine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-5270,morphine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-3901,berberine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-5287,sanguinarine and macarpine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-8030,coptisine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-8031,epiberberine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-3581,(S)-reticuline biosynthesis I
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-6337,dehydroscoulerine biosynthesis
+M368T805,368.1254983,[M+K]+,BHLYRWXGMIUIHG,329.162708216,-1.0,(R)-reticuline | (S)-reticuline,PWY-5470,palmatine biosynthesis
+M368T805,368.1254983,[M+K]+,LLSADFZHWMEBHH,329.162708216,-1.0,salutaridinol,PWY-5270,morphine biosynthesis
+M375T654,375.1449264,[M+K]+,CMKFQVZJOWHHDV,336.183778008,-5.36,catharanthine,PWY-5292,"vindoline, vindorosine and vinblastine biosynthesis"
+M375T654,375.1449264,[M+K]+,FNGGIPWAZSFKCN,336.183778008,-5.36,tabersonine,PWY-5292,"vindoline, vindorosine and vinblastine biosynthesis"
+M147T671,147.04307859999997,[M+H-H2O]+,BTNMPGBKDVTSJY,164.047344116,-6.64,3-phenyl-2-oxopropanoate,PWY-5079,L-phenylalanine degradation III
+M147T671,147.04307859999997,[M+H-H2O]+,BTNMPGBKDVTSJY,164.047344116,-6.64,3-phenyl-2-oxopropanoate,PWY-5317,tropane alkaloids biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,BTNMPGBKDVTSJY,164.047344116,-6.64,3-phenyl-2-oxopropanoate,PWY-7432,"L-phenylalanine biosynthesis III (cytosolic, plants)"
+M147T671,147.04307859999997,[M+H-H2O]+,BTNMPGBKDVTSJY,164.047344116,-6.64,3-phenyl-2-oxopropanoate,PWY-7341,superpathway of hyoscyamine (atropine) and scopolamine biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5868,simplecoumarins biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-2181,free phenylpropanoid acid biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5313,superpathway of anthocyanin biosynthesis (from cyanidin and cyanidin 3-O-glucoside)
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-7897,flavonoid di-C-glucosylation
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY1F-FLAVSYN,flavonoid biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6320,phaselate biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5312,superpathway of anthocyanin biosynthesis (from pelargonidin 3-O-glucoside)
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-7397,naringenin biosynthesis (engineered)
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-7460,2-O-acetyl-3-O-trans-coutarate biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6431,4-hydroxybenzoate biosynthesis IV (plants)
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5071,superpathway of rosmarinic acid biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-7826,Amaryllidacea alkaloids biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5135,xanthohumol biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-1121,suberin monomers biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6040,chlorogenic acid biosynthesis II
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-361,monolignol biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5284,shisonin biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-7186,superpathway of scopolin and esculin biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5268,salvianin biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6432,curcuminoid biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6920,6-gingerol analog biosynthesis (engineered)
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5048,rosmarinic acid biosynthesis I
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6039,chlorogenic acid biosynthesis I
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6982,umbelliferone biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-5665,vanillin biosynthesis I
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY1F-467,"phenylpropanoid biosynthesis, initial reactions"
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-7398,coumarins biosynthesis (engineered)
+M147T671,147.04307859999997,[M+H-H2O]+,NGSWKAQJJWESNS,164.047344116,-6.64,4-coumarate,PWY-6435,4-hydroxybenzoate biosynthesis III (plants)
+M147T671,147.04307859999997,[M+H-H2O]+,AXMVYSVVTMKQSL,164.047344116,-6.64,caffealdehyde,PWY-7682,arabidopyrone biosynthesis
+M147T671,147.04307859999997,[M+H-H2O]+,PMOWTIHVNWZYFI,164.047344116,-6.64,cis-2-coumarate | trans-2-coumarate,PWY-5176,coumarin biosynthesis (via 2-coumarate)
+M180T321,180.10098180000003,[M+H-H2O]+,WXEMSGQRTGSYOG,197.10519334,-5.12,methyl ecgonone,PWY-5843,cocaine biosynthesis
+M283T632,283.1156607,[M+H-H2O]+,ILRCGYURZSFMEG,300.12090298,-6.9,salidroside,PWY-6802,salidroside biosynthesis
+M284T1010,284.1262999,[M+H-H2O]+,YGPRSGKVLATIHT,301.131408088,-6.4,hemanthamine,PWY-7826,Amaryllidacea alkaloids biosynthesis
+M284T765,284.1259355,[M+H-H2O]+,YGPRSGKVLATIHT,301.131408088,-7.69,hemanthamine,PWY-7826,Amaryllidacea alkaloids biosynthesis
+M284T892,284.1273478,[M+H-H2O]+,YGPRSGKVLATIHT,301.131408088,-2.71,hemanthamine,PWY-7826,Amaryllidacea alkaloids biosynthesis
+M352T804,352.1151842,[M+H-H2O]+,QRZCXUNTBXMAPR,369.121237328,-7.85,6-hydroxyprotopine,PWY-5287,sanguinarine and macarpine biosynthesis

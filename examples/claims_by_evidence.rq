@@ -1,0 +1,21 @@
+# One query over all four cases: every claim anchored in PlantMetWiki (a pathway or a metabolite),
+# with the anchor tier, the ECO classes of its evidence and the tools that produced it.
+PREFIX lodp: <https://example.org/lod-pathways/pilot/>
+PREFIX sio:  <http://semanticscience.org/resource/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?claim ?anchor ?anchorTier
+       (GROUP_CONCAT(DISTINCT STRAFTER(STR(?evidenceType), "obo/"); separator=", ") AS ?evidenceTypes)
+       (GROUP_CONCAT(DISTINCT ?tool; separator=", ") AS ?tools)
+WHERE {
+  ?claim (lodp:anchoredInPathway | lodp:anchoredToMetabolite) ?a ;
+         lodp:anchorTier ?anchorTier ;
+         sio:SIO_000772 ?ev .
+  ?a rdfs:label ?anchor .
+  ?ev a ?evidenceType ;
+      prov:wasGeneratedBy/lodp:software ?tool .
+  FILTER(STRSTARTS(STR(?evidenceType), "http://purl.obolibrary.org/obo/ECO_"))
+}
+GROUP BY ?claim ?anchor ?anchorTier
+ORDER BY ?anchor

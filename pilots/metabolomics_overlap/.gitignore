@@ -1,0 +1,5 @@
+# Downloaded inputs (Zenodo S6 ~45 MB zipped, ~190 MB unzipped); re-created by the script instructions
+data/S6*
+.venv/
+.ipynb_checkpoints/
+__pycache__/

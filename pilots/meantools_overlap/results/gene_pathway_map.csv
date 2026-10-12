@@ -1,0 +1,1083 @@
+locus,tier,plantcyc_id,pathway,via
+Solyc01g073640,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",SDR
+Solyc01g073640,gene_locus,PWY-2541,phytosterol biosynthesis (plants),SDR
+Solyc01g091320,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",SMO3
+Solyc02g081730,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",3βHSD-2
+Solyc02g081730,gene_locus,PWY-2541,phytosterol biosynthesis (plants),3βHSD-2
+Solyc02g086180,gene_locus,PWY66-341,cholesterol biosynthesis I,C5-SD2
+Solyc02g086180,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",C5-SD2
+Solyc06g005750,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",SMO4
+Solyc06g082980,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)","8,7 SI"
+Solyc06g082980,gene_locus,PWY-2541,phytosterol biosynthesis (plants),"8,7 SI"
+Solyc07g043420,gene_locus,PWY18C3-3,α-tomatine biosynthesis,GAME1
+Solyc07g043420,gene_locus,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),GAME1
+Solyc07g043420,gene_locus,PWY18C3-4,solasodine glycosylation,GAME1
+Solyc07g043460,gene_locus,PWY18C3-3,α-tomatine biosynthesis,GAME8
+Solyc07g043460,gene_locus,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),GAME8
+Solyc07g043460,gene_locus,PWY18C3-2,solasodine and soladulcidine biosynthesis,GAME8
+Solyc07g043480,gene_locus,PWY18C3-3,α-tomatine biosynthesis,GAME17
+Solyc07g043480,gene_locus,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),GAME17
+Solyc07g043500,gene_locus,PWY18C3-3,α-tomatine biosynthesis,GAME18
+Solyc07g043500,gene_locus,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),GAME18
+Solyc09g009040,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",C14-R
+Solyc09g009040,gene_locus,PWY-2541,phytosterol biosynthesis (plants),C14-R
+Solyc12g006460,gene_locus,PWY18C3-3,α-tomatine biosynthesis,GAME4
+Solyc12g006460,gene_locus,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),GAME4
+Solyc12g006460,gene_locus,PWY18C3-2,solasodine and soladulcidine biosynthesis,GAME4
+Solyc12g006470,gene_locus,PWY18C3-3,α-tomatine biosynthesis,GAME12
+Solyc12g006470,gene_locus,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),GAME12
+Solyc12g006470,gene_locus,PWY18C3-2,solasodine and soladulcidine biosynthesis,GAME12
+Solyc12g098640,gene_locus,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",CPI
+Solyc12g098640,gene_locus,PWY-2541,phytosterol biosynthesis (plants),CPI
+Solyc10g081650,gene_uniprot,PWY-6475,trans-lycopene biosynthesis II (oxygenic phototrophs and green sulfur bacteria),Q8S4R4
+Solyc10g081650,gene_uniprot,CAROTENOID-PWY,superpathway of carotenoid biosynthesis in plants,Q8S4R4
+Solyc07g056570,gene_ec,PWY-695,abscisic acid biosynthesis,EC 1.13.11.51
+Solyc06g071290,gene_ec,PWY0-461,L-lysine degradation I,EC 1.2.1.19
+Solyc06g071290,gene_ec,PWY-2,putrescine degradation IV,EC 1.2.1.19
+Solyc06g071290,gene_ec,CHOLINE-BETAINE-ANA-PWY,choline degradation I,EC 1.2.1.8
+Solyc06g071290,gene_ec,PWY-6055,dimethylsulfoniopropanoate biosynthesis II (Spartina),EC 1.2.1.8
+Solyc06g071290,gene_ec,PWY-6054,dimethylsulfoniopropanoate biosynthesis I (Wollastonia),EC 1.2.1.8
+Solyc06g071290,gene_ec,PWY-3981,β-alanine biosynthesis I,EC 1.2.1.8
+Solyc06g071290,gene_ec,PWY1F-353,glycine betaine biosynthesis III (plants),EC 1.2.1.8
+Solyc01g006300,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc01g006300,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc01g006300,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc01g006300,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc01g006300,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc01g006300,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc01g006290,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc01g006290,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc01g006290,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc01g006290,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc01g006290,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc01g006290,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc01g105070,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc01g105070,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc01g105070,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc01g105070,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc01g105070,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc01g105070,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc02g081160,gene_ec,PWY-1042,glycolysis IV,EC 2.7.1.90
+Solyc02g081160,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.1.90
+Solyc02g084740,gene_ec,PWY-6544,superpathway of C28 brassinosteroid biosynthesis,EC 1.14.14.147
+Solyc02g084740,gene_ec,PWY-2582,brassinolide biosynthesis II,EC 1.14.14.147
+Solyc02g084740,gene_ec,PWY-699,brassinolide biosynthesis I,EC 1.14.14.147
+Solyc03g025380,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc03g025380,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc03g025380,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc03g025380,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc03g025380,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc03g025380,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc03g006700,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc03g006700,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc03g006700,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc03g006700,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc03g006700,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc03g006700,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc02g092580,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc02g092580,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc02g092580,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc02g092580,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc02g092580,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc02g092580,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc05g052280,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc05g052280,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc05g052280,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc05g052280,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc05g052280,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc05g052280,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc06g050440,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc06g050440,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc06g050440,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc06g050440,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc06g050440,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc06g050440,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc07g065900,gene_ec,PWY-7196,superpathway of pyrimidine ribonucleosides salvage,EC 2.7.1.48
+Solyc07g065900,gene_ec,PWYQT-4445,pyrimidine salvage pathway,EC 2.7.1.48
+Solyc07g065900,gene_ec,PWY-7193,pyrimidine ribonucleosides salvage I,EC 2.7.1.48
+Solyc07g065900,gene_ec,PWY-1042,glycolysis IV,EC 4.1.2.13
+Solyc07g065900,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.1.2.13
+Solyc07g065900,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.1.2.13
+Solyc07g065900,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.1.2.13
+Solyc07g065900,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 4.1.2.13
+Solyc07g065900,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.1.2.13
+Solyc07g065900,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 4.1.2.13
+Solyc07g065900,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.1.2.13
+Solyc11g010120,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc11g010120,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc11g010120,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc11g010120,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc11g010120,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc11g010120,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc11g018800,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc11g018800,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc11g018800,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc11g018800,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc11g018800,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc11g018800,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc04g009620,gene_ec,PWY-6163,chorismate biosynthesis from 3-dehydroquinate,EC 4.2.3.5
+Solyc04g009620,gene_ec,ARO-PWY,chorismate biosynthesis I,EC 4.2.3.5
+Solyc11g069040,gene_ec,PWY-5386,methylglyoxal degradation I,EC 4.4.1.5
+Solyc10g086500,gene_ec,PWY-6544,superpathway of C28 brassinosteroid biosynthesis,EC 1.3.1.22
+Solyc10g086500,gene_ec,PWY-2582,brassinolide biosynthesis II,EC 1.3.1.22
+Solyc10g086500,gene_ec,PWY-699,brassinolide biosynthesis I,EC 1.3.1.22
+Solyc10g086500,gene_ec,PWY-2602,brassinosteroid biosynthesis III,EC 1.3.1.22
+Solyc10g086500,gene_ec,PWY-6032,digitoxigenin biosynthesis,EC 1.3.1.22
+Solyc10g081650,gene_ec,PWY-6475,trans-lycopene biosynthesis II (oxygenic phototrophs and green sulfur bacteria),EC 5.2.1.13
+Solyc10g081650,gene_ec,CAROTENOID-PWY,superpathway of carotenoid biosynthesis in plants,EC 5.2.1.13
+Solyc01g109140,gene_ec,PWY-5406,divinyl ether biosynthesis I,EC 4.2.1.121
+Solyc01g109140,gene_ec,PWY-5433,superpathway of lipoxygenase,EC 4.2.1.121
+Solyc01g005560,gene_ec,PWY-6549,nitrogen remobilization from senescing leaves,EC 1.1.1.42
+Solyc01g005560,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.1.1.42
+Solyc01g103450,gene_ec,PWY-6121,5-aminoimidazole ribonucleotide biosynthesis I,EC 6.3.4.13
+Solyc01g103450,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 6.3.4.13
+Solyc01g101060,gene_ec,PWY-5041,S-adenosyl-L-methionine salvage II,EC 2.5.1.6
+Solyc01g101060,gene_ec,PWY-7528,L-methionine salvage cycle I (bacteria and plants),EC 2.5.1.6
+Solyc01g101060,gene_ec,PWY-7270,L-methionine salvage cycle II (plants),EC 2.5.1.6
+Solyc01g101060,gene_ec,METHIONINE-DEG1-PWY,L-methionine degradation I (to L-homocysteine),EC 2.5.1.6
+Solyc01g101060,gene_ec,PWY-5912,2'-deoxymugineic acid phytosiderophore biosynthesis,EC 2.5.1.6
+Solyc01g101060,gene_ec,ETHYL-PWY,ethene biosynthesis I (plants),EC 2.5.1.6
+Solyc01g101060,gene_ec,SAM-PWY,S-adenosyl-L-methionine biosynthesis,EC 2.5.1.6
+Solyc01g102410,gene_ec,PWY-5918,superpathway of heme b biosynthesis from glutamate,EC 6.1.1.17
+Solyc01g102410,gene_ec,PWY-5188,tetrapyrrole biosynthesis I (from glutamate),EC 6.1.1.17
+Solyc02g005350,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 6.2.1.5
+Solyc02g005350,gene_ec,P23-PWY,reductive TCA cycle I,EC 6.2.1.5
+Solyc02g005350,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 6.2.1.5
+Solyc02g005350,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 6.2.1.5
+Solyc02g038740,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 1.1.1.34
+Solyc02g038740,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 1.1.1.34
+Solyc02g038740,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 1.1.1.34
+Solyc02g064640,gene_ec,PWY-5340,sulfate activation for sulfonation,EC 2.7.1.25
+Solyc02g063220,gene_ec,PWY-3881,mannitol biosynthesis,EC 5.3.1.8
+Solyc02g063220,gene_ec,MANNCAT-PWY,D-mannose degradation I,EC 5.3.1.8
+Solyc02g063220,gene_ec,PWY-5659,GDP-mannose biosynthesis,EC 5.3.1.8
+Solyc02g063220,gene_ec,PWY-3861,mannitol degradation II,EC 5.3.1.8
+Solyc02g080530,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc02g080530,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc02g080530,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc02g080530,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc02g080530,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc02g080530,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc02g085350,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.3.5.1
+Solyc02g085350,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 1.3.5.1
+Solyc02g085350,gene_ec,PWY-4302,aerobic respiration III (alternative oxidase pathway),EC 1.3.5.1
+Solyc02g085350,gene_ec,PWY-3781,aerobic respiration I (cytochrome c),EC 1.3.5.1
+Solyc02g085350,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.3.5.1
+Solyc02g085350,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.3.5.1
+Solyc02g085350,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 1.3.5.1
+Solyc02g087240,gene_ec,PWY-5083,NAD(P)/NADPH interconversion,EC 7.1.1.2
+Solyc02g087240,gene_ec,PWY-4302,aerobic respiration III (alternative oxidase pathway),EC 7.1.1.2
+Solyc02g087240,gene_ec,PWY-3781,aerobic respiration I (cytochrome c),EC 7.1.1.2
+Solyc02g091560,gene_ec,PWY-3841,folate transformations II (plants),EC 2.1.2.1
+Solyc02g091560,gene_ec,GLYSYN2-PWY,glycine biosynthesis,EC 2.1.2.1
+Solyc02g091560,gene_ec,PWY-2161,folate polyglutamylation,EC 2.1.2.1
+Solyc02g091560,gene_ec,GLYSYN-PWY,glycine biosynthesis I,EC 2.1.2.1
+Solyc02g091560,gene_ec,PWY-181,photorespiration I,EC 2.1.2.1
+Solyc03g071590,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.1.1.37
+Solyc03g071590,gene_ec,PWY-7047,malate-oxaloacetate shuttle I,EC 1.1.1.37
+Solyc03g071590,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 1.1.1.37
+Solyc03g071590,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 1.1.1.37
+Solyc03g071590,gene_ec,GLYOXYLATE-BYPASS,glyoxylate cycle,EC 1.1.1.37
+Solyc03g071590,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.1.1.37
+Solyc03g071590,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 1.1.1.37
+Solyc03g071590,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.1.1.37
+Solyc03g071590,gene_ec,PWY-7048,malate-oxaloacetate shuttle II,EC 1.1.1.37
+Solyc03g071590,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 1.1.1.37
+Solyc03g113580,gene_ec,DETOX1-PWY,superoxide radicals degradation,EC 1.15.1.1
+Solyc02g080630,gene_ec,PWY-5386,methylglyoxal degradation I,EC 4.4.1.5
+Solyc02g082260,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 1.1.1.34
+Solyc02g082260,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 1.1.1.34
+Solyc02g082260,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 1.1.1.34
+Solyc02g083500,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc02g083500,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc02g083500,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc02g083500,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc02g083500,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc02g083500,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc04g007520,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.7.8.8
+Solyc04g007520,gene_ec,PWY-5669,phosphatidylserine and phosphatidylethanolamine biosynthesis I,EC 2.7.8.8
+Solyc04g009580,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.7.8.5
+Solyc04g009580,gene_ec,PWY4FS-8,phosphatidylglycerol biosynthesis II,EC 2.7.8.5
+Solyc04g009580,gene_ec,PWY4FS-7,phosphatidylglycerol biosynthesis I,EC 2.7.8.5
+Solyc04g009580,gene_ec,PWYQT-4482,CDP-diacylglycerol biosynthesis IV,EC 2.7.8.5
+Solyc04g009580,gene_ec,PWY-5269,cardiolipin biosynthesis II,EC 2.7.8.5
+Solyc04g014270,gene_ec,PWY-1042,glycolysis IV,EC 2.7.1.11
+Solyc04g014270,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 2.7.1.11
+Solyc04g014270,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 2.7.1.11
+Solyc04g014270,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.1.11
+Solyc04g014270,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.1.11
+Solyc04g049350,gene_ec,PWY-6163,chorismate biosynthesis from 3-dehydroquinate,EC 4.2.3.5
+Solyc04g049350,gene_ec,ARO-PWY,chorismate biosynthesis I,EC 4.2.3.5
+Solyc03g006870,gene_ec,PWY-6317,D-galactose degradation I (Leloir pathway),EC 5.4.2.2
+Solyc03g006870,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 5.4.2.2
+Solyc03g006870,gene_ec,PWY-7343,UDP-α-D-glucose biosynthesis,EC 5.4.2.2
+Solyc03g006870,gene_ec,DTDPRHAMSYN-PWY,dTDP-β-L-rhamnose biosynthesis,EC 5.4.2.2
+Solyc03g006870,gene_ec,PWY-622,starch biosynthesis,EC 5.4.2.2
+Solyc03g006870,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 5.4.2.2
+Solyc03g006870,gene_ec,PWY-5661,GDP-α-D-glucose biosynthesis,EC 5.4.2.2
+Solyc03g006870,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 5.4.2.2
+Solyc03g006870,gene_ec,PWY-7238,sucrose biosynthesis II,EC 5.4.2.2
+Solyc03g006870,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 5.4.2.2
+Solyc04g071650,gene_ec,PWY-1001,cellulose biosynthesis,EC 2.4.1.12
+Solyc04g072000,gene_ec,PWY-6814,chitin degradation III (carnivorous plants),EC 3.2.1.14
+Solyc04g072000,gene_ec,PWY-6902,chitin degradation II (Vibrio),EC 3.2.1.14
+Solyc04g076090,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 5.3.1.9
+Solyc04g076090,gene_ec,PWY-5054,D-sorbitol biosynthesis I,EC 5.3.1.9
+Solyc04g076090,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 5.3.1.9
+Solyc04g076090,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 5.3.1.9
+Solyc04g076090,gene_ec,PWY-622,starch biosynthesis,EC 5.3.1.9
+Solyc04g076090,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 5.3.1.9
+Solyc04g076090,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 5.3.1.9
+Solyc04g076090,gene_ec,PWY-7238,sucrose biosynthesis II,EC 5.3.1.9
+Solyc04g076090,gene_ec,UDPNACETYLGALSYN-PWY,UDP-N-acetyl-D-glucosamine biosynthesis II,EC 5.3.1.9
+Solyc04g076090,gene_ec,PWY-5659,GDP-mannose biosynthesis,EC 5.3.1.9
+Solyc04g076090,gene_ec,PWY-621,sucrose degradation III (sucrose invertase),EC 5.3.1.9
+Solyc04g076090,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 5.3.1.9
+Solyc05g008580,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.7.8.8
+Solyc05g008580,gene_ec,PWY-5669,phosphatidylserine and phosphatidylethanolamine biosynthesis I,EC 2.7.8.8
+Solyc05g012510,gene_ec,PWY-7238,sucrose biosynthesis II,EC 2.4.1.1
+Solyc03g112910,gene_ec,PANTO-PWY,phosphopantothenate biosynthesis I,EC 2.7.1.33
+Solyc03g112910,gene_ec,PWY-4221,superpathway of coenzyme A biosynthesis II (plants),EC 2.7.1.33
+Solyc03g112910,gene_ec,PWY-4221ARA,superpathway of pantothenate and coenzymeA biosynthesis,EC 2.7.1.33
+Solyc03g112910,gene_ec,PWY-3961,phosphopantothenate biosynthesis II,EC 2.7.1.33
+Solyc05g053100,gene_ec,PWY-5084,2-oxoglutarate decarboxylation to succinyl-CoA,EC 1.8.1.4
+Solyc05g053100,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 1.8.1.4
+Solyc05g053100,gene_ec,PWY-5046,2-oxoisovalerate decarboxylation to isobutanoyl-CoA,EC 1.8.1.4
+Solyc05g053100,gene_ec,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I,EC 1.8.1.4
+Solyc05g053100,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.8.1.4
+Solyc05g053100,gene_ec,GLYCLEAV-PWY,glycine cleavage,EC 1.8.1.4
+Solyc04g074480,gene_ec,PWY-6164,3-dehydroquinate biosynthesis I,EC 2.5.1.54
+Solyc04g074480,gene_ec,ARO-PWY,chorismate biosynthesis I,EC 2.5.1.54
+Solyc06g071910,gene_ec,PWY-5367,petroselinate biosynthesis,EC 1.1.1.100
+Solyc06g071910,gene_ec,PWY-5973,cis-vaccenate biosynthesis,EC 1.1.1.100
+Solyc06g071910,gene_ec,PWY-5989,stearate biosynthesis II (bacteria and plants),EC 1.1.1.100
+Solyc06g071910,gene_ec,PWY-5971,palmitate biosynthesis II (type II fatty acid synthase),EC 1.1.1.100
+Solyc06g071910,gene_ec,FASYN-ELONG-PWY,fatty acid elongation--saturated,EC 1.1.1.100
+Solyc06g071910,gene_ec,PWY-5156,superpathway of fatty acid biosynthesis II (plant),EC 1.1.1.100
+Solyc07g061940,gene_ec,ILEUSYN-PWY,L-isoleucine biosynthesis I (from threonine),EC 2.2.1.6
+Solyc07g061940,gene_ec,ILE-VAL-PWY,superpathway of isoleucine and valine biosynthesis,EC 2.2.1.6
+Solyc07g061940,gene_ec,PWY-3001,superpathway of L-isoleucine biosynthesis I,EC 2.2.1.6
+Solyc07g061940,gene_ec,VALSYN-PWY,L-valine biosynthesis,EC 2.2.1.6
+Solyc07g061940,gene_ec,BRANCHED-CHAIN-AA-SYN-PWY,superpathway of branched chain amino acid biosynthesis,EC 2.2.1.6
+Solyc07g064160,gene_ec,THISYNARA-PWY,superpathway of thiamine pyrophosphate biosynthesis III (eukaryotes),EC 2.4.2.60
+Solyc07g064160,gene_ec,PWY-6909,thiazole component of thiamine pyrophosphate biosynthesis III,EC 2.4.2.60
+Solyc07g056140,gene_ec,PWY-622,starch biosynthesis,EC 2.7.7.27
+Solyc07g056140,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 2.7.7.27
+Solyc07g066610,gene_ec,PWY-1042,glycolysis IV,EC 2.7.2.3
+Solyc07g066610,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 2.7.2.3
+Solyc07g066610,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 2.7.2.3
+Solyc07g066610,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 2.7.2.3
+Solyc07g066610,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 2.7.2.3
+Solyc07g066610,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.2.3
+Solyc07g066610,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 2.7.2.3
+Solyc07g066610,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.2.3
+Solyc05g056420,gene_ec,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)",EC 2.7.1.107
+Solyc05g056420,gene_ec,PWY-7039,"phosphatidate metabolism, as a signaling molecule",EC 2.7.1.107
+Solyc07g064800,gene_ec,PWY-5084,2-oxoglutarate decarboxylation to succinyl-CoA,EC 2.3.1.61
+Solyc08g005130,gene_ec,PWY-4661,1D-myo-inositol hexakisphosphate biosynthesis III (Spirodela polyrrhiza),EC 2.7.1.134
+Solyc08g066850,gene_ec,PWY-5386,methylglyoxal degradation I,EC 4.4.1.5
+Solyc09g007520,gene_ec,PWY-5469,sesamin biosynthesis,EC 1.11.1.7
+Solyc09g007520,gene_ec,PWY-5466,matairesinol biosynthesis,EC 1.11.1.7
+Solyc09g007520,gene_ec,PWY-5461,betanidin degradation,EC 1.11.1.7
+Solyc09g007520,gene_ec,PWY-7214,baicalein degradation (hydrogen peroxide detoxification),EC 1.11.1.7
+Solyc09g007520,gene_ec,PWY-7445,luteolin triglucuronide degradation,EC 1.11.1.7
+Solyc09g007520,gene_ec,PWY-6824,justicidin B biosynthesis,EC 1.11.1.7
+Solyc06g075310,gene_ec,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc06g075310,gene_ec,PWY-7219,adenosine ribonucleotides de novo biosynthesis,EC 2.7.4.3
+Solyc06g075310,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc09g010420,gene_ec,GLUTORN-PWY,L-ornithine biosynthesis I,EC 2.3.1.1
+Solyc09g010420,gene_ec,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle),EC 2.3.1.1
+Solyc09g010420,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 2.3.1.1
+Solyc09g010420,gene_ec,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle),EC 2.3.1.35
+Solyc09g009190,gene_ec,PWY-622,starch biosynthesis,EC 2.4.1.18
+Solyc09g009190,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 2.4.1.18
+Solyc07g006580,gene_ec,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)",EC 2.7.1.107
+Solyc07g006580,gene_ec,PWY-7039,"phosphatidate metabolism, as a signaling molecule",EC 2.7.1.107
+Solyc09g075120,gene_ec,PWY-4821,UDP-α-D-xylose biosynthesis,EC 4.1.1.35
+Solyc09g082650,gene_ec,PWY-5389,3-methylthiopropanoate biosynthesis,EC 1.13.11.53
+Solyc09g082650,gene_ec,PWY-7528,L-methionine salvage cycle I (bacteria and plants),EC 1.13.11.54
+Solyc09g082650,gene_ec,PWY-7270,L-methionine salvage cycle II (plants),EC 1.13.11.54
+Solyc09g082650,gene_ec,PWY-6755,S-methyl-5-thio-α-D-ribose 1-phosphate degradation I,EC 1.13.11.54
+Solyc09g082650,gene_ec,PWY-4361,S-methyl-5-thio-α-D-ribose 1-phosphate degradation I,EC 1.13.11.54
+Solyc09g083330,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.7.7.41
+Solyc09g083330,gene_ec,PWY4FS-8,phosphatidylglycerol biosynthesis II,EC 2.7.7.41
+Solyc09g083330,gene_ec,PWY-5667,CDP-diacylglycerol biosynthesis I,EC 2.7.7.41
+Solyc09g083330,gene_ec,PWY4FS-7,phosphatidylglycerol biosynthesis I,EC 2.7.7.41
+Solyc09g083330,gene_ec,PWYQT-4482,CDP-diacylglycerol biosynthesis IV,EC 2.7.7.41
+Solyc09g083330,gene_ec,PWY0-1319,CDP-diacylglycerol biosynthesis II,EC 2.7.7.41
+Solyc09g091840,gene_ec,PWY-4081,glutathione-peroxide redox reactions,EC 1.8.1.7
+Solyc10g005510,gene_ec,PWY-1042,glycolysis IV,EC 1.2.1.12
+Solyc10g005510,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 1.2.1.12
+Solyc10g005510,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 1.2.1.12
+Solyc10g005510,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 1.2.1.12
+Solyc10g005510,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 1.2.1.12
+Solyc10g005510,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 1.2.1.12
+Solyc10g005510,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.2.1.12
+Solyc10g018300,gene_ec,PWY-5723,Rubisco shunt,EC 2.2.1.1
+Solyc10g018300,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 2.2.1.1
+Solyc10g018300,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 2.2.1.1
+Solyc10g018300,gene_ec,NONOXIPENT-PWY,pentose phosphate pathway (non-oxidative branch) I,EC 2.2.1.1
+Solyc08g022210,gene_ec,PWY-7528,L-methionine salvage cycle I (bacteria and plants),EC 5.3.1.23
+Solyc08g022210,gene_ec,PWY-7270,L-methionine salvage cycle II (plants),EC 5.3.1.23
+Solyc08g022210,gene_ec,PWY-6755,S-methyl-5-thio-α-D-ribose 1-phosphate degradation I,EC 5.3.1.23
+Solyc08g022210,gene_ec,PWY-4361,S-methyl-5-thio-α-D-ribose 1-phosphate degradation I,EC 5.3.1.23
+Solyc10g055800,gene_ec,PWY-6814,chitin degradation III (carnivorous plants),EC 3.2.1.14
+Solyc10g055800,gene_ec,PWY-6902,chitin degradation II (Vibrio),EC 3.2.1.14
+Solyc08g061100,gene_ec,PWY-1001,cellulose biosynthesis,EC 2.4.1.12
+Solyc08g069030,gene_ec,PWY-5918,superpathway of heme b biosynthesis from glutamate,EC 4.2.1.24
+Solyc08g069030,gene_ec,PWY-5188,tetrapyrrole biosynthesis I (from glutamate),EC 4.2.1.24
+Solyc10g083720,gene_ec,PWY-1042,glycolysis IV,EC 2.7.1.40
+Solyc10g083720,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 2.7.1.40
+Solyc10g083720,gene_ec,PWY-5723,Rubisco shunt,EC 2.7.1.40
+Solyc10g083720,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 2.7.1.40
+Solyc10g083720,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.1.40
+Solyc10g083720,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.1.40
+Solyc11g010450,gene_ec,PWY-1042,glycolysis IV,EC 2.7.1.11
+Solyc11g010450,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 2.7.1.11
+Solyc11g010450,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 2.7.1.11
+Solyc11g010450,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.1.11
+Solyc11g010450,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.1.11
+Solyc11g011930,gene_ec,PWY-6549,nitrogen remobilization from senescing leaves,EC 1.1.1.42
+Solyc11g011930,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.1.1.42
+Solyc12g005630,gene_ec,PWY-101,photosynthesis light reactions I (plastocyanin),EC 7.1.1.6
+Solyc12g005630,gene_ec,PWY-7731,superpathway of photosynthetic hydrogen production,EC 7.1.1.6
+Solyc12g008360,gene_ec,MANNOSYL-CHITO-DOLICHOL-BIOSYNTHESIS,protein N-glycosylation initial phase (eukaryotic),EC 2.4.99.18
+Solyc12g014380,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 5.3.1.9
+Solyc12g014380,gene_ec,PWY-5054,D-sorbitol biosynthesis I,EC 5.3.1.9
+Solyc12g014380,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 5.3.1.9
+Solyc12g014380,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 5.3.1.9
+Solyc12g014380,gene_ec,PWY-622,starch biosynthesis,EC 5.3.1.9
+Solyc12g014380,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 5.3.1.9
+Solyc12g014380,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 5.3.1.9
+Solyc12g014380,gene_ec,PWY-7238,sucrose biosynthesis II,EC 5.3.1.9
+Solyc12g014380,gene_ec,UDPNACETYLGALSYN-PWY,UDP-N-acetyl-D-glucosamine biosynthesis II,EC 5.3.1.9
+Solyc12g014380,gene_ec,PWY-5659,GDP-mannose biosynthesis,EC 5.3.1.9
+Solyc12g014380,gene_ec,PWY-621,sucrose degradation III (sucrose invertase),EC 5.3.1.9
+Solyc12g014380,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 5.3.1.9
+Solyc12g018990,gene_ec,P165-PWY,superpathway of purines degradation in plants,EC 3.2.2.2
+Solyc12g018990,gene_ec,PWY-6596,adenosine nucleotides degradation I,EC 3.2.2.2
+Solyc12g018990,gene_ec,PWY-5044,purine nucleotides degradation I (plants),EC 3.2.2.2
+Solyc12g018990,gene_ec,PWY-7196,superpathway of pyrimidine ribonucleosides salvage,EC 3.2.2.3
+Solyc12g018990,gene_ec,PWYQT-4445,pyrimidine salvage pathway,EC 3.2.2.3
+Solyc12g018990,gene_ec,PWY-5381,NAD salvage (plants),EC 3.2.2.3
+Solyc12g018990,gene_ec,PWY-6556,pyrimidine ribonucleosides salvage II,EC 3.2.2.3
+Solyc10g008740,gene_ec,CHLOROPHYLL-SYN,"3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)",EC 6.6.1.1
+Solyc12g095880,gene_ec,PWY-1042,glycolysis IV,EC 2.7.1.11
+Solyc12g095880,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 2.7.1.11
+Solyc12g095880,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 2.7.1.11
+Solyc12g095880,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.1.11
+Solyc12g095880,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.1.11
+Solyc11g039840,gene_ec,PWY-3781,aerobic respiration I (cytochrome c),EC 7.1.1.8
+Solyc12g010840,gene_ec,ILEUSYN-PWY,L-isoleucine biosynthesis I (from threonine),EC 1.1.1.86
+Solyc12g010840,gene_ec,ILE-VAL-PWY,superpathway of isoleucine and valine biosynthesis,EC 1.1.1.86
+Solyc12g010840,gene_ec,PWY-3001,superpathway of L-isoleucine biosynthesis I,EC 1.1.1.86
+Solyc12g010840,gene_ec,VALSYN-PWY,L-valine biosynthesis,EC 1.1.1.86
+Solyc12g010840,gene_ec,BRANCHED-CHAIN-AA-SYN-PWY,superpathway of branched chain amino acid biosynthesis,EC 1.1.1.86
+Solyc07g049530,gene_ec,ETHYL-PWY,ethene biosynthesis I (plants),EC 1.14.17.4
+Solyc09g009020,gene_ec,PWY-1042,glycolysis IV,EC 4.2.1.11
+Solyc09g009020,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.2.1.11
+Solyc09g009020,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.2.1.11
+Solyc09g009020,gene_ec,PWY-5723,Rubisco shunt,EC 4.2.1.11
+Solyc09g009020,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.2.1.11
+Solyc09g009020,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.2.1.11
+Solyc09g009020,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.2.1.11
+Solyc02g082920,gene_ec,PWY-6814,chitin degradation III (carnivorous plants),EC 3.2.1.14
+Solyc02g082920,gene_ec,PWY-6902,chitin degradation II (Vibrio),EC 3.2.1.14
+Solyc02g082930,gene_ec,PWY-6814,chitin degradation III (carnivorous plants),EC 3.2.1.14
+Solyc02g082930,gene_ec,PWY-6902,chitin degradation II (Vibrio),EC 3.2.1.14
+Solyc01g096190,gene_ec,PWY-6188,calmodulin regulated calcium transport,EC 7.2.2.10
+Solyc07g066480,gene_ec,PWY-5963,molybdenum cofactor sulfulylation (eukaryotes),EC 2.8.1.9
+Solyc01g005000,gene_ec,PWY-4321,L-glutamate degradation IV,EC 4.1.1.15
+Solyc01g009420,gene_ec,PWY-4821,UDP-α-D-xylose biosynthesis,EC 4.1.1.35
+Solyc01g014840,gene_ec,PWY-5381,NAD salvage (plants),EC 3.2.2.6
+Solyc01g028900,gene_ec,PWY-5046,2-oxoisovalerate decarboxylation to isobutanoyl-CoA,EC 1.2.4.4
+Solyc01g067660,gene_ec,PWY-6724,starch degradation II,EC 3.2.1.2
+Solyc01g067660,gene_ec,PWY-842,starch degradation I,EC 3.2.1.2
+Solyc01g067740,gene_ec,DETOX1-PWY,superoxide radicals degradation,EC 1.15.1.1
+Solyc01g081520,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 2.7.7.9
+Solyc01g081520,gene_ec,GALACTMETAB-PWY,UDP-galactose biosynthesis (salvage pathway from galactose using UDP-glucose),EC 2.7.7.9
+Solyc01g081520,gene_ec,PWY-7343,UDP-α-D-glucose biosynthesis,EC 2.7.7.9
+Solyc01g081520,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.7.9
+Solyc01g081520,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 2.7.7.9
+Solyc01g081520,gene_ec,PWY-7238,sucrose biosynthesis II,EC 2.7.7.9
+Solyc01g081520,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 2.7.7.9
+Solyc01g081520,gene_ec,PWY-6527,stachyose degradation,EC 2.7.7.9
+Solyc01g091910,gene_ec,PWYIO2-5,phospholipases (Chlamydomonas),EC 3.1.4.4
+Solyc01g091910,gene_ec,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)",EC 3.1.4.4
+Solyc01g091910,gene_ec,PWY-4762,superpathway of choline biosynthesis,EC 3.1.4.4
+Solyc01g091910,gene_ec,PWY-3561,choline biosynthesis III,EC 3.1.4.4
+Solyc01g091910,gene_ec,PWY-7039,"phosphatidate metabolism, as a signaling molecule",EC 3.1.4.4
+Solyc01g091910,gene_ec,LIPASYN-PWY,phospholipases,EC 3.1.4.4
+Solyc01g095300,gene_ec,PWY-6814,chitin degradation III (carnivorous plants),EC 3.2.1.14
+Solyc01g095300,gene_ec,PWY-6902,chitin degradation II (Vibrio),EC 3.2.1.14
+Solyc01g095990,gene_ec,PWY-6351,"D-myo-inositol (1,4,5)-trisphosphate biosynthesis",EC 2.7.1.67
+Solyc01g096420,gene_ec,PWY-7731,superpathway of photosynthetic hydrogen production,EC 1.6.5.2
+Solyc01g099590,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc01g099590,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc01g099590,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc01g102940,gene_ec,PWY-6935,seleno-amino acid detoxification and volatilization II,EC 2.1.1.12
+Solyc01g102940,gene_ec,PWY-5441,S-methyl-L-methionine cycle,EC 2.1.1.12
+Solyc01g102940,gene_ec,PWY-6055,dimethylsulfoniopropanoate biosynthesis II (Spartina),EC 2.1.1.12
+Solyc01g102940,gene_ec,PWY-6054,dimethylsulfoniopropanoate biosynthesis I (Wollastonia),EC 2.1.1.12
+Solyc01g102940,gene_ec,PWY-6931,seleno-amino acid detoxification and volatilization I,EC 2.1.1.12
+Solyc01g102940,gene_ec,PWY-6395,superpathway of seleno-compound metabolism,EC 2.1.1.12
+Solyc01g102660,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc01g102660,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc01g102660,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc01g105060,gene_ec,PWY-5973,cis-vaccenate biosynthesis,EC 4.2.1.59
+Solyc01g105060,gene_ec,PWY-5989,stearate biosynthesis II (bacteria and plants),EC 4.2.1.59
+Solyc01g105060,gene_ec,PWY-5971,palmitate biosynthesis II (type II fatty acid synthase),EC 4.2.1.59
+Solyc01g105060,gene_ec,FASYN-ELONG-PWY,fatty acid elongation--saturated,EC 4.2.1.59
+Solyc01g105060,gene_ec,PWY-5156,superpathway of fatty acid biosynthesis II (plant),EC 4.2.1.59
+Solyc01g106390,gene_ec,PWY-5918,superpathway of heme b biosynthesis from glutamate,EC 1.2.1.70
+Solyc01g106390,gene_ec,PWY-5188,tetrapyrrole biosynthesis I (from glutamate),EC 1.2.1.70
+Solyc01g107910,gene_ec,PWY-7498,phenylpropanoids methylation (ice plant),EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-1121,suberin monomers biosynthesis,EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-361,monolignol biosynthesis,EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-5710,capsaicin biosynthesis,EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-6432,curcuminoid biosynthesis,EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-6039,chlorogenic acid biosynthesis I,EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-7398,coumarins biosynthesis (engineered),EC 2.1.1.104
+Solyc01g107910,gene_ec,PWY-6792,scopoletin biosynthesis,EC 2.1.1.104
+Solyc01g109300,gene_ec,PWY-7156,superpathway of ergosterol biosynthesis II,EC 1.17.7.4
+Solyc01g109300,gene_ec,PWY-6270,isoprene biosynthesis I,EC 1.17.7.4
+Solyc01g109300,gene_ec,NONMEVIPP-PWY,methylerythritol phosphate pathway I,EC 1.17.7.4
+Solyc01g109300,gene_ec,PWY-7392,taxadiene biosynthesis (engineered),EC 1.17.7.4
+Solyc01g109300,gene_ec,PWY-5121,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP),EC 1.17.7.4
+Solyc01g109300,gene_ec,PWY-7560,methylerythritol phosphate pathway II,EC 1.17.7.4
+Solyc01g109370,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.3.1.51
+Solyc01g109370,gene_ec,TRIGLSYN-PWY,diacylglycerol and triacylglycerol biosynthesis,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWY4FS-8,phosphatidylglycerol biosynthesis II,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWY-5667,CDP-diacylglycerol biosynthesis I,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWY4FS-7,phosphatidylglycerol biosynthesis I,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWY-6453,stigma estolide biosynthesis,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWYQT-4482,CDP-diacylglycerol biosynthesis IV,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWY0-1319,CDP-diacylglycerol biosynthesis II,EC 2.3.1.51
+Solyc01g109370,gene_ec,PWYIO2-7,triacylglycerol biosynthesis (Chlamydomonas),EC 2.3.1.51
+Solyc01g111630,gene_ec,PWY-181,photorespiration I,EC 1.1.1.29
+Solyc02g024050,gene_ec,PWY-101,photosynthesis light reactions I (plastocyanin),EC 1.18.1.2
+Solyc02g024050,gene_ec,PWY-7731,superpathway of photosynthetic hydrogen production,EC 1.18.1.2
+Solyc02g030170,gene_ec,PWY66-341,cholesterol biosynthesis I,EC 1.3.1.72
+Solyc02g030170,gene_ec,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",EC 1.3.1.72
+Solyc02g030170,gene_ec,PWY-6663,plant sterol biosynthesis II,EC 1.3.1.72
+Solyc02g062110,gene_ec,PWY-101,photosynthesis light reactions I (plastocyanin),EC 1.18.1.2
+Solyc02g062110,gene_ec,PWY-7731,superpathway of photosynthetic hydrogen production,EC 1.18.1.2
+Solyc02g063490,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.1.1.37
+Solyc02g063490,gene_ec,PWY-7047,malate-oxaloacetate shuttle I,EC 1.1.1.37
+Solyc02g063490,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 1.1.1.37
+Solyc02g063490,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 1.1.1.37
+Solyc02g063490,gene_ec,GLYOXYLATE-BYPASS,glyoxylate cycle,EC 1.1.1.37
+Solyc02g063490,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.1.1.37
+Solyc02g063490,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 1.1.1.37
+Solyc02g063490,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.1.1.37
+Solyc02g063490,gene_ec,PWY-7048,malate-oxaloacetate shuttle II,EC 1.1.1.37
+Solyc02g063490,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 1.1.1.37
+Solyc02g067080,gene_ec,PWY-4821,UDP-α-D-xylose biosynthesis,EC 1.1.1.22
+Solyc02g067080,gene_ec,PWY-7346,UDP-α-D-glucuronate biosynthesis (from UDP-glucose),EC 1.1.1.22
+Solyc02g069620,gene_ec,PWY-5723,Rubisco shunt,EC 5.3.1.6
+Solyc02g069620,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 5.3.1.6
+Solyc02g069620,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 5.3.1.6
+Solyc02g069620,gene_ec,NONOXIPENT-PWY,pentose phosphate pathway (non-oxidative branch) I,EC 5.3.1.6
+Solyc01g081300,gene_ec,PWY-6124,inosine-5'-phosphate biosynthesis II,EC 6.3.2.6
+Solyc01g081300,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 6.3.2.6
+Solyc02g079750,gene_ec,PWY-7731,superpathway of photosynthetic hydrogen production,EC 1.6.5.2
+Solyc02g080620,gene_ec,PWY-3481,superpathway of L-phenylalanine and L-tyrosine biosynthesis,EC 4.2.1.91
+Solyc02g080620,gene_ec,PWY-3462,L-phenylalanine biosynthesis II,EC 4.2.1.91
+Solyc02g080810,gene_ec,GLYCLEAV-PWY,glycine cleavage,EC 2.1.2.10
+Solyc01g094890,gene_ec,PWY-5934,iron reduction and absorption,EC 1.16.1.7
+Solyc02g078230,gene_ec,PWY-6773,"1,3-β-D-glucan biosynthesis",EC 2.4.1.34
+Solyc02g082250,gene_ec,THIOREDOX-PWY,thioredoxin pathway,EC 1.8.1.9
+Solyc02g085100,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 5.1.3.15
+Solyc02g081840,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.7.7.41
+Solyc02g081840,gene_ec,PWY4FS-8,phosphatidylglycerol biosynthesis II,EC 2.7.7.41
+Solyc02g081840,gene_ec,PWY-5667,CDP-diacylglycerol biosynthesis I,EC 2.7.7.41
+Solyc02g081840,gene_ec,PWY4FS-7,phosphatidylglycerol biosynthesis I,EC 2.7.7.41
+Solyc02g081840,gene_ec,PWYQT-4482,CDP-diacylglycerol biosynthesis IV,EC 2.7.7.41
+Solyc02g081840,gene_ec,PWY0-1319,CDP-diacylglycerol biosynthesis II,EC 2.7.7.41
+Solyc02g086820,gene_ec,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type",EC 4.2.1.1
+Solyc02g086820,gene_ec,PWY-241,"C4 photosynthetic carbon assimilation cycle, NADP-ME type",EC 4.2.1.1
+Solyc02g086820,gene_ec,PWYQT-4429,CO₂ fixation into oxaloacetate (anaplerotic),EC 4.2.1.1
+Solyc02g086820,gene_ec,PWYIO2-3,carbon concentration mechanism (Chlamydomonas),EC 4.2.1.1
+Solyc02g086820,gene_ec,CYANCAT-PWY,cyanate degradation,EC 4.2.1.1
+Solyc02g086820,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 4.2.1.1
+Solyc02g083810,gene_ec,PWY-101,photosynthesis light reactions I (plastocyanin),EC 1.18.1.2
+Solyc02g083810,gene_ec,PWY-7731,superpathway of photosynthetic hydrogen production,EC 1.18.1.2
+Solyc02g084440,gene_ec,PWY-1042,glycolysis IV,EC 4.1.2.13
+Solyc02g084440,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.1.2.13
+Solyc02g084440,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.1.2.13
+Solyc02g084440,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.1.2.13
+Solyc02g084440,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 4.1.2.13
+Solyc02g084440,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.1.2.13
+Solyc02g084440,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 4.1.2.13
+Solyc02g084440,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.1.2.13
+Solyc02g088690,gene_ec,PWY-4821,UDP-α-D-xylose biosynthesis,EC 1.1.1.22
+Solyc02g088690,gene_ec,PWY-7346,UDP-α-D-glucuronate biosynthesis (from UDP-glucose),EC 1.1.1.22
+Solyc02g086880,gene_ec,PWY-7985,oxalate degradation VI,EC 1.17.1.9
+Solyc02g088460,gene_ec,PWY-3481,superpathway of L-phenylalanine and L-tyrosine biosynthesis,EC 5.4.99.5
+Solyc02g088460,gene_ec,PWY-3462,L-phenylalanine biosynthesis II,EC 5.4.99.5
+Solyc02g088460,gene_ec,PWY-3461,L-tyrosine biosynthesis II,EC 5.4.99.5
+Solyc02g088460,gene_ec,PWY-6120,L-tyrosine biosynthesis III,EC 5.4.99.5
+Solyc02g093830,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 1.1.1.49
+Solyc02g093830,gene_ec,OXIDATIVEPENT-PWY,pentose phosphate pathway (oxidative branch) I,EC 1.1.1.49
+Solyc02g093990,gene_ec,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc02g093990,gene_ec,PWY-7219,adenosine ribonucleotides de novo biosynthesis,EC 2.7.4.3
+Solyc02g093990,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc02g093250,gene_ec,PWY-7498,phenylpropanoids methylation (ice plant),EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-1121,suberin monomers biosynthesis,EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-361,monolignol biosynthesis,EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-5710,capsaicin biosynthesis,EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-6432,curcuminoid biosynthesis,EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-6039,chlorogenic acid biosynthesis I,EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-7398,coumarins biosynthesis (engineered),EC 2.1.1.104
+Solyc02g093250,gene_ec,PWY-6792,scopoletin biosynthesis,EC 2.1.1.104
+Solyc02g093680,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.3.5.1
+Solyc02g093680,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 1.3.5.1
+Solyc02g093680,gene_ec,PWY-4302,aerobic respiration III (alternative oxidase pathway),EC 1.3.5.1
+Solyc02g093680,gene_ec,PWY-3781,aerobic respiration I (cytochrome c),EC 1.3.5.1
+Solyc02g093680,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.3.5.1
+Solyc02g093680,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.3.5.1
+Solyc02g093680,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 1.3.5.1
+Solyc02g093270,gene_ec,PWY-7498,phenylpropanoids methylation (ice plant),EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-1121,suberin monomers biosynthesis,EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-361,monolignol biosynthesis,EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-5710,capsaicin biosynthesis,EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-6432,curcuminoid biosynthesis,EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-6039,chlorogenic acid biosynthesis I,EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-7398,coumarins biosynthesis (engineered),EC 2.1.1.104
+Solyc02g093270,gene_ec,PWY-6792,scopoletin biosynthesis,EC 2.1.1.104
+Solyc03g007240,gene_ec,BSUBPOLYAMSYN-PWY,spermidine biosynthesis I,EC 2.5.1.16
+Solyc03g007240,gene_ec,PWY-7528,L-methionine salvage cycle I (bacteria and plants),EC 2.5.1.16
+Solyc03g007240,gene_ec,PWYQT-94,superpathway of polyamine biosynthesis,EC 2.5.1.16
+Solyc03g007240,gene_ec,POLYAMINSYN3-PWY,superpathway of polyamine biosynthesis II,EC 2.5.1.16
+Solyc03g007290,gene_ec,TRESYN-PWY,trehalose biosynthesis I,EC 3.1.3.12
+Solyc02g020980,gene_ec,PWY-6724,starch degradation II,EC 2.4.1.25
+Solyc02g020980,gene_ec,PWY-7238,sucrose biosynthesis II,EC 2.4.1.25
+Solyc03g043750,gene_ec,PWY-5027,phylloquinol biosynthesis,EC 1.6.5.12
+Solyc03g043750,gene_ec,PWY-5863,superpathway of phylloquinol biosynthesis,EC 1.6.5.12
+Solyc03g071720,gene_ec,PWY-5107,phytol salvage pathway,EC 2.7.1.182
+Solyc03g043950,gene_ec,GLUTORN-PWY,L-ornithine biosynthesis I,EC 2.3.1.1
+Solyc03g043950,gene_ec,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle),EC 2.3.1.1
+Solyc03g043950,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 2.3.1.1
+Solyc03g083610,gene_ec,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc03g083610,gene_ec,PWY-7219,adenosine ribonucleotides de novo biosynthesis,EC 2.7.4.3
+Solyc03g083610,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc03g113030,gene_ec,PWY-6317,D-galactose degradation I (Leloir pathway),EC 5.1.3.3
+Solyc03g114500,gene_ec,PWY-1042,glycolysis IV,EC 4.2.1.11
+Solyc03g114500,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.2.1.11
+Solyc03g114500,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.2.1.11
+Solyc03g114500,gene_ec,PWY-5723,Rubisco shunt,EC 4.2.1.11
+Solyc03g114500,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.2.1.11
+Solyc03g114500,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.2.1.11
+Solyc03g114500,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.2.1.11
+Solyc03g117490,gene_ec,PWY-4261,glycerol degradation I,EC 2.7.1.30
+Solyc03g114340,gene_ec,PWY-7156,superpathway of ergosterol biosynthesis II,EC 1.1.1.267
+Solyc03g114340,gene_ec,PWY-6270,isoprene biosynthesis I,EC 1.1.1.267
+Solyc03g114340,gene_ec,NONMEVIPP-PWY,methylerythritol phosphate pathway I,EC 1.1.1.267
+Solyc03g114340,gene_ec,PWY-7392,taxadiene biosynthesis (engineered),EC 1.1.1.267
+Solyc03g114340,gene_ec,PWY-5121,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP),EC 1.1.1.267
+Solyc03g114340,gene_ec,PWY-7560,methylerythritol phosphate pathway II,EC 1.1.1.267
+Solyc03g118270,gene_ec,PWY-66,GDP-L-fucose biosynthesis I (from GDP-D-mannose),EC 4.2.1.47
+Solyc04g008740,gene_ec,PWY-1042,glycolysis IV,EC 2.7.1.40
+Solyc04g008740,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 2.7.1.40
+Solyc04g008740,gene_ec,PWY-5723,Rubisco shunt,EC 2.7.1.40
+Solyc04g008740,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 2.7.1.40
+Solyc04g008740,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.7.1.40
+Solyc04g008740,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.7.1.40
+Solyc03g121960,gene_ec,TRIGLSYN-PWY,diacylglycerol and triacylglycerol biosynthesis,EC 2.3.1.158
+Solyc03g121960,gene_ec,PWYIO2-7,triacylglycerol biosynthesis (Chlamydomonas),EC 2.3.1.158
+Solyc04g009960,gene_ec,GLYSYN2-PWY,glycine biosynthesis,EC 4.1.2.48
+Solyc04g006970,gene_ec,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type",EC 4.1.1.31
+Solyc04g006970,gene_ec,PWY-241,"C4 photosynthetic carbon assimilation cycle, NADP-ME type",EC 4.1.1.31
+Solyc04g006970,gene_ec,PWYQT-4429,CO₂ fixation into oxaloacetate (anaplerotic),EC 4.1.1.31
+Solyc04g006970,gene_ec,PWY-6549,nitrogen remobilization from senescing leaves,EC 4.1.1.31
+Solyc04g006970,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 4.1.1.31
+Solyc04g005160,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 1.1.1.44
+Solyc04g005160,gene_ec,OXIDATIVEPENT-PWY,pentose phosphate pathway (oxidative branch) I,EC 1.1.1.44
+Solyc04g009200,gene_ec,PWY-5918,superpathway of heme b biosynthesis from glutamate,EC 5.4.3.8
+Solyc04g009200,gene_ec,PWY-5188,tetrapyrrole biosynthesis I (from glutamate),EC 5.4.3.8
+Solyc04g016360,gene_ec,PWY-1801,formaldehyde oxidation II (glutathione-dependent),EC 3.1.2.12
+Solyc04g045340,gene_ec,PWY-6317,D-galactose degradation I (Leloir pathway),EC 5.4.2.2
+Solyc04g045340,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 5.4.2.2
+Solyc04g045340,gene_ec,PWY-7343,UDP-α-D-glucose biosynthesis,EC 5.4.2.2
+Solyc04g045340,gene_ec,DTDPRHAMSYN-PWY,dTDP-β-L-rhamnose biosynthesis,EC 5.4.2.2
+Solyc04g045340,gene_ec,PWY-622,starch biosynthesis,EC 5.4.2.2
+Solyc04g045340,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 5.4.2.2
+Solyc04g045340,gene_ec,PWY-5661,GDP-α-D-glucose biosynthesis,EC 5.4.2.2
+Solyc04g045340,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 5.4.2.2
+Solyc04g045340,gene_ec,PWY-7238,sucrose biosynthesis II,EC 5.4.2.2
+Solyc04g045340,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 5.4.2.2
+Solyc04g025530,gene_ec,PWY-4321,L-glutamate degradation IV,EC 4.1.1.15
+Solyc03g019790,gene_ec,PWY0-1301,melibiose degradation,EC 3.2.1.22
+Solyc03g019790,gene_ec,PWY-6527,stachyose degradation,EC 3.2.1.22
+Solyc04g054740,gene_ec,PWY-4661,1D-myo-inositol hexakisphosphate biosynthesis III (Spirodela polyrrhiza),EC 5.5.1.4
+Solyc04g054740,gene_ec,PWY-2301,myo-inositol biosynthesis,EC 5.5.1.4
+Solyc03g083960,gene_ec,TRESYN-PWY,trehalose biosynthesis I,EC 3.1.3.12
+Solyc04g079750,gene_ec,PWY0-501,lipoate biosynthesis and incorporation I,EC 2.3.1.181
+Solyc05g008600,gene_ec,PWY-1042,glycolysis IV,EC 4.1.2.13
+Solyc05g008600,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.1.2.13
+Solyc05g008600,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.1.2.13
+Solyc05g008600,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.1.2.13
+Solyc05g008600,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 4.1.2.13
+Solyc05g008600,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.1.2.13
+Solyc05g008600,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 4.1.2.13
+Solyc05g008600,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.1.2.13
+Solyc05g007260,gene_ec,PWY-5723,Rubisco shunt,EC 5.1.3.1
+Solyc05g007260,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 5.1.3.1
+Solyc05g007260,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 5.1.3.1
+Solyc05g007260,gene_ec,NONOXIPENT-PWY,pentose phosphate pathway (non-oxidative branch) I,EC 5.1.3.1
+Solyc05g005020,gene_ec,PWY-6724,starch degradation II,EC 2.7.9.4
+Solyc05g014980,gene_ec,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc05g014980,gene_ec,PWY-7219,adenosine ribonucleotides de novo biosynthesis,EC 2.7.4.3
+Solyc05g014980,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc05g010810,gene_ec,PWY-6351,"D-myo-inositol (1,4,5)-trisphosphate biosynthesis",EC 2.7.1.67
+Solyc05g013720,gene_ec,PWY0-1301,melibiose degradation,EC 3.2.1.22
+Solyc05g013720,gene_ec,PWY-6527,stachyose degradation,EC 3.2.1.22
+Solyc05g017760,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 2.3.1.9
+Solyc05g017760,gene_ec,LYSINE-DEG2-PWY,lysine degradation II,EC 2.3.1.9
+Solyc05g017760,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 2.3.1.9
+Solyc05g017760,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 2.3.1.9
+Solyc05g018650,gene_ec,PWY-5918,superpathway of heme b biosynthesis from glutamate,EC 4.98.1.1
+Solyc05g018650,gene_ec,HEME-BIOSYNTHESIS-II,heme b biosynthesis I (aerobic),EC 4.98.1.1
+Solyc05g052600,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 3.1.3.11
+Solyc05g052600,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 3.1.3.11
+Solyc05g052600,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 3.1.3.11
+Solyc05g052600,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 3.1.3.11
+Solyc05g052600,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 3.1.3.11
+Solyc05g052600,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 3.1.3.11
+Solyc05g053300,gene_ec,PWY-5084,2-oxoglutarate decarboxylation to succinyl-CoA,EC 1.8.1.4
+Solyc05g053300,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 1.8.1.4
+Solyc05g053300,gene_ec,PWY-5046,2-oxoisovalerate decarboxylation to isobutanoyl-CoA,EC 1.8.1.4
+Solyc05g053300,gene_ec,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I,EC 1.8.1.4
+Solyc05g053300,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.8.1.4
+Solyc05g053300,gene_ec,GLYCLEAV-PWY,glycine cleavage,EC 1.8.1.4
+Solyc05g050980,gene_ec,PWY-6163,chorismate biosynthesis from 3-dehydroquinate,EC 2.5.1.19
+Solyc05g050980,gene_ec,ARO-PWY,chorismate biosynthesis I,EC 2.5.1.19
+Solyc05g055760,gene_ec,PWY-7156,superpathway of ergosterol biosynthesis II,EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-6859,all-trans-farnesol biosynthesis,EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-7102,bisabolene biosynthesis (engineered),EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-6270,isoprene biosynthesis I,EC 5.3.3.2
+Solyc05g055760,gene_ec,NONMEVIPP-PWY,methylerythritol phosphate pathway I,EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-7392,taxadiene biosynthesis (engineered),EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-5121,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP),EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-7560,methylerythritol phosphate pathway II,EC 5.3.3.2
+Solyc05g055760,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 5.3.3.2
+Solyc05g054320,gene_ec,PWY-6710,poly-hydroxy fatty acids biosynthesis,EC 3.3.2.10
+Solyc05g054350,gene_ec,PWY-6710,poly-hydroxy fatty acids biosynthesis,EC 3.3.2.10
+Solyc05g055000,gene_ec,PWY0-1021,L-alanine biosynthesis III,EC 2.8.1.7
+Solyc05g055000,gene_ec,PWY-6823,molybdopterin biosynthesis,EC 2.8.1.7
+Solyc04g012060,gene_ec,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I,EC 1.17.4.1
+Solyc04g012060,gene_ec,PWY-7226,guanosine deoxyribonucleotides de novo biosynthesis I,EC 1.17.4.1
+Solyc04g012060,gene_ec,PWY-7211,superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis,EC 1.17.4.1
+Solyc04g012060,gene_ec,PWY-7227,adenosine deoxyribonucleotides de novo biosynthesis I,EC 1.17.4.1
+Solyc04g012060,gene_ec,PWY0-166,superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli),EC 1.17.4.1
+Solyc04g012060,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 1.17.4.1
+Solyc04g012060,gene_ec,PWY-7184,pyrimidine deoxyribonucleotides de novo biosynthesis I,EC 1.17.4.1
+Solyc06g007180,gene_ec,ASPARAGINE-BIOSYNTHESIS,L-asparagine biosynthesis I,EC 6.3.5.4
+Solyc06g009220,gene_ec,PWY-622,starch biosynthesis,EC 3.2.1.68
+Solyc06g009220,gene_ec,PWY-6724,starch degradation II,EC 3.2.1.68
+Solyc06g009220,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 3.2.1.68
+Solyc04g016550,gene_ec,PWY-2161,folate polyglutamylation,EC 6.3.2.17
+Solyc04g016550,gene_ec,PWY-2161B-PMN,folate polyglutamylation II,EC 6.3.2.17
+Solyc04g016550,gene_ec,PWY-3742,tetrahydrofolate biosynthesis II,EC 6.3.2.17
+Solyc06g065270,gene_ec,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc06g065270,gene_ec,PWY-7219,adenosine ribonucleotides de novo biosynthesis,EC 2.7.4.3
+Solyc06g065270,gene_ec,PWY-841,superpathway of purine nucleotides de novo biosynthesis I,EC 2.7.4.3
+Solyc06g068090,gene_ec,PWYIO2-5,phospholipases (Chlamydomonas),EC 3.1.4.4
+Solyc06g068090,gene_ec,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)",EC 3.1.4.4
+Solyc06g068090,gene_ec,PWY-4762,superpathway of choline biosynthesis,EC 3.1.4.4
+Solyc06g068090,gene_ec,PWY-3561,choline biosynthesis III,EC 3.1.4.4
+Solyc06g068090,gene_ec,PWY-7039,"phosphatidate metabolism, as a signaling molecule",EC 3.1.4.4
+Solyc06g068090,gene_ec,LIPASYN-PWY,phospholipases,EC 3.1.4.4
+Solyc04g056390,gene_ec,PWY-7156,superpathway of ergosterol biosynthesis II,EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-6859,all-trans-farnesol biosynthesis,EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-7102,bisabolene biosynthesis (engineered),EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-6270,isoprene biosynthesis I,EC 5.3.3.2
+Solyc04g056390,gene_ec,NONMEVIPP-PWY,methylerythritol phosphate pathway I,EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-7392,taxadiene biosynthesis (engineered),EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-5121,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP),EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-7560,methylerythritol phosphate pathway II,EC 5.3.3.2
+Solyc04g056390,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 5.3.3.2
+Solyc06g063090,gene_ec,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type",EC 2.6.1.2
+Solyc06g063090,gene_ec,ALACAT2-PWY,L-alanine degradation II (to D-lactate),EC 2.6.1.2
+Solyc06g063090,gene_ec,ALANINE-DEG3-PWY,L-alanine degradation III,EC 2.6.1.2
+Solyc06g063090,gene_ec,ALANINE-SYN2-PWY,L-alanine biosynthesis II,EC 2.6.1.2
+Solyc06g063090,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 2.6.1.2
+Solyc06g074510,gene_ec,PWYQT-4433,CA1P biosynthesis,EC 3.1.3.63
+Solyc04g077870,gene_ec,PWY-6188,calmodulin regulated calcium transport,EC 7.2.2.10
+Solyc07g005090,gene_ec,PWY-6814,chitin degradation III (carnivorous plants),EC 3.2.1.14
+Solyc07g005090,gene_ec,PWY-6902,chitin degradation II (Vibrio),EC 3.2.1.14
+Solyc07g005390,gene_ec,PWY-1042,glycolysis IV,EC 1.2.1.9
+Solyc07g005390,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.2.1.9
+Solyc07g006790,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 2.3.1.12
+Solyc07g006790,gene_ec,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I,EC 2.3.1.12
+Solyc07g006790,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 2.3.1.12
+Solyc07g007790,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 2.4.1.14
+Solyc07g007790,gene_ec,PWY-7238,sucrose biosynthesis II,EC 2.4.1.14
+Solyc07g019440,gene_ec,PWY-622,starch biosynthesis,EC 2.7.7.27
+Solyc07g019440,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 2.7.7.27
+Solyc07g008570,gene_ec,PWY-6348,phosphate acquisition,EC 3.1.3.2
+Solyc05g010720,gene_ec,PWY-6837,"fatty acid β-oxidation V (unsaturated, odd number, di-isomerase-dependent)",EC 5.3.3.8
+Solyc05g010720,gene_ec,PWY-5138,"fatty acid β-oxidation IV (unsaturated, even number)",EC 5.3.3.8
+Solyc05g010720,gene_ec,PWY-5137,"fatty acid β-oxidation III (unsaturated, odd number)",EC 5.3.3.8
+Solyc05g024160,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 1.2.4.1
+Solyc05g024160,gene_ec,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I,EC 1.2.4.1
+Solyc05g024160,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.2.4.1
+Solyc05g032660,gene_ec,PWY-5068,chlorophyll cycle,EC 1.1.1.294
+Solyc05g032680,gene_ec,VALDEG-PWY,L-valine degradation I,EC 3.1.2.4
+Solyc05g032680,gene_ec,PWY-4221,superpathway of coenzyme A biosynthesis II (plants),EC 3.1.2.4
+Solyc05g032680,gene_ec,PWY-3941,β-alanine biosynthesis II,EC 3.1.2.4
+Solyc07g045540,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 1.1.1.49
+Solyc07g045540,gene_ec,OXIDATIVEPENT-PWY,pentose phosphate pathway (oxidative branch) I,EC 1.1.1.49
+Solyc07g055210,gene_ec,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type",EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-5079,L-phenylalanine degradation III,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-5886,3-(4-hydroxyphenyl)pyruvate biosynthesis,EC 2.6.1.1
+Solyc07g055210,gene_ec,THRESYN-PWY,superpathway of L-threonine biosynthesis,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-5071,superpathway of rosmarinic acid biosynthesis,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-3001,superpathway of L-isoleucine biosynthesis I,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-5048,rosmarinic acid biosynthesis I,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-3581,(S)-reticuline biosynthesis I,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-581,indole-3-acetate biosynthesis II,EC 2.6.1.1
+Solyc07g055210,gene_ec,PWY-5864,superpathway of plastoquinol biosynthesis,EC 2.6.1.1
+Solyc07g055210,gene_ec,ASPARTATESYN-PWY,L-aspartate biosynthesis,EC 2.6.1.1
+Solyc07g054210,gene_ec,CHLOROPHYLL-SYN,"3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)",EC 1.3.1.33
+Solyc07g066470,gene_ec,PWY-5918,superpathway of heme b biosynthesis from glutamate,EC 2.5.1.61
+Solyc07g066470,gene_ec,PWY-5188,tetrapyrrole biosynthesis I (from glutamate),EC 2.5.1.61
+Solyc05g054640,gene_ec,PWY-5084,2-oxoglutarate decarboxylation to succinyl-CoA,EC 1.2.4.2
+Solyc06g007980,gene_ec,PWY-6036,cardenolide glucosides biosynthesis,EC 2.4.1.173
+Solyc06g007980,gene_ec,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),EC 2.4.1.173
+Solyc06g007980,gene_ec,PWY18C3-4,solasodine glycosylation,EC 2.4.1.173
+Solyc08g014340,gene_ec,CYSTSYN-PWY,L-cysteine biosynthesis I,EC 2.5.1.47
+Solyc08g014340,gene_ec,PWY-6936,seleno-amino acid biosynthesis (plants),EC 2.5.1.47
+Solyc08g014340,gene_ec,PWY-6395,superpathway of seleno-compound metabolism,EC 2.5.1.47
+Solyc06g053310,gene_ec,PWY-5386,methylglyoxal degradation I,EC 3.1.2.6
+Solyc08g065220,gene_ec,GLYCLEAV-PWY,glycine cleavage,EC 1.4.4.2
+Solyc08g076220,gene_ec,PWY-5723,Rubisco shunt,EC 2.7.1.19
+Solyc08g076220,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 2.7.1.19
+Solyc08g076470,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.3.1.15
+Solyc08g076470,gene_ec,TRIGLSYN-PWY,diacylglycerol and triacylglycerol biosynthesis,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWY4FS-8,phosphatidylglycerol biosynthesis II,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWY-5667,CDP-diacylglycerol biosynthesis I,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWY4FS-7,phosphatidylglycerol biosynthesis I,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWY-6453,stigma estolide biosynthesis,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWYQT-4482,CDP-diacylglycerol biosynthesis IV,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWY0-1319,CDP-diacylglycerol biosynthesis II,EC 2.3.1.15
+Solyc08g076470,gene_ec,PWYIO2-7,triacylglycerol biosynthesis (Chlamydomonas),EC 2.3.1.15
+Solyc08g066950,gene_ec,PWY-7156,superpathway of ergosterol biosynthesis II,EC 2.2.1.7
+Solyc08g066950,gene_ec,PWY-6270,isoprene biosynthesis I,EC 2.2.1.7
+Solyc08g066950,gene_ec,NONMEVIPP-PWY,methylerythritol phosphate pathway I,EC 2.2.1.7
+Solyc08g066950,gene_ec,PWY-7392,taxadiene biosynthesis (engineered),EC 2.2.1.7
+Solyc08g066950,gene_ec,PWY-5121,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP),EC 2.2.1.7
+Solyc08g066950,gene_ec,PWY-7560,methylerythritol phosphate pathway II,EC 2.2.1.7
+Solyc08g066790,gene_ec,PWYIO2-5,phospholipases (Chlamydomonas),EC 3.1.4.4
+Solyc08g066790,gene_ec,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)",EC 3.1.4.4
+Solyc08g066790,gene_ec,PWY-4762,superpathway of choline biosynthesis,EC 3.1.4.4
+Solyc08g066790,gene_ec,PWY-3561,choline biosynthesis III,EC 3.1.4.4
+Solyc08g066790,gene_ec,PWY-7039,"phosphatidate metabolism, as a signaling molecule",EC 3.1.4.4
+Solyc08g066790,gene_ec,LIPASYN-PWY,phospholipases,EC 3.1.4.4
+Solyc08g076970,gene_ec,GLUTORN-PWY,L-ornithine biosynthesis I,EC 3.5.1.16
+Solyc08g076970,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 3.5.1.16
+Solyc08g080370,gene_ec,GLUTORN-PWY,L-ornithine biosynthesis I,EC 2.6.1.11
+Solyc08g080370,gene_ec,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle),EC 2.6.1.11
+Solyc08g080370,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 2.6.1.11
+Solyc08g076140,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 2.7.4.2
+Solyc08g076140,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 2.7.4.2
+Solyc08g076140,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 2.7.4.2
+Solyc06g068950,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.1.1.103
+Solyc06g068950,gene_ec,PWY4FS-3,phosphatidylcholine biosynthesis III,EC 2.1.1.103
+Solyc06g068950,gene_ec,PWY4FS-4,phosphatidylcholine biosynthesis IV,EC 2.1.1.103
+Solyc06g068950,gene_ec,PWY-4762,superpathway of choline biosynthesis,EC 2.1.1.103
+Solyc06g068950,gene_ec,PWY-3385,choline biosynthesis I,EC 2.1.1.103
+Solyc06g068950,gene_ec,PWY4FS-2,phosphatidylcholine biosynthesis II,EC 2.1.1.103
+Solyc08g076990,gene_ec,GLUTORN-PWY,L-ornithine biosynthesis I,EC 3.5.1.16
+Solyc08g076990,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 3.5.1.16
+Solyc08g080130,gene_ec,PWYIO2-5,phospholipases (Chlamydomonas),EC 3.1.4.4
+Solyc08g080130,gene_ec,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)",EC 3.1.4.4
+Solyc08g080130,gene_ec,PWY-4762,superpathway of choline biosynthesis,EC 3.1.4.4
+Solyc08g080130,gene_ec,PWY-3561,choline biosynthesis III,EC 3.1.4.4
+Solyc08g080130,gene_ec,PWY-7039,"phosphatidate metabolism, as a signaling molecule",EC 3.1.4.4
+Solyc08g080130,gene_ec,LIPASYN-PWY,phospholipases,EC 3.1.4.4
+Solyc08g080910,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc08g080910,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc08g080910,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc06g074530,gene_ec,PWY-3481,superpathway of L-phenylalanine and L-tyrosine biosynthesis,EC 4.2.1.91
+Solyc06g074530,gene_ec,PWY-3462,L-phenylalanine biosynthesis II,EC 4.2.1.91
+Solyc09g009260,gene_ec,PWY-1042,glycolysis IV,EC 4.1.2.13
+Solyc09g009260,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.1.2.13
+Solyc09g009260,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.1.2.13
+Solyc09g009260,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.1.2.13
+Solyc09g009260,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 4.1.2.13
+Solyc09g009260,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.1.2.13
+Solyc09g009260,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 4.1.2.13
+Solyc09g009260,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.1.2.13
+Solyc07g007620,gene_ec,PWY-401,galactolipid biosynthesis I,EC 2.4.1.46
+Solyc09g014760,gene_ec,PWY-7764,chlorophyll a biosynthesis III,EC 2.5.1.62
+Solyc09g014760,gene_ec,PWY-5086,chlorophyll a biosynthesis I,EC 2.5.1.62
+Solyc09g014760,gene_ec,PWY-5064,chlorophyll a biosynthesis II,EC 2.5.1.62
+Solyc09g014760,gene_ec,PWY-5068,chlorophyll cycle,EC 2.5.1.62
+Solyc09g031970,gene_ec,PWY-7238,sucrose biosynthesis II,EC 2.4.1.1
+Solyc09g061860,gene_ec,PWY-6036,cardenolide glucosides biosynthesis,EC 2.4.1.173
+Solyc09g061860,gene_ec,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae),EC 2.4.1.173
+Solyc09g061860,gene_ec,PWY18C3-4,solasodine glycosylation,EC 2.4.1.173
+Solyc09g061840,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 2.3.1.9
+Solyc09g061840,gene_ec,LYSINE-DEG2-PWY,lysine degradation II,EC 2.3.1.9
+Solyc09g061840,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 2.3.1.9
+Solyc09g061840,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 2.3.1.9
+Solyc09g063150,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc09g063150,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc09g063150,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc07g032740,gene_ec,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type",EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-5079,L-phenylalanine degradation III,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-5886,3-(4-hydroxyphenyl)pyruvate biosynthesis,EC 2.6.1.1
+Solyc07g032740,gene_ec,THRESYN-PWY,superpathway of L-threonine biosynthesis,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-5071,superpathway of rosmarinic acid biosynthesis,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-3001,superpathway of L-isoleucine biosynthesis I,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-5048,rosmarinic acid biosynthesis I,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-3581,(S)-reticuline biosynthesis I,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-581,indole-3-acetate biosynthesis II,EC 2.6.1.1
+Solyc07g032740,gene_ec,PWY-5864,superpathway of plastoquinol biosynthesis,EC 2.6.1.1
+Solyc07g032740,gene_ec,ASPARTATESYN-PWY,L-aspartate biosynthesis,EC 2.6.1.1
+Solyc09g082060,gene_ec,CYSTSYN-PWY,L-cysteine biosynthesis I,EC 2.5.1.47
+Solyc09g082060,gene_ec,PWY-6936,seleno-amino acid biosynthesis (plants),EC 2.5.1.47
+Solyc09g082060,gene_ec,PWY-6395,superpathway of seleno-compound metabolism,EC 2.5.1.47
+Solyc09g074430,gene_ec,PWYDQC-4,indole-3-acetate biosynthesis I,EC 1.14.13.168
+Solyc09g074430,gene_ec,PWY-581,indole-3-acetate biosynthesis II,EC 1.14.13.168
+Solyc09g072610,gene_ec,PWY-2724,alkane oxidation,EC 1.1.3.20
+Solyc09g075450,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 4.2.1.2
+Solyc09g075450,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 4.2.1.2
+Solyc09g075450,gene_ec,P23-PWY,reductive TCA cycle I,EC 4.2.1.2
+Solyc09g075450,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.2.1.2
+Solyc09g075450,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 4.2.1.2
+Solyc09g090700,gene_ec,PWY-6535,4-aminobutanoate degradation I,EC 1.2.1.24
+Solyc09g090700,gene_ec,PWY-4321,L-glutamate degradation IV,EC 1.2.1.24
+Solyc09g090700,gene_ec,PWY-6473,4-aminobutanoate degradation IV,EC 1.2.1.24
+Solyc09g098590,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 2.4.1.13
+Solyc09g098590,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.4.1.13
+Solyc09g098590,gene_ec,PWYQT-4438,UDP-glucose biosynthesis (from sucrose),EC 2.4.1.13
+Solyc07g056540,gene_ec,PWY-181,photorespiration I,EC 1.1.3.15
+Solyc10g007600,gene_ec,PWY-181,photorespiration I,EC 1.1.3.15
+Solyc10g008110,gene_ec,PWY-7854,crotonyl-CoA/ethylmalonyl-CoA/hydroxybutyryl-CoA cycle (engineered),EC 1.3.3.6
+Solyc10g008110,gene_ec,PWY-735,jasmonic acid biosynthesis,EC 1.3.3.6
+Solyc10g008110,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.3.3.6
+Solyc10g008110,gene_ec,PWY-6837,"fatty acid β-oxidation V (unsaturated, odd number, di-isomerase-dependent)",EC 1.3.3.6
+Solyc10g008110,gene_ec,PWY-5136,fatty acid β-oxidation II (plant peroxisome),EC 1.3.3.6
+Solyc10g008110,gene_ec,PWY-6920,6-gingerol analog biosynthesis (engineered),EC 1.3.3.6
+Solyc10g008110,gene_ec,PWY-7007,methyl ketone biosynthesis (engineered),EC 1.3.3.6
+Solyc10g006900,gene_ec,CHLOROPHYLL-SYN,"3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)",EC 1.3.1.33
+Solyc10g009030,gene_ec,PWY-5129,sphingolipid biosynthesis (plants),EC 1.14.19.17
+Solyc10g007760,gene_ec,PWY0-662,PRPP biosynthesis,EC 2.7.6.1
+Solyc10g017580,gene_ec,PWY-401,galactolipid biosynthesis I,EC 2.4.1.241
+Solyc07g066270,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 3.1.1.31
+Solyc07g066270,gene_ec,OXIDATIVEPENT-PWY,pentose phosphate pathway (oxidative branch) I,EC 3.1.1.31
+Solyc10g012370,gene_ec,CYSTSYN-PWY,L-cysteine biosynthesis I,EC 2.5.1.47
+Solyc10g012370,gene_ec,PWY-6936,seleno-amino acid biosynthesis (plants),EC 2.5.1.47
+Solyc10g012370,gene_ec,PWY-6395,superpathway of seleno-compound metabolism,EC 2.5.1.47
+Solyc10g050890,gene_ec,PWY-381,nitrate reduction II (assimilatory),EC 1.7.7.1
+Solyc10g078560,gene_ec,GLUTAMATE-SYN2-PWY,L-glutamate biosynthesis II,EC 1.4.1.3
+Solyc10g076510,gene_ec,PWY-5486,pyruvate fermentation to ethanol II,EC 4.1.1.1
+Solyc10g076510,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.1.1.1
+Solyc10g076510,gene_ec,PWY3O-440,pyruvate fermentation to acetoin,EC 4.1.1.1
+Solyc10g076510,gene_ec,PWY4LZ-257,superpathway of fermentation (Chlamydomonas reinhardtii),EC 4.1.1.1
+Solyc10g076510,gene_ec,PWY-6330,acetaldehyde biosynthesis II,EC 4.1.1.1
+Solyc10g079110,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.3.1.51
+Solyc10g079110,gene_ec,TRIGLSYN-PWY,diacylglycerol and triacylglycerol biosynthesis,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWY4FS-8,phosphatidylglycerol biosynthesis II,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWY-5667,CDP-diacylglycerol biosynthesis I,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWY4FS-7,phosphatidylglycerol biosynthesis I,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWY-6453,stigma estolide biosynthesis,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWYQT-4482,CDP-diacylglycerol biosynthesis IV,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWY0-1319,CDP-diacylglycerol biosynthesis II,EC 2.3.1.51
+Solyc10g079110,gene_ec,PWYIO2-7,triacylglycerol biosynthesis (Chlamydomonas),EC 2.3.1.51
+Solyc10g080680,gene_ec,PWY-5340,sulfate activation for sulfonation,EC 2.7.1.25
+Solyc10g083570,gene_ec,PWY-1042,glycolysis IV,EC 4.1.2.13
+Solyc10g083570,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.1.2.13
+Solyc10g083570,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.1.2.13
+Solyc10g083570,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.1.2.13
+Solyc10g083570,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 4.1.2.13
+Solyc10g083570,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.1.2.13
+Solyc10g083570,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 4.1.2.13
+Solyc10g083570,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.1.2.13
+Solyc10g084960,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc10g084960,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc10g084960,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc10g085550,gene_ec,PWY-1042,glycolysis IV,EC 4.2.1.11
+Solyc10g085550,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 4.2.1.11
+Solyc10g085550,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 4.2.1.11
+Solyc10g085550,gene_ec,PWY-5723,Rubisco shunt,EC 4.2.1.11
+Solyc10g085550,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 4.2.1.11
+Solyc10g085550,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 4.2.1.11
+Solyc10g085550,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 4.2.1.11
+Solyc08g078850,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 1.1.1.27
+Solyc08g078850,gene_ec,PWY-5481,pyruvate fermentation to (S)-lactate,EC 1.1.1.27
+Solyc11g006550,gene_ec,PWY-5691,urate conversion to allantoin I,EC 1.7.3.3
+Solyc11g006550,gene_ec,P165-PWY,superpathway of purines degradation in plants,EC 1.7.3.3
+Solyc11g006550,gene_ec,URSIN-PWY,ureide biosynthesis,EC 1.7.3.3
+Solyc11g006550,gene_ec,PWY4LZ-81,Organic Nitrogen Assimilation,EC 1.7.3.3
+Solyc08g080170,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 2.3.3.10
+Solyc08g080170,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 2.3.3.10
+Solyc08g080170,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 2.3.3.10
+Solyc11g007020,gene_ec,PWY-922,mevalonate pathway I (eukaryotes and bacteria),EC 4.1.1.33
+Solyc11g007020,gene_ec,PWY-7391,isoprene biosynthesis II (engineered),EC 4.1.1.33
+Solyc11g007020,gene_ec,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),EC 4.1.1.33
+Solyc11g008620,gene_ec,PWY-181,photorespiration I,EC 3.1.3.18
+Solyc11g007990,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.1.1.37
+Solyc11g007990,gene_ec,PWY-7047,malate-oxaloacetate shuttle I,EC 1.1.1.37
+Solyc11g007990,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 1.1.1.37
+Solyc11g007990,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 1.1.1.37
+Solyc11g007990,gene_ec,GLYOXYLATE-BYPASS,glyoxylate cycle,EC 1.1.1.37
+Solyc11g007990,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.1.1.37
+Solyc11g007990,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 1.1.1.37
+Solyc11g007990,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.1.1.37
+Solyc11g007990,gene_ec,PWY-7048,malate-oxaloacetate shuttle II,EC 1.1.1.37
+Solyc11g007990,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 1.1.1.37
+Solyc11g007270,gene_ec,PWY-621,sucrose degradation III (sucrose invertase),EC 3.2.1.26
+Solyc11g007270,gene_ec,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue),EC 3.2.1.26
+Solyc11g009080,gene_ec,PWY-6164,3-dehydroquinate biosynthesis I,EC 2.5.1.54
+Solyc11g009080,gene_ec,ARO-PWY,chorismate biosynthesis I,EC 2.5.1.54
+Solyc11g013180,gene_ec,PWY-6351,"D-myo-inositol (1,4,5)-trisphosphate biosynthesis",EC 2.7.1.68
+Solyc09g009040,gene_ec,PWY-7156,superpathway of ergosterol biosynthesis II,EC 1.3.1.70
+Solyc09g009040,gene_ec,PWY66-341,cholesterol biosynthesis I,EC 1.3.1.70
+Solyc09g009040,gene_ec,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)",EC 1.3.1.70
+Solyc09g009040,gene_ec,PWY-2541,phytosterol biosynthesis (plants),EC 1.3.1.70
+Solyc09g009040,gene_ec,PWY-6074,zymosterol biosynthesis,EC 1.3.1.70
+Solyc09g009040,gene_ec,PWY-7154,ergosterol biosynthesis II,EC 1.3.1.70
+Solyc09g009040,gene_ec,PWY-6663,plant sterol biosynthesis II,EC 1.3.1.70
+Solyc11g071620,gene_ec,PWY-3181,L-tryptophan degradation VI (via tryptamine),EC 1.2.3.7
+Solyc11g073130,gene_ec,PWY-5080,very long chain fatty acid biosynthesis I,EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-7053,docosahexaenoate biosynthesis I (lower eukaryotes),EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-5353,"arachidonate biosynthesis I (6-desaturase, lower eukaryotes)",EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-6958,icosapentaenoate biosynthesis I (lower eukaryotes),EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-7036,very long chain fatty acid biosynthesis II,EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-6433,hydroxylated fatty acid biosynthesis (plants),EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-6598,sciadonate biosynthesis,EC 4.2.1.134
+Solyc11g073130,gene_ec,PWY-7619,juniperonate biosynthesis,EC 4.2.1.134
+Solyc11g073160,gene_ec,RIBOSYN2-PWY,flavin biosynthesis I (bacteria and plants),EC 3.5.4.25
+Solyc09g091070,gene_ec,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation,EC 1.1.1.37
+Solyc09g091070,gene_ec,PWY-7047,malate-oxaloacetate shuttle I,EC 1.1.1.37
+Solyc09g091070,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 1.1.1.37
+Solyc09g091070,gene_ec,PWYQT-4481,TCA cycle variation V (plant),EC 1.1.1.37
+Solyc09g091070,gene_ec,GLYOXYLATE-BYPASS,glyoxylate cycle,EC 1.1.1.37
+Solyc09g091070,gene_ec,P23-PWY,reductive TCA cycle I,EC 1.1.1.37
+Solyc09g091070,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 1.1.1.37
+Solyc09g091070,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.1.1.37
+Solyc09g091070,gene_ec,PWY-7048,malate-oxaloacetate shuttle II,EC 1.1.1.37
+Solyc09g091070,gene_ec,PWY-5690,TCA cycle II (plants and fungi),EC 1.1.1.37
+Solyc12g013710,gene_ec,CHLOROPHYLL-SYN,"3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)",EC 1.3.1.33
+Solyc12g014250,gene_ec,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type",EC 4.1.1.31
+Solyc12g014250,gene_ec,PWY-241,"C4 photosynthetic carbon assimilation cycle, NADP-ME type",EC 4.1.1.31
+Solyc12g014250,gene_ec,PWYQT-4429,CO₂ fixation into oxaloacetate (anaplerotic),EC 4.1.1.31
+Solyc12g014250,gene_ec,PWY-6549,nitrogen remobilization from senescing leaves,EC 4.1.1.31
+Solyc12g014250,gene_ec,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type",EC 4.1.1.31
+Solyc12g035190,gene_ec,TRPSYN-PWY,L-tryptophan biosynthesis,EC 2.4.2.18
+Solyc12g040570,gene_ec,PENTOSE-P-PWY,pentose phosphate pathway,EC 1.1.1.44
+Solyc12g040570,gene_ec,OXIDATIVEPENT-PWY,pentose phosphate pathway (oxidative branch) I,EC 1.1.1.44
+Solyc12g043020,gene_ec,ILEUSYN-PWY,L-isoleucine biosynthesis I (from threonine),EC 4.2.1.9
+Solyc12g043020,gene_ec,ILE-VAL-PWY,superpathway of isoleucine and valine biosynthesis,EC 4.2.1.9
+Solyc12g043020,gene_ec,PWY-3001,superpathway of L-isoleucine biosynthesis I,EC 4.2.1.9
+Solyc12g043020,gene_ec,VALSYN-PWY,L-valine biosynthesis,EC 4.2.1.9
+Solyc12g043020,gene_ec,BRANCHED-CHAIN-AA-SYN-PWY,superpathway of branched chain amino acid biosynthesis,EC 4.2.1.9
+Solyc12g040790,gene_ec,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants),EC 2.1.1.103
+Solyc12g040790,gene_ec,PWY4FS-3,phosphatidylcholine biosynthesis III,EC 2.1.1.103
+Solyc12g040790,gene_ec,PWY4FS-4,phosphatidylcholine biosynthesis IV,EC 2.1.1.103
+Solyc12g040790,gene_ec,PWY-4762,superpathway of choline biosynthesis,EC 2.1.1.103
+Solyc12g040790,gene_ec,PWY-3385,choline biosynthesis I,EC 2.1.1.103
+Solyc12g040790,gene_ec,PWY4FS-2,phosphatidylcholine biosynthesis II,EC 2.1.1.103
+Solyc12g042430,gene_ec,PWY-4562,"lipid-dependent phytate biosynthesis II (via Ins(1,3,4)P₃)",EC 2.7.1.140
+Solyc12g042430,gene_ec,PWY-6554,"1D-myo-inositol hexakisphosphate biosynthesis V (from Ins(1,3,4)P3)",EC 2.7.1.140
+Solyc12g042430,gene_ec,PWY-4765,superpathway of lipid-dependent phytate biosynthesis,EC 2.7.1.140
+Solyc12g042430,gene_ec,PWY-6555,superpathway of 1D-myo-inositol hexakisphosphate biosynthesis (plants),EC 2.7.1.140
+Solyc12g042430,gene_ec,PWY-4541,"lipid-dependent phytate biosynthesis I (via Ins(1,4,5)P₃)",EC 2.7.1.151
+Solyc12g042430,gene_ec,PWY-6361,"1D-myo-inositol hexakisphosphate biosynthesis I (from Ins(1,4,5)P3)",EC 2.7.1.151
+Solyc12g042430,gene_ec,PWY-4562,"lipid-dependent phytate biosynthesis II (via Ins(1,3,4)P₃)",EC 2.7.1.151
+Solyc12g042430,gene_ec,PWY-6554,"1D-myo-inositol hexakisphosphate biosynthesis V (from Ins(1,3,4)P3)",EC 2.7.1.151
+Solyc12g042430,gene_ec,PWY-4765,superpathway of lipid-dependent phytate biosynthesis,EC 2.7.1.151
+Solyc12g042430,gene_ec,PWY-6555,superpathway of 1D-myo-inositol hexakisphosphate biosynthesis (plants),EC 2.7.1.151
+Solyc12g056530,gene_ec,PWY-5484,glycolysis II (from fructose 6-phosphate),EC 3.1.3.11
+Solyc12g056530,gene_ec,GLUCONEO-PWY,gluconeogenesis I,EC 3.1.3.11
+Solyc12g056530,gene_ec,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate),EC 3.1.3.11
+Solyc12g056530,gene_ec,CALVIN-PWY,Calvin-Benson-Bassham cycle,EC 3.1.3.11
+Solyc12g056530,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 3.1.3.11
+Solyc12g056530,gene_ec,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis),EC 3.1.3.11
+Solyc12g099260,gene_ec,PWY-5172,acetyl-CoA biosynthesis from citrate,EC 2.3.3.8
+Solyc12g099260,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 2.3.3.8
+Solyc12g099260,gene_ec,P23-PWY,reductive TCA cycle I,EC 2.3.3.8
+Solyc12g099100,gene_ec,PWY-5084,2-oxoglutarate decarboxylation to succinyl-CoA,EC 1.8.1.4
+Solyc12g099100,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 1.8.1.4
+Solyc12g099100,gene_ec,PWY-5046,2-oxoisovalerate decarboxylation to isobutanoyl-CoA,EC 1.8.1.4
+Solyc12g099100,gene_ec,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I,EC 1.8.1.4
+Solyc12g099100,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.8.1.4
+Solyc12g099100,gene_ec,GLYCLEAV-PWY,glycine cleavage,EC 1.8.1.4
+Solyc12g099430,gene_ec,PWY-6710,poly-hydroxy fatty acids biosynthesis,EC 3.3.2.10
+Solyc11g068730,gene_ec,PWYQT-4476,indole glucosinolate activation (herbivore attack),EC 3.5.5.1
+Solyc11g068730,gene_ec,PWY-581,indole-3-acetate biosynthesis II,EC 3.5.5.1
+Solyc11g069180,gene_ec,LEU-DEG2-PWY,L-leucine degradation I,EC 1.3.8.4
+Solyc11g072100,gene_ec,PWY-7398,coumarins biosynthesis (engineered),EC 1.14.11.61
+Solyc11g072100,gene_ec,PWY-6792,scopoletin biosynthesis,EC 1.14.11.61
+Solyc11g072510,gene_ec,PWY-5152,leucodelphinidin biosynthesis,EC 1.1.1.219
+Solyc11g072510,gene_ec,PWY1F-823,leucopelargonidin and leucocyanidin biosynthesis,EC 1.1.1.219
+Solyc11g072510,gene_ec,PWY-7252,luteolinidin 5-O-glucoside biosynthesis,EC 1.1.1.234
+Solyc11g072510,gene_ec,PWY-7253,apigeninidin 5-O-glucoside biosynthesis,EC 1.1.1.234
+Solyc12g007310,gene_ec,PWY-5386,methylglyoxal degradation I,EC 4.4.1.5
+Solyc12g009410,gene_ec,PWY-5173,superpathway of acetyl-CoA biosynthesis,EC 1.2.4.1
+Solyc12g009410,gene_ec,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I,EC 1.2.4.1
+Solyc12g009410,gene_ec,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",EC 1.2.4.1
+Solyc07g042550,gene_ec,PWY-3801,sucrose degradation II (sucrose synthase),EC 2.4.1.13
+Solyc07g042550,gene_ec,PWY-7345,superpathway of anaerobic sucrose degradation,EC 2.4.1.13
+Solyc07g042550,gene_ec,PWYQT-4438,UDP-glucose biosynthesis (from sucrose),EC 2.4.1.13
+Solyc06g053400,gene_ec,LEUSYN-PWY,L-leucine biosynthesis,EC 2.3.3.13
+Solyc06g053400,gene_ec,BRANCHED-CHAIN-AA-SYN-PWY,superpathway of branched chain amino acid biosynthesis,EC 2.3.3.13
+Solyc11g005620,gene_ec,GLUTORN-PWY,L-ornithine biosynthesis I,EC 2.7.2.8
+Solyc11g005620,gene_ec,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle),EC 2.7.2.8
+Solyc11g005620,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 2.7.2.8
+Solyc12g094430,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc12g094430,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc12g094430,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc12g009470,gene_ec,PWY-5874,heme degradation I,EC 1.14.14.18
+Solyc01g086680,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc01g086680,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc01g086680,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc02g091340,gene_ec,PLPSAL-PWY,pyridoxal 5'-phosphate salvage I,EC 2.7.1.35
+Solyc02g091340,gene_ec,PWY-7204,pyridoxal 5'-phosphate salvage II (plants),EC 2.7.1.35
+Solyc02g094640,gene_ec,PWY66-162,ethanol degradation IV,EC 6.2.1.1
+Solyc02g094640,gene_ec,PWY-5132,lupulone and humulone biosynthesis,EC 6.2.1.1
+Solyc02g094640,gene_ec,PWY-5133,colupulone and cohumulone biosynthesis,EC 6.2.1.1
+Solyc02g094640,gene_ec,PWY-5134,superpathway of bitter acids biosynthesis,EC 6.2.1.1
+Solyc02g094640,gene_ec,PWY66-21,ethanol degradation II,EC 6.2.1.1
+Solyc02g094640,gene_ec,PWY-7857,adlupulone and adhumulone biosynthesis,EC 6.2.1.1
+Solyc03g096900,gene_ec,PPGPPMET-PWY,ppGpp metabolism,EC 2.7.6.5
+Solyc03g116910,gene_ec,PWY-6027,capsiconiate biosynthesis,EC 1.2.1.44
+Solyc03g116910,gene_ec,PWY-361,monolignol biosynthesis,EC 1.2.1.44
+Solyc04g009530,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc04g009530,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc04g009530,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc06g068440,gene_ec,PWY-6027,capsiconiate biosynthesis,EC 1.2.1.44
+Solyc06g068440,gene_ec,PWY-361,monolignol biosynthesis,EC 1.2.1.44
+Solyc06g071030,gene_ec,PWY-5837,"2-carboxy-1,4-naphthoquinol biosynthesis",EC 5.4.4.2
+Solyc06g071030,gene_ec,PWY-5791,"1,4-dihydroxy-2-naphthoate biosynthesis II (plants)",EC 5.4.4.2
+Solyc06g071030,gene_ec,PWY-6406,salicylate biosynthesis I,EC 5.4.4.2
+Solyc06g071030,gene_ec,PWY-5863,superpathway of phylloquinol biosynthesis,EC 5.4.4.2
+Solyc04g080610,gene_ec,PWY-7060,ornithine-citrulline shuttle,EC 2.1.3.3
+Solyc04g080610,gene_ec,CITRULLINE-DEG-PWY,L-citrulline degradation,EC 2.1.3.3
+Solyc04g080610,gene_ec,PWY-5004,superpathway of L-citrulline metabolism,EC 2.1.3.3
+Solyc04g080610,gene_ec,PWY4LZ-81,Organic Nitrogen Assimilation,EC 2.1.3.3
+Solyc04g080610,gene_ec,PWY-4984,urea cycle,EC 2.1.3.3
+Solyc04g080610,gene_ec,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle),EC 2.1.3.3
+Solyc04g080610,gene_ec,ARGDEGRAD-PWY,L-arginine degradation V (arginine deiminase pathway),EC 2.1.3.3
+Solyc04g080610,gene_ec,CITRULBIO-PWY,L-citrulline biosynthesis,EC 2.1.3.3
+Solyc04g080610,gene_ec,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine),EC 2.1.3.3
+Solyc07g052690,gene_ec,PWY-6724,starch degradation II,EC 3.2.1.2
+Solyc07g052690,gene_ec,PWY-842,starch degradation I,EC 3.2.1.2
+Solyc09g011590,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc09g011590,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc09g011590,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc09g011640,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc09g011640,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc09g011640,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18
+Solyc09g011550,gene_ec,CAMALEXIN-SYN,camalexin biosynthesis,EC 2.5.1.18
+Solyc09g011550,gene_ec,PWYQT-4477,indole glucosinolate activation (intact plant cell),EC 2.5.1.18
+Solyc09g011550,gene_ec,PWY-6842,glutathione-mediated detoxification II,EC 2.5.1.18

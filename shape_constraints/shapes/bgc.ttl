@@ -1,0 +1,199 @@
+# Case 1: predicted biosynthetic gene clusters (plantiSMASH) and their links to PlantMetWiki pathways.
+# Evidence points of the main README: the prediction, the detection rule, the software version,
+# the MIBiG match, and the overlap with the pathway's nodes.
+
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix lodps:  <https://example.org/lod-pathways/shapes/> .
+@prefix lodp:   <https://example.org/lod-pathways/pilot/> .
+@prefix obo:    <http://purl.obolibrary.org/obo/> .
+@prefix sio:    <http://semanticscience.org/resource/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wp:     <http://vocabularies.wikipathways.org/wp#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# The BGC node
+# ---------------------------------------------------------------------------
+lodps:BGCShape a sh:NodeShape ;
+    sh:name "Predicted BGC" ;
+    sh:targetClass obo:SO_0002357 ;
+    sh:nodeKind sh:IRI ;
+
+    sh:property [ sh:path rdfs:label ; sh:minCount 1 ;
+        sh:message "A BGC needs an rdfs:label." ] ;
+
+    sh:property [ sh:path wp:organismName ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:message "A BGC needs exactly one wp:organismName (the species it was predicted in)." ] ;
+
+    sh:property [ sh:path sio:SIO_000772 ; sh:minCount 1 ;
+        sh:message "A predicted BGC needs evidence for the prediction (sio:SIO_000772)." ] ;
+
+    # the genes of the cluster (has part); BFO:0000051, not obo:RO_0000051
+    sh:property [ sh:path obo:BFO_0000051 ; sh:nodeKind sh:IRI ;
+        sh:message "The parts of a BGC (obo:BFO_0000051 'has part') must be gene IRIs." ] ;
+
+    # "detected by rule X"
+    sh:property [
+        sh:path ( sio:SIO_000772 lodp:detectionRule ) ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "alkaloid" "cyclopeptide" "fatty_acid" "lignan" "phenolamide" "phenylpropanoid" "polyketide"
+                "saccharide" "sesterterpene" "strictosidine_like" "terpene" "transporter_associated" "putative" ) ;
+        sh:message "The prediction evidence needs at least one lodp:detectionRule, one of the plantiSMASH 2.0 rules: alkaloid, cyclopeptide, fatty_acid, lignan, phenolamide, phenylpropanoid, polyketide, saccharide, sesterterpene, strictosidine_like, terpene, transporter_associated, putative." ] ;
+
+    sh:property [
+        sh:path ( sio:SIO_000772 lodp:coreDomain ) ;
+        sh:datatype xsd:string ;
+        sh:message "lodp:coreDomain must be a string (the name of the core enzyme domain)." ] ;
+
+    # "predicted computationally": pHMM match and/or genomic context
+    sh:property [
+        sh:path ( sio:SIO_000772 rdf:type ) ;
+        sh:severity sh:Warning ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0000256 obo:ECO_0007327 ) ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "BGC prediction evidence is usually obo:ECO_0000256 (match to sequence model) and/or obo:ECO_0007327 (genomic context)." ] ;
+
+    sh:property [
+        sh:path ( sio:SIO_000772 prov:wasGeneratedBy ) ;
+        sh:class lodp:PlantiSMASHRun ;
+        sh:severity sh:Warning ;
+        sh:message "The prediction should come from a lodp:PlantiSMASHRun." ] ;
+
+    # MIBiG match: IRI shape, one relation at most
+    sh:property [ sh:path skos:exactMatch ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://mibig[.]secondarymetabolites[.]org/repository/BGC[0-9]{7}$" ;
+        sh:message "skos:exactMatch of a BGC must be a MIBiG IRI (https://mibig.secondarymetabolites.org/repository/BGCnnnnnnn)." ] ;
+    sh:property [ sh:path skos:closeMatch ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://mibig[.]secondarymetabolites[.]org/repository/BGC[0-9]{7}$" ;
+        sh:message "skos:closeMatch of a BGC must be a MIBiG IRI (https://mibig.secondarymetabolites.org/repository/BGCnnnnnnn)." ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "A MIBiG match needs lodp:mibigMatchEvidence (with the percentage of genes similar)." ;
+        sh:select """
+            SELECT $this WHERE {
+              $this skos:exactMatch|skos:closeMatch ?m .
+              FILTER NOT EXISTS { $this lodp:mibigMatchEvidence ?e }
+            }""" ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Inconsistent MIBiG match: skos:exactMatch needs 100% of genes similar, skos:closeMatch less than 100%." ;
+        sh:select """
+            SELECT $this ?rel ?pct WHERE {
+              $this ?rel ?m ; lodp:mibigMatchEvidence/lodp:percentGenesSimilar ?pct .
+              FILTER(?rel IN (skos:exactMatch, skos:closeMatch))
+              FILTER( (?rel = skos:exactMatch && ?pct != 100) || (?rel = skos:closeMatch && ?pct >= 100) )
+            }""" ] .
+
+lodps:MIBiGEvidenceShape a sh:NodeShape ;
+    sh:name "MIBiG match evidence" ;
+    sh:targetObjectsOf lodp:mibigMatchEvidence ;
+    sh:property [ sh:path lodp:percentGenesSimilar ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
+        sh:minInclusive 0 ; sh:maxInclusive 100 ;
+        sh:message "lodp:percentGenesSimilar must be exactly one integer between 0 and 100." ] .
+
+# ---------------------------------------------------------------------------
+# The BGC-pathway link
+# ---------------------------------------------------------------------------
+lodps:BGCPathwayLinkShape a sh:NodeShape ;
+    sh:name "BGC-pathway link" ;
+    sh:targetClass lodp:BGCPathwayLink ;
+
+    # overlaps (RO:0002131): exactly one BGC and one PlantMetWiki pathway
+    sh:property [ sh:path obo:RO_0002131 ;
+        sh:qualifiedValueShape [ sh:class obo:SO_0002357 ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "A BGC-pathway link needs exactly one BGC (a obo:SO_0002357) as obo:RO_0002131 'overlaps' value." ] ;
+    sh:property [ sh:path obo:RO_0002131 ;
+        sh:qualifiedValueShape [ sh:nodeKind sh:IRI ;
+            sh:pattern "^http://rdf-plantmetwiki[.]bioinformatics[.]nl/pathways/PC[0-9]+$" ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "A BGC-pathway link needs exactly one PlantMetWiki pathway IRI as obo:RO_0002131 'overlaps' value." ] ;
+
+    # evidence of the link
+    sh:property [ sh:path ( sio:SIO_000772 rdf:type ) ; sh:hasValue obo:ECO_0007679 ;
+        sh:message "The link evidence must be typed obo:ECO_0007679 (combinatorial computational evidence used in automatic assertion)." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 prov:wasGeneratedBy ) ; sh:class lodp:LinkingRun ;
+        sh:message "The link evidence must come from a lodp:LinkingRun (the mapping to PlantMetWiki), not from plantiSMASH itself." ] ;
+
+    sh:property [ sh:path ( sio:SIO_000772 lodp:linkTier ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:in ( "gene_direct" "gene_uniprot" "gene_ec" ) ;
+        sh:message "The link evidence needs exactly one lodp:linkTier: gene_direct, gene_uniprot or gene_ec." ] ;
+
+    # "X overlap with pathway nodes"
+    sh:property [ sh:path ( sio:SIO_000772 lodp:nSharedGenes ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ;
+        sh:message "The link evidence needs exactly one lodp:nSharedGenes (an integer of at least 1)." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:nPathwayGenes ) ; sh:maxCount 1 ;
+        sh:datatype xsd:integer ; sh:minInclusive 1 ;
+        sh:message "lodp:nPathwayGenes must be one integer of at least 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:fractionPathwayGenes ) ; sh:maxCount 1 ;
+        sh:datatype xsd:double ; sh:minExclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:fractionPathwayGenes must be one decimal number above 0 and at most 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:nSharedEC ) ; sh:maxCount 1 ;
+        sh:datatype xsd:integer ; sh:minInclusive 1 ;
+        sh:message "lodp:nSharedEC must be one integer of at least 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:fractionPathwayECs ) ; sh:maxCount 1 ;
+        sh:datatype xsd:double ; sh:minExclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:fractionPathwayECs must be one decimal number above 0 and at most 1." ] ;
+
+    # the linking genes, proteins or ECs must be listed, so the link can be inspected
+    sh:or (
+        [ sh:path ( sio:SIO_000772 lodp:linkingGene ) ; sh:minCount 1 ]
+        [ sh:path ( sio:SIO_000772 lodp:linkingProtein ) ; sh:minCount 1 ]
+        [ sh:path ( sio:SIO_000772 lodp:linkingEC ) ; sh:minCount 1 ]
+    ) ;
+    sh:message "The link evidence must list what links the BGC to the pathway: lodp:linkingGene, lodp:linkingProtein or lodp:linkingEC." ;
+
+    # consistency
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "lodp:anchorTier must equal the lodp:linkTier of the link evidence." ;
+        sh:select """
+            SELECT $this ?anchor ?tier WHERE {
+              $this lodp:anchorTier ?anchor ; sio:SIO_000772/lodp:linkTier ?tier .
+              FILTER(?anchor != ?tier)
+            }""" ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "lodp:anchoredInPathway must be the pathway that the BGC overlaps (obo:RO_0002131)." ;
+        sh:select """
+            SELECT $this ?p WHERE {
+              $this lodp:anchoredInPathway ?p .
+              FILTER NOT EXISTS { $this obo:RO_0002131 ?p }
+            }""" ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The link tier needs its matching evidence: gene_direct needs lodp:linkingGene and lodp:fractionPathwayGenes; gene_uniprot needs lodp:linkingProtein; gene_ec needs lodp:linkingEC and lodp:fractionPathwayECs." ;
+        sh:select """
+            SELECT $this ?tier WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:linkTier ?tier .
+              FILTER(
+                (?tier = "gene_direct" && (NOT EXISTS { ?ev lodp:linkingGene ?x } || NOT EXISTS { ?ev lodp:fractionPathwayGenes ?y })) ||
+                (?tier = "gene_uniprot" && NOT EXISTS { ?ev lodp:linkingProtein ?x }) ||
+                (?tier = "gene_ec" && (NOT EXISTS { ?ev lodp:linkingEC ?x } || NOT EXISTS { ?ev lodp:fractionPathwayECs ?y })) )
+            }""" ] .
+
+# ---------------------------------------------------------------------------
+# Runs of case 1
+# ---------------------------------------------------------------------------
+lodps:LinkingRunShape a sh:NodeShape ;
+    sh:name "Linking run" ;
+    sh:description "A linking run should say which resources it combined." ;
+    sh:targetClass lodp:LinkingRun ;
+    sh:property [ sh:path prov:used ; sh:minCount 2 ; sh:severity sh:Warning ;
+        sh:message "A linking run combines at least two inputs (the predictions and PlantMetWiki); list both with prov:used." ] .

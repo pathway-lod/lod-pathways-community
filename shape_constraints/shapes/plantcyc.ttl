@@ -1,0 +1,98 @@
+# Case 4: PlantCyc evidence on PlantMetWiki nodes.
+# PlantMetWiki stores PlantCyc's evidence codes in the citation property of a node ("pubmed:EV-code:...").
+# Here the evidence is attached to the node's membership in its pathway (rdf:Statement) and the code
+# is mapped to an ECO class. The mapping is by meaning (a proposal), not an official crosswalk.
+
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix lodps:  <https://example.org/lod-pathways/shapes/> .
+@prefix lodp:   <https://example.org/lod-pathways/pilot/> .
+@prefix obo:    <http://purl.obolibrary.org/obo/> .
+@prefix sio:    <http://semanticscience.org/resource/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+lodps:PathwayMembershipShape a sh:NodeShape ;
+    sh:name "Pathway membership claim" ;
+    sh:targetClass lodp:PathwayMembershipClaim ;
+
+    sh:property [ sh:path rdf:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^http://rdf-plantmetwiki[.]bioinformatics[.]nl/Pathway/PC[0-9]+_[^/]+/(DataNode|Interaction)/.+$" ;
+        sh:message "rdf:subject must be a PlantMetWiki pathway node (.../Pathway/PC<n>_<release>/DataNode/<id> or /Interaction/<id>)." ] ;
+    sh:property [ sh:path rdf:predicate ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue dcterms:isPartOf ;
+        sh:message "rdf:predicate must be dcterms:isPartOf (the node is part of the pathway)." ] ;
+    sh:property [ sh:path rdf:object ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^http://rdf-plantmetwiki[.]bioinformatics[.]nl/pathways/PC[0-9]+$" ;
+        sh:message "rdf:object must be a PlantMetWiki pathway IRI." ] ;
+    sh:property [ sh:path lodp:anchorTier ; sh:hasValue "curated" ;
+        sh:message "PlantCyc evidence is anchored as 'curated': the node already exists in PlantMetWiki." ] ;
+
+    sh:property [ sh:path ( sio:SIO_000772 prov:wasGeneratedBy ) ; sh:class lodp:PlantCycCuration ;
+        sh:message "The evidence must come from a lodp:PlantCycCuration run." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:originalEvidenceCode ) ;
+        sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^EV-[A-Z0-9-]+$" ;
+        sh:message "The evidence needs the original PlantCyc code in lodp:originalEvidenceCode (EV-...)." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 dcterms:references ) ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://identifiers[.]org/pubmed/[0-9]+$" ;
+        sh:message "dcterms:references must be an identifiers.org PubMed IRI." ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "lodp:anchoredInPathway must be the pathway of rdf:object." ;
+        sh:select """
+            SELECT $this ?p WHERE {
+              $this lodp:anchoredInPathway ?p .
+              FILTER NOT EXISTS { $this rdf:object ?p }
+            }""" ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The node must belong to the pathway it is claimed to be part of: the PC number in rdf:subject must equal the one in rdf:object." ;
+        sh:select """
+            SELECT $this ?s ?o WHERE {
+              $this rdf:subject ?s ; rdf:object ?o .
+              FILTER( STRAFTER(STR(?o), "/pathways/") != STRBEFORE(STRAFTER(STR(?s), "/Pathway/"), "_") )
+            }""" ] ;
+
+    # the code decides the ECO class (proposed mapping)
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The ECO class does not match the PlantCyc code. Proposed mapping: EV-EXP-IDA* = ECO:0000314, EV-EXP-IEP = ECO:0000270, EV-EXP-TAS and EV-AS-TAS = ECO:0000304, EV-EXP = ECO:0000006, EV-COMP-HINF-SEQ-ORTHOLOGY = ECO:0000266, EV-IC = ECO:0000305." ;
+        sh:select """
+            SELECT $this ?ev ?code ?expected WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:originalEvidenceCode ?code .
+              BIND( IF(STRSTARTS(?code, "EV-EXP-IDA"), obo:ECO_0000314,
+                    IF(?code = "EV-EXP-IEP", obo:ECO_0000270,
+                    IF(?code IN ("EV-EXP-TAS", "EV-AS-TAS"), obo:ECO_0000304,
+                    IF(?code = "EV-EXP", obo:ECO_0000006,
+                    IF(?code = "EV-COMP-HINF-SEQ-ORTHOLOGY", obo:ECO_0000266,
+                    IF(?code = "EV-IC", obo:ECO_0000305, ?unbound)))))) AS ?expected )
+              FILTER( BOUND(?expected) && NOT EXISTS { ?ev a ?expected } )
+            }""" ] .
+
+# a code without a proposed ECO class is allowed but flagged (its own shape: severity belongs to the shape)
+lodps:PathwayMembershipCodeShape a sh:NodeShape ;
+    sh:name "Pathway membership claim (evidence codes)" ;
+    sh:severity sh:Warning ;
+    sh:targetClass lodp:PathwayMembershipClaim ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "This PlantCyc evidence code has no proposed ECO mapping yet; add it to the mapping before relying on the ECO class." ;
+        sh:select """
+            SELECT $this ?ev ?code WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:originalEvidenceCode ?code .
+              FILTER( !STRSTARTS(?code, "EV-EXP-IDA")
+                      && ?code NOT IN ("EV-EXP-IEP", "EV-EXP-TAS", "EV-AS-TAS", "EV-EXP", "EV-COMP-HINF-SEQ-ORTHOLOGY", "EV-IC") )
+            }""" ] .
+
+
+lodps:PlantCycCurationShape a sh:NodeShape ;
+    sh:name "PlantCyc curation run" ;
+    sh:targetClass lodp:PlantCycCuration ;
+    sh:property [ sh:path lodp:software ; sh:hasValue "PlantCyc" ;
+        sh:message "A PlantCyc curation run has lodp:software 'PlantCyc'." ] .

@@ -1,0 +1,398 @@
+class,category
+3-Dehydroquinate-Biosynthesis,primary
+4-Aminobenzoate-Biosynthesis,primary
+4-Aminobutyraye-Degradation,primary
+4-Hydroxybenzoate-Biosynthesis,primary
+6-HM-Dihydropterin-PP-Biosynthesis,primary
+8-Oxo-GTP-Detoxification,primary
+ACYLSUGAR-BIOSYNTHESIS,specialized (secondary)
+AEROBIC-RESPIRATION,primary
+AIR-Biosynthesis,primary
+ALANINE-DEG,primary
+ALANINE-SYN,primary
+ALKALOIDS,specialized (secondary)
+ALKALOIDS-SYN,specialized (secondary)
+AMINO-ACID-FAMILY-SYN,primary
+ANTHOCYANIN-SYN,specialized (secondary)
+APOCAROTENOID-SYN,specialized (secondary)
+ARGININE-DEG,primary
+ARGININE-SYN,primary
+AROMATIC-COMPOUNDS-BIOSYN,unclassified
+AROMATIC-COMPOUNDS-DEGRADATION,unclassified
+ASPARAGINE-DEG,primary
+ASPARAGINE-SYN,primary
+ASPARTATE-SYN,primary
+AURONE-SYN,specialized (secondary)
+Abscisic-Acid-Biosynthesis,hormones
+Abscisic-Acid-Degradation,hormones
+Acetaldehyde-Biosynthesis,primary
+Acetate-Formation,primary
+Acetlylenic-Fatty-Acid-Biosynthesis,primary
+Acetoin-Biosynthesis,primary
+Acetyl-CoA-Biosynthesis,primary
+Activation,unclassified
+Adenine-Adenosine-Salvage,primary
+Adenosine-Deoxy-Denovo-Bbiosynthesis,primary
+Adenosine-Nucleotides-Degradation,primary
+Alkanes-Biosynthesis,primary
+Alkenes-Biosynthesis,primary
+All-Trans-Farnesyl-PP-Biosynthesis,primary
+All-Trans-Polyprenyl-Biosynthesis,primary
+Allantoin-degradation,primary
+Alpha-Linolenate-Biosynthesis,primary
+Amino-Acids-Modification,primary
+Aminoacyl-tRNAs-Charging,primary
+Ammonia-Assimilation,primary
+Arachidonate-Biosynthesis,primary
+Aroma-Compound-Biosynthesis,specialized (secondary)
+Ascorbate-Biosynthesis,primary
+Ascorbate-Degradation,primary
+Assimilatory-Sulfate-Reduction,primary
+Autotrophic-CO2-Fixation,primary
+Auxin-Biosynthesis,hormones
+BENZENOID-SYN,specialized (secondary)
+BETALAIN-ALKALOIDS,specialized (secondary)
+BIOTIN-SYN,primary
+Benzoate-Biosynthesis,specialized (secondary)
+Bergamotene-Biosynthesis,specialized (secondary)
+Beta-Alanine-Biosynthesis,primary
+Betaine-Biosynthesis,primary
+Brassinosteroid-Biosynthesis,hormones
+C1-COMPOUNDS,primary
+C40-Carotenoids-Biosynthesis,specialized (secondary)
+CAFFEINE,specialized (secondary)
+CARBO-BIOSYNTHESIS,primary
+CARBOXYLATES-DEG,primary
+CDP-diacylglycerol-Biosynthesis,primary
+CHALCONE-SYN,specialized (secondary)
+CHLORINATED-COMPOUNDS-DEG,primary
+CINNAMATE-SYN,specialized (secondary)
+CMP-KDO-Biosynthesis,primary
+CMP-Sugar-Biosynthesis,primary
+CO2-Fixation,primary
+COUMARIN-PHYTOALEXINS,specialized (secondary)
+COUMARIN-SYN,specialized (secondary)
+CYANOGENIC-GLUCOSIDE-DEG,specialized (secondary)
+CYANOGENIC-GLUCOSIDE-SYN,specialized (secondary)
+CYCLITOLS,primary
+CYCLITOLS-DEG,primary
+CYSTEINE-SYN,primary
+CYTOKININ-BIOSYNTHESIS,hormones
+CYTOKININS-DEGRADATION,hormones
+Caffeine-Biosynthesis,specialized (secondary)
+Camphor-Biosynthesis,specialized (secondary)
+Carbohydrates-Degradation,primary
+Carboxylate-Biosynthesis,primary
+Cardiolipin-Biosynthesis,primary
+Chitin-Degradation,primary
+Chlorophyll-A-Degradation,primary
+Chlorophyll-a-Biosynthesis,primary
+Chlorophyllide-a-Biosynthesis,primary
+Choline-Biosynthesis,primary
+Choline-Degradation,primary
+Chorismate-Biosynthesis,primary
+Citrulline-Biosynthesis,primary
+CoA-Biosynthesis,primary
+Cobamide-Salvage,primary
+Cofactor-Biosynthesis,primary
+Conjugated-Fatty-Acid-Biosynthesis,primary
+Cyanide-Detoxification,primary
+Cyclitols-Biosynthesis,primary
+Cyclopropane-fatty-acid-biosyn,primary
+D-Amino-Acid-Degradation,primary
+D-Mannose-Degradation,primary
+DHNA-Biosynthesis,primary
+DITERPENOID-SYN,specialized (secondary)
+DMNT-Biosynthesis,specialized (secondary)
+Detoxification,primary
+Dimethylsulfoniopropionate-Biosynthesis,primary
+Dimethylsulfoniopropionate-Degradation,primary
+Divinyl-Ether-Biosynthesis,specialized (secondary)
+Docosahexaenoate-Biosynthesis,primary
+ELLAGITANNINS,specialized (secondary)
+EPIDERMAL-STRUCTURE,primary
+Eicosapentaenoate-Biosynthesis,primary
+Electron-Transfer,primary
+Energy-Metabolism,primary
+Ergosterol-Biosynthesis,primary
+Ethanol-Degradation,primary
+Ethylene-Biosynthesis,hormones
+FATTY-ACID-DERIVATIVE-SYN,specialized (secondary)
+FLAVANONES-SYN,specialized (secondary)
+FLAVONE-SYN,specialized (secondary)
+FLAVONOID-DEG,specialized (secondary)
+FLAVONOID-PHYTOALEXINS,specialized (secondary)
+FLAVONOID-SYN,specialized (secondary)
+FLAVONOL-SYN,specialized (secondary)
+Fatty-Acid-Biosyn-Initiation,primary
+Fatty-Acid-Degradation,primary
+Fatty-Acid-and-Lipid-Degradation,primary
+Fatty-acid-biosynthesis,primary
+Flavin-Biosynthesis,primary
+Folate-Biosynthesis,primary
+Folate-Transformations,primary
+Formaldehyde-Oxidation,primary
+GALACTOSE-DEGRADATION,primary
+GALLOTANNINS,specialized (secondary)
+GDP-Sugar-Biosynthesis,primary
+GGPP-Biosynthesis,primary
+GIBBERELLIN-SYN,hormones
+GIBBERELLINS-BIOSYNTHESIS,hormones
+GIBBERELLINS-DEGRADATION,hormones
+GLUCOSINOLATE-DEG,specialized (secondary)
+GLUCOSINOLATE-SYN,specialized (secondary)
+GLUTAMATE-DEG,primary
+GLUTAMATE-SYN,primary
+GLUTAMINE-SYN,primary
+GLYCEROL-DEG,primary
+GLYCINE-DEG,primary
+GLYCINE-SYN,primary
+GLYCOGEN-BIOSYN,primary
+GLYCOLYSIS-VARIANTS,primary
+Gamma-Glutamyl-Cycles,primary
+Gamma-linolenate-Biosynthesis,primary
+Gibberellin-Inactivation,hormones
+Gluconeogenesis,primary
+Glycan-Pathways,primary
+Glycolate-Degradation,primary
+Glycolipids-Biosynthesis,primary
+Glycosylation-Pathways,unclassified
+Guanine-Guanosine-Salvage,primary
+Guanosine-Deoxy-Denovo-Biosynthesis,primary
+Guanosine-Nucleotides-Degradation,primary
+HISTIDINE-SYN,primary
+HMP-PP-Biosynthesis,primary
+Heme-Degradation,primary
+Heme-b-Biosynthesis,primary
+Homospermidine-Biosynthesis,specialized (secondary)
+Hydrocarbon-Degradation,primary
+Hydrogen-Production,primary
+Hydroxy-Fatty-Acids-Biosynthesis,primary
+IMP-Biosynthesis,primary
+IND-AMINO-ACID-SYN,primary
+INDOLE-ALKALOIDS,specialized (secondary)
+INDOLE-PHYTOALEXIN-SYN,specialized (secondary)
+ISOFLAVONOID-PHYTOALEXINS,specialized (secondary)
+ISOFLAVONOID-SYN,specialized (secondary)
+ISOLEUCINE-DEG,primary
+ISOLEUCINE-SYN,primary
+ISOPRENOIDS,unclassified
+ISOQUINOLINE-ALKALOIDS,specialized (secondary)
+Inactivation,unclassified
+Indole-3-Acetate-Inactivation,hormones
+Insecticides-Biosynthesis,specialized (secondary)
+Interconversion,unclassified
+Iron-Metabolism,primary
+JH-III-Biosynthesis,hormones
+Jasmonates-Biosynthesis,hormones
+L-Canavanine-Degradation,primary
+L-Ornithine-Biosynthesis,primary
+LEUCINE-DEG,primary
+LEUCINE-SYN,primary
+LEUCOANTHOCYANIDIN-SYN,specialized (secondary)
+LIGNAN-SYN,specialized (secondary)
+LIGNIN-SYN,specialized (secondary)
+LYSINE-DEG,primary
+LYSINE-SYN,primary
+Linalool-Biosynthesis,specialized (secondary)
+Linoleate-Biosynthesis,primary
+Lipid-Biosynthesis,primary
+Lipid-IV-A-Biosynthesis,primary
+Lipoate-Biosynthesis,primary
+Lycopene-Biosynthesis,specialized (secondary)
+MALATE-OXALOACETATE-SHUTTLE,primary
+MEP-Pathways,primary
+METHIONINE-DEG,primary
+MISCELLANEOUS-DEG,unclassified
+MONOTERPENOID-SYN,specialized (secondary)
+MTR-1P-Degradation,primary
+Mannitol-Degradation,primary
+Metabolic-Clusters,super-pathway / cluster
+Metabolic-Regulators,unclassified
+Methionine-De-novo-Biosynthesis,primary
+Methionine-Salvage,primary
+Methylglyoxal-Detoxification,primary
+Methylthioadenosine-Degradation,primary
+Mevalonate-Pathways,primary
+Molybdenum-Cofactor-Biosynthesis,primary
+N-CONTAINING-GLUCOSIDE-SYN,specialized (secondary)
+N-CONTAINING-SECONDARY-CMPD-SYN,specialized (secondary)
+NAD-Metabolism,primary
+NAD-SYN,primary
+NITROGEN-DEG,primary
+NON-PROTEIN-AMINO-ACID-SYN,primary
+NORLIGNANS,specialized (secondary)
+NUCLEO-DEG,primary
+Neurotransmitter-Biosynthesis,primary
+Nitrate-Reduction,primary
+Nitric-Oxide-Biosynthesis,primary
+Nitro-Toluene-Degradation,primary
+Noncarbon-Nutrients,primary
+Oleate-Biosynthesis,primary
+Olefins-Biosynthesis,primary
+Oligosaccharides-Biosynthesis,primary
+Other-Amino-Acid-Biosynthesis,primary
+Other-Degradation,unclassified
+Other-biosynthesis,unclassified
+Oxalate-Degradation,primary
+PHENYLALANINE-DEG,primary
+PHENYLALANINE-SYN,primary
+PHENYLPROPANOID-DERIVATIVE-DEG,specialized (secondary)
+PHENYLPROPANOID-SYN,specialized (secondary)
+PHYTOALEXIN-SYN,specialized (secondary)
+PLANT-CELL-STRUCTURE,primary
+PLANT-HORMONE-DEG,hormones
+POLYKETIDE-SYN,specialized (secondary)
+POLYSACCHARIDES-DEG,primary
+POLYTERPENOID-SYN,specialized (secondary)
+PRENYLFLAVONOID-SYN,specialized (secondary)
+PRIMARY-CELL-WALL,primary
+PROANTHOCYANIDIN-SYN,specialized (secondary)
+PROLINE-DEG,primary
+PROLINE-SYN,primary
+PUFA-Biosynthesis,primary
+PUR-NUC-SYN,primary
+PURINE-ALKALOIDS,specialized (secondary)
+PYR-NUC-SYN,primary
+PYRROLIDINE-ALKALOIDS,specialized (secondary)
+Palmitate-Biosynthesis,primary
+Palmitoleate-Biosynthesis,primary
+Pantothenate-Biosynthesis,primary
+Pathways,unclassified
+Pectin-Degradation,primary
+Pentose-Phosphate-Cycle,primary
+PhosphatidylcholineBiosynthesis,primary
+PhosphatidylethanolamineBiosynthesis,primary
+PhosphatidylglycerolBiosynthesis,primary
+Phosphatidylinositol-Biosynthesis,primary
+Phosphatidylserine-Biosynthesis,primary
+Phospholipid-Biosynthesis,primary
+Phosphorus-Compounds,primary
+Photorespiration,primary
+Photosynthesis,primary
+Phycobilin-Biosynthesis,primary
+Phylloquinone-Biosynthesis,primary
+Phytate-Biosynthesis,primary
+Phytate-Degradation,primary
+Phytyl-Diphosphate-Biosynthesis,primary
+Pigment-Biosynthesis,unclassified
+Pinitol-Biosynthesis,primary
+Plant-Hormone-Biosynthesis,hormones
+Plastoquinone-Biosynthesis,primary
+Polyamine-Biosynthesis,primary
+Polysaccharides-Biosynthesis,primary
+Porphyrin-Compounds-Biosynthesis,primary
+Protein-Glycosylation,primary
+Protein-Modification,primary
+Purine-Degradation,primary
+Purine-Nucleotide-De-Novo-Biosynthesis,primary
+Purine-Nucleotides-Salvage,primary
+Purine-Ribonuc-De-Novo-Biosynthesis,primary
+Putrescine-Biosynthesis,primary
+Putrescine-Degradation,primary
+Pyrimid-Deoxyribonucleot-De-Novo-Biosyn,primary
+Pyrimid-Ribonucleot-De-Novo-Biosyn,primary
+Pyrimidine-Base-Degradation,primary
+Pyrimidine-Nucleotide-Salvage,primary
+Pyrimidine-Ribonucleosides-Degradation,primary
+Pyruvate-Acetate-Fermentation,primary
+Pyruvate-Degradation,primary
+Pyruvate-Ethanol-Fermentation,primary
+Pyruvate-Lactate-Fermentation,primary
+QUINOLINE-ALKALOIDS,specialized (secondary)
+QUINOLIZIDINE-ALKALOIDS,specialized (secondary)
+QUINONE-SYN,primary
+Quinone-Biosynthesis,primary
+REACTIVE-OXYGEN-SPECIES-DEGRADATION,primary
+REDUCTANTS,primary
+Reductants,primary
+Reductive-TCA-Cycles,primary
+Resin-Acids-Biosynthesis,specialized (secondary)
+Respiration,primary
+Rosmarinate-Biosynthesis,specialized (secondary)
+Rotenoids-Biosynthesis,specialized (secondary)
+S-CONTAINING-SECONDARY-CMPD-SYN,specialized (secondary)
+S-Reticuline-Biosynthesis,specialized (secondary)
+S-adenosyl-L-methionine-Biosynthesis,primary
+SECONDARY-CELL-WALL,primary
+SECONDARY-METABOLITE-BIOSYNTHESIS,specialized (secondary)
+SERINE-BIOSYNTHESIS,primary
+SESQUITERPENE-LACTONE,specialized (secondary)
+SESQUITERPENOID-SYN,specialized (secondary)
+SPERMINE-SPERMIDINE-DEG,primary
+STILBENE-PHYTOALEXINS,specialized (secondary)
+STILBENE-SYN,specialized (secondary)
+SUCROSE-DEG,primary
+SUGAR-ALCOHOLS-DEG,primary
+SUGAR-DERIVS,primary
+SUGAR-NUCLEOTIDES,primary
+Salicylate-Biosynthesis,hormones
+Salicylate-Glycosylation,hormones
+Selenium-Metabolism,primary
+Seleno-Amino-Acid-Detoxification,primary
+Selenocysteine-Biosynthesis,primary
+Sesquiterpenoid-Degradation,specialized (secondary)
+Siderophores-Biosynthesis,specialized (secondary)
+Sorbitol-Biosynthesis,primary
+Spermidine-Biosynthesis,primary
+Sphingolipid-Biosynthesis,primary
+Sphingolipid-Recyc-Deg,primary
+Starch-Degradation,primary
+Stearate-Biosynthesis,primary
+Sterol-Biosynthesis,primary
+Sucrose-Biosynthesis,primary
+Sugar-Alcohols-Biosynthesis,primary
+Sugar-Derivatives,primary
+Sugar-Phosphate-Biosynthesis,primary
+Sugars-And-Polysaccharides,primary
+Sugars-And-Polysaccharides-Degradation,primary
+Sulfite-Oxidation,primary
+Sulfur-Metabolism,primary
+Super-Pathways,super-pathway / cluster
+TANNIN-SYN,specialized (secondary)
+TCA-VARIANTS,primary
+TERPENOID-ALKALOIDS,specialized (secondary)
+TERPENOID-DEG,specialized (secondary)
+TERPENOID-PHYTOALEXINS,specialized (secondary)
+TERPENOPHENOLICS-SYN,specialized (secondary)
+TETRATERPENOID-SYN,specialized (secondary)
+THREONINE-BIOSYNTHESIS,primary
+TRITERPENOID-SYN,specialized (secondary)
+TROPANE-ALKALOIDS,specialized (secondary)
+TRYPTOPHAN-BIOSYNTHESIS,primary
+TRYPTOPHAN-DEG,primary
+TYROSINE-SYN,primary
+Terpenoid-Biosynthesis,unclassified
+Tetrapyrrole-Biosynthesis,primary
+Thiamin-Diphosphate-Biosynthesis,primary
+Thiamin-Salvage,primary
+Thiamine-Biosynthesis,primary
+Thiazole-Biosynthesis,primary
+Thiosulfate-Disproportionation,primary
+Toxin-Biosynthesis,specialized (secondary)
+Transport-Pathways,primary
+Trehalose-Degradation,primary
+Trehalose-biosynthesis,primary
+UDP-NAc-Glucosamine-Biosynthesis,primary
+UDP-Sugar-Biosynthesis,primary
+UDP-Sugars,primary
+UMP-Biosynthesis,primary
+UTP-CTP-Dephosphorylation,primary
+Ubiquinone-Biosynthesis,primary
+Unsaturated-Fatty-Acids-Biosynthesis,primary
+Unusual-fatty-acid-biosynthesis,primary
+Uracil-Degradation,primary
+Urate-Degradation,primary
+Urea-Degradation,primary
+VALINE-BIOSYNTHESIS,primary
+VALINE-DEG,primary
+Vanillin-Biosynthesis,specialized (secondary)
+Vernolate-Biosynthesis,primary
+Vitamin-B6-Biosynthesis,primary
+Vitamin-Biosynthesis,primary
+Volatile-Benzenoids-Biosynthesis,specialized (secondary)
+XANTHONE-SYN,specialized (secondary)
+Xylan-Degradation,primary
+Yatein-Biosynthesis,specialized (secondary)
+dTDP-L-Rhamnose-Biosynthesis,primary
+dTDP-Sugar-Biosynthesis,primary

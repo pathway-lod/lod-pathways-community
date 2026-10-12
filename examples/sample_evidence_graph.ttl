@@ -1,0 +1,208 @@
+# Sample evidence graph: the four cases attached to PlantMetWiki nodes.
+#
+# All identifiers and numbers are real, taken from the pilots in ../pilots/ and from the PlantMetWiki
+# SPARQL endpoint (snapshot 2026-09-29). Nothing here is a new biological claim.
+# `lodp:` is a PLACEHOLDER namespace for terms that do not exist in any ontology yet
+# (defined in ../shape_constraints/vocab/lodp.ttl). The graph conforms to ../shape_constraints/shapes/.
+#
+# Shape shared by all four cases:
+#   claim --sio:SIO_000772 (has evidence)--> evidence node (typed with an ECO class)
+#   evidence node --prov:wasGeneratedBy--> run (software, version, input data)
+#   claim --lodp:anchoredInPathway / lodp:anchoredToMetabolite--> PlantMetWiki node
+#   claim --lodp:anchorTier--> how the anchor was established (weak tiers are flagged by the shapes)
+
+@prefix lodp:    <https://example.org/lod-pathways/pilot/> .
+@prefix pmw:     <http://rdf-plantmetwiki.bioinformatics.nl/pathways/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix swo:     <http://www.ebi.ac.uk/swo/> .
+@prefix edam:    <http://edamontology.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wp:      <http://vocabularies.wikipathways.org/wp#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix mibig:   <https://mibig.secondarymetabolites.org/repository/> .
+@prefix tair:    <https://identifiers.org/tair.name/> .
+@prefix pubmed:  <https://identifiers.org/pubmed/> .
+
+# ---------------------------------------------------------------------------
+# PlantMetWiki nodes that the claims are anchored to (these already exist there)
+# ---------------------------------------------------------------------------
+pmw:PC800  rdfs:label "thalianol and derivatives biosynthesis" .         # PlantCyc PWY-5992
+pmw:PC1159 rdfs:label "α-tomatine biosynthesis" .                        # PlantCyc PWY18C3-3
+pmw:PC992  rdfs:label "L-aspartate biosynthesis" .                       # PlantCyc ASPARTATESYN-PWY
+<https://identifiers.org/inchikey/GMMLNKINDDUDCF-BYNGITTOSA-M> rdfs:label "glucoraphanin" .
+
+# GAME17 is listed in PlantMetWiki by its Solyc locus (a property of this DataNode)
+<http://rdf-plantmetwiki.bioinformatics.nl/Pathway/PC1159_r17.0.0_20260605-171052/DataNode/G18C3_9>
+    rdfs:label "GAME17" ; lodp:solycLocus "Solyc07g043480" ; dcterms:isPartOf pmw:PC1159 .
+
+# ---------------------------------------------------------------------------
+# Runs: one per tool, pipeline or curation effort
+# ---------------------------------------------------------------------------
+lodp:run_plantismash a lodp:PlantiSMASHRun ;
+    rdfs:label "plantiSMASH precalculated database" ;
+    lodp:software "plantiSMASH" ; swo:SWO_0004000 "2.0 (precalculated database v2)" ;   # has version
+    prov:used <https://plantismash.bioinformatics.nl/precalc/v2/> .
+
+lodp:run_bgc_pathway_linking a lodp:LinkingRun ;
+    rdfs:label "Linking of plantiSMASH BGCs to PlantMetWiki pathways" ;
+    lodp:software "lod-pathways pilots/plantismash_overlap" ; swo:SWO_0004000 "pilot snapshot 2026-09-29" ;
+    prov:used <https://plantismash.bioinformatics.nl/precalc/v2/> ,
+              <https://plantmetwiki.bioinformatics.nl/sparql> ,
+              <https://rest.uniprot.org/> .
+
+lodp:run_meantools a lodp:MEANtoolsRun , edam:operation_3463 , edam:operation_3432 ;   # expression correlation analysis ; clustering
+    rdfs:label "MEANtools functional clustering, tomato, fungal treatment, decay rate 10" ;
+    lodp:software "MEANtools" ; swo:SWO_0004000 "1.0.0" ;
+    prov:used <https://zenodo.org/records/15697913> ;
+    lodp:decayRate 10 .
+
+lodp:run_sirius a lodp:AnnotationToolRun ;
+    rdfs:label "SIRIUS on the Brassicaceae LC-MS/MS data" ;
+    lodp:software "SIRIUS" ; swo:SWO_0004000 "6.1.0" ;
+    prov:used <https://www.ebi.ac.uk/metabolights/MTBLS14270> .
+
+lodp:run_ms2query a lodp:AnnotationToolRun ;
+    rdfs:label "MS2Query on the Brassicaceae LC-MS/MS data" ;
+    lodp:software "MS2Query" ; swo:SWO_0004000 "1.0" ;
+    prov:used <https://www.ebi.ac.uk/metabolights/MTBLS14270> .
+
+lodp:run_consensus a lodp:ConsensusAnnotationRun ;
+    rdfs:label "Consensus annotation of SIRIUS, MS2Query and DreaMS" ;
+    lodp:software "Consensus_annotator (Annotation_matching_module_update_report_v02.py)" ;
+    swo:SWO_0004000 "git 59d225b of capsicumbaccatum/Metabolic_fingerprinting_consensus_annotation" ;
+    lodp:usesTool "SIRIUS 6.1.0" , "MS2Query 1.0" , "DreaMS 1.0" ;
+    prov:used <https://doi.org/10.5281/zenodo.19391098> .
+
+lodp:run_plantcyc a lodp:PlantCycCuration ;
+    rdfs:label "PlantCyc curation, as released in PlantMetWiki" ;
+    lodp:software "PlantCyc" ; swo:SWO_0004000 "17.0.0" ;
+    prov:used <https://pmn.plantcyc.org/> .
+
+# ===========================================================================
+# CASE 1. BGC prediction (plantiSMASH 2.0, Arabidopsis thaliana)
+# ===========================================================================
+<https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60>
+    a obo:SO_0002357 ;                                          # biosynthetic_gene_cluster
+    rdfs:label "Arabidopsis_thaliana_GCF_000001735.4/#cluster-60" ;
+    wp:organismName "Arabidopsis thaliana" ;
+    lodp:genomeAssembly "GCF_000001735.4" ;
+    obo:BFO_0000051 tair:AT5G47950 , tair:AT5G47980 , tair:AT5G47990 ,   # has part: the 5 biosynthetic genes
+                    tair:AT5G48000 , tair:AT5G48010 ;
+    # "there is a BGC", "detected by rule X", "from plantiSMASH version X"
+    sio:SIO_000772 [
+        a obo:ECO_0000256 , obo:ECO_0007327 ;                   # pHMM rule match + genomic co-location
+        prov:wasGeneratedBy lodp:run_plantismash ;
+        lodp:detectionRule "terpene" ;
+        lodp:coreDomain "SQHop_cyclase_C" , "SQHop_cyclase_N" , "Transferase" , "p450"
+    ] ;
+    # "complete match with a MIBiG BGC" (all genes similar)
+    skos:exactMatch mibig:BGC0000670 ;
+    lodp:mibigMatchEvidence [
+        a obo:ECO_0000249 ;                                     # sequence similarity (KnownClusterBLAST)
+        prov:wasGeneratedBy lodp:run_plantismash ;
+        lodp:percentGenesSimilar "100"^^xsd:integer
+    ] .
+
+# "X overlap with pathway nodes": the BGC shares 3 of the pathway's 4 TAIR genes
+lodp:link_cluster60_PC800 a lodp:BGCPathwayLink ;
+    obo:RO_0002131 <https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60> ,
+                   pmw:PC800 ;                                  # overlaps
+    lodp:anchoredInPathway pmw:PC800 ;
+    lodp:anchorTier "gene_direct" ;
+    sio:SIO_000772 [
+        a obo:ECO_0007679 ;                                     # combinatorial computational evidence, automatic
+        prov:wasGeneratedBy lodp:run_bgc_pathway_linking ;
+        lodp:linkTier "gene_direct" ;
+        lodp:linkingGene "AT5G47990" , "AT5G48000" , "AT5G48010" ;
+        lodp:nSharedGenes "3"^^xsd:integer ;
+        lodp:nPathwayGenes "4"^^xsd:integer ;
+        lodp:fractionPathwayGenes "0.75"^^xsd:double
+    ] .
+
+# ===========================================================================
+# CASE 2. Paired-omics association (MEANtools, tomato)
+# GAME17 (a PlantMetWiki gene) correlated with metabolite feature M492T803.
+# The cluster is NOT significant (p = 0.75): the shapes flag this as a warning.
+# ===========================================================================
+lodp:feature_MTBLS1039_M492T803 a lodp:MetaboliteFeature ;
+    lodp:featureId "M492T803" ;
+    lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
+    lodp:ionMode "positive" .
+
+lodp:assoc_fungal_DR10_C257_Solyc07g043480_M492T803 a lodp:GeneMetaboliteAssociation ;
+    sio:SIO_000628 <https://plants.ensembl.org/Solanum_lycopersicum/Gene/Summary?g=Solyc07g043480> ,   # refers to
+                   lodp:feature_MTBLS1039_M492T803 ;
+    lodp:anchoredInPathway pmw:PC1159 ;                         # gene side only: the metabolite is not identified
+    lodp:anchoredSide "gene" ;
+    lodp:geneAnchorTier "gene_locus" ;
+    lodp:anchorTier "gene_locus" ;
+    sio:SIO_000772 [
+        a obo:ECO_0007590 ;                                     # closest ECO term; none for M-T correlation
+        prov:wasGeneratedBy lodp:run_meantools ;
+        obo:STATO_0000280 "0.8192"^^xsd:double ;                # Pearson's r
+        obo:OBI_0000175 "3.2e-05"^^xsd:double ;                 # p-value of the correlation
+        lodp:mutualRank "2.646"^^xsd:double ;
+        lodp:edgeWeight "0.8483"^^xsd:double ;
+        lodp:functionalCluster "257" ;
+        lodp:clusterPValue "0.7475"^^xsd:double
+    ] .
+
+# ===========================================================================
+# CASE 3. Consensus MS/MS annotation (Brassicaceae, positive mode feature 741)
+# SIRIUS and MS2Query agree on glucoraphanin (2 of 3 tools = "partial").
+# One claim, three evidence nodes (one per tier). Anchored to the metabolite, not to its pathways.
+# ===========================================================================
+lodp:feature_MTBLS14270_pos_741 a lodp:MetaboliteFeature ;
+    lodp:featureId "741" ;
+    lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS14270> ;
+    lodp:ionMode "positive" .
+
+lodp:annotation_MTBLS14270_pos_741 a lodp:MetaboliteAnnotation ;
+    lodp:feature lodp:feature_MTBLS14270_pos_741 ;
+    skos:closeMatch <https://identifiers.org/inchikey/GMMLNKINDDUDCF-BYNGITTOSA-M> ,   # glucoraphanin
+                    <http://www.wikidata.org/entity/Q27106767> ;
+    lodp:anchoredToMetabolite <https://identifiers.org/inchikey/GMMLNKINDDUDCF-BYNGITTOSA-M> ;
+    lodp:anchorTier "structure_match" ;
+    lodp:matchLevel "connectivity" ;                            # first InChIKey block only
+    sio:SIO_000772 [
+        a obo:ECO_0007653 , obo:ECO_0001580 ;                   # automatically integrated computational + LC-MS/MS
+        prov:wasGeneratedBy lodp:run_consensus ;
+        lodp:identificationTier "consensus_inchi" ;
+        lodp:matchType "partial" ;
+        lodp:agreementScore "0.5"^^xsd:double ;
+        lodp:agreeingTool "SIRIUS" , "MS2Query"
+    ] , [
+        a obo:ECO_0007669 , obo:ECO_0001580 ;                   # computational evidence (one tool) + LC-MS/MS
+        prov:wasGeneratedBy lodp:run_sirius ;
+        lodp:identificationTier "sirius" ;
+        lodp:siriusConfidenceApprox "0.43"^^xsd:double
+    ] , [
+        a obo:ECO_0007669 , obo:ECO_0001580 ;
+        prov:wasGeneratedBy lodp:run_ms2query ;
+        lodp:identificationTier "ms2query_exact" ;
+        lodp:ms2queryModelScore "0.8512"^^xsd:double ;
+        lodp:precursorMzDifference "0.0006"^^xsd:double
+    ] .
+
+# ===========================================================================
+# CASE 4. PlantCyc evidence on a PlantMetWiki enzyme node
+# The code is stored in PlantMetWiki as a citation property of the node:
+#   "22186372:EV-COMP-HINF-SEQ-ORTHOLOGY:3618148918:Mary L Schaeffer"
+# ===========================================================================
+lodp:claim_GDQC_108527_MONOMER_PC992 a lodp:PathwayMembershipClaim ;
+    rdf:subject <http://rdf-plantmetwiki.bioinformatics.nl/Pathway/PC992_r17.0.0_20260605-171052/DataNode/GDQC_108527_MONOMER> ;
+    rdf:predicate dcterms:isPartOf ;
+    rdf:object pmw:PC992 ;
+    lodp:anchoredInPathway pmw:PC992 ;
+    lodp:anchorTier "curated" ;
+    sio:SIO_000772 [
+        a obo:ECO_0000266 ;                                     # sequence orthology evidence, manual assertion (proposed mapping)
+        prov:wasGeneratedBy lodp:run_plantcyc ;
+        lodp:originalEvidenceCode "EV-COMP-HINF-SEQ-ORTHOLOGY" ;
+        dcterms:references pubmed:22186372
+    ] .

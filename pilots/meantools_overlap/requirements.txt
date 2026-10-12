@@ -1,0 +1,9 @@
+# Pinned versions used for the results in explore_results.ipynb (Python 3.12)
+pandas==3.0.6
+numpy==2.5.3
+rdkit==2026.3.6
+requests==2.34.2
+matplotlib==3.11.2
+ipykernel==7.3.0
+nbformat==5.11.1
+nbconvert==7.17.1

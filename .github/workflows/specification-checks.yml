@@ -1,0 +1,50 @@
+name: Specification checks
+
+# Runs on every pull request and push that touches the specification, the shapes or the GitHub templates.
+on:
+  pull_request:
+    paths:
+      - "specification/**"
+      - "shape_constraints/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/workflows/**"
+  push:
+    branches: [main, dev]
+    paths:
+      - "specification/**"
+      - "shape_constraints/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the dependencies
+        run: pip install pyshacl==0.40.1 rdflib==7.6.0 requests pyyaml
+
+      - name: Term table is valid and the generated files are up to date
+        working-directory: specification
+        run: python check_terms.py --check-render
+
+      - name: Tests of the issue script and the issue forms
+        working-directory: specification
+        run: python -m unittest discover -s tests -v
+
+      - name: Tests of the shapes
+        working-directory: shape_constraints
+        run: python -m unittest discover -s tests -v
+
+      - name: The sample graph conforms to the shapes
+        working-directory: shape_constraints
+        run: python validate.py ../examples/sample_evidence_graph.ttl --no-references

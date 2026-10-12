@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontology term status</title>
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --line:#d1d9e0; --card:#f6f8fa; --hover:#eef2f6; --accent:#0969da;
+  --covered:#116329; --covered-bg:#dafbe1; --partial:#7d4e00; --partial-bg:#fff2b8; --gap:#a40e26; --gap-bg:#ffebe9;
+  --open:#953800; --open-bg:#ffe8d2; --proposed:#0550ae; --proposed-bg:#ddf4ff; --agreed:#116329; --agreed-bg:#dafbe1;
+  --rejected:#424a53; --rejected-bg:#e6eaef; --local:#6639ba; --local-bg:#f0e8ff;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --line:#30363d; --card:#151b23; --hover:#1b222c; --accent:#4493f8;
+    --covered:#7ee787; --covered-bg:#12351c; --partial:#f2cc60; --partial-bg:#3a2f0b; --gap:#ff8182; --gap-bg:#4b1c1f;
+    --open:#ffa657; --open-bg:#3f2410; --proposed:#79c0ff; --proposed-bg:#10304f; --agreed:#7ee787; --agreed-bg:#12351c;
+    --rejected:#9198a1; --rejected-bg:#222a33; --local:#d2a8ff; --local-bg:#2b1f45;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1320px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.6rem;margin:0 0 4px}
+h2{font-size:1rem;margin:14px 0 6px}
+a{color:var(--accent)}
+.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-align:left;color:inherit;font:inherit;cursor:pointer}
+.card:hover{background:var(--hover)}
+.card[aria-pressed="true"]{outline:2px solid var(--accent)}
+.card .n{font-size:1.9rem;font-weight:700;line-height:1.1}
+.card .l{color:var(--muted);font-size:.85rem}
+.card.covered .n{color:var(--covered)} .card.partial .n{color:var(--partial)} .card.gap .n{color:var(--gap)} .card.open .n{color:var(--open)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.toolbar input,.toolbar select,.toolbar button{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font:inherit;min-width:0}
+.toolbar input{flex:1 1 240px}
+.toolbar button{cursor:pointer}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--card);position:sticky;top:0;font-size:.85rem;white-space:nowrap}
+tr.req:hover{background:var(--hover)}
+tr.detail td{background:var(--card);padding:10px 14px 14px}
+.idbtn{background:none;border:0;color:var(--accent);font:inherit;font-weight:700;cursor:pointer;padding:0;white-space:nowrap}
+.b{display:inline-block;padding:1px 9px;border-radius:999px;font-size:.78rem;font-weight:600;white-space:nowrap}
+.status-covered,.decision-agreed,.coverage-exact{background:var(--covered-bg);color:var(--covered)}
+.status-partial,.coverage-partial{background:var(--partial-bg);color:var(--partial)}
+.status-gap,.coverage-none{background:var(--gap-bg);color:var(--gap)}
+.decision-open{background:var(--open-bg);color:var(--open)}
+.decision-proposed{background:var(--proposed-bg);color:var(--proposed)}
+.decision-rejected{background:var(--rejected-bg);color:var(--rejected)}
+.role-local{background:var(--local-bg);color:var(--local)}
+.role-primary{background:var(--proposed-bg);color:var(--proposed)}
+.role-stand_in,.role-alternative,.role-gap{background:var(--rejected-bg);color:var(--rejected)}
+.terms{font-size:.9rem}
+.terms td,.terms th{padding:4px 8px;font-size:.88rem}
+.discussion{margin-top:12px}
+.discussion ul{margin:4px 0 8px;padding-left:20px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.btn{display:inline-block;border:1px solid var(--accent);border-radius:8px;padding:5px 12px;text-decoration:none;font-weight:600;font-size:.88rem}
+.btn:hover{background:var(--hover)}
+.who{color:var(--proposed)}
+code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace}
+.legend{margin:6px 0 0;font-size:.85rem}
+.gh{font-size:.85rem;margin:2px 0 8px}
+footer{margin-top:28px;font-size:.85rem}
+.empty{padding:24px;text-align:center}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Ontology term status</h1>
+    <p class="muted">Which ontology terms can express what each use case needs, and which decisions are still open.
+    Generated from <a id="lnk-csv" href="ontology_terms.csv">ontology_terms.csv</a>; the written specification is in <a id="lnk-spec" href="SPECIFICATION.md">SPECIFICATION.md</a>.
+    Discussion happens in GitHub issues: select a requirement ID to open a discussion, suggest a term or see who has taken it on.</p>
+  </header>
+
+  <section class="cards" id="cards" aria-label="Summary"></section>
+
+  <section class="toolbar" aria-label="Filters">
+    <input id="q" type="search" placeholder="Search requirements, terms and notes" aria-label="Search">
+    <select id="f-use_case" aria-label="Use case"></select>
+    <select id="f-status" aria-label="Status"></select>
+    <select id="f-decision" aria-label="Decision"></select>
+    <select id="f-action" aria-label="Action"></select>
+    <select id="f-owner" aria-label="Owner"></select>
+    <select id="f-ontology" aria-label="Ontology"></select>
+    <button id="reset" type="button">Reset</button>
+  </section>
+  <p id="count" class="muted" role="status"></p>
+  <p id="gh" class="gh muted" role="status"></p>
+
+  <div class="tablewrap">
+    <table id="tbl">
+      <thead><tr><th>ID</th><th>Use case</th><th>Requirement</th><th>Status</th><th>Decision</th><th>Owner</th><th>Action</th><th>Discussion</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="legend muted"><b>Status:</b> covered = a primary term fits exactly; partial = only stand-ins or partial fits; gap = no term, or only our own local term.
+  <b>Decision:</b> open = to discuss; proposed = suggested; agreed; rejected. <b>Owner:</b> the person named in the table, plus the GitHub users assigned to the issue (shown with @).
+  The filters are kept in the address, so a filtered view can be shared as a link.</p>
+  <footer class="muted" id="foot">Edit <code>ontology_terms.csv</code>, then run <code>python check_terms.py --update --render</code> to refresh this page and the tables in <code>SPECIFICATION.md</code>.</footer>
+</main>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function () {
+  var DATA = JSON.parse(document.getElementById('data').textContent);
+  var R = DATA.requirements;
+  var REPO = DATA.repo || '';
+  var GH = REPO ? 'https://github.com/' + REPO : '';
+  var COLS = 8;
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  var label = function (v) { return String(v).replace(/_/g, ' '); };
+  var allOwners = function (r) {
+    var seen = {}, out = [];
+    r.owners.concat(r.assignees || []).forEach(function (o) { if (!seen[o]) { seen[o] = true; out.push(o); } });
+    return out;
+  };
+  var FILTERS = [
+    ['use_case', 'All use cases', function (r) { return [r.use_case_title]; }],
+    ['status', 'Any status', function (r) { return [r.status]; }],
+    ['decision', 'Any decision', function (r) { return [r.decision]; }],
+    ['action', 'Any action', function (r) { return r.actions; }],
+    ['owner', 'Any owner', allOwners],
+    ['ontology', 'Any ontology', function (r) { return r.ontologies; }]
+  ];
+  var state = { q: '' };
+  FILTERS.forEach(function (f) { state[f[0]] = ''; });
+  var openIds = {};
+
+  function fromHash() {
+    var p = new URLSearchParams(location.hash.slice(1));
+    state.q = p.get('q') || '';
+    FILTERS.forEach(function (f) { state[f[0]] = p.get(f[0]) || ''; });
+  }
+  function toHash() {
+    var p = new URLSearchParams();
+    if (state.q) p.set('q', state.q);
+    FILTERS.forEach(function (f) { if (state[f[0]]) p.set(f[0], state[f[0]]); });
+    var h = p.toString();
+    try { history.replaceState(null, '', h ? '#' + h : location.pathname + location.search); } catch (e) { /* some browsers refuse on file:// */ }
+  }
+
+  function fillSelect(f) {
+    var sel = document.getElementById('f-' + f[0]);
+    var vals = {};
+    R.forEach(function (r) { f[2](r).forEach(function (v) { vals[v] = true; }); });
+    var opts = Object.keys(vals).sort();
+    sel.innerHTML = '<option value="">' + esc(f[1]) + '</option>' +
+      opts.map(function (v) { return '<option value="' + esc(v) + '">' + esc(label(v)) + '</option>'; }).join('');
+    sel.value = state[f[0]];
+  }
+  function setupFilters() {
+    FILTERS.forEach(function (f) {
+      fillSelect(f);
+      document.getElementById('f-' + f[0]).addEventListener('change', function (e) { state[f[0]] = e.target.value; render(); });
+    });
+    document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value.trim(); render(); });
+    document.getElementById('reset').addEventListener('click', function () {
+      state.q = ''; FILTERS.forEach(function (f) { state[f[0]] = ''; }); render();
+    });
+  }
+
+  function matches(r) {
+    if (state.q && r.haystack.indexOf(state.q.toLowerCase()) < 0) return false;
+    for (var i = 0; i < FILTERS.length; i++) {
+      var k = FILTERS[i][0];
+      if (state[k] && FILTERS[i][2](r).indexOf(state[k]) < 0) return false;
+    }
+    return true;
+  }
+
+  function badge(kind, val) { return '<span class="b ' + kind + '-' + esc(val) + '">' + esc(label(val)) + '</span>'; }
+
+  /* ---- GitHub issues -------------------------------------------------- */
+  function newIssueUrl(template, r, titlePrefix) {
+    var p = new URLSearchParams();
+    p.set('template', template);
+    p.set('title', '[' + r.id + '] ' + titlePrefix + r.text.slice(0, 70));
+    p.set('req_id', r.id);
+    p.set('requirement', r.text);
+    return GH + '/issues/new?' + p.toString();
+  }
+  function issueSummary(i) {
+    return '<a href="' + esc(i.url) + '">#' + i.number + '</a> ' + esc(i.state) + ', ' + i.comments + ' comment' + (i.comments === 1 ? '' : 's');
+  }
+  function discussionCell(r) {
+    var is = r.issues || [];
+    if (is.length) {
+      return issueSummary(is[0]) + (is.length > 1 ? ' <span class="muted">+' + (is.length - 1) + ' more</span>' : '');
+    }
+    if (r.issue_urls.length) return '<a href="' + esc(r.issue_urls[0]) + '">issue</a>';
+    return '<span class="muted">-</span>';
+  }
+  function discussionBlock(r) {
+    if (!GH) return '';
+    var is = r.issues || [];
+    var list = is.length ? '<ul>' + is.map(function (i) {
+      return '<li><a href="' + esc(i.url) + '">#' + i.number + ' ' + esc(i.title) + '</a> <span class="muted">(' + esc(i.state) + ', ' + i.comments +
+        ' comment' + (i.comments === 1 ? '' : 's') + ', updated ' + esc(String(i.updated).slice(0, 10)) + ')</span>' +
+        (i.assignees.length ? ' <span class="who">' + i.assignees.map(function (a) { return '@' + esc(a); }).join(', ') + '</span>' : '') + '</li>';
+    }).join('') + '</ul>' : '<p class="muted">No discussion yet.</p>';
+    return '<div class="discussion"><h2>Discussion on GitHub</h2>' + list +
+      '<div class="actions">' +
+      '<a class="btn" href="' + esc(newIssueUrl('requirement-discussion.yml', r, 'Discussion: ')) + '">Open a discussion</a>' +
+      '<a class="btn" href="' + esc(newIssueUrl('term-suggestion.yml', r, 'Suggested term: ')) + '">Suggest a term</a>' +
+      (is.length ? '<a class="btn" href="' + esc(is[0].url) + '">Open the issue to comment or assign yourself</a>' : '') +
+      '</div></div>';
+  }
+
+  function attach(issues) {
+    var ids = {};
+    R.forEach(function (r) { ids[r.id] = r; r.issues = []; r.assignees = []; });
+    issues.forEach(function (i) {
+      var m = String(i.title).match(/\b([A-Z]+-\d{2,})\b/);
+      var r = m && ids[m[1]];
+      if (!r) return;
+      var item = { number: i.number, title: i.title, url: i.html_url, state: i.state, comments: i.comments,
+                   updated: i.updated_at, assignees: (i.assignees || []).map(function (a) { return a.login; }) };
+      r.issues.push(item);
+      item.assignees.forEach(function (a) { if (r.assignees.indexOf('@' + a) < 0) r.assignees.push('@' + a); });
+    });
+  }
+  function loadIssues() {
+    var out = document.getElementById('gh');
+    if (!GH) { out.textContent = 'Discussion links are off: the GitHub repository is not known.'; return; }
+    if (typeof fetch !== 'function') { out.textContent = 'Discussion data is unavailable in this browser.'; return; }
+    out.textContent = 'Loading discussion data from GitHub...';
+    fetch('https://api.github.com/repos/' + REPO + '/issues?labels=ontology-terms&state=all&per_page=100',
+          { headers: { 'Accept': 'application/vnd.github+json' } })
+      .then(function (res) {
+        if (res.status === 403) throw new Error('GitHub rate limit reached; try again later');
+        if (!res.ok) throw new Error('GitHub answered ' + res.status);
+        return res.json();
+      })
+      .then(function (items) {
+        var issues = items.filter(function (i) { return !i.pull_request; });
+        attach(issues);
+        out.innerHTML = 'Discussion data: live from <a href="' + esc(GH + '/issues?q=label%3Aontology-terms') + '">' + esc(REPO) + '</a> (' + issues.length + ' issue' + (issues.length === 1 ? '' : 's') + ' with the label <code>ontology-terms</code>).';
+        fillSelect(FILTERS[4]);
+        render();
+      })
+      .catch(function (e) {
+        out.textContent = 'Discussion data could not be loaded (' + e.message + '). Buttons still work.';
+      });
+  }
+
+  /* ---- rendering ------------------------------------------------------ */
+  function termsTable(r) {
+    var rows = r.rows.map(function (t) {
+      var term = t.curie ? (t.iri ? '<a href="' + esc(t.iri) + '"><code>' + esc(t.curie) + '</code></a>' : '<code>' + esc(t.curie) + '</code>') : '-';
+      var issue = t.issue_url ? ' <a href="' + esc(t.issue_url) + '">issue</a>' : '';
+      return '<tr><td>' + badge('role', t.role) + '</td><td>' + term + (t.label ? ' ' + esc(t.label) : '') + '</td><td>' + esc(t.ontology || '-') +
+        '</td><td>' + badge('coverage', t.coverage) + '</td><td>' + badge('decision', t.decision) + '</td><td>' + esc(label(t.action)) +
+        '</td><td>' + esc(t.notes) + issue + (t.owner ? ' <span class="muted">(' + esc(t.owner) + ')</span>' : '') + '</td></tr>';
+    }).join('');
+    return '<table class="terms"><thead><tr><th>Role</th><th>Term</th><th>Ontology</th><th>Coverage</th><th>Decision</th><th>Action</th><th>Notes</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  function renderCards() {
+    var count = function (fn) { return R.filter(fn).length; };
+    var cards = [
+      ['', 'Requirements', R.length, '', ''],
+      ['covered', 'Covered', count(function (r) { return r.status === 'covered'; }), 'status', 'covered'],
+      ['partial', 'Partial', count(function (r) { return r.status === 'partial'; }), 'status', 'partial'],
+      ['gap', 'Gap', count(function (r) { return r.status === 'gap'; }), 'status', 'gap'],
+      ['open', 'Open decisions', count(function (r) { return r.decision === 'open'; }), 'decision', 'open']
+    ];
+    document.getElementById('cards').innerHTML = cards.map(function (c) {
+      var pressed = c[3] && state[c[3]] === c[4];
+      return '<button type="button" class="card ' + c[0] + '" data-k="' + c[3] + '" data-v="' + c[4] + '" aria-pressed="' + (pressed ? 'true' : 'false') + '">' +
+        '<div class="n">' + c[2] + '</div><div class="l">' + esc(c[1]) + '</div></button>';
+    }).join('');
+  }
+
+  function render() {
+    toHash();
+    document.getElementById('q').value = state.q;
+    FILTERS.forEach(function (f) { document.getElementById('f-' + f[0]).value = state[f[0]]; });
+    renderCards();
+    var list = R.filter(matches);
+    document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + R.length + ' requirements';
+    var body = document.querySelector('#tbl tbody');
+    if (!list.length) { body.innerHTML = '<tr><td colspan="' + COLS + '" class="empty muted">No requirement matches these filters.</td></tr>'; return; }
+    body.innerHTML = list.map(function (r) {
+      var open = !!openIds[r.id];
+      var owners = allOwners(r);
+      return '<tr class="req"><td><button type="button" class="idbtn" data-id="' + esc(r.id) + '" aria-expanded="' + open + '">' + esc(r.id) + '</button></td>' +
+        '<td>' + esc(r.use_case_title) + '</td><td>' + esc(r.text) + '</td><td>' + badge('status', r.status) + '</td><td>' + badge('decision', r.decision) +
+        '</td><td>' + (owners.length ? owners.map(function (o) { return o.charAt(0) === '@' ? '<span class="who">' + esc(o) + '</span>' : esc(o); }).join(', ') : '<span class="muted">-</span>') +
+        '</td><td>' + (r.actions.length ? esc(r.actions.map(label).join(', ')) : '-') + '</td><td>' + discussionCell(r) + '</td></tr>' +
+        (open ? '<tr class="detail"><td colspan="' + COLS + '">' + termsTable(r) + discussionBlock(r) + '</td></tr>' : '');
+    }).join('');
+  }
+
+  document.querySelector('#tbl tbody').addEventListener('click', function (e) {
+    var b = e.target.closest('.idbtn');
+    if (!b) return;
+    var id = b.getAttribute('data-id');
+    openIds[id] = !openIds[id];
+    render();
+  });
+  document.getElementById('cards').addEventListener('click', function (e) {
+    var c = e.target.closest('.card');
+    if (!c || !c.getAttribute('data-k')) return;
+    var k = c.getAttribute('data-k'), v = c.getAttribute('data-v');
+    state[k] = state[k] === v ? '' : v;
+    render();
+  });
+  window.addEventListener('hashchange', function () { fromHash(); render(); });
+
+  if (GH) {
+    document.getElementById('lnk-spec').href = GH + '/blob/main/specification/SPECIFICATION.md';
+    document.getElementById('lnk-csv').href = GH + '/blob/main/specification/ontology_terms.csv';
+    document.getElementById('foot').innerHTML += ' The table can also be edited on GitHub: <a href="' + esc(GH + '/blob/main/specification/ontology_terms.csv') +
+      '">ontology_terms.csv</a> (pencil icon), which opens a pull request. <a href="' + esc(GH + '/issues?q=label%3Aontology-terms') + '">All discussions</a>.';
+  }
+  fromHash();
+  setupFilters();
+  render();
+  loadIssues();
+})();
+</script>
+</body>
+</html>
