@@ -1,0 +1,8 @@
+# Pinned versions used for the results (Python 3.12)
+numpy==2.5.3
+owlrl==7.6.2
+pandas==3.0.6
+pyshacl==0.40.1
+rdflib==7.6.0
+rdkit==2026.3.6
+requests==2.34.2

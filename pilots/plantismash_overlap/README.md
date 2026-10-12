@@ -48,7 +48,7 @@ Then open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kern
 - [`explore_results.ipynb`](explore_results.ipynb) holds the results with written interpretation.
 - `results/plantismash_clusters.csv.gz`: one row per BGC (type, rules, core domains, MIBiG match).
 - `results/bgc_pathway_links.csv.gz`: one row per BGC × pathway, with tier, linking genes and overlap values.
-- `results/bgc_evidence.ttl`: the 448 BGC–pathway links of the direct and UniProt tiers, and the 57 BGCs they involve, as RDF (placeholder `lodp:` namespace).
+- `results/bgc_evidence.ttl`: a **draft** RDF export of the 448 BGC–pathway links of the direct and UniProt tiers and the 57 BGCs they involve. It does not conform to the [shape constraints](../../shape_constraints/) (for example, it has no anchor tier and attributes the link to plantiSMASH itself) and is superseded by `build_rdf.py bgc` there, which writes validated RDF.
 
 ## Results (2026-09-29)
 

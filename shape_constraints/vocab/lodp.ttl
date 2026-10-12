@@ -1,0 +1,169 @@
+# Placeholder vocabulary for the terms that do not exist in any ontology yet.
+#
+# Everything here is a DRAFT. The namespace is a placeholder (example.org) until a permanent one is chosen,
+# for example under w3id.org. Terms that exist in other ontologies (SO, ECO, SIO, STATO, OBI, RO, BFO, PROV, SWO,
+# SKOS, EDAM) are NOT redefined here; see ../README.md for the full list.
+#
+# The class hierarchy matters for validation: the shapes target lodp:Claim and lodp:Run, and
+# validate.py passes this file to the validator so that subclasses are found.
+
+@prefix lodp: <https://example.org/lod-pathways/pilot/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sio:  <http://semanticscience.org/resource/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/lod-pathways/pilot/> a owl:Ontology ;
+    rdfs:label "LOD-pathways placeholder vocabulary (draft)" .
+
+# ---------------------------------------------------------------------------
+# Classes
+# ---------------------------------------------------------------------------
+lodp:Claim a owl:Class ;
+    rdfs:label "claim" ;
+    rdfs:comment "A statement that links data (a prediction, an association, an annotation) to PlantMetWiki. Every claim carries evidence and is anchored to a PlantMetWiki node." .
+
+lodp:BGCPathwayLink a owl:Class ; rdfs:subClassOf lodp:Claim ;
+    rdfs:label "BGC-pathway link" ;
+    rdfs:comment "A predicted biosynthetic gene cluster overlaps a PlantMetWiki pathway (case 1)." .
+
+lodp:GeneMetaboliteAssociation a owl:Class ; rdfs:subClassOf lodp:Claim , sio:SIO_001257 ;
+    rdfs:label "gene-metabolite association" ;
+    rdfs:comment "A gene and a metabolite feature fall into the same functional cluster of a paired-omics analysis (case 2)." .
+
+lodp:MetaboliteAnnotation a owl:Class ; rdfs:subClassOf lodp:Claim ;
+    rdfs:label "metabolite annotation" ;
+    rdfs:comment "An untargeted MS feature is annotated as a PlantMetWiki metabolite (case 3)." .
+
+lodp:PathwayMembershipClaim a owl:Class ; rdfs:subClassOf lodp:Claim , rdf:Statement ;
+    rdfs:label "pathway membership claim" ;
+    rdfs:comment "Evidence for a node of a PlantMetWiki pathway, reified as an rdf:Statement (case 4)." .
+
+lodp:MetaboliteFeature a owl:Class ;
+    rdfs:label "metabolite feature" ;
+    rdfs:comment "An untargeted mass-spectrometry feature (m/z, retention time) from a dataset." .
+
+lodp:Run a owl:Class ; rdfs:subClassOf prov:Activity ;
+    rdfs:label "run" ;
+    rdfs:comment "One run of a tool, a pipeline or a curation effort. Carries software, version and input data." .
+
+lodp:PlantiSMASHRun a owl:Class ; rdfs:subClassOf lodp:Run ; rdfs:label "plantiSMASH run" .
+lodp:LinkingRun a owl:Class ; rdfs:subClassOf lodp:Run ;
+    rdfs:label "linking run" ;
+    rdfs:comment "The mapping of predictions to PlantMetWiki nodes (genes to pathways, features to metabolites)." .
+lodp:MEANtoolsRun a owl:Class ; rdfs:subClassOf lodp:Run ; rdfs:label "MEANtools run" .
+lodp:AnnotationToolRun a owl:Class ; rdfs:subClassOf lodp:Run ;
+    rdfs:label "annotation tool run" ;
+    rdfs:comment "SIRIUS, MS2Query, DreaMS or a GNPS library search." .
+lodp:ConsensusAnnotationRun a owl:Class ; rdfs:subClassOf lodp:Run ; rdfs:label "consensus annotation run" .
+lodp:PlantCycCuration a owl:Class ; rdfs:subClassOf lodp:Run ; rdfs:label "PlantCyc curation" .
+
+# ---------------------------------------------------------------------------
+# Anchoring to PlantMetWiki (all claims)
+# ---------------------------------------------------------------------------
+lodp:anchoredInPathway a owl:ObjectProperty ;
+    rdfs:label "anchored in pathway" ;
+    rdfs:comment "The PlantMetWiki pathway (http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC<n>) the claim is attached to." .
+lodp:anchoredToMetabolite a owl:ObjectProperty ;
+    rdfs:label "anchored to metabolite" ;
+    rdfs:comment "The PlantMetWiki metabolite, as the identifiers.org InChIKey IRI that PlantMetWiki uses (wp:bdbInChIKey)." .
+lodp:anchorTier a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "anchor tier" ;
+    rdfs:comment "How the anchor was established; for several anchors, the weakest one used. One of: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec, mass_match (strongest to weakest)." .
+lodp:anchoredSide a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "anchored side" ;
+    rdfs:comment "For gene-metabolite associations: which side was found in PlantMetWiki (gene, metabolite or both)." .
+lodp:geneAnchorTier a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "gene anchor tier" ; rdfs:comment "Tier of the gene-side anchor: gene_locus, gene_uniprot or gene_ec." .
+lodp:metaboliteAnchorTier a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "metabolite anchor tier" ; rdfs:comment "Tier of the metabolite-side anchor: mass_match." .
+
+# ---------------------------------------------------------------------------
+# Provenance of a run
+# ---------------------------------------------------------------------------
+lodp:software a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "software" ; rdfs:comment "Name of the tool or resource." .
+lodp:usesTool a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "uses tool" ; rdfs:comment "A tool, with its version, that a pipeline run combines." .
+lodp:decayRate a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "decay rate" ; rdfs:comment "MEANtools: decay rate of the edge weight exp(-(MR-1)/DR)." .
+
+# ---------------------------------------------------------------------------
+# Case 1: BGC predictions
+# ---------------------------------------------------------------------------
+lodp:detectionRule a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "detection rule" ; rdfs:comment "plantiSMASH rule (BGC type) that detected the cluster, e.g. terpene. Hybrids have several." .
+lodp:coreDomain a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "core domain" ; rdfs:comment "Core enzyme domain (pHMM) that triggered the rule, e.g. SQHop_cyclase_N." .
+lodp:genomeAssembly a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "genome assembly" ; rdfs:comment "Assembly accession the BGC was predicted on, e.g. GCF_000001735.4." .
+lodp:mibigMatchEvidence a owl:ObjectProperty ;
+    rdfs:label "MIBiG match evidence" ; rdfs:comment "Evidence node for the KnownClusterBLAST match to a MIBiG cluster." .
+lodp:percentGenesSimilar a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "percent genes similar" ; rdfs:comment "KnownClusterBLAST: percentage of the MIBiG cluster's genes with a similar gene in the BGC (0-100)." .
+lodp:linkTier a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "link tier" ; rdfs:comment "gene_direct (same gene ID), gene_uniprot (same UniProt enzyme) or gene_ec (same EC number)." .
+lodp:linkingGene a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "linking gene" ; rdfs:comment "A gene (locus) shared by the BGC and the pathway." .
+lodp:linkingProtein a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "linking protein" ; rdfs:comment "A UniProt accession shared by the BGC and the pathway." .
+lodp:linkingEC a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "linking EC" ; rdfs:comment "An EC number shared by the BGC and the pathway." .
+lodp:nSharedGenes a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label "number of shared genes" .
+lodp:nPathwayGenes a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label "number of pathway genes" ; rdfs:comment "Genes of the pathway that PlantMetWiki lists with the same gene IDs as the BGC." .
+lodp:fractionPathwayGenes a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "fraction of pathway genes" ; rdfs:comment "Shared genes divided by the pathway's genes (0-1)." .
+lodp:nSharedEC a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label "number of shared ECs" .
+lodp:fractionPathwayECs a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "fraction of pathway ECs" ; rdfs:comment "Shared ECs divided by the pathway's ECs (0-1)." .
+
+# ---------------------------------------------------------------------------
+# Case 2: paired omics
+# ---------------------------------------------------------------------------
+lodp:mutualRank a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "mutual rank" ; rdfs:comment "Mutual rank of the gene-metabolite pair (1 = best)." .
+lodp:edgeWeight a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "edge weight" ; rdfs:comment "Weight derived from the mutual rank and the decay rate (0-1)." .
+lodp:functionalCluster a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "functional cluster" ; rdfs:comment "Identifier of the MEANtools functional cluster (ClusterONE) the pair belongs to." .
+lodp:clusterPValue a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "cluster p-value" ; rdfs:comment "ClusterONE p-value of the functional cluster (0-1)." .
+lodp:feature a owl:ObjectProperty ; rdfs:range lodp:MetaboliteFeature ; rdfs:label "feature" .
+lodp:featureId a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "feature identifier" ; rdfs:comment "Identifier of the feature in its dataset." .
+lodp:ionMode a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "ion mode" ; rdfs:comment "positive or negative." .
+lodp:dataset a owl:ObjectProperty ; rdfs:label "dataset" ; rdfs:comment "The dataset (e.g. a MetaboLights study) the feature comes from." .
+lodp:solycLocus a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "Solyc locus" ; rdfs:comment "Tomato gene locus (SGN/ITAG, e.g. Solyc07g043480) under which PlantMetWiki lists a gene node of a pathway." .
+
+# ---------------------------------------------------------------------------
+# Case 3: metabolite annotation
+# ---------------------------------------------------------------------------
+lodp:identificationTier a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "identification tier" ; rdfs:comment "gnps_library, consensus_inchi, sirius, ms2query_exact or dreams." .
+lodp:matchLevel a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "match level" ; rdfs:comment "What the structure match compared: connectivity (first InChIKey block) or full." .
+lodp:matchType a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "match type" ; rdfs:comment "Consensus agreement: full (3 of 3 tools) or partial (2 of 3)." .
+lodp:agreementScore a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "agreement score" ; rdfs:comment "Consensus score: 1.0 (full) or 0.5 (partial)." .
+lodp:agreeingTool a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "agreeing tool" ; rdfs:comment "A tool that proposed the consensus structure." .
+lodp:libraryCompoundName a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "library compound name" .
+lodp:ms2queryModelScore a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "MS2Query model score" .
+lodp:precursorMzDifference a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "precursor m/z difference" ; rdfs:comment "In Da, between the query and the library match." .
+lodp:siriusConfidenceApprox a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "SIRIUS approximate confidence" .
+lodp:dreamsSimilarity a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "DreaMS similarity" .
+
+# ---------------------------------------------------------------------------
+# Case 4: PlantCyc
+# ---------------------------------------------------------------------------
+lodp:originalEvidenceCode a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "original evidence code" ; rdfs:comment "The PlantCyc evidence code as stored in PlantMetWiki (EV-...)." .
+
+# ---------------------------------------------------------------------------
+# Transcriptomics and machine-learning predictions (drafts, see specification/SPECIFICATION.md)
+# ---------------------------------------------------------------------------
+lodp:log2FoldChange a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "log2 fold change" ; rdfs:comment "Log2 of the expression ratio between the two conditions of a contrast (for example the DESeq2 log2FoldChange); positive when higher in the first condition." .
+lodp:adjustedPValue a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "adjusted p-value" ; rdfs:comment "p-value after correction for multiple testing (0-1); the correction method is stated next to it." .
+lodp:contrast a owl:ObjectProperty ;
+    rdfs:label "contrast" ; rdfs:comment "The comparison a differential result refers to: two conditions (treatment, tissue, time point) in a stated direction." .
+lodp:predictionScore a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "prediction score" ; rdfs:comment "Score given by a machine-learning model to a predicted link. Whether it is a calibrated probability has to be stated per model." .
