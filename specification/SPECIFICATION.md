@@ -70,12 +70,12 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|---|---|
 | PMN - PlantCyc computationally inferred | 14 | 10 | 1 | 3 | 5 | 1 |
 | BGC - plantiSMASH BGCs | 16 | 8 | 2 | 6 | 3 | 7 |
-| MET - Metabolomics data | 18 | 8 | 4 | 6 | 11 | 12 |
+| MET - Metabolomics data | 18 | 7 | 4 | 7 | 11 | 12 |
 | PO - Paired omics data | 12 | 5 | 1 | 6 | 6 | 9 |
 | UN - Unsupervised predictions | 12 | 3 | 3 | 6 | 12 | 2 |
 | TX - Transcriptomics data | 22 | 12 | 6 | 4 | 13 | 6 |
 | COM - Shared by all use cases | 12 | 6 | 1 | 5 | 4 | 5 |
-| **All** | **106** | **52** | **18** | **36** | **54** | **38** |
+| **All** | **106** | **51** | **18** | **37** | **54** | **38** |
 <!-- END:overview -->
 
 ### Decisions needed
@@ -266,7 +266,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-04** | A spectral library match supports the annotation | - | `MS:1001031` spectral library search (stand-in)<br>`EDAM:operation_3801` Spectral library search (alternative) | - | 🟡 partial | 🟠 open | review | Elena Del Pup |
 | **MET-05** | Confidence level of the identification (MSI or Schymanski level) | `MS:1002896` compound identification confidence level | `MS:1002955` hr-ms compound identification confidence level (alternative)<br>`NCIT:C181006` Metabolite Identification Confidence Level (alternative) | - | 🟢 covered | 🟠 open | review | - |
 | **MET-06** | The identified structure is given by its InChIKey | `CHEMINF:000059` InChIKey | - | - | 🟢 covered | 🔵 proposed | reuse | - |
-| **MET-07** | The metabolite in PlantMetWiki is identified by an InChIKey IRI | `identifiers.org:inchikey` InChIKey IRI | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **MET-07** | The metabolite in PlantMetWiki is identified by an InChIKey IRI | - | - | - | 🔴 gap | ✅ agreed | - | - |
 | **MET-08** | What the structure match compared (first InChIKey block, or the full key) | - | - | `lodp:matchLevel` match level | 🔴 gap | 🟠 open | local_term | - |
 | **MET-09** | An MS feature is annotated as a PlantMetWiki metabolite | - | `skos:closeMatch` has close match (stand-in) | `lodp:MetaboliteAnnotation` metabolite annotation | 🟡 partial | 🟠 open | review, local_term | - |
 | **MET-10** | A related compound (MS2Query analogue with a different mass) is not a detection | - | `skos:relatedMatch` has related match (stand-in) | - | 🟡 partial | 🟠 open | review | - |
@@ -440,6 +440,7 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **COM-08** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki pathway | 🔴 gap | local_term, review | Gives one query that works across all use cases. |
 | **COM-09** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki metabolite | 🔴 gap | local_term | The value is the identifiers.org InChIKey IRI that PlantMetWiki uses for metabolites. |
 | **COM-10** | COM - Shared by all use cases | How strong the attachment to PlantMetWiki is (anchor tier) | 🔴 gap | local_term | Values, strongest first: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec, mass_match. Weak tiers raise warnings in the shapes. |
+| **MET-07** | MET - Metabolomics data | The metabolite in PlantMetWiki is identified by an InChIKey IRI | 🔴 gap | - | - |
 | **MET-08** | MET - Metabolomics data | What the structure match compared (first InChIKey block, or the full key) | 🔴 gap | local_term | Values: connectivity, full. |
 | **MET-11** | MET - Metabolomics data | Agreement between tools (full or partial, score, which tools agree) | 🔴 gap | local_term | Values: full (3 of 3 tools), partial (2 of 3). |
 | **MET-12** | MET - Metabolomics data | Tool-specific scores (SIRIUS confidence, MS2Query model score, DreaMS similarity, precursor m/z difference) | 🔴 gap | local_term, review | Four annotations have a SIRIUS confidence of -Infinity (not computed); the value is left out of the RDF. |
@@ -515,7 +516,6 @@ Number of requirements per ontology and use case (a requirement counts once per 
 | [SEPIO](https://github.com/monarch-initiative/SEPIO-ontology): Scientific Evidence and Provenance Information Ontology | - | - | - | - | - | - | 1 | 1 |
 | [SO](http://www.sequenceontology.org/): Sequence Ontology | - | 1 | - | - | - | - | - | 1 |
 | [WP](https://vocabularies.wikipathways.org/wp): WikiPathways vocabulary | - | - | - | - | - | - | 1 | 1 |
-| [identifiers.org](https://identifiers.org/): identifiers.org IRIs | - | - | 1 | - | - | - | - | 1 |
 | lodp: Local placeholder vocabulary (draft) | 1 | 6 | 8 | 6 | 2 | 6 | 5 | 34 |
 <!-- END:ontologies -->
 
