@@ -70,18 +70,18 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|---|---|
 | PMN - PlantCyc computationally inferred | 14 | 10 | 1 | 3 | 5 | 1 |
 | BGC - plantiSMASH BGCs | 16 | 8 | 2 | 6 | 3 | 7 |
-| MET - Metabolomics data | 18 | 8 | 4 | 6 | 10 | 12 |
+| MET - Metabolomics data | 18 | 8 | 4 | 6 | 11 | 12 |
 | PO - Paired omics data | 12 | 5 | 1 | 6 | 6 | 9 |
 | UN - Unsupervised predictions | 12 | 3 | 3 | 6 | 12 | 2 |
 | TX - Transcriptomics data | 22 | 12 | 6 | 4 | 13 | 6 |
 | COM - Shared by all use cases | 12 | 6 | 1 | 5 | 4 | 5 |
-| **All** | **106** | **52** | **18** | **36** | **53** | **38** |
+| **All** | **106** | **52** | **18** | **36** | **54** | **38** |
 <!-- END:overview -->
 
 ### Decisions needed
 
 <!-- BEGIN:decisions -->
-53 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
+54 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
 
 | ID | Use case | Requirement | Owner | Action | Why it is open |
 |---|---|---|---|---|---|
@@ -136,6 +136,7 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **UN-06** | UN - Unsupervised predictions | Prediction score of the model for a link | - | local_term, review | Number given by the model; whether it is a calibrated probability has to be stated per model. |
 | **UN-07** | UN - Unsupervised predictions | Model performance on the benchmark (area under the ROC curve, area under the precision-recall curve) | - | review | Area under the receiver operator characteristic curve. |
 | **UN-09** | UN - Unsupervised predictions | Data split strategy of the evaluation (random, organism-held-out, pathway-held-out) | - | review | No term found. |
+| **MET-08** | MET - Metabolomics data | What the structure match compared (first InChIKey block, or the full key) | - | local_term | Values: connectivity, full. |
 | **UN-11** | UN - Unsupervised predictions | The benchmark dataset the model was trained and evaluated on | - | local_term | Reuses the local property of MET-18; value is the dataset IRI (for example a Zenodo DOI). |
 | **MET-01** | MET - Metabolomics data | The annotation comes from LC-MS/MS data | - | reuse | - |
 <!-- END:decisions -->
@@ -266,7 +267,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-05** | Confidence level of the identification (MSI or Schymanski level) | `MS:1002896` compound identification confidence level | `MS:1002955` hr-ms compound identification confidence level (alternative)<br>`NCIT:C181006` Metabolite Identification Confidence Level (alternative) | - | 🟢 covered | 🟠 open | review | - |
 | **MET-06** | The identified structure is given by its InChIKey | `CHEMINF:000059` InChIKey | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-07** | The metabolite in PlantMetWiki is identified by an InChIKey IRI | `identifiers.org:inchikey` InChIKey IRI | - | - | 🟢 covered | 🔵 proposed | reuse | - |
-| **MET-08** | What the structure match compared (first InChIKey block, or the full key) | - | - | `lodp:matchLevel` match level | 🔴 gap | 🔵 proposed | local_term | - |
+| **MET-08** | What the structure match compared (first InChIKey block, or the full key) | - | - | `lodp:matchLevel` match level | 🔴 gap | 🟠 open | local_term | - |
 | **MET-09** | An MS feature is annotated as a PlantMetWiki metabolite | - | `skos:closeMatch` has close match (stand-in) | `lodp:MetaboliteAnnotation` metabolite annotation | 🟡 partial | 🟠 open | review, local_term | - |
 | **MET-10** | A related compound (MS2Query analogue with a different mass) is not a detection | - | `skos:relatedMatch` has related match (stand-in) | - | 🟡 partial | 🟠 open | review | - |
 | **MET-11** | Agreement between tools (full or partial, score, which tools agree) | - | - | `lodp:matchType` match type<br>`lodp:agreementScore` agreement score<br>`lodp:agreeingTool` agreeing tool | 🔴 gap | 🔵 proposed | local_term | - |
