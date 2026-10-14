@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -48,7 +48,7 @@ jobs:
             echo "enabled=unknown" >> "$GITHUB_OUTPUT"   # could not tell (HTTP ${code}): try the deployment anyway
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: steps.pages.outputs.enabled != 'false'
 
       - name: Collect the site
@@ -59,14 +59,14 @@ jobs:
           cp specification/ontology_terms.csv specification/SPECIFICATION.md _site/
           touch _site/.nojekyll
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
         if: steps.pages.outputs.enabled != 'false'
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         if: steps.pages.outputs.enabled != 'false'
         with:
           path: _site
 
       - id: deployment
         if: steps.pages.outputs.enabled != 'false'
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
