@@ -73,6 +73,13 @@ jobs:
             --body "Records the outcome of issue #${ISSUE} in the term table and regenerates the specification and the dashboard. Review the changed rows of specification/ontology_terms.csv before merging. Refs #${ISSUE}.")"
           gh issue comment "$ISSUE" --body "A pull request records this: ${url}. Merging it updates the term table and the dashboard."
 
+      # The branch is pushed before the pull request is created, so this link normally works even when creating the PR is refused.
+      - name: Tell the issue that the pull request could not be created
+        if: ${{ failure() && steps.apply.outputs.changed == 'true' && steps.render.outcome == 'success' }}
+        run: |
+          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}"
+          gh issue comment "$ISSUE" --body "The change to the term table was prepared, but the pull request could not be created. The usual reason is that the repository setting Settings > Actions > General > Workflow permissions > Allow GitHub Actions to create and approve pull requests is off. If the branch ${branch} was pushed, the pull request can be opened by hand: https://github.com/${GITHUB_REPOSITORY}/compare/${branch}?expand=1"
+
       - name: Tell the issue why nothing happened
         if: ${{ always() && (steps.apply.outputs.changed != 'true' || steps.render.outcome == 'failure') }}
         run: |
