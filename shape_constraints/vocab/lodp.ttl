@@ -171,3 +171,6 @@ lodp:predictionScore a owl:DatatypeProperty ; rdfs:range xsd:double ;
 lodp:Mass2Motif a owl:Class ; rdfs:label "Mass2Motif" ; rdfs:comment "A topic of an MS2LDA model: a pattern of fragment and neutral-loss m/z values that co-occur in MS/MS spectra." .
 lodp:hasMass2Motif a owl:ObjectProperty ; rdfs:domain lodp:MetaboliteFeature ; rdfs:range lodp:Mass2Motif ; rdfs:label "has Mass2Motif" .
 lodp:motifProbability a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "motif probability" ; rdfs:comment "Probability of a Mass2Motif for a feature (0-1)." .
+lodp:massErrorPpm a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "mass error (ppm)" ; rdfs:comment "Difference between the measured and the calculated m/z of a mass match, in ppm." .
+lodp:massTolerancePpm a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "mass tolerance (ppm)" ; rdfs:comment "Tolerance used for a mass match, in ppm." .
+lodp:candidateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label "candidate count" ; rdfs:comment "Number of PlantMetWiki metabolites matching the same feature and adduct." .
