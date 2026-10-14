@@ -26,9 +26,33 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Without the Pages setting the deployment cannot work. Say so clearly and skip it, instead of a failing check.
+      - name: Is GitHub Pages set up with the source "GitHub Actions"?
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          code="$(curl -s -o pages.json -w '%{http_code}' \
+            -H "Authorization: Bearer ${GH_TOKEN}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages")"
+          if [ "$code" = "200" ] && grep -q '"build_type": *"workflow"' pages.json; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          elif [ "$code" = "404" ] || [ "$code" = "200" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=GitHub Pages is not set up::Settings > Pages > Build and deployment > Source must be GitHub Actions. Then re-run this workflow."
+            {
+              echo "### GitHub Pages is not set up"
+              echo "Open **Settings > Pages > Build and deployment** and set **Source** to **GitHub Actions**, then re-run this workflow (Actions > Publish the specification dashboard > Run workflow)."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "enabled=unknown" >> "$GITHUB_OUTPUT"   # could not tell (HTTP ${code}): try the deployment anyway
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.pages.outputs.enabled != 'false'
 
       - name: Collect the site
+        if: steps.pages.outputs.enabled != 'false'
         run: |
           mkdir _site
           cp specification/index.html _site/index.html
@@ -36,10 +60,13 @@ jobs:
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
+        if: steps.pages.outputs.enabled != 'false'
 
       - uses: actions/upload-pages-artifact@v3
+        if: steps.pages.outputs.enabled != 'false'
         with:
           path: _site
 
       - id: deployment
+        if: steps.pages.outputs.enabled != 'false'
         uses: actions/deploy-pages@v4

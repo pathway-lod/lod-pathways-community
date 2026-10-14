@@ -57,10 +57,12 @@ jobs:
           python check_terms.py --check-render
           python -m unittest discover -s tests
 
-      - name: Open a pull request
+      # The attempt number is part of the branch name, so that "Re-run failed jobs" does not collide with the branch of the first attempt.
+      - name: Commit the change to a branch
+        id: branch
         if: steps.apply.outputs.changed == 'true' && steps.render.outcome == 'success'
         run: |
-          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}"
+          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           summary="$(head -n 1 specification/apply_issue_summary.txt)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -68,10 +70,31 @@ jobs:
           git add specification/ontology_terms.csv specification/SPECIFICATION.md specification/index.html
           git commit -m "Term table: ${summary}"
           git push origin "$branch"
-          url="$(gh pr create --base "${{ github.event.repository.default_branch }}" --head "$branch" \
-            --title "Term table: ${summary}" \
-            --body "Records the outcome of issue #${ISSUE} in the term table and regenerates the specification and the dashboard. Review the changed rows of specification/ontology_terms.csv before merging. Refs #${ISSUE}.")"
-          gh issue comment "$ISSUE" --body "A pull request records this: ${url}. Merging it updates the term table and the dashboard."
+          echo "name=${branch}" >> "$GITHUB_OUTPUT"
+          echo "summary=${summary}" >> "$GITHUB_OUTPUT"
+
+      # Creating the pull request needs the repository setting "Allow GitHub Actions to create and approve pull requests",
+      # which an organisation can switch off. Without it the workflow leaves a link that opens the pull request in one click.
+      - name: Open the pull request, or leave a link to open it
+        if: steps.branch.outcome == 'success'
+        env:
+          BRANCH: ${{ steps.branch.outputs.name }}
+          SUMMARY: ${{ steps.branch.outputs.summary }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          body="Records the outcome of issue #${ISSUE} in the term table and regenerates the specification and the dashboard. Review the changed rows of specification/ontology_terms.csv before merging. Refs #${ISSUE}."
+          if url="$(gh pr create --base "$DEFAULT_BRANCH" --head "$BRANCH" --title "Term table: ${SUMMARY}" --body "$body" 2> pr_error.txt)"; then
+            gh issue comment "$ISSUE" --body "A pull request records this: ${url}. Merging it updates the term table and the dashboard."
+          else
+            reason="$(head -c 300 pr_error.txt | tr '\n' ' ')"
+            echo "::warning title=Pull request not created::${reason}"
+            gh issue comment "$ISSUE" --body "The change to the term table is prepared on the branch ${BRANCH}, but GitHub did not allow the workflow to create the pull request (${reason}). Open it with one click: https://github.com/${GITHUB_REPOSITORY}/compare/${DEFAULT_BRANCH}...${BRANCH}?expand=1"
+          fi
+
+      - name: Tell the issue that the change could not be prepared
+        if: ${{ failure() && steps.apply.outputs.changed == 'true' && steps.render.outcome == 'success' }}
+        run: |
+          gh issue comment "$ISSUE" --body "The change to the term table could not be committed or pushed to a branch. See the workflow run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
 
       - name: Tell the issue why nothing happened
         if: ${{ always() && (steps.apply.outputs.changed != 'true' || steps.render.outcome == 'failure') }}
