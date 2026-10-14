@@ -18,7 +18,7 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|
 | **PMN** | PlantCyc computationally inferred | Plant Metabolic Network (PlantCyc and the other Cyc databases) | 14 | PMN-01 to PMN-14 |
 | **BGC** | plantiSMASH BGCs | biosynthetic gene cluster | 16 | BGC-01 to BGC-16 |
-| **MET** | Metabolomics data | metabolomics | 18 | MET-01 to MET-18 |
+| **MET** | Metabolomics data | metabolomics | 27 | MET-01 to MET-27 |
 | **PO** | Paired omics data | paired omics (transcriptomics and metabolomics of the same samples) | 12 | PO-01 to PO-12 |
 | **UN** | Unsupervised predictions | unsupervised (machine-learning) predictions | 12 | UN-01 to UN-12 |
 | **TX** | Transcriptomics data | transcriptomics | 22 | TX-01 to TX-22 |
@@ -70,18 +70,18 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|---|---|
 | PMN - PlantCyc computationally inferred | 14 | 10 | 1 | 3 | 5 | 1 |
 | BGC - plantiSMASH BGCs | 16 | 8 | 2 | 6 | 3 | 7 |
-| MET - Metabolomics data | 18 | 8 | 4 | 6 | 9 | 12 |
+| MET - Metabolomics data | 27 | 15 | 3 | 9 | 13 | 16 |
 | PO - Paired omics data | 12 | 5 | 1 | 6 | 6 | 9 |
 | UN - Unsupervised predictions | 12 | 3 | 3 | 6 | 12 | 2 |
 | TX - Transcriptomics data | 22 | 12 | 6 | 4 | 13 | 6 |
 | COM - Shared by all use cases | 12 | 6 | 1 | 5 | 4 | 5 |
-| **All** | **106** | **52** | **18** | **36** | **52** | **38** |
+| **All** | **115** | **59** | **17** | **39** | **56** | **42** |
 <!-- END:overview -->
 
 ### Decisions needed
 
 <!-- BEGIN:decisions -->
-52 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
+56 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
 
 | ID | Use case | Requirement | Owner | Action | Why it is open |
 |---|---|---|---|---|---|
@@ -93,6 +93,8 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **UN-08** | UN - Unsupervised predictions | Ranking metrics of the benchmark (precision of the top k hits, for example P-H@50) | Elena Del Pup | review | No term found for precision of the top k hits. |
 | **UN-10** | UN - Unsupervised predictions | Input modalities and edge types of the model (for example metabolite fingerprints, protein and DNA embeddings) | Elena Del Pup | review | No term found. |
 | **UN-12** | UN - Unsupervised predictions | A predicted link can be told apart from a curated link in queries | Elena Del Pup | review | Open design question: the two end nodes are curated PlantMetWiki nodes but the link is a prediction, so the anchor tier 'curated' would mislead. |
+| **MET-22** | MET - Metabolomics data | List of precursor masses excluded from fragmentation during acquisition | - | request_term | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). |
+| **MET-26** | MET - Metabolomics data | Compound class of the structure proposed for a feature (ClassyFire, NPClassifier) | - | request_term | S5 and S6 give ClassyFire and NPClassifier class, superclass and pathway with probabilities (canopus_*, ms2query_cf_*, dreams_*_results). |
 | **PO-03** | PO - Paired omics data | Evidence: transcript and metabolite abundances are correlated | - | request_term, review | Less specific (not high-throughput). |
 | **BGC-08** | BGC - plantiSMASH BGCs | Complete match with a MIBiG BGC (all genes similar) | - | review | A prediction is not the same thing as a curated cluster, so 'exact' is a stretch. |
 | **BGC-09** | BGC - plantiSMASH BGCs | Partial match with a MIBiG BGC | - | review | The threshold between complete and partial is a choice (now: 100% of genes similar). |
@@ -106,8 +108,10 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **MET-10** | MET - Metabolomics data | A related compound (MS2Query analogue with a different mass) is not a detection | - | review | Analogue hits are currently left out of the generated RDF. |
 | **MET-12** | MET - Metabolomics data | Tool-specific scores (SIRIUS confidence, MS2Query model score, DreaMS similarity, precursor m/z difference) | - | local_term, review | 'probability value': the scores are not all probabilities. |
 | **MET-15** | MET - Metabolomics data | Retention time of a feature | - | review | Not in the generated RDF yet. |
-| **MET-16** | MET - Metabolomics data | Ion mode (positive or negative) of a feature | - | local_term, review | 'positive scan'; MS:1000129 is 'negative scan'. |
 | **MET-17** | MET - Metabolomics data | Adduct of the detected ion | - | review | Needed for mass-based matching (used in the MEANtools pilot, not in the RDF). |
+| **MET-20** | MET - Metabolomics data | Instrument model and ion source used for the acquisition | - | reuse, review | S1 gives H-ESI (heated electrospray). |
+| **MET-23** | MET - Metabolomics data | Feature detection and alignment run (mzmine batch) that produced the feature table | - | reuse, review, local_term | The batch uses a join aligner across samples; the term describes correction of scan times. |
+| **MET-25** | MET - Metabolomics data | Abundance (peak area) of a feature in a sample | - | review | S5 and S6 give peak areas per sample file. |
 | **PMN-07** | PMN - PlantCyc computationally inferred | Computational inference reviewed by a curator (EV-COMP-HINF) | - | review | Not present in the PlantMetWiki snapshot; confirm the mapping with the PlantCyc curators. |
 | **PMN-08** | PMN - PlantCyc computationally inferred | Computational inference without human oversight (EV-COMP-AINF) | - | review | Not present in the PlantMetWiki snapshot. |
 | **PMN-14** | PMN - PlantCyc computationally inferred | Which Cyc database a statement or prediction comes from | - | review | 'A related resource from which the described resource is derived'. |
@@ -268,14 +272,23 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-08** | What the structure match compared (first InChIKey block, or the full key) | - | - | `lodp:matchLevel` match level | 🔴 gap | 🔵 proposed | local_term | - |
 | **MET-09** | An MS feature is annotated as a PlantMetWiki metabolite | - | `skos:closeMatch` has close match (stand-in) | `lodp:MetaboliteAnnotation` metabolite annotation | 🟡 partial | 🟠 open | review, local_term | - |
 | **MET-10** | A related compound (MS2Query analogue with a different mass) is not a detection | - | `skos:relatedMatch` has related match (stand-in) | - | 🟡 partial | 🟠 open | review | - |
-| **MET-11** | Agreement between tools (full or partial, score, which tools agree) | - | - | `lodp:matchType` match type<br>`lodp:agreementScore` agreement score<br>`lodp:agreeingTool` agreeing tool | 🔴 gap | 🔵 proposed | local_term | - |
+| **MET-11** | Agreement between tools (full or partial, score, which tools agree) | - | - | `lodp:matchType` match type<br>`lodp:agreementScore` agreement score<br>`lodp:agreeingTool` agreeing tool<br>`lodp:matchCategory` match category | 🔴 gap | 🔵 proposed | local_term | - |
 | **MET-12** | Tool-specific scores (SIRIUS confidence, MS2Query model score, DreaMS similarity, precursor m/z difference) | - | `SIO:000765` probability value (alternative) | `lodp:siriusConfidenceApprox` SIRIUS approximate confidence<br>`lodp:ms2queryModelScore` MS2Query model score<br>`lodp:dreamsSimilarity` DreaMS similarity | 🔴 gap | 🟠 open | local_term, review | - |
-| **MET-13** | An untargeted MS feature as a resource (m/z, retention time, ion mode, dataset) | - | - | `lodp:MetaboliteFeature` metabolite feature | 🔴 gap | 🔵 proposed | local_term | - |
+| **MET-13** | An untargeted MS feature as a resource (m/z, retention time, scan polarity, dataset) | - | - | `lodp:MetaboliteFeature` metabolite feature | 🔴 gap | 🔵 proposed | local_term | - |
 | **MET-14** | Identifier of the feature within its dataset | - | - | `lodp:featureId` feature identifier | 🔴 gap | 🔵 proposed | local_term | - |
 | **MET-15** | Retention time of a feature | `MS:1000894` retention time | - | - | 🟢 covered | 🟠 open | review | - |
-| **MET-16** | Ion mode (positive or negative) of a feature | `MS:1000130` positive scan | `MS:1000077` positive polarity acquisition (alternative) | `lodp:ionMode` ion mode | 🟡 partial | 🟠 open | local_term, review | - |
+| **MET-16** | Scan polarity of a feature (positive or negative) | `MS:1000465` scan polarity<br>`MS:1000130` positive scan (value of `MS:1000465`)<br>`MS:1000129` negative scan (value of `MS:1000465`) | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-17** | Adduct of the detected ion | `MS:1000353` adduct ion | `MS:1002807` positive mode adduct ion (alternative) | - | 🟢 covered | 🟠 open | review | - |
 | **MET-18** | The study or dataset a feature comes from | - | - | `lodp:dataset` dataset | 🔴 gap | 🔵 proposed | local_term | - |
+| **MET-19** | Scan polarity of a whole acquisition run (every scan of the run has the same polarity) | `MS:1000077` positive polarity acquisition (value of `MS:1000465`)<br>`MS:1000076` negative polarity acquisition (value of `MS:1000465`) | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **MET-20** | Instrument model and ion source used for the acquisition | `MS:1000031` instrument model<br>`MS:1003095` Orbitrap Exploris 120 (value of `MS:1000031`) | `MS:1000073` electrospray ionization (stand-in) | - | 🟢 covered | 🟠 open | reuse, review | - |
+| **MET-21** | Acquisition method that qualifies the spectra (data-dependent MS/MS, fragmentation, energies, scan window, resolution) | `MS:1003221` data-dependent acquisition<br>`MS:1002481` higher energy beam-type collision-induced dissociation<br>`MS:1000138` normalized collision energy<br>`MS:1000501` scan window lower limit<br>`MS:1000500` scan window upper limit<br>`MS:1000011` mass resolution | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **MET-22** | List of precursor masses excluded from fragmentation during acquisition | - | - | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. | 🔴 gap | 🟠 open | request_term | - |
+| **MET-23** | Feature detection and alignment run (mzmine batch) that produced the feature table | `MS:1002342` mzmine | `MS:1000745` retention time alignment (alternative) | `lodp:batchFile` batch file | 🟢 covered | 🟠 open | reuse, review, local_term | - |
+| **MET-24** | Organism and plant structure of the sample in which a feature was measured | `wp:organism` organism<br>`PO:0009011` plant structure | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **MET-25** | Abundance (peak area) of a feature in a sample | `MSIO:0000191` peak area | - | - | 🟢 covered | 🟠 open | review | - |
+| **MET-26** | Compound class of the structure proposed for a feature (ClassyFire, NPClassifier) | - | - | S5 and S6 give ClassyFire and NPClassifier class, superclass and pathway with probabilities (canopus_*, ms2query_cf_*, dreams_*_results). Neither classification is in the Ontology Lookup Service. NPClassifier pathways could be linked to PlantCyc pathway classes. | 🔴 gap | 🟠 open | request_term | - |
+| **MET-27** | A Mass2Motif (MS2LDA pattern of fragments and neutral losses) is assigned to a feature with a probability | - | - | `lodp:Mass2Motif` Mass2Motif<br>`lodp:hasMass2Motif` has Mass2Motif<br>`lodp:motifProbability` motif probability | 🔴 gap | 🔵 proposed | local_term | - |
 <!-- END:terms:metabolomics -->
 
 ---
@@ -441,9 +454,12 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **MET-08** | MET - Metabolomics data | What the structure match compared (first InChIKey block, or the full key) | 🔴 gap | local_term | Values: connectivity, full. |
 | **MET-11** | MET - Metabolomics data | Agreement between tools (full or partial, score, which tools agree) | 🔴 gap | local_term | Values: full (3 of 3 tools), partial (2 of 3). |
 | **MET-12** | MET - Metabolomics data | Tool-specific scores (SIRIUS confidence, MS2Query model score, DreaMS similarity, precursor m/z difference) | 🔴 gap | local_term, review | Four annotations have a SIRIUS confidence of -Infinity (not computed); the value is left out of the RDF. |
-| **MET-13** | MET - Metabolomics data | An untargeted MS feature as a resource (m/z, retention time, ion mode, dataset) | 🔴 gap | local_term | No ontology class for an untargeted feature was found. |
+| **MET-13** | MET - Metabolomics data | An untargeted MS feature as a resource (m/z, retention time, scan polarity, dataset) | 🔴 gap | local_term | No ontology class for an untargeted feature was found. |
 | **MET-14** | MET - Metabolomics data | Identifier of the feature within its dataset | 🔴 gap | local_term | - |
 | **MET-18** | MET - Metabolomics data | The study or dataset a feature comes from | 🔴 gap | local_term | MetaboLights (MTBLS14270) and MassIVE (MSV000101479) IRIs. DCAT is a candidate to review (not in the Ontology Lookup Service). |
+| **MET-22** | MET - Metabolomics data | List of precursor masses excluded from fragmentation during acquisition | 🔴 gap | request_term | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. |
+| **MET-26** | MET - Metabolomics data | Compound class of the structure proposed for a feature (ClassyFire, NPClassifier) | 🔴 gap | request_term | S5 and S6 give ClassyFire and NPClassifier class, superclass and pathway with probabilities (canopus_*, ms2query_cf_*, dreams_*_results). Neither classification is in the Ontology Lookup Service. NPClassifier pathways could be linked to PlantCyc pathway classes. |
+| **MET-27** | MET - Metabolomics data | A Mass2Motif (MS2LDA pattern of fragments and neutral losses) is assigned to a feature with a probability | 🔴 gap | local_term | A topic of the MS2LDA model: a set of fragment and neutral-loss m/z values with weights, optionally with an automatic structure annotation (Spec2Vec, cosine >= 0.90). 400 motifs per mode. |
 | **PMN-09** | PMN - PlantCyc computationally inferred | The original PlantCyc evidence code is kept next to the ECO class | 🔴 gap | local_term | Keeps the claim traceable to PlantCyc's own vocabulary. |
 | **PMN-11** | PMN - PlantCyc computationally inferred | Prediction method and confidence of the extended PlantCyc predictions | 🔴 gap | review | TODO(Elena): which method produces the predictions and what scores or confidence they carry. |
 | **PMN-12** | PMN - PlantCyc computationally inferred | A reusable crosswalk between PlantCyc EV- codes and ECO | 🔴 gap | request_term | No ECO or PlantCyc crosswalk found (searching the codes in the Ontology Lookup Service returns nothing). The mapping in this table could be contributed. |
@@ -469,7 +485,6 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **MET-04** | MET - Metabolomics data | A spectral library match supports the annotation | 🟡 partial | review | Ask Adriano Rutz whether a term for a spectral library match as evidence already exists, or whether to request one. MS:1001031 is a PSI-MS term for the method; searching ECO for 'spectral library' finds no class; the generated RDF uses ECO:0001580 only. |
 | **MET-09** | MET - Metabolomics data | An MS feature is annotated as a PlantMetWiki metabolite | 🟡 partial | review, local_term | SKOS mapping relations are meant for concepts, not measurements. A dedicated 'annotated as' property would be cleaner. |
 | **MET-10** | MET - Metabolomics data | A related compound (MS2Query analogue with a different mass) is not a detection | 🟡 partial | review | Analogue hits are currently left out of the generated RDF. |
-| **MET-16** | MET - Metabolomics data | Ion mode (positive or negative) of a feature | 🟡 partial | local_term, review | Strings 'positive' and 'negative'. |
 | **PMN-14** | PMN - PlantCyc computationally inferred | Which Cyc database a statement or prediction comes from | 🟡 partial | review | 'A related resource from which the described resource is derived'. Today the sample graph names the database in lodp:software ('PlantCyc'), which stretches that property. |
 | **PO-03** | PO - Paired omics data | Evidence: transcript and metabolite abundances are correlated | 🟡 partial | request_term, review | Closest ECO class. ECO has no class for metabolite-transcript correlation; request one. |
 | **TX-05** | TX - Transcriptomics data | Normalisation method (library-size normalisation, TMM, variance-stabilising transformation) | 🟡 partial | review | Variance stabilizing transformation (as in DESeq2 'vst'). |
@@ -492,29 +507,30 @@ Number of requirements per ontology and use case (a requirement counts once per 
 |---|---|---|---|---|---|---|---|---|
 | [ECO](https://www.evidenceontology.org/): Evidence & Conclusion Ontology | 8 | 4 | 3 | 1 | 1 | 1 | 1 | 19 |
 | [STATO](https://stato-ontology.org/): Statistical Methods Ontology | - | - | - | 1 | 1 | 9 | - | 11 |
+| [MS](https://www.psidev.info/): PSI-MS (mass spectrometry ontology) | - | - | 9 | - | - | - | - | 9 |
 | [SIO](https://github.com/MaastrichtU-IDS/semanticscience): Semanticscience Integrated Ontology | - | - | 1 | 2 | 2 | 2 | 2 | 9 |
 | [OBI](https://obi-ontology.org/): Ontology for Biomedical Investigations | - | - | - | 2 | 1 | 5 | - | 8 |
 | [EDAM](https://edamontology.org/): EDAM (data analysis and management) | - | - | 1 | 2 | - | 3 | - | 6 |
-| [MS](https://www.psidev.info/): PSI-MS (mass spectrometry ontology) | - | - | 5 | - | - | - | - | 5 |
 | [SWO](https://github.com/allysonlister/swo): Software Ontology | 1 | 1 | - | - | 1 | - | 2 | 5 |
 | [SKOS](https://www.w3.org/TR/skos-reference/): SKOS (mapping relations) | - | 2 | 2 | - | - | - | - | 4 |
 | [EFO](https://www.ebi.ac.uk/efo/): Experimental Factor Ontology | - | - | - | - | - | 3 | - | 3 |
 | [DCTERMS](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/): Dublin Core Terms | 2 | - | - | - | - | - | - | 2 |
 | [NCIT](https://ncithesaurus.nci.nih.gov/): NCI Thesaurus | - | - | 1 | - | - | 1 | - | 2 |
+| [PO](https://planteome.org/): Plant Ontology | - | - | 1 | - | - | 1 | - | 2 |
 | [PROV](https://www.w3.org/TR/prov-o/): PROV-O (provenance) | - | - | - | - | - | - | 2 | 2 |
 | [RDF](https://www.w3.org/TR/rdf11-concepts/): RDF | - | - | - | - | 1 | - | 1 | 2 |
+| [WP](https://vocabularies.wikipathways.org/wp): WikiPathways vocabulary | - | - | 1 | - | - | - | 1 | 2 |
 | [AGRO](https://github.com/AgriculturalSemantics/agro): Agronomy Ontology | - | - | - | - | - | 1 | - | 1 |
 | [AIO](https://github.com/berkeleybop/artificial-intelligence-ontology): Artificial Intelligence Ontology | - | - | - | - | 1 | - | - | 1 |
 | [BFO](https://basic-formal-ontology.org/): Basic Formal Ontology | - | 1 | - | - | - | - | - | 1 |
 | [CHEMINF](https://github.com/semanticchemistry/semanticchemistry): Chemical Information Ontology | - | - | 1 | - | - | - | - | 1 |
 | [INO](https://github.com/INO-ontology/ino): Interaction Network Ontology | - | - | - | - | - | 1 | - | 1 |
-| [PO](https://planteome.org/): Plant Ontology | - | - | - | - | - | 1 | - | 1 |
+| [MSIO](https://github.com/MSI-Metabolomics-Standards-Initiative/MSIO): Metabolomics Standards Initiative Ontology | - | - | 1 | - | - | - | - | 1 |
 | [RO](https://oborel.github.io/): Relation Ontology | - | 1 | - | - | - | - | - | 1 |
 | [SEPIO](https://github.com/monarch-initiative/SEPIO-ontology): Scientific Evidence and Provenance Information Ontology | - | - | - | - | - | - | 1 | 1 |
 | [SO](http://www.sequenceontology.org/): Sequence Ontology | - | 1 | - | - | - | - | - | 1 |
-| [WP](https://vocabularies.wikipathways.org/wp): WikiPathways vocabulary | - | - | - | - | - | - | 1 | 1 |
 | [identifiers.org](https://identifiers.org/): identifiers.org IRIs | - | - | 1 | - | - | - | - | 1 |
-| lodp: Local placeholder vocabulary (draft) | 1 | 6 | 8 | 6 | 2 | 6 | 5 | 34 |
+| lodp: Local placeholder vocabulary (draft) | 1 | 6 | 9 | 6 | 2 | 6 | 5 | 35 |
 <!-- END:ontologies -->
 
 ## Open questions for discussion

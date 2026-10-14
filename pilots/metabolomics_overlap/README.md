@@ -11,6 +11,19 @@ This is the first test of evidence case 3 (consensus from MS/MS tools) in the ma
 | Annotated GNPS2 FBMN node tables (neg + pos, 14 species, leaf + root) | Zenodo [10.5281/zenodo.19391098](https://doi.org/10.5281/zenodo.19391098), file `S6_Annotation_tables_and_annotated_FBMNs.zip` |
 | PlantMetWiki metabolites (`wp:Metabolite` with `wp:bdbInChIKey`), their PlantCyc pathways and pathway classes | SPARQL endpoint `https://plantmetwiki.bioinformatics.nl/sparql`, snapshots in `data/plantmetwiki_*.csv` (2026-09-29) |
 
+## Supplementary files S1-S6
+
+The dataset deposit (Zenodo [10.5281/zenodo.19391098](https://doi.org/10.5281/zenodo.19391098)) holds six supplementary archives. Only S6 is used by the matching. The others document how the data were acquired and processed and are the source of several MET requirements in the [specification](../../specification/SPECIFICATION.md). `python fetch_supplementary.py` downloads them (with MD5 check, resumable); [`data/supplementary/README.md`](data/supplementary/README.md) lists what each file contains and which MET requirement it feeds.
+
+| File | Content | Used for |
+|---|---|---|
+| S1 | Instrument settings and mass exclusion lists, positive and negative mode (Thermo Orbitrap Exploris 120) | MET-16, MET-19 to MET-22 |
+| S2 | mzmine batch files and aligned feature lists, positive and negative mode | MET-23 |
+| S3 | MS2LDA configuration and results (Mass2Motifs), 385 MB | MET-27 |
+| S4 | Consensus annotation reports and summary table | MET-02, MET-11 |
+| S5 | Feature table of 17 species, negative mode, with SIRIUS summaries | MET-24 to MET-26 |
+| S6 | Annotation tables and annotated FBMNs, 14 species | the matching in this pilot |
+
 ## Method
 
 - Each feature can have up to six structure predictions. Each prediction is assigned an **evidence tier**, strongest first:

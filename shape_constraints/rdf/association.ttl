@@ -26181,202 +26181,202 @@ lodp:assoc_fungal_DR10_C9_Solyc07g006790_M772T844 a lodp:GeneMetaboliteAssociati
 lodp:feature_MTBLS1039_M201T449 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M201T449" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M232T448 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M232T448" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M390T527 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M390T527" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M442T448 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M442T448" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M447T448 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M447T448" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M448T447 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M448T447" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M635T910 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M635T910" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M251T775 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M251T775" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M463T775 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M463T775" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M484T775 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M484T775" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M341T1347 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M341T1347" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M624T1347 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M624T1347" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M627T1347 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M627T1347" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M722T804 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M722T804" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M775T1347 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M775T1347" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M266T805 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M266T805" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M492T803 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M492T803" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M282T761 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M282T761" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M462T635 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M462T635" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M190T888 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M190T888" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M300T887 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M300T887" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M771T749 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M771T749" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M771T844 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M771T844" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M772T844 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M772T844" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M316T672 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M316T672" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M161T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M161T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M209T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M209T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M242T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M242T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M264T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M264T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M462T775 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M462T775" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M301T887 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M301T887" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M366T1055 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M366T1055" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M344T1055 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M344T1055" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M345T1054 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M345T1054" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M360T818 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M360T818" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M284T892 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M284T892" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M210T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M210T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M241T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M241T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M263T1547 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M263T1547" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:feature_MTBLS1039_M306T892 a lodp:MetaboliteFeature ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
     lodp:featureId "M306T892" ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:run_meantools_fungal_DR10 a edam:operation_3432,
         edam:operation_3463,

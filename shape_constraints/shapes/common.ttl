@@ -160,7 +160,7 @@ lodps:FeatureShape a sh:NodeShape ;
         sh:message "A feature needs exactly one lodp:dataset (IRI of the study, e.g. a MetaboLights study)." ] ;
 
     sh:property [
-        sh:path lodp:ionMode ;
+        sh:path obo:MS_1000465 ;
         sh:maxCount 1 ;
-        sh:in ( "positive" "negative" ) ;
-        sh:message "lodp:ionMode must be 'positive' or 'negative'." ] .
+        sh:in ( obo:MS_1000130 obo:MS_1000129 ) ;
+        sh:message "The scan polarity (obo:MS_1000465) of a feature must be obo:MS_1000130 (positive scan) or obo:MS_1000129 (negative scan)." ] .

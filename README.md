@@ -377,7 +377,7 @@ lodp:link_cluster60_PC800 a lodp:BGCPathwayLink ;
 lodp:feature_MTBLS1039_M492T803 a lodp:MetaboliteFeature ;
     lodp:featureId "M492T803" ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS1039> ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:assoc_fungal_DR10_C257_Solyc07g043480_M492T803 a lodp:GeneMetaboliteAssociation ;
     sio:SIO_000628 <https://plants.ensembl.org/Solanum_lycopersicum/Gene/Summary?g=Solyc07g043480> ,   # refers to
@@ -405,7 +405,7 @@ lodp:assoc_fungal_DR10_C257_Solyc07g043480_M492T803 a lodp:GeneMetaboliteAssocia
 lodp:feature_MTBLS14270_pos_741 a lodp:MetaboliteFeature ;
     lodp:featureId "741" ;
     lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS14270> ;
-    lodp:ionMode "positive" .
+    obo:MS_1000465 obo:MS_1000130 .
 
 lodp:annotation_MTBLS14270_pos_741 a lodp:MetaboliteAnnotation ;
     lodp:feature lodp:feature_MTBLS14270_pos_741 ;

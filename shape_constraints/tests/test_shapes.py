@@ -114,7 +114,7 @@ def cases():
     # features
     yield "feature without id", lambda g: rm(g, FEATURE, LODP.featureId), [(V, "needs exactly one lodp:featureId")]
     yield "feature without dataset", lambda g: rm(g, FEATURE, LODP.dataset), [(V, "needs exactly one lodp:dataset")]
-    yield "feature with unknown ion mode", lambda g: put(g, FEATURE, LODP.ionMode, Literal("both")), [(V, "'positive' or 'negative'")]
+    yield "feature with unknown scan polarity", lambda g: put(g, FEATURE, OBO.MS_1000465, OBO.MS_1000999), [(V, "positive scan")]
 
     # case 1: BGC
     yield "BGC without species", lambda g: rm(g, BGC, WP.organismName), [(V, "exactly one wp:organismName")]

@@ -259,7 +259,7 @@ footer{margin-top:28px;font-size:.85rem}
     var rows = r.rows.map(function (t) {
       var term = t.curie ? (t.iri ? '<a href="' + esc(t.iri) + '"><code>' + esc(t.curie) + '</code></a>' : '<code>' + esc(t.curie) + '</code>') : '-';
       var issue = t.issue_url ? ' <a href="' + esc(t.issue_url) + '">issue</a>' : '';
-      return '<tr><td>' + badge('role', t.role) + '</td><td>' + term + (t.label ? ' ' + esc(t.label) : '') + '</td><td>' + esc(t.ontology || '-') +
+      return '<tr><td>' + badge('role', t.role) + '</td><td>' + term + (t.label ? ' ' + esc(t.label) : '') + (t.value_of ? ' <span class="muted">(value of <code>' + esc(t.value_of) + '</code>)</span>' : '') + '</td><td>' + esc(t.ontology || '-') +
         '</td><td>' + badge('coverage', t.coverage) + '</td><td>' + badge('decision', t.decision) + '</td><td>' + esc(label(t.action)) +
         '</td><td>' + esc(t.notes) + issue + (t.owner ? ' <span class="muted">(' + esc(t.owner) + ')</span>' : '') + '</td></tr>';
     }).join('');
