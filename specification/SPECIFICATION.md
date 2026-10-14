@@ -70,18 +70,18 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|---|---|
 | PMN - PlantCyc computationally inferred | 14 | 10 | 1 | 3 | 5 | 1 |
 | BGC - plantiSMASH BGCs | 16 | 8 | 2 | 6 | 3 | 7 |
-| MET - Metabolomics data | 18 | 8 | 4 | 6 | 9 | 12 |
+| MET - Metabolomics data | 18 | 8 | 4 | 6 | 10 | 12 |
 | PO - Paired omics data | 12 | 5 | 1 | 6 | 6 | 9 |
 | UN - Unsupervised predictions | 12 | 3 | 3 | 6 | 12 | 2 |
 | TX - Transcriptomics data | 22 | 12 | 6 | 4 | 13 | 6 |
 | COM - Shared by all use cases | 12 | 6 | 1 | 5 | 4 | 5 |
-| **All** | **106** | **52** | **18** | **36** | **52** | **38** |
+| **All** | **106** | **52** | **18** | **36** | **53** | **38** |
 <!-- END:overview -->
 
 ### Decisions needed
 
 <!-- BEGIN:decisions -->
-52 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
+53 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
 
 | ID | Use case | Requirement | Owner | Action | Why it is open |
 |---|---|---|---|---|---|
@@ -137,6 +137,7 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **UN-07** | UN - Unsupervised predictions | Model performance on the benchmark (area under the ROC curve, area under the precision-recall curve) | - | review | Area under the receiver operator characteristic curve. |
 | **UN-09** | UN - Unsupervised predictions | Data split strategy of the evaluation (random, organism-held-out, pathway-held-out) | - | review | No term found. |
 | **UN-11** | UN - Unsupervised predictions | The benchmark dataset the model was trained and evaluated on | - | local_term | Reuses the local property of MET-18; value is the dataset IRI (for example a Zenodo DOI). |
+| **MET-01** | MET - Metabolomics data | The annotation comes from LC-MS/MS data | - | reuse | - |
 <!-- END:decisions -->
 
 Term IDs are written as OBO-style CURIEs (Compact Uniform Resource Identifier) (`ECO:0000314`). `lodp:` is a **placeholder** namespace for terms that no ontology has; it is defined in [`../shape_constraints/vocab/lodp.ttl`](../shape_constraints/vocab/lodp.ttl). The shapes that check data against these terms are in [`../shape_constraints/`](../shape_constraints/).
@@ -258,7 +259,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 <!-- BEGIN:terms:metabolomics -->
 | ID | Requirement | Fitting terms | Stand-ins and alternatives | Local terms needed / gap | Status | Decision | Action | Owner |
 |---|---|---|---|---|---|---|---|---|
-| **MET-01** | The annotation comes from LC-MS/MS data | `ECO:0001580` liquid chromatography coupled with tandem mass spectrometry evidence | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **MET-01** | The annotation comes from LC-MS/MS data | `ECO:0001580` liquid chromatography coupled with tandem mass spectrometry evidence | - | - | 🟢 covered | 🟠 open | reuse | - |
 | **MET-02** | Several tools were combined automatically (consensus annotation) | `ECO:0007653` automatically integrated combinatorial computational evidence used in automatic assertion | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-03** | A single in-silico tool proposed the structure (SIRIUS, MS2Query, DreaMS) | `ECO:0007669` computational evidence used in automatic assertion | `ECO:0008004` machine learning method evidence used in automatic assertion (alternative)<br>`ECO:0008006` deep learning neural network method evidence used in automatic assertion (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **MET-04** | A spectral library match supports the annotation | - | `MS:1001031` spectral library search (stand-in)<br>`EDAM:operation_3801` Spectral library search (alternative) | - | 🟡 partial | 🟠 open | review | Elena Del Pup |
