@@ -263,7 +263,7 @@ def build_association(max_cluster_p=0.05):
         g.add((feature, RDF.type, LODP.MetaboliteFeature))
         g.add((feature, LODP.featureId, Literal(r.metabolite)))
         g.add((feature, LODP.dataset, URIRef("https://www.ebi.ac.uk/metabolights/MTBLS1039")))
-        g.add((feature, LODP.ionMode, Literal("positive")))
+        g.add((feature, OBO.MS_1000465, OBO.MS_1000130))   # scan polarity: positive scan
         g.add((assoc, RDF.type, LODP.GeneMetaboliteAssociation))
         g.add((assoc, SIO.SIO_000628, URIRef(f"https://plants.ensembl.org/Solanum_lycopersicum/Gene/Summary?g={r.locus}")))
         g.add((assoc, SIO.SIO_000628, feature))
@@ -328,12 +328,12 @@ def build_annotation():
     n_claims = n_evidence = 0
     for (mode, fid, key14), grp in hits.groupby(["mode", "feature_id", "key14"]):
         row = nodes[mode].loc[str(fid)]
-        ion = "positive" if mode == "pos" else "negative"
+        polarity = OBO.MS_1000130 if mode == "pos" else OBO.MS_1000129   # positive scan / negative scan
         feature = LODP[f"feature_MTBLS14270_{mode}_{fid}"]
         g.add((feature, RDF.type, LODP.MetaboliteFeature))
         g.add((feature, LODP.featureId, Literal(str(fid))))
         g.add((feature, LODP.dataset, URIRef(DATASET_14270)))
-        g.add((feature, LODP.ionMode, Literal(ion)))
+        g.add((feature, OBO.MS_1000465, polarity))   # scan polarity
 
         keys = sorted(set(str(grp.pmw_inchikeys.iloc[0]).split(" | ")))
         claim = LODP[f"annotation_MTBLS14270_{mode}_{fid}_{key14}"]

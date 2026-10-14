@@ -98,7 +98,7 @@ def add_term(rows, req_id, form, issue):
     new = dict(template)
     nid = max(int(r["row_id"][1:]) for r in rows if re.fullmatch(r"T\d+", r["row_id"])) + 1
     new.update({"row_id": f"T{nid:03d}", "role": role, "curie": term, "label": "", "ontology": code, "iri": "",
-                "coverage": coverage, "decision": "proposed", "action": "review", "used_in": "",
+                "coverage": coverage, "decision": "proposed", "action": "review", "used_in": "", "value_of": "",
                 "notes": one_line(form.get("Why this term", "")) + f" (suggested in issue #{issue['number']})",
                 "source": f"issue #{issue['number']}", "owner": "", "issue_url": issue.get("html_url", ""), "verified": ""})
     rows.append(new)

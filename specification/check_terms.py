@@ -30,7 +30,7 @@ VOCAB = HERE.parent / "shape_constraints" / "vocab" / "lodp.ttl"
 LODP_NS = "https://example.org/lod-pathways/pilot/"
 
 COLUMNS = ["row_id", "req_id", "use_case", "requirement", "element_type", "role", "curie", "label", "ontology", "iri",
-           "coverage", "decision", "action", "used_in", "notes", "source", "owner", "issue_url", "verified"]
+           "coverage", "decision", "action", "used_in", "value_of", "notes", "source", "owner", "issue_url", "verified"]
 
 USE_CASES = OrderedDict([   # key: (acronym = prefix of the requirement IDs, title shown everywhere)
     ("plantcyc", ("PMN", "PMN - PlantCyc computationally inferred")),
@@ -72,6 +72,7 @@ ONTOLOGIES = {
     "EDAM": ("EDAM (data analysis and management)", "https://edamontology.org/", "EDAM", True),
     "SWO": ("Software Ontology", "https://github.com/allysonlister/swo", "SWO", True),
     "MS": ("PSI-MS (mass spectrometry ontology)", "https://www.psidev.info/", "MS", True),
+    "MSIO": ("Metabolomics Standards Initiative Ontology", "https://github.com/MSI-Metabolomics-Standards-Initiative/MSIO", "MSIO", True),
     "CHEMINF": ("Chemical Information Ontology", "https://github.com/semanticchemistry/semanticchemistry", "CHEMINF", True),
     "SEPIO": ("Scientific Evidence and Provenance Information Ontology", "https://github.com/monarch-initiative/SEPIO-ontology", "SEPIO", True),
     "NCIT": ("NCI Thesaurus", "https://ncithesaurus.nci.nih.gov/", "NCIT", True),
@@ -153,6 +154,7 @@ def validate(header, rows):
         return errors, warnings
 
     seen_ids, seen_pairs = set(), set()
+    all_curies = {r["curie"].strip() for r in rows if r["curie"].strip()}
     per_req = defaultdict(list)
     vocab_terms, _ = local_terms_in_vocab()
     for r in rows:
@@ -214,6 +216,10 @@ def validate(header, rows):
             warn(r, "a rejected term should not be primary or local")
         if r["action"] == "ask" and not r["owner"].strip():
             err(r, "action 'ask' means asking a named person: fill the owner column")
+        if r["value_of"].strip() and r["value_of"].strip() not in all_curies:
+            err(r, f"value_of '{r['value_of']}' is not a term (curie) of the table")
+        if r["value_of"].strip() == curie:
+            err(r, "a term cannot be a value of itself")
         if r["action"] == "local_term" and role != "local":
             warn(r, "action 'local_term' on a row that is not a local term")
         if role == "local" and vocab_terms is not None and curie not in vocab_terms:
@@ -295,6 +301,8 @@ def term_text(r):
         parts.append(f"`{r['curie']}`")
     if r["label"]:
         parts.append(esc(r["label"]))
+    if r.get("value_of", "").strip():
+        parts.append(f"(value of `{r['value_of'].strip()}`)")
     return " ".join(parts)
 
 
@@ -461,7 +469,7 @@ def html_data(rows):
             "ontologies": list(OrderedDict.fromkeys(r["ontology"] for r in rs if r["ontology"])), "haystack": haystack,
             "issue_urls": list(OrderedDict.fromkeys(r["issue_url"] for r in rs if r["issue_url"].strip())),
             "rows": [{k: r[k] for k in ("row_id", "role", "curie", "label", "ontology", "iri", "coverage", "decision",
-                                        "action", "used_in", "notes", "owner", "issue_url", "verified")} for r in rs],
+                                        "action", "used_in", "value_of", "notes", "owner", "issue_url", "verified")} for r in rs],
         })
     return {"repo": repo_slug(), "requirements": out}
 
