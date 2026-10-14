@@ -57,10 +57,11 @@ jobs:
           python check_terms.py --check-render
           python -m unittest discover -s tests
 
+      # The attempt number is part of the branch name, so that "Re-run failed jobs" does not collide with the branch of the first attempt.
       - name: Open a pull request
         if: steps.apply.outputs.changed == 'true' && steps.render.outcome == 'success'
         run: |
-          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}"
+          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           summary="$(head -n 1 specification/apply_issue_summary.txt)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -77,7 +78,7 @@ jobs:
       - name: Tell the issue that the pull request could not be created
         if: ${{ failure() && steps.apply.outputs.changed == 'true' && steps.render.outcome == 'success' }}
         run: |
-          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}"
+          branch="bot/issue-${ISSUE}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           gh issue comment "$ISSUE" --body "The change to the term table was prepared, but the pull request could not be created. The usual reason is that the repository setting Settings > Actions > General > Workflow permissions > Allow GitHub Actions to create and approve pull requests is off. If the branch ${branch} was pushed, the pull request can be opened by hand: https://github.com/${GITHUB_REPOSITORY}/compare/${branch}?expand=1"
 
       - name: Tell the issue why nothing happened
