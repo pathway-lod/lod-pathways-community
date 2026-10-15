@@ -170,7 +170,7 @@ def main():
         ("ontology", "a ECO:0001580, ECO:0007669", ["LC-MS/MS and computational evidence"], "MET-01, MET-03"),
         ("local", "lodp:identificationTier", ['"sirius"'], ""),
         ("grey", "predicted structure (data)", [sv["sirius_name"][:38], f"{sv['sirius_molecularFormula']}  ·  {skey}"], ""),
-        ("local", "lodp:siriusConfidenceApprox", [f"{sv['sirius_ConfidenceScoreApproximate']}  (not computed: left out)"], "MET-12"),
+        ("local", "lodp:siriusConfidenceApprox", ["no value in the data (file has -Infinity): left out"], "MET-12"),
         ("ontology", "prov:wasGeneratedBy", ["→ lodp:run_sirius"], v1.badge_for("prov:wasGeneratedBy")),
     ], dashed=True)
     s.arrow(f"M910,{y0 + 715} C950,{y0 + 715} 960,{y0 + 715} 1010,{y0 + 715}", None, color=C["ontology"], dashed=True)
