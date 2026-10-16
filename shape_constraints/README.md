@@ -9,7 +9,7 @@ SHACL shapes (the W3C standard for validating RDF) and the tools around them, fo
 | 3 | MS/MS annotations (GNPS library, SIRIUS, MS2Query, DreaMS, consensus) | Metabolite annotations of LC-MS/MS features |
 | 4 | PlantCyc evidence codes on PlantMetWiki nodes | Typed evidence for pathway membership |
 
-The model behind the shapes is described in the main [README](../README.md#sample-graph-the-four-cases-combined), with a sample graph that conforms to these shapes.
+The model behind the shapes is described in the [examples](../examples/README.md), with a sample graph that conforms to these shapes.
 
 ## Goals
 

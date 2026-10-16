@@ -385,6 +385,21 @@ def render_gaps(reqs):
     return table(["ID", "Use case", "Requirement", "Status", "Action", "What is missing"], [t[2] for t in items])
 
 
+def render_requests(reqs):
+    """Requirements for which a term should be requested from an existing ontology (rows with action request_term)."""
+    body = []
+    for d in reqs.values():
+        asks = [r for r in d["rows"] if r["action"] == "request_term" and r["decision"] != "rejected"]
+        if not asks:
+            continue
+        closest = [term_text(r) for r in d["rows"] if r["curie"] and r["role"] in ("primary", "stand_in") and r["decision"] != "rejected"]
+        notes = [esc(r["notes"]) for r in asks if r["notes"]]
+        owners = list(OrderedDict.fromkeys(r["owner"] for r in asks if r["owner"].strip()))
+        body.append([f"**{d['id']}**", esc(d["text"]), "<br>".join(closest) or "-", " ".join(notes) or "-", ", ".join(owners) or "-"])
+    head = f"{len(body)} requirements are marked `request_term`: no suitable term exists, and the term should be proposed to an existing ontology."
+    return head + "\n\n" + table(["ID", "Requirement", "Closest existing term", "Request", "Owner"], body)
+
+
 def first_sentence(text):
     t = text.strip()
     m = re.match(r"(.+?[.!?])(\s|$)", t)
@@ -431,7 +446,7 @@ MISSING_BLOCKS = []
 def render_all(text, rows):
     MISSING_BLOCKS.clear()
     reqs = requirements(rows)
-    blocks = {"usecases": render_usecases(reqs), "overview": render_overview(reqs, rows), "decisions": render_decisions(reqs), "gaps": render_gaps(reqs),
+    blocks = {"usecases": render_usecases(reqs), "overview": render_overview(reqs, rows), "decisions": render_decisions(reqs), "gaps": render_gaps(reqs), "requests": render_requests(reqs),
               "ontologies": render_ontologies(reqs, rows)}
     for uc in USE_CASES:
         blocks[f"terms:{uc}"] = render_use_case(reqs, uc)

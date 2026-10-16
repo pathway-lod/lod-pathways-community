@@ -2,7 +2,7 @@
 
 How many of the gene–metabolite associations that MEANtools finds in the tomato case study can be mapped to [PlantMetWiki](https://plantmetwiki.bioinformatics.nl)? And do the gene and the metabolite meet in the same PlantCyc pathway?
 
-The final goal is an **evidence model** for *"gene G is associated with metabolite M because they are in the same MEANtools functional cluster"*. This pilot tests evidence case 2 (*paired omics M-T correlations*) in the main [README](../../README.md).
+The final goal is an **evidence model** for *"gene G is associated with metabolite M because they are in the same MEANtools functional cluster"*. This pilot tests the PO use case (*paired omics M-T correlations*) of the [specification](../../specification/SPECIFICATION.md#4-po---paired-omics-data); see also the [pipeline](../../README.md#the-pipeline).
 
 ## Inputs
 
