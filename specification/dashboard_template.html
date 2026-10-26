@@ -11,6 +11,7 @@
   --covered:#116329; --covered-bg:#dafbe1; --partial:#7d4e00; --partial-bg:#fff2b8; --gap:#a40e26; --gap-bg:#ffebe9;
   --open:#953800; --open-bg:#ffe8d2; --proposed:#0550ae; --proposed-bg:#ddf4ff; --agreed:#116329; --agreed-bg:#dafbe1;
   --rejected:#424a53; --rejected-bg:#e6eaef; --local:#6639ba; --local-bg:#f0e8ff;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#6250d6;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -18,6 +19,7 @@
     --covered:#7ee787; --covered-bg:#12351c; --partial:#f2cc60; --partial-bg:#3a2f0b; --gap:#ff8182; --gap-bg:#4b1c1f;
     --open:#ffa657; --open-bg:#3f2410; --proposed:#79c0ff; --proposed-bg:#10304f; --agreed:#7ee787; --agreed-bg:#12351c;
     --rejected:#9198a1; --rejected-bg:#222a33; --local:#d2a8ff; --local-bg:#2b1f45;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9;
   }
 }
 *{box-sizing:border-box}
@@ -66,6 +68,34 @@ tr.detail td{background:var(--card);padding:10px 14px 14px}
 code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace}
 .legend{margin:6px 0 0;font-size:.85rem}
 .gh{font-size:.85rem;margin:2px 0 8px}
+
+.chart{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 16px}
+.chart-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between}
+.chart-head h2{margin:0;font-size:1.05rem}
+.chart .cap{margin:4px 0 0;font-size:.85rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{background:var(--bg);color:var(--fg);border:0;padding:5px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.keys{display:flex;flex-wrap:wrap;gap:4px 14px;margin:8px 0 0;font-size:.8rem}
+.keys span{display:inline-flex;align-items:center;gap:5px}
+.keys i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.bars{margin-top:8px}
+.bar-row{display:grid;grid-template-columns:minmax(80px,150px) 1fr;align-items:center;gap:10px;width:100%;background:none;border:0;border-radius:6px;padding:2px 4px;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.bar-row:hover,.bar-row:focus-visible{background:var(--hover)}
+.bar-row.dim{opacity:.45}
+.bar-row[aria-pressed="true"]{outline:2px solid var(--accent)}
+.bar-label{font-size:.85rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{display:flex;align-items:center;min-width:0}
+.fill{display:flex;height:14px;min-width:0}
+.fill b{display:block;height:100%;margin-right:2px;min-width:3px}
+.fill b:last-child{margin-right:0;border-radius:0 4px 4px 0}
+.bar-val{margin-left:8px;font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.more{margin-top:6px;background:none;border:0;color:var(--accent);font:inherit;font-size:.85rem;cursor:pointer;padding:2px 4px}
+.chart details{margin-top:8px;font-size:.85rem}
+.chart table{font-size:.82rem}
+.chart td.num,.chart th.num{text-align:right;font-variant-numeric:tabular-nums}
+#tip{position:fixed;z-index:10;pointer-events:none;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.82rem;max-width:300px;box-shadow:0 2px 8px rgba(0,0,0,.18);display:none}
 footer{margin-top:28px;font-size:.85rem}
 .empty{padding:24px;text-align:center}
 </style>
@@ -80,6 +110,22 @@ footer{margin-top:28px;font-size:.85rem}
   </header>
 
   <section class="cards" id="cards" aria-label="Summary"></section>
+
+  <section class="chart" id="chart" aria-labelledby="chart-h">
+    <div class="chart-head">
+      <h2 id="chart-h">Terms per ontology</h2>
+      <div class="seg" role="group" aria-label="Chart view">
+        <button type="button" id="v-terms" aria-pressed="true">Distinct terms</button>
+        <button type="button" id="v-split" aria-pressed="false">Split by use case</button>
+      </div>
+    </div>
+    <p class="cap muted" id="chart-cap"></p>
+    <div class="keys" id="chart-keys" hidden></div>
+    <div class="bars" id="bars"></div>
+    <button type="button" class="more" id="more" hidden></button>
+    <details><summary>Table view</summary><div class="tablewrap" id="chart-table"></div></details>
+  </section>
+  <div id="tip" role="tooltip"></div>
 
   <section class="toolbar" aria-label="Filters">
     <input id="q" type="search" placeholder="Search requirements, terms and notes" aria-label="Search">
@@ -170,10 +216,11 @@ footer{margin-top:28px;font-size:.85rem}
     });
   }
 
-  function matches(r) {
+  function matches(r, skip) {
     if (state.q && r.haystack.indexOf(state.q.toLowerCase()) < 0) return false;
     for (var i = 0; i < FILTERS.length; i++) {
       var k = FILTERS[i][0];
+      if (k === skip) continue;
       if (state[k] && FILTERS[i][2](r).indexOf(state[k]) < 0) return false;
     }
     return true;
@@ -266,6 +313,107 @@ footer{margin-top:28px;font-size:.85rem}
     return '<table class="terms"><thead><tr><th>Role</th><th>Term</th><th>Ontology</th><th>Coverage</th><th>Decision</th><th>Action</th><th>Notes</th></tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
+
+  /* ---- terms per ontology ------------------------------------------------ */
+  var NAMES = DATA.ontology_names || {};
+  var chart = { view: 'terms', all: false, top: 10 };
+  var acr = function (title) { return String(title).split(' - ')[0]; };
+  var UCS = [];   // use-case acronyms in the order of the specification; the colour belongs to the use case, not to its rank
+  var UCTITLE = {};
+  R.forEach(function (r) { var a = acr(r.use_case_title); if (UCS.indexOf(a) < 0) { UCS.push(a); UCTITLE[a] = r.use_case_title; } });
+  var ucColor = function (a) { return 'var(--s' + (UCS.indexOf(a) % 7 + 1) + ')'; };
+
+  function ontologyStats() {
+    var by = {};
+    R.filter(function (r) { return matches(r, 'ontology'); }).forEach(function (r) {
+      var uc = acr(r.use_case_title);
+      r.rows.forEach(function (t) {
+        if (!t.ontology || !t.curie || t.decision === 'rejected') return;
+        var o = by[t.ontology] || (by[t.ontology] = { code: t.ontology, terms: {}, reqs: {}, uc: {} });
+        o.terms[t.curie] = true; o.reqs[r.id] = true;
+        (o.uc[uc] = o.uc[uc] || {})[t.curie] = true;
+      });
+    });
+    return Object.keys(by).map(function (k) {
+      var o = by[k];
+      var uc = {};
+      UCS.forEach(function (a) { uc[a] = o.uc[a] ? Object.keys(o.uc[a]).length : 0; });
+      return { code: k, n: Object.keys(o.terms).length, reqs: Object.keys(o.reqs).length, uc: uc };
+    }).sort(function (a, b) { return b.n - a.n || (a.code < b.code ? -1 : 1); });
+  }
+  function ontName(code) { return code === 'lodp' ? 'local placeholders (no ontology has these terms yet)' : (NAMES[code] || code); }
+
+  function renderChart() {
+    var rows = ontologyStats();
+    var split = chart.view === 'split';
+    document.getElementById('v-terms').setAttribute('aria-pressed', split ? 'false' : 'true');
+    document.getElementById('v-split').setAttribute('aria-pressed', split ? 'true' : 'false');
+    var total = rows.reduce(function (s, o) { return s + o.n; }, 0);
+    document.getElementById('chart-cap').textContent = rows.length ? (total + ' distinct terms in ' + rows.length + ' ontologies and vocabularies' +
+      (split ? '; a term used in several use cases is counted once in each' : '') + '. Rejected terms are not counted; the chart follows the filters below. Select a bar to filter the requirements by that ontology.') :
+      'No terms match these filters.';
+    var keys = document.getElementById('chart-keys');
+    keys.hidden = !split;
+    keys.innerHTML = split ? UCS.map(function (a) { return '<span><i style="background:' + ucColor(a) + '"></i>' + esc(a) + '</span>'; }).join('') : '';
+    var scale = function (o) { return split ? UCS.reduce(function (s, a) { return s + o.uc[a]; }, 0) : o.n; };
+    var max = rows.reduce(function (m, o) { return Math.max(m, scale(o)); }, 1);
+    var shown = chart.all ? rows : rows.slice(0, chart.top);
+    if (state.ontology && shown.every(function (o) { return o.code !== state.ontology; })) {
+      var sel = rows.filter(function (o) { return o.code === state.ontology; });
+      shown = shown.concat(sel);   // keep the selected ontology visible
+    }
+    document.getElementById('bars').innerHTML = shown.map(function (o) {
+      var val = scale(o);
+      var w = 'calc(' + (val / max * 100).toFixed(2) + '% * 0.86)';
+      var segs = split ? UCS.filter(function (a) { return o.uc[a]; }).map(function (a) {
+        return '<b style="flex:' + o.uc[a] + ' 1 0;background:' + ucColor(a) + '"></b>';
+      }).join('') : '<b style="flex:1;background:var(--s1)"></b>';
+      var tip = '<b>' + esc(o.code) + '</b>: ' + esc(ontName(o.code)) + '<br>' + o.n + ' distinct term' + (o.n === 1 ? '' : 's') + ' in ' + o.reqs + ' requirement' + (o.reqs === 1 ? '' : 's') +
+        (split ? ' (' + val + ' counted per use case)<br>' + UCS.filter(function (a) { return o.uc[a]; }).map(function (a) { return esc(a) + ' ' + o.uc[a]; }).join(' · ') : '');
+      var pressed = state.ontology === o.code;
+      return '<button type="button" class="bar-row' + (state.ontology && !pressed ? ' dim' : '') + '" data-o="' + esc(o.code) + '" data-tip="' + esc(tip) + '" aria-pressed="' + pressed +
+        '" aria-label="' + esc(o.code + ': ' + val + (split ? ' terms, counted per use case' : ' terms')) + '"><span class="bar-label">' + esc(o.code) + '</span><span class="bar-track"><span class="fill" style="width:' + w + '">' + segs +
+        '</span><span class="bar-val">' + val + '</span></span></button>';
+    }).join('');
+    var more = document.getElementById('more');
+    more.hidden = rows.length <= chart.top;
+    more.textContent = chart.all ? 'Show only the ' + chart.top + ' largest' : 'Show all ' + rows.length + ' ontologies';
+    var head = '<tr><th>Ontology</th><th class="num">Terms</th><th class="num">Requirements</th>' + (split ? UCS.map(function (a) { return '<th class="num">' + esc(a) + '</th>'; }).join('') : '') + '</tr>';
+    document.getElementById('chart-table').innerHTML = '<table><thead>' + head + '</thead><tbody>' + rows.map(function (o) {
+      return '<tr><td><b>' + esc(o.code) + '</b> <span class="muted">' + esc(ontName(o.code)) + '</span></td><td class="num">' + o.n + '</td><td class="num">' + o.reqs + '</td>' +
+        (split ? UCS.map(function (a) { return '<td class="num">' + (o.uc[a] || '-') + '</td>'; }).join('') : '') + '</tr>';
+    }).join('') + '</tbody></table>';
+  }
+  (function chartEvents() {
+    var tip = document.getElementById('tip');
+    var bars = document.getElementById('bars');
+    function place(e) {
+      var x = Math.min(e.clientX + 14, window.innerWidth - 310), y = e.clientY + 14;
+      tip.style.left = Math.max(8, x) + 'px'; tip.style.top = y + 'px';
+    }
+    bars.addEventListener('mousemove', function (e) {
+      var r = e.target.closest('.bar-row');
+      if (!r) { tip.style.display = 'none'; return; }
+      tip.innerHTML = r.getAttribute('data-tip'); tip.style.display = 'block'; place(e);
+    });
+    bars.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    bars.addEventListener('focusin', function (e) {
+      var r = e.target.closest('.bar-row'); if (!r) return;
+      var b = r.getBoundingClientRect();
+      tip.innerHTML = r.getAttribute('data-tip'); tip.style.display = 'block'; tip.style.left = (b.left + 160) + 'px'; tip.style.top = (b.bottom + 4) + 'px';
+    });
+    bars.addEventListener('focusout', function () { tip.style.display = 'none'; });
+    bars.addEventListener('click', function (e) {
+      var r = e.target.closest('.bar-row'); if (!r) return;
+      var o = r.getAttribute('data-o');
+      state.ontology = state.ontology === o ? '' : o;
+      render();
+    });
+    document.getElementById('v-terms').addEventListener('click', function () { chart.view = 'terms'; renderChart(); });
+    document.getElementById('v-split').addEventListener('click', function () { chart.view = 'split'; renderChart(); });
+    document.getElementById('more').addEventListener('click', function () { chart.all = !chart.all; renderChart(); });
+  })();
+
   function renderCards() {
     var count = function (fn) { return R.filter(fn).length; };
     var cards = [
@@ -287,7 +435,8 @@ footer{margin-top:28px;font-size:.85rem}
     document.getElementById('q').value = state.q;
     FILTERS.forEach(function (f) { document.getElementById('f-' + f[0]).value = state[f[0]]; });
     renderCards();
-    var list = R.filter(matches);
+    renderChart();
+    var list = R.filter(function (r) { return matches(r); });
     document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + R.length + ' requirements';
     var body = document.querySelector('#tbl tbody');
     if (!list.length) { body.innerHTML = '<tr><td colspan="' + COLS + '" class="empty muted">No requirement matches these filters.</td></tr>'; return; }
