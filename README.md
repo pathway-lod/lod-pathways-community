@@ -14,7 +14,7 @@ This repository builds those standards: an **evidence model** that says, for any
 ## Project 3 Co-Leads 
 - Elena Del Pup, Wageningen University & Research, elena.delpup@wur.nl
 - Denise Slenter
-- Kumar Saurabh Sing 
+- Kumar Saurabh Singh
 
 ## The knowledge graph that predictions attach to
 
