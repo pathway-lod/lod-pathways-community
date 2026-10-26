@@ -2,7 +2,7 @@
 
 All plantiSMASH BGCs are *predictions*. How many of them can be linked to PlantMetWiki genes and pathways, how much do they overlap, and which evidence must a link carry?
 
-This pilot tests evidence case 1 (BGC predictions) in the main [README](../../README.md#1-bgc-predictions). The resulting evidence model is part of the [sample graph](../../README.md#sample-graph-the-four-cases-combined) there.
+This pilot tests evidence case 1 (BGC predictions) in the [specification](../../specification/SPECIFICATION.md#2-bgc---plantismash-bgcs). The resulting evidence model is part of the [sample graph](../../README.md#sample-graph-the-four-cases-combined) there.
 
 ## Starting point
 
@@ -27,7 +27,7 @@ Each BGC gene is linked to PlantMetWiki pathways in three tiers, strongest first
 | `gene_uniprot` | the BGC's *biosynthetic* protein (RefSeq/GenBank → UniProt) is an enzyme of the pathway | all |
 | `gene_ec` | the biosynthetic protein's *complete* EC number (UniProt) catalyses a reaction of the pathway | all |
 
-For every BGC the evidence points of the main README are collected: the prediction, the detection rule(s) and core domains, the plantiSMASH version, the MIBiG match (% of genes similar) and the overlap with the pathway.
+For every BGC the evidence points of the BGC use case in the [specification](../../specification/SPECIFICATION.md#2-bgc---plantismash-bgcs) are collected: the prediction, the detection rule(s) and core domains, the plantiSMASH version, the MIBiG match (% of genes similar) and the overlap with the pathway.
 
 ## Setup and run
 

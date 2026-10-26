@@ -2,7 +2,7 @@
 Pilot: link all plantiSMASH 2.0 predicted BGCs (precalculated database, 430 genomes) to
 PlantMetWiki genes and pathways, and collect the evidence needed to describe each link.
 
-Evidence collected per BGC (the statements listed in the main README):
+Evidence collected per BGC (the statements of the BGC use case in specification/SPECIFICATION.md):
   - there is a BGC                    plantiSMASH prediction (pHMM rules + genomic co-location)
   - detected by rule X                cluster `type` (e.g. "terpene", "saccharide-alkaloid") and core domains
   - from plantiSMASH version X        precalculated database v2 (plantiSMASH 2.0)

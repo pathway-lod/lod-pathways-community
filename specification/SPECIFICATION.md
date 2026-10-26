@@ -8,6 +8,8 @@ This document collects, for each use case, what we need to say about the data an
 - The terms live in [`ontology_terms.csv`](ontology_terms.csv), one row per requirement and candidate term. That file is the source of truth.
 - The tables below are **generated from the CSV**. Do not edit them by hand: edit the CSV and run the script (see [How to edit](#how-to-edit)).
 
+**How the terms were checked.** Every term ID and label in the CSV was looked up in the [EBI Ontology Lookup Service](https://www.ebi.ac.uk/ols4/) (OLS) by `check_terms.py --update`, so none is typed by hand; the date of the last check is in the `verified` column. Terms from vocabularies that OLS does not hold (PROV-O, SKOS, Dublin Core, the WikiPathways vocabulary, identifiers.org) are checked against their published documents. A statement of the form "no term found" in a note means that searches in OLS (several ontologies, with the main synonyms) returned nothing suitable at the date of the check.
+
 
 ## Use cases and acronyms
 
@@ -85,9 +87,9 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 
 | ID | Use case | Requirement | Owner | Action | Why it is open |
 |---|---|---|---|---|---|
+| **MET-04** | MET - Metabolomics data | A spectral library match supports the annotation | Elena Del Pup | review, request_term | Ask Adriano Rutz whether a term for a spectral library match as evidence already exists, or whether to request one. |
 | **PMN-12** | PMN - PlantCyc computationally inferred | A reusable crosswalk between PlantCyc EV- codes and ECO | Elena Del Pup | request_term | No ECO or PlantCyc crosswalk found (searching the codes in the Ontology Lookup Service returns nothing). |
 | **BGC-12** | BGC - plantiSMASH BGCs | The BGC overlaps a PlantMetWiki pathway | Elena Del Pup | review | Open design question: say this only at query time, or also record it? |
-| **MET-04** | MET - Metabolomics data | A spectral library match supports the annotation | Elena Del Pup | review | Ask Adriano Rutz whether a term for a spectral library match as evidence already exists, or whether to request one. |
 | **PMN-11** | PMN - PlantCyc computationally inferred | Prediction method and confidence of the extended PlantCyc predictions | Elena Del Pup | review | TODO(Elena): which method produces the predictions and what scores or confidence they carry. |
 | **UN-04** | UN - Unsupervised predictions | Training procedure (supervised learning on known links) | Elena Del Pup | review | Link prediction is trained on known links, so the section title 'Unsupervised predictions' may need rewording (for example 'Machine-learning predictions'). |
 | **UN-08** | UN - Unsupervised predictions | Ranking metrics of the benchmark (precision of the top k hits, for example P-H@50) | Elena Del Pup | review | No term found for precision of the top k hits. |
@@ -218,6 +220,11 @@ plantiSMASH predicts biosynthetic gene clusters (BGCs) in plant genomes with rul
 - **Pilot results:** [`../pilots/plantismash_overlap/`](../pilots/plantismash_overlap/). Direct links for *A. thaliana*: 33 BGCs, 53 genes and 216 pathways; 57 BGCs with 448 links of the direct and UniProt tiers overall.
 - **Generated RDF:** [`../shape_constraints/rdf/bgc.ttl`](../shape_constraints/rdf/bgc.ttl).
 
+**Notes for the maintainers of PlantMetWiki's BGC graph** (`bgc-plantismash` and `bgc-mibig`):
+
+- It links BGCs to genes with `obo:RO_0000051`, a term that was not found in the Ontology Lookup Service. The OBO *has part* term is `BFO:0000051` (to be checked with the `map-to-rdf` authors).
+- It stores only BGC to gene, a label and the source. There is no detection rule, version, MIBiG match or evidence type, so a prediction cannot be told from a curated MIBiG cluster.
+
 ### Specifications and fitting ontology terms
 
 >  there is a BGC, detected by rule X, plantiSMASH version X, complete or partial MIBiG match, X overlap with pathway nodes.
@@ -270,7 +277,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-01** | The annotation comes from LC-MS/MS data | `ECO:0001580` liquid chromatography coupled with tandem mass spectrometry evidence | - | - | 🟢 covered | 🟠 open | reuse | - |
 | **MET-02** | Several tools were combined automatically (consensus annotation) | `ECO:0007653` automatically integrated combinatorial computational evidence used in automatic assertion | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-03** | A single in-silico tool proposed the structure (SIRIUS, MS2Query, DreaMS) | `ECO:0007669` computational evidence used in automatic assertion | `ECO:0008004` machine learning method evidence used in automatic assertion (alternative)<br>`ECO:0008006` deep learning neural network method evidence used in automatic assertion (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
-| **MET-04** | A spectral library match supports the annotation | - | `MS:1001031` spectral library search (stand-in)<br>`EDAM:operation_3801` Spectral library search (alternative) | - | 🟡 partial | 🟠 open | review | Elena Del Pup |
+| **MET-04** | A spectral library match supports the annotation | - | `MS:1001031` spectral library search (stand-in)<br>`EDAM:operation_3801` Spectral library search (alternative) | Request to ECO: 'spectral library match evidence used in automatic assertion'. No ECO term found; ECO:0001580 (LC-MS/MS evidence) is generic. | 🟡 partial | 🟠 open | review, request_term | Elena Del Pup |
 | **MET-05** | Confidence level of the identification (MSI or Schymanski level) | `MS:1002896` compound identification confidence level | `MS:1002955` hr-ms compound identification confidence level (alternative)<br>`NCIT:C181006` Metabolite Identification Confidence Level (alternative) | - | 🟢 covered | 🟠 open | review | - |
 | **MET-06** | The identified structure is given by its InChIKey | `CHEMINF:000059` InChIKey | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-07** | The metabolite in PlantMetWiki is identified by an InChIKey IRI | - | - | - | 🔴 gap | ✅ agreed | - | - |
@@ -288,7 +295,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-19** | Scan polarity of a whole acquisition run (every scan of the run has the same polarity) | `MS:1000077` positive polarity acquisition (value of `MS:1000465`)<br>`MS:1000076` negative polarity acquisition (value of `MS:1000465`) | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-20** | Instrument model and ion source used for the acquisition | `MS:1000031` instrument model<br>`MS:1003095` Orbitrap Exploris 120 (value of `MS:1000031`) | `MS:1000073` electrospray ionization (stand-in) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **MET-21** | Acquisition method that qualifies the spectra (data-dependent MS/MS, fragmentation, energies, scan window, resolution) | `MS:1003221` data-dependent acquisition<br>`MS:1002481` higher energy beam-type collision-induced dissociation<br>`MS:1000138` normalized collision energy<br>`MS:1000501` scan window lower limit<br>`MS:1000500` scan window upper limit<br>`MS:1000011` mass resolution | - | - | 🟢 covered | 🔵 proposed | reuse | - |
-| **MET-22** | List of precursor masses excluded from fragmentation during acquisition | - | - | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. | 🔴 gap | 🟠 open | request_term | - |
+| **MET-22** | List of precursor masses excluded from fragmentation during acquisition | - | - | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. Request to PSI-MS: 'precursor exclusion list' (an acquisition setting of data-dependent MS/MS). | 🔴 gap | 🟠 open | request_term | - |
 | **MET-23** | Feature detection and alignment run (mzmine batch) that produced the feature table | `MS:1002342` mzmine | `MS:1000745` retention time alignment (alternative) | `lodp:batchFile` batch file | 🟢 covered | 🟠 open | reuse, review, local_term | - |
 | **MET-24** | Organism and plant structure of the sample in which a feature was measured | `wp:organism` organism<br>`PO:0009011` plant structure | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-25** | Abundance (peak area) of a feature in a sample | `MSIO:0000191` peak area | - | - | 🟢 covered | 🟠 open | review | - |
@@ -329,7 +336,7 @@ MEANtools correlates metabolite features with gene transcripts and groups genes 
 | **PO-03** | Evidence: transcript and metabolite abundances are correlated | - | `ECO:0007590` high throughput expression pattern evidence used in automatic assertion (stand-in)<br>`ECO:0007298` expression pattern evidence used in automatic assertion (alternative)<br>`ECO:0007829` combinatorial computational and experimental evidence used in automatic assertion (alternative) | - | 🟡 partial | 🟠 open | request_term, review | - |
 | **PO-04** | Correlation coefficient of the pair | `STATO:0000280` Pearson's correlation coefficient | `STATO:0000201` Spearman's rank correlation coefficient (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **PO-05** | Significance of the correlation | `OBI:0000175` p-value | `OBI:0001265` FWER adjusted p-value (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
-| **PO-06** | Mutual rank of the gene-metabolite pair | - | - | `lodp:mutualRank` mutual rank | 🔴 gap | 🔵 proposed | local_term | - |
+| **PO-06** | Mutual rank of the gene-metabolite pair | - | - | `lodp:mutualRank` mutual rank | 🔴 gap | 🔵 proposed | request_term | - |
 | **PO-07** | Edge weight derived from the mutual rank and the decay rate | - | - | `lodp:edgeWeight` edge weight<br>`lodp:decayRate` decay rate | 🔴 gap | 🔵 proposed | local_term | - |
 | **PO-08** | Functional cluster (module) of genes and metabolites | - | `EDAM:data_3768` Clustered expression profiles (alternative) | `lodp:functionalCluster` functional cluster | 🔴 gap | 🟠 open | local_term, review | - |
 | **PO-09** | Significance of the functional cluster | - | `OBI:0000175` p-value (alternative) | `lodp:clusterPValue` cluster p-value | 🔴 gap | 🟠 open | local_term, review | - |
@@ -408,7 +415,7 @@ Expression measurements and the statistics derived from them serve as evidence f
 | **TX-13** | Multiple-testing correction method (Benjamini-Hochberg, the DESeq2 default) | `OBI:0200036` Benjamini and Hochberg false discovery rate correction method | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **TX-14** | Correlation of the expression profiles of two genes (or of a gene and a metabolite) | `STATO:0000280` Pearson's correlation coefficient | `STATO:0000201` Spearman's rank correlation coefficient (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **TX-15** | Two genes are co-expressed | - | `INO:0000231` co-expression (stand-in) | - | 🟡 partial | 🟠 open | review | - |
-| **TX-16** | Mutual rank of a pair based on correlation ranks (co-expression network, MEANtools) | - | - | `lodp:mutualRank` mutual rank | 🔴 gap | 🔵 proposed | local_term | - |
+| **TX-16** | Mutual rank of a pair based on correlation ranks (co-expression network, MEANtools) | - | - | `lodp:mutualRank` mutual rank | 🔴 gap | 🔵 proposed | request_term | - |
 | **TX-17** | The comparison a differential result refers to (treatment against control, tissue, time point) | - | `EFO:0000727` treatment (alternative) | `lodp:contrast` contrast | 🔴 gap | 🟠 open | local_term, review | - |
 | **TX-18** | Replicates of a condition | `EFO:0000683` replicate | `OBI:0000198` biological replicate role (alternative)<br>`SIO:001418` replicate (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **TX-19** | Plant structure (tissue or organ) the sample was taken from | `PO:0009011` plant structure | - | - | 🟢 covered | 🔵 proposed | reuse | - |
@@ -467,20 +474,20 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **MET-13** | MET - Metabolomics data | An untargeted MS feature as a resource (m/z, retention time, scan polarity, dataset) | 🔴 gap | local_term | No ontology class for an untargeted feature was found. |
 | **MET-14** | MET - Metabolomics data | Identifier of the feature within its dataset | 🔴 gap | local_term | - |
 | **MET-18** | MET - Metabolomics data | The study or dataset a feature comes from | 🔴 gap | local_term | MetaboLights (MTBLS14270) and MassIVE (MSV000101479) IRIs. DCAT is a candidate to review (not in the Ontology Lookup Service). |
-| **MET-22** | MET - Metabolomics data | List of precursor masses excluded from fragmentation during acquisition | 🔴 gap | request_term | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. |
+| **MET-22** | MET - Metabolomics data | List of precursor masses excluded from fragmentation during acquisition | 🔴 gap | request_term | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. Request to PSI-MS: 'precursor exclusion list' (an acquisition setting of data-dependent MS/MS). |
 | **MET-26** | MET - Metabolomics data | Compound class of the structure proposed for a feature (ClassyFire, NPClassifier) | 🔴 gap | request_term | S5 and S6 give ClassyFire and NPClassifier class, superclass and pathway with probabilities (canopus_*, ms2query_cf_*, dreams_*_results). Neither classification is in the Ontology Lookup Service. NPClassifier pathways could be linked to PlantCyc pathway classes. |
 | **MET-27** | MET - Metabolomics data | A Mass2Motif (MS2LDA pattern of fragments and neutral losses) is assigned to a feature with a probability | 🔴 gap | local_term | A topic of the MS2LDA model: a set of fragment and neutral-loss m/z values with weights, optionally with an automatic structure annotation (Spec2Vec, cosine >= 0.90). 400 motifs per mode. |
 | **MET-31** | MET - Metabolomics data | Several PlantMetWiki metabolites match one feature by mass | 🔴 gap | local_term | Number of PlantMetWiki metabolites that match the same feature and adduct. One claim per candidate; none of them is asserted as the identity. |
 | **PMN-09** | PMN - PlantCyc computationally inferred | The original PlantCyc evidence code is kept next to the ECO class | 🔴 gap | local_term | Keeps the claim traceable to PlantCyc's own vocabulary. |
 | **PMN-11** | PMN - PlantCyc computationally inferred | Prediction method and confidence of the extended PlantCyc predictions | 🔴 gap | review | TODO(Elena): which method produces the predictions and what scores or confidence they carry. |
 | **PMN-12** | PMN - PlantCyc computationally inferred | A reusable crosswalk between PlantCyc EV- codes and ECO | 🔴 gap | request_term | No ECO or PlantCyc crosswalk found (searching the codes in the Ontology Lookup Service returns nothing). The mapping in this table could be contributed. |
-| **PO-06** | PO - Paired omics data | Mutual rank of the gene-metabolite pair | 🔴 gap | local_term | No term found in STATO or OBI. |
+| **PO-06** | PO - Paired omics data | Mutual rank of the gene-metabolite pair | 🔴 gap | request_term | Request to STATO: 'mutual rank' (a rank-based co-expression statistic). No term found in STATO or OBI; lodp:mutualRank is used until a term exists. Same term as TX-16. |
 | **PO-07** | PO - Paired omics data | Edge weight derived from the mutual rank and the decay rate | 🔴 gap | local_term | exp(-(MR-1)/DR), 0-1. |
 | **PO-08** | PO - Paired omics data | Functional cluster (module) of genes and metabolites | 🔴 gap | local_term, review | Cluster id as an attribute of the association; a cluster node of its own is an open choice. |
 | **PO-09** | PO - Paired omics data | Significance of the functional cluster | 🔴 gap | local_term, review | ClusterONE p-value; most clusters are not significant. |
 | **PO-11** | PO - Paired omics data | Identity of the tomato gene (Solyc locus) and its PlantMetWiki counterpart | 🔴 gap | local_term | PlantMetWiki stores Solyc loci only as properties of pathway nodes (about 20 tomato loci). |
 | **PO-12** | PO - Paired omics data | Which side of the association is found in PlantMetWiki (gene, metabolite or both) | 🔴 gap | local_term | Support from PlantMetWiki can be partial. |
-| **TX-16** | TX - Transcriptomics data | Mutual rank of a pair based on correlation ranks (co-expression network, MEANtools) | 🔴 gap | local_term | No term found in STATO, OBI or SIO (searched 'mutual rank' twice). Same local term as PO-06. |
+| **TX-16** | TX - Transcriptomics data | Mutual rank of a pair based on correlation ranks (co-expression network, MEANtools) | 🔴 gap | request_term | Request to STATO: 'mutual rank'. No term found in STATO, OBI or SIO (searched 'mutual rank' twice); lodp:mutualRank is used until a term exists. Same term as PO-06. |
 | **TX-17** | TX - Transcriptomics data | The comparison a differential result refers to (treatment against control, tissue, time point) | 🔴 gap | local_term, review | Names the two conditions and their direction, so that the sign of a fold change is defined. |
 | **TX-21** | TX - Transcriptomics data | The sequencing dataset the expression values come from (BioProject, SRA or GEO accession) | 🔴 gap | local_term | Same local property as MET-18. The tomato data: BioProject PRJNA509154. |
 | **TX-22** | TX - Transcriptomics data | Gene identifiers: expression tables and PlantMetWiki use different gene IDs | 🔴 gap | local_term | Same property as PO-11. MEANtools uses ITAG2 models (Solyc..), plantiSMASH and UniProt use RefSeq or Ensembl Plants IDs; an ID crosswalk is needed (BridgeDb). |
@@ -493,13 +500,13 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **BGC-08** | BGC - plantiSMASH BGCs | Complete match with a MIBiG BGC (all genes similar) | 🟡 partial | review | A prediction is not the same thing as a curated cluster, so 'exact' is a stretch. |
 | **BGC-09** | BGC - plantiSMASH BGCs | Partial match with a MIBiG BGC | 🟡 partial | review | The threshold between complete and partial is a choice (now: 100% of genes similar). |
 | **COM-11** | COM - Shared by all use cases | A statement about an existing PlantMetWiki triple carries evidence (reification) | 🟡 partial | review | - |
-| **MET-04** | MET - Metabolomics data | A spectral library match supports the annotation | 🟡 partial | review | Ask Adriano Rutz whether a term for a spectral library match as evidence already exists, or whether to request one. MS:1001031 is a PSI-MS term for the method; searching ECO for 'spectral library' finds no class; the generated RDF uses ECO:0001580 only. |
+| **MET-04** | MET - Metabolomics data | A spectral library match supports the annotation | 🟡 partial | review, request_term | Ask Adriano Rutz whether a term for a spectral library match as evidence already exists, or whether to request one. MS:1001031 is a PSI-MS term for the method; searching ECO for 'spectral library' finds no class; the generated RDF uses ECO:0001580 only. |
 | **MET-09** | MET - Metabolomics data | An MS feature is annotated as a PlantMetWiki metabolite | 🟡 partial | review, local_term | SKOS mapping relations are meant for concepts, not measurements. A dedicated 'annotated as' property would be cleaner. |
 | **MET-10** | MET - Metabolomics data | A related compound (MS2Query analogue with a different mass) is not a detection | 🟡 partial | review | Analogue hits are currently left out of the generated RDF. |
 | **MET-28** | MET - Metabolomics data | The annotation rests on the accurate mass of an MS1 feature only (no fragment spectrum) | 🟡 partial | review | - |
 | **MET-29** | MET - Metabolomics data | Mass error and tolerance of a mass match | 🟡 partial | review, local_term | A QC metric of a run, not of one match. |
 | **PMN-14** | PMN - PlantCyc computationally inferred | Which Cyc database a statement or prediction comes from | 🟡 partial | review | 'A related resource from which the described resource is derived'. Today the sample graph names the database in lodp:software ('PlantCyc'), which stretches that property. |
-| **PO-03** | PO - Paired omics data | Evidence: transcript and metabolite abundances are correlated | 🟡 partial | request_term, review | Closest ECO class. ECO has no class for metabolite-transcript correlation; request one. |
+| **PO-03** | PO - Paired omics data | Evidence: transcript and metabolite abundances are correlated | 🟡 partial | request_term, review | Request to ECO (github.com/evidenceontology/evidenceontology/issues): 'metabolite-transcript correlation evidence used in automatic assertion', as a child of 'expression pattern evidence'. ECO:0007590 is the closest class in the meantime. |
 | **TX-05** | TX - Transcriptomics data | Normalisation method (library-size normalisation, TMM, variance-stabilising transformation) | 🟡 partial | review | Variance stabilizing transformation (as in DESeq2 'vst'). |
 | **TX-08** | TX - Transcriptomics data | Fold change between two conditions (log2 fold change of a DESeq2 result) | 🟡 partial | review, local_term | 'fold change'; the log2 scale is not captured. |
 | **TX-10** | TX - Transcriptomics data | Standard error of the log2 fold change (DESeq2 lfcSE) | 🟡 partial | review | 'standard error of estimate'. |
@@ -510,6 +517,24 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **UN-04** | UN - Unsupervised predictions | Training procedure (supervised learning on known links) | 🟡 partial | review | - |
 | **UN-05** | UN - Unsupervised predictions | Version of the model code and the training run (hyperparameters, random seed) | 🟡 partial | review | - |
 <!-- END:gaps -->
+
+### Terms to request from existing ontologies
+
+For these requirements no suitable term exists. A term should be proposed to the ontology named in the request, and the local term (`lodp:`) or the closest existing term is used until it is accepted. The table is generated from the rows with the action `request_term`; the wording of each request is in the `notes` column of the CSV and can be discussed on the dashboard.
+
+<!-- BEGIN:requests -->
+7 requirements are marked `request_term`: no suitable term exists, and the term should be proposed to an existing ontology.
+
+| ID | Requirement | Closest existing term | Request | Owner |
+|---|---|---|---|---|
+| **PMN-12** | A reusable crosswalk between PlantCyc EV- codes and ECO | - | No ECO or PlantCyc crosswalk found (searching the codes in the Ontology Lookup Service returns nothing). The mapping in this table could be contributed. | Elena Del Pup |
+| **MET-04** | A spectral library match supports the annotation | `MS:1001031` spectral library search | Request to ECO: 'spectral library match evidence used in automatic assertion'. No ECO term found; ECO:0001580 (LC-MS/MS evidence) is generic. | - |
+| **MET-22** | List of precursor masses excluded from fragmentation during acquisition | - | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. Request to PSI-MS: 'precursor exclusion list' (an acquisition setting of data-dependent MS/MS). | - |
+| **MET-26** | Compound class of the structure proposed for a feature (ClassyFire, NPClassifier) | - | S5 and S6 give ClassyFire and NPClassifier class, superclass and pathway with probabilities (canopus_*, ms2query_cf_*, dreams_*_results). Neither classification is in the Ontology Lookup Service. NPClassifier pathways could be linked to PlantCyc pathway classes. | - |
+| **PO-03** | Evidence: transcript and metabolite abundances are correlated | `ECO:0007590` high throughput expression pattern evidence used in automatic assertion | Request to ECO (github.com/evidenceontology/evidenceontology/issues): 'metabolite-transcript correlation evidence used in automatic assertion', as a child of 'expression pattern evidence'. ECO:0007590 is the closest class in the meantime. | - |
+| **PO-06** | Mutual rank of the gene-metabolite pair | - | Request to STATO: 'mutual rank' (a rank-based co-expression statistic). No term found in STATO or OBI; lodp:mutualRank is used until a term exists. Same term as TX-16. | - |
+| **TX-16** | Mutual rank of a pair based on correlation ranks (co-expression network, MEANtools) | - | Request to STATO: 'mutual rank'. No term found in STATO, OBI or SIO (searched 'mutual rank' twice); lodp:mutualRank is used until a term exists. Same term as PO-06. | - |
+<!-- END:requests -->
 
 ### Which ontologies cover what
 

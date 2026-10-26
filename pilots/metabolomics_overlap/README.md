@@ -2,7 +2,7 @@
 
 How many metabolites annotated in the Brassicaceae metabolic fingerprinting dataset (Wolters et al. 2026) are present as metabolites in [PlantMetWiki](https://plantmetwiki.bioinformatics.nl)?
 
-This is the first test of evidence case 3 (consensus from MS/MS tools) in the main [README](../../README.md).
+This is the first test of the MET use case (consensus from MS/MS tools) of the [specification](../../specification/SPECIFICATION.md#3-met---metabolomics-data); see also the [pipeline](../../README.md#the-pipeline).
 
 ## Inputs
 
@@ -28,7 +28,7 @@ The dataset deposit (Zenodo [10.5281/zenodo.19391098](https://doi.org/10.5281/ze
 
 - Each feature can have up to six structure predictions. Each prediction is assigned an **evidence tier**, strongest first:
   1. `gnps_library`: GNPS spectral library match
-  2. `consensus_inchi`: ≥ 2 of SIRIUS / MS2Query / DreaMS agree on the structure (Felicia's consensus module)
+  2. `consensus_inchi`: ≥ 2 of SIRIUS / MS2Query / DreaMS agree on the structure (the consensus module of Wolters et al. 2026)
   3. `sirius`: SIRIUS CSI:FingerID top hit
   4. `ms2query_exact`: MS2Query hit with precursor m/z difference ≤ 0.01 Da
   5. `dreams`: DreaMS top hit
@@ -92,4 +92,4 @@ Open [`explore_results.ipynb`](explore_results.ipynb) in VS Code, select the `.v
 - [ ] Add species-aware matching: is the metabolite in a PlantMetWiki pathway *for the same species or genus*?
 - [ ] Curate the gap list in the notebook (section 9): real gaps vs. metabolites without an InChIKey in PlantMetWiki.
 - [ ] Review the hand-made class mapping in [`data/pathway_class_categories.csv`](data/pathway_class_categories.csv). PlantMetWiki only stores the most specific PlantCyc class, and the MetaCyc hierarchy needs a BioCyc account. Carotenoids and lignin count as specialized, following MetaCyc. It might be worth adding the class hierarchy to PlantMetWiki itself.
-- [ ] Express the matches as RDF using the evidence model in the main README (ECO terms per tier).
+- [ ] Express the matches as RDF using the evidence model of the [specification](../../specification/SPECIFICATION.md) (ECO terms per tier).
