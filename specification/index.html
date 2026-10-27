@@ -11,6 +11,7 @@
   --covered:#116329; --covered-bg:#dafbe1; --partial:#7d4e00; --partial-bg:#fff2b8; --gap:#a40e26; --gap-bg:#ffebe9;
   --open:#953800; --open-bg:#ffe8d2; --proposed:#0550ae; --proposed-bg:#ddf4ff; --agreed:#116329; --agreed-bg:#dafbe1;
   --rejected:#424a53; --rejected-bg:#e6eaef; --local:#6639ba; --local-bg:#f0e8ff;
+  --good:#0ca30c; --warn:#fab219; --crit:#d03b3b;
   --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#6250d6;
 }
 @media (prefers-color-scheme: dark){
@@ -95,6 +96,7 @@ code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace}
 .chart details{margin-top:8px;font-size:.85rem}
 .chart table{font-size:.82rem}
 .chart td.num,.chart th.num{text-align:right;font-variant-numeric:tabular-nums}
+.cov-n{margin-left:8px;font-size:.8rem;color:var(--muted);white-space:nowrap}
 #tip{position:fixed;z-index:10;pointer-events:none;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.82rem;max-width:300px;box-shadow:0 2px 8px rgba(0,0,0,.18);display:none}
 footer{margin-top:28px;font-size:.85rem}
 .empty{padding:24px;text-align:center}
@@ -124,6 +126,19 @@ footer{margin-top:28px;font-size:.85rem}
     <div class="bars" id="bars"></div>
     <button type="button" class="more" id="more" hidden></button>
     <details><summary>Table view</summary><div class="tablewrap" id="chart-table"></div></details>
+  </section>
+  <section class="chart" id="cov" aria-labelledby="cov-h">
+    <div class="chart-head">
+      <h2 id="cov-h">Coverage</h2>
+      <div class="seg" role="group" aria-label="Coverage view">
+        <button type="button" id="c-uc" aria-pressed="true">Requirements by use case</button>
+        <button type="button" id="c-ont" aria-pressed="false">Terms by ontology</button>
+      </div>
+    </div>
+    <p class="cap muted" id="cov-cap"></p>
+    <div class="keys" id="cov-keys"></div>
+    <div class="bars" id="cov-bars"></div>
+    <details><summary>Table view</summary><div class="tablewrap" id="cov-table"></div></details>
   </section>
   <div id="tip" role="tooltip"></div>
 
@@ -216,11 +231,11 @@ footer{margin-top:28px;font-size:.85rem}
     });
   }
 
-  function matches(r, skip) {
+  function matches(r, skip) {   // skip: names of filters to leave out (a chart ignores the filter of the dimension it draws)
     if (state.q && r.haystack.indexOf(state.q.toLowerCase()) < 0) return false;
     for (var i = 0; i < FILTERS.length; i++) {
       var k = FILTERS[i][0];
-      if (k === skip) continue;
+      if (skip && skip.indexOf(k) >= 0) continue;
       if (state[k] && FILTERS[i][2](r).indexOf(state[k]) < 0) return false;
     }
     return true;
@@ -325,7 +340,7 @@ footer{margin-top:28px;font-size:.85rem}
 
   function ontologyStats() {
     var by = {};
-    R.filter(function (r) { return matches(r, 'ontology'); }).forEach(function (r) {
+    R.filter(function (r) { return matches(r, ['ontology']); }).forEach(function (r) {
       var uc = acr(r.use_case_title);
       r.rows.forEach(function (t) {
         if (!t.ontology || !t.curie || t.decision === 'rejected') return;
@@ -414,6 +429,92 @@ footer{margin-top:28px;font-size:.85rem}
     document.getElementById('more').addEventListener('click', function () { chart.all = !chart.all; renderChart(); });
   })();
 
+  /* ---- coverage ---------------------------------------------------------- */
+  var cov = { view: 'uc' };
+  var COVSETS = {
+    uc:  [['covered', 'covered', '\u2713', 'var(--good)'], ['partial', 'partial', '\u25D0', 'var(--warn)'], ['gap', 'gap', '\u2715', 'var(--crit)']],
+    ont: [['exact', 'exact fit', '\u2713', 'var(--good)'], ['partial', 'partial fit', '\u25D0', 'var(--warn)'], ['none', 'no fit (local term)', '\u2715', 'var(--crit)']]
+  };
+  function coverageGroups() {
+    var by = {}, order = [];
+    var add = function (g, k) { if (!by[g]) { by[g] = { g: g, c: {} }; order.push(g); } by[g].c[k] = (by[g].c[k] || 0) + 1; };
+    if (cov.view === 'uc') {
+      R.filter(function (r) { return matches(r, ['use_case', 'status']); }).forEach(function (r) { add(acr(r.use_case_title), r.status); });
+      order = UCS.filter(function (a) { return by[a]; });
+    } else {
+      var rank = { exact: 3, partial: 2, none: 1 }, best = {};   // a term counts once, with its best fit over the requirements
+      R.filter(function (r) { return matches(r, ['ontology']); }).forEach(function (r) {
+        r.rows.forEach(function (t) {
+          if (!t.ontology || !t.curie || t.decision === 'rejected') return;
+          var k = t.ontology + ' ' + t.curie;
+          if (!best[k] || rank[t.coverage] > rank[best[k].cov]) best[k] = { o: t.ontology, cov: t.coverage };
+        });
+      });
+      Object.keys(best).forEach(function (k) { add(best[k].o, best[k].cov); });
+      order.sort(function (a, b) {
+        var n = function (g) { return Object.keys(by[g].c).reduce(function (s, k) { return s + by[g].c[k]; }, 0); };
+        return n(b) - n(a) || (a < b ? -1 : 1);
+      });
+    }
+    return order.map(function (g) { return by[g]; });
+  }
+  function renderCoverage() {
+    var uc = cov.view === 'uc', sets = COVSETS[cov.view], groups = coverageGroups();
+    document.getElementById('c-uc').setAttribute('aria-pressed', uc ? 'true' : 'false');
+    document.getElementById('c-ont').setAttribute('aria-pressed', uc ? 'false' : 'true');
+    var tot = function (g) { return sets.reduce(function (s, x) { return s + (g.c[x[0]] || 0); }, 0); };
+    var all = groups.reduce(function (s, g) { return s + tot(g); }, 0);
+    var good = groups.reduce(function (s, g) { return s + (g.c[sets[0][0]] || 0); }, 0);
+    document.getElementById('cov-cap').textContent = all ? (uc ?
+      all + ' requirements; ' + good + ' (' + Math.round(100 * good / all) + '%) have a primary term that fits exactly (covered), the others only a partial fit or a stand-in (partial) or no term or only a local one (gap). Select a bar to filter by use case and status.' :
+      all + ' distinct terms; each is counted with its best fit over the requirements that use it. Local placeholder terms (lodp) have no fit by definition. Select a bar to filter by ontology.') :
+      'Nothing matches these filters.';
+    document.getElementById('cov-keys').innerHTML = sets.map(function (x) {
+      return '<span><i style="background:' + x[3] + '"></i>' + x[2] + ' ' + esc(x[1]) + '</span>';
+    }).join('');
+    var max = groups.reduce(function (m, g) { return Math.max(m, tot(g)); }, 1);
+    document.getElementById('cov-bars').innerHTML = groups.map(function (g) {
+      var segs = sets.filter(function (x) { return g.c[x[0]]; }).map(function (x) {
+        return '<b data-s="' + x[0] + '" style="flex:' + g.c[x[0]] + ' 1 0;background:' + x[3] + '"></b>';
+      }).join('');
+      var txt = sets.filter(function (x) { return g.c[x[0]]; }).map(function (x) { return x[2] + ' ' + g.c[x[0]]; }).join('  ');
+      var tip = '<b>' + esc(g.g) + '</b>' + (uc ? ': ' + esc(UCTITLE[g.g].split(' - ')[1] || '') : ': ' + esc(ontName(g.g))) + '<br>' +
+        sets.map(function (x) { return x[2] + ' ' + esc(x[1]) + ': ' + (g.c[x[0]] || 0); }).join('<br>');
+      var pressed = uc ? state.use_case === UCTITLE[g.g] : state.ontology === g.g;
+      return '<button type="button" class="bar-row' + (pressed ? '' : '') + '" data-g="' + esc(g.g) + '" data-tip="' + esc(tip) + '" aria-pressed="' + pressed + '" aria-label="' +
+        esc(g.g + ': ' + sets.map(function (x) { return (g.c[x[0]] || 0) + ' ' + x[1]; }).join(', ')) + '"><span class="bar-label">' + esc(g.g) +
+        '</span><span class="bar-track"><span class="fill" style="width:calc(' + (tot(g) / max * 100).toFixed(2) + '% * 0.78)">' + segs + '</span><span class="cov-n">' + esc(txt) + '</span></span></button>';
+    }).join('');
+    var head = '<tr><th>' + (uc ? 'Use case' : 'Ontology') + '</th>' + sets.map(function (x) { return '<th class="num">' + x[2] + ' ' + esc(x[1]) + '</th>'; }).join('') + '<th class="num">Total</th></tr>';
+    document.getElementById('cov-table').innerHTML = '<table><thead>' + head + '</thead><tbody>' + groups.map(function (g) {
+      return '<tr><td><b>' + esc(g.g) + '</b></td>' + sets.map(function (x) { return '<td class="num">' + (g.c[x[0]] || 0) + '</td>'; }).join('') + '<td class="num">' + tot(g) + '</td></tr>';
+    }).join('') + '</tbody></table>';
+  }
+  (function covEvents() {
+    var tip = document.getElementById('tip'), bars = document.getElementById('cov-bars');
+    bars.addEventListener('mousemove', function (e) {
+      var r = e.target.closest('.bar-row');
+      if (!r) { tip.style.display = 'none'; return; }
+      tip.innerHTML = r.getAttribute('data-tip'); tip.style.display = 'block';
+      tip.style.left = Math.max(8, Math.min(e.clientX + 14, window.innerWidth - 310)) + 'px'; tip.style.top = (e.clientY + 14) + 'px';
+    });
+    bars.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    bars.addEventListener('click', function (e) {
+      var r = e.target.closest('.bar-row'); if (!r) return;
+      var g = r.getAttribute('data-g'), seg = e.target.closest('b');
+      if (cov.view === 'uc') {
+        var title = UCTITLE[g], st = seg ? seg.getAttribute('data-s') : '';
+        var same = state.use_case === title && state.status === st;
+        state.use_case = same ? '' : title; state.status = same ? '' : st;
+      } else {
+        state.ontology = state.ontology === g ? '' : g;
+      }
+      render();
+    });
+    document.getElementById('c-uc').addEventListener('click', function () { cov.view = 'uc'; renderCoverage(); });
+    document.getElementById('c-ont').addEventListener('click', function () { cov.view = 'ont'; renderCoverage(); });
+  })();
+
   function renderCards() {
     var count = function (fn) { return R.filter(fn).length; };
     var cards = [
@@ -436,6 +537,7 @@ footer{margin-top:28px;font-size:.85rem}
     FILTERS.forEach(function (f) { document.getElementById('f-' + f[0]).value = state[f[0]]; });
     renderCards();
     renderChart();
+    renderCoverage();
     var list = R.filter(function (r) { return matches(r); });
     document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + R.length + ' requirements';
     var body = document.querySelector('#tbl tbody');

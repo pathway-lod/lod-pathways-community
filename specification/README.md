@@ -13,7 +13,7 @@ The term table (`ontology_terms.csv`) stays the single source of truth. Everythi
 ### Contributors (any GitHub account)
 
 1. Open the dashboard (published address: <https://pathway-lod.github.io/lod-pathways-community/> once Pages is set up; otherwise open `index.html` from a download).
-2. The chart at the top shows how many distinct terms each ontology (and the local placeholder vocabulary `lodp`) contributes to the list, optionally split by use case. It follows the filters, and selecting a bar filters the requirements by that ontology; the table view below the chart gives the same numbers as text.
+2. The chart at the top shows how many distinct terms each ontology (and the local placeholder vocabulary `lodp`) contributes to the list, optionally split by use case. It follows the filters, and selecting a bar filters the requirements by that ontology; the table view below the chart gives the same numbers as text. A second chart shows the coverage: requirements by use case (covered, partial, gap) or terms by ontology (exact fit, partial fit, no fit, the last being the local placeholder terms); selecting a bar filters the list.
    Find the requirement with the search box or the filters (use case, status, decision, owner, action, ontology). Select its ID to see the candidate terms.
 3. Choose one of the buttons:
    - **Open a discussion**: a question or comment about the requirement.
