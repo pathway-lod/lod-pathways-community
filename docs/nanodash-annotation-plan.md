@@ -43,9 +43,10 @@ The specification, the shape constraints and the dashboard let a community discu
 
 ## Spike: status
 
-- Docker Desktop was started. The image `nanopub/nanodash:latest` could not be pulled: the Docker daemon's connection to Docker Hub timed out through its configured proxy (`http.docker.internal:3128`), although the host reaches Docker Hub.
-- Building from source needs Java 21; only Java 8 is installed on the machine used so far.
-- Nothing has been published. No test registry is documented in the Nanodash repository. A private or local registry and query service can be configured (`NANOPUB_REGISTRY_INSTANCES`, `NANOPUB_QUERY_INSTANCES`, `NANODASH_MAIN_REGISTRY`, `NANODASH_MAIN_QUERY`), and the publish form has a preview that shows the nanopublication before it is published.
+- **Running.** The Docker image could not be pulled (the Docker daemon's connection to Docker Hub timed out through its system proxy), so Nanodash was built and started from source with Java 21 (`./run-dev.sh`, version 5.21.3-SNAPSHOT). It answers at `http://localhost:37373`; the publish and profile pages load. Nothing has been published.
+- **Existing templates already use the Ontology Lookup Service picker.** A query of the public nanopublication network found published templates whose placeholders carry `nt:possibleValuesFromApi "https://www.ebi.ac.uk/ols/api/select?ontology=ro&fieldList=iri,label,description&q="`. One example: <https://w3id.org/np/RAYPTZVeBhqbabhNwh9aB0AoK_bz_Uk5Z3bEh-8gs0QiU>. The same constructs (`nt:GuidedChoicePlaceholder`, `nt:possibleValue`, statements written as `rdf:subject`, `rdf:predicate`, `rdf:object`) cover what the claim, evidence and run pattern needs. An ECO picker is the same URL with `ontology=eco`.
+- **Draft template.** [`nanodash-spike/met-annotation-claim.assertion.trig`](nanodash-spike/met-annotation-claim.assertion.trig) holds the assertion part for one metabolite annotation claim: a picker for the evidence class (ECO), closed lists for match level and tier, a pattern for the InChIKey IRI, and the run. It parses as TriG and uses only terms defined in [`lodp.ttl`](../shape_constraints/vocab/lodp.ttl). It is not yet wrapped in a nanopublication, published or tried in Nanodash.
+- **Next, and needing a decision.** Log in to the local instance, publish the template (signed, public and permanent), fill it in with the example feature and compare the result with the sample graph. The Nanodash repository documents no test registry; a private registry and query service can be configured (`NANOPUB_REGISTRY_INSTANCES`, `NANOPUB_QUERY_INSTANCES`, `NANODASH_MAIN_REGISTRY`, `NANODASH_MAIN_QUERY`), and the publish form has a preview that shows the nanopublication before it is published.
 
 ## Open decisions
 
