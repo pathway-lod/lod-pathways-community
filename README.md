@@ -127,6 +127,7 @@ A complete example that attaches one claim of each case to PlantMetWiki, with th
 | [`shape_constraints/`](shape_constraints/) | SHACL shapes, the placeholder vocabulary, scripts that validate RDF and generate it from the pilot results, the generated RDF and the tests |
 | [`pilots/`](pilots/) | Three analyses on real data, each with README, notebook and results |
 | [`examples/`](examples/) | A sample evidence graph and a query over it |
+| [`docs/`](docs/) | Design notes, for example on collaborative annotation with Nanodash |
 | [`.github/`](.github/) | Issue forms and the GitHub Actions of the discussion workflow |
 
 Validation rules are written in SHACL (a W3C Recommendation) and checked with pyshacl; a reference check tests that the PlantMetWiki pathways and metabolites a claim refers to exist in a dated snapshot. See [`shape_constraints/README.md`](shape_constraints/README.md).
