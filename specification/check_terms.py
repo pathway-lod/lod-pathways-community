@@ -486,7 +486,7 @@ def html_data(rows):
             "rows": [{k: r[k] for k in ("row_id", "role", "curie", "label", "ontology", "iri", "coverage", "decision",
                                         "action", "used_in", "value_of", "notes", "owner", "issue_url", "verified")} for r in rs],
         })
-    return {"repo": repo_slug(), "requirements": out}
+    return {"repo": repo_slug(), "ontology_names": {k: v[0] for k, v in ONTOLOGIES.items()}, "requirements": out}
 
 
 def render_html(rows):

@@ -51,6 +51,13 @@ jobs:
       - uses: actions/checkout@v7
         if: steps.pages.outputs.enabled != 'false'
 
+      # The published page always follows the term table, even if the generated files in the repository are out of date
+      # (for example after an edit of the CSV in the GitHub web editor on main).
+      - name: Regenerate the dashboard and the tables from the term table
+        if: steps.pages.outputs.enabled != 'false'
+        working-directory: specification
+        run: python3 check_terms.py --render
+
       - name: Collect the site
         if: steps.pages.outputs.enabled != 'false'
         run: |

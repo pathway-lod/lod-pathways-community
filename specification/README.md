@@ -13,7 +13,8 @@ The term table (`ontology_terms.csv`) stays the single source of truth. Everythi
 ### Contributors (any GitHub account)
 
 1. Open the dashboard (published address: <https://pathway-lod.github.io/lod-pathways-community/> once Pages is set up; otherwise open `index.html` from a download).
-2. Find the requirement with the search box or the filters (use case, status, decision, owner, action, ontology). Select its ID to see the candidate terms.
+2. The charts are in a collapsed "Charts" bar under the summary cards (a link with `#charts=1` opens it). They show how many distinct terms each ontology (and the local placeholder vocabulary `lodp`) contributes to the list, optionally split by use case. It follows the filters, and selecting a bar filters the requirements by that ontology; the table view below the chart gives the same numbers as text. A second chart shows the coverage: requirements by use case (covered, partial, gap) or terms by ontology (exact fit, partial fit, no fit, the last being the local placeholder terms); selecting a bar filters the list.
+   Find the requirement with the search box or the filters (use case, status, decision, owner, action, ontology). Select its ID to see the candidate terms.
 3. Choose one of the buttons:
    - **Open a discussion**: a question or comment about the requirement.
    - **Suggest a term**: a term ID, its ontology, how well it fits and why. The term should exist in the [Ontology Lookup Service](https://www.ebi.ac.uk/ols4/).
@@ -32,7 +33,7 @@ Issues need the label `ontology-terms` and the requirement ID at the start of th
 | A suggested term is accepted | Put the label `accept-term` on its issue. The workflow adds the term as a new row of its requirement (role and coverage from the form) and opens a pull request. |
 | A suggested term is rejected | Put the label `decision:rejected` on its issue. Only the suggested term is marked rejected. |
 | Review the pull request | Check the changed rows in `ontology_terms.csv` and merge. The dashboard and the tables of `SPECIFICATION.md` are regenerated in the same pull request. |
-| Edit the table by hand | Edit `ontology_terms.csv` (also possible in the GitHub web editor), run `python check_terms.py --update --render`, commit all changed files. |
+| Edit the table by hand | Edit `ontology_terms.csv`, run `python check_terms.py --update --render`, commit all changed files. In the GitHub web editor, only the CSV needs to be edited: on a pull request from this repository the checks workflow regenerates `SPECIFICATION.md` and `index.html` and commits them to the branch. |
 
 Only people with triage or write access can set labels, so only they can trigger a change of the table. The issue text is read as data by the script: it is checked against the lists of the specification and cut to one short line per field, and the pull request is reviewed before anything reaches the main branch.
 
@@ -71,8 +72,8 @@ Do these after this branch has been merged into the default branch (`main`): Git
 
 | Workflow | Runs when | What it does |
 |---|---|---|
-| `specification-checks.yml` | pull request or push that changes the specification, the shapes or the templates | Validates the CSV, checks that the generated files are up to date, runs the tests of the issue script, the issue forms and the shapes, and validates the sample graph. |
-| `specification-pages.yml` | push to `main` that changes `specification/`, or by hand | Publishes the dashboard and the term table with GitHub Pages. |
+| `specification-checks.yml` | pull request or push that changes the specification, the shapes or the templates | On a pull request from this repository: regenerates the generated files from the CSV and commits them to the branch when they differ. Then validates the CSV, checks that the generated files are up to date, runs the tests of the issue script, the issue forms and the shapes, and validates the sample graph. |
+| `specification-pages.yml` | push to `main` that changes `specification/`, or by hand | Regenerates the dashboard and the tables from the CSV, so that the published page always follows the term table, then publishes them with GitHub Pages. |
 | `issue-to-csv.yml` | a label is put on an issue | For `decision:*` and `accept-term`: changes the CSV, looks the term up, regenerates the files, runs the checks, opens a pull request and comments on the issue. Otherwise comments why nothing changed. |
 
 ## How the dashboard gets the discussion
@@ -94,6 +95,8 @@ python -m unittest discover -s tests        # tests (the issue-form tests need P
 Open `index.html` directly in a browser to look at it. Discussion data needs internet access and a repository that is public.
 
 ## Known limits
+
+- **Regenerated files on pull requests.** Commits made with the workflow token do not start new workflow runs, so after the workflow has committed regenerated files, the checks do not run a second time; the run that made the commit has already checked the regenerated files. Pull requests from forks are not regenerated (their token is read-only): the check fails until the contributor runs `python check_terms.py --update --render`.
 
 - **Rate limit.** GitHub allows 60 anonymous API requests per hour and address. Past that, the dashboard shows a message and the buttons keep working.
 - **Pull requests made by the workflow do not start the checks workflow** (a GitHub rule for pull requests opened with the built-in token). The workflow runs the same checks itself before opening the pull request.
