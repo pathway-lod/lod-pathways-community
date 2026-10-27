@@ -70,6 +70,14 @@ code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace}
 .legend{margin:6px 0 0;font-size:.85rem}
 .gh{font-size:.85rem;margin:2px 0 8px}
 
+.charts{margin:0 0 16px}
+.charts>summary{cursor:pointer;padding:9px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;list-style:none;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.charts>summary::-webkit-details-marker{display:none}
+.charts>summary::before{content:"\25B8";color:var(--muted)}
+.charts[open]>summary::before{content:"\25BE"}
+.charts>summary:hover{background:var(--hover)}
+.charts-title{font-weight:600}
+.charts[open]>summary{margin-bottom:12px}
 .chart{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 16px}
 .chart-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between}
 .chart-head h2{margin:0;font-size:1.05rem}
@@ -113,6 +121,8 @@ footer{margin-top:28px;font-size:.85rem}
 
   <section class="cards" id="cards" aria-label="Summary"></section>
 
+  <details class="charts" id="charts">
+    <summary><span class="charts-title">Charts</span> <span class="muted" id="charts-sum"></span></summary>
   <section class="chart" id="chart" aria-labelledby="chart-h">
     <div class="chart-head">
       <h2 id="chart-h">Terms per ontology</h2>
@@ -140,6 +150,7 @@ footer{margin-top:28px;font-size:.85rem}
     <div class="bars" id="cov-bars"></div>
     <details><summary>Table view</summary><div class="tablewrap" id="cov-table"></div></details>
   </section>
+  </details>
   <div id="tip" role="tooltip"></div>
 
   <section class="toolbar" aria-label="Filters">
@@ -194,18 +205,21 @@ footer{margin-top:28px;font-size:.85rem}
     ['owner', 'Any owner', allOwners],
     ['ontology', 'Any ontology', function (r) { return r.ontologies; }]
   ];
-  var state = { q: '' };
+  var state = { q: '', charts: '' };
   FILTERS.forEach(function (f) { state[f[0]] = ''; });
   var openIds = {};
 
   function fromHash() {
     var p = new URLSearchParams(location.hash.slice(1));
     state.q = p.get('q') || '';
+    state.charts = p.get('charts') || '';
+    var cd = document.getElementById('charts'); if (cd) cd.open = state.charts === '1';
     FILTERS.forEach(function (f) { state[f[0]] = p.get(f[0]) || ''; });
   }
   function toHash() {
     var p = new URLSearchParams();
     if (state.q) p.set('q', state.q);
+    if (state.charts === '1') p.set('charts', '1');
     FILTERS.forEach(function (f) { if (state[f[0]]) p.set(f[0], state[f[0]]); });
     var h = p.toString();
     try { history.replaceState(null, '', h ? '#' + h : location.pathname + location.search); } catch (e) { /* some browsers refuse on file:// */ }
@@ -515,6 +529,18 @@ footer{margin-top:28px;font-size:.85rem}
     document.getElementById('c-ont').addEventListener('click', function () { cov.view = 'ont'; renderCoverage(); });
   })();
 
+  function renderChartSummary() {
+    var terms = {}, onts = {};
+    R.forEach(function (r) { r.rows.forEach(function (t) { if (t.ontology && t.curie && t.decision !== 'rejected') { terms[t.ontology + ' ' + t.curie] = true; onts[t.ontology] = true; } }); });
+    var cov = R.filter(function (r) { return r.status === 'covered'; }).length;
+    document.getElementById('charts-sum').textContent = Object.keys(terms).length + ' distinct terms in ' + Object.keys(onts).length + ' ontologies \u00B7 ' +
+      cov + ' of ' + R.length + ' requirements covered (' + Math.round(100 * cov / Math.max(R.length, 1)) + '%) \u00B7 terms per ontology and coverage';
+  }
+  document.getElementById('charts').addEventListener('toggle', function (e) {
+    state.charts = e.target.open ? '1' : '';
+    toHash();
+  });
+
   function renderCards() {
     var count = function (fn) { return R.filter(fn).length; };
     var cards = [
@@ -536,6 +562,7 @@ footer{margin-top:28px;font-size:.85rem}
     document.getElementById('q').value = state.q;
     FILTERS.forEach(function (f) { document.getElementById('f-' + f[0]).value = state[f[0]]; });
     renderCards();
+    renderChartSummary();
     renderChart();
     renderCoverage();
     var list = R.filter(function (r) { return matches(r); });
