@@ -1,0 +1,9 @@
+substrate,product,substrate_in_paper,product_in_paper,enzyme_status,enzymes_uniprot
+deacetylisoipecoside,6-O-methyl-N-deacetylisoipecoside,DAII [stereo]; DAI [connectivity],,UniProt-linked,D3KY98: Cephaeline 6'-O-methyltransferase IpeOMT1 (Em (Carapichea ipecacuanha)
+6-O-methyl-N-deacetylisoipecoside,6-O-methyl-N-deacetylisoipecoside aglycon,,,UniProt-linked,B6ZKM3: Ipecoside beta-D-glucosidase IpeGLU1 (EC 3.2. (Carapichea ipecacuanha)
+6-O-methyl-N-deacetylisoipecoside aglycon,"6,7-O,O-dimethyl-N-deacetylisoipecoside aglycon",,,UniProt-linked,D3KYA0: 3-O-methylredipecamine 2-O-methyltransferase  (Carapichea ipecacuanha)
+"6,7-O,O-dimethyl-N-deacetylisoipecoside aglycon",protoemetine,,Protoemetine [connectivity],no enzyme listed,
+protoemetine,7'-O-demethylcephaeline,Protoemetine [connectivity],,no enzyme listed,
+7'-O-demethylcephaeline,cephaeline,,Cephaeline [stereo],UniProt-linked,D3KY99: 7'-O-demethylcephaeline 7'-O-methyltransferas (Carapichea ipecacuanha); E7FL15: Cephaeline 6'-O-methyltransferase CiOMT (Emet (Carapichea ipecacuanha)
+cephaeline,emetine,Cephaeline [stereo],Emetine [stereo],UniProt-linked,D3KY98: Cephaeline 6'-O-methyltransferase IpeOMT1 (Em (Carapichea ipecacuanha); E7FL15: Cephaeline 6'-O-methyltransferase CiOMT (Emet (Carapichea ipecacuanha)
+secologanin,deacetylisoipecoside,Secologanin [full],DAII [stereo]; DAI [connectivity],PlantCyc monomer only (no sequence),MONOMER-17752

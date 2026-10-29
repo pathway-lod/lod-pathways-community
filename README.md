@@ -125,7 +125,7 @@ A complete example that attaches one claim of each case to PlantMetWiki, with th
 |---|---|
 | [`specification/`](specification/) | Written specification, the term table, the dashboard and the scripts that keep them in sync; the documentation of the discussion workflow |
 | [`shape_constraints/`](shape_constraints/) | SHACL shapes, the placeholder vocabulary, scripts that validate RDF and generate it from the pilot results, the generated RDF and the tests |
-| [`pilots/`](pilots/) | Three analyses on real data, each with README, notebook and results |
+| [`pilots/`](pilots/) | Four analyses on real data (the fourth, [`ipecac_overlap`](pilots/ipecac_overlap/), is paired-omics data of ipecac alkaloid biosynthesis), each with README and results; three with a notebook |
 | [`examples/`](examples/) | A sample evidence graph and a query over it |
 | [`.github/`](.github/) | Issue forms and the GitHub Actions of the discussion workflow |
 
