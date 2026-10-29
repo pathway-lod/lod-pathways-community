@@ -1,0 +1,19 @@
+species,transcriptome_column,metabolite_tissue
+Ci,YL,young leaves
+Ci,ML,expanded leaves
+Ci,OL,old leaves
+Ci,Stem,stem
+Ci,MR,rhizome
+Ci,LR,roots
+As,As_LB,leaf buds
+As,As_L1,leaf 1
+As,As_L2,leaf 2
+As,As_L3,leaf 3
+As,As_L4,leaf 4
+As,As_L5,leaf 5
+As,As_L6,leaf 6
+As,As_L7,leaf 7
+As,As_GS,young stem
+As,As_WS,old stem
+As,As_SB,stem bark
+As,As_R,roots

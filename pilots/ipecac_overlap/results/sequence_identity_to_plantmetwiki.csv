@@ -1,0 +1,22 @@
+gene,species,tree,length,best_plantmetwiki_enzyme,best_enzyme_name,identity_percent,all_identities
+AsDOMT1,Alangium salviifolium,OMT tree,230,D3KY98,Cephaeline 6'-O-methyltransferase IpeOMT1,24.8,D3KY98 25; D3KY99 22; E7FL15 20; D3KYA0 19
+AsDOMT2,Alangium salviifolium,OMT tree,230,D3KY98,Cephaeline 6'-O-methyltransferase IpeOMT1,24.8,D3KY98 25; E7FL15 21; D3KY99 21; D3KYA0 10
+AsDOMT3,Alangium salviifolium,OMT tree,232,E7FL15,Cephaeline 6'-O-methyltransferase CiOMT,23.7,E7FL15 24; D3KY98 19; D3KY99 18; D3KYA0 4
+AsDOMT4,Alangium salviifolium,OMT tree,232,D3KY98,Cephaeline 6'-O-methyltransferase IpeOMT1,22.8,D3KY98 23; E7FL15 22; D3KY99 22; D3KYA0 11
+AsDOMT5,Alangium salviifolium,OMT tree,232,D3KY99,7'-O-demethylcephaeline 7'-O-methyltransferase IpeOMT2,21.1,D3KY99 21; E7FL15 19; D3KY98 17; D3KYA0 11
+AsDOMT6,Alangium salviifolium,OMT tree,230,D3KYA0,3-O-methylredipecamine 2-O-methyltransferase IpeOMT3,23.0,D3KYA0 23; D3KY98 21; D3KY99 20; E7FL15 18
+AsDOMT7,Alangium salviifolium,OMT tree,230,D3KYA0,3-O-methylredipecamine 2-O-methyltransferase IpeOMT3,23.0,D3KYA0 23; D3KY99 22; E7FL15 17; D3KY98 17
+AsDPOMT1,Alangium salviifolium,OMT tree,366,E7FL15,Cephaeline 6'-O-methyltransferase CiOMT,34.0,E7FL15 34; D3KY99 34; D3KY98 32; D3KYA0 28
+AsDPOMT2,Alangium salviifolium,OMT tree,366,E7FL15,Cephaeline 6'-O-methyltransferase CiOMT,32.9,E7FL15 33; D3KY99 33; D3KY98 32; D3KYA0 28
+CiDOMT1,Carapichea ipecacuanha,OMT tree,350,D3KY98,Cephaeline 6'-O-methyltransferase IpeOMT1,95.4,D3KY98 95; D3KY99 80; E7FL15 79; D3KYA0 73
+CiDOMT2,Carapichea ipecacuanha,OMT tree,350,D3KY99,7'-O-demethylcephaeline 7'-O-methyltransferase IpeOMT2,98.3,D3KY99 98; E7FL15 98; D3KY98 81; D3KYA0 75
+CiDPOMT,Carapichea ipecacuanha,OMT tree,358,D3KYA0,3-O-methylredipecamine 2-O-methyltransferase IpeOMT3,98.3,D3KYA0 98; D3KY99 76; E7FL15 75; D3KY98 74
+AsDGD1,Alangium salviifolium,Glucosidase tree,577,B6ZKM3,Ipecoside beta-D-glucosidase IpeGLU1,46.2,B6ZKM3 46
+AsDGD2,Alangium salviifolium,Glucosidase tree,575,B6ZKM3,Ipecoside beta-D-glucosidase IpeGLU1,46.6,B6ZKM3 47
+CiDGD,Carapichea ipecacuanha,Glucosidase tree,543,B6ZKM3,Ipecoside beta-D-glucosidase IpeGLU1,93.6,B6ZKM3 94
+CiS6DGD,Carapichea ipecacuanha,Glucosidase tree,549,B6ZKM3,Ipecoside beta-D-glucosidase IpeGLU1,73.1,B6ZKM3 73
+AsS6DGD,Alangium salviifolium,Glucosidase tree,608,B6ZKM3,Ipecoside beta-D-glucosidase IpeGLU1,16.6,B6ZKM3 17
+AsDR1,Alangium salviifolium,Reductase tree,361,,no enzyme of this family in PWY-7135,,
+AsDR2,Alangium salviifolium,Reductase tree,361,,no enzyme of this family in PWY-7135,,
+CiDR1,Carapichea ipecacuanha,Reductase tree,358,,no enzyme of this family in PWY-7135,,
+CiDR2,Carapichea ipecacuanha,Reductase tree,358,,no enzyme of this family in PWY-7135,,
