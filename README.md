@@ -2,7 +2,7 @@
 
 - [Project page and abstract](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/3.md) (ELIXIR BioHackathon Europe 2026)
 - [ELIXIR BioHackathon Europe 2026](https://biohackathon-europe.org/)
-- [Previous BioHackathon Europe 2025 preprints on BioHackrXiv](https://index.biohackrxiv.org/tag/BioHackEU25) (a possible place to archive this work)
+- [BioHackathon Europe 2026 preprints on BioHackrXiv](https://index.biohackrxiv.org/tag/BioHackEU26) (a possible place to archive this work)
 - [Collaborative Google doc](https://docs.google.com/document/d/1rzbnRQLCf-iMgQG8XEfBdkGMdMxM0h0J9rloR8ZC2vE/edit?tab=t.0#heading=h.jbaphzt6t7wb)
 - [Specification dashboard](https://pathway-lod.github.io/lod-pathways-community/) (browse, filter and discuss the ontology terms)
 
