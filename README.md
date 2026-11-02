@@ -14,9 +14,9 @@ Our project aims to expand our plant metabolism knowledge graph ([PlantMetWiki](
 This repository builds those standards: an **evidence model** that says, for any prediction or experimental result attached to a PlantMetWiki pathway, enzyme, gene or metabolite, *why it is believed* (a typed evidence statement), *where it comes from* (tool, version, input data) and *how strongly it is anchored* in the knowledge graph. Users can then filter the graph by the kind of support behind a statement. The terms come from existing ontologies wherever possible; what no ontology provides is collected as candidates for new terms.
 
 ## Project 3 Co-Leads 
-- Elena Del Pup, Wageningen University & Research, elena.delpup@wur.nl
-- Denise Slenter
-- Kumar Saurabh Singh
+- Elena Del Pup, Wageningen University & Research, elena.delpup@wur.nl, [ORCID 0000-0002-9472-918X](https://orcid.org/0000-0002-9472-918X)
+- Denise Slenter, Maastricht University, [ORCID 0000-0001-8449-1318](https://orcid.org/0000-0001-8449-1318)
+- Kumar Saurabh Singh, Maastricht University, [ORCID 0000-0001-8352-5897](https://orcid.org/0000-0001-8352-5897)
 
 ## The knowledge graph that predictions attach to
 
