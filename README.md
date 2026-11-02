@@ -1,4 +1,4 @@
-# BioHackathon Project 3: aligning predictions and experimental data with the PlantMetWiki knowledge graph
+# BioHackathon Project 3: Developing Open Standards for a Semantic Framework in Plant Specialized Metabolism
 
 - [Project page and abstract](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/3.md) (ELIXIR BioHackathon Europe 2026)
 - [ELIXIR BioHackathon Europe 2026](https://biohackathon-europe.org/)
