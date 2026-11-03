@@ -40,7 +40,7 @@ CACHE = DATA / "plantismash_v2"          # one compact json.gz per genome (gitig
 
 # Reuse the PlantMetWiki snapshots (pathway ECs / UniProt ids / PC -> PlantCyc) of the MEANtools pilot,
 # which in turn reuses the metabolite snapshots and pathway classes of the first pilot
-PILOT2 = HERE.parent / "meantools_overlap" / "match_meantools.py"
+PILOT2 = HERE.parent / "pairedomics_overlap" / "match_meantools.py"
 _spec = importlib.util.spec_from_file_location("match_meantools", PILOT2)
 mm = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(mm)

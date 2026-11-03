@@ -113,7 +113,7 @@ The four evidence cases on which the specification started:
 | # | Case | Specification use case | Test data | Pilot |
 |---|---|---|---|---|
 | 1 | Biosynthetic gene cluster (BGC) predictions | BGC | plantiSMASH 2.0 precalculated database, about 30,400 BGCs in 430 genomes | [`pilots/plantismash_overlap`](pilots/plantismash_overlap/) |
-| 2 | Paired-omics metabolite-transcript correlations | PO | Tomato data of the [MEANtools paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003307) (Kumar et al.) | [`pilots/meantools_overlap`](pilots/meantools_overlap/) |
+| 2 | Paired-omics metabolite-transcript correlations | PO | Tomato data of the [MEANtools paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003307) (Kumar et al.) | [`pilots/pairedomics_overlap`](pilots/pairedomics_overlap/) |
 | 3 | Metabolite annotation: consensus of MS/MS tools (SIRIUS, MS2Query, DreaMS) and mass-only matches | MET | Brassicaceae metabolic fingerprinting, Wolters et al. 2026 ([GitHub](https://github.com/capsicumbaccatum/Metabolic_fingerprinting_consensus_annotation), [Zenodo](https://doi.org/10.5281/zenodo.19391098)) | [`pilots/metabolomics_overlap`](pilots/metabolomics_overlap/) |
 | 4 | Computational predictions of the (extended) PlantCyc | PMN | PlantCyc evidence codes on PlantMetWiki nodes | [`shape_constraints/rdf/plantcyc.ttl`](shape_constraints/rdf/plantcyc.ttl) |
 
