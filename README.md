@@ -117,7 +117,7 @@ The four evidence cases on which the specification started:
 | 3 | Metabolite annotation: consensus of MS/MS tools (SIRIUS, MS2Query, DreaMS) and mass-only matches | MET | Brassicaceae metabolic fingerprinting, Wolters et al. 2026 ([GitHub](https://github.com/capsicumbaccatum/Metabolic_fingerprinting_consensus_annotation), [Zenodo](https://doi.org/10.5281/zenodo.19391098)) | [`pilots/metabolomics_overlap`](pilots/metabolomics_overlap/) |
 | 4 | Computational predictions of the (extended) PlantCyc | PMN | PlantCyc evidence codes on PlantMetWiki nodes | [`shape_constraints/rdf/plantcyc.ttl`](shape_constraints/rdf/plantcyc.ttl) |
 
-The specification adds three use cases: transcriptomics data (TX), unsupervised predictions such as graph neural network link prediction (UN), and the terms shared by all use cases (COM).
+The specification adds three use cases: transcriptomics data (TX), unsupervised predictions such as graph neural network link prediction (UN), and the terms shared by all use cases (COM). A pilot for the UN case, using the predictions of the PlantMetBench preprint, is planned in [`pilots/unsupervised_overlap`](pilots/unsupervised_overlap/).
 
 A complete example that attaches one claim of each case to PlantMetWiki, with the validation and a query over it, is in [`examples/`](examples/README.md).
 
