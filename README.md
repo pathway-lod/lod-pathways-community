@@ -1,7 +1,9 @@
-# BioHackathon Project 3: aligning predictions and experimental data with the PlantMetWiki knowledge graph
+# BioHackathon Project 3: Developing Open Standards for a Semantic Framework in Plant Specialized Metabolism
 
 - [Project page and abstract](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/3.md) (ELIXIR BioHackathon Europe 2026)
 - [ELIXIR BioHackathon Europe 2026](https://biohackathon-europe.org/)
+- [BioHackathon Europe 2026 preprints on BioHackrXiv](https://index.biohackrxiv.org/tag/BioHackEU26) (a possible place to archive this work)
+- [Paper repository (developing-open-standards)](https://github.com/pathway-lod/developing-open-standards): the main place where we write the paper
 - [Collaborative Google doc](https://docs.google.com/document/d/1rzbnRQLCf-iMgQG8XEfBdkGMdMxM0h0J9rloR8ZC2vE/edit?tab=t.0#heading=h.jbaphzt6t7wb)
 - [Specification dashboard](https://pathway-lod.github.io/lod-pathways-community/) (browse, filter and discuss the ontology terms)
 
@@ -12,9 +14,9 @@ Our project aims to expand our plant metabolism knowledge graph ([PlantMetWiki](
 This repository builds those standards: an **evidence model** that says, for any prediction or experimental result attached to a PlantMetWiki pathway, enzyme, gene or metabolite, *why it is believed* (a typed evidence statement), *where it comes from* (tool, version, input data) and *how strongly it is anchored* in the knowledge graph. Users can then filter the graph by the kind of support behind a statement. The terms come from existing ontologies wherever possible; what no ontology provides is collected as candidates for new terms.
 
 ## Project 3 Co-Leads 
-- Elena Del Pup, Wageningen University & Research, elena.delpup@wur.nl
-- Denise Slenter
-- Kumar Saurabh Singh
+- Elena Del Pup, Wageningen University & Research, elena.delpup@wur.nl, [ORCID 0000-0002-9472-918X](https://orcid.org/0000-0002-9472-918X)
+- Denise Slenter, Maastricht University, [ORCID 0000-0001-8449-1318](https://orcid.org/0000-0001-8449-1318)
+- Kumar Saurabh Singh, Maastricht University, [ORCID 0000-0001-8352-5897](https://orcid.org/0000-0001-8352-5897)
 
 ## The knowledge graph that predictions attach to
 
@@ -111,11 +113,11 @@ The four evidence cases on which the specification started:
 | # | Case | Specification use case | Test data | Pilot |
 |---|---|---|---|---|
 | 1 | Biosynthetic gene cluster (BGC) predictions | BGC | plantiSMASH 2.0 precalculated database, about 30,400 BGCs in 430 genomes | [`pilots/plantismash_overlap`](pilots/plantismash_overlap/) |
-| 2 | Paired-omics metabolite-transcript correlations | PO | Tomato data of the [MEANtools paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003307) (Kumar et al.) | [`pilots/meantools_overlap`](pilots/meantools_overlap/) |
+| 2 | Paired-omics metabolite-transcript correlations | PO | Tomato data of the [MEANtools paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003307) (Kumar et al.) | [`pilots/pairedomics_overlap`](pilots/pairedomics_overlap/) |
 | 3 | Metabolite annotation: consensus of MS/MS tools (SIRIUS, MS2Query, DreaMS) and mass-only matches | MET | Brassicaceae metabolic fingerprinting, Wolters et al. 2026 ([GitHub](https://github.com/capsicumbaccatum/Metabolic_fingerprinting_consensus_annotation), [Zenodo](https://doi.org/10.5281/zenodo.19391098)) | [`pilots/metabolomics_overlap`](pilots/metabolomics_overlap/) |
 | 4 | Computational predictions of the (extended) PlantCyc | PMN | PlantCyc evidence codes on PlantMetWiki nodes | [`shape_constraints/rdf/plantcyc.ttl`](shape_constraints/rdf/plantcyc.ttl) |
 
-The specification adds three use cases: transcriptomics data (TX), unsupervised predictions such as graph neural network link prediction (UN), and the terms shared by all use cases (COM).
+The specification adds three use cases: transcriptomics data (TX), unsupervised predictions such as graph neural network link prediction (UN), and the terms shared by all use cases (COM). A pilot for the UN case, using the predictions of the PlantMetBench preprint, is planned in [`pilots/unsupervised_overlap`](pilots/unsupervised_overlap/).
 
 A complete example that attaches one claim of each case to PlantMetWiki, with the validation and a query over it, is in [`examples/`](examples/README.md).
 

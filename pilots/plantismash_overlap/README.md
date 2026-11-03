@@ -14,7 +14,7 @@ PlantMetWiki already links BGCs to pathways for *Arabidopsis thaliana* only ([`m
 |---|---|
 | plantiSMASH 2.0 precalculated database: clusters, rules, core domains, genes, KnownClusterBLAST (MIBiG) matches | `plantismash.bioinformatics.nl/precalc/v2/<genome>/geneclusters.js`, 430 genomes |
 | RefSeq and GenBank protein → UniProt accession and EC | UniProt ID-mapping service, snapshot `data/protein_to_uniprot.tsv.gz` |
-| PlantMetWiki TAIR gene → pathway, pathway ECs, enzyme UniProt ids | SPARQL snapshots (2026-09-29): `data/plantmetwiki_tair_gene_pathways.csv`, and the snapshots of [`../meantools_overlap`](../meantools_overlap/) |
+| PlantMetWiki TAIR gene → pathway, pathway ECs, enzyme UniProt ids | SPARQL snapshots (2026-09-29): `data/plantmetwiki_tair_gene_pathways.csv`, and the snapshots of [`../pairedomics_overlap`](../pairedomics_overlap/) |
 | PlantMetWiki pathway classes | reused from [`../metabolomics_overlap`](../metabolomics_overlap/) |
 
 ## Method

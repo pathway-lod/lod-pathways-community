@@ -8,7 +8,7 @@ Create RDF for the four cases from the results of the pilots, and validate it ag
 
 Cases and inputs (the pilots must have been run; their result files are committed):
   bgc          pilots/plantismash_overlap/results/*.csv.gz     -> rdf/bgc.ttl
-  association  pilots/meantools_overlap/results/*.csv          -> rdf/association.ttl
+  association  pilots/pairedomics_overlap/results/*.csv          -> rdf/association.ttl
   annotation   pilots/metabolomics_overlap/results/*.csv       -> rdf/annotation.ttl
                (+ the Zenodo S6 node tables for scores, downloaded by the pilot)
   plantcyc     data/plantmetwiki_citations.csv (SPARQL snapshot) -> rdf/plantcyc.ttl
@@ -135,7 +135,7 @@ def strongest(tiers):
 def build_bgc(include_ec=False):
     clusters = pd.read_csv(PILOTS / "plantismash_overlap/results/plantismash_clusters.csv.gz")
     links = pd.read_csv(PILOTS / "plantismash_overlap/results/bgc_pathway_links.csv.gz")
-    pcs = pd.read_csv(PILOTS / "meantools_overlap/data/plantmetwiki_pc_pathways.csv")
+    pcs = pd.read_csv(PILOTS / "pairedomics_overlap/data/plantmetwiki_pc_pathways.csv")
     links = links.merge(pcs[["plantcyc_id", "pc"]].drop_duplicates("plantcyc_id"), on="plantcyc_id", how="left")
     skipped = {"EC-only links not exported (use --include-ec)": 0, "pathway is not a PC pathway": 0}
     if not include_ec:
@@ -212,10 +212,10 @@ def build_bgc(include_ec=False):
 # Case 2: MEANtools gene-metabolite associations
 # ----------------------------
 def build_association(max_cluster_p=0.05):
-    pairs = pd.read_csv(PILOTS / "meantools_overlap/results/cluster_pairs.csv")
-    gmap = pd.read_csv(PILOTS / "meantools_overlap/results/gene_pathway_map.csv")
-    mmap = pd.read_csv(PILOTS / "meantools_overlap/results/metabolite_pathway_map.csv")
-    pcs = pd.read_csv(PILOTS / "meantools_overlap/data/plantmetwiki_pc_pathways.csv")
+    pairs = pd.read_csv(PILOTS / "pairedomics_overlap/results/cluster_pairs.csv")
+    gmap = pd.read_csv(PILOTS / "pairedomics_overlap/results/gene_pathway_map.csv")
+    mmap = pd.read_csv(PILOTS / "pairedomics_overlap/results/metabolite_pathway_map.csv")
+    pcs = pd.read_csv(PILOTS / "pairedomics_overlap/data/plantmetwiki_pc_pathways.csv")
     pc_of = dict(zip(pcs.plantcyc_id, pcs.pc))
 
     n_all = len(pairs)

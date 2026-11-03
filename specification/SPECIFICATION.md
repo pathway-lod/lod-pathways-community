@@ -321,7 +321,7 @@ MEANtools correlates metabolite features with gene transcripts and groups genes 
 ### Available data for testing
 
 - **MEANtools tomato case study** (fungal treatment): MEANtools output in Zenodo [15697913](https://zenodo.org/records/15697913) (`Jeon_fungal.sqlite`; the 2.6 GB bacterial output is not used yet); metabolomics in MetaboLights [MTBLS1039](https://www.ebi.ac.uk/metabolights/MTBLS1039) (positive mode); RNA-seq in BioProject PRJNA509154; code at <https://github.com/kumarsaurabh20/meantools> (release [10.5281/zenodo.15720912](https://doi.org/10.5281/zenodo.15720912)).
-- **Pilot results:** [`../pilots/meantools_overlap/`](../pilots/meantools_overlap/). 21,817 gene-metabolite pairs in functional clusters (decay rate 10), 4,068 of them in clusters with p < 0.05.
+- **Pilot results:** [`../pilots/pairedomics_overlap/`](../pilots/pairedomics_overlap/). 21,817 gene-metabolite pairs in functional clusters (decay rate 10), 4,068 of them in clusters with p < 0.05.
 - **Generated RDF:** [`../shape_constraints/rdf/association.ttl`](../shape_constraints/rdf/association.ttl) (1,293 associations).
 
 ### Specifications and fitting ontology terms
@@ -388,7 +388,7 @@ Expression measurements and the statistics derived from them serve as evidence f
 ### Available data for testing
 
 - **Tomato RNA-seq expression matrix** (normalised; file `rnaseq.rpkm.csv`) from the MEANtools case study, Zenodo [15697913](https://zenodo.org/records/15697913); reads in BioProject PRJNA509154.
-- **Correlations and mutual ranks** between genes and metabolite features: the MEANtools output `Jeon_fungal.sqlite`, analysed in [`../pilots/meantools_overlap/`](../pilots/meantools_overlap/).
+- **Correlations and mutual ranks** between genes and metabolite features: the MEANtools output `Jeon_fungal.sqlite`, analysed in [`../pilots/pairedomics_overlap/`](../pilots/pairedomics_overlap/).
 - **PlantCyc expression evidence:** the code `EV-EXP-IEP` (inferred from expression pattern) on 53 PlantMetWiki nodes, mapped to `ECO:0000270` (PMN-02).
 
 > **TODO(Elena):** list the datasets with DESeq2 results or z-scores that should be used for testing.
