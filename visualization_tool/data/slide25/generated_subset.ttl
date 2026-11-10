@@ -1,0 +1,49 @@
+@prefix lodp: <https://example.org/lod-pathways/pilot/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swo: <http://www.ebi.ac.uk/swo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lodp:annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX a lodp:MetaboliteAnnotation ;
+    sio:SIO_000772 [ a obo:ECO_0001580,
+                obo:ECO_0007669 ;
+            prov:wasGeneratedBy lodp:run_ms2query ;
+            lodp:identificationTier "ms2query_exact" ;
+            lodp:ms2queryModelScore 9.364e-01 ;
+            lodp:precursorMzDifference 5e-04 ],
+        [ a obo:ECO_0001580 ;
+            prov:wasGeneratedBy lodp:run_gnps_library ;
+            lodp:identificationTier "gnps_library" ;
+            lodp:libraryCompoundName "Massbank:PR307271 Benzyl glucosinolate" ] ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q27125128>,
+        <https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> ;
+    lodp:anchorTier "structure_match" ;
+    lodp:anchoredToMetabolite <https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> ;
+    lodp:feature lodp:feature_MTBLS14270_neg_589 ;
+    lodp:matchLevel "connectivity" .
+
+lodp:run_sirius a lodp:AnnotationToolRun ;
+    rdfs:label "SIRIUS on the Brassicaceae LC-MS/MS data" ;
+    swo:SWO_0004000 "6.1.0" ;
+    prov:used <https://www.ebi.ac.uk/metabolights/MTBLS14270> ;
+    lodp:software "SIRIUS" .
+
+lodp:feature_MTBLS14270_neg_589 a lodp:MetaboliteFeature ;
+    obo:MS_1000465 obo:MS_1000129 ;
+    lodp:dataset <https://www.ebi.ac.uk/metabolights/MTBLS14270> ;
+    lodp:featureId "589" .
+
+lodp:run_gnps_library a lodp:AnnotationToolRun ;
+    rdfs:label "GNPS spectral library search" ;
+    prov:used <https://www.ebi.ac.uk/metabolights/MTBLS14270> ;
+    lodp:software "GNPS library search" .
+
+lodp:run_ms2query a lodp:AnnotationToolRun ;
+    rdfs:label "MS2Query on the Brassicaceae LC-MS/MS data" ;
+    swo:SWO_0004000 "1.0" ;
+    prov:used <https://www.ebi.ac.uk/metabolights/MTBLS14270> ;
+    lodp:software "MS2Query" .
+

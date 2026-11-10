@@ -1,0 +1,80 @@
+{
+  "name": "LOD-pathways draft (lodp: placeholders, 2026-11)",
+  "comment": "Maps the terms of the evidence model to the roles the viewer knows. The viewer has no vocabulary of its own: when the ontologies are fixed, change this file (and the vocabulary shipped with the data), not the code. Values are CURIEs (prefixes below) or full IRIs.",
+
+  "prefixes": {
+    "lodp": "https://example.org/lod-pathways/pilot/",
+    "sio": "http://semanticscience.org/resource/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "swo": "http://www.ebi.ac.uk/swo/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "wp": "http://vocabularies.wikipathways.org/wp#",
+    "pmwv": "http://rdf-plantmetwiki.bioinformatics.nl/vocab/",
+    "pmw": "http://rdf-plantmetwiki.bioinformatics.nl/pathways/",
+    "pmwnode": "http://rdf-plantmetwiki.bioinformatics.nl/Pathway/",
+    "inchikey": "https://identifiers.org/inchikey/",
+    "wikidata": "http://www.wikidata.org/entity/",
+    "metabolights": "https://www.ebi.ac.uk/metabolights/",
+    "mibig": "https://mibig.secondarymetabolites.org/repository/",
+    "tair": "https://identifiers.org/tair.name/",
+    "pubmed": "https://identifiers.org/pubmed/",
+    "edam": "http://edamontology.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "obo": "http://purl.obolibrary.org/obo/"
+  },
+
+  "roles": {
+    "claim": {
+      "label": "claim",
+      "classes": ["lodp:Claim"],
+      "hasPredicates": ["sio:SIO_000772"]
+    },
+    "evidence": {
+      "label": "evidence",
+      "objectOf": ["sio:SIO_000772", "lodp:mibigMatchEvidence"]
+    },
+    "run": {
+      "label": "run (provenance)",
+      "classes": ["lodp:Run", "prov:Activity"],
+      "objectOf": ["prov:wasGeneratedBy"],
+      "summary": ["lodp:software", "swo:SWO_0004000"]
+    },
+    "kg": {
+      "label": "already in PlantMetWiki",
+      "objectOf": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"],
+      "namespaces": ["pmw:", "pmwnode:"],
+      "classNamespaces": ["wp:"],
+      "graphs": ["plantmetwiki"]
+    }
+  },
+
+  "pattern": {
+    "hasEvidence": ["sio:SIO_000772", "lodp:mibigMatchEvidence"],
+    "generatedBy": ["prov:wasGeneratedBy"],
+    "anchoredTo": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"]
+  },
+
+  "terms": {
+    "localNamespaces": ["lodp:"],
+    "kgVocabularyNamespaces": ["wp:", "pmwv:"],
+    "generic": ["rdf:", "rdfs:", "owl:", "xsd:"]
+  },
+
+  "titles": {
+    "labelProperties": ["rdfs:label", "dc:title", "skos:prefLabel", "lodp:featureId"],
+    "byClass": {
+      "wp:Pathway": ["pmwv:plantcycId", "dc:title"]
+    }
+  },
+
+  "predicateLabels": {
+    "sio:SIO_000772": "has evidence",
+    "lodp:mibigMatchEvidence": "MIBiG match evidence"
+  }
+}

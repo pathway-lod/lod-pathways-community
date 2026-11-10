@@ -1,0 +1,43 @@
+# Slide 25, the parts drawn DASHED or GREY: not in the current RDF export or shapes (proposals for discussion).
+#
+# Source: pilots/metabolomics_overlap/make_slide_figure_v2.py and its output
+# results/example_feature_neg_589_v2.svg (values from the S4/S6 tables of Wolters et al. 2026).
+# Written as RDF here so that the viewer can show them; terms are those of the slide and of
+# specification/ontology_terms.csv. Modelling choices that the slide does not fix are marked "CHOICE".
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix lodp:    <https://example.org/lod-pathways/pilot/> .
+
+# --- Feature 589: values in the data but not in the generated RDF (grey on slide 24/25)
+lodp:feature_MTBLS14270_neg_589
+    obo:MS_1000894 "0.93"^^xsd:double ;          # retention time (min), MET-15 primary term (decision open)
+    obo:MS_1000744 "408.0424"^^xsd:double .      # selected ion m/z. CHOICE: no m/z term in the term table yet
+
+# --- Claim B: SIRIUS proposes a structure that is not in PlantMetWiki
+lodp:annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP a lodp:MetaboliteAnnotation ;
+    lodp:feature lodp:feature_MTBLS14270_neg_589 ;
+    lodp:matchLevel "connectivity" ;
+    lodp:anchorTier "none" ;                     # proposal: new value, not allowed by the current shapes
+    lodp:predictedKey "MOOJZGCWXISCRP" ;         # proposal: new term
+    # lodp:anchoredToMetabolite absent: no PlantMetWiki node with this key (snapshot 2026-09-29)
+    sio:SIO_000772 [
+        a obo:ECO_0001580 , obo:ECO_0007669 ;
+        prov:wasGeneratedBy lodp:run_sirius ;
+        lodp:identificationTier "sirius" ;
+        # predicted structure (data on the slide, no term): CHOICE rdfs:comment
+        rdfs:comment "predicted structure: Benzoyloxymethyl Glucosinolate, C15H19NO11S2"
+        # lodp:siriusConfidenceApprox left out: the data file has -Infinity
+    ] .
+
+# --- Agreement across tools at class level (consensus, NPClassifier class)
+# As on the slide: a node of its own, without a class and without a link to the feature or a claim
+# (the slide draws the card next to the feature but unconnected). In RDF this makes it an orphan.
+lodp:agreement_MTBLS14270_neg_589
+    lodp:matchCategory "class" ;
+    lodp:matchType "partial" ;
+    lodp:agreeingTool "SIRIUS" , "MS2Query" ;
+    rdfs:comment "class, both tools: Glucosinolates (SIRIUS/CANOPUS, MS2Query); structure level: none, the tools name different structures" .

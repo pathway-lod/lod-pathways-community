@@ -129,6 +129,7 @@ A complete example that attaches one claim of each case to PlantMetWiki, with th
 | [`shape_constraints/`](shape_constraints/) | SHACL shapes, the placeholder vocabulary, scripts that validate RDF and generate it from the pilot results, the generated RDF and the tests |
 | [`pilots/`](pilots/) | Three analyses on real data, each with README, notebook and results |
 | [`examples/`](examples/) | A sample evidence graph and a query over it |
+| [`visualization_tool/`](visualization_tool/) | Evidence graph viewer (prototype): shows evidence RDF as cards (claim, evidence, run, PlantMetWiki anchor) with term status and SHACL problems; open your own Turtle file. [Try it](https://pathway-lod.github.io/lod-pathways-community/visualization_tool/) |
 | [`docs/`](docs/) | Design notes, for example on collaborative annotation with Nanodash |
 | [`.github/`](.github/) | Issue forms and the GitHub Actions of the discussion workflow |
 

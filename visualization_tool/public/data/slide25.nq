@@ -1,0 +1,412 @@
+<https://example.org/lod-pathways/pilot/agreement_MTBLS14270_neg_589> <https://example.org/lod-pathways/pilot/matchCategory> "class" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <https://example.org/lod-pathways/pilot/anchorTier> "none" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <http://semanticscience.org/resource/SIO_000772> _:nc4a5b1e4e1b149198f2adb1ca0b53776b1 <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <https://example.org/lod-pathways/pilot/predictedKey> "MOOJZGCWXISCRP" <urn:lodviz:proposal> .
+_:nc4a5b1e4e1b149198f2adb1ca0b53776b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/ECO_0007669> <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/agreement_MTBLS14270_neg_589> <https://example.org/lod-pathways/pilot/matchType> "partial" <urn:lodviz:proposal> .
+_:nc4a5b1e4e1b149198f2adb1ca0b53776b1 <http://www.w3.org/ns/prov#wasGeneratedBy> <https://example.org/lod-pathways/pilot/run_sirius> <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <https://example.org/lod-pathways/pilot/matchLevel> "connectivity" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/agreement_MTBLS14270_neg_589> <https://example.org/lod-pathways/pilot/agreeingTool> "SIRIUS" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <https://example.org/lod-pathways/pilot/feature> <https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <http://purl.obolibrary.org/obo/MS_1000894> "0.93"^^<http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:proposal> .
+_:nc4a5b1e4e1b149198f2adb1ca0b53776b1 <http://www.w3.org/2000/01/rdf-schema#comment> "predicted structure: Benzoyloxymethyl Glucosinolate, C15H19NO11S2" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/agreement_MTBLS14270_neg_589> <http://www.w3.org/2000/01/rdf-schema#comment> "class, both tools: Glucosinolates (SIRIUS/CANOPUS, MS2Query); structure level: none, the tools name different structures" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <http://purl.obolibrary.org/obo/MS_1000744> "408.0424"^^<http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:proposal> .
+_:nc4a5b1e4e1b149198f2adb1ca0b53776b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/ECO_0001580> <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/agreement_MTBLS14270_neg_589> <https://example.org/lod-pathways/pilot/agreeingTool> "MS2Query" <urn:lodviz:proposal> .
+_:nc4a5b1e4e1b149198f2adb1ca0b53776b1 <https://example.org/lod-pathways/pilot/identificationTier> "sirius" <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/lod-pathways/pilot/MetaboliteAnnotation> <urn:lodviz:proposal> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/lod-pathways/pilot/MetaboliteAnnotation> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <http://semanticscience.org/resource/SIO_000772> _:nd2b6146b343548ad8fc60e7a2a6881d3b918 <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <https://example.org/lod-pathways/pilot/feature> <https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b919 <https://example.org/lod-pathways/pilot/libraryCompoundName> "Massbank:PR307271 Benzyl glucosinolate" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q27125128> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_ms2query> <http://www.w3.org/2000/01/rdf-schema#label> "MS2Query on the Brassicaceae LC-MS/MS data" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_ms2query> <https://example.org/lod-pathways/pilot/software> "MS2Query" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_sirius> <https://example.org/lod-pathways/pilot/software> "SIRIUS" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_gnps_library> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/lod-pathways/pilot/AnnotationToolRun> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_ms2query> <http://www.w3.org/ns/prov#used> <https://www.ebi.ac.uk/metabolights/MTBLS14270> <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b918 <https://example.org/lod-pathways/pilot/identificationTier> "ms2query_exact" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_gnps_library> <https://example.org/lod-pathways/pilot/software> "GNPS library search" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_ms2query> <http://www.ebi.ac.uk/swo/SWO_0004000> "1.0" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <https://example.org/lod-pathways/pilot/dataset> <https://www.ebi.ac.uk/metabolights/MTBLS14270> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/lod-pathways/pilot/MetaboliteFeature> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_sirius> <http://www.w3.org/ns/prov#used> <https://www.ebi.ac.uk/metabolights/MTBLS14270> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_sirius> <http://www.ebi.ac.uk/swo/SWO_0004000> "6.1.0" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <https://example.org/lod-pathways/pilot/anchoredToMetabolite> <https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b918 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/ECO_0001580> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <https://example.org/lod-pathways/pilot/matchLevel> "connectivity" <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b919 <http://www.w3.org/ns/prov#wasGeneratedBy> <https://example.org/lod-pathways/pilot/run_gnps_library> <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b918 <https://example.org/lod-pathways/pilot/precursorMzDifference> "0.0005"^^<http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_gnps_library> <http://www.w3.org/2000/01/rdf-schema#label> "GNPS spectral library search" <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b919 <https://example.org/lod-pathways/pilot/identificationTier> "gnps_library" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <http://semanticscience.org/resource/SIO_000772> _:nd2b6146b343548ad8fc60e7a2a6881d3b919 <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_ms2query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/lod-pathways/pilot/AnnotationToolRun> <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b918 <http://www.w3.org/ns/prov#wasGeneratedBy> <https://example.org/lod-pathways/pilot/run_ms2query> <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b918 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/ECO_0007669> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <http://purl.obolibrary.org/obo/MS_1000465> <http://purl.obolibrary.org/obo/MS_1000129> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/feature_MTBLS14270_neg_589> <https://example.org/lod-pathways/pilot/featureId> "589" <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b919 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/ECO_0001580> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_gnps_library> <http://www.w3.org/ns/prov#used> <https://www.ebi.ac.uk/metabolights/MTBLS14270> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_sirius> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/lod-pathways/pilot/AnnotationToolRun> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_QQGLQYQXUKHWPX> <https://example.org/lod-pathways/pilot/anchorTier> "structure_match" <urn:lodviz:generated> .
+_:nd2b6146b343548ad8fc60e7a2a6881d3b918 <https://example.org/lod-pathways/pilot/ms2queryModelScore> "0.9364"^^<http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/run_sirius> <http://www.w3.org/2000/01/rdf-schema#label> "SIRIUS on the Brassicaceae LC-MS/MS data" <urn:lodviz:generated> .
+<https://example.org/lod-pathways/pilot/matchCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreeingTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkTier> <http://www.w3.org/2000/01/rdf-schema#comment> "gene_direct (same gene ID), gene_uniprot (same UniProt enzyme) or gene_ec (same EC number)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredSide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "An untargeted MS feature is annotated as a PlantMetWiki metabolite (case 3)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/featureId> <http://www.w3.org/2000/01/rdf-schema#label> "feature identifier" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/contrast> <http://www.w3.org/2000/01/rdf-schema#label> "contrast" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/GeneMetaboliteAssociation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/SIO_001257> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/clusterPValue> <http://www.w3.org/2000/01/rdf-schema#comment> "ClusterONE p-value of the functional cluster (0-1)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PathwayMembershipClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Claim> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/siriusConfidenceApprox> <http://www.w3.org/2000/01/rdf-schema#label> "SIRIUS approximate confidence" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/ms2queryModelScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayECs> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/usesTool> <http://www.w3.org/2000/01/rdf-schema#label> "uses tool" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingProtein> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteFeature> <http://www.w3.org/2000/01/rdf-schema#label> "metabolite feature" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PlantCycCuration> <http://www.w3.org/2000/01/rdf-schema#label> "PlantCyc curation" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/decayRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/contrast> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/feature> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/lod-pathways/pilot/MetaboliteFeature> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreeingTool> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreementScore> <http://www.w3.org/2000/01/rdf-schema#comment> "Consensus score: 1.0 (full) or 0.5 (partial)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredSide> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchType> <http://www.w3.org/2000/01/rdf-schema#label> "match type" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/contrast> <http://www.w3.org/2000/01/rdf-schema#comment> "The comparison a differential result refers to: two conditions (treatment, tissue, time point) in a stated direction." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredToMetabolite> <http://www.w3.org/2000/01/rdf-schema#label> "anchored to metabolite" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredInPathway> <http://www.w3.org/2000/01/rdf-schema#label> "anchored in pathway" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingGene> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/dreamsSimilarity> <http://www.w3.org/2000/01/rdf-schema#label> "DreaMS similarity" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nPathwayGenes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/detectionRule> <http://www.w3.org/2000/01/rdf-schema#comment> "plantiSMASH rule (BGC type) that detected the cluster, e.g. terpene. Hybrids have several." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/batchFile> <http://www.w3.org/2000/01/rdf-schema#comment> "The mzmine batch file (XML) with all parameters of a feature-processing run." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/identificationTier> <http://www.w3.org/2000/01/rdf-schema#label> "identification tier" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/software> <http://www.w3.org/2000/01/rdf-schema#comment> "Name of the tool or resource." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingProtein> <http://www.w3.org/2000/01/rdf-schema#comment> "A UniProt accession shared by the BGC and the pathway." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchorTier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/edgeWeight> <http://www.w3.org/2000/01/rdf-schema#comment> "Weight derived from the mutual rank and the decay rate (0-1)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/metaboliteAnchorTier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/ms2queryModelScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/batchFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/candidateCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PlantiSMASHRun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/originalEvidenceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/solycLocus> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/decayRate> <http://www.w3.org/2000/01/rdf-schema#label> "decay rate" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreementScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/ConsensusAnnotationRun> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Run> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/predictionScore> <http://www.w3.org/2000/01/rdf-schema#comment> "Score given by a machine-learning model to a predicted link. Whether it is a calibrated probability has to be stated per model." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/featureId> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the feature in its dataset." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/AnnotationToolRun> <http://www.w3.org/2000/01/rdf-schema#comment> "SIRIUS, MS2Query, DreaMS or a GNPS library search." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/AnnotationToolRun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/> <http://www.w3.org/2000/01/rdf-schema#label> "LOD-pathways placeholder vocabulary (draft)" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massTolerancePpm> <http://www.w3.org/2000/01/rdf-schema#comment> "Tolerance used for a mass match, in ppm." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/functionalCluster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/edgeWeight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nSharedGenes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/ConsensusAnnotationRun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/coreDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/originalEvidenceCode> <http://www.w3.org/2000/01/rdf-schema#label> "original evidence code" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/featureId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/precursorMzDifference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mibigMatchEvidence> <http://www.w3.org/2000/01/rdf-schema#label> "MIBiG match evidence" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/genomeAssembly> <http://www.w3.org/2000/01/rdf-schema#comment> "Assembly accession the BGC was predicted on, e.g. GCF_000001735.4." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/dreamsSimilarity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/originalEvidenceCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayGenes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/percentGenesSimilar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/genomeAssembly> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/solycLocus> <http://www.w3.org/2000/01/rdf-schema#label> "Solyc locus" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/libraryCompoundName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/motifProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingEC> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/coreDomain> <http://www.w3.org/2000/01/rdf-schema#label> "core domain" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/featureId> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/candidateCount> <http://www.w3.org/2000/01/rdf-schema#label> "candidate count" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Mass2Motif> <http://www.w3.org/2000/01/rdf-schema#label> "Mass2Motif" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/adjustedPValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/genomeAssembly> <http://www.w3.org/2000/01/rdf-schema#label> "genome assembly" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mutualRank> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/LinkingRun> <http://www.w3.org/2000/01/rdf-schema#label> "linking run" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/geneAnchorTier> <http://www.w3.org/2000/01/rdf-schema#label> "gene anchor tier" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The dataset (e.g. a MetaboLights study) the feature comes from." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredToMetabolite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mutualRank> <http://www.w3.org/2000/01/rdf-schema#label> "mutual rank" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/percentGenesSimilar> <http://www.w3.org/2000/01/rdf-schema#label> "percent genes similar" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/libraryCompoundName> <http://www.w3.org/2000/01/rdf-schema#label> "library compound name" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingProtein> <http://www.w3.org/2000/01/rdf-schema#label> "linking protein" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massTolerancePpm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/motifProbability> <http://www.w3.org/2000/01/rdf-schema#label> "motif probability" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mibigMatchEvidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/metaboliteAnchorTier> <http://www.w3.org/2000/01/rdf-schema#label> "metabolite anchor tier" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/hasMass2Motif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/BGCPathwayLink> <http://www.w3.org/2000/01/rdf-schema#comment> "A predicted biosynthetic gene cluster overlaps a PlantMetWiki pathway (case 1)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/predictionScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/LinkingRun> <http://www.w3.org/2000/01/rdf-schema#comment> "The mapping of predictions to PlantMetWiki nodes (genes to pathways, features to metabolites)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/percentGenesSimilar> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/coreDomain> <http://www.w3.org/2000/01/rdf-schema#comment> "Core enzyme domain (pHMM) that triggered the rule, e.g. SQHop_cyclase_N." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PathwayMembershipClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/identificationTier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/adjustedPValue> <http://www.w3.org/2000/01/rdf-schema#label> "adjusted p-value" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayECs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchCategory> <http://www.w3.org/2000/01/rdf-schema#label> "match category" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PlantiSMASHRun> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Run> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingEC> <http://www.w3.org/2000/01/rdf-schema#label> "linking EC" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkTier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/log2FoldChange> <http://www.w3.org/2000/01/rdf-schema#label> "log2 fold change" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MEANtoolsRun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreementScore> <http://www.w3.org/2000/01/rdf-schema#label> "agreement score" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nPathwayGenes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nSharedEC> <http://www.w3.org/2000/01/rdf-schema#label> "number of shared ECs" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/hasMass2Motif> <http://www.w3.org/2000/01/rdf-schema#label> "has Mass2Motif" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/predictionScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Claim> <http://www.w3.org/2000/01/rdf-schema#comment> "A statement that links data (a prediction, an association, an annotation) to PlantMetWiki. Every claim carries evidence and is anchored to a PlantMetWiki node." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/AnnotationToolRun> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Run> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingEC> <http://www.w3.org/2000/01/rdf-schema#comment> "An EC number shared by the BGC and the pathway." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredToMetabolite> <http://www.w3.org/2000/01/rdf-schema#comment> "The PlantMetWiki metabolite, as the identifiers.org InChIKey IRI that PlantMetWiki uses (wp:bdbInChIKey)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nSharedEC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredSide> <http://www.w3.org/2000/01/rdf-schema#comment> "For gene-metabolite associations: which side was found in PlantMetWiki (gene, metabolite or both)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingEC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/GeneMetaboliteAssociation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayGenes> <http://www.w3.org/2000/01/rdf-schema#comment> "Shared genes divided by the pathway's genes (0-1)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/GeneMetaboliteAssociation> <http://www.w3.org/2000/01/rdf-schema#comment> "A gene and a metabolite feature fall into the same functional cluster of a paired-omics analysis (case 2)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/genomeAssembly> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/libraryCompoundName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MEANtoolsRun> <http://www.w3.org/2000/01/rdf-schema#label> "MEANtools run" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/usesTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/decayRate> <http://www.w3.org/2000/01/rdf-schema#comment> "MEANtools: decay rate of the edge weight exp(-(MR-1)/DR)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/log2FoldChange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Mass2Motif> <http://www.w3.org/2000/01/rdf-schema#comment> "A topic of an MS2LDA model: a pattern of fragment and neutral-loss m/z values that co-occur in MS/MS spectra." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massErrorPpm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Claim> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/candidateCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PlantiSMASHRun> <http://www.w3.org/2000/01/rdf-schema#label> "plantiSMASH run" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/geneAnchorTier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkTier> <http://www.w3.org/2000/01/rdf-schema#label> "link tier" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/geneAnchorTier> <http://www.w3.org/2000/01/rdf-schema#comment> "Tier of the gene-side anchor: gene_locus, gene_uniprot or gene_ec." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/edgeWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/clusterPValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/feature> <http://www.w3.org/2000/01/rdf-schema#label> "feature" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/software> <http://www.w3.org/2000/01/rdf-schema#label> "software" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/BGCPathwayLink> <http://www.w3.org/2000/01/rdf-schema#label> "BGC-pathway link" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchLevel> <http://www.w3.org/2000/01/rdf-schema#label> "match level" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/siriusConfidenceApprox> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/precursorMzDifference> <http://www.w3.org/2000/01/rdf-schema#label> "precursor m/z difference" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredSide> <http://www.w3.org/2000/01/rdf-schema#label> "anchored side" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayECs> <http://www.w3.org/2000/01/rdf-schema#comment> "Shared ECs divided by the pathway's ECs (0-1)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/detectionRule> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nSharedGenes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/dreamsSimilarity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayGenes> <http://www.w3.org/2000/01/rdf-schema#label> "fraction of pathway genes" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/identificationTier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/predictionScore> <http://www.w3.org/2000/01/rdf-schema#label> "prediction score" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/metaboliteAnchorTier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/GeneMetaboliteAssociation> <http://www.w3.org/2000/01/rdf-schema#label> "gene-metabolite association" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PlantCycCuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/precursorMzDifference> <http://www.w3.org/2000/01/rdf-schema#comment> "In Da, between the query and the library match." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mutualRank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/LinkingRun> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Run> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchorTier> <http://www.w3.org/2000/01/rdf-schema#label> "anchor tier" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/usesTool> <http://www.w3.org/2000/01/rdf-schema#comment> "A tool, with its version, that a pipeline run combines." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/solycLocus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayECs> <http://www.w3.org/2000/01/rdf-schema#label> "fraction of pathway ECs" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "What the annotation tools agree on: inchi, class, superclass or pathway." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingGene> <http://www.w3.org/2000/01/rdf-schema#label> "linking gene" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/clusterPValue> <http://www.w3.org/2000/01/rdf-schema#label> "cluster p-value" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MEANtoolsRun> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Run> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/LinkingRun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/GeneMetaboliteAssociation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Claim> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/ConsensusAnnotationRun> <http://www.w3.org/2000/01/rdf-schema#label> "consensus annotation run" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Mass2Motif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingGene> <http://www.w3.org/2000/01/rdf-schema#comment> "A gene (locus) shared by the BGC and the pathway." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massTolerancePpm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Claim> <http://www.w3.org/2000/01/rdf-schema#label> "claim" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PathwayMembershipClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "What the structure match compared: connectivity (first InChIKey block) or full." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/functionalCluster> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/originalEvidenceCode> <http://www.w3.org/2000/01/rdf-schema#comment> "The PlantCyc evidence code as stored in PlantMetWiki (EV-...)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nPathwayGenes> <http://www.w3.org/2000/01/rdf-schema#comment> "Genes of the pathway that PlantMetWiki lists with the same gene IDs as the BGC." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Claim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredInPathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/geneAnchorTier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massErrorPpm> <http://www.w3.org/2000/01/rdf-schema#label> "mass error (ppm)" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchoredInPathway> <http://www.w3.org/2000/01/rdf-schema#comment> "The PlantMetWiki pathway (http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC<n>) the claim is attached to." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/dataset> <http://www.w3.org/2000/01/rdf-schema#label> "dataset" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Run> <http://www.w3.org/2000/01/rdf-schema#label> "run" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/BGCPathwayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Claim> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/functionalCluster> <http://www.w3.org/2000/01/rdf-schema#label> "functional cluster" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/adjustedPValue> <http://www.w3.org/2000/01/rdf-schema#comment> "p-value after correction for multiple testing (0-1); the correction method is stated next to it." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nSharedGenes> <http://www.w3.org/2000/01/rdf-schema#label> "number of shared genes" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nPathwayGenes> <http://www.w3.org/2000/01/rdf-schema#label> "number of pathway genes" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreementScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massTolerancePpm> <http://www.w3.org/2000/01/rdf-schema#label> "mass tolerance (ppm)" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/detectionRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massErrorPpm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/hasMass2Motif> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/lod-pathways/pilot/MetaboliteFeature> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mutualRank> <http://www.w3.org/2000/01/rdf-schema#comment> "Mutual rank of the gene-metabolite pair (1 = best)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "metabolite annotation" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/solycLocus> <http://www.w3.org/2000/01/rdf-schema#comment> "Tomato gene locus (SGN/ITAG, e.g. Solyc07g043480) under which PlantMetWiki lists a gene node of a pathway." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/identificationTier> <http://www.w3.org/2000/01/rdf-schema#comment> "gnps_library, consensus_inchi, sirius, ms2query_exact or dreams." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Run> <http://www.w3.org/2000/01/rdf-schema#comment> "One run of a tool, a pipeline or a curation effort. Carries software, version and input data." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkingProtein> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/nSharedEC> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchLevel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PathwayMembershipClaim> <http://www.w3.org/2000/01/rdf-schema#label> "pathway membership claim" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/precursorMzDifference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchorTier> <http://www.w3.org/2000/01/rdf-schema#comment> "How the anchor was established; for several anchors, the weakest one used. One of: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec, mass_match (strongest to weakest)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/candidateCount> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of PlantMetWiki metabolites matching the same feature and adduct." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/BGCPathwayLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/software> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/fractionPathwayGenes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PathwayMembershipClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "Evidence for a node of a PlantMetWiki pathway, reified as an rdf:Statement (case 4)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/PlantCycCuration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/lod-pathways/pilot/Run> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/log2FoldChange> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/functionalCluster> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the MEANtools functional cluster (ClusterONE) the pair belongs to." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/decayRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/hasMass2Motif> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/lod-pathways/pilot/Mass2Motif> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/motifProbability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/metaboliteAnchorTier> <http://www.w3.org/2000/01/rdf-schema#comment> "Tier of the metabolite-side anchor: mass_match." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/linkTier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/clusterPValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/log2FoldChange> <http://www.w3.org/2000/01/rdf-schema#comment> "Log2 of the expression ratio between the two conditions of a contrast (for example the DESeq2 log2FoldChange); positive when higher in the first condition." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/anchorTier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/AnnotationToolRun> <http://www.w3.org/2000/01/rdf-schema#label> "annotation tool run" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Run> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/edgeWeight> <http://www.w3.org/2000/01/rdf-schema#label> "edge weight" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/batchFile> <http://www.w3.org/2000/01/rdf-schema#label> "batch file" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/adjustedPValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreeingTool> <http://www.w3.org/2000/01/rdf-schema#label> "agreeing tool" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/siriusConfidenceApprox> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/motifProbability> <http://www.w3.org/2000/01/rdf-schema#comment> "Probability of a Mass2Motif for a feature (0-1)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/MetaboliteFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An untargeted mass-spectrometry feature (m/z, retention time) from a dataset." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/Run> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/percentGenesSimilar> <http://www.w3.org/2000/01/rdf-schema#comment> "KnownClusterBLAST: percentage of the MIBiG cluster's genes with a similar gene in the BGC (0-100)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/massErrorPpm> <http://www.w3.org/2000/01/rdf-schema#comment> "Difference between the measured and the calculated m/z of a mass match, in ppm." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/agreeingTool> <http://www.w3.org/2000/01/rdf-schema#comment> "A tool that proposed the consensus structure." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/matchType> <http://www.w3.org/2000/01/rdf-schema#comment> "Consensus agreement: full (3 of 3 tools) or partial (2 of 3)." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/detectionRule> <http://www.w3.org/2000/01/rdf-schema#label> "detection rule" <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/mibigMatchEvidence> <http://www.w3.org/2000/01/rdf-schema#comment> "Evidence node for the KnownClusterBLAST match to a MIBiG cluster." <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/coreDomain> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/usesTool> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:vocab> .
+<https://example.org/lod-pathways/pilot/ms2queryModelScore> <http://www.w3.org/2000/01/rdf-schema#label> "MS2Query model score" <urn:lodviz:vocab> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <http://purl.org/dc/elements/1.1/title> "glucosinolate biosynthesis from phenylalanine"@en <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vocabularies.wikipathways.org/wp#Pathway> <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vocabularies.wikipathways.org/wp#Pathway> <urn:lodviz:plantmetwiki> .
+<https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <http://purl.org/dc/terms/isPartOf> <http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <http://rdf-plantmetwiki.bioinformatics.nl/vocab/plantcycId> "PWY-6684" <urn:lodviz:plantmetwiki> .
+<https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <http://purl.org/dc/terms/identifier> "QQGLQYQXUKHWPX-RFEZBLSLSA-M" <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <http://purl.org/dc/terms/identifier> "PC848" <urn:lodviz:plantmetwiki> .
+<https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <http://www.w3.org/2000/01/rdf-schema#label> "glucotropaeolin" <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <http://rdf-plantmetwiki.bioinformatics.nl/vocab/plantcycId> "PWY-2821" <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <http://purl.org/dc/terms/identifier> "PWY-6684" <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <http://purl.org/dc/terms/identifier> "PC1071" <urn:lodviz:plantmetwiki> .
+<https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <http://purl.org/dc/terms/isPartOf> <http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <urn:lodviz:plantmetwiki> .
+<https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vocabularies.wikipathways.org/wp#DataNode> <urn:lodviz:plantmetwiki> .
+<https://identifiers.org/inchikey/QQGLQYQXUKHWPX-RFEZBLSLSA-M> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vocabularies.wikipathways.org/wp#Metabolite> <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <http://purl.org/dc/elements/1.1/title> "aromatic glucosinolate activation"@en <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> <http://vocabularies.wikipathways.org/wp#organismName> "Viridiplantae" <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <http://vocabularies.wikipathways.org/wp#organismName> "Viridiplantae" <urn:lodviz:plantmetwiki> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> <http://purl.org/dc/terms/identifier> "PWY-2821" <urn:lodviz:plantmetwiki> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#resultSeverity> <http://www.w3.org/ns/shacl#Violation> <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#sourceConstraintComponent> <http://www.w3.org/ns/shacl#InConstraintComponent> <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#focusNode> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/ns/shacl#resultSeverity> <http://www.w3.org/ns/shacl#Violation> <urn:lodviz:report> .
+_:Nfbf9f00d78874649a4fcf875def9ff57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N41c6b583884941a397a4cb0e55a5fde9 <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/ns/shacl#focusNode> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#sourceShape> _:na79492aebc5f4676aebaac03fa360f3eb17 <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/ns/shacl#resultMessage> "Version missing (swo:SWO_0004000). State the software version, or the date and release of the resource." <urn:lodviz:report> .
+_:N41c6b583884941a397a4cb0e55a5fde9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "mass_match" <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/ns/shacl#sourceConstraintComponent> <http://www.w3.org/ns/shacl#OrConstraintComponent> <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/ns/shacl#sourceConstraintComponent> <http://www.w3.org/ns/shacl#MinCountConstraintComponent> <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab3 <http://www.w3.org/ns/shacl#hasValue> "structure_match" <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/ns/shacl#sourceShape> _:nb3d6b937c2c2498c9acfcddbb462e98ab3 <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#resultPath> <https://example.org/lod-pathways/pilot/anchorTier> <urn:lodviz:report> .
+_:N0b694808e123486c80f3a46775a8e75f <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N683c13421f34489489605537fb6e7e64 <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab2 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:report> .
+_:N3d2246ca890243c984e17ee6f24e3158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N594dc528153d48879b53b3c5d9f85d82 <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#resultMessage> "A claim needs exactly one lodp:anchorTier: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec or mass_match." <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb17 <http://www.w3.org/ns/shacl#message> "A claim needs exactly one lodp:anchorTier: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec or mass_match." <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/ns/shacl#resultPath> <https://example.org/lod-pathways/pilot/anchorTier> <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#result> _:N4833356bfbe545ef86b5c417713ba6f5 <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb34 <http://www.w3.org/ns/shacl#path> <http://www.ebi.ac.uk/swo/SWO_0004000> <urn:lodviz:report> .
+_:Neda5e2ba8ae9495aa6de56b78a6d17d4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N3d2246ca890243c984e17ee6f24e3158 <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb17 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#result> _:N3017d046d78243bf97cc1619354e7e19 <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#result> _:N0bb8c40dc6aa4d0b9d2f02df8925960c <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/ns/shacl#sourceShape> _:nb3d6b937c2c2498c9acfcddbb462e98ab2 <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb34 <http://www.w3.org/ns/shacl#message> "Version missing (swo:SWO_0004000). State the software version, or the date and release of the resource." <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/ns/shacl#resultMessage> "Annotations are anchored by structure_match (first InChIKey block)." <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationResult> <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab32 <http://www.w3.org/ns/shacl#prefixes> <https://example.org/lod-pathways/shapes/> <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/ns/shacl#sourceShape> <https://example.org/lod-pathways/shapes/ClaimShape> <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb17 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/ns/shacl#value> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/ns/shacl#resultMessage> "An annotation is anchored to the PlantMetWiki metabolite it names (lodp:anchoredToMetabolite)." <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb34 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#value> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab32 <http://www.w3.org/ns/shacl#message> "A tool evidence should carry its score: sirius needs lodp:siriusConfidenceApprox, ms2query_exact needs lodp:ms2queryModelScore, dreams needs lodp:dreamsSimilarity." <urn:lodviz:report> .
+_:Nfbf9f00d78874649a4fcf875def9ff57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gene_ec" <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb34 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Warning> <urn:lodviz:report> .
+_:N0b694808e123486c80f3a46775a8e75f <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "structure_match" <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#sourceConstraint> _:nb3d6b937c2c2498c9acfcddbb462e98ab32 <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/ns/shacl#value> "none" <urn:lodviz:report> .
+_:N683c13421f34489489605537fb6e7e64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gene_uniprot" <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab32 <http://www.w3.org/ns/shacl#select> "\r\n            SELECT $this ?ev ?tier WHERE {\r\n              $this sio:SIO_000772 ?ev . ?ev lodp:identificationTier ?tier .\r\n              FILTER( (?tier = \"sirius\" && NOT EXISTS { ?ev lodp:siriusConfidenceApprox ?s })\r\n                   || (?tier = \"ms2query_exact\" && NOT EXISTS { ?ev lodp:ms2queryModelScore ?s })\r\n                   || (?tier = \"dreams\" && NOT EXISTS { ?ev lodp:dreamsSimilarity ?s }) )\r\n            }" <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/ns/shacl#resultPath> <https://example.org/lod-pathways/pilot/anchoredToMetabolite> <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#resultSeverity> <http://www.w3.org/ns/shacl#Warning> <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/ns/shacl#sourceConstraintComponent> <http://www.w3.org/ns/shacl#HasValueConstraintComponent> <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb17 <http://www.w3.org/ns/shacl#path> <https://example.org/lod-pathways/pilot/anchorTier> <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#focusNode> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#conforms> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/ns/shacl#sourceShape> _:na79492aebc5f4676aebaac03fa360f3eb34 <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/ns/shacl#resultPath> <http://www.ebi.ac.uk/swo/SWO_0004000> <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/ns/shacl#sourceConstraintComponent> <http://www.w3.org/ns/shacl#MinCountConstraintComponent> <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab2 <http://www.w3.org/ns/shacl#message> "An annotation is anchored to the PlantMetWiki metabolite it names (lodp:anchoredToMetabolite)." <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationResult> <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/ns/shacl#resultMessage> "A claim must be anchored to PlantMetWiki: give lodp:anchoredInPathway or lodp:anchoredToMetabolite." <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#result> _:Nb218c7209c634c699ca07aa9b482d4e4 <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb17 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> <urn:lodviz:report> .
+_:N683c13421f34489489605537fb6e7e64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nfbf9f00d78874649a4fcf875def9ff57 <urn:lodviz:report> .
+_:N3d2246ca890243c984e17ee6f24e3158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gene_direct" <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationResult> <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#sourceShape> <https://example.org/lod-pathways/shapes/AnnotationScoreShape> <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab2 <http://www.w3.org/ns/shacl#path> <https://example.org/lod-pathways/pilot/anchoredToMetabolite> <urn:lodviz:report> .
+_:na79492aebc5f4676aebaac03fa360f3eb17 <http://www.w3.org/ns/shacl#in> _:Neda5e2ba8ae9495aa6de56b78a6d17d4 <urn:lodviz:report> .
+_:N41c6b583884941a397a4cb0e55a5fde9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> <urn:lodviz:report> .
+_:N414dc383fd2846b89fcd2b609588f3ff <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationResult> <urn:lodviz:report> .
+_:Neda5e2ba8ae9495aa6de56b78a6d17d4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "curated" <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab3 <http://www.w3.org/ns/shacl#path> <https://example.org/lod-pathways/pilot/anchorTier> <urn:lodviz:report> .
+_:N4833356bfbe545ef86b5c417713ba6f5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationResult> <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/ns/shacl#focusNode> <https://example.org/lod-pathways/pilot/run_gnps_library> <urn:lodviz:report> .
+_:N594dc528153d48879b53b3c5d9f85d82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N0b694808e123486c80f3a46775a8e75f <urn:lodviz:report> .
+_:N594dc528153d48879b53b3c5d9f85d82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gene_locus" <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationResult> <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#result> _:N97d89be821ae4725812a8f31538bf168 <urn:lodviz:report> .
+_:N97d89be821ae4725812a8f31538bf168 <http://www.w3.org/ns/shacl#resultSeverity> <http://www.w3.org/ns/shacl#Warning> <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#sourceConstraintComponent> <http://www.w3.org/ns/shacl#SPARQLConstraintComponent> <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/ns/shacl#focusNode> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/ns/shacl#resultSeverity> <http://www.w3.org/ns/shacl#Violation> <urn:lodviz:report> .
+_:N0bb8c40dc6aa4d0b9d2f02df8925960c <http://www.w3.org/ns/shacl#focusNode> <https://example.org/lod-pathways/pilot/annotation_MTBLS14270_neg_589_MOOJZGCWXISCRP> <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab3 <http://www.w3.org/ns/shacl#message> "Annotations are anchored by structure_match (first InChIKey block)." <urn:lodviz:report> .
+_:Nb218c7209c634c699ca07aa9b482d4e4 <http://www.w3.org/ns/shacl#resultMessage> "A tool evidence should carry its score: sirius needs lodp:siriusConfidenceApprox, ms2query_exact needs lodp:ms2queryModelScore, dreams needs lodp:dreamsSimilarity." <urn:lodviz:report> .
+_:nb3d6b937c2c2498c9acfcddbb462e98ab32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#SPARQLConstraint> <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/ns/shacl#result> _:N414dc383fd2846b89fcd2b609588f3ff <urn:lodviz:report> .
+_:N3017d046d78243bf97cc1619354e7e19 <http://www.w3.org/ns/shacl#resultSeverity> <http://www.w3.org/ns/shacl#Violation> <urn:lodviz:report> .
+_:Nf650bf435fb8401db94e51eb6e9998f6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#ValidationReport> <urn:lodviz:report> .
+
