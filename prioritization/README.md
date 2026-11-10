@@ -41,9 +41,9 @@ The tiers above grade the **components of a pathway** in PlantMetWiki. A second 
 
 | Family | Tiers (summary) |
 |---|---|
-| Metabolite annotation (MET) | MET-1 an annotated InChIKey matches a PlantMetWiki metabolite on the first block; MET-2 two detected metabolites share a chemical class (NPClassifier); MET-3 linked by a similarity metric; MET-4 by a structure similarity (InChI); MET-5 and the difference between them is a Rhea reaction with a known PlantMetWiki enzyme |
-| Paired omics (PO) | PO-1 metabolite and gene match the same pathway; PO-2 and the gene is an ortholog of a gene in a species with the pathway; PO-3 the gene is predicted to catalyse exactly the transformation between the two metabolites; PO-4 PO-2 and a machine-learning predicted transformation agrees |
-| Biosynthetic gene clusters (BGC) | BGC-1 co-expressed genes are in the same cluster; BGC-2 and only one gene matches a pathway (a lead to extend it); BGC-3 and both genes match |
+| Metabolite annotation | `annotation-matches-plantmetwiki` an annotated InChIKey matches a PlantMetWiki metabolite on the first block; `shared-chemical-class` two detected metabolites share a chemical class (NPClassifier); `similarity-link` linked by a similarity metric; `structure-similarity` linked by a structure similarity (InChI); `rhea-step-between-metabolites` and the difference between them is a Rhea reaction with a known PlantMetWiki enzyme |
+| Paired omics | `gene-and-metabolite-in-same-pathway`; `ortholog-in-pathway-species` the gene is an ortholog of a gene in a species with the pathway; `gene-catalyses-the-transformation` the gene is predicted to catalyse exactly the transformation between the two metabolites; `ortholog-plus-ml-prediction` the ortholog case plus a machine-learning predicted transformation |
+| Biosynthetic gene clusters | `coexpressed-in-same-cluster` co-expressed genes are in the same cluster; `coexpressed-in-cluster-one-in-pathway` and only one gene matches a pathway (a lead to extend it); `coexpressed-in-cluster-both-in-pathway` and both genes match |
 
 ## Questions to discuss
 
