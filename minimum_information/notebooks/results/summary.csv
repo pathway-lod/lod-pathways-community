@@ -1,0 +1,14 @@
+tier,case,status,n_rows,seconds,timeout_s,date,pmw_release
+coexpressed-in-cluster-both-in-pathway,3 gene clusters,timeout,,,150,2026-11-10,r17.0.0_20260605-171052
+coexpressed-in-cluster-one-in-pathway,3 gene clusters,no rows,0,85.5,150,2026-11-10,r17.0.0_20260605-171052
+coexpressed-in-same-cluster,3 gene clusters,no rows,0,2.0,150,2026-11-10,r17.0.0_20260605-171052
+annotation-matches-plantmetwiki,5 metabolomics,rows,2015,4.0,150,2026-11-10,r17.0.0_20260605-171052
+rhea-step-between-metabolites,5 metabolomics,error: killed by the system (probably out of memory),,,150,2026-11-10,r17.0.0_20260605-171052
+shared-chemical-class,5 metabolomics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
+similarity-link,5 metabolomics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
+structure-similarity,5 metabolomics,timeout,,,150,2026-11-10,r17.0.0_20260605-171052
+gene-and-metabolite-in-same-pathway,6 paired omics,no rows,0,2.1,150,2026-11-10,r17.0.0_20260605-171052
+gene-catalyses-the-transformation,6 paired omics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
+gene-in-plantmetwiki-pathway,6 paired omics,no rows,0,1.6,240,2026-11-10,r17.0.0_20260605-171052
+ortholog-in-pathway-species,6 paired omics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
+ortholog-plus-ml-prediction,6 paired omics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052

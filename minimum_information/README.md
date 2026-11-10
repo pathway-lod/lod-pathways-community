@@ -50,7 +50,7 @@ Order by support: `coexpressed-in-cluster-both-in-pathway` is the strongest. `co
 
 ## Running the tiers
 
-The queries start from the evidence graphs of the pilots. How to serve those graphs from a SPARQL endpoint (Oxigraph), and the idea of keeping static results in notebooks, are described in [`oxigraph-endpoint.md`](oxigraph-endpoint.md) (a plan, not implemented).
+The queries start from the evidence graphs of the pilots. The **results of each tier** (how many hits, with the first rows, and what is missing) are kept in [`notebooks/`](notebooks/) as executed Jupyter notebooks, one per case, with a table of the first run. How to serve the graphs from a SPARQL endpoint (Oxigraph) is described in [`oxigraph-endpoint.md`](oxigraph-endpoint.md) (a plan, not implemented).
 
 ## Open questions
 

@@ -54,14 +54,17 @@ A notebook per case (metabolomics, paired omics, gene clusters) could run each q
 
 Existing pilots already follow this pattern (`explore_results.ipynb` in three of them).
 
+**Implemented** (first version, 2026-11-10): see [`notebooks/`](notebooks/). They run the queries in a local in-process store, not through an endpoint.
+
 ## Test results to date (local in-process store, 2026-11-10)
 
 | Query | Result |
 |---|---|
 | `annotation-matches-plantmetwiki` | 2,015 features with a match, about 63 s |
-| `gene-in-plantmetwiki-pathway` | 2 pathways (PC70, PC968), about 97 s |
+| `gene-in-plantmetwiki-pathway` | 0 rows on the 1,293 associations of the MEANtools pilot (none of its genes is listed by Solyc locus in PlantMetWiki); the 2 pathways PC70 and PC968 that were found at first come from the single association of the sample graph |
 | `gene-and-metabolite-in-same-pathway`, `coexpressed-in-cluster-one-in-pathway` | 0 rows (the data are missing in the graph) |
-| `structure-similarity`, `rhea-step-between-metabolites`, `coexpressed-in-cluster-both-in-pathway` | did not finish within 280 s |
+| `structure-similarity`, `coexpressed-in-cluster-both-in-pathway` | did not finish within the time limit |
+| `rhea-step-between-metabolites` | did not finish; in one run the local store was killed by the system (probably out of memory) |
 | `ortholog-in-pathway-species`, `gene-catalyses-the-transformation`, `ortholog-plus-ml-prediction` | 0 rows (written against the proposed data model) |
 | `shared-chemical-class`, `similarity-link`, `coexpressed-in-same-cluster` | not run; they need data that the graphs do not have |
 
