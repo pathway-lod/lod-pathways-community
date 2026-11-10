@@ -1,0 +1,36 @@
+# PlantMetWiki context for slide 25: the metabolite glucotropaeolin and the pathways it is part of.
+#
+# Real PlantMetWiki RDF, not retyped: result of a CONSTRUCT on https://plantmetwiki.bioinformatics.nl/sparql
+# on 2026-11-10 (raw response in raw_pmw.ttl; query in notes/log/2026-11-10-rdf-visualizer.md).
+# Only the triples needed for the slide are kept (type, label, identifiers, isPartOf pathway); interactions and
+# descriptions are left out.
+#
+# Note: the slide (pilot data) names the pathways PWY-6684 and PWY-2821, which agrees with this.
+# The PC numbers (PC848, PC1071) are the ones of the endpoint on 2026-11-10; they differ from the
+# 2026-10-01 snapshot used by the pilots (see the session log).
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix wp:      <http://vocabularies.wikipathways.org/wp#> .
+@prefix pmwv:    <http://rdf-plantmetwiki.bioinformatics.nl/vocab/> .
+@prefix ik:      <https://identifiers.org/inchikey/> .
+
+ik:QQGLQYQXUKHWPX-RFEZBLSLSA-M a wp:Metabolite , wp:DataNode ;
+    rdfs:label "glucotropaeolin" ;
+    dcterms:identifier "QQGLQYQXUKHWPX-RFEZBLSLSA-M" ;
+    dcterms:isPartOf <http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> ,
+                     <http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> .
+
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> a wp:Pathway ;
+    dc:title "aromatic glucosinolate activation"@en ;
+    dcterms:identifier "PC848" , "PWY-6684" ;
+    pmwv:plantcycId "PWY-6684" ;
+    wp:organismName "Viridiplantae" .
+
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> a wp:Pathway ;
+    dc:title "glucosinolate biosynthesis from phenylalanine"@en ;
+    dcterms:identifier "PC1071" , "PWY-2821" ;
+    pmwv:plantcycId "PWY-2821" ;
+    wp:organismName "Viridiplantae" .

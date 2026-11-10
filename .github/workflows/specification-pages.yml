@@ -1,13 +1,16 @@
 name: Publish the specification dashboard
 
 # Publishes specification/index.html (and the term table it reads) with GitHub Pages
-# whenever the specification changes on the main branch.
+# whenever the specification changes on the main branch, and the evidence graph viewer (visualization_tool/)
+# under /visualization_tool/ of the same site (one Pages site per repository).
 # One-time setting: Settings > Pages > Build and deployment > Source: "GitHub Actions".
 on:
   push:
     branches: [main]
     paths:
       - "specification/**"
+      - "visualization_tool/**"
+      - ".github/workflows/specification-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -58,12 +61,26 @@ jobs:
         working-directory: specification
         run: python3 check_terms.py --render
 
+      - uses: actions/setup-node@v7
+        if: steps.pages.outputs.enabled != 'false'
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: visualization_tool/package-lock.json
+
+      # Static site in visualization_tool/dist (relative paths, so it works under /visualization_tool/).
+      - name: Build the evidence graph viewer
+        if: steps.pages.outputs.enabled != 'false'
+        working-directory: visualization_tool
+        run: npm ci && npm run build
+
       - name: Collect the site
         if: steps.pages.outputs.enabled != 'false'
         run: |
           mkdir _site
           cp specification/index.html _site/index.html
           cp specification/ontology_terms.csv specification/SPECIFICATION.md _site/
+          cp -r visualization_tool/dist _site/visualization_tool
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v6

@@ -1,0 +1,25 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<https://identifiers.org/inchikey/> .
+@prefix ns2:	<http://vocabularies.wikipathways.org/wp#> .
+ns1:QQGLQYQXUKHWPX-RFEZBLSLSA-M	rdf:type	ns2:Metabolite ,
+		ns2:DataNode .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+ns1:QQGLQYQXUKHWPX-RFEZBLSLSA-M	rdfs:label	"glucotropaeolin" .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
+ns1:QQGLQYQXUKHWPX-RFEZBLSLSA-M	dcterms:isPartOf	<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052> ,
+		<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052> ;
+	dcterms:identifier	"QQGLQYQXUKHWPX-RFEZBLSLSA-M" .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052>	rdf:type	ns2:Pathway ;
+	ns2:organismName	"Viridiplantae" .
+@prefix dc:	<http://purl.org/dc/elements/1.1/> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052>	dc:title	"glucosinolate biosynthesis from phenylalanine"@en ;
+	dcterms:identifier	"PC1071" ,
+		"PWY-2821" .
+@prefix ns6:	<http://rdf-plantmetwiki.bioinformatics.nl/vocab/> .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1071_r17.0.0_20260605-171052>	ns6:plantcycId	"PWY-2821" .
+<http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC848_r17.0.0_20260605-171052>	rdf:type	ns2:Pathway ;
+	ns2:organismName	"Viridiplantae" ;
+	dc:title	"aromatic glucosinolate activation"@en ;
+	dcterms:identifier	"PC848" ,
+		"PWY-6684" ;
+	ns6:plantcycId	"PWY-6684" .

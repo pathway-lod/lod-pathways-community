@@ -1,0 +1,24 @@
+{
+  "name": "rdf-evidence-viewer",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "shot": "node tools/screenshot.mjs"
+  },
+  "description": "Card-based viewer for evidence RDF (claims, evidence, provenance, PlantMetWiki anchors)",
+  "dependencies": {
+    "@xyflow/react": "^12.3.6",
+    "html-to-image": "^1.11.11",
+    "n3": "^1.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  },
+  "type": "module",
+  "private": true
+}
