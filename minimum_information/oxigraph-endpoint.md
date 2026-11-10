@@ -62,7 +62,8 @@ Existing pilots already follow this pattern (`explore_results.ipynb` in three of
 | `gene-in-plantmetwiki-pathway` | 2 pathways (PC70, PC968), about 97 s |
 | `gene-and-metabolite-in-same-pathway`, `coexpressed-in-cluster-one-in-pathway` | 0 rows (the data are missing in the graph) |
 | `structure-similarity`, `rhea-step-between-metabolites`, `coexpressed-in-cluster-both-in-pathway` | did not finish within 280 s |
-| the others | return nothing on the current graphs (they are written against the proposed data model) |
+| `ortholog-in-pathway-species`, `gene-catalyses-the-transformation`, `ortholog-plus-ml-prediction` | 0 rows (written against the proposed data model) |
+| `shared-chemical-class`, `similarity-link`, `coexpressed-in-same-cluster` | not run; they need data that the graphs do not have |
 
 ## Open questions
 
