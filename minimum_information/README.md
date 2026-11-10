@@ -48,6 +48,10 @@ Two **co-expressed genes** (from the same transcriptomic data) are looked at tog
 
 Order by support: `coexpressed-in-cluster-both-in-pathway` is the strongest. `coexpressed-in-cluster-one-in-pathway` is a different kind of result (a lead for new knowledge), so it is listed with its own flag and not simply below `coexpressed-in-cluster-both-in-pathway`. The cluster-to-pathway links of the plantiSMASH pilot (`gene_direct`, `gene_uniprot`, `gene_ec`) are the "matches" in `coexpressed-in-cluster-one-in-pathway` and `coexpressed-in-cluster-both-in-pathway`.
 
+## Running the tiers
+
+The queries start from the evidence graphs of the pilots. How to serve those graphs from a SPARQL endpoint (Oxigraph), and the idea of keeping static results in notebooks, are described in [`oxigraph-endpoint.md`](oxigraph-endpoint.md) (a plan, not implemented).
+
 ## Open questions
 
 1. **Order inside a family.** Is the order of the metabolomics tiers and of the paired-omics tiers right? For instance, is `gene-catalyses-the-transformation` (an exact transformation) stronger than `ortholog-in-pathway-species` (an ortholog in a species with the pathway)? Do `gene-catalyses-the-transformation` and `ortholog-in-pathway-species` combine?
