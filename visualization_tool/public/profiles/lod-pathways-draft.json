@@ -47,6 +47,7 @@
     },
     "kg": {
       "label": "already in PlantMetWiki",
+      "name": "PlantMetWiki",
       "objectOf": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"],
       "namespaces": ["pmw:", "pmwnode:"],
       "classNamespaces": ["wp:"],

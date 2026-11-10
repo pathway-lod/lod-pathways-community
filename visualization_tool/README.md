@@ -50,6 +50,10 @@ URL parameters: `?data=<file in public/data>&focus=<claim IRI>&profile=<file or 
   properties as dashed red rows.
 - Click a card to see its RDF (Turtle). Export PNG/SVG. Open a local `.ttl`/`.nq`/`.trig` file (no report then).
   Files with more than 60 subjects open on the first claim.
+- **Global view (test, `global.html`)**: all claims of a file on one Cytoscape.js canvas: knowledge graph in the
+  middle, anchors on its rim, claims on an outer ring, unanchored claims in a separate wedge. Click a claim to open
+  its cards beside the ring. Experimental: it checks whether Cytoscape.js is fast enough for thousands of claims
+  (see docs/decisions.md D21-D22).
 
 ## Data
 
@@ -81,6 +85,7 @@ report). Other files can be opened with "Open file".
 | `src/model.js` | cards, rows, edges; attaching SHACL results and pattern checks |
 | `src/layout.js` | column layouts (compact / slide; by link distance without claims): claim blocks, linked claims adjacent, KG groups, edge sides |
 | `src/CardNode.jsx`, `src/TrackEdge.jsx`, `src/LaneEdge.jsx`, `src/App.jsx` | ReactFlow rendering (cards, edges on own tracks, edges over the top) |
+| `global.html`, `src/Global.jsx`, `src/globalLayout.js` | global view test (Cytoscape.js; deterministic ring layout); reuses `Graph` from `src/App.jsx` for the detail |
 | `tools/build_viewer_bundle.py` | data bundles: subset + SHACL report + vocabulary as N-Quads, term table as JSON |
 | `tools/rebuild_bundles.sh` | rebuilds every bundle in `public/data/` |
 | `tools/screenshot.mjs` | build, serve, headless screenshots of given URL queries (the visual check) |

@@ -14,7 +14,7 @@ import { loadProfile, makeRoles, makeLabels, titleFor } from './profile.js';
 import { buildView } from './model.js';
 import { layout, handlesFor, assignTracks, assignPorts } from './layout.js';
 
-const ROLE_COLOR = { data: '#2563eb', claim: '#c2410c', evidence: '#15803d', kg: '#7e22ce', run: '#475569' };
+export const ROLE_COLOR = { data: '#2563eb', claim: '#c2410c', evidence: '#15803d', kg: '#7e22ce', run: '#475569' };
 const PROFILES = [
   { file: 'profiles/lod-pathways-draft.json', label: 'LOD-pathways draft (lodp:)' },
   { file: null, label: 'none (generic RDF)' },
@@ -29,7 +29,7 @@ const measureCtx = document.createElement('canvas').getContext('2d');
 measureCtx.font = "600 12px ui-monospace, 'Cascadia Mono', Consolas, monospace";
 const labelWidth = (text) => measureCtx.measureText(text).width + 10;
 
-function Graph({ view, P, showMissing, selected, onSelect, exportRef, mode }) {
+export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mode }) {
   const [nodes, setNodes, onNodesChange] = useNodesState(
     [...view.cards.values()].map((c) => ({
       id: c.id, type: 'card', position: { x: 0, y: 0 }, data: { card: c, showMissing, compact: P.compact }, style: { opacity: 0 },

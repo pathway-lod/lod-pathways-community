@@ -49,7 +49,9 @@ claim shape applies). The reference check of `validate.py` (PlantMetWiki snapsho
 | `src/profile.js` | everything vocabulary-specific | `loadProfile`, `makeRoles`, `makeLabels`, `titleFor`, `termInfo`, `patternChecks` |
 | `src/model.js` | cards / rows / edges, problems attached | `buildView` |
 | `src/layout.js` | positions and edge routing | `layout`, `handlesFor`, `assignPorts`, `assignTracks`, `LAYOUTS` (details: docs/layout.md) |
-| `src/App.jsx` | state, controls, ReactFlow graph, export, legend | |
+| `src/App.jsx` | state, controls, ReactFlow graph, export, legend | `Graph` (also used by the global view), `ROLE_COLOR` |
+| `src/Global.jsx`, `src/global-main.jsx`, `global.html` | global view **test**: all claims on a Cytoscape.js canvas, click → `Graph` in a side panel | |
+| `src/globalLayout.js` | vocabulary-free ring layout for the global view | `globalLayout` |
 | `src/CardNode.jsx` | one card (header, IRI, rows, badges, problems) | |
 | `src/TrackEdge.jsx` | edge between neighbouring columns: own vertical track (`data.centerX`), spread ports (`data.sOff`, `data.tOff`), label at the target | |
 | `src/LaneEdge.jsx` | edge that skips a column: over a lane above all cards (`data.laneY`) | |
@@ -103,6 +105,7 @@ claim-to-claim edge.
 | `roles.evidence.objectOf` | see Roles |
 | `roles.run.classes`, `.objectOf`, `.summary` | `summary`: predicates joined for the inline run text and evidence titles (e.g. software + version) |
 | `roles.kg.objectOf`, `.namespaces`, `.classNamespaces`, `.graphs` | see Roles |
+| `roles.kg.name` | name of the knowledge graph, shown in the middle of the global view (default "knowledge graph") |
 | `roles.<role>.label` | legend text |
 | `pattern.hasEvidence`, `.generatedBy`, `.anchoredTo` | used by the pattern checks and titles |
 | `terms.localNamespaces` | placeholder namespaces (orange; "not in spec" when not in the term table) |
@@ -148,6 +151,23 @@ not editable in Inkscape/Illustrator.
 
 `data` (file in public/data, default `slide25.nq`), `focus` (claim IRI), `profile` (profile path; empty = none),
 `runs=1` (runs as cards), `layout=slide`, `terms=0` (term table off).
+Global view (`global.html`): `data` (default `sample_evidence_graph.nq`), `focus` (claim IRI opened in the detail panel).
+Screenshots of it: `npm run shot -- shots/ --page global.html "data=..."`.
+
+## Global view (test, `global.html`)
+
+Answers two questions before the global view is designed properly: is Cytoscape.js fast enough for thousands of
+claims, and does global → detail work. Claims = role `claim`; anchors = objects of the profile's `pattern.anchoredTo`
+predicates. `globalLayout` (deterministic, no forces): claims sorted by first anchor, then IRI, on an outer ring;
+each anchor at the circular mean angle of its claims on an inner ring, on the rim of a disk that stands for the
+knowledge graph; claims without anchor in a separate wedge. Cytoscape uses `preset` positions, `haystack` edges and
+`hideEdgesOnViewport`. Click a claim → `buildView(focusSet(claim))` → `Graph` from App.jsx in a side panel; click
+an anchor → list of its claims. Big local test files go into `public/data/local/` (git-ignored) and open with
+`?data=local/<file>`.
+
+Seen on the metabolomics pilot (2,722 claims, 673 anchors): it renders, but the claim ring becomes a solid line and
+the edges a haze, so the real global view needs grouping (e.g. one node per anchor). Long anchor labels overlap
+where anchors bunch. Interactive speed is not measured yet (headless screenshots use virtual time).
 
 ## Open work
 
