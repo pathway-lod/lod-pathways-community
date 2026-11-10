@@ -1,0 +1,13 @@
+name,pubchem,formula,inchikey,match_level,plantmetwiki_key,plantmetwiki_label,pathways,in_PWY-7135
+Secologanin,161276,C17H24O10,CSKKDSFETGLMSB-NRZPKYKESA-N,full,CSKKDSFETGLMSB-NRZPKYKESA-N,secologanin,"PWY-5290 secologanin and strictosidine biosynthesis; PWY-5292 vindoline, vindorosine and vinblastine biosynthesis; PWY-7135 emetine biosynthesis",True
+Secologanic acid,71607801,C16H22O10,LCTYGGXMQYUYHL-UEMOXOMHSA-N,none,,,,False
+DAII,441257,C25H33NO11,MTAVTRZTGFLKSC-ONGZBVEHSA-N,stereo (protonation differs),MTAVTRZTGFLKSC-ONGZBVEHSA-O,deacetylisoipecoside,PWY-7135 emetine biosynthesis,True
+DAI,441259,C25H33NO11,MTAVTRZTGFLKSC-MDXCLUIBSA-N,connectivity,MTAVTRZTGFLKSC-ONGZBVEHSA-O,deacetylisoipecoside,PWY-7135 emetine biosynthesis,True
+DAIIA,178183438,C24H31NO11,AIGZZWIMDAFXNA-ICBTVIENSA-N,none,,,,False
+DAIA,178183439,C24H31NO11,AIGZZWIMDAFXNA-RJRDEGSCSA-N,none,,,,False
+6-O-Me-DAIIA,637480,C25H33NO11,SQIULMODQKFOOJ-ONGZBVEHSA-N,none,,,,False
+6-O-Me-DAIA,10649711,C25H33NO11,SQIULMODQKFOOJ-MDXCLUIBSA-N,none,,,,False
+Ipecoside,442249,C27H35NO12,QISXROCIXKXUPS-OWVLCBNUSA-N,none,,,,False
+Protoemetine,443421,C19H27NO3,BBVFHYCHEWCGBH-ZQIUZPCESA-N,connectivity,BBVFHYCHEWCGBH-KVULBXGLSA-O,protoemetine,PWY-7135 emetine biosynthesis,True
+Cephaeline,442195,C28H38N2O4,DTGZHCFJNDAHEN-OZEXIGSWSA-N,stereo (protonation differs),DTGZHCFJNDAHEN-OZEXIGSWSA-P,cephaeline,PWY-7135 emetine biosynthesis,True
+Emetine,10219,C29H40N2O4,AUVVAXYIELKVAI-CKBKHPSWSA-N,stereo (protonation differs),AUVVAXYIELKVAI-CKBKHPSWSA-P,emetine,PWY-7135 emetine biosynthesis,True

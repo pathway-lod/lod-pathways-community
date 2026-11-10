@@ -1,0 +1,701 @@
+Name,description,metabolite,r,max_expression
+NODE_52718_length_2094_cov_797.184962_g10005_i1,Neprosin,Secologanic acid,0.978442009633088,99.731882
+NODE_35673_length_2992_cov_867.701694_g12703_i0,Belongs to the class I-like SAM-binding methyltransferase superfamily. Erg6 SMT family,Secologanic acid,0.975499507844717,134.987546
+NODE_50458_length_2197_cov_3486.108675_g15317_i1,3-ketoacyl-coa synthase,Secologanic acid,0.9746215000052704,616.187226
+NODE_75150_length_1199_cov_1541.240909_g25014_i0,YGGT family,Secologanic acid,0.9727352653374316,114.826972
+NODE_74435_length_1227_cov_771.550532_g9689_i6,Bacterial trigger factor protein (TF),Secologanic acid,0.9725320277657534,51.006754
+NODE_115726_length_351_cov_803.837302_g60138_i0,,Secologanic acid,0.971829690096269,52.263715
+NODE_70953_length_1360_cov_729.384615_g12470_i2,Putative Phosphatase,Secologanic acid,0.970363047763178,53.754764
+NODE_61941_length_1708_cov_1066.433188_g15086_i4,XRI1-like,Secologanic acid,0.9672302614557752,58.200018
+NODE_71455_length_1340_cov_2384.297341_g3817_i3,NAD(P)-binding Rossmann-fold superfamily protein,Secologanic acid,0.9672221697722624,290.477401
+NODE_92029_length_653_cov_1369.548736_g36682_i0,disease resistance,Secologanic acid,0.9670035240175987,78.076851
+NODE_63772_length_1636_cov_3938.483409_g7780_i3,2-cys peroxiredoxin BAS1,Secologanic acid,0.966665080346436,371.012444
+NODE_57624_length_1882_cov_903.994391_g6448_i5,GDT1-like protein 2,Secologanic acid,0.965656786546839,62.913901
+NODE_80210_length_1019_cov_601.115217_g27685_i0,thylakoid lumenal 15 kDa protein,Secologanic acid,0.9645267570437493,70.186711
+NODE_72591_length_1297_cov_820.636895_g16774_i1,Belongs to the Casparian strip membrane proteins (CASP) family,Secologanic acid,0.9636630655153083,156.478691
+NODE_60281_length_1775_cov_2363.838902_g8607_i3,Glutaminyl-peptide,Secologanic acid,0.9635936124227406,81.571338
+NODE_56780_length_1918_cov_1381.014843_g17904_i1,Leucine rich repeat,Secologanic acid,0.962181623250567,139.904483
+NODE_36793_length_2925_cov_1750.940906_g12964_i1,Acyl-protein thioesterase,Secologanic acid,0.9619694868523417,82.971701
+NODE_87343_length_784_cov_1917.356204_g32611_i0,Disease resistance protein,Secologanic acid,0.9618255319808923,185.132901
+NODE_65995_length_1547_cov_535.662293_g9451_i2,F-actin-capping protein subunit beta,Secologanic acid,0.9616438904818755,51.543037
+NODE_59367_length_1812_cov_677.082312_g12732_i1,Belongs to the universal ribosomal protein uL6 family,Secologanic acid,0.9613631280997756,109.837599
+NODE_45119_length_2460_cov_981.694197_g6457_i8,Allows the formation of correctly charged Gln-tRNA(Gln) through the transamidation of misacylated Glu-tRNA(Gln) in chloroplasts and mitochondria. The reaction takes place in the presence of glutamine and ATP through an activated gamma-phospho- Glu-tRNA(Gln),Secologanic acid,0.9602374941622912,81.981029
+NODE_71347_length_1344_cov_1134.494779_g14762_i1,Protein LHCP TRANSLOCATION,Secologanic acid,0.9594141446928361,120.055931
+NODE_36079_length_2969_cov_469.295819_g8771_i2,Belongs to the peptidase C1 family,Secologanic acid,0.9584152892981698,54.247819
+NODE_82748_length_933_cov_34546.085132_g29309_i0,deacetylase,Secologanic acid,0.9583784490326285,109.914058
+NODE_54881_length_1998_cov_2837.190627_g859_i3,Belongs to the short-chain dehydrogenases reductases (SDR) family,Secologanic acid,0.9581139369425707,344.193725
+NODE_81390_length_978_cov_688.562002_g28440_i0,-,Secologanic acid,0.9573873773140589,62.762735
+NODE_34055_length_3093_cov_843.716767_g4932_i1,Protein TRANSPORT INHIBITOR RESPONSE,Secologanic acid,0.9572078214599776,58.198187
+NODE_62019_length_1705_cov_816.850560_g16903_i1,Peptidyl-prolyl cis-trans isomerase,Secologanic acid,0.9567432797458825,116.611268
+NODE_21657_length_4058_cov_1565.070725_g938_i3,50S ribosomal protein L27,Secologanic acid,0.9563585990483418,116.974578
+NODE_45812_length_2427_cov_2521.943729_g8980_i2,Triose phosphate phosphate translocator,Secologanic acid,0.9558950489323254,196.10126
+NODE_85387_length_846_cov_629.906292_g31122_i0,Belongs to the cystatin family. Phytocystatin subfamily,Secologanic acid,0.9552320849346289,66.50041
+NODE_57085_length_1906_cov_815.908688_g1110_i3,"Bifunctional DNA N-glycosylase with associated apurinic apyrimidinic (AP) lyase function that catalyzes the first step in base excision repair (BER), the primary repair pathway for the repair of oxidative DNA damage. The DNA N-glycosylase activity releases the damaged DNA base from DNA by cleaving the N- glycosidic bond, leaving an AP site. The AP lyase activity cleaves the phosphodiester bond 3' to the AP site by a beta-elimination. Primarily recognizes and repairs oxidative base damage of pyrimidines",Secologanic acid,0.9547243663520549,52.653885
+NODE_63186_length_1660_cov_659.688661_g10529_i1,50S ribosomal protein L5,Secologanic acid,0.9543329769607776,80.062256
+NODE_77516_length_1111_cov_37062.528656_g26207_i0,deacetylase,Secologanic acid,0.9528625451352314,4160.56559
+NODE_60974_length_1746_cov_1527.996357_g4881_i2,PPIases accelerate the folding of proteins. It catalyzes the cis-trans isomerization of proline imidic peptide bonds in oligopeptides,Secologanic acid,0.9524374660548083,194.735543
+NODE_42823_length_2579_cov_422.157661_g10561_i1,expressed protein,Secologanic acid,0.951916153603154,61.331747
+NODE_43740_length_2532_cov_11994.143855_g8965_i2,Gamma-secretase subunit APH1-like,Secologanic acid,0.9516438275338257,75.630266
+NODE_37351_length_2891_cov_1086.264327_g4781_i5,"Protein TIC 40, chloroplastic-like",Secologanic acid,0.9513839487017166,61.895301
+NODE_70375_length_1382_cov_695.492595_g19406_i1,30S ribosomal protein 2,Secologanic acid,0.9509714837573081,86.770645
+NODE_60121_length_1782_cov_637.624480_g398_i11,isoform X1,Secologanic acid,0.9507486786084688,50.266829
+NODE_47321_length_2350_cov_705.845402_g10458_i1,Belongs to the universal ribosomal protein uS9 family,Secologanic acid,0.9507000866308006,77.238151
+NODE_67987_length_1471_cov_381.079446_g686_i2,NAD(P)-binding Rossmann-like domain,Secologanic acid,0.9505222349918783,58.87545
+NODE_66180_length_1540_cov_459.678001_g13546_i1,Belongs to the peroxidase family,Secologanic acid,0.9504171144467061,73.081099
+NODE_74288_length_1232_cov_822.958517_g13356_i1,ribosomal protein s6,Secologanic acid,0.9501320288415926,133.61472
+NODE_49120_length_2259_cov_969.712037_g16305_i0,Lipase (class 3),Secologanic acid,0.9498527580766937,132.875028
+NODE_90679_length_688_cov_1597.589134_g35452_i0,LSD1 zinc finger,Secologanic acid,0.9497439475383408,202.75498
+NODE_39632_length_2759_cov_1804.767669_g9533_i1,Pyridoxal-phosphate dependent enzyme,Secologanic acid,0.9494734493625572,126.71432
+NODE_38714_length_2813_cov_5492.190125_g8311_i2,Belongs to the 14-3-3 family,Secologanic acid,0.9490177889368271,69.131455
+NODE_67446_length_1492_cov_1360.419239_g330_i12,Belongs to the sulfotransferase 1 family,Secologanic acid,0.9489678196475708,266.52432
+NODE_64354_length_1611_cov_1528.013889_g20774_i0,Disease resistance protein,Secologanic acid,0.9484614649724298,67.310384
+NODE_61551_length_1723_cov_2390.971675_g8607_i4,Glutaminyl-peptide,Secologanic acid,0.9478726279459408,89.461783
+NODE_52955_length_2083_cov_2752.780746_g14903_i2,coproporphyrinogen-III oxidase,Secologanic acid,0.9466702812079643,302.916919
+NODE_59391_length_1811_cov_2896.436332_g7607_i11,Belongs to the ALAD family,Secologanic acid,0.9465836435171032,311.089293
+NODE_55670_length_1964_cov_20151.018231_g18142_i0,deacetylase,Secologanic acid,0.9465598939540644,55.081753
+NODE_59575_length_1804_cov_1245.684457_g1441_i1,Kynurenine--oxoglutarate transaminase,Secologanic acid,0.9462114717671183,106.37579
+NODE_24115_length_3839_cov_747.593048_g5425_i4,Disease resistance protein,Secologanic acid,0.9460196108800637,79.880215
+NODE_82747_length_933_cov_35199.039568_g29308_i0,deacetylase,Secologanic acid,0.9451681279545193,128.290396
+NODE_72588_length_1297_cov_4381.187813_g10497_i3,Protein CURVATURE THYLAKOID 1A,Secologanic acid,0.9450387957027971,773.921652
+NODE_37033_length_2909_cov_712.627758_g706_i7,Belongs to the class-I pyridine nucleotide-disulfide oxidoreductase family,Secologanic acid,0.9446721352065764,65.010927
+NODE_25044_length_3757_cov_1004.296884_g7688_i1,Neutral ceramidase-like,Secologanic acid,0.9441716986884447,53.226874
+NODE_130006_length_296_cov_31606.487310_g74418_i0,"hel,pr-4,pr4",Secologanic acid,0.9434885293869706,416.975432
+NODE_37543_length_2880_cov_3537.560590_g5231_i6,Belongs to the chaperonin (HSP60) family,Secologanic acid,0.942639723215693,63.435795
+NODE_23167_length_3920_cov_1002.047893_g8980_i0,Triose phosphate phosphate translocator,Secologanic acid,0.9407768681541001,51.110852
+NODE_49233_length_2254_cov_1257.474246_g4682_i5,Catalyzes the 6-electron oxidation of protoporphyrinogen-IX to form protoporphyrin-IX,Secologanic acid,0.9404325145923571,128.541831
+NODE_72667_length_1294_cov_1227.514644_g11792_i2,Protein of unknown function (DUF3054),Secologanic acid,0.9401065108937612,142.337834
+NODE_121720_length_323_cov_22.254464_g66132_i0,,Secologanic acid,0.9398722394192008,59.874354
+NODE_45581_length_2436_cov_608.098845_g15350_i0,Belongs to the oxygen-dependent FAD-linked oxidoreductase family,Secologanic acid,0.939514586803308,83.640786
+NODE_103857_length_440_cov_39996.211144_g48275_i0,"hel,pr-4,pr4",Secologanic acid,0.9395018633972906,216.175548
+NODE_80447_length_1011_cov_34685.053728_g27836_i0,deacetylase,Secologanic acid,0.9389053773192032,97.41601
+NODE_98429_length_519_cov_584.864286_g42857_i0,50S ribosomal protein 5,Secologanic acid,0.9385687933679301,100.336291
+NODE_35896_length_2980_cov_1089.215203_g662_i2,transcription factor,Secologanic acid,0.9385670568436589,112.721854
+NODE_52203_length_2117_cov_454.935580_g4855_i4,-,Secologanic acid,0.9385613903228766,65.704859
+NODE_18925_length_4325_cov_955.410790_g1583_i1,Belongs to the class-III pyridoxal-phosphate-dependent aminotransferase family,Secologanic acid,0.938116847905888,68.796301
+NODE_128597_length_301_cov_0.673267_g73009_i0,Pentapeptide repeats (9 copies),Secologanic acid,0.9378761936513688,117.862487
+NODE_61219_length_1736_cov_664.097740_g7044_i2,Belongs to the uroporphyrinogen decarboxylase family,Secologanic acid,0.9374968711076591,133.222213
+NODE_67425_length_1493_cov_596.799857_g16915_i1,Belongs to the 'GDSL' lipolytic enzyme family,Secologanic acid,0.936106728917717,161.972307
+NODE_148311_length_273_cov_26948.603448_g92723_i0,"hel,pr-4,pr4",Secologanic acid,0.9360474682777493,67.812265
+NODE_73328_length_1270_cov_1193.165670_g22585_i1,kDa ribonucleoprotein,Secologanic acid,0.935667255976719,110.742814
+NODE_88189_length_759_cov_26893.066667_g33305_i0,"hel,pr-4,pr4",Secologanic acid,0.9350742721991988,107.801841
+NODE_72592_length_1297_cov_777.611018_g23846_i0,21 kDa protein,Secologanic acid,0.9348382648161168,235.972938
+NODE_81981_length_957_cov_564.355478_g15107_i2,50S ribosomal protein L9,Secologanic acid,0.9346876751018839,56.811627
+NODE_63158_length_1661_cov_1142.528169_g20384_i0,50S ribosomal protein L4,Secologanic acid,0.9345176134464777,138.912692
+NODE_58481_length_1846_cov_933.661133_g18964_i0,Belongs to the iron ascorbate-dependent oxidoreductase family,Secologanic acid,0.9343810676267887,178.102043
+NODE_80886_length_996_cov_4430.305463_g6523_i1,Non-specific lipid transfer protein GPI-anchored,Secologanic acid,0.9340267216665934,940.625865
+NODE_80208_length_1019_cov_691.800000_g11688_i1,50S ribosomal protein L28,Secologanic acid,0.9339855501347308,64.400604
+NODE_69305_length_1422_cov_1016.218443_g22525_i0,Belongs to the universal ribosomal protein uS17 family,Secologanic acid,0.933923328775547,156.660338
+NODE_69446_length_1416_cov_1317.128322_g372_i24,plastid-lipid-associated protein 8,Secologanic acid,0.9335782620559234,139.877557
+NODE_65431_length_1568_cov_3365.673928_g11248_i5,26S proteasome non-ATPase regulatory subunit,Secologanic acid,0.9334726275827582,251.423347
+NODE_82073_length_954_cov_1239.908772_g9127_i3,50S ribosomal protein L18,Secologanic acid,0.9326526885034631,187.144838
+NODE_83362_length_913_cov_16572.500000_g8965_i5,Pathogenesis-related protein,Secologanic acid,0.9324090119478149,1428.366308
+NODE_31738_length_3248_cov_1171.441728_g9240_i3,1-deoxy-D-xylulose-5-phosphate synthase,Secologanic acid,0.9323225370022704,157.236302
+NODE_80503_length_1009_cov_907.213187_g359_i3,Belongs to the universal ribosomal protein uL24 family,Secologanic acid,0.932281277248474,89.020834
+NODE_43990_length_2519_cov_405.875620_g1723_i2,GDSL-like Lipase/Acylhydrolase family,Secologanic acid,0.9322714621962417,54.643612
+NODE_62135_length_1701_cov_1127.665418_g3082_i2,Soluble inorganic pyrophosphatase 1,Secologanic acid,0.9322170541018312,60.862143
+NODE_55208_length_1984_cov_377.923077_g14650_i1,Methyladenine glycosylase,Secologanic acid,0.9320458843232453,57.221656
+NODE_72042_length_1318_cov_2593.391304_g9669_i2,Belongs to the universal ribosomal protein uL13 family,Secologanic acid,0.9319413073828082,284.344705
+NODE_71781_length_1328_cov_1001.912937_g7155_i2,ATP-dependent Clp protease proteolytic subunit,Secologanic acid,0.9317713964863303,114.641794
+NODE_82859_length_930_cov_36947.352587_g29377_i0,deacetylase,Secologanic acid,0.931638585547562,104.996547
+NODE_30901_length_3305_cov_323.326887_g11349_i0,-,Secologanic acid,0.9315383295701144,60.263468
+NODE_53778_length_2048_cov_1134.987173_g14365_i2,Belongs to the class I-like SAM-binding methyltransferase superfamily. Erg6 SMT family,Secologanic acid,0.9315170418860078,131.404644
+NODE_82859_length_930_cov_36947.352587_g29377_i0,deacetylase,DAIIA,0.9614924706350952,104.996547
+NODE_36325_length_2953_cov_843.297828_g3905_i6,(R)-mandelonitrile lyase,DAIIA,0.9571971513246162,101.412741
+NODE_82747_length_933_cov_35199.039568_g29308_i0,deacetylase,DAIIA,0.9535278529076447,128.290396
+NODE_82748_length_933_cov_34546.085132_g29309_i0,deacetylase,DAIIA,0.9518596465522592,109.914058
+NODE_38373_length_2831_cov_3689.411054_g8788_i2,Belongs to the cytochrome P450 family,DAIIA,0.9358838952550742,148.198182
+NODE_77515_length_1111_cov_37110.845850_g26206_i0,deacetylase,DAIIA,0.9281782384451801,1728.351455
+NODE_64737_length_1595_cov_603.662433_g20896_i0,Major latex,DAIIA,0.9239365376907682,172.580237
+NODE_35231_length_3019_cov_1548.175685_g985_i9,heat shock protein,DAIIA,0.9209633032357026,100.092566
+NODE_81021_length_992_cov_558.577828_g28203_i0,EF-hand domain pair,DAIIA,0.9199407540129777,66.083622
+NODE_96869_length_548_cov_88992.826281_g41306_i0,Chitin binding domain,DAIIA,0.9192751793221278,9336.843167
+NODE_83362_length_913_cov_16572.500000_g8965_i5,Pathogenesis-related protein,DAIIA,0.9180958130270519,1428.366308
+NODE_40915_length_2687_cov_3281.049073_g8857_i2,Belongs to the chaperonin (HSP60) family,DAIIA,0.9172127444221917,187.390368
+NODE_79960_length_1027_cov_61800.967672_g27532_i0,deacetylase,DAIIA,0.9169305058039169,6912.030706
+NODE_55670_length_1964_cov_20151.018231_g18142_i0,deacetylase,DAIIA,0.9153588760623591,55.081753
+NODE_64193_length_1618_cov_452.073074_g10500_i2,axial regulator YABBY,DAIIA,0.9145941536965773,86.875213
+NODE_88463_length_751_cov_52835.737730_g33526_i0,"hel,pr-4,pr4",DAIIA,0.9130382880358358,2040.953057
+NODE_79955_length_1027_cov_62654.803879_g27527_i0,deacetylase,DAIIA,0.912224815809974,265.021931
+NODE_34055_length_3093_cov_843.716767_g4932_i1,Protein TRANSPORT INHIBITOR RESPONSE,DAIIA,0.9121284626579819,58.198187
+NODE_95013_length_585_cov_72495.137860_g39500_i0,chitin binding,DAIIA,0.911846084435234,211.964633
+NODE_79958_length_1027_cov_62483.966595_g27530_i0,deacetylase,DAIIA,0.9088424100500383,1000.633592
+NODE_37543_length_2880_cov_3537.560590_g5231_i6,Belongs to the chaperonin (HSP60) family,DAIIA,0.9086637569761914,63.435795
+NODE_91033_length_679_cov_45528.886207_g35770_i0,"hel,pr-4,pr4",DAIIA,0.9071694437796204,159.453177
+NODE_79959_length_1027_cov_62477.386853_g27531_i0,deacetylase,DAIIA,0.9059287176002672,1331.553346
+NODE_90679_length_688_cov_1597.589134_g35452_i0,LSD1 zinc finger,DAIIA,0.9051782506491853,202.75498
+NODE_177753_length_220_cov_22238.991736_g122165_i0,"hel,pr-4,pr4",DAIIA,0.9032312992435494,153.080895
+NODE_25260_length_3739_cov_1040.489286_g4044_i3,"Cell division cycle 20.2, cofactor of APC complex-like",DAIIA,0.9006082718603948,175.505854
+NODE_85159_length_853_cov_52170.754642_g30948_i0,"hel,pr-4,pr4",DAIIA,0.8996188372725986,92.9392
+NODE_85251_length_850_cov_49489.422104_g31011_i0,"hel,pr-4,pr4",DAIIA,0.8987587500517105,142.707495
+NODE_54881_length_1998_cov_2837.190627_g859_i3,Belongs to the short-chain dehydrogenases reductases (SDR) family,DAIIA,0.8971584935896483,344.193725
+NODE_29322_length_3422_cov_400.891062_g2620_i3,ion channel POLLUX-like,DAIIA,0.894816319606193,56.89296
+NODE_42436_length_2599_cov_1185.439600_g985_i10,heat shock protein,DAIIA,0.8947400455687765,58.262374
+NODE_85157_length_853_cov_54037.255968_g30946_i0,"hel,pr-4,pr4",DAIIA,0.8941416474006517,180.455518
+NODE_77516_length_1111_cov_37062.528656_g26207_i0,deacetylase,DAIIA,0.8917873470796897,4160.56559
+NODE_67192_length_1502_cov_177.790449_g14876_i3,axial regulator YABBY,DAIIA,0.8909446161440199,72.571481
+NODE_28424_length_3493_cov_10440.605480_g10607_i0,DYW family of nucleic acid deaminases,DAIIA,0.8906269617912552,50.235362
+NODE_35673_length_2992_cov_867.701694_g12703_i0,Belongs to the class I-like SAM-binding methyltransferase superfamily. Erg6 SMT family,DAIIA,0.8903899355724155,134.987546
+NODE_71455_length_1340_cov_2384.297341_g3817_i3,NAD(P)-binding Rossmann-fold superfamily protein,DAIIA,0.8885905454576702,290.477401
+NODE_16865_length_4557_cov_3105.419919_g2650_i4,"Plant lipoxygenase may be involved in a number of diverse aspects of plant physiology including growth and development, pest resistance, and senescence or responses to wounding",DAIIA,0.8876473506594027,586.267919
+NODE_118455_length_338_cov_1.322176_g62867_i0,,DAIIA,0.8868083271354775,78.066646
+NODE_74288_length_1232_cov_822.958517_g13356_i1,ribosomal protein s6,DAIIA,0.8866283502591646,133.61472
+NODE_66180_length_1540_cov_459.678001_g13546_i1,Belongs to the peroxidase family,DAIIA,0.8862964116292441,73.081099
+NODE_177769_length_220_cov_4.884298_g122181_i0,,DAIIA,0.8858862674828013,53.578724
+NODE_162436_length_259_cov_1.931250_g106848_i0,,DAIIA,0.8828453115730873,59.01661
+NODE_79953_length_1027_cov_62812.876078_g27525_i0,deacetylase,DAIIA,0.8818924052461358,684.905828
+NODE_91200_length_675_cov_49371.911458_g35920_i0,"hel,pr-4,pr4",DAIIA,0.8814813558852497,9550.743338
+NODE_76771_length_1138_cov_2322.079885_g5680_i12,Belongs to the chaperonin (HSP60) family,DAIIA,0.880883497370153,110.68339
+NODE_76772_length_1138_cov_2258.477382_g5680_i13,Belongs to the chaperonin (HSP60) family,DAIIA,0.8805008112718916,87.775231
+NODE_104146_length_437_cov_37333.523669_g48564_i0,Endochitinase,DAIIA,0.8795065449576335,140.567879
+NODE_57762_length_1876_cov_204.970174_g11633_i1,axial regulator YABBY,DAIIA,0.8788387609943182,87.301498
+NODE_35670_length_2992_cov_20937.988939_g3353_i14,belongs to the protein kinase superfamily,DAIIA,0.8780296820330026,103.306183
+NODE_79954_length_1027_cov_62773.165948_g27526_i0,deacetylase,DAIIA,0.8775986489072811,148.869962
+NODE_46759_length_2378_cov_317.729706_g15650_i0,transcription factor,DAIIA,0.8766182956723183,78.259462
+NODE_79965_length_1027_cov_2578.025862_g7956_i7,Small nuclear ribonucleoprotein,DAIIA,0.8762489469508208,159.763366
+NODE_40916_length_2687_cov_3260.622102_g8857_i3,Belongs to the chaperonin (HSP60) family,DAIIA,0.8762110826894043,159.267775
+NODE_74815_length_1211_cov_117.831835_g23348_i1,"atexp8,atexpa8,athexp alpha 1.11,exp8,expa8",DAIIA,0.8756985774065296,50.944646
+NODE_70953_length_1360_cov_729.384615_g12470_i2,Putative Phosphatase,DAIIA,0.8746948344346634,53.754764
+NODE_59575_length_1804_cov_1245.684457_g1441_i1,Kynurenine--oxoglutarate transaminase,DAIIA,0.8741221866612393,106.37579
+NODE_44359_length_2499_cov_299.300000_g13693_i1,Squamosa promoter-binding-like protein,DAIIA,0.8734551210693678,52.667736
+NODE_104144_length_437_cov_54631.798817_g48562_i0,"hel,pr-4,pr4",DAIIA,0.8731708624736542,55.132765
+NODE_43857_length_2526_cov_4111.175113_g5231_i8,Belongs to the chaperonin (HSP60) family,DAIIA,0.871106527879412,363.466442
+NODE_63290_length_1656_cov_918.829801_g20406_i1,Protein CHAPERONE-LIKE PROTEIN OF POR1-like,DAIIA,0.8695243170362361,97.926393
+NODE_79957_length_1027_cov_62557.241379_g27529_i0,deacetylase,DAIIA,0.8693267406005044,422.832281
+NODE_56627_length_1925_cov_406.097481_g16377_i2,Belongs to the peptidase S10 family,DAIIA,0.8689892964175625,105.541505
+NODE_69790_length_1403_cov_571.282209_g22723_i0,Nuclear transcription factor Y subunit,DAIIA,0.8689747062166236,74.337547
+NODE_36793_length_2925_cov_1750.940906_g12964_i1,Acyl-protein thioesterase,DAIIA,0.8686841997256692,82.971701
+NODE_52718_length_2094_cov_797.184962_g10005_i1,Neprosin,DAIIA,0.8686072413590772,99.731882
+NODE_25638_length_3710_cov_949.131819_g7561_i6,Auxin response factors (ARFs) are transcriptional factors that bind specifically to the DNA sequence 5'-TGTCTC-3' found in the auxin-responsive promoter elements (AuxREs),DAIIA,0.8682762527893838,90.863212
+NODE_55355_length_1977_cov_2254.588924_g12854_i3,Belongs to the GroES chaperonin family,DAIIA,0.8675188235382939,305.140193
+NODE_54651_length_2009_cov_264.224607_g13949_i1,GDSL-like Lipase/Acylhydrolase,DAIIA,0.8652296302299889,86.233535
+NODE_65454_length_1567_cov_970.127384_g4218_i1,ATP-dependent Clp protease proteolytic subunit,DAIIA,0.8650755343385592,87.803438
+NODE_45486_length_2441_cov_254.410333_g12385_i1,Trihelix transcription factor,DAIIA,0.8647050202331418,64.177342
+NODE_68567_length_1450_cov_879.359734_g11791_i1,Belongs to the peroxidase family,DAIIA,0.864669534777291,334.029591
+NODE_24115_length_3839_cov_747.593048_g5425_i4,Disease resistance protein,DAIIA,0.8641981738701414,79.880215
+NODE_168776_length_253_cov_2.603896_g113188_i0,Belongs to the glycosyl hydrolase 17 family,DAIIA,0.8631801753029417,271.237668
+NODE_35896_length_2980_cov_1089.215203_g662_i2,transcription factor,DAIIA,0.8626533505844133,112.721854
+NODE_17153_length_4524_cov_641.981921_g1885_i4,Serine threonine-protein kinase MHK-like,DAIIA,0.8624360060345321,81.515508
+NODE_25578_length_3714_cov_786.028492_g5329_i6,phosphoethanolamine N-methyltransferase,DAIIA,0.8620017611543161,57.936945
+NODE_66677_length_1520_cov_1513.591133_g14816_i6,Belongs to the glycosyl hydrolase 1 family,DAIIA,0.8616297960632767,160.121932
+NODE_73630_length_1258_cov_705.435720_g24320_i0,Ferredoxins are iron-sulfur proteins that transfer electrons in a wide variety of metabolic reactions,DAIIA,0.8615096738788809,81.201158
+NODE_143369_length_279_cov_0.761111_g87781_i0,Wound-induced basic,DAIIA,0.8612696899734793,60.444085
+NODE_45812_length_2427_cov_2521.943729_g8980_i2,Triose phosphate phosphate translocator,DAIIA,0.8603871674653042,196.10126
+NODE_48421_length_2294_cov_1341.115718_g14816_i2,Belongs to the glycosyl hydrolase 1 family,DAIIA,0.8600845822148663,237.0885
+NODE_50458_length_2197_cov_3486.108675_g15317_i1,3-ketoacyl-coa synthase,DAIIA,0.859479191071148,616.187226
+NODE_63772_length_1636_cov_3938.483409_g7780_i3,2-cys peroxiredoxin BAS1,DAIIA,0.859107741897546,371.012444
+NODE_85387_length_846_cov_629.906292_g31122_i0,Belongs to the cystatin family. Phytocystatin subfamily,DAIIA,0.858394770875983,66.50041
+NODE_53359_length_2065_cov_4876.123601_g15795_i2,"hel,pr-4,pr4",DAIIA,0.8566964173598312,58.906132
+NODE_148311_length_273_cov_26948.603448_g92723_i0,"hel,pr-4,pr4",DAIIA,0.8564360843298581,67.812265
+NODE_65995_length_1547_cov_535.662293_g9451_i2,F-actin-capping protein subunit beta,DAIIA,0.8557868623557742,51.543037
+NODE_56392_length_1935_cov_1060.444444_g13277_i1,Belongs to the class I-like SAM-binding methyltransferase superfamily. MPBQ MBSQ MT family,DAIIA,0.8545176953867392,94.54094
+NODE_57085_length_1906_cov_815.908688_g1110_i3,"Bifunctional DNA N-glycosylase with associated apurinic apyrimidinic (AP) lyase function that catalyzes the first step in base excision repair (BER), the primary repair pathway for the repair of oxidative DNA damage. The DNA N-glycosylase activity releases the damaged DNA base from DNA by cleaving the N- glycosidic bond, leaving an AP site. The AP lyase activity cleaves the phosphodiester bond 3' to the AP site by a beta-elimination. Primarily recognizes and repairs oxidative base damage of pyrimidines",DAIIA,0.8537503839313453,52.653885
+NODE_82073_length_954_cov_1239.908772_g9127_i3,50S ribosomal protein L18,DAIIA,0.8530272222339635,187.144838
+NODE_61219_length_1736_cov_664.097740_g7044_i2,Belongs to the uroporphyrinogen decarboxylase family,DAIIA,0.8529605743910155,133.222213
+NODE_61413_length_1729_cov_1857.774233_g10004_i2,inositol oxygenase,DAIIA,0.8515676050910824,360.719746
+NODE_72338_length_1308_cov_1550.396195_g19213_i1,Protein of unknown function (DUF2488),DAIIA,0.8513757394705762,171.624695
+NODE_70624_length_1372_cov_999.026709_g19497_i2,inositol oxygenase,DAIIA,0.8503648739487996,315.847675
+NODE_115726_length_351_cov_803.837302_g60138_i0,,DAIIA,0.8496469322034339,52.263715
+NODE_88522_length_749_cov_161.376923_g33577_i0,Nonspecific lipid-transfer protein,DAIIA,0.8496395426023474,100.739066
+NODE_72591_length_1297_cov_820.636895_g16774_i1,Belongs to the Casparian strip membrane proteins (CASP) family,DAIIA,0.8488418418354754,156.478691
+NODE_61551_length_1723_cov_2390.971675_g8607_i4,Glutaminyl-peptide,DAIIA,0.8488135103415771,89.461783
+NODE_53524_length_2058_cov_6053.828484_g15795_i3,"hel,pr-4,pr4",DAIIA,0.8485442167092097,614.101088
+NODE_45774_length_2429_cov_803.605579_g9790_i1,Indole-3-acetic acid-amido synthetase,DAIA,0.9118108506433229,53.393404
+NODE_38373_length_2831_cov_3689.411054_g8788_i2,Belongs to the cytochrome P450 family,DAIA,0.9103603524008165,148.198182
+NODE_162436_length_259_cov_1.931250_g106848_i0,,DAIA,0.9040815594126413,59.01661
+NODE_82859_length_930_cov_36947.352587_g29377_i0,deacetylase,DAIA,0.8901635700513232,104.996547
+NODE_69698_length_1407_cov_574.077982_g9779_i2,axial regulator YABBY,DAIA,0.8840413937296739,62.422767
+NODE_83362_length_913_cov_16572.500000_g8965_i5,Pathogenesis-related protein,DAIA,0.8754442733214671,1428.366308
+NODE_56392_length_1935_cov_1060.444444_g13277_i1,Belongs to the class I-like SAM-binding methyltransferase superfamily. MPBQ MBSQ MT family,DAIA,0.874826396388332,94.54094
+NODE_77515_length_1111_cov_37110.845850_g26206_i0,deacetylase,DAIA,0.8675834428708765,1728.351455
+NODE_82747_length_933_cov_35199.039568_g29308_i0,deacetylase,DAIA,0.8641578088126657,128.290396
+NODE_82748_length_933_cov_34546.085132_g29309_i0,deacetylase,DAIA,0.853280837448188,109.914058
+NODE_41082_length_2677_cov_2922.988363_g4030_i4,cyclic nucleotide-gated ion channel,DAIA,0.8495406614258604,170.330581
+NODE_42436_length_2599_cov_1185.439600_g985_i10,heat shock protein,DAIA,0.8452797953651197,58.262374
+NODE_35231_length_3019_cov_1548.175685_g985_i9,heat shock protein,DAIA,0.839237664503001,100.092566
+NODE_90679_length_688_cov_1597.589134_g35452_i0,LSD1 zinc finger,DAIA,0.8383262701322116,202.75498
+NODE_36325_length_2953_cov_843.297828_g3905_i6,(R)-mandelonitrile lyase,DAIA,0.8273564546712858,101.412741
+NODE_96869_length_548_cov_88992.826281_g41306_i0,Chitin binding domain,DAIA,0.8263815816373868,9336.843167
+NODE_64193_length_1618_cov_452.073074_g10500_i2,axial regulator YABBY,DAIA,0.8200690663777577,86.875213
+NODE_79960_length_1027_cov_61800.967672_g27532_i0,deacetylase,DAIA,0.8199505010610705,6912.030706
+NODE_73630_length_1258_cov_705.435720_g24320_i0,Ferredoxins are iron-sulfur proteins that transfer electrons in a wide variety of metabolic reactions,DAIA,0.8193605913995038,81.201158
+NODE_34055_length_3093_cov_843.716767_g4932_i1,Protein TRANSPORT INHIBITOR RESPONSE,DAIA,0.8189926767506842,58.198187
+NODE_77516_length_1111_cov_37062.528656_g26207_i0,deacetylase,DAIA,0.8140736556302836,4160.56559
+NODE_76676_length_1142_cov_1913.358581_g19265_i1,"Uncharacterized protein family, UPF0114",DAIA,0.8097076933970649,170.754533
+NODE_14371_length_4890_cov_984.184304_g5797_i1,Transcription factor,DAIA,0.8082794490131762,77.57633
+NODE_43518_length_2543_cov_751.149755_g7307_i2,Phytoene synthase,DAIA,0.8078088528511733,55.016107
+NODE_143369_length_279_cov_0.761111_g87781_i0,Wound-induced basic,DAIA,0.8076764932179795,60.444085
+NODE_62245_length_1696_cov_12231.078898_g1333_i17,Histone H1,DAIA,0.806545187267046,68.503249
+NODE_88463_length_751_cov_52835.737730_g33526_i0,"hel,pr-4,pr4",DAIA,0.8064786316700924,2040.953057
+NODE_59575_length_1804_cov_1245.684457_g1441_i1,Kynurenine--oxoglutarate transaminase,DAIA,0.8019038805914542,106.37579
+NODE_81021_length_992_cov_558.577828_g28203_i0,EF-hand domain pair,DAIA,0.7996707339340139,66.083622
+NODE_40915_length_2687_cov_3281.049073_g8857_i2,Belongs to the chaperonin (HSP60) family,DAIA,0.7994989036736788,187.390368
+NODE_72623_length_1296_cov_925.508772_g15468_i2,epoxide hydrolase,DAIA,0.7994688853798237,85.313468
+NODE_79955_length_1027_cov_62654.803879_g27527_i0,deacetylase,DAIA,0.7992223162662867,265.021931
+NODE_59210_length_1818_cov_1712.070971_g12954_i2,Belongs to the universal ribosomal protein uL15 family,DAIA,0.79854006068225,187.017093
+NODE_77108_length_1125_cov_28552.107212_g25993_i0,"hel,pr-4,pr4",DAIA,0.7983526753023499,2705.703733
+NODE_79959_length_1027_cov_62477.386853_g27531_i0,deacetylase,DAIA,0.7981386203000399,1331.553346
+NODE_66330_length_1533_cov_3296.500697_g393_i4,Pentatricopeptide repeat-containing protein,DAIA,0.7959344996337508,343.504995
+NODE_104146_length_437_cov_37333.523669_g48564_i0,Endochitinase,DAIA,0.7958258814341072,140.567879
+NODE_79958_length_1027_cov_62483.966595_g27530_i0,deacetylase,DAIA,0.7950466917314394,1000.633592
+NODE_2132_length_8740_cov_1727.235158_g652_i6,Encoded by,DAIA,0.7946722993140999,74.463033
+NODE_44359_length_2499_cov_299.300000_g13693_i1,Squamosa promoter-binding-like protein,DAIA,0.7941978645098575,52.667736
+NODE_95013_length_585_cov_72495.137860_g39500_i0,chitin binding,DAIA,0.7935974155003532,211.964633
+NODE_74172_length_1237_cov_922.644991_g3416_i5,Protein of unknown function (DUF3531),DAIA,0.7933154312127648,50.978199
+NODE_35896_length_2980_cov_1089.215203_g662_i2,transcription factor,DAIA,0.7932136430003243,112.721854
+NODE_22556_length_3976_cov_1078.607944_g3749_i4,Transcription factor TCP4-like,DAIA,0.7918504117744076,123.11412
+NODE_85159_length_853_cov_52170.754642_g30948_i0,"hel,pr-4,pr4",DAIA,0.7911083135804144,92.9392
+NODE_68873_length_1438_cov_1979.041822_g94_i11,Belongs to the class I-like SAM-binding methyltransferase superfamily. Cation-independent O- methyltransferase family,DAIA,0.7888614744102181,88.010701
+NODE_91033_length_679_cov_45528.886207_g35770_i0,"hel,pr-4,pr4",DAIA,0.7876487050628437,159.453177
+NODE_79965_length_1027_cov_2578.025862_g7956_i7,Small nuclear ribonucleoprotein,DAIA,0.7868691816634968,159.763366
+NODE_29322_length_3422_cov_400.891062_g2620_i3,ion channel POLLUX-like,DAIA,0.7867602141456125,56.89296
+NODE_104144_length_437_cov_54631.798817_g48562_i0,"hel,pr-4,pr4",DAIA,0.7855682260371845,55.132765
+NODE_177753_length_220_cov_22238.991736_g122165_i0,"hel,pr-4,pr4",DAIA,0.7854062434274246,153.080895
+NODE_148311_length_273_cov_26948.603448_g92723_i0,"hel,pr-4,pr4",DAIA,0.7850835784028772,67.812265
+NODE_37543_length_2880_cov_3537.560590_g5231_i6,Belongs to the chaperonin (HSP60) family,DAIA,0.7843966429348576,63.435795
+NODE_85157_length_853_cov_54037.255968_g30946_i0,"hel,pr-4,pr4",DAIA,0.7843941827778314,180.455518
+NODE_79953_length_1027_cov_62812.876078_g27525_i0,deacetylase,DAIA,0.7840611452650692,684.905828
+NODE_49746_length_2230_cov_52596.149226_g100_i49,"The light-harvesting complex (LHC) functions as a light receptor, it captures and delivers excitation energy to photosystems with which it is closely associated",DAIA,0.7829521699469487,109.615143
+NODE_79954_length_1027_cov_62773.165948_g27526_i0,deacetylase,DAIA,0.7821890352438091,148.869962
+NODE_19626_length_4257_cov_1072.270803_g7756_i1,Nodulin-like,DAIA,0.7818847085198327,62.038892
+NODE_74288_length_1232_cov_822.958517_g13356_i1,ribosomal protein s6,DAIA,0.7807680253814716,133.61472
+NODE_85251_length_850_cov_49489.422104_g31011_i0,"hel,pr-4,pr4",DAIA,0.7797741048489707,142.707495
+NODE_45812_length_2427_cov_2521.943729_g8980_i2,Triose phosphate phosphate translocator,DAIA,0.7794130122849469,196.10126
+NODE_71091_length_1354_cov_10570.481275_g21252_i1,Early light-induced protein,DAIA,0.7781379906393217,1293.483719
+NODE_66432_length_1530_cov_797.180992_g11635_i1,-,DAIA,0.7771747170639632,52.975512
+NODE_72338_length_1308_cov_1550.396195_g19213_i1,Protein of unknown function (DUF2488),DAIA,0.7765644681776811,171.624695
+NODE_61195_length_1737_cov_563.946886_g7619_i1,Belongs to the UDP-glycosyltransferase family,DAIA,0.7759486067325317,83.243083
+NODE_76772_length_1138_cov_2258.477382_g5680_i13,Belongs to the chaperonin (HSP60) family,DAIA,0.7748770502415736,87.775231
+NODE_45044_length_2464_cov_1391.446089_g11503_i1,Myo-inositol-1-phosphate synthase,DAIA,0.7724386831917389,185.071491
+NODE_28424_length_3493_cov_10440.605480_g10607_i0,DYW family of nucleic acid deaminases,DAIA,0.7723418443143529,50.235362
+NODE_55670_length_1964_cov_20151.018231_g18142_i0,deacetylase,DAIA,0.7712501433490333,55.081753
+NODE_45463_length_2442_cov_3570.855741_g4488_i3,Zinc finger protein CONSTANS-like,DAIA,0.7711743815223874,83.080958
+NODE_64556_length_1602_cov_1728.741184_g4985_i2,Belongs to the peptidase S14 family,DAIA,0.7710129816287706,133.123817
+NODE_85387_length_846_cov_629.906292_g31122_i0,Belongs to the cystatin family. Phytocystatin subfamily,DAIA,0.7707802539627843,66.50041
+NODE_91200_length_675_cov_49371.911458_g35920_i0,"hel,pr-4,pr4",DAIA,0.7705471597580983,9550.743338
+NODE_54881_length_1998_cov_2837.190627_g859_i3,Belongs to the short-chain dehydrogenases reductases (SDR) family,DAIA,0.7701556227139797,344.193725
+NODE_67187_length_1502_cov_2898.980756_g19417_i1,Aldo/keto reductase family,DAIA,0.7700801981091416,194.060046
+NODE_16865_length_4557_cov_3105.419919_g2650_i4,"Plant lipoxygenase may be involved in a number of diverse aspects of plant physiology including growth and development, pest resistance, and senescence or responses to wounding",DAIA,0.7690350803634662,586.267919
+NODE_23167_length_3920_cov_1002.047893_g8980_i0,Triose phosphate phosphate translocator,DAIA,0.7684727317583077,51.110852
+NODE_58856_length_1831_cov_912.872402_g8359_i1,rho-N domain-containing protein 1,DAIA,0.7675452255289384,66.67169
+NODE_68846_length_1439_cov_1061.780597_g4575_i2,"ATP-dependent Clp protease proteolytic subunit-related protein 3, chloroplastic",DAIA,0.7673403766297268,52.711073
+NODE_36698_length_2930_cov_3473.102437_g12961_i0,-,DAIA,0.7657549128174517,92.054844
+NODE_121720_length_323_cov_22.254464_g66132_i0,,DAIA,0.7647104684214464,59.874354
+NODE_75120_length_1200_cov_842.517711_g9443_i1,kDa ribonucleoprotein,DAIA,0.7635285233657904,77.736563
+NODE_66393_length_1531_cov_1478.359637_g8732_i2,Belongs to the universal ribosomal protein uS5 family,DAIA,0.7632109308347382,173.016961
+NODE_79957_length_1027_cov_62557.241379_g27529_i0,deacetylase,DAIA,0.7630440014991858,422.832281
+NODE_58898_length_1829_cov_3117.045665_g9089_i2,COBW domain-containing protein,DAIA,0.7620689417603353,185.704502
+NODE_76771_length_1138_cov_2322.079885_g5680_i12,Belongs to the chaperonin (HSP60) family,DAIA,0.7620415620912757,110.68339
+NODE_70953_length_1360_cov_729.384615_g12470_i2,Putative Phosphatase,DAIA,0.7610668366922022,53.754764
+NODE_81766_length_965_cov_475.383372_g28682_i0,"Dihydrodipicolinate reductase, C-terminus",DAIA,0.7595665851910699,55.554464
+NODE_64737_length_1595_cov_603.662433_g20896_i0,Major latex,DAIA,0.7582554120294502,172.580237
+NODE_88189_length_759_cov_26893.066667_g33305_i0,"hel,pr-4,pr4",DAIA,0.7581691987103866,107.801841
+NODE_52718_length_2094_cov_797.184962_g10005_i1,Neprosin,DAIA,0.7577202417025314,99.731882
+NODE_71455_length_1340_cov_2384.297341_g3817_i3,NAD(P)-binding Rossmann-fold superfamily protein,DAIA,0.7572877845568339,290.477401
+NODE_64404_length_1609_cov_5126.206623_g12138_i3,29 kDa ribonucleoprotein,DAIA,0.7532780091802059,436.114271
+NODE_82319_length_946_cov_609.932704_g9749_i1,-,DAIA,0.7521546262345976,51.622955
+NODE_63772_length_1636_cov_3938.483409_g7780_i3,2-cys peroxiredoxin BAS1,DAIA,0.7507949959655152,371.012444
+NODE_66180_length_1540_cov_459.678001_g13546_i1,Belongs to the peroxidase family,DAIA,0.7504181119773047,73.081099
+NODE_47603_length_2337_cov_641.520107_g6288_i2,Protein NRT1 PTR FAMILY,DAIA,0.7489570456892841,59.7926
+NODE_38714_length_2813_cov_5492.190125_g8311_i2,Belongs to the 14-3-3 family,DAIA,0.7485438123704488,69.131455
+NODE_16005_length_4669_cov_2816.719694_g9_i15,Lysosomal,DAIA,0.7479541425698101,166.554243
+NODE_70494_length_1377_cov_2529.651800_g10475_i5,CS domain,DAIA,0.7464857289543004,50.821235
+NODE_62534_length_1685_cov_2282.360025_g20031_i1,methionine,6-O-Me-DAIIA,0.8242346753999822,206.46078
+NODE_96869_length_548_cov_88992.826281_g41306_i0,Chitin binding domain,6-O-Me-DAIIA,0.796328454860851,9336.843167
+NODE_88463_length_751_cov_52835.737730_g33526_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7842947271518037,2040.953057
+NODE_79960_length_1027_cov_61800.967672_g27532_i0,deacetylase,6-O-Me-DAIIA,0.7811862287152499,6912.030706
+NODE_44359_length_2499_cov_299.300000_g13693_i1,Squamosa promoter-binding-like protein,6-O-Me-DAIIA,0.7787568211453363,52.667736
+NODE_79959_length_1027_cov_62477.386853_g27531_i0,deacetylase,6-O-Me-DAIIA,0.772166962897813,1331.553346
+NODE_79958_length_1027_cov_62483.966595_g27530_i0,deacetylase,6-O-Me-DAIIA,0.7688510077260257,1000.633592
+NODE_36325_length_2953_cov_843.297828_g3905_i6,(R)-mandelonitrile lyase,6-O-Me-DAIIA,0.7616654604221434,101.412741
+NODE_91033_length_679_cov_45528.886207_g35770_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7612060980564151,159.453177
+NODE_91200_length_675_cov_49371.911458_g35920_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7577850218063902,9550.743338
+NODE_91371_length_670_cov_576.124343_g36072_i0,Glycine rich protein family,6-O-Me-DAIIA,0.7568881580691035,86.805061
+NODE_85159_length_853_cov_52170.754642_g30948_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7566501060101437,92.9392
+NODE_28424_length_3493_cov_10440.605480_g10607_i0,DYW family of nucleic acid deaminases,6-O-Me-DAIIA,0.7564678349819207,50.235362
+NODE_79953_length_1027_cov_62812.876078_g27525_i0,deacetylase,6-O-Me-DAIIA,0.7547670477144832,684.905828
+NODE_79954_length_1027_cov_62773.165948_g27526_i0,deacetylase,6-O-Me-DAIIA,0.7529720211656289,148.869962
+NODE_79955_length_1027_cov_62654.803879_g27527_i0,deacetylase,6-O-Me-DAIIA,0.752543197442213,265.021931
+NODE_85157_length_853_cov_54037.255968_g30946_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7521103839159413,180.455518
+NODE_77108_length_1125_cov_28552.107212_g25993_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7498290425466622,2705.703733
+NODE_177753_length_220_cov_22238.991736_g122165_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7490077600830297,153.080895
+NODE_85251_length_850_cov_49489.422104_g31011_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7405467313460892,142.707495
+NODE_95013_length_585_cov_72495.137860_g39500_i0,chitin binding,6-O-Me-DAIIA,0.7369467974381739,211.964633
+NODE_79957_length_1027_cov_62557.241379_g27529_i0,deacetylase,6-O-Me-DAIIA,0.7314294883368756,422.832281
+NODE_77694_length_1105_cov_984.705765_g26300_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.7253551707125796,503.953657
+NODE_82859_length_930_cov_36947.352587_g29377_i0,deacetylase,6-O-Me-DAIIA,0.7174574850668859,104.996547
+NODE_29322_length_3422_cov_400.891062_g2620_i3,ion channel POLLUX-like,6-O-Me-DAIIA,0.7166715920281393,56.89296
+NODE_87379_length_783_cov_26592.181287_g32643_i0,Glycine-rich protein-like,6-O-Me-DAIIA,0.712784714811654,2324.304892
+NODE_16865_length_4557_cov_3105.419919_g2650_i4,"Plant lipoxygenase may be involved in a number of diverse aspects of plant physiology including growth and development, pest resistance, and senescence or responses to wounding",6-O-Me-DAIIA,0.712674466375712,586.267919
+NODE_67192_length_1502_cov_177.790449_g14876_i3,axial regulator YABBY,6-O-Me-DAIIA,0.7124377563169632,72.571481
+NODE_79956_length_1027_cov_62600.815733_g27528_i0,deacetylase,6-O-Me-DAIIA,0.7099826201168588,57.716497
+NODE_61055_length_1743_cov_839.907543_g6194_i14,Belongs to the peptidase C1 family,6-O-Me-DAIIA,0.7093083426154809,194.255856
+NODE_66330_length_1533_cov_3296.500697_g393_i4,Pentatricopeptide repeat-containing protein,6-O-Me-DAIIA,0.709193444279848,343.504995
+NODE_47860_length_2324_cov_1803.980674_g1091_i16,Belongs to the glycosyl hydrolase 18 family,6-O-Me-DAIIA,0.7077246290350989,332.625131
+NODE_162436_length_259_cov_1.931250_g106848_i0,,6-O-Me-DAIIA,0.7041398000881488,59.01661
+NODE_72593_length_1297_cov_681.384808_g19542_i1,Belongs to the peptidase C1 family,6-O-Me-DAIIA,0.7025491659894717,339.429477
+NODE_38373_length_2831_cov_3689.411054_g8788_i2,Belongs to the cytochrome P450 family,6-O-Me-DAIIA,0.7022097568841774,148.198182
+NODE_90254_length_699_cov_27783.836667_g35079_i0,Glycine-rich protein-like,6-O-Me-DAIIA,0.6999971138108313,1763.93669
+NODE_40648_length_2703_cov_381.342550_g12867_i1,Belongs to the RNase T2 family,6-O-Me-DAIIA,0.69989305360837,173.136402
+NODE_45774_length_2429_cov_803.605579_g9790_i1,Indole-3-acetic acid-amido synthetase,6-O-Me-DAIIA,0.6998873928534729,53.393404
+NODE_83889_length_896_cov_681.452949_g30063_i0,chitin binding,6-O-Me-DAIIA,0.6996567289648724,453.657975
+NODE_31017_length_3296_cov_1199.407882_g1091_i14,rRNA-processing protein FCF1 homolog,6-O-Me-DAIIA,0.6992778010735741,288.155015
+NODE_60352_length_1772_cov_793.793186_g14285_i1,Belongs to the iron ascorbate-dependent oxidoreductase family,6-O-Me-DAIIA,0.6991897392855879,106.424005
+NODE_88579_length_747_cov_26132.070988_g33629_i0,Glycine-rich protein-like,6-O-Me-DAIIA,0.6989322918119559,342.827923
+NODE_81586_length_971_cov_11196.528670_g28564_i0,,6-O-Me-DAIIA,0.6981203023918928,94.144752
+NODE_55595_length_1967_cov_2125.475910_g4761_i1,Belongs to the synaptobrevin family,6-O-Me-DAIIA,0.6980501566760826,68.149992
+NODE_80986_length_993_cov_399.531320_g27558_i1,germin-like protein,6-O-Me-DAIIA,0.6966329800145844,88.060175
+NODE_48421_length_2294_cov_1341.115718_g14816_i2,Belongs to the glycosyl hydrolase 1 family,6-O-Me-DAIIA,0.6966117570390097,237.0885
+NODE_64737_length_1595_cov_603.662433_g20896_i0,Major latex,6-O-Me-DAIIA,0.6964083895539922,172.580237
+NODE_104144_length_437_cov_54631.798817_g48562_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.6956809679900954,55.132765
+NODE_66677_length_1520_cov_1513.591133_g14816_i6,Belongs to the glycosyl hydrolase 1 family,6-O-Me-DAIIA,0.69370347071434,160.121932
+NODE_79804_length_1032_cov_697.003215_g27433_i0,Encoded by,6-O-Me-DAIIA,0.6930200388823292,455.427747
+NODE_63699_length_1640_cov_159.828683_g16563_i1,S-adenosylmethionine-dependent methyltransferase,6-O-Me-DAIIA,0.6929746766540913,86.233551
+NODE_71252_length_1348_cov_1018.198559_g22210_i1,Protodermal factor,6-O-Me-DAIIA,0.6919429559716358,624.739887
+NODE_79022_length_1058_cov_2852.035454_g27031_i0,-,6-O-Me-DAIIA,0.6917912057329162,1814.620163
+NODE_73726_length_1254_cov_1007.830303_g24367_i0,Protodermal factor,6-O-Me-DAIIA,0.6914938113067607,638.765144
+NODE_92536_length_640_cov_730.469501_g37148_i0,Glycine rich protein family,6-O-Me-DAIIA,0.6913460979594478,337.308838
+NODE_82747_length_933_cov_35199.039568_g29308_i0,deacetylase,6-O-Me-DAIIA,0.6909916970437994,128.290396
+NODE_82821_length_931_cov_20527.751202_g29354_i0,Glycine-rich protein-like,6-O-Me-DAIIA,0.6909543377576495,4886.462554
+NODE_82748_length_933_cov_34546.085132_g29309_i0,deacetylase,6-O-Me-DAIIA,0.6901276059541344,109.914058
+NODE_43201_length_2560_cov_126.078017_g14731_i0,Zinc-finger homeodomain protein,6-O-Me-DAIIA,0.6899611464190393,60.498739
+NODE_35344_length_3012_cov_266.992104_g12611_i0,GMC oxidoreductase,6-O-Me-DAIIA,0.6896831668003544,141.237903
+NODE_88466_length_751_cov_430.771472_g30172_i1,Gibberellin regulated protein,6-O-Me-DAIIA,0.6893270900203895,310.020977
+NODE_79287_length_1049_cov_48836.014737_g27171_i0,deacetylase,6-O-Me-DAIIA,0.6891722590852614,6175.286067
+NODE_97668_length_533_cov_322.421659_g42099_i0,,6-O-Me-DAIIA,0.6891374207045332,262.087108
+NODE_63593_length_1644_cov_256.663430_g19715_i1,Belongs to the 'GDSL' lipolytic enzyme family,6-O-Me-DAIIA,0.6890759119606984,160.163086
+NODE_68366_length_1458_cov_137.487123_g14611_i1,Belongs to the 'GDSL' lipolytic enzyme family,6-O-Me-DAIIA,0.6887462423451266,77.286147
+NODE_51179_length_2162_cov_966.153175_g16870_i0,Belongs to the glycosyl hydrolase 1 family,6-O-Me-DAIIA,0.6884873408603628,293.688121
+NODE_72086_length_1317_cov_165.467159_g23625_i0,-,6-O-Me-DAIIA,0.6884746419556907,113.438689
+NODE_64512_length_1604_cov_1525.954153_g20827_i0,,6-O-Me-DAIIA,0.6884541631011044,1016.534889
+NODE_85841_length_831_cov_21456.112022_g31453_i0,Glycine-rich protein-like,6-O-Me-DAIIA,0.688124747871247,155.779347
+NODE_93122_length_627_cov_843.513258_g37689_i0,Belongs to the cystatin family. Phytocystatin subfamily,6-O-Me-DAIIA,0.6867343483887685,478.136239
+NODE_74922_length_1207_cov_116.733755_g24898_i0,,6-O-Me-DAIIA,0.6866126732441814,76.616336
+NODE_48420_length_2294_cov_1341.643736_g14816_i1,Belongs to the glycosyl hydrolase 1 family,6-O-Me-DAIIA,0.6864945626701905,248.516585
+NODE_63056_length_1665_cov_904.579183_g19201_i1,Belongs to the peptidase C1 family,6-O-Me-DAIIA,0.6864585025070625,532.140098
+NODE_46759_length_2378_cov_317.729706_g15650_i0,transcription factor,6-O-Me-DAIIA,0.6849501262495155,78.259462
+NODE_47208_length_2355_cov_13120.881649_g15795_i0,"hel,pr-4,pr4",6-O-Me-DAIIA,0.6845636172555314,1654.600563
+NODE_42436_length_2599_cov_1185.439600_g985_i10,heat shock protein,6-O-Me-DAIIA,0.6841915239736247,58.262374
+NODE_60272_length_1776_cov_336.144902_g12988_i3,Belongs to the 'GDSL' lipolytic enzyme family,6-O-Me-DAIIA,0.6837332019199561,153.268956
+NODE_61654_length_1719_cov_357.826543_g16817_i1,Belongs to the RNase T2 family,6-O-Me-DAIIA,0.6822078069881997,197.695909
+NODE_83362_length_913_cov_16572.500000_g8965_i5,Pathogenesis-related protein,6-O-Me-DAIIA,0.6821479300377881,1428.366308
+NODE_57762_length_1876_cov_204.970174_g11633_i1,axial regulator YABBY,6-O-Me-DAIIA,0.6800847975257017,87.301498
+NODE_74886_length_1208_cov_1039.315600_g24886_i0,thaumatin-like protein,6-O-Me-DAIIA,0.6785297611055229,219.228645
+NODE_55740_length_1962_cov_94.164788_g18162_i0,Domain of unknown function (DUF1929),6-O-Me-DAIIA,0.678267915584315,52.112665
+NODE_46343_length_2400_cov_218.632334_g15538_i0,3-ketoacyl-coa synthase,6-O-Me-DAIIA,0.6774565524470423,107.622386
+NODE_53524_length_2058_cov_6053.828484_g15795_i3,"hel,pr-4,pr4",6-O-Me-DAIIA,0.6756457143914375,614.101088
+NODE_91418_length_669_cov_24111.231579_g36118_i0,Glycine-rich protein-like,6-O-Me-DAIIA,0.6753450900467152,102.446927
+NODE_53151_length_2074_cov_900.605063_g1582_i2,histone H2B,6-O-Me-DAIIA,0.6753145298823533,104.919886
+NODE_64193_length_1618_cov_452.073074_g10500_i2,axial regulator YABBY,6-O-Me-DAIIA,0.6750608939178786,86.875213
+NODE_45735_length_2431_cov_179.968268_g2246_i2,Transcription factor,6-O-Me-DAIIA,0.672851027511275,59.360208
+NODE_77515_length_1111_cov_37110.845850_g26206_i0,deacetylase,6-O-Me-DAIIA,0.6726238476724083,1728.351455
+NODE_25260_length_3739_cov_1040.489286_g4044_i3,"Cell division cycle 20.2, cofactor of APC complex-like",6-O-Me-DAIIA,0.6726062072478428,175.505854
+NODE_61339_length_1732_cov_235.353950_g19818_i0,GDSL-like Lipase/Acylhydrolase,6-O-Me-DAIIA,0.6721438123910651,82.325503
+NODE_56392_length_1935_cov_1060.444444_g13277_i1,Belongs to the class I-like SAM-binding methyltransferase superfamily. MPBQ MBSQ MT family,6-O-Me-DAIIA,0.6711271969369785,94.54094
+NODE_51679_length_2140_cov_1610.453699_g11151_i2,acid phosphatase,6-O-Me-DAIIA,0.6696056177836613,820.163658
+NODE_168838_length_253_cov_2.000000_g113250_i0,,6-O-Me-DAIIA,0.6690824030181437,152.789008
+NODE_74815_length_1211_cov_117.831835_g23348_i1,"atexp8,atexpa8,athexp alpha 1.11,exp8,expa8",6-O-Me-DAIIA,0.6688385014481448,50.944646
+NODE_65771_length_1555_cov_1447.791209_g20469_i1,"Embryo-specific protein 3, (ATS3)",6-O-Me-DAIIA,0.6684296388546804,611.426303
+NODE_55382_length_1976_cov_356.891849_g18040_i0,spermidine hydroxycinnamoyl,6-O-Me-DAIIA,0.6683305705369206,143.094114
+NODE_73417_length_1266_cov_16654.584404_g23047_i1,PPIases accelerate the folding of proteins. It catalyzes the cis-trans isomerization of proline imidic peptide bonds in oligopeptides,6-O-Me-DAIIA,0.6680632130901575,236.556445
+NODE_54651_length_2009_cov_264.224607_g13949_i1,GDSL-like Lipase/Acylhydrolase,6-O-Me-DAIIA,0.666886571397229,86.233535
+NODE_80001_length_1026_cov_392.161812_g27558_i0,germin-like protein,6-O-Me-DAIIA,0.6655175853270335,178.082054
+NODE_69698_length_1407_cov_574.077982_g9779_i2,axial regulator YABBY,6-O-Me-DAIA,0.9216697917032732,62.422767
+NODE_56392_length_1935_cov_1060.444444_g13277_i1,Belongs to the class I-like SAM-binding methyltransferase superfamily. MPBQ MBSQ MT family,6-O-Me-DAIA,0.9206912739119613,94.54094
+NODE_162436_length_259_cov_1.931250_g106848_i0,,6-O-Me-DAIA,0.9185022357902218,59.01661
+NODE_83362_length_913_cov_16572.500000_g8965_i5,Pathogenesis-related protein,6-O-Me-DAIA,0.9031313298900895,1428.366308
+NODE_90679_length_688_cov_1597.589134_g35452_i0,LSD1 zinc finger,6-O-Me-DAIA,0.8939994690899332,202.75498
+NODE_42436_length_2599_cov_1185.439600_g985_i10,heat shock protein,6-O-Me-DAIA,0.8889393580324271,58.262374
+NODE_38373_length_2831_cov_3689.411054_g8788_i2,Belongs to the cytochrome P450 family,6-O-Me-DAIA,0.8885751087227857,148.198182
+NODE_82859_length_930_cov_36947.352587_g29377_i0,deacetylase,6-O-Me-DAIA,0.888503288659302,104.996547
+NODE_64193_length_1618_cov_452.073074_g10500_i2,axial regulator YABBY,6-O-Me-DAIA,0.8844551587316328,86.875213
+NODE_45774_length_2429_cov_803.605579_g9790_i1,Indole-3-acetic acid-amido synthetase,6-O-Me-DAIA,0.8843676117761312,53.393404
+NODE_82748_length_933_cov_34546.085132_g29309_i0,deacetylase,6-O-Me-DAIA,0.8800963922868109,109.914058
+NODE_82747_length_933_cov_35199.039568_g29308_i0,deacetylase,6-O-Me-DAIA,0.8791719687301307,128.290396
+NODE_43518_length_2543_cov_751.149755_g7307_i2,Phytoene synthase,6-O-Me-DAIA,0.8753699885023298,55.016107
+NODE_35231_length_3019_cov_1548.175685_g985_i9,heat shock protein,6-O-Me-DAIA,0.8737310299187963,100.092566
+NODE_76676_length_1142_cov_1913.358581_g19265_i1,"Uncharacterized protein family, UPF0114",6-O-Me-DAIA,0.8713842162792949,170.754533
+NODE_74288_length_1232_cov_822.958517_g13356_i1,ribosomal protein s6,6-O-Me-DAIA,0.8586274737851592,133.61472
+NODE_73630_length_1258_cov_705.435720_g24320_i0,Ferredoxins are iron-sulfur proteins that transfer electrons in a wide variety of metabolic reactions,6-O-Me-DAIA,0.855053898896848,81.201158
+NODE_59210_length_1818_cov_1712.070971_g12954_i2,Belongs to the universal ribosomal protein uL15 family,6-O-Me-DAIA,0.8542708313923087,187.017093
+NODE_22556_length_3976_cov_1078.607944_g3749_i4,Transcription factor TCP4-like,6-O-Me-DAIA,0.8529234742710431,123.11412
+NODE_61195_length_1737_cov_563.946886_g7619_i1,Belongs to the UDP-glycosyltransferase family,6-O-Me-DAIA,0.8507059668940368,83.243083
+NODE_77515_length_1111_cov_37110.845850_g26206_i0,deacetylase,6-O-Me-DAIA,0.8487807953492514,1728.351455
+NODE_34055_length_3093_cov_843.716767_g4932_i1,Protein TRANSPORT INHIBITOR RESPONSE,6-O-Me-DAIA,0.8484179265518771,58.198187
+NODE_77516_length_1111_cov_37062.528656_g26207_i0,deacetylase,6-O-Me-DAIA,0.8476118999895382,4160.56559
+NODE_58856_length_1831_cov_912.872402_g8359_i1,rho-N domain-containing protein 1,6-O-Me-DAIA,0.8443092244241308,66.67169
+NODE_59575_length_1804_cov_1245.684457_g1441_i1,Kynurenine--oxoglutarate transaminase,6-O-Me-DAIA,0.8415738800381796,106.37579
+NODE_72338_length_1308_cov_1550.396195_g19213_i1,Protein of unknown function (DUF2488),6-O-Me-DAIA,0.8402492124235094,171.624695
+NODE_77108_length_1125_cov_28552.107212_g25993_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.840162489757032,2705.703733
+NODE_41082_length_2677_cov_2922.988363_g4030_i4,cyclic nucleotide-gated ion channel,6-O-Me-DAIA,0.8401383850773588,170.330581
+NODE_45812_length_2427_cov_2521.943729_g8980_i2,Triose phosphate phosphate translocator,6-O-Me-DAIA,0.8391157001126404,196.10126
+NODE_79960_length_1027_cov_61800.967672_g27532_i0,deacetylase,6-O-Me-DAIA,0.8372055009271686,6912.030706
+NODE_35896_length_2980_cov_1089.215203_g662_i2,transcription factor,6-O-Me-DAIA,0.8370006585413158,112.721854
+NODE_36325_length_2953_cov_843.297828_g3905_i6,(R)-mandelonitrile lyase,6-O-Me-DAIA,0.8367161639789127,101.412741
+NODE_68846_length_1439_cov_1061.780597_g4575_i2,"ATP-dependent Clp protease proteolytic subunit-related protein 3, chloroplastic",6-O-Me-DAIA,0.8355498689604636,52.711073
+NODE_14371_length_4890_cov_984.184304_g5797_i1,Transcription factor,6-O-Me-DAIA,0.8348190509718215,77.57633
+NODE_104144_length_437_cov_54631.798817_g48562_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.8330859542072924,55.132765
+NODE_74172_length_1237_cov_922.644991_g3416_i5,Protein of unknown function (DUF3531),6-O-Me-DAIA,0.831815691551662,50.978199
+NODE_95013_length_585_cov_72495.137860_g39500_i0,chitin binding,6-O-Me-DAIA,0.8310622195187235,211.964633
+NODE_96869_length_548_cov_88992.826281_g41306_i0,Chitin binding domain,6-O-Me-DAIA,0.8299687637756495,9336.843167
+NODE_67187_length_1502_cov_2898.980756_g19417_i1,Aldo/keto reductase family,6-O-Me-DAIA,0.8298865248335394,194.060046
+NODE_40915_length_2687_cov_3281.049073_g8857_i2,Belongs to the chaperonin (HSP60) family,6-O-Me-DAIA,0.8285646267488804,187.390368
+NODE_79955_length_1027_cov_62654.803879_g27527_i0,deacetylase,6-O-Me-DAIA,0.8281904618702276,265.021931
+NODE_55670_length_1964_cov_20151.018231_g18142_i0,deacetylase,6-O-Me-DAIA,0.827428911242404,55.081753
+NODE_66393_length_1531_cov_1478.359637_g8732_i2,Belongs to the universal ribosomal protein uS5 family,6-O-Me-DAIA,0.8268273384576615,173.016961
+NODE_45463_length_2442_cov_3570.855741_g4488_i3,Zinc finger protein CONSTANS-like,6-O-Me-DAIA,0.823062296049073,83.080958
+NODE_79954_length_1027_cov_62773.165948_g27526_i0,deacetylase,6-O-Me-DAIA,0.8226917493307916,148.869962
+NODE_29322_length_3422_cov_400.891062_g2620_i3,ion channel POLLUX-like,6-O-Me-DAIA,0.82243200455212,56.89296
+NODE_148311_length_273_cov_26948.603448_g92723_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.822207986286795,67.812265
+NODE_76772_length_1138_cov_2258.477382_g5680_i13,Belongs to the chaperonin (HSP60) family,6-O-Me-DAIA,0.821835559971163,87.775231
+NODE_23167_length_3920_cov_1002.047893_g8980_i0,Triose phosphate phosphate translocator,6-O-Me-DAIA,0.8214067743369365,51.110852
+NODE_66432_length_1530_cov_797.180992_g11635_i1,-,6-O-Me-DAIA,0.8212433914110232,52.975512
+NODE_81766_length_965_cov_475.383372_g28682_i0,"Dihydrodipicolinate reductase, C-terminus",6-O-Me-DAIA,0.8198460830644927,55.554464
+NODE_34815_length_3045_cov_677.336728_g11007_i1,Belongs to the universal ribosomal protein uL3 family,6-O-Me-DAIA,0.8192732444379452,58.916757
+NODE_85159_length_853_cov_52170.754642_g30948_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.8190077552398551,92.9392
+NODE_71455_length_1340_cov_2384.297341_g3817_i3,NAD(P)-binding Rossmann-fold superfamily protein,6-O-Me-DAIA,0.8185840179109362,290.477401
+NODE_85157_length_853_cov_54037.255968_g30946_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.8170269120768215,180.455518
+NODE_85251_length_850_cov_49489.422104_g31011_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.8169720223222101,142.707495
+NODE_37543_length_2880_cov_3537.560590_g5231_i6,Belongs to the chaperonin (HSP60) family,6-O-Me-DAIA,0.8169573255160523,63.435795
+NODE_44359_length_2499_cov_299.300000_g13693_i1,Squamosa promoter-binding-like protein,6-O-Me-DAIA,0.8158456147571345,52.667736
+NODE_104146_length_437_cov_37333.523669_g48564_i0,Endochitinase,6-O-Me-DAIA,0.8157762554704425,140.567879
+NODE_58898_length_1829_cov_3117.045665_g9089_i2,COBW domain-containing protein,6-O-Me-DAIA,0.8153175317940224,185.704502
+NODE_177753_length_220_cov_22238.991736_g122165_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.8139154168310391,153.080895
+NODE_88463_length_751_cov_52835.737730_g33526_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.8135971066411155,2040.953057
+NODE_79953_length_1027_cov_62812.876078_g27525_i0,deacetylase,6-O-Me-DAIA,0.8134217520813558,684.905828
+NODE_65454_length_1567_cov_970.127384_g4218_i1,ATP-dependent Clp protease proteolytic subunit,6-O-Me-DAIA,0.8133185118700093,87.803438
+NODE_79959_length_1027_cov_62477.386853_g27531_i0,deacetylase,6-O-Me-DAIA,0.813071045211221,1331.553346
+NODE_66180_length_1540_cov_459.678001_g13546_i1,Belongs to the peroxidase family,6-O-Me-DAIA,0.8123504693146978,73.081099
+NODE_57006_length_1909_cov_910.670718_g6725_i2,Aldo/keto reductase family,6-O-Me-DAIA,0.8120829240668631,55.559308
+NODE_79958_length_1027_cov_62483.966595_g27530_i0,deacetylase,6-O-Me-DAIA,0.8119216553773736,1000.633592
+NODE_76771_length_1138_cov_2322.079885_g5680_i12,Belongs to the chaperonin (HSP60) family,6-O-Me-DAIA,0.8108376594927669,110.68339
+NODE_66330_length_1533_cov_3296.500697_g393_i4,Pentatricopeptide repeat-containing protein,6-O-Me-DAIA,0.8102376382156068,343.504995
+NODE_68826_length_1440_cov_707.771812_g3981_i1,Ribosome-binding factor PSRP1,6-O-Me-DAIA,0.8101976977624542,70.152302
+NODE_19626_length_4257_cov_1072.270803_g7756_i1,Nodulin-like,6-O-Me-DAIA,0.8095423482452847,62.038892
+NODE_36698_length_2930_cov_3473.102437_g12961_i0,-,6-O-Me-DAIA,0.8087400375831494,92.054844
+NODE_64404_length_1609_cov_5126.206623_g12138_i3,29 kDa ribonucleoprotein,6-O-Me-DAIA,0.8057934930759666,436.114271
+NODE_79957_length_1027_cov_62557.241379_g27529_i0,deacetylase,6-O-Me-DAIA,0.8055840068328491,422.832281
+NODE_60974_length_1746_cov_1527.996357_g4881_i2,PPIases accelerate the folding of proteins. It catalyzes the cis-trans isomerization of proline imidic peptide bonds in oligopeptides,6-O-Me-DAIA,0.8045063287757138,194.735543
+NODE_87230_length_788_cov_998.259797_g30558_i1,-,6-O-Me-DAIA,0.8041772750575041,80.278151
+NODE_71091_length_1354_cov_10570.481275_g21252_i1,Early light-induced protein,6-O-Me-DAIA,0.8027436169765,1293.483719
+NODE_38714_length_2813_cov_5492.190125_g8311_i2,Belongs to the 14-3-3 family,6-O-Me-DAIA,0.8024194167380414,69.131455
+NODE_73328_length_1270_cov_1193.165670_g22585_i1,kDa ribonucleoprotein,6-O-Me-DAIA,0.8021999561462674,110.742814
+NODE_62880_length_1672_cov_592.708837_g12310_i1,tetratricopeptide repeat,6-O-Me-DAIA,0.8015565244330194,59.321684
+NODE_45044_length_2464_cov_1391.446089_g11503_i1,Myo-inositol-1-phosphate synthase,6-O-Me-DAIA,0.8012567380292926,185.071491
+NODE_91033_length_679_cov_45528.886207_g35770_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.7997332914224292,159.453177
+NODE_88189_length_759_cov_26893.066667_g33305_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.7988716458994215,107.801841
+NODE_19613_length_4258_cov_786.290695_g3603_i2,Associates with the EF-Tu.GDP complex and induces the exchange of GDP to GTP. It remains bound to the aminoacyl-tRNA.EF- Tu.GTP complex up to the GTP hydrolysis stage on the ribosome,6-O-Me-DAIA,0.7983459500339959,88.997036
+NODE_63657_length_1641_cov_1781.143969_g1773_i9,-,6-O-Me-DAIA,0.7966579264762816,96.581719
+NODE_75120_length_1200_cov_842.517711_g9443_i1,kDa ribonucleoprotein,6-O-Me-DAIA,0.7965863011901425,77.736563
+NODE_36079_length_2969_cov_469.295819_g8771_i2,Belongs to the peptidase C1 family,6-O-Me-DAIA,0.795729879491004,54.247819
+NODE_79290_length_1049_cov_1348.941053_g9218_i1,Belongs to the bacterial ribosomal protein bL35 family,6-O-Me-DAIA,0.794462236802146,142.575652
+NODE_49182_length_2256_cov_714.774223_g4980_i1,Sigma factors are initiation factors that promote the attachment of plastid-encoded RNA polymerase (PEP) to specific initiation sites and are then released,6-O-Me-DAIA,0.7943030248985004,86.946494
+NODE_87525_length_779_cov_771.980882_g32760_i0,50S ribosomal protein L9,6-O-Me-DAIA,0.7939954770646759,89.731252
+NODE_130006_length_296_cov_31606.487310_g74418_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.7936380028558347,416.975432
+NODE_72042_length_1318_cov_2593.391304_g9669_i2,Belongs to the universal ribosomal protein uL13 family,6-O-Me-DAIA,0.7935630321978704,284.344705
+NODE_49746_length_2230_cov_52596.149226_g100_i49,"The light-harvesting complex (LHC) functions as a light receptor, it captures and delivers excitation energy to photosystems with which it is closely associated",6-O-Me-DAIA,0.7928580760467817,109.615143
+NODE_39325_length_2777_cov_840.912621_g1125_i1,Ribosomal protein S1-like RNA-binding domain,6-O-Me-DAIA,0.7924354114224831,51.437032
+NODE_85387_length_846_cov_629.906292_g31122_i0,Belongs to the cystatin family. Phytocystatin subfamily,6-O-Me-DAIA,0.7917395078706387,66.50041
+NODE_28424_length_3493_cov_10440.605480_g10607_i0,DYW family of nucleic acid deaminases,6-O-Me-DAIA,0.7912539394624507,50.235362
+NODE_74147_length_1238_cov_1317.561896_g9212_i2,30S ribosomal protein S10,6-O-Me-DAIA,0.79048689332889,166.627194
+NODE_91200_length_675_cov_49371.911458_g35920_i0,"hel,pr-4,pr4",6-O-Me-DAIA,0.7894686838703687,9550.743338
+NODE_40916_length_2687_cov_3260.622102_g8857_i3,Belongs to the chaperonin (HSP60) family,6-O-Me-DAIA,0.7894313795544381,159.267775
+NODE_82747_length_933_cov_35199.039568_g29308_i0,deacetylase,Protoemetine,0.9847673646552061,128.290396
+NODE_82748_length_933_cov_34546.085132_g29309_i0,deacetylase,Protoemetine,0.9817329958149821,109.914058
+NODE_77516_length_1111_cov_37062.528656_g26207_i0,deacetylase,Protoemetine,0.9816626613671167,4160.56559
+NODE_82859_length_930_cov_36947.352587_g29377_i0,deacetylase,Protoemetine,0.9749851621880875,104.996547
+NODE_77515_length_1111_cov_37110.845850_g26206_i0,deacetylase,Protoemetine,0.9740447675591994,1728.351455
+NODE_50458_length_2197_cov_3486.108675_g15317_i1,3-ketoacyl-coa synthase,Protoemetine,0.969533587043366,616.187226
+NODE_52718_length_2094_cov_797.184962_g10005_i1,Neprosin,Protoemetine,0.9682885185264428,99.731882
+NODE_72591_length_1297_cov_820.636895_g16774_i1,Belongs to the Casparian strip membrane proteins (CASP) family,Protoemetine,0.9673124059246668,156.478691
+NODE_83362_length_913_cov_16572.500000_g8965_i5,Pathogenesis-related protein,Protoemetine,0.9647856822648205,1428.366308
+NODE_104146_length_437_cov_37333.523669_g48564_i0,Endochitinase,Protoemetine,0.9647104738262717,140.567879
+NODE_34055_length_3093_cov_843.716767_g4932_i1,Protein TRANSPORT INHIBITOR RESPONSE,Protoemetine,0.9644076517263372,58.198187
+NODE_121720_length_323_cov_22.254464_g66132_i0,,Protoemetine,0.9618936874367409,59.874354
+NODE_35673_length_2992_cov_867.701694_g12703_i0,Belongs to the class I-like SAM-binding methyltransferase superfamily. Erg6 SMT family,Protoemetine,0.9611947537303482,134.987546
+NODE_63772_length_1636_cov_3938.483409_g7780_i3,2-cys peroxiredoxin BAS1,Protoemetine,0.9609416978636304,371.012444
+NODE_59575_length_1804_cov_1245.684457_g1441_i1,Kynurenine--oxoglutarate transaminase,Protoemetine,0.9597122489073686,106.37579
+NODE_38373_length_2831_cov_3689.411054_g8788_i2,Belongs to the cytochrome P450 family,Protoemetine,0.9593525992391821,148.198182
+NODE_36793_length_2925_cov_1750.940906_g12964_i1,Acyl-protein thioesterase,Protoemetine,0.9592586583926536,82.971701
+NODE_45119_length_2460_cov_981.694197_g6457_i8,Allows the formation of correctly charged Gln-tRNA(Gln) through the transamidation of misacylated Glu-tRNA(Gln) in chloroplasts and mitochondria. The reaction takes place in the presence of glutamine and ATP through an activated gamma-phospho- Glu-tRNA(Gln),Protoemetine,0.9555115900796748,81.981029
+NODE_71455_length_1340_cov_2384.297341_g3817_i3,NAD(P)-binding Rossmann-fold superfamily protein,Protoemetine,0.9555101578422737,290.477401
+NODE_59367_length_1812_cov_677.082312_g12732_i1,Belongs to the universal ribosomal protein uL6 family,Protoemetine,0.9554952780976524,109.837599
+NODE_36079_length_2969_cov_469.295819_g8771_i2,Belongs to the peptidase C1 family,Protoemetine,0.9551038404193214,54.247819
+NODE_90679_length_688_cov_1597.589134_g35452_i0,LSD1 zinc finger,Protoemetine,0.9548808342372586,202.75498
+NODE_73630_length_1258_cov_705.435720_g24320_i0,Ferredoxins are iron-sulfur proteins that transfer electrons in a wide variety of metabolic reactions,Protoemetine,0.9518782987406275,81.201158
+NODE_88189_length_759_cov_26893.066667_g33305_i0,"hel,pr-4,pr4",Protoemetine,0.9517361187530665,107.801841
+NODE_75150_length_1199_cov_1541.240909_g25014_i0,YGGT family,Protoemetine,0.9504035483788998,114.826972
+NODE_45044_length_2464_cov_1391.446089_g11503_i1,Myo-inositol-1-phosphate synthase,Protoemetine,0.9494891409466727,185.071491
+NODE_80447_length_1011_cov_34685.053728_g27836_i0,deacetylase,Protoemetine,0.9490129758523014,97.41601
+NODE_62019_length_1705_cov_816.850560_g16903_i1,Peptidyl-prolyl cis-trans isomerase,Protoemetine,0.9482834632705298,116.611268
+NODE_81021_length_992_cov_558.577828_g28203_i0,EF-hand domain pair,Protoemetine,0.9482715830988467,66.083622
+NODE_115726_length_351_cov_803.837302_g60138_i0,,Protoemetine,0.9472724728179817,52.263715
+NODE_38714_length_2813_cov_5492.190125_g8311_i2,Belongs to the 14-3-3 family,Protoemetine,0.9470975148093735,69.131455
+NODE_103857_length_440_cov_39996.211144_g48275_i0,"hel,pr-4,pr4",Protoemetine,0.9461314460203365,216.175548
+NODE_64556_length_1602_cov_1728.741184_g4985_i2,Belongs to the peptidase S14 family,Protoemetine,0.944501989920374,133.123817
+NODE_55670_length_1964_cov_20151.018231_g18142_i0,deacetylase,Protoemetine,0.9428950365120577,55.081753
+NODE_61941_length_1708_cov_1066.433188_g15086_i4,XRI1-like,Protoemetine,0.9428490030135909,58.200018
+NODE_35896_length_2980_cov_1089.215203_g662_i2,transcription factor,Protoemetine,0.9426756999646909,112.721854
+NODE_37543_length_2880_cov_3537.560590_g5231_i6,Belongs to the chaperonin (HSP60) family,Protoemetine,0.9424247543350354,63.435795
+NODE_71347_length_1344_cov_1134.494779_g14762_i1,Protein LHCP TRANSLOCATION,Protoemetine,0.9416616347338825,120.055931
+NODE_85387_length_846_cov_629.906292_g31122_i0,Belongs to the cystatin family. Phytocystatin subfamily,Protoemetine,0.9415736287549444,66.50041
+NODE_148311_length_273_cov_26948.603448_g92723_i0,"hel,pr-4,pr4",Protoemetine,0.9411674175816936,67.812265
+NODE_45812_length_2427_cov_2521.943729_g8980_i2,Triose phosphate phosphate translocator,Protoemetine,0.9400552213262016,196.10126
+NODE_130006_length_296_cov_31606.487310_g74418_i0,"hel,pr-4,pr4",Protoemetine,0.9389329790023581,416.975432
+NODE_49746_length_2230_cov_52596.149226_g100_i49,"The light-harvesting complex (LHC) functions as a light receptor, it captures and delivers excitation energy to photosystems with which it is closely associated",Protoemetine,0.9382923318177044,109.615143
+NODE_56780_length_1918_cov_1381.014843_g17904_i1,Leucine rich repeat,Protoemetine,0.938196203076521,139.904483
+NODE_92029_length_653_cov_1369.548736_g36682_i0,disease resistance,Protoemetine,0.9370588286429324,78.076851
+NODE_80210_length_1019_cov_601.115217_g27685_i0,thylakoid lumenal 15 kDa protein,Protoemetine,0.9364772351273318,70.186711
+NODE_66180_length_1540_cov_459.678001_g13546_i1,Belongs to the peroxidase family,Protoemetine,0.9356264645837485,73.081099
+NODE_67987_length_1471_cov_381.079446_g686_i2,NAD(P)-binding Rossmann-like domain,Protoemetine,0.935493785328044,58.87545
+NODE_74288_length_1232_cov_822.958517_g13356_i1,ribosomal protein s6,Protoemetine,0.9349746425864849,133.61472
+NODE_60974_length_1746_cov_1527.996357_g4881_i2,PPIases accelerate the folding of proteins. It catalyzes the cis-trans isomerization of proline imidic peptide bonds in oligopeptides,Protoemetine,0.934954619112698,194.735543
+NODE_74435_length_1227_cov_771.550532_g9689_i6,Bacterial trigger factor protein (TF),Protoemetine,0.9346787697087949,51.006754
+NODE_37351_length_2891_cov_1086.264327_g4781_i5,"Protein TIC 40, chloroplastic-like",Protoemetine,0.9343401091170401,61.895301
+NODE_66393_length_1531_cov_1478.359637_g8732_i2,Belongs to the universal ribosomal protein uS5 family,Protoemetine,0.9343342274199914,173.016961
+NODE_73328_length_1270_cov_1193.165670_g22585_i1,kDa ribonucleoprotein,Protoemetine,0.9341787591899511,110.742814
+NODE_58481_length_1846_cov_933.661133_g18964_i0,Belongs to the iron ascorbate-dependent oxidoreductase family,Protoemetine,0.933856006358455,178.102043
+NODE_74147_length_1238_cov_1317.561896_g9212_i2,30S ribosomal protein S10,Protoemetine,0.9326214117410538,166.627194
+NODE_23167_length_3920_cov_1002.047893_g8980_i0,Triose phosphate phosphate translocator,Protoemetine,0.9318142071903308,51.110852
+NODE_61195_length_1737_cov_563.946886_g7619_i1,Belongs to the UDP-glycosyltransferase family,Protoemetine,0.9305824292318166,83.243083
+NODE_155303_length_266_cov_35713.203593_g99715_i0,"hel,pr-4,pr4",Protoemetine,0.9304631911746516,167.875039
+NODE_47603_length_2337_cov_641.520107_g6288_i2,Protein NRT1 PTR FAMILY,Protoemetine,0.9293429662725056,59.7926
+NODE_70953_length_1360_cov_729.384615_g12470_i2,Putative Phosphatase,Protoemetine,0.9290320947978289,53.754764
+NODE_9031_length_5818_cov_826.200210_g1426_i5,isoform X1,Protoemetine,0.9286099653526221,64.42517
+NODE_81245_length_984_cov_468.494915_g25114_i1,Plastid and cyanobacterial ribosomal protein (PSRP-3 / Ycf65),Protoemetine,0.9284601843898274,95.074099
+NODE_52955_length_2083_cov_2752.780746_g14903_i2,coproporphyrinogen-III oxidase,Protoemetine,0.9281761628260151,302.916919
+NODE_80886_length_996_cov_4430.305463_g6523_i1,Non-specific lipid transfer protein GPI-anchored,Protoemetine,0.92809611793676,940.625865
+NODE_43740_length_2532_cov_11994.143855_g8965_i2,Gamma-secretase subunit APH1-like,Protoemetine,0.9280451319573971,75.630266
+NODE_34815_length_3045_cov_677.336728_g11007_i1,Belongs to the universal ribosomal protein uL3 family,Protoemetine,0.9279940363757139,58.916757
+NODE_72042_length_1318_cov_2593.391304_g9669_i2,Belongs to the universal ribosomal protein uL13 family,Protoemetine,0.9273797629761354,284.344705
+NODE_60281_length_1775_cov_2363.838902_g8607_i3,Glutaminyl-peptide,Protoemetine,0.9269196215379237,81.571338
+NODE_67446_length_1492_cov_1360.419239_g330_i12,Belongs to the sulfotransferase 1 family,Protoemetine,0.9262601279761183,266.52432
+NODE_63186_length_1660_cov_659.688661_g10529_i1,50S ribosomal protein L5,Protoemetine,0.925058585364055,80.062256
+NODE_87343_length_784_cov_1917.356204_g32611_i0,Disease resistance protein,Protoemetine,0.92475721237881,185.132901
+NODE_35231_length_3019_cov_1548.175685_g985_i9,heat shock protein,Protoemetine,0.9247500235640232,100.092566
+NODE_57624_length_1882_cov_903.994391_g6448_i5,GDT1-like protein 2,Protoemetine,0.924635866661069,62.913901
+NODE_59210_length_1818_cov_1712.070971_g12954_i2,Belongs to the universal ribosomal protein uL15 family,Protoemetine,0.9240875841062998,187.017093
+NODE_61551_length_1723_cov_2390.971675_g8607_i4,Glutaminyl-peptide,Protoemetine,0.9237375169676656,89.461783
+NODE_29774_length_3386_cov_656.586857_g5813_i2,tail specific protease,Protoemetine,0.9233892453035549,56.70784
+NODE_63158_length_1661_cov_1142.528169_g20384_i0,50S ribosomal protein L4,Protoemetine,0.9227035090069338,138.912692
+NODE_65995_length_1547_cov_535.662293_g9451_i2,F-actin-capping protein subunit beta,Protoemetine,0.9226085741246414,51.543037
+NODE_57006_length_1909_cov_910.670718_g6725_i2,Aldo/keto reductase family,Protoemetine,0.9221089030038291,55.559308
+NODE_54881_length_1998_cov_2837.190627_g859_i3,Belongs to the short-chain dehydrogenases reductases (SDR) family,Protoemetine,0.9217736132191624,344.193725
+NODE_57085_length_1906_cov_815.908688_g1110_i3,"Bifunctional DNA N-glycosylase with associated apurinic apyrimidinic (AP) lyase function that catalyzes the first step in base excision repair (BER), the primary repair pathway for the repair of oxidative DNA damage. The DNA N-glycosylase activity releases the damaged DNA base from DNA by cleaving the N- glycosidic bond, leaving an AP site. The AP lyase activity cleaves the phosphodiester bond 3' to the AP site by a beta-elimination. Primarily recognizes and repairs oxidative base damage of pyrimidines",Protoemetine,0.9216544975999001,52.653885
+NODE_62135_length_1701_cov_1127.665418_g3082_i2,Soluble inorganic pyrophosphatase 1,Protoemetine,0.9214555979082157,60.862143
+NODE_50809_length_2180_cov_1683.232580_g13519_i1,Involved in chlorophyll biosynthesis. Catalyzes the insertion of magnesium ion into protoporphyrin IX to yield Mg- protoporphyrin IX,Protoemetine,0.9208246116817493,84.457449
+NODE_79290_length_1049_cov_1348.941053_g9218_i1,Belongs to the bacterial ribosomal protein bL35 family,Protoemetine,0.9200287636987038,142.575652
+NODE_62880_length_1672_cov_592.708837_g12310_i1,tetratricopeptide repeat,Protoemetine,0.9190782358832501,59.321684
+NODE_69305_length_1422_cov_1016.218443_g22525_i0,Belongs to the universal ribosomal protein uS17 family,Protoemetine,0.9189771731469976,156.660338
+NODE_87525_length_779_cov_771.980882_g32760_i0,50S ribosomal protein L9,Protoemetine,0.9177310309728443,89.731252
+NODE_72588_length_1297_cov_4381.187813_g10497_i3,Protein CURVATURE THYLAKOID 1A,Protoemetine,0.9171792782724864,773.921652
+NODE_64193_length_1618_cov_452.073074_g10500_i2,axial regulator YABBY,Protoemetine,0.9169109018594067,86.875213
+NODE_47321_length_2350_cov_705.845402_g10458_i1,Belongs to the universal ribosomal protein uS9 family,Protoemetine,0.9156448623789347,77.238151
+NODE_81390_length_978_cov_688.562002_g28440_i0,-,Protoemetine,0.9155736290327918,62.762735
+NODE_40915_length_2687_cov_3281.049073_g8857_i2,Belongs to the chaperonin (HSP60) family,Protoemetine,0.914901255702793,187.390368
+NODE_87523_length_779_cov_31996.477941_g32759_i0,histone H3,Protoemetine,0.9141233209511653,1252.697453
+NODE_56312_length_1938_cov_784.481784_g17439_i1,APO protein,Protoemetine,0.9138166532398272,50.881316
+NODE_81981_length_957_cov_564.355478_g15107_i2,50S ribosomal protein L9,Protoemetine,0.9134757575879603,56.811627
+NODE_65201_length_1577_cov_4849.472260_g15080_i1,Catalyzes the formation of S-adenosylmethionine from methionine and ATP,Protoemetine,0.9132636652517494,92.261557
+NODE_72667_length_1294_cov_1227.514644_g11792_i2,Protein of unknown function (DUF3054),Protoemetine,0.9126867236683945,142.337834
+NODE_72338_length_1308_cov_1550.396195_g19213_i1,Protein of unknown function (DUF2488),Protoemetine,0.9125887413163184,171.624695
+NODE_89821_length_711_cov_868.789216_g13529_i5,"Monothiol glutaredoxin-S12, chloroplastic-like",Protoemetine,0.9116990286605607,53.019691
+NODE_60631_length_1761_cov_316.522262_g17458_i1,transcription factor,Cephaeline,0.9764745913694624,55.567548
+NODE_72398_length_1305_cov_1047.700663_g23756_i0,,Cephaeline,0.9715642491285369,224.497164
+NODE_17155_length_4524_cov_493.209718_g5932_i1,disease resistance,Cephaeline,0.9655957167036657,57.554687
+NODE_43100_length_2564_cov_4349.395538_g14492_i1,YTH domain family protein,Cephaeline,0.9613934634350283,50.988633
+NODE_69310_length_1422_cov_299.662132_g22528_i0,nicotianamine,Cephaeline,0.9600998719278994,52.671264
+NODE_55495_length_1971_cov_1575.169872_g11718_i2,Belongs to the cytochrome P450 family,Cephaeline,0.9584109719648192,72.401015
+NODE_70185_length_1389_cov_3495.705426_g9770_i2,cyclase family,Cephaeline,0.9558118273354751,574.713394
+NODE_90605_length_690_cov_753.076142_g35390_i0,-,Cephaeline,0.9552926623072165,144.321615
+NODE_51358_length_2154_cov_420.065207_g14447_i1,response regulator,Cephaeline,0.9546620869865668,66.451426
+NODE_58589_length_1841_cov_1056.559127_g17688_i1,Belongs to the peroxidase family. Classical plant (class III) peroxidase subfamily,Cephaeline,0.9538319819349113,175.808199
+NODE_55374_length_1976_cov_1048.063399_g18039_i0,Geranylgeranyl diphosphate reductase,Cephaeline,0.9533020374634553,151.923224
+NODE_70022_length_1395_cov_1184.388117_g19540_i1,zinc finger A20 and AN1 domain-containing stress-associated protein,Cephaeline,0.9504766244190836,145.365373
+NODE_72525_length_1300_cov_341.137386_g18328_i1,Belongs to the expansin family,Cephaeline,0.9500742916236388,64.679446
+NODE_106895_length_410_cov_385.061093_g51310_i0,S-adenosyl-l-methionine decarboxylase leader peptide,Cephaeline,0.9480421481505249,67.884161
+NODE_32203_length_3215_cov_574.342747_g8634_i2,Cytochrome p450,Cephaeline,0.9465643883804966,67.237679
+NODE_24155_length_3835_cov_2214.083512_g9298_i0,B2 protein-like,Cephaeline,0.9447318644504449,271.536708
+NODE_41836_length_2633_cov_1848.911208_g14357_i0,Belongs to the GRAS family,Cephaeline,0.9444944536809482,197.934426
+NODE_59556_length_1805_cov_822.606096_g15444_i3,2-aminoethanethiol dioxygenase-like,Cephaeline,0.944480871357038,73.191726
+NODE_55406_length_1975_cov_442.196695_g12776_i2,Belongs to the cytochrome P450 family,Cephaeline,0.9437602805850064,78.350628
+NODE_66121_length_1542_cov_638.378378_g18080_i1,Myb-related protein,Cephaeline,0.9425043973386983,106.684681
+NODE_52273_length_2114_cov_521.000993_g12735_i1,Homeobox-leucine zipper protein,Cephaeline,0.9422977757419543,84.984307
+NODE_26301_length_3659_cov_1690.891573_g832_i3,Transcription factor,Cephaeline,0.9410494444860985,141.854337
+NODE_70471_length_1378_cov_599.942924_g13143_i4,calcium-dependent protein kinase,Cephaeline,0.940255459341485,57.699278
+NODE_36308_length_2954_cov_3553.640280_g12320_i1,late embryogenesis abundant protein,Cephaeline,0.9397690543424502,359.547087
+NODE_89820_length_711_cov_4009.923203_g34697_i0,"transposition, RNA-mediated",Cephaeline,0.9396895955496197,307.163145
+NODE_42643_length_2588_cov_541.237847_g14577_i0,receptor-like protein kinase,Cephaeline,0.939026041168149,99.595596
+NODE_48728_length_2279_cov_777.941284_g16187_i0,Zinc finger A20 and AN1 domain-containing stress-associated protein,Cephaeline,0.9385943008614452,105.660619
+NODE_83216_length_918_cov_1605.814408_g29620_i0,Polyadenylate-binding protein,Cephaeline,0.9375142492925049,59.583209
+NODE_32145_length_3219_cov_1223.895192_g11718_i0,Belongs to the cytochrome P450 family,Cephaeline,0.9370737940648061,188.636097
+NODE_64262_length_1615_cov_795.476913_g20748_i0,Family of unknown function (DUF716),Cephaeline,0.93700353041151,81.243566
+NODE_56519_length_1930_cov_627.509558_g16720_i1,BEST Arabidopsis thaliana protein match is Protein of,Cephaeline,0.936565462569006,69.671364
+NODE_18161_length_4410_cov_2556.018325_g6938_i2,BEST Arabidopsis thaliana protein match is Protein of,Cephaeline,0.9362191176476795,427.458671
+NODE_17837_length_4446_cov_555.429262_g7274_i0,Pentatricopeptide repeat-containing protein,Cephaeline,0.935796704358232,94.935232
+NODE_73223_length_1274_cov_401.463830_g18032_i1,Haloacid dehalogenase-like hydrolase (HAD) superfamily protein,Cephaeline,0.935795181527017,72.961947
+NODE_55916_length_1954_cov_308.588140_g17264_i1,Salt tolerance-like protein,Cephaeline,0.9343365457991206,57.419523
+NODE_65402_length_1569_cov_3249.864626_g21120_i0,YLS9-like,Cephaeline,0.9340618932841016,594.4771
+NODE_47021_length_2365_cov_1387.568402_g2291_i5,CBS domain-containing protein CBSX3,Cephaeline,0.9334060286000359,165.270812
+NODE_42860_length_2577_cov_1184.874496_g70_i212,Belongs to the syntaxin family,Cephaeline,0.9325432505945402,185.443557
+NODE_81239_length_984_cov_643.187571_g28345_i0,-,Cephaeline,0.9324844331815655,126.395128
+NODE_40133_length_2732_cov_517.029244_g13901_i0,BTB POZ domain-containing protein,Cephaeline,0.9323297878245304,84.282074
+NODE_55207_length_1984_cov_411.881167_g17371_i1,NAC transcription factor,Cephaeline,0.9322762485166125,59.711452
+NODE_57055_length_1907_cov_1373.408186_g14292_i2,Belongs to the thiolase family,Cephaeline,0.9321668920682894,120.568144
+NODE_58551_length_1843_cov_888.131307_g12517_i5,Belongs to the iron ascorbate-dependent oxidoreductase family,Cephaeline,0.9319855556416189,66.912956
+NODE_21670_length_4057_cov_1512.023497_g5683_i2,Belongs to the terpene cyclase mutase family,Cephaeline,0.9313997163355348,260.600562
+NODE_58174_length_1859_cov_952.475000_g1985_i6,Cytochrome p450,Cephaeline,0.9312463673497056,56.590218
+NODE_30533_length_3330_cov_1570.573507_g5188_i5,Potassium transporter,Cephaeline,0.9308057386927336,129.562304
+NODE_47631_length_2336_cov_379.305320_g15915_i0,WRKY Transcription Factor,Cephaeline,0.9304992656697122,56.825141
+NODE_111746_length_374_cov_259.065455_g56159_i0,"Catalyzes xyloglucan endohydrolysis (XEH) and or endotransglycosylation (XET). Cleaves and religates xyloglucan polymers, an essential constituent of the primary cell wall, and thereby participates in cell wall construction of growing tissues",Cephaeline,0.9303420344688705,149.069771
+NODE_50232_length_2208_cov_767.264106_g7286_i3,RING finger and CHY zinc finger domain-containing protein,Cephaeline,0.9300640994844279,54.538001
+NODE_35116_length_3028_cov_346.345852_g11658_i1,Indole-3-acetic acid-amido synthetase,Cephaeline,0.9295728112119811,56.734003
+NODE_55830_length_1957_cov_1157.165770_g724_i3,Protein SSUH2 homolog,Cephaeline,0.9293171012076301,64.204721
+NODE_38716_length_2813_cov_1797.096536_g386_i24,Phenylalanine ammonialyase,Cephaeline,0.928758028330077,243.023056
+NODE_37567_length_2878_cov_1704.539043_g1267_i11,Belongs to the tetraspanin (TM4SF) family,Cephaeline,0.9286200408275448,92.40227
+NODE_78245_length_1086_cov_294.014184_g25078_i1,Cysteine-rich TM module stress tolerance,Cephaeline,0.9279074053980662,62.260669
+NODE_4839_length_7106_cov_614.719994_g226_i3,MACPF domain-containing protein,Cephaeline,0.9274177899428441,68.50059
+NODE_70326_length_1384_cov_584.989105_g22934_i0,-,Cephaeline,0.9271874656846465,110.719659
+NODE_37446_length_2885_cov_2399.888729_g13167_i0,Zinc finger protein,Cephaeline,0.9271221743082577,231.176988
+NODE_65860_length_1552_cov_308.282175_g21281_i0,-,Cephaeline,0.9264338518811263,66.648876
+NODE_40779_length_2695_cov_3157.890986_g1864_i5,nuclease HARBI1,Cephaeline,0.9263537302146018,541.904035
+NODE_85252_length_850_cov_10420.777630_g12654_i4,ethylene-responsive transcription factor,Cephaeline,0.9260769010863984,243.956779
+NODE_65094_length_1582_cov_639.941335_g8288_i2,-,Cephaeline,0.9252976760717034,59.839538
+NODE_80031_length_1025_cov_1644.369330_g5034_i6,Belongs to the peptidase A1 family,Cephaeline,0.9251087826313119,93.024843
+NODE_30454_length_3335_cov_1100.086527_g10049_i1,glycerol-3-phosphate transporter,Cephaeline,0.9245770049976977,82.590068
+NODE_5876_length_6705_cov_1515.186951_g1698_i1,Phosphoenolpyruvate carboxylase,Cephaeline,0.9242479204296764,80.591645
+NODE_72668_length_1294_cov_1133.888703_g21966_i1,"Catalyzes xyloglucan endohydrolysis (XEH) and or endotransglycosylation (XET). Cleaves and religates xyloglucan polymers, an essential constituent of the primary cell wall, and thereby participates in cell wall construction of growing tissues",Cephaeline,0.9235489415481526,174.073193
+NODE_56492_length_1931_cov_471.591157_g12753_i1,lipolytic acyl hydrolase (LAH),Cephaeline,0.9230040686833053,85.319323
+NODE_79055_length_1057_cov_1294.556367_g1985_i12,Cytochrome p450,Cephaeline,0.9222598651613795,67.486073
+NODE_46547_length_2388_cov_466.086501_g15596_i0,DDE superfamily endonuclease,Cephaeline,0.9221552210781564,80.025991
+NODE_44509_length_2490_cov_564.104559_g882_i3,transcription factor,Cephaeline,0.9219764987776887,67.680921
+NODE_33095_length_3157_cov_548.164487_g8820_i1,zinc transporter,Cephaeline,0.9218066707064602,53.621005
+NODE_72949_length_1284_cov_490.665823_g24027_i0,Domain of unknown function (DUF4228),Cephaeline,0.9202892585199081,112.817315
+NODE_65360_length_1571_cov_1174.110734_g724_i4,Protein SSUH2 homolog,Cephaeline,0.9201268280919511,58.845476
+NODE_97365_length_539_cov_6675.304545_g41797_i0,N-alpha-acetyltransferase,Cephaeline,0.9201122475804887,566.78449
+NODE_73790_length_1252_cov_558.281873_g24391_i0,Phi-1 protein,Cephaeline,0.9196356327311405,114.744333
+NODE_75638_length_1180_cov_1389.810361_g25234_i0,-,Cephaeline,0.9193201390534126,273.633084
+NODE_68281_length_1461_cov_4567.116006_g22152_i0,Extensin-2-like,Cephaeline,0.9192817955940967,292.049037
+NODE_51240_length_2159_cov_1074.250485_g16887_i0,Late embryogenesis abundant protein,Cephaeline,0.9191072121166887,104.87423
+NODE_71498_length_1339_cov_259.470968_g22352_i1,inhibitor,Cephaeline,0.9189998810141266,50.160951
+NODE_89746_length_713_cov_4180.359935_g34634_i0,"transposition, RNA-mediated",Cephaeline,0.9184812469612483,339.04109
+NODE_77240_length_1120_cov_1045.469148_g20804_i2,Belongs to the plant dehydrin family,Cephaeline,0.9182512700532882,111.269436
+NODE_39723_length_2754_cov_432.254614_g13787_i0,Belongs to the cytochrome P450 family,Cephaeline,0.9176465418052927,52.296313
+NODE_8242_length_6000_cov_1635.346382_g3804_i0,Hs1pro-1 N-terminus,Cephaeline,0.9175467073989726,140.414934
+NODE_70325_length_1384_cov_597.169650_g22933_i0,disease resistance,Cephaeline,0.9171227228854116,53.669295
+NODE_76079_length_1163_cov_3952.783835_g25462_i0,YTH domain family protein,Cephaeline,0.9167114978597336,219.52286
+NODE_72043_length_1318_cov_1599.296144_g16887_i1,Late embryogenesis abundant protein,Cephaeline,0.9166386652420133,162.197934
+NODE_76195_length_1159_cov_241.899057_g25518_i0,Domain of unknown function (DUF4228),Cephaeline,0.9163838601113153,52.907422
+NODE_63241_length_1658_cov_1544.241822_g19977_i1,early responsive to dehydration,Cephaeline,0.9155059431623916,51.911702
+NODE_62145_length_1701_cov_360.358926_g20052_i0,ZINC FINGER protein,Cephaeline,0.9154967639556099,80.091554
+NODE_64922_length_1588_cov_639.075218_g20961_i0,transcription factor,Cephaeline,0.9154934807020659,110.600217
+NODE_61876_length_1710_cov_1500.084420_g19977_i0,early responsive to dehydration,Cephaeline,0.9151184142578129,55.46897
+NODE_66459_length_1529_cov_828.441958_g21489_i0,ZINC FINGER protein,Cephaeline,0.9149865901949307,114.460048
+NODE_52537_length_2101_cov_1805.744755_g5034_i4,Belongs to the peptidase A1 family,Cephaeline,0.914770644551094,180.642224
+NODE_44384_length_2497_cov_397.516681_g13240_i1,Wall-associated receptor kinase,Cephaeline,0.9144875121073436,66.717538
+NODE_70913_length_1362_cov_295.438638_g23141_i0,glutaredoxin-C9-like,Cephaeline,0.9142143316660793,55.191878
+NODE_46608_length_2385_cov_1283.383202_g15613_i0,Non-specific serine threonine protein kinase,Cephaeline,0.9135546041255846,195.364438
+NODE_66478_length_1528_cov_854.437369_g20335_i3,E3 ubiquitin-protein ligase,Cephaeline,0.9132895840059163,54.464852
+NODE_80183_length_1020_cov_495.605863_g27667_i0,,Cephaeline,0.9131737275546263,129.019242
+NODE_74750_length_1213_cov_4655.471275_g2354_i19,Major latex,Cephaeline,0.9131603099880058,700.185704
+NODE_70643_length_1371_cov_1250.632075_g22058_i1,f-box protein,Cephaeline,0.9125956542343673,52.951384
+NODE_114097_length_360_cov_6444.164751_g58509_i0,Cysteine proteinase inhibitor,Cephaeline,0.912450007666291,812.593328

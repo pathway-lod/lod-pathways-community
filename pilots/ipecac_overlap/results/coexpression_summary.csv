@@ -1,0 +1,3 @@
+transcriptome,transcripts,with_pearson,tissues,bait,bait_description,pearson_ge_cutoff,expected_by_chance_normal_null,after_expression_cutoff,p_value_at_cutoff_two_sided
+Ci,137713,136736,6,NODE_49441_length_1590_cov_622.147552_g5127_i1,Belongs to the class I-like SAM-binding methyltransferase superfamily. Cation-independent O- methyltransferase family,5546,5875,369,0.0859
+As,178877,176972,12,NODE_27464_length_3565_cov_8180.392095_g9907_i2,Belongs to the cytochrome P450 family,14214,439,1413,0.005

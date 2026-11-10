@@ -1,0 +1,2 @@
+endpoint: https://plantmetwiki.bioinformatics.nl/sparql
+date: 2026-10-29
