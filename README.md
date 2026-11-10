@@ -131,6 +131,7 @@ A complete example that attaches one claim of each case to PlantMetWiki, with th
 | [`pilots/`](pilots/) | Four analyses on real data (the fourth, [`ipecac_overlap`](pilots/ipecac_overlap/), is paired-omics data of ipecac alkaloid biosynthesis), each with README and results; three with a notebook |
 | [`examples/`](examples/) | A sample evidence graph and a query over it |
 | [`prioritization/`](prioritization/) | Discussion of the evidence tiers that score and prioritise the components of a pathway. The agreed tiers are implemented as SPARQL queries in [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw) ([browse the queries](https://pathway-lod.github.io/sparql-examples-pmw/examples/PlantMetWiki/)) |
+| [`minimum_information/`](minimum_information/) | Draft minimum-information tiers for the results of the pilots (annotations, associations, clusters): what a claim must contain to reach each evidence tier |
 | [`.github/`](.github/) | Issue forms and the GitHub Actions of the discussion workflow |
 
 Validation rules are written in SHACL (a W3C Recommendation) and checked with pyshacl; a reference check tests that the PlantMetWiki pathways and metabolites a claim refers to exist in a dated snapshot. See [`shape_constraints/README.md`](shape_constraints/README.md).

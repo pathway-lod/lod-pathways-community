@@ -35,6 +35,16 @@ Evidence for the reactions of PlantMetWiki (release 17, queried 2026-11-10). The
 
 The tiers overlap and are **not yet an ordered scale**: a reaction can have an EC number but no Rhea identifier, or the other way round.
 
+## Tiers for the pilot data (minimum information)
+
+The tiers above grade the **components of a pathway** in PlantMetWiki. A second set grades **the results of our pilots** (annotations, associations, clusters) and is written as the minimum information a claim has to carry. It is in [`../minimum_information/`](../minimum_information/):
+
+| Family | Tiers (summary) |
+|---|---|
+| Metabolite annotation (MET) | MET-1 an annotated InChIKey matches a PlantMetWiki metabolite on the first block; MET-2 two detected metabolites share a chemical class (NPClassifier); MET-3 linked by a similarity metric; MET-4 by a structure similarity (InChI); MET-5 and the difference between them is a Rhea reaction with a known PlantMetWiki enzyme |
+| Paired omics (PO) | PO-1 metabolite and gene match the same pathway; PO-2 and the gene is an ortholog of a gene in a species with the pathway; PO-3 the gene is predicted to catalyse exactly the transformation between the two metabolites; PO-4 PO-2 and a machine-learning predicted transformation agrees |
+| Biosynthetic gene clusters (BGC) | BGC-1 co-expressed genes are in the same cluster; BGC-2 and only one gene matches a pathway (a lead to extend it); BGC-3 and both genes match |
+
 ## Questions to discuss
 
 1. **Unit.** What do we rank: the reaction, the enzyme, the gene, the whole pathway, or a claim attached to one of them?
