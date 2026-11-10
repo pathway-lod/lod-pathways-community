@@ -2,6 +2,8 @@
 
 A place to **discuss and decide** the scoring and prioritisation tiers of pathway components (reactions, enzymes, genes, metabolites). The tiers that are agreed here are **implemented as SPARQL queries** in the repository [`pathway-lod/sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw) (SIB SPARQL-examples format; some queries are federated with Rhea, UniProt and OrthoDB). This folder holds the discussion; that repository holds the queries.
 
+**Browse the queries:** <https://pathway-lod.github.io/sparql-examples-pmw/examples/PlantMetWiki/> (one page per tier, with the query text, the endpoint it runs on and the `.rq` and `.ttl` files).
+
 This is a draft for brainstorming. Nothing here is decided; use a pull request or an issue to propose a change.
 
 ## Why tiers
@@ -18,6 +20,8 @@ A claim that attaches to PlantMetWiki (the pipeline of the [main README](../READ
 | Paired omics ([`pilots/pairedomics_overlap`](../pilots/pairedomics_overlap/)) | `gene_locus`, `gene_uniprot`, `gene_ec` (genes); `mass_match` (features) | How a gene or feature was linked to a pathway |
 
 ## Tiers implemented as queries (first draft)
+
+The queries can be read and tried on the website: <https://pathway-lod.github.io/sparql-examples-pmw/examples/PlantMetWiki/>.
 
 Evidence for the reactions of PlantMetWiki (release 17, queried 2026-11-10). The reactions are `gpml:Interaction` nodes; the queries are in [`sparql-examples-pmw/examples/PlantMetWiki`](https://github.com/pathway-lod/sparql-examples-pmw/tree/main/examples/PlantMetWiki).
 

@@ -4,7 +4,7 @@
 - [ELIXIR BioHackathon Europe 2026](https://biohackathon-europe.org/)
 - [BioHackathon Europe 2026 preprints on BioHackrXiv](https://index.biohackrxiv.org/tag/BioHackEU26) (a possible place to archive this work)
 - [Paper repository (developing-open-standards)](https://github.com/pathway-lod/developing-open-standards): the main place where we write the paper
-- [SPARQL examples for PlantMetWiki](https://github.com/pathway-lod/sparql-examples-pmw): queries that define the evidence tiers of pathway components, some federated with Rhea, UniProt and OrthoDB
+- [SPARQL examples for PlantMetWiki](https://github.com/pathway-lod/sparql-examples-pmw): queries that define the evidence tiers of pathway components, some federated with Rhea, UniProt and OrthoDB ([website with the queries](https://pathway-lod.github.io/sparql-examples-pmw/examples/PlantMetWiki/))
 - [Collaborative Google doc](https://docs.google.com/document/d/1rzbnRQLCf-iMgQG8XEfBdkGMdMxM0h0J9rloR8ZC2vE/edit?tab=t.0#heading=h.jbaphzt6t7wb)
 - [Specification dashboard](https://pathway-lod.github.io/lod-pathways-community/) (browse, filter and discuss the ontology terms)
 
@@ -130,7 +130,7 @@ A complete example that attaches one claim of each case to PlantMetWiki, with th
 | [`shape_constraints/`](shape_constraints/) | SHACL shapes, the placeholder vocabulary, scripts that validate RDF and generate it from the pilot results, the generated RDF and the tests |
 | [`pilots/`](pilots/) | Four analyses on real data (the fourth, [`ipecac_overlap`](pilots/ipecac_overlap/), is paired-omics data of ipecac alkaloid biosynthesis), each with README and results; three with a notebook |
 | [`examples/`](examples/) | A sample evidence graph and a query over it |
-| [`prioritization/`](prioritization/) | Discussion of the evidence tiers that score and prioritise the components of a pathway. The agreed tiers are implemented as SPARQL queries in [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw) |
+| [`prioritization/`](prioritization/) | Discussion of the evidence tiers that score and prioritise the components of a pathway. The agreed tiers are implemented as SPARQL queries in [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw) ([browse the queries](https://pathway-lod.github.io/sparql-examples-pmw/examples/PlantMetWiki/)) |
 | [`.github/`](.github/) | Issue forms and the GitHub Actions of the discussion workflow |
 
 Validation rules are written in SHACL (a W3C Recommendation) and checked with pyshacl; a reference check tests that the PlantMetWiki pathways and metabolites a claim refers to exist in a dated snapshot. See [`shape_constraints/README.md`](shape_constraints/README.md).
