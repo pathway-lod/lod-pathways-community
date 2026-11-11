@@ -1,0 +1,2479 @@
+pc,plantcyc_id,pathway_name
+PC1000,PWY-7205,CMP phosphorylation
+PC1001,PWY-5316,nicotine biosynthesis
+PC1002,CHLOROPHYLL-SYN,"3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)"
+PC1003,PWY-6926,pyrethrin I biosynthesis
+PC1004,PWY-6430,thymine degradation
+PC1005,PWY-102,gibberellin inactivation I (2β-hydroxylation)
+PC1006,PWY-3861,mannitol degradation II
+PC1007,PWY-6603,dicranin biosynthesis
+PC1008,PWY-5795,juglone biosynthesis
+PC1009,PWY18C3-9,diacylsucrose biosynthesis (Solanum)
+PC100,PWY-7071,steviol glucoside biosynthesis (rebaudioside A biosynthesis)
+PC1010,PWY-7468,benzoyl-β-D-glucopyranose biosynthesis
+PC1011,PWY-5061,"6,7,4'-trihydroxyisoflavone biosynthesis"
+PC1012,PWY-5389,3-methylthiopropanoate biosynthesis
+PC1013,PWY-6305,superpathway of putrescine biosynthesis
+PC1014,PWY-4541,"lipid-dependent phytate biosynthesis I (via Ins(1,4,5)P₃)"
+PC1015,PWY-5269,cardiolipin biosynthesis II
+PC1016,PWY18C3-7,cembratrienediol biosynthesis
+PC1017,TRESYN-PWY,trehalose biosynthesis I
+PC1018,PWY-7047,malate-oxaloacetate shuttle I
+PC1019,PWY-5976,dhurrin degradation
+PC101,PWY-6663,plant sterol biosynthesis II
+PC1020,PWY-7152,pinolenate and coniferonate biosynthesis
+PC1021,PWY-5535,acetate and ATP formation from acetyl-CoA II
+PC1022,PWY-6105,botryococcenes and methylated squalene biosynthesis
+PC1023,PWY-5373,calendate biosynthesis
+PC1024,PWY-6265,zerumbone biosynthesis
+PC1025,PWY-6447,trichome monoterpenes biosynthesis
+PC1026,PWY-7135,emetine biosynthesis
+PC1027,PWY-5320,kaempferol glycoside biosynthesis (Arabidopsis)
+PC1028,PWY-6555,superpathway of 1D-myo-inositol hexakisphosphate biosynthesis (plants)
+PC1029,PWY-6163,chorismate biosynthesis from 3-dehydroquinate
+PC102,PWY-6773,"1,3-β-D-glucan biosynthesis"
+PC1030,ASPSYNII-PWY,cyanide detoxification I
+PC1031,PWY-5986,ammonium transport
+PC1032,PWY-6266-ARA,superpathway of flavones and derivatives biosynthesis
+PC1033,THISYNARA-PWY,superpathway of thiamine pyrophosphate biosynthesis III (eukaryotes)
+PC1034,PWY-5944,zeaxanthin biosynthesis
+PC1035,PWYIO2-7,triacylglycerol biosynthesis (Chlamydomonas)
+PC1036,PWY-6931,seleno-amino acid detoxification and volatilization I
+PC1037,PWY-7678,anthocyanidin sambubioside biosynthesis
+PC1038,PWY-6015,vitexin and derivatives biosynthesis
+PC1039,PWY-4781,phytate degradation II
+PC103,PWY-5286,anthocyanidin sophoroside metabolism
+PC1040,PWY-7183,pyrimidine nucleobases salvage I
+PC1041,PWY-6543,4-aminobenzoate biosynthesis I
+PC1042,PWY-6046,dimethylsulfoniopropanoate degradation I (cleavage)
+PC1043,PWY-5172,acetyl-CoA biosynthesis from citrate
+PC1044,PWY-7489,"oryzalexin A, B, and C biosynthesis"
+PC1045,PWY-5134,superpathway of bitter acids biosynthesis
+PC1046,PWY18C3-25,superpathway of methylsalicylate metabolism
+PC1047,PWY-6835,6-gingerol biosynthesis
+PC1048,PWY-6754,S-methyl-5'-thioadenosine degradation I
+PC1049,PWY-116,coniferin metabolism
+PC104,PWY-6614,tetrahydrofolate biosynthesis I
+PC1050,THIOREDOX-PWY,thioredoxin pathway
+PC1051,PWY-5827,heliocides biosynthesis
+PC1052,PWY-7176,UTP and CTP de novo biosynthesis
+PC1053,PWY-5769,gallate biosynthesis
+PC1054,PWY-7857,adlupulone and adhumulone biosynthesis
+PC1055,PWY-6809,neoxanthin biosynthesis
+PC1056,PWY-2724,alkane oxidation
+PC1057,PWY-6257,curcumene biosynthesis
+PC1058,PWY-4681,kievitone biosynthesis
+PC1059,PWY-6920,6-gingerol analog biosynthesis (engineered)
+PC105,PWY-6310,aloenin biosynthesis
+PC1060,LIPAS-PWY,triacylglycerol degradation
+PC1061,PWY-5472,bisbenzylisoquinoline alkaloid biosynthesis
+PC1062,PWY-4942,sterculate biosynthesis
+PC1063,PWY-6115,"avenacin biosynthesis, initial reactions"
+PC1064,PWY-6914,sophoraflavanone G biosynthesis
+PC1065,PWY-7474,avenacin A-2 biosynthesis
+PC1066,PWY-1981,indole-3-acetate inactivation III
+PC1067,PWY-6553,caffeine degradation II
+PC1068,PWY-6546,brassinosteroids inactivation
+PC1069,PWY-6668,"(E,E)-4,8,12-trimethyltrideca-1,3,7,11-tetraene biosynthesis"
+PC106,PWY-5848,cinchona alkaloids biosynthesis
+PC1070,PWY-6007,"(3E)-4,8-dimethylnona-1,3,7-triene biosynthesis II"
+PC1071,PWY-2821,glucosinolate biosynthesis from phenylalanine
+PC1072,PWY-5399,betacyanin biosynthesis
+PC1073,PWY1F-467,"phenylpropanoid biosynthesis, initial reactions"
+PC1074,PWY-4261,glycerol degradation I
+PC1075,PWY-5991,superpathway of linamarin and lotaustralin biosynthesis
+PC1076,PWY-5098,chlorophyll a degradation I
+PC1077,PWYQT-4481,TCA cycle variation V (plant)
+PC1078,PWY-7219,adenosine ribonucleotides de novo biosynthesis
+PC1079,PWY-5321,quercetin glycoside biosynthesis (Arabidopsis)
+PC107,PWY-5835,geranyl acetate biosynthesis
+PC1080,PWY-6128,cis-calamenene related sesquiterpenoids biosynthesis
+PC1081,PWY-6005,marneral biosynthesis
+PC1082,GLYOXDEG-PWY,glycolate and glyoxylate degradation II
+PC1083,PWY-6008,baruol biosynthesis
+PC1084,PWY-5272,abscisic acid degradation by glucosylation
+PC1085,PWY-6291,valencene and 7-epi-α-selinene biosynthesis
+PC1086,PWY-1921,indole-3-acetate activation II
+PC1087,PWY-1001,cellulose biosynthesis
+PC1088,PWY-5967,lupinate biosynthesis
+PC1089,PWY-5963,molybdenum cofactor sulfulylation (eukaryotes)
+PC108,PWY-6525,stellariose and mediose biosynthesis
+PC1090,PWY-5884,wax esters biosynthesis I
+PC1091,PWY-5312,superpathway of anthocyanin biosynthesis (from pelargonidin 3-O-glucoside)
+PC1092,PWY-7169,hyperxanthone E biosynthesis
+PC1093,PWY-6024,isovitexin glycosides biosynthesis
+PC1094,PWY-6540,costunolide biosynthesis
+PC1095,PWY-622,starch biosynthesis
+PC1096,ETHYL-PWY,ethene biosynthesis I (plants)
+PC1097,PWY-7298,nevadensin biosynthesis
+PC1098,PWY-7061,glutamate-glutamine shuttle
+PC1099,CAMALEXIN-SYN,camalexin biosynthesis
+PC109,PWY0-1312,acetate and ATP formation from acetyl-CoA I
+PC10,PWY-6845,nitric oxide biosynthesis I (plants)
+PC1100,PWY-5975,furaneol and mesifurane biosynthesis
+PC1101,PWY-7259,pelargonidin diglucoside biosynthesis (acyl-glucose dependent)
+PC1102,PWY-6270,isoprene biosynthesis I
+PC1103,PWY-3981,β-alanine biosynthesis I
+PC1104,PWY-6950,DIMBOA-glucoside biosynthesis
+PC1105,ARGSPECAT-PWY,spermine biosynthesis
+PC1106,PWY-1962,indole-3-acetate inactivation II
+PC1107,PWY-6351,"D-myo-inositol (1,4,5)-trisphosphate biosynthesis"
+PC1108,PWY-5160,rose anthocyanin biosynthesis I (via cyanidin 5-O-β-D-glucoside)
+PC1109,PWY-6836,santalene biosynthesis II
+PC110,PWY-6598,sciadonate biosynthesis
+PC1110,PWY-6220,jasmonoyl-amino acid conjugates biosynthesis I
+PC1111,ALANINE-SYN2-PWY,L-alanine biosynthesis II
+PC1112,PWY-7226,guanosine deoxyribonucleotides de novo biosynthesis I
+PC1113,PWY-4281,L-proline biosynthesis IV
+PC1114,PWY-7476,superpathway of avenacin A biosynthesis
+PC1115,PWY-3261,UDP-β-L-rhamnose biosynthesis
+PC1116,PWY-7007,methyl ketone biosynthesis (engineered)
+PC1117,PWY-6730,methylhalides biosynthesis (plants)
+PC1118,PWY-5173,superpathway of acetyl-CoA biosynthesis
+PC1119,P23-PWY,reductive TCA cycle I
+PC111,PWY-7630,hinokinin biosynthesis
+PC1120,PWY-6837,"fatty acid β-oxidation V (unsaturated, odd number, di-isomerase-dependent)"
+PC1121,PWY-5926,afrormosin conjugates interconversion
+PC1122,PWY-5476,cornusiin E biosynthesis
+PC1123,PWY-7709,(3R)-linalool biosynthesis
+PC1124,PWY-7166,kaempferide triglycoside biosynthesis
+PC1125,PWY-101,photosynthesis light reactions I (plastocyanin)
+PC1126,BSUBPOLYAMSYN-PWY,spermidine biosynthesis I
+PC1127,NAGLIPASYN-PWY,lipid IVA biosynthesis (E. coli)
+PC1128,PWY-6841,homophytochelatin biosynthesis
+PC1129,PWY-5305,bixin biosynthesis
+PC112,PWY-7262,rose anthocyanin biosynthesis II (via cyanidin 3-O-β-D-glucoside)
+PC1130,PWY-3042,phaseollin biosynthesis
+PC1131,PWY-6766,salicin biosynthesis
+PC1132,PWYDQC-4,indole-3-acetate biosynthesis I
+PC1133,PWY-724,"superpathway of L-lysine, L-threonine and L-methionine biosynthesis II"
+PC1134,PWY-3841,folate transformations II (plants)
+PC1135,ARGSYNBSUB-PWY,L-arginine biosynthesis II (acetyl cycle)
+PC1136,PWY-5837,"2-carboxy-1,4-naphthoquinol biosynthesis"
+PC1137,PWY-5203,soybean saponin I biosynthesis
+PC1138,PWY-5195,artemisinin and arteannuin B biosynthesis
+PC1139,PWY-5883,ephedrine biosynthesis
+PC113,PWY-5872,ubiquinol-10 biosynthesis (late decarboxylation)
+PC1140,PWY-4221ARA,superpathway of pantothenate and coenzymeA biosynthesis
+PC1141,PWY-2981,diterpene phytoalexins precursors biosynthesis
+PC1142,PWY-782,glycolipid desaturation
+PC1143,PWY-6348,phosphate acquisition
+PC1144,PWY-4861,UDP-α-D-galacturonate biosynthesis I (from UDP-D-glucuronate)
+PC1145,PWY-6,GDP-L-fucose biosynthesis II (from L-fucose)
+PC1146,PWY-7590,"(7Z,10Z,13Z)-hexadecatrienoate biosynthesis"
+PC1147,PWY-5936,xyloglucan biosynthesis
+PC1148,PWY-4341,L-glutamate biosynthesis V
+PC1149,PWY-5136,fatty acid β-oxidation II (plant peroxisome)
+PC114,PWY-7157,eupatolitin 3-O-glucoside biosynthesis
+PC1150,PWY-5439,betacyanin biosynthesis (via dopamine)
+PC1151,PWY-7899,protein NEDDylation
+PC1152,PWY-7445,luteolin triglucuronide degradation
+PC1153,PWY-2781,cis-zeatin biosynthesis
+PC1154,PWY-5045,pinosylvin metabolism
+PC1155,PWY-5864,superpathway of plastoquinol biosynthesis
+PC1156,PWY-7826,Amaryllidacea alkaloids biosynthesis
+PC1157,PWY-3542,choline biosynthesis II
+PC1158,PWY-5934,iron reduction and absorption
+PC1159,COA-PWY,coenzyme A biosynthesis I (bacteria)
+PC115,PWY-882,"L-ascorbate biosynthesis I (plants, L-galactose pathway)"
+PC1160,PWYQT-4476,indole glucosinolate activation (herbivore attack)
+PC1161,CITRULBIO-PWY,L-citrulline biosynthesis
+PC1162,PWY-5787,oligomeric urushiol biosynthesis
+PC116,PWY-7341,superpathway of hyoscyamine (atropine) and scopolamine biosynthesis
+PC117,PWY-5433,superpathway of lipoxygenase
+PC118,PWY-5729,vestitol and sativan biosynthesis
+PC119,URDEGR-PWY,superpathway of allantoin degradation in plants
+PC11,PWY-5004,superpathway of L-citrulline metabolism
+PC120,GLUTAMATE-DEG1-PWY,L-glutamate degradation I
+PC121,PWY-5037,caffeine biosynthesis I
+PC122,PWY-5290,secologanin and strictosidine biosynthesis
+PC123,PWY-5032,ent-kaurene biosynthesis I
+PC124,PWY-7137,quercetin gentiotetraside biosynthesis
+PC125,PWY-4821,UDP-α-D-xylose biosynthesis
+PC126,PWY-1,lathyrine biosynthesis
+PC127,PWY-7204,pyridoxal 5'-phosphate salvage II (plants)
+PC128,PWY-7267,anthocyanin biosynthesis (pelargonidin 3-O-glucoside)
+PC129,PWY-4361,S-methyl-5-thio-α-D-ribose 1-phosphate degradation I
+PC12,PWY-5148,acyl-CoA hydrolysis
+PC130,PWY-6304,casbene biosynthesis
+PC131,PWY-6933,seleno-amino acid detoxification and volatilization III
+PC132,PWY-5365,linear furanocoumarin biosynthesis
+PC133,PWY-5142,acyl-[acyl-carrier protein] thioesterase pathway
+PC134,PWY-5137,"fatty acid β-oxidation III (unsaturated, odd number)"
+PC135,PWY-6799,fatty acid biosynthesis initiation (plant mitochondria)
+PC136,PWY-6887,kauralexin biosynthesis
+PC137,PWY-7145,genistin gentiobioside biosynthesis
+PC138,PWY-2021,indole-3-acetate inactivation IV
+PC139,PWY-3001,superpathway of L-isoleucine biosynthesis I
+PC13,PWY-2343,daidzein conjugates interconversion
+PC140,PWY-7187,pyrimidine deoxyribonucleotides de novo biosynthesis II
+PC141,PWY-6927,chlorophyll a degradation II
+PC142,PWY-5046,2-oxoisovalerate decarboxylation to isobutanoyl-CoA
+PC143,PWY-1901,aurone biosynthesis
+PC144,PWY-6612,superpathway of tetrahydrofolate biosynthesis
+PC145,PWY-5111,CMP-KDO biosynthesis II (from D-arabinose 5-phosphate)
+PC146,TRPSYN-PWY,L-tryptophan biosynthesis
+PC147,DETOX1-PWY,superoxide radicals degradation
+PC148,PWY-5810,usnate biosynthesis
+PC149,PWY-5064,chlorophyll a biosynthesis II
+PC14,PWY-5133,colupulone and cohumulone biosynthesis
+PC150,PWY-5808,hyperforin and adhyperforin biosynthesis
+PC151,PWY-5054,D-sorbitol biosynthesis I
+PC152,PWY-3581,(S)-reticuline biosynthesis I
+PC153,PWY-6036,cardenolide glucosides biosynthesis
+PC154,PWY-4841,UDP-α-D-glucuronate biosynthesis (from myo-inositol)
+PC155,PWY-3982,uracil degradation I (reductive)
+PC156,PWY-5288,"astaxanthin biosynthesis (bacteria, fungi, algae)"
+PC157,PWY-5315,1-methylpyrrolinium biosynthesis
+PC158,PWY-7280,ternatin C3 biosynthesis
+PC159,PWY-5132,lupulone and humulone biosynthesis
+PC15,PWY-6733,sporopollenin precursors biosynthesis
+PC160,PWY-5691,urate conversion to allantoin I
+PC161,PWY4FS-12,VTC2 cycle
+PC162,PWY-5123,"trans, trans-farnesyl pyrophosphate biosynthesis"
+PC163,GLNSYN-PWY,L-glutamine biosynthesis I
+PC164,PWY-621,sucrose degradation III (sucrose invertase)
+PC165,METHIONINE-DEG1-PWY,L-methionine degradation I (to L-homocysteine)
+PC166,PWY-5038,caffeine biosynthesis II (via paraxanthine)
+PC167,PWY-2229,superpathway of pterocarpan biosynthesis (via formononetin)
+PC168,PWY-5863,superpathway of phylloquinol biosynthesis
+PC169,VALDEG-PWY,L-valine degradation I
+PC16,PWY-7473,avenacin A-1 biosynthesis
+PC170,PWY-8001,felinine and 3-methyl-3-sulfanylbutan-1-ol biosynthesis
+PC171,PWY-13,superpathway of tetrahydroxyxanthone biosynthesis
+PC172,PWY-1801,formaldehyde oxidation II (glutathione-dependent)
+PC173,PWY-6923,ricinine degradation
+PC174,PYRIDNUCSYN-PWY,NAD de novo biosynthesis I
+PC175,PWY-1269,CMP-3-deoxy-D-manno-octulosonate biosynthesis
+PC176,PWY66-21,ethanol degradation II
+PC177,PWY-7060,ornithine-citrulline shuttle
+PC178,PWY-8024,4-hydroxyindole-3-carbonyl nitrile biosynthesis
+PC179,PWY-7619,juniperonate biosynthesis
+PC17,PWY-6418,4-hydroxycoumarin and dicoumarol biosynthesis
+PC180,PWY-4441,DIMBOA-glucoside activation
+PC181,PWY-4041,γ-glutamyl cycle
+PC182,MANNOSYL-CHITO-DOLICHOL-BIOSYNTHESIS,protein N-glycosylation initial phase (eukaryotic)
+PC183,PWY-5995,linoleate biosynthesis I (plants)
+PC184,PWY-5394,betalamic acid biosynthesis
+PC185,PWY-7642,abscisic acid degradation to 7'-hydroxyabscisate
+PC186,PWY-6364,"D-myo-inositol (1,3,4)-trisphosphate biosynthesis"
+PC187,PWY-6196,D-serine metabolism
+PC188,PWY-5828,lacinilene C biosynthesis
+PC189,PWY-7067,betulinate biosynthesis
+PC18,PWY-6795,"diacylglyceryl-N,N,N-trimethylhomoserine biosynthesis"
+PC190,PWY-2181,free phenylpropanoid acid biosynthesis
+PC191,PWY-7697,geranyl β-primeveroside biosynthesis
+PC192,PWY-6062,peonidin and derivatives biosynthesis
+PC193,PWY-3341,L-proline biosynthesis III (from L-ornithine)
+PC194,PWY-822,fructan biosynthesis
+PC195,PWY-2321,formononetin biosynthesis
+PC196,PWY-5704,urea degradation II
+PC197,PWYQT-4432,glutathione degradation
+PC198,PWY-6010,apigenin glycosides biosynthesis
+PC199,PWY-40,putrescine biosynthesis I
+PC19,PWY-6665,pterostilbene biosynthesis
+PC1,PWY-7113,furcatin degradation
+PC200,PWY-5421,dehydroabietic acid biosynthesis
+PC201,PWY-7460,2-O-acetyl-3-O-trans-coutarate biosynthesis
+PC202,PWY-6051,"2,4,6-trinitrotoluene degradation"
+PC203,PWY-5791,"1,4-dihydroxy-2-naphthoate biosynthesis II (plants)"
+PC204,ARGASEDEG-PWY,L-arginine degradation I (arginase pathway)
+PC205,ARO-PWY,chorismate biosynthesis I
+PC206,PWY-181,photorespiration I
+PC207,PWY-5034,gibberellin A₁₂ biosynthesis
+PC208,PWY-6785,hydrogen production VIII
+PC209,PWY-5039,theobromine biosynthesis I
+PC20,PWY4FS-10,scopolin biosynthesis
+PC210,PWY-7115,"C4 photosynthetic carbon assimilation cycle, NAD-ME type"
+PC211,PWY-6990,(+)-camphor biosynthesis
+PC212,PWY-7430,indole degradation to anthranil and anthranilate
+PC213,PWY18C3-21,phenylpropanoid volatiles glycoconjugation (tomato)
+PC214,PWY-381,nitrate reduction II (assimilatory)
+PC215,PWY-5371,chrysophanol biosynthesis
+PC216,PWY-7491,podophyllotoxin glucosides metabolism
+PC217,PWY-6888,zealexin biosynthesis
+PC218,PWY-6232,chrysoeriol biosynthesis
+PC219,PWY-4983,nitric oxide biosynthesis II (mammals)
+PC21,PWY0-1319,CDP-diacylglycerol biosynthesis II
+PC220,PWY-5706,alliin metabolism
+PC221,PWY-5918,superpathway of heme b biosynthesis from glutamate
+PC222,PWY-6483,ceramide degradation (generic)
+PC223,PWY-2161,folate polyglutamylation
+PC224,PWY-5752,piperine biosynthesis
+PC225,PWY-12,pentaketide chromone biosynthesis
+PC226,PWY-5797,indole-3-acetate inactivation VI
+PC227,PWY-7436,vitamin E biosynthesis (tocotrienols)
+PC228,PWY-7683,nitrite reduction (hemoglobin)
+PC229,PWY-7200,superpathway of pyrimidine deoxyribonucleoside salvage
+PC22,PWY-3101,flavonol biosynthesis
+PC230,PWY0-166,superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)
+PC231,PWY-6466,pyridoxal 5'-phosphate biosynthesis II
+PC232,PWY0A-6303,methyl indole-3-acetate interconversion
+PC233,PWY-3881,mannitol biosynthesis
+PC234,PWY-5651,L-tryptophan degradation to 2-amino-3-carboxymuconate semialdehyde
+PC235,PWY-5301,ajmaline and sarpagine biosynthesis
+PC236,PWY-6395,superpathway of seleno-compound metabolism
+PC237,PWY-6303,methyl indole-3-acetate interconversion
+PC238,PWY-7452,cyanidin dimalonylglucoside biosynthesis
+PC239,PWY-5405,superpathway of betalain biosynthesis
+PC23,PWY-7994,dolabralexins biosynthesis
+PC240,PWY-5484,glycolysis II (from fructose 6-phosphate)
+PC241,PWY-5600,pyruvate fermentation to acetate VII
+PC242,PWY-5885,wax esters biosynthesis II
+PC243,SULFMETII-PWY,assimilatory sulfate reduction II
+PC244,PWY-5876,magnoflorine biosynthesis
+PC245,PWY-5070,"gibberellin biosynthesis I (non C-3, non C-13 hydroxylation)"
+PC246,PWY-6295,olivetol biosynthesis
+PC247,PWY-5485,pyruvate fermentation to acetate IV
+PC248,PWY-6804,diacylglycerol biosynthesis (PUFA enrichment in oilseed)
+PC249,PWY-581,indole-3-acetate biosynthesis II
+PC24,PWY-5153,anthocyanin biosynthesis (delphinidin 3-O-glucoside)
+PC250,PWY-6032,digitoxigenin biosynthesis
+PC251,PWY-6453,stigma estolide biosynthesis
+PC252,PWY-6029,"2,3-trans-flavanols biosynthesis"
+PC253,PWY-282,cuticular wax biosynthesis
+PC254,PWY-6900,(Z)-butanethial-S-oxide biosynthesis
+PC255,PWY-5059,pinobanksin biosynthesis
+PC256,PWY-7193,pyrimidine ribonucleosides salvage I
+PC257,PWY-6792,scopoletin biosynthesis
+PC258,PWY-2681,trans-zeatin biosynthesis
+PC259,PWY-5987,sorgoleone biosynthesis
+PC25,PWY-5910,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate)
+PC260,PWY-7342,superpathway of nicotine biosynthesis
+PC261,PWY-7208,superpathway of pyrimidine nucleobases salvage
+PC262,PWY-6275,β-caryophyllene biosynthesis
+PC263,PWY-5470,palmatine biosynthesis
+PC264,PWY-5886,3-(4-hydroxyphenyl)pyruvate biosynthesis
+PC265,PWY-5318,calystegine biosynthesis
+PC266,PWY-5386,methylglyoxal degradation I
+PC267,PWY-861,dhurrin biosynthesis
+PC268,PWY-7397,naringenin biosynthesis (engineered)
+PC269,PWY-4922,6-methoxymellein biosynthesis
+PC26,PWY-4984,urea cycle
+PC270,PWY0-1301,melibiose degradation
+PC271,PWY-6599,guanine and guanosine salvage II
+PC272,PWY-6842,glutathione-mediated detoxification II
+PC273,PWY-5340,sulfate activation for sulfonation
+PC274,PWY-6427,rot-2'-enonate biosynthesis
+PC275,PWY-5945,"violaxanthin, antheraxanthin and zeaxanthin interconversion"
+PC276,PWY-5084,2-oxoglutarate decarboxylation to succinyl-CoA
+PC277,PWY-6244,bergamotene biosynthesis II
+PC278,PWY-1741,indole-3-acetate inactivation IX
+PC279,PWY-4502,wighteone and luteone biosynthesis
+PC27,PWY-401,galactolipid biosynthesis I
+PC280,PWY-4221,superpathway of coenzyme A biosynthesis II (plants)
+PC281,PWY-5694,allantoin degradation to glyoxylate I
+PC282,PWY-2261,ascorbate glutathione cycle
+PC283,PWYQT-4450,"aliphatic glucosinolate biosynthesis, side chain elongation cycle"
+PC284,PWY-5801,lawsone biosynthesis
+PC285,PWY-6755,S-methyl-5-thio-α-D-ribose 1-phosphate degradation I
+PC286,PWY-6653,ent-kaurene biosynthesis II
+PC287,PWY-5083,NAD(P)/NADPH interconversion
+PC288,PWY4FS-4,phosphatidylcholine biosynthesis IV
+PC289,PWY-7199,pyrimidine deoxyribonucleosides salvage
+PC28,PWY-7631,arctigenin and isoarctigenin biosynthesis
+PC290,PWY-2602,brassinosteroid biosynthesis III
+PC291,PWY-2161B,glutamate removal from folates
+PC292,PWY-6290,β-cubebene biosynthesis
+PC293,PWY-3961,phosphopantothenate biosynthesis II
+PC294,PWY-7058,esculetin modification
+PC295,PWY-7448,galloylated catechin biosynthesis
+PC296,PWY18C3-4,solasodine glycosylation
+PC297,PWY-5267,glucosinolate activation
+PC298,PWY4FS-13,extended VTC2 cycle
+PC299,PWY-3282,superpathway of ammonia assimilation (plants)
+PC29,PWY-5174,capsanthin and capsorubin biosynthesis
+PC2,HOMOSERSYN-PWY,L-homoserine biosynthesis
+PC300,PWY-6233,jasmonoyl-amino acid conjugates biosynthesis II
+PC301,PWY-5661,GDP-α-D-glucose biosynthesis
+PC302,PWY-2541,phytosterol biosynthesis (plants)
+PC303,PWY-7133,quercetin glucoside degradation (Allium)
+PC304,PWY-5659,GDP-mannose biosynthesis
+PC305,PWY-6958,icosapentaenoate biosynthesis I (lower eukaryotes)
+PC306,PWY-6312,aloin biosynthesis
+PC307,PWY4FS-2,phosphatidylcholine biosynthesis II
+PC308,PWY-7036,very long chain fatty acid biosynthesis II
+PC309,PWYQT-4445,pyrimidine salvage pathway
+PC30,PWY-7158,L-phenylalanine degradation V
+PC310,PWY-7625,phosphatidylinositol biosynthesis II (eukaryotes)
+PC311,PWY-6064,methylquercetin biosynthesis
+PC312,PWY-5295,ternatin C5 biosynthesis
+PC313,PWY-6982,umbelliferone biosynthesis
+PC314,PWY-6991,(-)-camphor biosynthesis
+PC315,PWY-7089,taxiphyllin bioactivation
+PC316,PWY18C3-14,superpathway of glandular trichomes produced diterpenoids (tobacco)
+PC317,PWYQT-4449,polyisoprenoid biosynthesis
+PC318,PWY-5362,sapienate biosynthesis
+PC319,PWY-6445,fenchol biosynthesis II
+PC31,PROUT-PWY,L-proline degradation I
+PC320,PWY-2561,medicarpin conjugates interconversion
+PC321,PWY-6333,acetaldehyde biosynthesis I
+PC322,PWY-6363,"D-myo-inositol (1,4,5)-trisphosphate degradation"
+PC323,PWY-7463,N-methylanthraniloyl-β-D-glucopyranose biosynthesis
+PC324,PWY-1722,"formate assimilation into 5,10-methylenetetrahydrofolate"
+PC325,PWY-6442,spermidine hydroxycinnamic acid conjugates biosynthesis
+PC326,PWY-6431,4-hydroxybenzoate biosynthesis IV (plants)
+PC327,PWY-6011,amygdalin and prunasin degradation
+PC328,PWY-6360,flavonol glucosylation I
+PC329,PWY-2002,isoflavonoid biosynthesis I
+PC32,PWY-6425,rotenoid biosynthesis II
+PC330,PWY-6132,lanosterol biosynthesis
+PC331,PWY-2464,(-)-maackiain biosynthesis
+PC332,PWY-5317,tropane alkaloids biosynthesis
+PC333,PWY-1581,plastoquinol-9 biosynthesis I
+PC334,PWY-6446,"benzoate biosynthesis III (CoA-dependent, non-β-oxidative)"
+PC335,PWY-7481,oryzalide A biosynthesis
+PC336,PWYQT-4466,superpathway of sucrose and starch metabolism I (non-photosynthetic tissue)
+PC337,PWY-66,GDP-L-fucose biosynthesis I (from GDP-D-mannose)
+PC338,ILEUDEG-PWY,L-isoleucine degradation I
+PC339,PWY-6406,salicylate biosynthesis I
+PC33,PWY18C3-22,methylsalicylate biosynthesis
+PC340,PWYQT-4477,indole glucosinolate activation (intact plant cell)
+PC341,PWY-7163,polymethylated kaempferol biosynthesis
+PC342,PWY-6314,plumbagin biosynthesis
+PC343,PWY-6054,dimethylsulfoniopropanoate biosynthesis I (Wollastonia)
+PC344,PWY-6902,chitin degradation II (Vibrio)
+PC345,PWY-4081,glutathione-peroxide redox reactions
+PC346,PWY-7507,chelerythrine biosynthesis
+PC347,PWY-4985,mimosine biosynthesis
+PC348,PWY-5411,abietic acid biosynthesis
+PC349,PWY-6055,dimethylsulfoniopropanoate biosynthesis II (Spartina)
+PC34,PWY-5943,β-carotene biosynthesis
+PC350,PWY18C3-16,acylsucrose biosynthesis (Solanum habrochaites)
+PC351,PWY-5413,neoabietic acid biosynthesis
+PC352,PWY-5412,levopimaric acid biosynthesis
+PC353,PWY-5175,lactucaxanthin biosynthesis
+PC354,PWY-7461,hydroxycinnamate sugar acid ester biosynthesis
+PC355,PWY-6243,bergamotene biosynthesis I
+PC356,PWY-7861,N-hydroxy-L-pipecolate biosynthesis
+PC357,PWY-7048,malate-oxaloacetate shuttle II
+PC358,PWY-1422,vitamin E biosynthesis (tocopherols)
+PC359,PWY-6699,oxalate biosynthesis
+PC35,PWY-7478,oryzalexin D and E biosynthesis
+PC360,PWY-5406,divinyl ether biosynthesis I
+PC361,PWY-6109,mangrove triterpenoid biosynthesis
+PC362,PWY-6631,tricetin methylation
+PC363,PWY-6441,spermine and spermidine degradation III
+PC364,PWY-7985,oxalate degradation VI
+PC365,PWY-7143,kaempferol gentiobioside biosynthesis
+PC366,PWY-922,mevalonate pathway I (eukaryotes and bacteria)
+PC367,PWY-4321,L-glutamate degradation IV
+PC368,PWY-7346,UDP-α-D-glucuronate biosynthesis (from UDP-glucose)
+PC369,PWY-6239,luteolin glycosides biosynthesis
+PC36,PWY-6320,phaselate biosynthesis
+PC370,PWY-7070,steviol biosynthesis
+PC371,MANNCAT-PWY,D-mannose degradation I
+PC372,PWY-2301,myo-inositol biosynthesis
+PC373,PWY-5119,acacetin biosynthesis
+PC374,HEME-BIOSYNTHESIS-II,heme b biosynthesis I (aerobic)
+PC375,PWY-6840,homoglutathione biosynthesis
+PC376,PWY-7444,luteolin triglucuronide biosynthesis
+PC377,PWY-1186,L-homomethionine biosynthesis
+PC378,PWY4FS-7,phosphatidylglycerol biosynthesis I
+PC379,PWY4FS-17,abscisic acid biosynthesis shunt
+PC37,PWY-5,canavanine biosynthesis
+PC380,PWY-6787,flavonoid biosynthesis (in equisetum)
+PC381,PWY-5710,capsaicin biosynthesis
+PC382,PWY-5992,thalianol and derivatives biosynthesis
+PC383,PWY-6552,"caffeine degradation I (main, plants)"
+PC384,PWY-2904,formononetin conjugates interconversion
+PC385,PWY-4961,β-pyrazole-1-ylalanine biosynthesis
+PC386,ARGDEGRAD-PWY,L-arginine degradation V (arginine deiminase pathway)
+PC387,PWY-5287,sanguinarine and macarpine biosynthesis
+PC388,PWY-7069,oleanolate biosynthesis
+PC389,PWY-6910,hydroxymethylpyrimidine salvage
+PC38,PWY18C3-23,guaiacol biosynthesis
+PC390,PWY-641,proanthocyanidins biosynthesis from flavanols
+PC391,PWY-6448,hordatine biosynthesis
+PC392,PWY-5697,allantoin degradation to ureidoglycolate I (urea producing)
+PC393,PWY-5291,canthaxanthin biosynthesis
+PC394,PWY-6235,hydroxyjasmonate sulfate biosynthesis
+PC395,PWY-4661,1D-myo-inositol hexakisphosphate biosynthesis III (Spirodela polyrrhiza)
+PC396,PWY-5667,CDP-diacylglycerol biosynthesis I
+PC397,PWY-5422,isopimaric acid biosynthesis
+PC398,PWY-5390,rutin biosynthesis
+PC399,PWY-1042,glycolysis IV
+PC39,PWYQT-4471,glucosinolate biosynthesis from dihomomethionine
+PC3,SERSYN-PWY,L-serine biosynthesis I
+PC400,PWY-4381,fatty acid biosynthesis initiation (type II)
+PC401,PWY-5040,theobromine biosynthesis II (via xanthine)
+PC402,PWY-7074,phenylethanol glycoconjugate biosynthesis
+PC403,LEUSYN-PWY,L-leucine biosynthesis
+PC404,PWY-5912,2'-deoxymugineic acid phytosiderophore biosynthesis
+PC405,PWY4FS-8,phosphatidylglycerol biosynthesis II
+PC406,PWY-7068,ursolate biosynthesis
+PC407,PWY-6066,IAA biosynthesis VII
+PC408,PWY-2467,(+)-pisatin biosynthesis
+PC409,PWY-5152,leucodelphinidin biosynthesis
+PC40,PWY-6014,vernolate biosynthesis I
+PC410,PWY-762,phospholipid desaturation
+PC411,PWYQT-4438,UDP-glucose biosynthesis (from sucrose)
+PC412,PWY-5708,ethiin metabolism
+PC413,PWY-6801,volatile esters biosynthesis (during fruit ripening)
+PC414,PWY-7095,"3,4-dihydroxymandelonitrile β-D-glucose biosynthesis"
+PC415,PWY-5036,gibberellin biosynthesis II (early C-3 hydroxylation)
+PC416,PWY-5001,"1,3,6,7-tetrahydroxyxanthone biosynthesis (from benzoyl-CoA)"
+PC417,PWY-5021,willardiine and isowillardiine biosynthesis
+PC418,PWY490-4,L-asparagine biosynthesis III (tRNA-dependent)
+PC419,PWY-841,superpathway of purine nucleotides de novo biosynthesis I
+PC41,PWY-7560,methylerythritol phosphate pathway II
+PC420,PWY-7182,linalool biosynthesis I
+PC421,PWY-5775,rotenoid biosynthesis I
+PC422,PWY-7149,superpathway of polymethylated quercetin/quercetagetin glucoside biosynthesis (Chrysosplenium)
+PC423,GLUTATHIONESYN-PWY,glutathione biosynthesis
+PC424,PWY-7680,carnosate bioynthesis
+PC425,PWY-5471,laudanine biosynthesis
+PC426,PWY-5874,heme degradation I
+PC427,PWY-8011,L-serine biosynthesis II
+PC428,PWY-43,putrescine biosynthesis II
+PC429,PWY-5338,galactosylcyclitol biosynthesis
+PC42,PWY-6458,benzoyl-CoA biosynthesis
+PC430,PWY-2762,glyceollin biosynthesis
+PC431,PWY-6137,copper transport II
+PC432,PWY-5686,UMP biosynthesis I
+PC433,PWY1F-FLAVSYN,flavonoid biosynthesis
+PC434,PWY18C3-15,acylsucrose biosynthesis (Solanum pennellii)
+PC435,PWY-7614,methiin metabolism
+PC436,PWY-5821,dalcochinin biosynthesis
+PC437,PWY-735,jasmonic acid biosynthesis
+PC438,PWY-2881,cytokinins 7-N-glucoside biosynthesis
+PC439,PWY-6068,indican biosynthesis
+PC43,PWY-5404,betaxanthin biosynthesis (via dopaxanthin)
+PC440,PWY-5989,stearate biosynthesis II (bacteria and plants)
+PC441,PWY-3781,aerobic respiration I (cytochrome c)
+PC442,PWY-6465,ω-hydroxylation of caprate and laurate
+PC443,PWY-4302,aerobic respiration III (alternative oxidase pathway)
+PC444,PWY-7252,luteolinidin 5-O-glucoside biosynthesis
+PC445,PWY-5326,sulfite oxidation IV (sulfite oxidase)
+PC446,PWYQT-4470,γ-glutamyl cycle (plant pathway)
+PC447,PWY-7392,taxadiene biosynthesis (engineered)
+PC448,PWY18C3-12,superpathway of acylsucrose biosynthesis (cultivated tomato)
+PC449,PWY-5048,rosmarinic acid biosynthesis I
+PC44,PWY-5949,Fe(II)-nicotianamine transport in phloem
+PC450,PWY-5414,palustric acid biosynthesis
+PC451,PWY-5071,superpathway of rosmarinic acid biosynthesis
+PC452,SUCSYN-PWY,sucrose biosynthesis I (from photosynthesis)
+PC453,PWY-6623,salicylate glucosides biosynthesis II
+PC454,PWY-5410,traumatin and (Z)-3-hexen-1-yl acetate biosynthesis
+PC455,PWY-6287,neurosporene biosynthesis
+PC456,PWY-5672,ginsenosides biosynthesis
+PC457,PWY-5107,phytol salvage pathway
+PC458,PWY-5773,gossypol biosynthesis
+PC459,PWY-5120,geranylgeranyl pyrophosphate biosynthesis
+PC45,PWY-5268,salvianin biosynthesis
+PC460,PWY-6234,superpathway of jasmonoyl-amino acid conjugates biosynthesis
+PC461,PWY-6549,nitrogen remobilization from senescing leaves
+PC462,GLUGLNSYN-PWY,L-glutamate biosynthesis IV
+PC463,PWY-7851,coenzyme A biosynthesis II (eukaryotic)
+PC464,ASPARAGINE-DEG1-PWY,L-asparagine degradation I
+PC465,PWY-6456,serinol biosynthesis
+PC466,PWY-6738,pinitol biosynthesis I
+PC467,PWY-7168,flavonol acylglucoside biosynthesis I-kaempferol derivatives
+PC468,PWY-5110,trigonelline biosynthesis
+PC469,DTDPRHAMSYN-PWY,dTDP-β-L-rhamnose biosynthesis
+PC46,PWY-7076,"3,5-dimethoxytoluene biosynthesis"
+PC470,PWY-5426,betaxanthin biosynthesis
+PC471,PWY-6401,hispidol and hispidol 4'-O-β-D-glucoside biosynthesis
+PC472,PWY-6367,D-myo-inositol-5-phosphate metabolism
+PC473,PWYQT-4427,sulfoquinovosyl diacylglycerol biosynthesis
+PC474,PWY-3461,L-tyrosine biosynthesis II
+PC475,PWY-6624,salicylate glucosides biosynthesis III
+PC476,PWY-5353,"arachidonate biosynthesis I (6-desaturase, lower eukaryotes)"
+PC477,PWY-6964,ammonia assimilation cycle II
+PC478,PWY-6326,camptothecin biosynthesis
+PC479,PWY-7105,olivetol biosynthesis
+PC47,PWY-2921,capsidiol biosynthesis
+PC480,PWY-6752,ortho-quinones biosynthesis
+PC481,PWY-6736,sulfur volatiles biosynthesis
+PC482,PWY-7679,anthocyanidin acylglucoside and acylsambubioside biosynthesis
+PC483,PWY-7039,"phosphatidate metabolism, as a signaling molecule"
+PC484,PWY-5342,ajugose biosynthesis I (galactinol-dependent)
+PC485,PWY-6806,carotenoid cleavage
+PC486,PWY-7184,pyrimidine deoxyribonucleotides de novo biosynthesis I
+PC487,PWY-6908,thiamine pyrophosphate biosynthesis IV (eukaryotes)
+PC488,PWY-6645,labdane-type diterpenes biosynthesis
+PC489,PWY-5409,divinyl ether biosynthesis II
+PC48,PWY-3941,β-alanine biosynthesis II
+PC490,PWY-5176,coumarin biosynthesis (via 2-coumarate)
+PC491,PWY-5751,phenylethanol biosynthesis
+PC492,PWY-5748,γ-coniciene and coniine biosynthesis
+PC493,OXIDATIVEPENT-PWY,pentose phosphate pathway (oxidative branch) I
+PC494,PWY-7053,docosahexaenoate biosynthesis I (lower eukaryotes)
+PC495,PWY-7134,rutin degradation (plants)
+PC496,PWY-4,UDP-α-D-galacturonate biosynthesis II (from D-galacturonate)
+PC497,PWY-5337,stachyose biosynthesis
+PC498,PWY-5859,eugenol and isoeugenol biosynthesis
+PC499,PWY-2345,genistein conjugates interconversion
+PC49,PWY-7854,crotonyl-CoA/ethylmalonyl-CoA/hydroxybutyryl-CoA cycle (engineered)
+PC4,PWY-5292,"vindoline, vindorosine and vinblastine biosynthesis"
+PC500,THRESYN-PWY,superpathway of L-threonine biosynthesis
+PC501,PWY-5846,colchicine biosynthesis
+PC502,PWY-7265,lampranthin biosynthesis
+PC503,PWY-5052,superpathway of gibberellin biosynthesis
+PC504,PWY-6013,crepenynate biosynthesis
+PC505,PWY-6763,salicortin biosynthesis
+PC506,PWY-6424,"26,27-dehydrozymosterol metabolism"
+PC507,PWY-5118,ponciretin biosynthesis
+PC508,PWY-7172,flavonol acylglucoside biosynthesis III-quercetin derivatives
+PC509,PWY-6361,"1D-myo-inositol hexakisphosphate biosynthesis I (from Ins(1,4,5)P3)"
+PC50,PWY-7057,cichoriin interconversion
+PC510,PWYIO2-5,phospholipases (Chlamydomonas)
+PC511,PWY-5115,GDP-L-galactose biosynthesis
+PC512,PWY18C3-8,monoacylsucrose biosynthesis (Solanum)
+PC513,PWY-7055,daphnetin modification
+PC514,PWY4FS-3,phosphatidylcholine biosynthesis III
+PC515,PWY-6120,L-tyrosine biosynthesis III
+PC516,PWY-6468,ω-hydroxylation of laurate
+PC517,PWY0-1182,trehalose degradation II (cytosolic)
+PC518,PWY-7682,arabidopyrone biosynthesis
+PC519,PWY-6457,cinnamoyl-CoA biosynthesis
+PC51,PWY-6935,seleno-amino acid detoxification and volatilization II
+PC520,PWY-6124,inosine-5'-phosphate biosynthesis II
+PC521,PWY-7398,coumarins biosynthesis (engineered)
+PC522,PWY-7138,noscapine biosynthesis
+PC523,PHOSLIPSYN2-PWY,superpathway of phospholipid biosynthesis II (plants)
+PC524,P401-PWY,cyanide degradation
+PC525,NONOXIPENT-PWY,pentose phosphate pathway (non-oxidative branch) I
+PC526,PWY-6002,lotaustralin degradation
+PC527,PWY-5461,betanidin degradation
+PC528,PWY-6069,indigo biosynthesis
+PC529,PWY-2161B-PMN,folate polyglutamylation II
+PC52,RIBOSYN2-PWY,flavin biosynthesis I (bacteria and plants)
+PC530,PWY-5068,chlorophyll cycle
+PC531,PWY-5703,urea degradation I
+PC532,PWY-6477,gibberellin inactivation II (methylation)
+PC533,PWY-5049,rosmarinic acid biosynthesis II
+PC534,PWY-2861,biochanin A conjugates interconversion
+PC535,PWY-6922,L-Nδ-acetylornithine biosynthesis
+PC536,PWY-5474,hydroxycinnamic acid tyramine amides biosynthesis
+PC537,GLYSYN-PWY,glycine biosynthesis I
+PC538,PWY-5349,esculetin biosynthesis
+PC539,PWY-7065,"2α,7β-dihydroxylation of taxusin"
+PC53,PWY-7117,"C4 photosynthetic carbon assimilation cycle, PEPCK type"
+PC540,PWY-5116,sakuranetin biosynthesis
+PC541,PWY-5793,maysin biosynthesis
+PC542,PWY-5907,homospermidine biosynthesis I
+PC543,PWY-695,abscisic acid biosynthesis
+PC544,PWY-6316,aromatic polyketides biosynthesis
+PC545,PWY-6697,oxalate degradation IV
+PC546,PWY-5044,purine nucleotides degradation I (plants)
+PC547,PWY-7229,superpathway of adenosine nucleotides de novo biosynthesis I
+PC548,PWY-5733,germacrene biosynthesis
+PC549,PWY-31,L-canavanine degradation I
+PC54,PWY-5147,oleate biosynthesis I (plants)
+PC550,PWY18C3-20,gentisate 5-O-β-D-xylopyranoside biosynthesis
+PC551,PWY-6917,vernolate biosynthesis III
+PC552,PWY-7634,vernolate biosynthesis II
+PC553,CYSTSYN-PWY,L-cysteine biosynthesis I
+PC554,PWY-5788,indole-3-acetate inactivation V
+PC555,PWY-3301,sinapate ester biosynthesis
+PC556,PWY-7224,purine deoxyribonucleosides salvage
+PC557,PWY-5705,allantoin degradation to glyoxylate III
+PC558,PWY-4203,volatile benzenoid biosynthesis I (ester formation)
+PC559,PWY-4101,D-sorbitol degradation I
+PC55,PWY-5284,shisonin biosynthesis
+PC560,PWY-5105,hesperitin glycoside biosynthesis
+PC561,PWY-5665,vanillin biosynthesis I
+PC562,PWY-5379,B series fagopyritols biosynthesis
+PC563,PWY4FS-6,phosphatidylethanolamine biosynthesis II
+PC564,PWY-5937,Fe(III)-phytosiderophore transport
+PC565,PWY-5339,chalcone 2'-O-glucoside biosynthesis
+PC566,PWY-5125,anthocyanin biosynthesis
+PC567,PWY-801,homocysteine and cysteine interconversion
+PC568,PWY0-1507,biotin biosynthesis from 8-amino-7-oxononanoate I
+PC569,PWY-5980,xylogalacturonan biosynthesis
+PC56,PWY-7173,quercetin triglucoside biosynthesis
+PC570,PWY-6619,adenine and adenosine salvage VI
+PC571,PWY-5690,TCA cycle II (plants and fungi)
+PC572,PWY18C3-13,cis-abienol biosynthesis
+PC573,PWY-6135,copper transport I
+PC574,PWY-5381,NAD salvage (plants)
+PC575,PWY3O-440,pyruvate fermentation to acetoin
+PC576,PWY-5822,trichloroethene degradation
+PC577,PWY18C3-10,triacylsucrose biosynthesis (Solanum)
+PC578,PWY-5122,geranyl pyrophosphate biosynthesis
+PC579,PWY-5687,pyrimidine ribonucleotides interconversion
+PC57,PWYIO2-6,"phosphatidate metabolism, as a signaling molecule (Chlamydomonas)"
+PC580,PWY-6595,superpathway of guanosine nucleotides degradation (plants)
+PC581,PWY-5479,6-methoxypodophyllotoxin biosynthesis
+PC582,PWY-6669,δ-guaiene biosynthesis
+PC583,PWY-7185,UTP and CTP dephosphorylation I
+PC584,PWY-1061,homogalacturonan biosynthesis
+PC585,PWY-6473,4-aminobutanoate degradation IV
+PC586,PWY-5473,hydroxycinnamic acid serotonin amides biosynthesis
+PC587,PWY-7325,salvigenin biosynthesis
+PC588,PWY-5319,coumarin metabolism (to melilotic acid)
+PC589,PWY-7487,(+)-secoisolariciresinol diglucoside biosynthesis
+PC58,CYANCAT-PWY,cyanate degradation
+PC590,PWY-5784,indole-3-acetate inactivation VIII
+PC591,PWY-7232,gibberellin biosynthesis V
+PC592,PWY66-423,"fructose 2,6-bisphosphate biosynthesis"
+PC593,PWY-6585,2-methylketone biosynthesis
+PC594,PWY-6118,glycerol-3-phosphate shuttle
+PC595,PWY-4002,L-asparagine degradation II
+PC596,PWY-7345,superpathway of anaerobic sucrose degradation
+PC597,PWY-5692,allantoin degradation to glyoxylate II
+PC598,PWY-5423,oleoresin monoterpene volatiles biosynthesis
+PC599,PWY-6199,quercetin sulfate biosynthesis
+PC59,PWY-7091,linustatin bioactivation
+PC5,PWY-5802,alizarin biosynthesis
+PC600,PWY-6039,chlorogenic acid biosynthesis I
+PC601,PWY-7196,superpathway of pyrimidine ribonucleosides salvage
+PC602,PWY-5097,L-lysine biosynthesis VI
+PC603,PWY-5756,saponin biosynthesis II
+PC604,PWY-1121,suberin monomers biosynthesis
+PC605,PWY-7075,phenylethyl acetate biosynthesis
+PC606,PWY-8043,ophthalmate biosynthesis
+PC607,PWYQT-4482,CDP-diacylglycerol biosynthesis IV
+PC608,PWY-6435,4-hydroxybenzoate biosynthesis III (plants)
+PC609,PWY-5400,amaranthin biosynthesis
+PC60,PWY-5307,gentiodelphin biosynthesis
+PC610,PWY-7156,superpathway of ergosterol biosynthesis II
+PC611,PWY-6930,phenolic malonylglucosides biosynthesis
+PC612,PWYIO2-3,carbon concentration mechanism (Chlamydomonas)
+PC613,PWY-63,UDP-β-L-arabinose biosynthesis I (from UDP-α-D-xylose)
+PC614,PWY-7211,superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis
+PC615,PWY-7213,wogonin metabolism
+PC616,CITRULLINE-DEG-PWY,L-citrulline degradation
+PC617,PWY-5424,superpathway of oleoresin turpentine biosynthesis
+PC618,PWY-5707,propanethial S-oxide biosynthesis
+PC619,PWY-2501,fatty acid α-oxidation I (plants)
+PC61,PWY-82,UDP-β-L-arabinose biosynthesis II (from β-L-arabinose)
+PC620,PWY-5416,superpathway of diterpene resin acids biosynthesis
+PC621,PWY-5350,thiosulfate disproportionation IV (rhodanese)
+PC622,PWY-321,cutin biosynthesis
+PC623,PWY-6577,farnesylcysteine salvage pathway
+PC624,PWY-5905,hypusine biosynthesis
+PC625,PWY-6717,"(1,4)-β-D-xylan degradation"
+PC626,PWYQT-94,superpathway of polyamine biosynthesis
+PC627,PWY-7197,pyrimidine deoxyribonucleotide phosphorylation
+PC628,PWY-7170,phytochromobilin biosynthesis
+PC629,PWY-842,starch degradation I
+PC62,PWY-6707,gallate biosynthesis
+PC630,PWY-7449,acylated cyanidin galactoside biosynthesis
+PC631,CHOLINE-BETAINE-ANA-PWY,choline degradation I
+PC632,PWY-6254,santalene biosynthesis I
+PC633,PWY0-1021,L-alanine biosynthesis III
+PC634,PWY-5865,heliannuol and heliespirone biosynthesis
+PC635,PWY-6936,seleno-amino acid biosynthesis (plants)
+PC636,PWY-5717,superpathway of formononetin derivative biosynthesis
+PC637,PWY-6794,adenosine 5'-phosphoramidate biosynthesis
+PC638,PWY-7238,sucrose biosynthesis II
+PC639,PWY-5194,siroheme biosynthesis
+PC63,NONMEVIPP-PWY,methylerythritol phosphate pathway I
+PC640,PWY-5368,dimorphecolate biosynthesis
+PC641,PWY-5780,hypericin biosynthesis
+PC642,PWY-7155,7-dehydroporiferasterol biosynthesis
+PC643,PWY-5377,α-amyrin biosynthesis
+PC644,PWY-2761,(-)-glycinol biosynthesis
+PC645,PWY-5669,phosphatidylserine and phosphatidylethanolamine biosynthesis I
+PC646,PWY-5063,phytyl pyrophosphate biosynthesis
+PC647,PWY0-1264,malonly-CoA biosynthesis via biotin-carboxyl carrier protein
+PC648,PWY-7129,quercetin glucoside biosynthesis (Allium)
+PC649,PWY-3181,L-tryptophan degradation VI (via tryptamine)
+PC64,PWY-7253,apigeninidin 5-O-glucoside biosynthesis
+PC650,PWY-6273,phosphatidylethanolamine biosynthesis III
+PC651,PWYQT-1,lysine degradation III
+PC652,PWY-5825,dalpatein and dalnigrein biosynthesis
+PC653,PWY-6539,(Z)-phenylmethanethial S-oxide biosynthesis
+PC654,PWY-5805,nonaprenyl pyrophosphate biosynthesis I
+PC655,URSIN-PWY,ureide biosynthesis
+PC656,PWY-5393,raspberry ketone biosynthesis
+PC657,PWY-5877,beta-carboline biosynthesis
+PC658,PWY-6494,gibberellin inactivation III (epoxidation)
+PC659,PWY-3462,L-phenylalanine biosynthesis II
+PC65,PWY-7632,hinokiresinol biosynthesis
+PC660,PWY-6762,salicylate glucosides biosynthesis IV
+PC661,PWY-5477,gallotannin biosynthesis
+PC662,PWY-561,superpathway of glyoxylate cycle and fatty acid degradation
+PC663,PWY-6164,3-dehydroquinate biosynthesis I
+PC664,PWYQT-4475,glucosinolate biosynthesis from hexahomomethionine
+PC665,PWY-1081,pectin degradation III
+PC666,PWY-4421,curcumin glucoside biosynthesis
+PC667,PWY-6673,caffeoylglucarate biosynthesis
+PC668,PWY-7227,adenosine deoxyribonucleotides de novo biosynthesis I
+PC669,PWY-6188,calmodulin regulated calcium transport
+PC66,PWY-6913,methylbutenol biosynthesis
+PC670,PWY-5765,"1,3,5-trimethoxybenzene biosynthesis"
+PC671,PWY-5997,α-linolenate biosynthesis I (plants and red algae)
+PC672,GLYOXYLATE-BYPASS,glyoxylate cycle
+PC673,PWY-7151,polymethylated quercetin glucoside biosynthesis II-quercetagetin series (Chrysosplenium)
+PC674,NADSYN-PWY,NAD de novo biosynthesis II (from tryptophan)
+PC675,PWY-5043,purine nucleosides salvage II (plant)
+PC676,PWY-6544,superpathway of C28 brassinosteroid biosynthesis
+PC677,PWY-5135,xanthohumol biosynthesis
+PC678,PWY-7140,myricetin gentiobioside biosynthesis
+PC679,PWY-7088,taxiphyllin biosynthesis
+PC67,PWY-6213,cadmium transport I
+PC680,PWY-5161,6'-deoxychalcone metabolism
+PC681,PWY-5310,superpathway of anthocyanin biosynthesis (from delphinidin 3-O-glucoside)
+PC682,PWY-5990,lotaustralin biosynthesis
+PC683,PWY-5397,crocetin biosynthesis
+PC684,PWY-6074,zymosterol biosynthesis
+PC685,PWY-5138,"fatty acid β-oxidation IV (unsaturated, even number)"
+PC686,PWY-981,salicylate biosynthesis III
+PC687,PWY-7497,3β-hydroxysesquiterpene lactone biosynthesis
+PC688,PWY-6802,salidroside biosynthesis
+PC689,PWY2OL-4,superpathway of linalool biosynthesis
+PC68,PWY-5946,α-carotene biosynthesis
+PC690,PWY-5270,morphine biosynthesis
+PC691,PWY-84,resveratrol biosynthesis
+PC692,PWY-7192,quercetin diglycoside biosynthesis (pollen-specific)
+PC693,PWYQT-4473,glucosinolate biosynthesis from tetrahomomethionine
+PC694,PWY-241,"C4 photosynthetic carbon assimilation cycle, NADP-ME type"
+PC695,PWY-5882,epoxypseudoisoeugenol-2-methylbutanoate biosynthesis
+PC696,PWY-5486,pyruvate fermentation to ethanol II
+PC697,PWY-6535,4-aminobutanoate degradation I
+PC698,PWY-7212,baicalein metabolism
+PC699,PWY-5434,"(3E)-4,8-dimethylnona-1,3,7-triene biosynthesis I"
+PC69,PWY-6035,"2,3-cis-flavanols biosynthesis"
+PC6,PWY-5388,N-glucosylnicotinate metabolism
+PC700,NAD-BIOSYNTHESIS-III,NAD biosynthesis from nicotinamide
+PC701,PWY-6012,acyl carrier protein metabolism
+PC702,PWY-7618,ricinoleate biosynthesis
+PC703,PWY-3481,superpathway of L-phenylalanine and L-tyrosine biosynthesis
+PC704,PWY-6337,dehydroscoulerine biosynthesis
+PC705,PWYQT-4474,glucosinolate biosynthesis from pentahomomethionine
+PC706,PWY-6176,superpathway of Allium flavor precursors
+PC707,PWY-83,monolignol glucosides biosynthesis
+PC708,PWY-6607,guanosine nucleotides degradation I
+PC709,PWY66-341,cholesterol biosynthesis I
+PC70,PWY18C3-6,superpathway of glycoalkaloid metabolism (Solanaceae)
+PC710,PWY-7897,flavonoid di-C-glucosylation
+PC711,TRIGLSYN-PWY,diacylglycerol and triacylglycerol biosynthesis
+PC712,PWY18C3-18,labdenediol and sclareol biosynthesis
+PC713,PWY-2055,superpathway of pterocarpan biosynthesis (via daidzein)
+PC714,PWY-5363,chrysin biosynthesis
+PC715,PWY-3061,menthol biosynthesis
+PC716,PWY-1961,indole-3-acetate inactivation I
+PC717,PWY-6258,patchoulol biosynthesis
+PC718,PWY-6739,pinitol biosynthesis II
+PC719,GLYSYN2-PWY,glycine biosynthesis
+PC71,PWY-7522,(R)-canadine biosynthesis
+PC720,PWY-7033,alkane biosynthesis II
+PC721,PWY-7221,guanosine ribonucleotides de novo biosynthesis
+PC722,PWY-7171,flavonol acylglucoside biosynthesis II-isorhamnetin derivatives
+PC723,PWY-5774,saponin biosynthesis IV
+PC724,PWY-7150,polymethylated quercetin glucoside biosynthesis I-quercetin series (Chrysosplenium)
+PC725,CAROTENOID-PWY,superpathway of carotenoid biosynthesis in plants
+PC726,PWY-7177,UTP and CTP dephosphorylation II
+PC727,PWY-5367,petroselinate biosynthesis
+PC728,PWY-2901,cytokinins 9-N-glucoside biosynthesis
+PC729,ARGININE-SYN4-PWY,L-ornithine biosynthesis II
+PC72,PWY-7640,abscisic acid degradation to neophaseic acid
+PC730,PWY-3385,choline biosynthesis I
+PC731,PWY18C3-11,tetraacylsucrose biosynthesis (Solanum)
+PC732,PWY-701,L-methionine degradation II
+PC733,PWY-6824,justicidin B biosynthesis
+PC734,PWYQT-4433,CA1P biosynthesis
+PC735,PWY-5464,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle"
+PC736,PWY-6704,L-ascorbate degradation IV
+PC737,PWY-5027,phylloquinol biosynthesis
+PC738,PWY-7391,isoprene biosynthesis II (engineered)
+PC739,PWY-5868,simplecoumarins biosynthesis
+PC73,PWY-5968,cinnamate esters biosynthesis
+PC740,PWY-7029,terminal olefins biosynthesis II
+PC741,PWY-1187,glucosinolate biosynthesis from homomethionine
+PC742,PWY-6475,trans-lycopene biosynthesis II (oxygenic phototrophs and green sulfur bacteria)
+PC743,HOMOSER-THRESYN-PWY,L-threonine biosynthesis
+PC744,PWY1F-353,glycine betaine biosynthesis III (plants)
+PC745,PWY-7749,(-)-4'-demethyl-epipodophyllotoxin biosynthesis
+PC746,PWY-6147,6-hydroxymethyl-dihydropterin pyrophosphate biosynthesis I
+PC747,ARGSYN-PWY,L-arginine biosynthesis I (via L-ornithine)
+PC748,LYSINE-DEG2-PWY,lysine degradation II
+PC749,PWY-6554,"1D-myo-inositol hexakisphosphate biosynthesis V (from Ins(1,3,4)P3)"
+PC74,PWY-7256,cyanidin diglucoside biosynthesis (acyl-glucose dependent)
+PC750,PWY-5053,superpathway of gibberellin GA₁₂ biosynthesis
+PC751,PWY-5469,sesamin biosynthesis
+PC752,PWY-8028,cycloartenol biosynthesis
+PC753,PWY-5060,luteolin biosynthesis
+PC754,PWY66-162,ethanol degradation IV
+PC755,PWY-3022,linamarin biosynthesis
+PC756,PWY-6963,ammonia assimilation cycle I
+PC757,PWY-5475,pentagalloylglucose biosynthesis
+PC758,PWY-699,brassinolide biosynthesis I
+PC759,PWY-1822,indole-3-acetate activation I
+PC75,PWY-5361,(5Z)-icosenoate biosynthesis
+PC760,PWY-2083,isoflavonoid biosynthesis II
+PC761,PWY-6432,curcuminoid biosynthesis
+PC762,PWY-7102,bisabolene biosynthesis (engineered)
+PC763,PWY-7498,phenylpropanoids methylation (ice plant)
+PC764,PWY-7343,UDP-α-D-glucose biosynthesis
+PC765,PWY-6527,stachyose degradation
+PC766,PWY-7764,chlorophyll a biosynthesis III
+PC767,PWY-5188,tetrapyrrole biosynthesis I (from glutamate)
+PC768,PWY-5425,oleoresin sesquiterpene volatiles biosynthesis
+PC769,PWY-5928,(4R)-carvone biosynthesis
+PC76,PWY-5380,A series fagopyritols biosynthesis
+PC770,PWY0-501,lipoate biosynthesis and incorporation I
+PC771,PWY-6786,detoxification of reactive carbonyls in chloroplasts
+PC772,PWY-7141,(3S)-linalool biosynthesis
+PC773,PWY-6710,poly-hydroxy fatty acids biosynthesis
+PC774,PWY-6515,phloridzin biosynthesis
+PC775,PWY-6271,eudesmol biosynthesis
+PC776,GLUTAMATE-SYN2-PWY,L-glutamate biosynthesis II
+PC777,PWY-5725,farnesene biosynthesis
+PC778,PWY-7260,delphinidin diglucoside biosynthesis (acyl-glucose dependent)
+PC779,PWY-7739,aucuparin biosynthesis
+PC77,GLYCLEAV-PWY,glycine cleavage
+PC780,PWY-5468,lupanine biosynthesis
+PC781,PWY-4702,phytate degradation I
+PC782,PWY-6302,dihydroconiferyl alcohol biosynthesis
+PC783,PWY-8076,8-O-methylated benzoxazinoid glucoside biosynthesis
+PC784,PWY-3801,sucrose degradation II (sucrose synthase)
+PC785,PWY-7344,UDP-α-D-galactose biosynthesis
+PC786,BRANCHED-CHAIN-AA-SYN-PWY,superpathway of branched chain amino acid biosynthesis
+PC787,PWY-6556,pyrimidine ribonucleosides salvage II
+PC788,UDPNACETYLGALSYN-PWY,UDP-N-acetyl-D-glucosamine biosynthesis II
+PC789,PWY-46,putrescine biosynthesis III
+PC78,PWY-7432,"L-phenylalanine biosynthesis III (cytosolic, plants)"
+PC790,PWY-5467,gramine biosynthesis
+PC791,PWY4FS-11,"L-ascorbate biosynthesis II (plants, L-gulose pathway)"
+PC792,PWY-6053,dimethylsulfoniopropanoate biosynthesis III (algae and phytoplankton)
+PC793,PWY-6502,8-oxo-(d)GTP detoxification I
+PC794,ALANINE-DEG3-PWY,L-alanine degradation III
+PC795,PWY-5698,allantoin degradation to ureidoglycolate II (ammonia producing)
+PC796,PWY-5829,geraniol and geranial biosynthesis
+PC797,ILEUSYN-PWY,L-isoleucine biosynthesis I (from threonine)
+PC798,GLUTORN-PWY,L-ornithine biosynthesis I
+PC799,PWY-6325,echinatin biosynthesis
+PC79,ARG-PRO-PWY,L-arginine degradation VI (arginase 2 pathway)
+PC7,PWYQT-4472,glucosinolate biosynthesis from trihomomethionine
+PC800,PWYIO2-1,glycerolipid acyl chain desaturation (Chlamydomonas)
+PC801,PWY3O-450,phosphatidylcholine biosynthesis I
+PC802,PWY-5670,epoxysqualene biosynthesis
+PC803,PWY-2701,maackiain conjugates interconversion
+PC804,PWY-6440,spermine and spermidine degradation II
+PC805,PWY-5947,lutein biosynthesis
+PC806,HISTSYN-PWY,L-histidine biosynthesis
+PC807,PWY-5466,matairesinol biosynthesis
+PC808,PWY-6909,thiazole component of thiamine pyrophosphate biosynthesis III
+PC809,PWY0-162,superpathway of pyrimidine ribonucleotides de novo biosynthesis
+PC80,PWY-7943,lycopadiene biosynthesis
+PC810,PWY-5942,trans-lycopene biosynthesis I
+PC811,PWY-6859,all-trans-farnesol biosynthesis
+PC812,PWY-6030,serotonin and melatonin biosynthesis I
+PC813,PWY0-1535,D-serine degradation
+PC814,PWY-7139,sesaminol glucoside biosynthesis
+PC815,PWY-5998,γ-linolenate biosynthesis I (plants)
+PC816,PWY-5478,superpathway of hydrolyzable tannin biosynthesis
+PC817,PWY-6605,adenine and adenosine salvage II
+PC818,PWY-3097,superpathway of isoflavonoids (via naringenin)
+PC819,PWY-7214,baicalein degradation (hydrogen peroxide detoxification)
+PC81,PWY-5925,hydroxylated mugineic acid phytosiderophore biosynthesis
+PC820,PWY-7995,tricin biosynthesis
+PC821,PWY-5035,gibberellin biosynthesis III (early C-13 hydroxylation)
+PC822,PWY-6890,4-amino-2-methyl-5-diphosphomethylpyrimidine biosynthesis I
+PC823,PWY-4801,aloesone and aloesin biosynthesis
+PC824,PWY-5375,α-eleostearate biosynthesis
+PC825,PWY-5002,tetrahydroxyxanthone biosynthesis (from 3-hydroxybenzoate)
+PC826,PWY-7066,glycyrrhetinate biosynthesis
+PC827,PWY-5480,pyruvate fermentation to ethanol I
+PC828,PWY-7859,jasmonoyl-L-isoleucine inactivation
+PC829,PWY-2582,brassinolide biosynthesis II
+PC82,PWY-7363,papaverine biosynthesis
+PC830,PWY-361,monolignol biosynthesis
+PC831,PWY-6449,fenchone biosynthesis
+PC832,PWY-7731,superpathway of photosynthetic hydrogen production
+PC833,PWY-6323,benzoylanthranilate biosynthesis
+PC834,PLPSAL-PWY,pyridoxal 5'-phosphate salvage I
+PC835,PWY-7629,yatein biosynthesis II
+PC836,PWY-5079,L-phenylalanine degradation III
+PC837,PWY-5113,UDP-D-apiose biosynthesis (from UDP-D-glucuronate)
+PC838,PWY-5815,rubber biosynthesis
+PC839,PWY4LZ-283,Inorganic Nitrogen Assimilation
+PC83,FASYN-ELONG-PWY,fatty acid elongation--saturated
+PC840,PWY-7477,momilactone A biosynthesis
+PC841,PWY-5695,inosine 5'-phosphate degradation
+PC842,PWY-6745,phytochelatins biosynthesis
+PC843,PWY-7633,calycosin 7-O-glucoside biosynthesis
+PC844,PWY-1782,superpathway of indole-3-acetate conjugate biosynthesis
+PC845,PWY-8031,epiberberine biosynthesis
+PC846,PWY-5871,ubiquinol-9 biosynthesis (late decarboxylation)
+PC847,PWY-6237,nucleobase ascorbate transport I
+PC848,PWY-6684,aromatic glucosinolate activation
+PC849,PWY-7189,pinocembrin C-glucosylation
+PC84,PWY-6413,ginsenoside degradation III
+PC850,PWY-3821,D-galactose detoxification
+PC851,PWY-5843,cocaine biosynthesis
+PC852,PWY-6602,naringenin C-glucosylation
+PC853,PWY-6330,acetaldehyde biosynthesis II
+PC854,PWY-5800,xylan biosynthesis
+PC855,PWY-6098,diploterol biosynthesis
+PC856,PWY-5408,9-lipoxygenase and 9-hydroperoxide lyase pathway
+PC857,PWY-5481,pyruvate fermentation to (S)-lactate
+PC858,PWY-7092,neolinustatin bioactivation
+PC859,PWY-6960,L-ascorbate degradation III
+PC85,ASPARTATESYN-PWY,L-aspartate biosynthesis
+PC860,PWY-5041,S-adenosyl-L-methionine salvage II
+PC861,PWY-5653,NAD biosynthesis from 2-amino-3-carboxymuconate semialdehyde
+PC862,PWY-6268,adenosylcobalamin salvage from cobalamin
+PC863,ASPARAGINE-BIOSYNTHESIS,L-asparagine biosynthesis I
+PC864,PWY-5086,chlorophyll a biosynthesis I
+PC865,PWY-3221,dTDP-L-rhamnose biosynthesis II
+PC866,PWY-6438,phenylphenalenone biosynthesis
+PC867,PWY-6724,starch degradation II
+PC868,PWY-601,glucosinolate biosynthesis from tryptophan
+PC869,PWY-6803,phosphatidylcholine acyl editing
+PC86,PWY-5921,glutaminyl-tRNAglⁿ biosynthesis via transamidation
+PC870,PWY-5080,very long chain fatty acid biosynthesis I
+PC871,PWY-5313,superpathway of anthocyanin biosynthesis (from cyanidin and cyanidin 3-O-glucoside)
+PC872,ILE-VAL-PWY,superpathway of isoleucine and valine biosynthesis
+PC873,PWY-5957,L-nicotianamine biosynthesis
+PC874,PWY-7188,orientin and isoorientin biosynthesis I
+PC875,PWY-7161,polymethylated quercetin biosynthesis
+PC876,PWY-6520,nonaprenyl pyrophosphate biosynthesis II
+PC877,PWY-6332,coumestrol biosynthesis
+PC878,PWY-6266,superpathway of flavones and derivatives biosynthesis
+PC879,PWY-7064,3-amino-3-phenylpropanoyl-CoA biosynthesis
+PC87,PWY-6524,lychnose and isolychnose biosynthesis
+PC880,PWY-5971,palmitate biosynthesis II (type II fatty acid synthase)
+PC881,PWY-6691,plaunotol biosynthesis
+PC882,PWY-2961,sesquiterpenoid phytoalexins biosynthesis
+PC883,PANTO-PWY,phosphopantothenate biosynthesis I
+PC884,PWY-7154,ergosterol biosynthesis II
+PC885,PWY-6227,purine uptake
+PC886,PWY-6932,selenate reduction
+PC887,CALVIN-PWY,Calvin-Benson-Bassham cycle
+PC888,PWY-5759,saponin biosynthesis III
+PC889,PWY-7458,violdelphin biosynthesis
+PC88,PWY-6437,fenchol biosynthesis I
+PC890,PWY-6820,diphyllin biosynthesis
+PC891,PWY-7186,superpathway of scopolin and esculin biosynthesis
+PC892,PWY-5271,abscisic acid degradation to phaseic acid
+PC893,PWY-6433,hydroxylated fatty acid biosynthesis (plants)
+PC894,POLYAMINSYN3-PWY,superpathway of polyamine biosynthesis II
+PC895,PWY-5701,shikonin biosynthesis
+PC896,PWY-5140,cannabinoid biosynthesis
+PC897,PWY-5348,kaempferol triglucoside biosynthesis
+PC898,PWY4LZ-81,Organic Nitrogen Assimilation
+PC899,PWY-7120,esterified suberin biosynthesis
+PC89,PWY0-662,PRPP biosynthesis
+PC8,PWY-6429,ricinoleate biosynthesis
+PC900,PWY-4201,volatile cinnamoic ester biosynthesis
+PC901,PENTOSE-P-PWY,pentose phosphate pathway
+PC902,PWY-7160,polymethylated myricetin biosynthesis (tomato)
+PC903,PWY-5143,long-chain fatty acid activation
+PC904,PWY-7484,"phytocassanes biosynthesis, shared reactions"
+PC905,PWY-5121,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP)
+PC906,PWY-5374,punicate biosynthesis
+PC907,PWY-3561,choline biosynthesis III
+PC908,PWY-5813,bornyl pyrophosphate biosynthesis
+PC909,PWY-5398,crocetin esters biosynthesis
+PC90,PWY-2902,cytokinin-O-glucosides biosynthesis
+PC910,LIPASYN-PWY,phospholipases
+PC911,PWY-4562,"lipid-dependent phytate biosynthesis II (via Ins(1,3,4)P₃)"
+PC912,PWY-4161,superpathway of benzoxazinoid glucosides biosynthesis
+PC913,PWY1F-823,leucopelargonidin and leucocyanidin biosynthesis
+PC914,PWY-6040,chlorogenic acid biosynthesis II
+PC915,PWY-7261,anthocyanidin 3-malylglucoside biosynthesis (acyl-glucose dependent)
+PC916,PWY-7824,prunasin and amygdalin biosynthesis
+PC917,PWY-5391,syringetin biosynthesis
+PC918,PWY-6121,5-aminoimidazole ribonucleotide biosynthesis I
+PC919,PWY-6606,guanosine nucleotides degradation II
+PC91,PWY-5441,S-methyl-L-methionine cycle
+PC920,PWY-6317,D-galactose degradation I (Leloir pathway)
+PC921,PWY-3742,tetrahydrofolate biosynthesis II
+PC922,PWY-6949,DIBOA-glucoside biosynthesis
+PC923,PWY-3121,linamarin degradation
+PC924,PWY-4762,superpathway of choline biosynthesis
+PC925,PWY-7748,yatein biosynthesis I
+PC926,PWY-7026,terminal olefins biosynthesis I
+PC927,PWY-5723,Rubisco shunt
+PC928,PWY-7101,5-deoxystrigol biosynthesis
+PC929,PWY-7270,L-methionine salvage cycle II (plants)
+PC92,PWY-6823,molybdopterin biosynthesis
+PC930,PWY-5867,t-anethole biosynthesis
+PC931,PWY-112,lupeol biosynthesis
+PC932,PWY-7443,(4S)-carvone biosynthesis
+PC933,ALACAT2-PWY,L-alanine degradation II (to D-lactate)
+PC934,PWY0-461,L-lysine degradation I
+PC935,PWY-6814,chitin degradation III (carnivorous plants)
+PC936,PWY-7056,daphnin interconversion
+PC937,PWY-4021,β-alanine betaine biosynthesis
+PC938,GLYCOLYSIS,glycolysis I (from glucose 6-phosphate)
+PC939,PWY-702,L-methionine biosynthesis II
+PC93,SAM-PWY,S-adenosyl-L-methionine biosynthesis
+PC940,PPGPPMET-PWY,ppGpp metabolism
+PC941,PWY-5826,hypoglycin biosynthesis
+PC942,PWY-6219,indole-3-acetate inactivation VIII
+PC943,PWY-3901,berberine biosynthesis
+PC944,LEU-DEG2-PWY,L-leucine degradation I
+PC945,PWY-5407,9-lipoxygenase and 9-allene oxide synthase pathway
+PC946,GALACTMETAB-PWY,UDP-galactose biosynthesis (salvage pathway from galactose using UDP-glucose)
+PC947,GLUCONEO-PWY,gluconeogenesis I
+PC948,PWY-7528,L-methionine salvage cycle I (bacteria and plants)
+PC949,PWY-6444,"benzoate biosynthesis II (CoA-independent, non-β-oxidative)"
+PC94,PWY18C3-1,"cholesterol biosynthesis (plants, early side-chain reductase)"
+PC950,PWY-5156,superpathway of fatty acid biosynthesis II (plant)
+PC951,P165-PWY,superpathway of purines degradation in plants
+PC952,PWY-862,fructan degradation
+PC953,PWY-5403,betaxanthin biosynthesis (via dopamine)
+PC954,PWY4LZ-257,superpathway of fermentation (Chlamydomonas reinhardtii)
+PC955,PWY-2463,(-)-medicarpin biosynthesis
+PC956,PWY-6596,adenosine nucleotides degradation I
+PC957,PWY-5666,α-solanine/α-chaconine biosynthesis
+PC958,PWY-5745,costunolide biosynthesis I
+PC959,PWY-7495,gossypetin metabolism
+PC95,PWY-6297,tuberonate glucoside biosynthesis
+PC960,PWY-5366,palmitoleate biosynthesis II (plants and bacteria)
+PC961,PWY-7164,chlorophyll a degradation III
+PC962,PWY18C3-17,superpathway of acylsucrose biosynthesis (wild tomato)
+PC963,PWY-7191,kaempferol diglycoside biosynthesis (pollen-specific)
+PC964,PWY-7475,des-methyl avenacin A-1 biosynthesis
+PC965,ETOH-ACETYLCOA-ANA-PWY,ethanol degradation I
+PC966,PWY-5811,indole-3-acetate inactivation VII
+PC967,PWY-7393,β-carotene biosynthesis (engineered)
+PC968,PWY18C3-3,α-tomatine biosynthesis
+PC969,PWY-5139,pelargonidin conjugates biosynthesis
+PC96,PWY-2,putrescine degradation IV
+PC970,PWY-2841,cytokinins degradation
+PC971,PWY-6451,3-carene biosynthesis
+PC972,GLUT-REDOX-PWY,glutathione-glutaredoxin redox reactions
+PC973,PWY-6436,perillyl aldehyde biosynthesis
+PC974,PWY-7450,anthocyanidin modification (Arabidopsis)
+PC975,PWY18C3-2,solasodine and soladulcidine biosynthesis
+PC976,PWY-6281,L-selenocysteine biosynthesis II (archaea and eukaryotes)
+PC977,PWY-4765,superpathway of lipid-dependent phytate biosynthesis
+PC978,PWY-5343,ajugose biosynthesis II (galactinol-independent)
+PC979,PWY-5958,acridone alkaloid biosynthesis
+PC97,PWY-7643,coniferyl alcohol 9-methyl ether biosynthesis
+PC980,PWY-5809,robustaquinone biosynthesis
+PC981,PWY-6618,guanine and guanosine salvage III
+PC982,PWY-6027,capsiconiate biosynthesis
+PC983,PWY18C3-24,methylsalicylate degradation
+PC984,PWY-5973,cis-vaccenate biosynthesis
+PC985,PYRUVDEHYD-PWY,pyruvate decarboxylation to acetyl CoA I
+PC986,PWY-3041,monoterpene biosynthesis
+PC987,PWY-5129,sphingolipid biosynthesis (plants)
+PC988,PWY-8030,coptisine biosynthesis
+PC989,PWY-5660,paclitaxel biosynthesis
+PC98,PWY-6095,"dammara-20,24-diene biosynthesis"
+PC990,PWY-6443,"benzoate biosynthesis I (CoA-dependent, β-oxidative)"
+PC991,PWY-7114,tea aroma glycosidic precursor bioactivation
+PC992,PWY-6294,selinene biosynthesis
+PC993,PWY-6575,juvenile hormone III biosynthesis I
+PC994,VALSYN-PWY,L-valine biosynthesis
+PC995,PWY-7636,astaxanthin biosynthesis (flowering plants)
+PC996,PWY-7464,"cyanidin 3,7-diglucoside polyacylation biosynthesis"
+PC997,PWY-8027,parkeol biosynthesis
+PC998,PWY-5168,ferulate and sinapate biosynthesis
+PC999,PWY-7093,vicianin bioactivation
+PC99,PWYQT-4429,CO₂ fixation into oxaloacetate (anaplerotic)
+PC9,PWY-5094,naringenin glycoside biosynthesis
+RC1000,CYSTEINE-AMINOTRANSFERASE-RXN,CYSTEINE-AMINOTRANSFERASE-RXN
+RC1001,RXN-4208,RXN-4208
+RC1002,RXN0-5267,RXN0-5267
+RC1003,RXN-2207,RXN-2207
+RC1004,RXN-7669,RXN-7669
+RC1005,RXN-6547,RXN-6547
+RC1006,1.14.99.37-RXN,1.14.99.37-RXN
+RC1007,RXN-11737,RXN-11737
+RC1008,4-NITROPHENYLPHOSPHATASE-RXN,4-NITROPHENYLPHOSPHATASE-RXN
+RC1009,RXNQT-4384,RXNQT-4384
+RC100,RXN-23332,RXN-23332
+RC1010,RXN-8918,RXN-8918
+RC1011,RXN-7183,RXN-7183
+RC1012,RXN-12087,RXN-12087
+RC1013,RXN-14660,RXN-14660
+RC1014,RXN-11369,RXN-11369
+RC1015,3.5.1.60-RXN,3.5.1.60-RXN
+RC1016,RXN-18896,RXN-18896
+RC1017,RXN-14185,RXN-14185
+RC1018,4.3.1.17-RXN,4.3.1.17-RXN
+RC1019,1.1.1.170-RXN,1.1.1.170-RXN
+RC101,ADENYLYLSULFATASE-RXN,ADENYLYLSULFATASE-RXN
+RC1020,RXN66-317,"4&alpha;-formyl-5&alpha;-cholesta-8,24-dien-3&beta;-ol 4-hydroxylase"
+RC1021,RXN-8571,RXN-8571
+RC1022,RXN-12410,RXN-12410
+RC1023,GALACTOLIPASE-RXN,GALACTOLIPASE-RXN
+RC1024,RXN-4224,RXN-4224
+RC1025,RXN-14199,RXN-14199
+RC1026,RXN66-315,4&alpha;-methyl-zymosterol 4-hydroxylase
+RC1027,FMN-RED-RXN,FMN-RED-RXN
+RC1028,TRANS-HEXAPRENYLTRANSTRANSFERASE-RXN,TRANS-HEXAPRENYLTRANSTRANSFERASE-RXN
+RC1029,RXN-14213,RXN-14213
+RC102,RXN-12567,RXN-12567
+RC1030,RXN-10454,RXN-10454
+RC1031,3.2.1.141-RXN,3.2.1.141-RXN
+RC1032,RXN-19744,RXN-19744
+RC1033,RXN-18731,RXN-18731
+RC1034,RXN1ZN3-10,RXN1ZN3-10
+RC1035,RXN-12613,RXN-12613
+RC1036,RXN-9924,RXN-9924
+RC1037,3.1.3.67-RXN,3.1.3.67-RXN
+RC1038,RXN-18617,RXN-18617
+RC1039,RXN-20884,RXN-20884
+RC103,RXN-12990,RXN-12990
+RC1040,RXN-18897,RXN-18897
+RC1041,RXN-11676,RXN-11676
+RC1042,RXN-18783,RXN-18783
+RC1043,RXN-11546,RXN-11546
+RC1044,RXN-21004,RXN-21004
+RC1045,RXN-2122,RXN-2122
+RC1046,RXN-2203,RXN-2203
+RC1047,RXN-4318,RXN-4318
+RC1048,RXN-15137,RXN-15137
+RC1049,TRANS-RXN-185,TRANS-RXN-185
+RC104,RXN-16475,RXN-16475
+RC1050,RXN-14218,RXN-14218
+RC1051,ACYLACPSYNTH-RXN,ACYLACPSYNTH-RXN
+RC1052,HYDROPEROXIDE-DEHYDRATASE-RXN,"(9Z,11E,14Z)-(13S)-hydroperoxyoctadeca-9,11,14-trienoate 12,13-hydro-lyase"
+RC1053,RXN-4343,RXN-4343
+RC1054,RXN-11668,RXN-11668
+RC1055,ACP-S-ACETYLTRANSFER-RXN,ACP-S-ACETYLTRANSFER-RXN
+RC1056,RXN-22406,RXN-22406
+RC1057,RXN0-1382,RXN0-1382
+RC1058,RXN-23292,RXN-23292
+RC1059,RXN-7680,RXN-7680
+RC105,RXN-15129,RXN-15129
+RC1060,2.6.1.41-RXN,2.6.1.41-RXN
+RC1061,RXN-14510,RXN-14510
+RC1062,RXN-1441,RXN-1441
+RC1063,RXN-18165,RXN-18165
+RC1064,RXN-7708,methionine--phenylpyruvate transaminase
+RC1065,RXN-11931,RXN-11931
+RC1066,RXNQT-4375,RXNQT-4375
+RC1067,RXN-13016,RXN-13016
+RC1068,RXN2GG-5264,glucosyltransferase
+RC1069,RXN4FS-29,RXN4FS-29
+RC106,RXN-14503,RXN-14503
+RC1070,RXN-8682,RXN-8682
+RC1071,RXN-16998,RXN-16998
+RC1072,RXN-10787,RXN-10787
+RC1073,RXN-12242,RXN-12242
+RC1074,RXN-13543,phenylethyl acetate esterase
+RC1075,RXNQT-4170,RXNQT-4170
+RC1076,RXN-13403,RXN-13403
+RC1077,RXN-18356,RXN-18356
+RC1078,RXN-18158,RXN-18158
+RC1079,RXN-8349,RXN-8349
+RC107,1.3.7.5-RXN,1.3.7.5-RXN
+RC1080,RXN-14187,RXN-14187
+RC1081,PROSTAGLANDIN-E-SYNTHASE-RXN,PROSTAGLANDIN-E-SYNTHASE-RXN
+RC1082,RXN-9089,RXN-9089
+RC1083,25-DIAMINOVALERATE-AMINOTRANSFERASE-RXN,25-DIAMINOVALERATE-AMINOTRANSFERASE-RXN
+RC1084,RXN-18392,RXN-18392
+RC1085,RXN-11544,RXN-11544
+RC1086,RXN-13025,RXN-13025
+RC1087,RXN-11235,RXN-11235
+RC1088,RXN-13495,RXN-13495
+RC1089,RXN-8200,RXN-8200
+RC108,RXN-20459,RXN-20459
+RC1090,RXN-18161,RXN-18161
+RC1091,RXN-8094,RXN-8094
+RC1092,ADENPHOSPHOR-RXN,ADENPHOSPHOR-RXN
+RC1093,RXN-6841,RXN-6841
+RC1094,RXN-7878,RXN-7878
+RC1095,3-NUCLEOTID-RXN,3-NUCLEOTID-RXN
+RC1096,RXN-13004,RXN-13004
+RC1097,RXN-1061,RXN-1061
+RC1098,RXN0-3543,RXN0-3543
+RC1099,RXN-8315,RXN-8315
+RC109,RXN-8336,RXN-8336
+RC10,RXN-14090,RXN-14090
+RC1100,RXN4LZ-39,RXN4LZ-39
+RC1101,RXN-8544,RXN-8544
+RC1102,RXN-13197,RXN-13197
+RC1103,UMPKI-RXN,UMPKI-RXN
+RC1104,ALPHA-AMYL-RXN,ALPHA-AMYL-RXN
+RC1105,RXN-11233,RXN-11233
+RC1106,3.5.1.52-RXN,3.5.1.52-RXN
+RC1107,THYMIDINE-TRIPHOSPHATASE-RXN,THYMIDINE-TRIPHOSPHATASE-RXN
+RC1108,RXN-12753,RXN-12753
+RC1109,RXN-22002,RXN-22002
+RC110,RXN-8861,RXN-8861
+RC1110,RXN-12185,RXN-12185
+RC1111,RXN-7693,RXN-7693
+RC1112,RXN-14904,RXN-14904
+RC1113,RXN4KF-52,RXN4KF-52
+RC1114,TRANS-RXN-218,TRANS-RXN-218
+RC1115,EPOXIDE-HYDROLASE-RXN,Epoxide hydrolase
+RC1116,RXN-10435,RXN-10435
+RC1117,RXN-17753,RXN-17753
+RC1118,RXN-4423,RXN-4423
+RC1119,RXN-18966,RXN-18966
+RC111,GAPDHSYNEC-RXN,GAPDHSYNEC-RXN
+RC1120,RXN3O-4157,RXN3O-4157
+RC1121,RXN-1883,RXN-1883
+RC1122,RXN-7282,RXN-7282
+RC1123,RXN-8417,RXN-8417
+RC1124,RXN-11670,RXN-11670
+RC1125,RXN-13196,RXN-13196
+RC1126,RXN18C3-113,RXN18C3-113
+RC1127,RXN-8071,RXN-8071
+RC1128,RXN2PN3-45,RXN2PN3-45
+RC1129,RXN-14208,RXN-14208
+RC112,RXN-14332,RXN-14332
+RC1130,RXN-18702,RXN-18702
+RC1131,RXN-13459,RXN-13459
+RC1132,RXN-11811,RXN-11811
+RC1133,RXN-12064,indol-3-ylacetaldoxime isomerase
+RC1134,RXN-20155,RXN-20155
+RC1135,RXN4FS-24,RXN4FS-24
+RC1136,RXN-22729,RXN-22729
+RC1137,RXN-18160,RXN-18160
+RC1138,1.14.13.76-RXN,1.14.13.76-RXN
+RC1139,RXN0-5184,RXN0-5184
+RC113,RXNQT-4394,RXNQT-4394
+RC1140,CHLOROPHYLLASE-RXN,CHLOROPHYLLASE-RXN
+RC1141,RXN-17757,RXN-17757
+RC1142,INOSINEKIN-RXN,INOSINEKIN-RXN
+RC1143,RXN-14126,RXN-14126
+RC1144,RXN-18895,RXN-18895
+RC1145,1.2.1.27-RXN,1.2.1.27-RXN
+RC1146,RXN-14290,RXN-14290
+RC1147,RXN-22285,RXN-22285
+RC1148,RXN18C3-111,RXN18C3-111
+RC1149,RXNQT-4371,RXNQT-4371
+RC114,RXN-7022,RXN-7022
+RC1150,RXN0-7188,RXN0-7188
+RC1151,RXN-13955,RXN-13955
+RC1152,RXN0-5181,RXN0-5181
+RC1153,RXN-11173,RXN-11173
+RC1154,RXN-10868,RXN-10868
+RC1155,FAD-RED-RXN,FAD-RED-RXN
+RC1156,2.7.7.64-RXN,2.7.7.64-RXN
+RC1157,RXN-24075,RXN-24075
+RC1158,PROLINE-MULTI,PROLINE-MULTI
+RC1159,RXN-11667,(S)-3-hydroxybutanoyl-CoA dehydrogenase
+RC115,RXN-19006,RXN-19006
+RC1160,RXN-9332,RXN-9332
+RC1161,CYSTAGLY-RXN,CYSTAGLY-RXN
+RC1162,RXN-10731,RXN-10731
+RC1163,RXN-10632,RXN-10632
+RC1164,RXN-11552,RXN-11552
+RC1165,2.4.1.169-RXN,Xyloglucan 6-xylosyltransferase
+RC1166,2.3.1.162-RXN,2.3.1.162-RXN
+RC1167,RXN-23276,RXN-23276
+RC1168,2.4.1.207-RXN,2.4.1.207-RXN
+RC1169,TRANS-PENTAPRENYLTRANSFERASE-RXN,TRANS-PENTAPRENYLTRANSFERASE-RXN
+RC116,RXN-7876,RXN-7876
+RC1170,RXN-12610,RXN-12610
+RC1171,RXN-13399,RXN-13399
+RC1172,RXN-22388,RXN-22388
+RC1173,RXN18C3-114,RXN18C3-114
+RC1174,RXNQT-4380,RXNQT-4380
+RC1175,RXN-18969,RXN-18969
+RC1176,RXN-16995,RXN-16995
+RC1177,RXN-12102,RXN-12102
+RC1178,RXN-15511,RXN-15511
+RC1179,5-NUCLEOTID-RXN,5-NUCLEOTID-RXN
+RC117,RXN-9356,1-dodecanol-<em>O</em>-arachinoyltransferase
+RC1180,RXN-11675,RXN-11675
+RC1181,RXN-22287,RXN-22287
+RC1182,RXN-13023,RXN-13023
+RC1183,TRANS-RXN4LZ-45,TRANS-RXN4LZ-45
+RC1184,RXN-1824,RXN-1824
+RC1185,RXN-8416,RXN-8416
+RC1186,RXN-21008,RXN-21008
+RC1187,RXN-11656,RXN-11656
+RC1188,RXN-11927,RXN-11927
+RC1189,RXNQT-4372,RXNQT-4372
+RC118,3.2.1.154-RXN,3.2.1.154-RXN
+RC1190,AMP-DEPHOSPHORYLATION-RXN,AMP-DEPHOSPHORYLATION-RXN
+RC1191,RXN-18781,RXN-18781
+RC1192,RXN-11102,RXN-11102
+RC1193,RXN-14806,RXN-14806
+RC1194,RXN-11308,RXN-11308
+RC1195,ICOSANOYL-COA-SYNTHASE-RXN,ICOSANOYL-COA-SYNTHASE-RXN
+RC1196,CINNAMYL-ALCOHOL-DEHYDROGENASE-RXN,CINNAMYL-ALCOHOL-DEHYDROGENASE-RXN
+RC1197,RXN-8594,RXN-8594
+RC1198,RXN-19022,RXN-19022
+RC1199,RXN-8886,RXN-8886
+RC119,RXN-924,RXN-924
+RC11,RXN-8424,RXN-8424
+RC1200,RXN-8001,RXN-8001
+RC1201,RXN1F-10,RXN1F-10
+RC1202,1.11.1.15-RXN,1.11.1.15-RXN
+RC1203,RXN-13433,RXN-13433
+RC1204,RXN-20094,RXN-20094
+RC1205,RXN-16909,RXN-16909
+RC1206,RXN-22777,RXN-22777
+RC1207,RXN-20084,RXN-20084
+RC1208,RXN0-5040,RXN0-5040
+RC1209,UBIQUITIN--PROTEIN-LIGASE-RXN,UBIQUITIN--PROTEIN-LIGASE-RXN
+RC120,RXN-13328,late4-aminobutyrate--glyoxy transaminase
+RC1210,RXN-10954,RXN-10954
+RC1211,RXN-14807,RXN-14807
+RC1212,RXN-22315,RXN-22315
+RC1213,RXN-9562,RXN-9562
+RC1214,RXN-7571,RXN-7571
+RC1215,RXN0-6490,RXN0-6490
+RC1216,RXN-10733,RXN-10733
+RC1217,RXN-8199,RXN-8199
+RC1218,RXN-13019,RXN-13019
+RC1219,RXN-11234,RXN-11234
+RC121,RXN-19832,RXN-19832
+RC1220,RXN-10437,RXN-10437
+RC1221,RXN-20374,RXN-20374
+RC1222,RXN-13014,RXN-13014
+RC1223,RXN-10794,RXN-10794
+RC1224,INORGPYROPHOSPHAT-RXN,INORGPYROPHOSPHAT-RXN
+RC1225,RXN-14815,RXN-14815
+RC1226,1.3.7.2-RXN,1.3.7.2-RXN
+RC1227,RXN-14048,RXN-14048
+RC1228,RXN-10946,RXN-10946
+RC1229,RXN0-5185,RXN0-5185
+RC122,DSERDEAM-RXN,DSERDEAM-RXN
+RC1230,RXN-11232,RXN-11232
+RC1231,ALANINE--GLYOXYLATE-AMINOTRANSFERASE-RXN,ALANINE--GLYOXYLATE-AMINOTRANSFERASE-RXN
+RC1232,THREDEHYD-RXN,THREDEHYD-RXN
+RC1233,RXN-7843,RXN-7843
+RC1234,RXN-7877,RXN-7877
+RC1235,RXN-22828,RXN-22828
+RC1236,RXN0-5248,RXN0-5248
+RC1237,RXN-12516,RXN-12516
+RC1238,RXN-8563,RXN-8563
+RC1239,RXN-20457,RXN-20457
+RC123,3.2.1.68-RXN,3.2.1.68-RXN
+RC1240,CARBODEHYDRAT-RXN,CARBODEHYDRAT-RXN
+RC1241,3.2.1.55-RXN,3.2.1.55-RXN
+RC1242,RXN-11704,RXN-11704
+RC1243,GLYCEROL-3-PHOSPHATE-DEHYDROGENASE-RXN,Glycerol-3-phosphate dehydrogenase
+RC1244,2.4.1.214-RXN,2.4.1.214-RXN
+RC1245,RXN-12871,RXN-12871
+RC1246,1.14.19.3-RXN,1.14.19.3-RXN
+RC1247,RXN-10947,RXN-10947
+RC1248,RXN-20447,RXN-20447
+RC1249,RXN-1402,RXN-1402
+RC124,TRANS-RXN4LZ-7054,TRANS-RXN4LZ-7054
+RC1250,RXN-16426,RXN-16426
+RC1251,RXN-13880,RXN-13880
+RC1252,MANNPGUANYLTRANGDP-RXN,MANNPGUANYLTRANGDP-RXN
+RC1253,ALDEHYDE-OXIDASE-RXN,ALDEHYDE-OXIDASE-RXN
+RC1254,2.7.7.35-RXN,2.7.7.35-RXN
+RC1255,RXN-19583,RXN-19583
+RC1256,RXN-9560,RXN-9560
+RC1257,RXN-8427,RXN-8427
+RC1258,RXN-11930,RXN-11930
+RC1259,RXN-11226,RXN-11226
+RC125,RXN-8543,RXN-8543
+RC1260,RXN-14512,RXN-14512
+RC1261,1.5.1.31-RXN,1.5.1.31-RXN
+RC1262,RXN-12267,RXN-12267
+RC1263,RXN-11289,RXN-11289
+RC1264,RXN-974,RXN-974
+RC1265,RXN-21024,RXN-21024
+RC1266,RXN-12989,RXN-12989
+RC1267,RXN-18350,RXN-18350
+RC1268,2.6.1.57-RXN,2.6.1.57-RXN
+RC1269,RXN-14812,RXN-14812
+RC126,NADH-DEHYDROGENASE-RXN,NADH-DEHYDROGENASE-RXN
+RC1270,1.2.1.1-RXN,Formaldehyde dehydrogenase (glutathione)
+RC1271,RXN-4228,RXN-4228
+RC1272,DLACTDEHYDROGFAD-RXN,DLACTDEHYDROGFAD-RXN
+RC1273,RXN-14004,RXN-14004
+RC1274,RXN-22776,RXN-22776
+RC1275,RXN-7875,RXN-7875
+RC1276,RXN-2881,RXN-2881
+RC1277,AMYLOMALT-RXN,AMYLOMALT-RXN
+RC1278,2.8.1.6-RXN,2.8.1.6-RXN
+RC1279,RXN-9136,RXN-9136
+RC127,RXN-13833,RXN-13833
+RC1280,GKI-RXN,GKI-RXN
+RC1281,DEOXYNUCLEOTIDE-3-PHOSPHATASE-RXN,DEOXYNUCLEOTIDE-3-PHOSPHATASE-RXN
+RC1282,RXN-23260,RXN-23260
+RC1283,RXN-8447,RXN-8447
+RC1284,RXN-14091,RXN-14091
+RC1285,RXN-12947,RXN-12947
+RC1286,RXN-10734,RXN-10734
+RC1287,LACCASE-RXN,LACCASE-RXN
+RC1288,RXN-13506,RXN-13506
+RC1289,RXN-12392,RXN-12392
+RC128,RXN0-5393,RXN0-5393
+RC1290,RXNQT-4174,RXNQT-4174
+RC1291,RXN-10880,RXN-10880
+RC1292,RXN-14195,RXN-14195
+RC1293,RXN-4422,RXN-4422
+RC1294,RXN-11230,RXN-11230
+RC1295,RXN-8554,RXN-8554
+RC1296,RXN-14408,RXN-14408
+RC1297,RXN-19835,RXN-19835
+RC1298,RXN-22735,RXN-22735
+RC1299,RXN-11355,RXN-11355
+RC129,STEROL-GLUCOSYLTRANSFERASE-RXN,STEROL-GLUCOSYLTRANSFERASE-RXN
+RC12,RXN-16415,RXN-16415
+RC1300,RXN-19749,RXN-19749
+RC1301,RXN0-308,RXN0-308
+RC1302,AMIDASE-RXN,AMIDASE-RXN
+RC1303,RXNQT-4176,RXNQT-4176
+RC1304,RXN-22286,RXN-22286
+RC1305,RXN-15815,RXN-15815
+RC1306,CELLULOSE-SYNTHASE-GDP-FORMING-RXN,CELLULOSE-SYNTHASE-GDP-FORMING-RXN
+RC1307,RXN-11238,RXN-11238
+RC1308,RXN-23912,RXN-23912
+RC1309,RXN-18453,RXN-18453
+RC130,RXN66-339,RXN66-339
+RC1310,RXN-18939,RXN-18939
+RC1311,1.8.4.8-RXN,1.8.4.8-RXN
+RC1312,RXN0-5398,RXN0-5398
+RC1313,RXN-1827,RXN-1827
+RC1314,2.7.9.5-RXN,2.7.9.5-RXN
+RC1315,CARBOXYLESTERASE-RXN,CARBOXYLESTERASE-RXN
+RC1316,RXN-21019,RXN-21019
+RC131,RXN-7852,RXN-7852
+RC132,RXN-10722,RXN-10722
+RC133,RXN-22606,RXN-22606
+RC134,RXN-14220,RXN-14220
+RC135,3.2.1.52-RXN,3.2.1.52-RXN
+RC136,RXN0-5259,RXN0-5259
+RC137,RXN-14115,RXN-14115
+RC138,TRANS-RXN4LZ-7008,TRANS-RXN4LZ-7008
+RC139,RXN-18964,RXN-18964
+RC13,RXN-9213,RXN-9213
+RC140,RXN-8671,3' hydroxy flavanone 5&prime;-hydroxylase
+RC141,1.14.11.19-RXN,1.14.11.19-RXN
+RC142,2.6.1.7-RXN,2.6.1.7-RXN
+RC143,RXN-19584,RXN-19584
+RC144,RXN0-5265,RXN0-5265
+RC145,ACYL-COA-HYDROLASE-RXN,ACYL-COA-HYDROLASE-RXN
+RC146,RXN-5741,RXN-5741
+RC147,RXN-2942,RXN-2942
+RC148,RXN-11243,RXN-11243
+RC149,RXN-18962,RXN-18962
+RC14,PERILLYL-ALCOHOL-DEHYDROGENASE-RXN,PERILLYL-ALCOHOL-DEHYDROGENASE-RXN
+RC150,RXN-10811,RXN-10811
+RC151,RXN-14396,RXN-14396
+RC152,RXN-14179,RXN-14179
+RC153,RXN-19011,RXN-19011
+RC154,RXN-21169,RXN-21169
+RC155,RXN-13323,RXN-13323
+RC156,RXN-18899,RXN-18899
+RC157,RXN-15524,luteolin 8-hydroxylase
+RC158,OXALODECARB-RXN,OXALODECARB-RXN
+RC159,RXN-8560,RXN-8560
+RC15,RXN-5102,RXN-5102
+RC160,FLAVONOID-3-MONOOXYGENASE-RXN,FLAVONOID-3-MONOOXYGENASE-RXN
+RC161,RXN-12325,RXN-12325
+RC162,RXN-10874,RXN-10874
+RC163,RXN-23867,RXN-23867
+RC164,RXN-4402,RXN-4402
+RC165,RXN-12086,RXN-12086
+RC166,TRANS-RXN-190,TRANS-RXN-190
+RC167,RXN-18958,RXN-18958
+RC168,RXNQT-4140,RXNQT-4140
+RC169,1.14.13.117-RXN,1.14.13.117-RXN
+RC16,RXN-14047,RXN-14047
+RC170,RXN-8355,RXN-8355
+RC171,RXN-14658,RXN-14658
+RC172,ALDHDEHYDROG-RXN,ALDHDEHYDROG-RXN
+RC173,RXN-18971,RXN-18971
+RC174,RXN-14215,RXN-14215
+RC175,3.2.1.153-RXN,3.2.1.153-RXN
+RC176,RXN-23869,RXN-23869
+RC177,RXN-14525,RXN-14525
+RC178,RXN-21163,RXN-21163
+RC179,NADPH-DEHYDROGENASE-RXN,NADPH-DEHYDROGENASE-RXN
+RC17,RXN-1403,RXN-1403
+RC180,RXN-19656,RXN-19656
+RC181,RXN-15451,RXN-15451
+RC182,RXN-13435,RXN-13435
+RC183,RXN-8603,RXN-8603
+RC184,TRYPSYN-RXN,TRYPSYN-RXN
+RC185,RXN-18224,RXN-18224
+RC186,RXN-1826,RXN-1826
+RC187,RXN-10884,RXN-10884
+RC188,RXN4KF-51,RXN4KF-51
+RC189,RXN-13003,RXN-13003
+RC18,RXN-14514,RXN-14514
+RC190,GST-RXN,GST-RXN
+RC191,3.2.1.147-RXN,Thioglucosidase
+RC192,RXN-12201,RXN-12201
+RC193,RXN-23907,RXN-23907
+RC194,RXN-4344,RXN-4344
+RC195,RXN-602,RXN-602
+RC196,RXN-13191,RXN-13191
+RC197,RXN-8243,RXN-8243
+RC198,RXN-1828,RXN-1828
+RC199,RXN-9208,RXN-9208
+RC19,6.3.4.11-RXN,6.3.4.11-RXN
+RC1,RXN-19786,RXN-19786
+RC200,RXN-11875,RXN-11875
+RC201,CYTOCHROME-B5-REDUCTASE-RXN,CYTOCHROME-B5-REDUCTASE-RXN
+RC202,3.2.1.26-RXN,6-phospho-&beta;-fructofuranosidase
+RC203,1.5.99.12-RXN,1.5.99.12-RXN
+RC204,RXN-12417,RXN-12417
+RC205,RXN-8162,RXN-8162
+RC206,RXN-9771,RXN-9771
+RC207,ALCOHOL-DEHYDROGENASE-NADPORNOP+-RXN,ALCOHOL-DEHYDROGENASE-NADPORNOP+-RXN
+RC208,RXN-12648,RXN-12648
+RC209,RXN-14534,RXN-14534
+RC20,RXN-22831,RXN-22831
+RC210,RXN-13747,RXN-13747
+RC211,2.6.1.28-RXN,2.6.1.28-RXN
+RC212,RXN-23370,RXN-23370
+RC213,TRANS-RXN4LZ-4,TRANS-RXN4LZ-4
+RC214,RXN-13681,RXN-13681
+RC215,RXN-18444,RXN-18444
+RC216,1.14.15.6-RXN,1.14.15.6-RXN
+RC217,RXN-19785,RXN-19785
+RC218,RXN-8555,RXN-8555
+RC219,LONG-CHAIN-ENOYL-COA-HYDRATASE-RXN,LONG-CHAIN-ENOYL-COA-HYDRATASE-RXN
+RC21,RXN-11473,RXN-11473
+RC220,RXN-12508,2-(&alpha;-hydroxyethyl)-TPP:[dihydrolipoyllysine-residue acetyltransferase]-lipoyllysine acetyltransferase
+RC221,RXN18C3-110,RXN18C3-110
+RC222,RXN-13397,RXN-13397
+RC223,2.4.1.52-RXN,2.4.1.52-RXN
+RC224,RXN-15447,RXN-15447
+RC225,RXN-8556,RXN-8556
+RC226,RXN-15510,RXN-15510
+RC227,KETOISOCAPROATE-RXN,4-methyl-2-oxopentanoate dehydrogenase (lipoamide)
+RC228,RXN-8252,RXN-8252
+RC229,RXN-7920,RXN-7920
+RC22,RXN-7797,RXN-7797
+RC230,RXN-9373,RXN-9373
+RC231,RXN-12570,RXN-12570
+RC232,RXN-11529,RXN-11529
+RC233,SULFUR-DIOXYGENASE-RXN,Sulfur dioxygenase
+RC234,RXN-7894,RXN-7894
+RC235,RXN-10783,RXN-10783
+RC236,RXN-12255,RXN-12255
+RC237,RXN-8428,RXN-8428
+RC238,RXN0-5216,RXN0-5216
+RC239,SUCC-FUM-OXRED-RXN,SUCC-FUM-OXRED-RXN
+RC23,RXN-14205,RXN-14205
+RC240,3.1.1.23-RXN,3.1.1.23-RXN
+RC241,RXN-10721,RXN-10721
+RC242,RXN-7753,RXN-7753
+RC243,3.2.1.114-RXN,3.2.1.114-RXN
+RC244,RXN-16996,RXN-16996
+RC245,TRANS-RXN-186,TRANS-RXN-186
+RC246,ALKAPHOSPHA-RXN,ALKAPHOSPHA-RXN
+RC247,2.4.1.198-RXN,2.4.1.198-RXN
+RC248,RXN-13189,RXN-13189
+RC249,RXN-10886,RXN-10886
+RC24,RXN66-311,"4&alpha;-hydroxymethyl-4&beta;-methyl-5&alpha;-cholesta-8,24-dien-3&beta;-ol dehydrogenase"
+RC250,RXN-15355,RXN-15355
+RC251,RXN-21162,RXN-21162
+RC252,RXN-12892,RXN-12892
+RC253,RXN-8089,RXN-8089
+RC254,OXALATE-COA-TRANSFERASE-RXN,OXALATE-COA-TRANSFERASE-RXN
+RC255,RXN-10735,RXN-10735
+RC256,RXN-7883,RXN-7883
+RC257,RXN-8559,RXN-8559
+RC258,RXN-13163,RXN-13163
+RC259,RXN-12863,RXN-12863
+RC25,RXNQT-4180,RXNQT-4180
+RC260,RXN0-1021,RXN0-1021
+RC261,GLYCEROL-1-PHOSPHATASE-RXN,GLYCEROL-1-PHOSPHATASE-RXN
+RC262,RXN-14325,RXN-14325
+RC263,RXN-14161,RXN-14161
+RC264,RXN0-6491,dihydroorotate dehydrogenase
+RC265,RXN-13897,RXN-13897
+RC266,RXN-8984,RXN-8984
+RC267,RXN-8430,RXN-8430
+RC268,FAD-PYROPHOSPHATASE-RXN,FAD-PYROPHOSPHATASE-RXN
+RC269,RXN-12486,RXN-12486
+RC26,RXN-17697,RXN-17697
+RC270,RXN-7968,RXN-7968
+RC271,RXN-8642,RXN-8642
+RC272,RXN-22711,RXN-22711
+RC273,RXN-19987,RXN-19987
+RC274,RXN-12645,RXN-12645
+RC275,RXN-8547,RXN-8547
+RC276,RXN4FS-22,<i>cis</i>-abscisic alcohol monooxygenase
+RC277,RXN-22914,RXN-22914
+RC278,RXN-5465,RXN-5465
+RC279,RXN-5482,RXN-5482
+RC27,RXN-13640,RXN-13640
+RC280,RXN-7181,RXN-7181
+RC281,2.4.1.101-RXN,2.4.1.101-RXN
+RC282,3.2.1.23-RXN,3.2.1.23-RXN
+RC283,RXN-6543,RXN-6543
+RC284,RXN-11044,RXN-11044
+RC285,RXN-10730,RXN-10730
+RC286,RXN0-3542,RXN0-3542
+RC287,RXN-12879,RXN-12879
+RC288,RXN-14889,RXN-14889
+RC289,RXNQT-4173,RXNQT-4173
+RC28,RXN-22790,RXN-22790
+RC290,RXN-1501,RXN-1501
+RC291,PHENOL-BETA-GLUCOSYLTRANSFERASE-RXN,PHENOL-BETA-GLUCOSYLTRANSFERASE-RXN
+RC292,RXN-8779,RXN-8779
+RC293,TRIPHOSPHATASE-RXN,TRIPHOSPHATASE-RXN
+RC294,RXN4KF-54,RXN4KF-54
+RC295,RXN66-303,lanosterol 14-hydroxylase
+RC296,RXNQT-4395,RXNQT-4395
+RC297,3.6.3.6-RXN,3.6.3.6-RXN
+RC298,RXN-20768,RXN-20768
+RC299,RXN-18483,RXN-18483
+RC29,VINYLACETYL-COA-DELTA-ISOMERASE-RXN,VINYLACETYL-COA-DELTA-ISOMERASE-RXN
+RC2,RXN-10944,RXN-10944
+RC300,RXN-9347,RXN-9347
+RC301,RXN-15490,RXN-15490
+RC302,RXN4KF-11495,RXN4KF-11495
+RC303,HYDROXYPRODEHYDROG-RXN,HYDROXYPRODEHYDROG-RXN
+RC304,RXN-12582,choline monooxygenase (NADP)
+RC305,RXN-8855,RXN-8855
+RC306,RXN-8092,RXN-8092
+RC307,RXN0-300,hydroxypyruvate reductase (NADP+)
+RC308,RXN-8247,RXN-8247
+RC309,ATPSYN-RXN,ATPSYN-RXN
+RC30,DCYSDESULF-RXN,DCYSDESULF-RXN
+RC310,RXN-11403,RXN-11403
+RC311,RXN-15312,RXN-15312
+RC312,RXN-9081,RXN-9081
+RC313,RXN-16787,RXN-16787
+RC314,RXN-21161,RXN-21161
+RC315,RXN-14217,RXN-14217
+RC316,GLUCOSE-1-PHOSPHAT-RXN,GLUCOSE-1-PHOSPHAT-RXN
+RC317,PHOSPHATIDYLINOSITOL-BISPHOSPHATASE-RXN,PHOSPHATIDYLINOSITOL-BISPHOSPHATASE-RXN
+RC318,GMP-SYN-NH3-RXN,GMP-SYN-NH3-RXN
+RC319,RXN-22762,RXN-22762
+RC31,RXN-9564,RXN-9564
+RC320,RXN-18965,RXN-18965
+RC321,RXN-12099,RXN-12099
+RC322,XANPRIBOSYLTRAN-RXN,XANPRIBOSYLTRAN-RXN
+RC323,RXN-12257,RXN-12257
+RC324,RXN-12202,RXN-12202
+RC325,RXN-13015,RXN-13015
+RC326,RXN-22758,RXN-22758
+RC327,RXN0-5391,RXN0-5391
+RC328,RXN-10432,RXN-10432
+RC329,RXN-18527,RXN-18527
+RC32,RXN-7895,RXN-7895
+RC330,RXN-14997,RXN-14997
+RC331,RXN-11533,RXN-11533
+RC332,RXN-13187,RXN-13187
+RC333,RXN-11040,RXN-11040
+RC334,RXN-22736,RXN-22736
+RC335,RXN-14142,RXN-14142
+RC336,YEAST-SQUALENE-RXN,Farnesyl-diphosphate farnesyltransferase
+RC337,RXN-20172,hexaprenyldihydroxybenzoate methyltransferase
+RC338,GLUCONOKIN-RXN,GLUCONOKIN-RXN
+RC339,1.5.1.7-RXN,1.5.1.7-RXN
+RC33,RXNQT-4377,RXNQT-4377
+RC340,RXN-14513,RXN-14513
+RC341,RXN-1348,RXN-1348
+RC342,RXNQT-4171,RXNQT-4171
+RC343,SELENOCYSTEINE-LYASE-RXN,SELENOCYSTEINE-LYASE-RXN
+RC344,RXN0-7005,RXN0-7005
+RC345,RXN-12449,RXN-12449
+RC346,RXN-12591,RXN-12591
+RC347,HEMEOSYN-RXN,heme <i>o</i> biosynthesis
+RC348,RXN-9091,RXN-9091
+RC349,RXNQT-4181,RXNQT-4181
+RC34,PHOSPHOGLYCERATE-PHOSPHATASE-RXN,PHOSPHOGLYCERATE-PHOSPHATASE-RXN
+RC350,PREPHENATEDEHYDROG-RXN,PREPHENATEDEHYDROG-RXN
+RC351,RXN4FS-26,RXN4FS-26
+RC352,RXN-8418,RXN-8418
+RC353,RXN-12540,Fenton reaction
+RC354,RXN-1825,RXN-1825
+RC355,2.4.2.38-RXN,2.4.2.38-RXN
+RC356,RXN-1882,RXN-1882
+RC357,RXN-13192,RXN-13192
+RC358,RXN-4301,RXN-4301
+RC359,RXN-19009,RXN-19009
+RC35,RXN-12670,RXN-12670
+RC360,325-BISPHOSPHATE-NUCLEOTIDASE-RXN,325-BISPHOSPHATE-NUCLEOTIDASE-RXN
+RC361,RXN-21160,RXN-21160
+RC362,CHALCONE-ISOMERASE-RXN,CHALCONE-ISOMERASE-RXN
+RC363,RXN-21031,RXN-21031
+RC364,RXN-708,RXN-708
+RC365,RXN-20095,RXN-20095
+RC366,RXN-12845,RXN-12845
+RC367,NUCLEOSIDE-DIP-KIN-RXN,NUCLEOSIDE-DIP-KIN-RXN
+RC368,RXN-16329,RXN-16329
+RC369,ACETOACETATE-DECARBOXYLASE-RXN,ACETOACETATE-DECARBOXYLASE-RXN
+RC36,RXN-4603,RXN-4603
+RC370,RXN-18963,RXN-18963
+RC371,RXN-13183,RXN-13183
+RC372,RXN-23333,RXN-23333
+RC373,RXN-18968,RXN-18968
+RC374,RXN-14981,RXN-14981
+RC375,HYPOXANPRIBOSYLTRAN-RXN,HYPOXANPRIBOSYLTRAN-RXN
+RC376,2.5.1.46-RXN,2.5.1.46-RXN
+RC377,RXN-14523,RXN-14523
+RC378,RXN-4181,RXN-4181
+RC379,LCYSDESULF-RXN,LCYSDESULF-RXN
+RC37,RXN-7643,RXN-7643
+RC380,RXN-10856,RXN-10856
+RC381,RXN0-5462,RXN0-5462
+RC382,RXN-18703,RXN-18703
+RC383,RXN-8038,RXN-8038
+RC384,RXN4FS-5,RXN4FS-5
+RC385,RXN-9348,RXN-9348
+RC386,RXN-18212,RXN-18212
+RC387,UDPSUGARHYDRO-RXN,UDPSUGARHYDRO-RXN
+RC388,RXN-8332,RXN-8332
+RC389,RXN-14522,RXN-14522
+RC38,RXN-18804,RXN-18804
+RC390,RXN-11925,RXN-11925
+RC391,RXN-15468,RXN-15468
+RC392,RXN-12991,RXN-12991
+RC393,RXN-13939,RXN-13939
+RC394,PHOSPHOENOLPYRUVATE-PHOSPHATASE-RXN,PHOSPHOENOLPYRUVATE-PHOSPHATASE-RXN
+RC395,NADPH--FERRIHEMOPROTEIN-REDUCTASE-RXN,NADPH--FERRIHEMOPROTEIN-REDUCTASE-RXN
+RC396,ENTF-RXN,ENTF-RXN
+RC397,RXN-12862,RXN-12862
+RC398,MALTODEXGLUCOSID-RXN,MALTODEXGLUCOSID-RXN
+RC399,2.4.1.194-RXN,2.4.1.194-RXN
+RC39,GLYCOLATEDEHYDRO-RXN,GLYCOLATEDEHYDRO-RXN
+RC3,RXN-23918,RXN-23918
+RC400,RXN-10873,RXN-10873
+RC401,RXN-1302,RXN-1302
+RC402,1.6.5.4-RXN,1.6.5.4-RXN
+RC403,3.1.4.37-RXN,3.1.4.37-RXN
+RC404,RXN-20900,RXN-20900
+RC405,RXN-14056,RXN-14056
+RC406,RXN-19010,RXN-19010
+RC407,RXN1F-152,RXN1F-152
+RC408,RXN-8564,RXN-8564
+RC409,RXN-18957,RXN-18957
+RC40,RXN-10949,RXN-10949
+RC410,RXN-18031,RXN-18031
+RC411,RXN-12126,RXN-12126
+RC412,RXN-12893,RXN-12893
+RC413,RXN-4821,RXN-4821
+RC414,RXN0-5182,RXN0-5182
+RC415,RXN-14113,RXN-14113
+RC416,GLUTDEHYD-RXN,GLUTDEHYD-RXN
+RC417,RXN-10625,RXN-10625
+RC418,RXN-14808,RXN-14808
+RC419,TRANS-RXN4LZ-6845,TRANS-RXN4LZ-6845
+RC41,RXN-7645,RXN-7645
+RC420,RXN-11225,RXN-11225
+RC421,ESTRADIOL-17-BETA-DEHYDROGENASE-RXN,ESTRADIOL-17-BETA-DEHYDROGENASE-RXN
+RC422,RXN-3122,RXN-3122
+RC423,RXN-18342,RXN-18342
+RC424,METHYLVALERATE-RXN,3-methyl-2-oxobutanoate dehydrogenase [(<i>S</i>)-2-methylbutanoyl-transferring)
+RC425,RXN-19954,RXN-19954
+RC426,RXN-2043,RXN-2043
+RC427,RXN4FS-15,RXN4FS-15
+RC428,RXN-8406,RXN-8406
+RC429,RXN-8602,RXN-8602
+RC42,RXN-15140,RXN-15140
+RC430,RXN-12799,RXN-12799
+RC431,RXN-10753,RXN-10753
+RC432,RXN-19986,RXN-19986
+RC433,APYRASE-RXN,APYRASE-RXN
+RC434,RXN-19659,RXN-19659
+RC435,RXN0-7187,RXN0-7187
+RC436,ISOVALERYL-COA-FAD-RXN,Isovaleryl-CoA dehydrogenase
+RC437,RXN-8345,RXN-8345
+RC438,RXN-7673,RXN-7673
+RC439,RXN-19128,RXN-19128
+RC43,RXN-14214,RXN-14214
+RC440,RXN1F-72,RXN1F-72
+RC441,RXN-2121,RXN-2121
+RC442,RXN-12641,RXN-12641
+RC443,RXN-12587,RXN-12587
+RC444,RXN-22697,RXN-22697
+RC445,RXN-8344,RXN-8344
+RC446,AMINE-OXIDASE-FLAVIN-CONTAINING-RXN,Amine oxidase (flavin-containing)
+RC447,RXN-21164,RXN-21164
+RC448,RXN-18164,RXN-18164
+RC449,RXN-12805,RXN-12805
+RC44,RXN-21166,RXN-21166
+RC450,RXNQT-4379,RXNQT-4379
+RC451,RXN-5985,RXN-5985
+RC452,RXN-8173,RXN-8173
+RC453,2.7.7.11-RXN,2.7.7.11-RXN
+RC454,RXN-14490,RXN-14490
+RC455,RXN-18938,RXN-18938
+RC456,RXN-10748,RXN-10748
+RC457,RXN-4602,RXN-4602
+RC458,ASNSYNA-RXN,ASNSYNA-RXN
+RC459,RXN-21230,RXN-21230
+RC45,RXN-10885,RXN-10885
+RC460,RXN-12077,RXN-12077
+RC461,RXN-1026,fatty acid elongation
+RC462,GLYOXYLATE-REDUCTASE-NADP+-RXN,GLYOXYLATE-REDUCTASE-NADP+-RXN
+RC463,RXN-8259,RXN-8259
+RC464,RXN0-5245,RXN0-5245
+RC465,6.3.5.7-RXN,6.3.5.7-RXN
+RC466,RXN-22317,RXN-22317
+RC467,RXN-10869,RXN-10869
+RC468,RXN-14206,RXN-14206
+RC469,RXN-14124,RXN-14124
+RC46,RXN-18341,RXN-18341
+RC470,RXN-4222,RXN-4222
+RC471,RXN-10433,RXN-10433
+RC472,RXN-14501,RXN-14501
+RC473,RXN66-304,14-hydroxylanosterol 14-dehydrogenase
+RC474,RXN0-5363,RXN0-5363
+RC475,RXN-8545,RXN-8545
+RC476,RXN-19772,RXN-19772
+RC477,3.2.1.3-RXN,3.2.1.3-RXN
+RC478,RXN-22734,RXN-22734
+RC479,PHOSPHATIDYLINOSITOL-3-PHOSPHATASE-RXN,PHOSPHATIDYLINOSITOL-3-PHOSPHATASE-RXN
+RC47,RXN-21551,RXN-21551
+RC480,RXN-3103,RXN-3103
+RC481,RXN-18032,RXN-18032
+RC482,RXN-10981,RXN-10981
+RC483,RXN-13446,RXN-13446
+RC484,RXN18C3-4,RXN18C3-4
+RC485,RXN-11932,RXN-11932
+RC486,ACETYL-COA-HYDROLASE-RXN,ACETYL-COA-HYDROLASE-RXN
+RC487,RXN-19008,RXN-19008
+RC488,RXN-11908,RXN-11908
+RC489,RXN-22405,RXN-22405
+RC48,RXN0-4401,RXN0-4401
+RC490,RXN-18970,RXN-18970
+RC491,RXN-12364,RXN-12364
+RC492,RXN-8542,RXN-8542
+RC493,RXN-21523,RXN-21523
+RC494,RXN-14809,RXN-14809
+RC495,RXN-10878,RXN-10878
+RC496,7KAPSYN-RXN,7KAPSYN-RXN
+RC497,RXN-8737,RXN-8737
+RC498,RXN66-305,14-oxolanosterol deformylase
+RC499,RXN-9772,L-aspartate : fumarate oxidoreductase (deaminating)
+RC49,RXN-24129,RXN-24129
+RC4,RXN-4315,RXN-4315
+RC500,RXN-14857,RXN-14857
+RC501,RXN-18780,RXN-18780
+RC502,RXN-13190,RXN-13190
+RC503,RXN-11936,RXN-11936
+RC504,RXN-18079,RXN-18079
+RC505,RXN-4221,RXN-4221
+RC506,RXN-8589,RXN-8589
+RC507,RXN-8546,RXN-8546
+RC508,TRANS-RXN-187,TRANS-RXN-187
+RC509,RXN-11041,RXN-11041
+RC50,RXN-12611,thiamin phosphate synthase
+RC510,RXN-13728,RXN-13728
+RC511,RXN-11935,RXN-11935
+RC512,RXN-7692,RXN-7692
+RC513,RXN-4231,RXN-4231
+RC514,RXN-11655,RXN-11655
+RC515,RXN-18199,RXN-18199
+RC516,FATTY-ACYL-COA-SYNTHASE-RXN,FATTY-ACYL-COA-SYNTHASE-RXN
+RC517,CINNAMOYL-COA-REDUCTASE-RXN,CINNAMOYL-COA-REDUCTASE-RXN
+RC518,RXN-21007,RXN-21007
+RC519,RXN-14112,RXN-14112
+RC51,RXNQT-4386,RXNQT-4386
+RC520,ISOVALERYLCOA-DHLIPOAMIDE-RXN,dihydrolipoyllysine-residue (3-methylbutanoyl)transferase
+RC521,RXN-14813,RXN-14813
+RC522,RXN-12085,RXN-12085
+RC523,RXN-18343,RXN-18343
+RC524,RXN-2103,RXN-2103
+RC525,RXN-14509,RXN-14509
+RC526,RXN-5122,RXN-5122
+RC527,RXN-21167,RXN-21167
+RC528,RXN-6884,RXN-6884
+RC529,RXN-18162,RXN-18162
+RC52,RXN-13373,RXN-13373
+RC530,RXN-9911,RXN-9911
+RC531,SARCOX-RXN,SARCOX-RXN
+RC532,RXN-21389,RXN-21389
+RC533,RXN0-5254,RXN0-5254
+RC534,RXN-18782,RXN-18782
+RC535,RXNQT-4168,RXNQT-4168
+RC536,RXN-15582,RXN-15582
+RC537,ACETYL-COA-CARBOXYLTRANSFER-RXN,ACETYL-COA-CARBOXYLTRANSFER-RXN
+RC538,HEXOKINASE-RXN,HEXOKINASE-RXN
+RC539,RXN-12149,L-rhamnose pyranase
+RC53,RXN-14489,ricinoleyl-CoA desaturase
+RC540,2.4.1.126-RXN,2.4.1.126-RXN
+RC541,RXN-13537,phenylacetaldoxime hydrolase
+RC542,RXN-12250,RXN-12250
+RC543,SPERMIDINE-DEHYDROGENASE-RXN,SPERMIDINE-DEHYDROGENASE-RXN
+RC544,RXN-7863,RXN-7863
+RC545,RXN66-310,"4,4-dimethylzymosterol 4-hydroxylase"
+RC546,RXN-8601,RXN-8601
+RC547,RXN-10429,RXN-10429
+RC548,RXN-3241,RXN-3241
+RC549,1.14.13.77-RXN,1.14.13.77-RXN
+RC54,RXN-8992,RXN-8992
+RC550,2.4.2.39-RXN,2.4.2.39-RXN
+RC551,RXN-14024,RXN-14024
+RC552,RXN-9713,RXN-9713
+RC553,RXN-7002,RXN-7002
+RC554,RXN-22817,RXN-22817
+RC555,RXN-1823,RXN-1823
+RC556,RXN-7860,RXN-7860
+RC557,RXN-4424,RXN-4424
+RC558,RXN0-5261,RXN0-5261
+RC559,RXN-22829,RXN-22829
+RC55,RXN-12847,RXN-12847
+RC560,3.1.3.72-RXN,3.1.3.72-RXN
+RC561,RXN4FS-18,RXN4FS-18
+RC562,RXN-8423,RXN-8423
+RC563,RXN-12460,L-asparaginyl-tRNA<SUP>asn</SUP> hydrolase
+RC564,RXN-21170,RXN-21170
+RC565,RXN-13005,RXN-13005
+RC566,RXN-11249,RXN-11249
+RC567,RXN-14754,RXN-14754
+RC568,RXN-14216,RXN-14216
+RC569,RXN-22604,RXN-22604
+RC56,RXN-11224,RXN-11224
+RC570,RXN-10953,RXN-10953
+RC571,RXN-10887,RXN-10887
+RC572,RXN-7710,RXN-7710
+RC573,RXN-8334,RXN-8334
+RC574,RXN-15011,RXN-15011
+RC575,RXN-9951,isocitrate dehydrogenase (NADP<small><sup>+</sup></small>)
+RC576,RXN-10005,RXN-10005
+RC577,RXNQT-4178,RXNQT-4178
+RC578,RXN-21390,RXN-21390
+RC579,RXN-7891,RXN-7891
+RC57,RXN-10438,RXN-10438
+RC580,RXN66-338,22-&beta;-hydroxycholesterol 20-&alpha;-hydroxylation
+RC581,RXN-12978,RXN-12978
+RC582,RXNQT-4315,RXNQT-4315
+RC583,RXN-6081,RXN-6081
+RC584,RXN-11280,RXN-11280
+RC585,RXN-22605,RXN-22605
+RC586,RXN-21433,RXN-21433
+RC587,RXN-12861,dehydroascorbate hydrolase
+RC588,RXN-6546,RXN-6546
+RC589,RXN-13872,RXN-13872
+RC58,RXN-23866,RXN-23866
+RC590,RXN-6545,RXN-6545
+RC591,2.4.1.143-RXN,2.4.1.143-RXN
+RC592,RXN-19833,RXN-19833
+RC593,RXN-10769,RXN-10769
+RC594,RXN-10768,RXN-10768
+RC595,RXN-19381,RXN-19381
+RC596,RXN-14219,RXN-14219
+RC597,RXN-12816,RXN-12816
+RC598,RXN-7651,RXN-7651
+RC599,3.2.1.24-RXN,3.2.1.24-RXN
+RC59,RXN-10956,RXN-10956
+RC5,RXN-12647,RXN-12647
+RC600,RXN-982,RXN-982
+RC601,RAUCAFFRICINE-BETA-GLUCOSIDASE-RXN,RAUCAFFRICINE-BETA-GLUCOSIDASE-RXN
+RC602,RXN-18894,RXN-18894
+RC603,MERCAPYSTRANS-RXN,MERCAPYSTRANS-RXN
+RC604,RXN66-526,RXN66-526
+RC605,RXN-13507,RXN-13507
+RC606,SULFATE-ADENYLYLTRANSFERASE-ADP-RXN,SULFATE-ADENYLYLTRANSFERASE-ADP-RXN
+RC607,RXN-11937,RXN-11937
+RC608,RXN-14143,RXN-14143
+RC609,RXN-18232,RXN-18232
+RC60,RXN-12838,RXN-12838
+RC610,RXN-9221,RXN-9221
+RC611,RXN-8780,RXN-8780
+RC612,RXN-8253,RXN-8253
+RC613,RXN-13959,RXN-13959
+RC614,RXN-10961,RXN-10961
+RC615,RXNQT-4316,RXNQT-4316
+RC616,RXNQT-4383,RXNQT-4383
+RC617,RXN-7897,RXN-7897
+RC618,RXN-22774,RXN-22774
+RC619,RXN-14200,RXN-14200
+RC61,RXN18C3-109,RXN18C3-109
+RC620,RXN-8002,RXN-8002
+RC621,RXN-18972,RXN-18972
+RC622,GARTRANSFORMYL2-RXN,GARTRANSFORMYL2-RXN
+RC623,RXN-14471,RXN-14471
+RC624,FLAVONADPREDUCT-RXN,FLAVONADPREDUCT-RXN
+RC625,2-MEBUCOA-FAD-RXN,2-MEBUCOA-FAD-RXN
+RC626,RXN-7825,RXN-7825
+RC627,RXN-15139,RXN-15139
+RC628,RXN-10720,RXN-10720
+RC629,RXN-12207,RXN-12207
+RC62,RXN-7892,RXN-7892
+RC630,RXN-11584,"3',5'-<i>O</i>-dimethyltricetin 4&prime;-<em>O</em>-methyltransferase"
+RC631,RXNQT-4370,RXNQT-4370
+RC632,RXN-12259,RXN-12259
+RC633,RXN-11585,RXN-11585
+RC634,RXN-12127,RXN-12127
+RC635,GLUTAMATESYN-RXN,GLUTAMATESYN-RXN
+RC636,RXN-18960,RXN-18960
+RC637,KETOLACTOSE-RXN,KETOLACTOSE-RXN
+RC638,RXN-18344,RXN-18344
+RC639,1.14.99.30-RXN,"carotene 7,8-desaturase"
+RC63,RXN-12961,RXN-12961
+RC640,RXN-15556,RXN-15556
+RC641,RXN0-5305,RXN0-5305
+RC642,PEROXID-RXN,PEROXID-RXN
+RC643,RXN-8335,RXN-8335
+RC644,RXN-13185,RXN-13185
+RC645,RIBONUCLEOSIDE-DIP-REDUCTI-RXN,RIBONUCLEOSIDE-DIP-REDUCTI-RXN
+RC646,RXN-11926,RXN-11926
+RC647,RXN-20666,RXN-20666
+RC648,RXN-12182,RXN-12182
+RC649,RXN-19831,RXN-19831
+RC64,ADPSUGPPHOSPHAT-RXN,ADPSUGPPHOSPHAT-RXN
+RC650,ACYLPHOSPHATASE-RXN,ACYLPHOSPHATASE-RXN
+RC651,RXN0-1441,RXN0-1441
+RC652,3-SULFINOALANINE-AMINOTRANSFERASE-RXN,3-SULFINOALANINE-AMINOTRANSFERASE-RXN
+RC653,TRANS-RXN4LZ-0,TRANS-RXN4LZ-0
+RC654,RXN-8558,RXN-8558
+RC655,RXN-14685,RXN-14685
+RC656,RXN-13193,RXN-13193
+RC657,RXN-14198,RXN-14198
+RC658,RXN-6182,RXN-6182
+RC659,1.5.1.20-RXN,1.5.1.20-RXN
+RC65,RXN-18732,RXN-18732
+RC660,RXN-8980,RXN-8980
+RC661,RXN-13020,RXN-13020
+RC662,RXN-10772,RXN-10772
+RC663,RXN-16765,RXN-16765
+RC664,RXN-12949,RXN-12949
+RC665,RXNQT-4314,RXNQT-4314
+RC666,RXNQT-4365,RXNQT-4365
+RC667,SHCHCSYNTH-RXN,SHCHCSYNTH-RXN
+RC668,RXN-8548,RXN-8548
+RC669,3.6.3.35-RXN,3.6.3.35-RXN
+RC66,RXN-18967,RXN-18967
+RC670,RXN-21524,RXN-21524
+RC671,3.1.3.77-RXN,3.1.3.77-RXN
+RC672,RXN-12183,RXN-12183
+RC673,RXN-16997,RXN-16997
+RC674,RXN-11265,RXN-11265
+RC675,RXN-17117,RXN-17117
+RC676,RXNDQC-3,[phosphoenolpyruvate carboxylase] kinase
+RC677,RXN-8198,RXN-8198
+RC678,RXN-12755,arachidonate &Delta;<sup>17</sup> desaturase
+RC679,MONOPHENOL-MONOOXYGENASE-RXN,MONOPHENOL-MONOOXYGENASE-RXN
+RC67,RXN0-7080,RXN0-7080
+RC680,RXN-7866,RXN-7866
+RC681,3.2.1.39-RXN,3.2.1.39-RXN
+RC682,RXN0-5292,RXN0-5292
+RC683,MALTODEG-RXN,MALTODEG-RXN
+RC684,CARBON-MONOXIDE-DEHYDROGENASE-RXN,CARBON-MONOXIDE-DEHYDROGENASE-RXN
+RC685,RXN-16425,RXN-16425
+RC686,D-ALANINE-AMINOTRANSFERASE-RXN,D-ALANINE-AMINOTRANSFERASE-RXN
+RC687,GLUTAMINE--PYRUVATE-AMINOTRANSFERASE-RXN,GLUTAMINE--PYRUVATE-AMINOTRANSFERASE-RXN
+RC688,RXN-8348,RXN-8348
+RC689,PSERTRANSAMPYR-RXN,PSERTRANSAMPYR-RXN
+RC68,RXN-14890,RXN-14890
+RC690,RXN-8956,RXN-8956
+RC691,RXN-12125,RXN-12125
+RC692,RXN-21434,RXN-21434
+RC693,RXN4FS-11,RXN4FS-11
+RC694,RXN-13017,RXN-13017
+RC695,RXN-22778,RXN-22778
+RC696,RXN-15125,RXN-15125
+RC697,RXN-15346,RXN-15346
+RC698,RXN4FS-28,RXN4FS-28
+RC699,ADENYLYLSULFATE-REDUCTASE-RXN,ADENYLYLSULFATE-REDUCTASE-RXN
+RC69,DIHYDROPICRED-RXN,DIHYDROPICRED-RXN
+RC6,GLYC3PDEHYDROG-RXN,GLYC3PDEHYDROG-RXN
+RC700,RXN-8251,RXN-8251
+RC701,6PGLUCONDEHYDROG-RXN,"phosphogluconate dehydrogenase [NAD(P)+-dependent, decarboxylating]"
+RC702,RXN-10453,RXN-10453
+RC703,NUCLEOSIDE-DIPHOSPHATASE-RXN,NUCLEOSIDE-DIPHOSPHATASE-RXN
+RC704,RXN-21026,RXN-21026
+RC705,R311-RXN,Acrylamidase
+RC706,RXN-11270,RXN-11270
+RC707,RXN-13519,vectoral H<SUP>+</SUP> export
+RC708,RXN-8557,RXN-8557
+RC709,POLYAMINE-OXIDASE-RXN,Polyamine oxidase
+RC70,RXN-9070,phenolic oxidative coupling protein
+RC710,RXN-14883,RXN-14883
+RC711,RXN-21027,RXN-21027
+RC712,RXN-22407,RXN-22407
+RC713,RXN-22915,RXN-22915
+RC714,RXNQT-4387,RXNQT-4387
+RC715,1.14.11.2-RXN,1.14.11.2-RXN
+RC716,RXN-10767,RXN-10767
+RC717,2.6.1.64-RXN,2.6.1.64-RXN
+RC718,RXN-12338,RXN-12338
+RC719,RXN-12565,RXN-12565
+RC71,RXNQT-4354,RXNQT-4354
+RC720,S-2-HYDROXY-ACID-OXIDASE-RXN,S-2-HYDROXY-ACID-OXIDASE-RXN
+RC721,RXN-19642,RXN-19642
+RC722,RXN-12307,RXN-12307
+RC723,RXNQT-4382,RXNQT-4382
+RC724,RXN0-3741,RXN0-3741
+RC725,RXN-8622,RXN-8622
+RC726,RXN-8431,RXN-8431
+RC727,RXN-15509,RXN-15509
+RC728,RXN-11281,RXN-11281
+RC729,RXN-22775,RXN-22775
+RC72,RXN-8354,RXN-8354
+RC730,RXN-13022,RXN-13022
+RC731,RXN0-6721,RXN0-6721
+RC732,RXN-9722,RXN-9722
+RC733,ATPASE-RXN,ATPASE-RXN
+RC734,RXN-8333,RXN-8333
+RC735,RXN-12363,RXN-12363
+RC736,RXN-22603,RXN-22603
+RC737,RXN-12539,RXN-12539
+RC738,RXN-12253,RXN-12253
+RC739,RXN-18159,RXN-18159
+RC73,RXN-9826,RXN-9826
+RC740,RXN-18353,RXN-18353
+RC741,RXN-23528,RXN-23528
+RC742,3.2.1.7-RXN,3.2.1.7-RXN
+RC743,RXNQT-4165,RXNQT-4165
+RC744,RXN-19639,RXN-19639
+RC745,RXN-21159,RXN-21159
+RC746,RXN-24256,RXN-24256
+RC747,RXN-22404,RXN-22404
+RC748,ARYL-ALCOHOL-DEHYDROGENASE-NADP+-RXN,ARYL-ALCOHOL-DEHYDROGENASE-NADP+-RXN
+RC749,RXN-14201,RXN-14201
+RC74,RXN-8090,RXN-8090
+RC750,RXN-18351,RXN-18351
+RC751,RXN-3482,RXN-3482
+RC752,RXN-8421,RXN-8421
+RC753,RXN-18789,RXN-18789
+RC754,RXN-5105,RXN-5105
+RC755,RXN-21539,RXN-21539
+RC756,UDP-GLUCURONOSYLTRANSFERASE-RXN,UDP-GLUCURONOSYLTRANSFERASE-RXN
+RC757,RXN-24046,RXN-24046
+RC758,RXN-11401,RXN-11401
+RC759,RXN-18163,RXN-18163
+RC75,RXNQT-4318,RXNQT-4318
+RC760,RXN-12680,RXN-12680
+RC761,RXN-10036,RXN-10036
+RC762,RXN-14882,RXN-14882
+RC763,RXN4FS-25,RXN4FS-25
+RC764,RXNQT-4167,RXNQT-4167
+RC765,FUC4NACTRANS-RXN,FUC4NACTRANS-RXN
+RC766,RXN-19953,RXN-19953
+RC767,1.14.13.68-RXN,1.14.13.68-RXN
+RC768,RXN0-7192,RXN0-7192
+RC769,RXN-19743,RXN-19743
+RC76,RXN-12541,RXN-12541
+RC770,THIAZOLSYN3-RXN,THIAZOLSYN3-RXN
+RC771,RXN-10857,RXN-10857
+RC772,SUGAR-PHOSPHATASE-RXN,SUGAR-PHOSPHATASE-RXN
+RC773,METHIONINE-GAMMA-LYASE-RXN,METHIONINE-GAMMA-LYASE-RXN
+RC774,RXN-6542,RXN-6542
+RC775,RXN-14511,RXN-14511
+RC776,RXN-9929,RXN-9929
+RC777,RXN-21538,RXN-21538
+RC778,ORNITHINE--OXO-ACID-AMINOTRANSFERASE-RXN,ORNITHINE--OXO-ACID-AMINOTRANSFERASE-RXN
+RC779,3.2.1.21-RXN,3.2.1.21-RXN
+RC77,RXN-12878,RXN-12878
+RC780,RXN-18627,RXN-18627
+RC781,RXN-10763,RXN-10763
+RC782,RXN-19007,RXN-19007
+RC783,RXN-17428,RXN-17428
+RC784,MALATE-DEHYDROGENASE-ACCEPTOR-RXN,MALATE-DEHYDROGENASE-ACCEPTOR-RXN
+RC785,RXN-13162,RXN-13162
+RC786,RXN-1603,RXN-1603
+RC787,RXN-11250,RXN-11250
+RC788,RXN-19657,RXN-19657
+RC789,RXN-20585,RXN-20585
+RC78,RXN-23868,RXN-23868
+RC790,3.2.1.65-RXN,3.2.1.65-RXN
+RC791,RXN-20373,RXN-20373
+RC792,RXN-13021,RXN-13021
+RC793,RXN-13024,RXN-13024
+RC794,RXN-19151,RXN-19151
+RC795,RXN0-5330,RXN0-5330
+RC796,RXN-13413,RXN-13413
+RC797,RXN-17900,RXN-17900
+RC798,RXN4FS-16,RXN4FS-16
+RC799,TEICHOICSYN5-RXN,TEICHOICSYN5-RXN
+RC79,RXN-12583,pyruvate:thiamin diphosphate acetaldehydetransferase (decarboxylating)
+RC7,L-ASCORBATE-PEROXIDASE-RXN,L-ASCORBATE-PEROXIDASE-RXN
+RC800,RXN-18484,RXN-18484
+RC801,RXN-9561,RXN-9561
+RC802,MBCOA-DHLIPOAMIDE-RXN,dihydrolipoyllysine-residue (2-methylbutanoyl)transferase
+RC803,RXN-13158,RXN-13158
+RC804,RXN0-5244,RXN0-5244
+RC805,RXN-11172,RXN-11172
+RC806,RXN-12883,RXN-12883
+RC807,4.1.1.74-RXN,4.1.1.74-RXN
+RC808,RXN-21526,RXN-21526
+RC809,RXN-9023,RXN-9023
+RC80,RXN-8407,RXN-8407
+RC810,RXN-8573,RXN-8573
+RC811,RXN-11662,RXN-11662
+RC812,RXN-7842,RXN-7842
+RC813,RXN-7893,RXN-7893
+RC814,RXN-22713,RXN-22713
+RC815,RXN-13398,RXN-13398
+RC816,RXN-20674,RXN-20674
+RC817,RXN-10430,RXN-10430
+RC818,RXN-7783,flavonone 3&prime;-hydroxylase
+RC819,RXN-15517,RXN-15517
+RC81,RXN-24257,RXN-24257
+RC820,RXN-15348,RXN-15348
+RC821,RXN-21165,RXN-21165
+RC822,RXN-12101,RXN-12101
+RC823,RXN-23914,RXN-23914
+RC824,RXN0-5257,RXN0-5257
+RC825,RXN-13334,RXN-13334
+RC826,RXN-10945,RXN-10945
+RC827,RXN-13462,"(4<i>S</i>)-4-hydroxy-2,3,4,5-tetrahydro-(2<i>S</i>)-dipicolinate dehydratase"
+RC828,RXN-19980,RXN-19980
+RC829,BETA-PHOSPHOGLUCOMUTASE-RXN,BETA-PHOSPHOGLUCOMUTASE-RXN
+RC82,PHENYLPYRUVATE-TAUTOMERASE-RXN,PHENYLPYRUVATE-TAUTOMERASE-RXN
+RC830,RXN-20026,RXN-20026
+RC831,1.1.1.271-RXN,1.1.1.271-RXN
+RC832,RXN-7381,RXN-7381
+RC833,RXN-20673,RXN-20673
+RC834,PYRROLINECARBDEHYDROG-RXN,1-pyrroline-5-carboxylate dehydrogenase
+RC835,RXN-10938,RXN-10938
+RC836,1.14.19.1-RXN,1.14.19.1-RXN
+RC837,RXN-9955,RXN-9955
+RC838,RXN-12078,RXN-12078
+RC839,RXN18C3-112,RXN18C3-112
+RC83,FORMYLTHFDEFORMYL-RXN,FORMYLTHFDEFORMYL-RXN
+RC840,RXN-20154,RXN-20154
+RC841,2-HEXADECENAL-REDUCTASE-RXN,2-HEXADECENAL-REDUCTASE-RXN
+RC842,RXN-2102,RXN-2102
+RC843,RXN-10639,RXN-10639
+RC844,RXN66-316,"4&alpha;-hydroxymethyl-5&alpha;-cholesta-8,24-dien-3&beta;-ol dehydrogenase"
+RC845,RXN-21400,RXN-21400
+RC846,NADNUCLEOSID-RXN,NADNUCLEOSID-RXN
+RC847,RXN-14487,oleoyl-CoA 12-hydroxylase
+RC848,RXNQT-4385,RXNQT-4385
+RC849,3-SULFINYL-PYRUVATE-SPON-RXN,3-SULFINYL-PYRUVATE-SPON-RXN
+RC84,RXN-9559,RXN-9559
+RC850,GLYCEROL-2-PHOSPHATASE-RXN,GLYCEROL-2-PHOSPHATASE-RXN
+RC851,RXN-9983,RXN-9983
+RC852,GLYCOGEN-BRANCH-RXN,GLYCOGEN-BRANCH-RXN
+RC853,RXN-15986,RXN-15986
+RC854,RXN-10851,RXN-10851
+RC855,RXN-12128,RXN-12128
+RC856,RXN1ZN3-9,RXN1ZN3-9
+RC857,RXN-5984,RXN-5984
+RC858,THIAMINASE-RXN,THIAMINASE-RXN
+RC859,1.14.13.118-RXN,1.14.13.118-RXN
+RC85,RXN-11269,RXN-11269
+RC860,RXN-10862,RXN-10862
+RC861,RXN-8425,RXN-8425
+RC862,GUANOSINE-DIPHOSPHATASE-RXN,GUANOSINE-DIPHOSPHATASE-RXN
+RC863,RXN-7826,RXN-7826
+RC864,RXN-20456,RXN-20456
+RC865,4-HYDROXYGLUTAMATE-AMINOTRANSFERASE-RXN,4-HYDROXYGLUTAMATE-AMINOTRANSFERASE-RXN
+RC866,ALDOSE-1-EPIMERASE-RXN,ALDOSE-1-EPIMERASE-RXN
+RC867,RXN1F-444,RXN1F-444
+RC868,MALDEXPHOSPHORYL-RXN,MALDEXPHOSPHORYL-RXN
+RC869,RXN-15651,RXN-15651
+RC86,RXN-7657,RXN-7657
+RC870,RXN-12846,RXN-12846
+RC871,RXN-12754,RXN-12754
+RC872,RXN-8380,RXN-8380
+RC873,RXN0-5260,sn-glycerol 3-phosphate:ubiquinone oxidoreductase
+RC874,RXN-5481,RXN-5481
+RC875,RXN-21025,RXN-21025
+RC876,RXN-12332,RXN-12332
+RC877,RXN-4230,RXN-4230
+RC878,RXN-16333,RXN-16333
+RC879,RXN-22643,RXN-22643
+RC87,RXNQT-4393,RXNQT-4393
+RC880,HOMOCYSTEINE-S-METHYLTRANSFERASE-RXN,HOMOCYSTEINE-S-METHYLTRANSFERASE-RXN
+RC881,RXN-8426,RXN-8426
+RC882,6.3.5.6-RXN,6.3.5.6-RXN
+RC883,RXN-4311,RXN-4311
+RC884,RXN-8985,RXN-8985
+RC885,GLUCONOLACT-RXN,GLUCONOLACT-RXN
+RC886,RXN-10774,RXN-10774
+RC887,12-ALPHA-L-FUCOSIDASE-RXN,12-ALPHA-L-FUCOSIDASE-RXN
+RC888,RXN-11271,RXN-11271
+RC889,CYCPHOSDIESTER-RXN,CYCPHOSDIESTER-RXN
+RC88,NQOR-RXN,NQOR-RXN
+RC890,RXN-14064,RXN-14064
+RC891,RXN4FS-27,RXN4FS-27
+RC892,RXN-14524,RXN-14524
+RC893,RXN-13938,RXN-13938
+RC894,RXN-14058,RXN-14058
+RC895,RXN66-312,"4&alpha;-formyl-4&beta;-methyl-5&alpha;-cholesta-8,24-dien-3&beta;-ol 4-hydroxylase"
+RC896,RXN-14243,RXN-14243
+RC897,RXN-14473,RXN-14473
+RC898,RXN-14814,RXN-14814
+RC899,RXN-5101,RXN-5101
+RC89,RXN-12870,RXN-12870
+RC8,RXN-12124,RXN-12124
+RC900,RXN-22319,RXN-22319
+RC901,RXNQT-4317,RXNQT-4317
+RC902,RXNQT-4164,RXNQT-4164
+RC903,RXN-7740,RXN-7740
+RC904,1.14.13.87-RXN,1.14.13.87-RXN
+RC905,RXN-21168,RXN-21168
+RC906,RXN-10434,RXN-10434
+RC907,RXN-12309,RXN-12309
+RC908,RXN-10815,2-oxo-3-phenylpropanoate dioxygenase
+RC909,RXN-14505,RXN-14505
+RC90,RXN-14242,RXN-14242
+RC910,RXN-10773,RXN-10773
+RC911,RXN-21527,RXN-21527
+RC912,RXN-3541,RXN-3541
+RC913,RXN-14355,RXN-14355
+RC914,RXN-1024,RXN-1024
+RC915,RXN-11223,RXN-11223
+RC916,RXN-12304,RXN-12304
+RC917,RXN-7617,RXN-7617
+RC918,RXN-9567,RXN-9567
+RC919,RXN-13873,RXN-13873
+RC91,RXN-10727,myristoyl-ACP hydrolase activity
+RC920,GALACTOSIDE-2-L-FUCOSYLTRANSFERASE-RXN,GALACTOSIDE-2-L-FUCOSYLTRANSFERASE-RXN
+RC921,RXN-13508,RXN-13508
+RC922,RXN-11231,RXN-11231
+RC923,RXN-20169,RXN-20169
+RC924,1.14.13.74-RXN,1.14.13.74-RXN
+RC925,3.6.3.44-RXN,3.6.3.44-RXN
+RC926,RXN-9090,RXN-9090
+RC927,FORMATE-DEHYDROGENASE-NADP+-RXN,FORMATE-DEHYDROGENASE-NADP+-RXN
+RC928,RXN-8748,RXN-8748
+RC929,RXNQT-4158,RXNQT-4158
+RC92,RXN-15461,RXN-15461
+RC930,RXN-10864,RXN-10864
+RC931,ALPHA-L-FUCOSIDASE-RXN,ALPHA-L-FUCOSIDASE-RXN
+RC932,RXN-10879,RXN-10879
+RC933,RXN-9259,Protoporphyrinogen oxidase
+RC934,RXN-3121,RXN-3121
+RC935,RXN-16910,RXN-16910
+RC936,RXN-8353,RXN-8353
+RC937,RXN-14409,RXN-14409
+RC938,ARGININE-2-MONOOXYGENASE-RXN,ARGININE-2-MONOOXYGENASE-RXN
+RC939,CARDIOLIPSYN-RXN,CARDIOLIPSYN-RXN
+RC93,RXN-8088,RXN-8088
+RC940,RXN-13409,RXN-13409
+RC941,RXN-18383,RXN-18383
+RC942,NUCLEOSIDE-TRIPHOSPHATASE-RXN,NUCLEOSIDE-TRIPHOSPHATASE-RXN
+RC943,NADH-DEHYDROG-RXN,NADH dehydrogenase (ubiquinone)
+RC944,RXN-9673,RXN-9673
+RC945,RXN-11400,RXN-11400
+RC946,2.7.9.4-RXN,2.7.9.4-RXN
+RC947,RXN-22761,RXN-22761
+RC948,RXN-18451,RXN-18451
+RC949,RXN-10431,RXN-10431
+RC94,RXN-22316,RXN-22316
+RC950,TDCEACT-RXN,TDCEACT-RXN
+RC951,RXN0-5468,RXN0-5468
+RC952,RXN-9565,RXN-9565
+RC953,RXN-13027,RXN-13027
+RC954,RXNQT-4155,RXNQT-4155
+RC955,RXN-20898,RXN-20898
+RC956,ALCOHOL-DEHYDROG-GENERIC-RXN,ALCOHOL-DEHYDROG-GENERIC-RXN
+RC957,RXN-8408,RXN-8408
+RC958,RXN-15345,RXN-15345
+RC959,RXN-10770,RXN-10770
+RC95,RXN-10436,RXN-10436
+RC960,GLYCEROL-3-P-ACYLTRANSFER-RXN,acyl-ACP:sn-glycerol-3-phosphate 1-O-acyltransferase
+RC961,RXN4KF-53,RXN4KF-53
+RC962,RXN-7948,RXN-7948
+RC963,RXN-12659,RXN-12659
+RC964,RXN-8865,RXN-8865
+RC965,RXN-19005,RXN-19005
+RC966,RXN-7838,RXN-7838
+RC967,RXN-9071,phenolic oxidative coupling protein
+RC968,RXN-8813,RXN-8813
+RC969,PSERPHOSPHA-RXN,PSERPHOSPHA-RXN
+RC96,RXN-12251,RXN-12251
+RC970,DOLICHOL-KINASE-RXN,DOLICHOL-KINASE-RXN
+RC971,RXN-19582,RXN-19582
+RC972,RXN-14003,RXN-14003
+RC973,RXN-17677,RXN-17677
+RC974,GLUCOSE-6-PHOSPHATASE-RXN,GLUCOSE-6-PHOSPHATASE-RXN
+RC975,3.2.1.58-RXN,3.2.1.58-RXN
+RC976,RXN-11229,RXN-11229
+RC977,RXN-11745,5-fluoro-5-deoxy-d-ribulose-1-phosphate aldolase
+RC978,RXN-11545,RXN-11545
+RC979,RXN-18259,RXN-18259
+RC97,RXN-8419,RXN-8419
+RC980,RXN-13956,RXN-13956
+RC981,RXN-8039,RXN-8039
+RC982,RXN-21525,RXN-21525
+RC983,RXN4FS-17,RXN4FS-17
+RC984,RXN0-5187,RXN0-5187
+RC985,RXN-15525,RXN-15525
+RC986,RXN-14858,RXN-14858
+RC987,RXN4FS-23,RXN4FS-23
+RC988,3-OXOACYL-ACP-SYNTH-BASE-RXN,3-OXOACYL-ACP-SYNTH-BASE-RXN
+RC989,THYM-PHOSPH-RXN,THYM-PHOSPH-RXN
+RC98,RXN-11846,RXN-11846
+RC990,3.5.5.1-RXN,3.5.5.1-RXN
+RC991,RXN-12590,pyridoxal 5&prime;-phosphate synthase (glutamine hydrolyzing)
+RC992,RXN-11402,RXN-11402
+RC993,RXN-22830,RXN-22830
+RC994,RXN-4309,RXN-4309
+RC995,RXN-12876,RXN-12876
+RC996,RXN-22402,RXN-22402
+RC997,RXN-12642,RXN-12642
+RC998,RXN-15512,RXN-15512
+RC999,RXN-19646,RXN-19646
+RC99,4.2.3.14-RXN,pinene synthase
+RC9,RXN-14993,RXN-14993

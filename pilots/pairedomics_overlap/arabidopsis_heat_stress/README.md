@@ -19,3 +19,21 @@ _Transcriptomics:_ Illumina HiSeq. 4000 platform (100 bp single-end reads), Se
 _Proteomics:_ Q-Exactive (Thermo Fisher Scientific, Dreieich, Germany) mass spectrometer coupled to an EASY-nLC 1000 system, Proteome Discoverer (version 2.5, Thermo Fisher Scientific) software using the Arabidopsis protein database (Version 10, The Arabidopsis Information Resource, [www.arabidopsis.org](http://www.arabidopsis.org/)). An in-house list of common contaminants was added to the search. SEQUEST HT was used to assign the peptides, allowing a maximum of 2 missed tryptic cleavages. Additionally, a minimum peptide length of six amino acids, a precursor mass tolerance of 10 ppm, and a fragment mass tolerance of 0.02 Da were selected. Carbamidomethylation of cysteines and oxidation of methionine were specified as static and dynamic modifications, respectively. False discovery rates (FDRs) of 0.01 and 0.05 validated peptide spectral matches at high and medium confidence, respectively. Label-free quantification (LFQ) based on MS1 precursor ion intensity was performed in Proteome Discoverer with a minimum Quan value threshold set to 0.0001 for unique peptides. The ‘Top 3N’ peptides were used for area calculation. The normalized protein abundances were used among the samples, and values were log2-transformed and imputed using a normal distribution pattern.
 
 _Metabolomics_: GC-TOF-MS untargeted metabolomics workflow using two-step derivatization (methoxyamination + MSTFA), followed by peak detection and compound annotation with TargetSearch.
+
+
+
+## Data processing (done additionally for this project):
+
+- Samples names harmonization across omics layers
+- Selecting samples neasured for all omics layers: 22
+
+Transcriptomics: lowly expressed genes removed by filterByExpr edgeR, normalization by DeSEQ2, VST trsansformed
+Proteomics: entries measured in less than 20 samples removed, central median normalization, log2 transformation
+Metabolomics: log2 transformation, names mapped to IDs and InChIKey by Metabolite Translation Service BioCyc
+
+DGE and differential adundance analysis: DeSEQ2 and limma, model ~ TIME + TREATMENT
+Significant transcripts (padj<0.05 and abs(LFC)>1.5) and proteins (padj<0.05) are correlated with metabolites abundances (Pearson correlation, Spearman/mutual ranks)
+
+All IDs are compared vs PlantMetWiki entries:
+
+![alt text](image.png)
