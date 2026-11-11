@@ -99,3 +99,29 @@ def local_count(data, query):
     job = json.dumps({"query": query, "data": [str(DATA[d]) for d in data], "max_rows": 1})
     p = subprocess.run([sys.executable, str(HERE / "mi_worker.py")], input=job, capture_output=True, text=True, timeout=120)
     return int(json.loads(p.stdout)["rows"][0][0])
+
+
+def run_endpoint(name, case, timeout=150, max_rows=2000):
+    """Run a tier whose target is a public endpoint (the query reaches the others with SERVICE); same result as run()."""
+    import requests
+    q = load_query(name)
+    target = PMW
+    out = {"tier": name, "case": case, "date": datetime.date.today().isoformat(), "pmw_release": pmw_release(), "timeout_s": timeout}
+    import time
+    t0 = time.time()
+    try:
+        r = requests.post(target, data={"query": q["query"]}, headers={"Accept": "application/sparql-results+json"}, timeout=timeout)
+    except requests.exceptions.Timeout:
+        out.update(status="timeout", n_rows=None, seconds=None)
+        return out | {"table": pd.DataFrame(), "comment": q["comment"]}
+    if r.status_code != 200:
+        out.update(status=f"error: HTTP {r.status_code}", n_rows=None, seconds=None)
+        return out | {"table": pd.DataFrame(), "comment": q["comment"]}
+    d = r.json()
+    cols = d["head"]["vars"]
+    rows = [[b.get(c, {}).get("value") for c in cols] for b in d["results"]["bindings"]]
+    table = pd.DataFrame(rows[:max_rows], columns=cols)
+    RESULTS.mkdir(exist_ok=True)
+    table.to_csv(RESULTS / f"{name}.csv", index=False)
+    out.update(status="rows" if rows else "no rows", n_rows=len(rows), seconds=round(time.time() - t0, 1))
+    return out | {"table": table, "comment": q["comment"]}

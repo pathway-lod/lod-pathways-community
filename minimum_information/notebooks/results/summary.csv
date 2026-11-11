@@ -7,6 +7,9 @@ rhea-step-between-metabolites,5 metabolomics,error: killed by the system (probab
 shared-chemical-class,5 metabolomics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
 similarity-link,5 metabolomics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
 structure-similarity,5 metabolomics,timeout,,,150,2026-11-10,r17.0.0_20260605-171052
+idsm-similar-metabolite-with-coexpressed-catalysing-gene,5 metabolomics (IDSM),rows,4,2.7,150,2026-11-11,r17.0.0_20260605-171052
+idsm-similar-metabolites-in-pathway,5 metabolomics (IDSM),rows,77,1.0,150,2026-11-11,r17.0.0_20260605-171052
+metabolite-similar-to-pathway-metabolite-idsm,5 metabolomics (IDSM),rows,7,0.5,150,2026-11-11,r17.0.0_20260605-171052
 gene-and-metabolite-in-same-pathway,6 paired omics,no rows,0,2.1,150,2026-11-10,r17.0.0_20260605-171052
 gene-catalyses-the-transformation,6 paired omics,no rows,0,0.0,150,2026-11-10,r17.0.0_20260605-171052
 gene-in-plantmetwiki-pathway,6 paired omics,no rows,0,1.6,240,2026-11-10,r17.0.0_20260605-171052

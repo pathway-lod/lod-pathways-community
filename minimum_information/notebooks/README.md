@@ -6,6 +6,7 @@ One notebook per case. Each runs the SPARQL queries of the tiers (the files of [
 |---|---|---|
 | [`01_metabolomics.ipynb`](01_metabolomics.ipynb) | 5. Metabolomics: metabolite annotations | `annotation-matches-plantmetwiki`, `shared-chemical-class`, `similarity-link`, `structure-similarity`, `rhea-step-between-metabolites` |
 | [`02_paired_omics.ipynb`](02_paired_omics.ipynb) | 6. Paired omics (with cases 5 and 7) | `gene-and-metabolite-in-same-pathway`, `gene-in-plantmetwiki-pathway`, `ortholog-in-pathway-species`, `gene-catalyses-the-transformation`, `ortholog-plus-ml-prediction` |
+| [`04_idsm_similarity.ipynb`](04_idsm_similarity.ipynb) | 5 (with 2, 4 and 6). Chemical similarity with IDSM | `idsm-similar-metabolites-in-pathway`, `metabolite-similar-to-pathway-metabolite-idsm`, `idsm-similar-metabolite-with-coexpressed-catalysing-gene` (these run on the public PlantMetWiki endpoint, with IDSM called by `SERVICE`) |
 | [`03_gene_clusters.ipynb`](03_gene_clusters.ipynb) | 3 and 4. Gene clusters and co-expression (with case 6) | `coexpressed-in-same-cluster`, `coexpressed-in-cluster-one-in-pathway`, `coexpressed-in-cluster-both-in-pathway` |
 
 Each tier has a cell with the query's description, the run (status, number of rows, seconds, first rows) and a **For discussion** cell for comments. The results of each tier are also saved as CSV in [`results/`](results/), with [`results/summary.csv`](results/summary.csv) for all tiers.
@@ -27,6 +28,14 @@ Each tier has a cell with the query's description, the run (status, number of ro
 | `gene-in-plantmetwiki-pathway` | 6 paired omics | no rows | 1.6 |
 | `ortholog-in-pathway-species` | 6 paired omics | no rows | 0.0 |
 | `ortholog-plus-ml-prediction` | 6 paired omics | no rows | 0.0 |
+
+The three IDSM queries (run on 2026-11-11, same PlantMetWiki release, with the example metabolites and gene given in the queries):
+
+| Tier | Case | Status | Seconds |
+|---|---|---|---|
+| `idsm-similar-metabolite-with-coexpressed-catalysing-gene` | 5 metabolomics (IDSM) | rows (4 rows) | 2.7 |
+| `idsm-similar-metabolites-in-pathway` | 5 metabolomics (IDSM) | rows (77 rows) | 1.0 |
+| `metabolite-similar-to-pathway-metabolite-idsm` | 5 metabolomics (IDSM) | rows (7 rows) | 0.5 |
 
 How to read it:
 

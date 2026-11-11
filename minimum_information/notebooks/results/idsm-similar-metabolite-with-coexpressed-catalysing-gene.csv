@@ -1,0 +1,5 @@
+detectedMetabolite,similarChebi,score,pathway,conversion,enzyme
+solasodine,http://purl.obolibrary.org/obo/CHEBI_9190,1.0,PC296,http://rdf-plantmetwiki.bioinformatics.nl/Pathway/PC296_r17.0.0_20260605-171052/WP/Interaction/RXN18C3_13,https://identifiers.org/uniprot/E5L3R8
+solasodine,http://purl.obolibrary.org/obo/CHEBI_9190,1.0,PC70,http://rdf-plantmetwiki.bioinformatics.nl/Pathway/PC70_r17.0.0_20260605-171052/WP/Interaction/RXN18C3_13,https://identifiers.org/uniprot/E5L3R8
+solasodine,http://purl.obolibrary.org/obo/CHEBI_9629,0.935484,PC968,http://rdf-plantmetwiki.bioinformatics.nl/Pathway/PC968_r17.0.0_20260605-171052/WP/Interaction/RXN18C3_9,https://identifiers.org/uniprot/E5L3R8
+solasodine,http://purl.obolibrary.org/obo/CHEBI_9629,0.935484,PC70,http://rdf-plantmetwiki.bioinformatics.nl/Pathway/PC70_r17.0.0_20260605-171052/WP/Interaction/RXN18C3_9,https://identifiers.org/uniprot/E5L3R8
