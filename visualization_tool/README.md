@@ -15,7 +15,8 @@ npm run shot -- out.png "data=slide25.nq"   # build + headless screenshot (needs
 
 Documentation: [CLAUDE.md](CLAUDE.md) (guide for agents and developers: rules, how to check changes),
 [docs/architecture.md](docs/architecture.md) (pipeline, data structures, roles, profile reference, open work),
-[docs/layout.md](docs/layout.md) (the layout algorithm), [docs/decisions.md](docs/decisions.md) (why it looks like this).
+[docs/layout.md](docs/layout.md) (the layout algorithm), [docs/decisions.md](docs/decisions.md) (why it looks like this), [docs/pmw-structure.md](docs/pmw-structure.md)
+(PlantMetWiki structure and clustering options for the global view).
 
 ## Design: works for any data that fits the evidence model
 
@@ -39,6 +40,7 @@ URL parameters: `?data=<file in public/data>&focus=<claim IRI>&profile=<file or 
 - **Cards, not triples.** One card per resource. Literal values, types and links to resources outside the subset
   become rows. Only links between cards are drawn as edges.
 - **Columns by role**, derived from the evidence pattern. Default (compact): runs | data + evidence | claims | PlantMetWiki, so every link goes to a neighbouring column. "slide layout": data | claims | evidence | PlantMetWiki | runs, as on slides 24/25.
+  PlantMetWiki cards form trees growing downward (anchor on top, e.g. metabolite → its pathways side by side below).
   The layout is deterministic: claims centred on their evidence, linked claims adjacent, shared data between its
   claims, every edge on its own track, gaps as wide as their labels (see docs/layout.md). In the slide layout,
   edges that skip a column run on a lane above the cards.
@@ -48,12 +50,19 @@ URL parameters: `?data=<file in public/data>&focus=<claim IRI>&profile=<file or 
   own RDF, `proposal` = not in the RDF export yet (dashed).
 - **SHACL report** (pyshacl, the repo's shapes) on the cards: violations and warnings, and *missing* required
   properties as dashed red rows.
-- Click a card to see its RDF (Turtle). Export PNG/SVG. Open a local `.ttl`/`.nq`/`.trig` file (no report then).
+- Click a card to see its RDF (Turtle); Shift-, Ctrl- or Cmd-click adds or removes cards, Shift-drag on the background
+  selects a box of cards. The panel shows one combined Turtle of the selection, including the runs shown inside
+  selected evidence cards (only the prefixes it uses), which
+  **Copy** and **.ttl** export; proposal-only triples are shown below it and not exported.
+  Export PNG/SVG of the picture, and **TTL**: the Turtle of everything shown (all subjects of the current view,
+  including runs folded into evidence cards; without proposal triples). Open a local `.ttl`/`.nq`/`.trig` file (no report then).
   Files with more than 60 subjects open on the first claim.
 - **Global view (test, `global.html`)**: all claims of a file on one Cytoscape.js canvas: knowledge graph in the
   middle, anchors on its rim, claims on an outer ring, unanchored claims in a separate wedge. Click a claim to open
   its cards beside the ring. Experimental: it checks whether Cytoscape.js is fast enough for thousands of claims
-  (see docs/decisions.md D21-D22).
+  (see docs/decisions.md D21-D22). Default layout since 2026-11-11: the **PlantMetWiki map** (`?layout=kg`): a fixed
+  ring of PlantMetWiki groups and pathways that lights up where the file's claims land, claims around it in blocks
+  per group, ribbons between them; `?layout=ring` is the earlier anchor ring (D25).
 
 ## Data
 
@@ -84,8 +93,13 @@ report). Other files can be opened with "Open file".
 | `src/profile.js` | everything vocabulary-specific, driven by the profile: roles, titles, term status, pattern checks |
 | `src/model.js` | cards, rows, edges; attaching SHACL results and pattern checks |
 | `src/layout.js` | column layouts (compact / slide; by link distance without claims): claim blocks, linked claims adjacent, KG groups, edge sides |
-| `src/CardNode.jsx`, `src/TrackEdge.jsx`, `src/LaneEdge.jsx`, `src/App.jsx` | ReactFlow rendering (cards, edges on own tracks, edges over the top) |
+| `src/CardNode.jsx`, `src/TrackEdge.jsx`, `src/VTrackEdge.jsx`, `src/LaneEdge.jsx`, `src/App.jsx` | ReactFlow rendering (cards, edges on own tracks between columns or between tree rows, edges over the top) |
 | `global.html`, `src/Global.jsx`, `src/globalLayout.js` | global view test (Cytoscape.js; deterministic ring layout); reuses `Graph` from `src/App.jsx` for the detail |
+| `src/kgStubs.js` | card viewer, selections: stub cards for knowledge-graph anchors the file does not describe (from the snapshot) |
+| `src/handoff.js` | hand-off of a selection (and the file text) between global view and card viewer via IndexedDB |
+| `src/siblings.js` | global view: links between claims that point at the same node (directly or via evidence) |
+| `src/kgMap.js`, `src/kgDraw.js` | global view, PlantMetWiki map layout (test): claim → pathway mapping and geometry; canvas drawing under Cytoscape |
+| `tools/build_pmw_snapshot.py`, `tools/pmw_class_groups.csv` | PlantMetWiki snapshot for the map (`public/data/pmw_snapshot.json`); class → group table |
 | `tools/build_viewer_bundle.py` | data bundles: subset + SHACL report + vocabulary as N-Quads, term table as JSON |
 | `tools/rebuild_bundles.sh` | rebuilds every bundle in `public/data/` |
 | `tools/screenshot.mjs` | build, serve, headless screenshots of given URL queries (the visual check) |

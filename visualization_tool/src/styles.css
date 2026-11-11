@@ -27,6 +27,15 @@ main { flex: 1; display: flex; min-height: 0; }
 aside { width: 460px; border-left: 1px solid var(--line); background: #fff; display: flex; flex-direction: column; }
 .aside-head { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--line); }
 aside pre { margin: 0; padding: 12px; overflow: auto; font: 12px/1.5 var(--mono); white-space: pre-wrap; word-break: break-all; }
+aside { overflow-y: auto; }
+aside pre { flex-shrink: 0; overflow: visible; }
+.aside-head { position: sticky; top: 0; background: #fff; }
+.aside-actions { display: flex; gap: 6px; }
+.aside-actions button { font-size: 12px; padding: 2px 8px; cursor: pointer; }
+.aside-sub { padding: 6px 12px; border-top: 1px dashed var(--line); color: var(--grey); font-size: 12px; }
+aside pre.proposal { color: var(--grey); }
+/* multi-selection (box select): React Flow draws a frame for dragging the selection as a group; not wanted here */
+.react-flow__nodesselection-rect { display: none; }
 
 /* ---- cards */
 .card { width: 400px; background: #fff; border: 2.5px solid var(--c); border-radius: 10px; font-size: 12.5px; cursor: pointer; box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); }
@@ -76,3 +85,8 @@ aside pre { margin: 0; padding: 12px; overflow: auto; font: 12px/1.5 var(--mono)
 .issue.pattern { color: #1d4ed8; border-color: #1d4ed8; background: #eff6ff; }
 .cnt.pattern { color: #1d4ed8; }
 header .note { color: var(--grey); font-size: 12px; }
+
+/* selection handed over by the global view (App.jsx, 2026-11-11) */
+.subset-bar { display: flex; align-items: center; gap: 12px; padding: 6px 16px; background: #fff7ed;
+  border-bottom: 1px solid #fed7aa; font-size: 13px; }
+.subset-bar button { padding: 2px 10px; }

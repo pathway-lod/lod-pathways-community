@@ -48,6 +48,7 @@
     "kg": {
       "label": "already in PlantMetWiki",
       "name": "PlantMetWiki",
+      "snapshot": "data/pmw_snapshot.json",
       "objectOf": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"],
       "namespaces": ["pmw:", "pmwnode:"],
       "classNamespaces": ["wp:"],
@@ -58,7 +59,8 @@
   "pattern": {
     "hasEvidence": ["sio:SIO_000772", "lodp:mibigMatchEvidence"],
     "generatedBy": ["prov:wasGeneratedBy"],
-    "anchoredTo": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"]
+    "anchoredTo": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"],
+    "sameEntity": ["skos:closeMatch"]
   },
 
   "terms": {

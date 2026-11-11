@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState, useCallback } from 'react';
+import { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import {
-  ReactFlow, ReactFlowProvider, Background, Controls, MarkerType,
+  ReactFlow, ReactFlowProvider, Background, Controls, MarkerType, SelectionMode,
   useNodesState, useEdgesState, useNodesInitialized, useReactFlow, getNodesBounds, getViewportForBounds,
 } from '@xyflow/react';
 import { toPng, toSvg } from 'html-to-image';
@@ -9,10 +9,14 @@ import './styles.css';
 import CardNode from './CardNode.jsx';
 import LaneEdge from './LaneEdge.jsx';
 import TrackEdge from './TrackEdge.jsx';
-import { parseRdf, indexGraph, focusSet, turtleOf } from './rdf.js';
+import VTrackEdge from './VTrackEdge.jsx';
+import { parseRdf, indexGraph, focusSet, focusSetMany, turtleOf, key } from './rdf.js';
+import { getHandoff, handoffUrl } from './handoff.js';
 import { loadProfile, makeRoles, makeLabels, titleFor } from './profile.js';
 import { buildView } from './model.js';
-import { layout, handlesFor, assignTracks, assignPorts } from './layout.js';
+import { layout, layoutGrid, handlesFor, assignTracks, assignVTracks, assignPorts } from './layout.js';
+import { indexSnapshot } from './kgMap.js';
+import { withKgStubs } from './kgStubs.js';
 
 export const ROLE_COLOR = { data: '#2563eb', claim: '#c2410c', evidence: '#15803d', kg: '#7e22ce', run: '#475569' };
 const PROFILES = [
@@ -21,15 +25,18 @@ const PROFILES = [
 ];
 const EMPTY_PROFILE = { name: 'none', prefixes: {} };
 const nodeTypes = { card: CardNode };
-const edgeTypes = { lane: LaneEdge, track: TrackEdge };
+const edgeTypes = { lane: LaneEdge, track: TrackEdge, vtrack: VTrackEdge };
 const MAX_ALL = 60;
+const isProposal = (t) => t.origins.size === 1 && t.origins.has('proposal'); // as in model.js
+const MULTI_KEYS =['Shift', 'Control', 'Meta']; // held while clicking a card: add it to / remove it from the selection
 const params = new URLSearchParams(window.location.search);
+const SUBSET_PAGE = 100; // claims per page when a selection from the global view is shown
 // width of an edge label in the font it is drawn with (for the dynamic column gaps)
 const measureCtx = document.createElement('canvas').getContext('2d');
 measureCtx.font = "600 12px ui-monospace, 'Cascadia Mono', Consolas, monospace";
 const labelWidth = (text) => measureCtx.measureText(text).width + 10;
 
-export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mode }) {
+export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mode, grid = false }) {
   const [nodes, setNodes, onNodesChange] = useNodesState(
     [...view.cards.values()].map((c) => ({
       id: c.id, type: 'card', position: { x: 0, y: 0 }, data: { card: c, showMissing, compact: P.compact }, style: { opacity: 0 },
@@ -43,12 +50,14 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
   useEffect(() => {
     if (!initialized || done) return;
     const sizes = new Map(getNodes().map((n) => [n.id, n.measured]));
-    const pos = layout(view.cards, view.edges, sizes, mode, labelWidth);
+    // grid: each connected graph laid out on its own, graphs packed in rows (selections from the global view)
+    const pos = (grid ? layoutGrid : layout)(view.cards, view.edges, sizes, mode, labelWidth);
     setNodes((ns) => ns.map((n) => ({ ...n, position: pos.get(n.id) ?? n.position, style: { opacity: 1 } })));
     const lanes = new Map();
     const routed = view.edges.map((e) => ({ ...e, ...handlesFor(e, pos, lanes) }));
     const ports = assignPorts(routed, pos, sizes);
     const tracks = assignTracks(routed, pos, sizes, ports);
+    const vtracks = assignVTracks(routed, pos, sizes, ports);
     // edges entering the same card at the same point with the same label: show the label once
     const seenLabel = new Set();
     for (const e of routed) {
@@ -57,11 +66,12 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
     }
     setEdges(routed.map((e) => {
       const color = ROLE_COLOR[view.cards.get(e.target)?.role] || '#64748b';
-      const onTrack = tracks.has(e.id);
+      const onTrack = tracks.has(e.id), onVTrack = vtracks.has(e.id);
       return {
         id: e.id, source: e.source, target: e.target, sourceHandle: e.sourceHandle, targetHandle: e.targetHandle,
-        type: e.type === 'lane' ? 'lane' : onTrack ? 'track' : 'smoothstep',
-        data: e.type === 'lane' ? e.data : onTrack ? { centerX: tracks.get(e.id), ...ports.get(e.id) } : undefined,
+        type: e.type === 'lane' ? 'lane' : onTrack ? 'track' : onVTrack ? 'vtrack' : 'smoothstep',
+        data: e.type === 'lane' ? e.data : onTrack ? { centerX: tracks.get(e.id), ...ports.get(e.id) }
+          : onVTrack ? { trackY: vtracks.get(e.id), ...ports.get(e.id) } : undefined,
         label: e.label, labelStyle: { fill: color, fontWeight: 600, fontSize: 12, fontFamily: 'var(--mono)' },
         labelBgStyle: { fill: '#fff' }, labelBgPadding: [4, 2],
         style: { stroke: color, strokeWidth: 1.8, strokeDasharray: e.state === 'proposal' ? '7 5' : undefined },
@@ -77,9 +87,21 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
     requestAnimationFrame(() => { fitBounds(bounds, { padding: 0.04 }); document.body.dataset.ready = '1'; });
   }, [initialized, done]);
 
+  // selection: `selected` (list of card ids, or null) is the source of truth; it is pushed into React Flow's own
+  // node selection, and React Flow's changes (Shift/Ctrl/Cmd-click toggles, Shift-drag box) come back via onSelect
+  // (React Flow reports an empty selection on mount, before our push; ignore it so a remount keeps the selection)
+  const pushed = useRef(false);
   useEffect(() => {
-    setNodes((ns) => ns.map((n) => ({ ...n, data: { ...n.data, selected: n.id === selected } })));
+    const sel = new Set(selected || []);
+    setNodes((ns) => ns.map((n) => {
+      const s = sel.has(n.id);
+      return n.selected === s && n.data.selected === s ? n : { ...n, selected: s, data: { ...n.data, selected: s } };
+    }));
+    pushed.current = true;
   }, [selected]);
+  const onSelectionChange = useCallback(({ nodes: sel }) => {
+    if (pushed.current) onSelect(sel.map((n) => n.id));
+  }, [onSelect]);
 
   exportRef.current = async (kind) => {
     const b = getNodesBounds(getNodes());
@@ -97,7 +119,9 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
     <ReactFlow
       nodes={nodes} edges={edges} nodeTypes={nodeTypes} edgeTypes={edgeTypes}
       onNodesChange={onNodesChange} onEdgesChange={onEdgesChange}
-      onNodeClick={(_, n) => onSelect(n.id)} onPaneClick={() => onSelect(null)}
+      onNodeClick={(ev, n) => { if (!(ev.shiftKey || ev.ctrlKey || ev.metaKey)) onSelect([n.id]); }}
+      onPaneClick={() => onSelect([])} onSelectionChange={onSelectionChange}
+      multiSelectionKeyCode={MULTI_KEYS} selectionMode={SelectionMode.Partial} deleteKeyCode={null}
       minZoom={0.05} maxZoom={2} nodesConnectable={false} proOptions={{ hideAttribution: true }}
     >
       <Background gap={24} color="#e2e8f0" />
@@ -130,7 +154,7 @@ export default function App() {
   const [termTable, setTermTable] = useState(null);
   const [profileFile, setProfileFile] = useState(params.has('profile') ? (params.get('profile') || null) : PROFILES[0].file);
   const [profileJson, setProfileJson] = useState(null);
-  const [g, setG] = useState(null);
+  const [g0, setG] = useState(null); // the parsed file; `g` below adds knowledge-graph stubs in selection mode
   const [source, setSource] = useState(params.get('data') || 'slide25.nq');
   const [focus, setFocus] = useState(params.get('focus') || '');
   const [runsAsCards, setRunsAsCards] = useState(params.get('runs') === '1');
@@ -139,6 +163,9 @@ export default function App() {
   const [useTerms, setUseTerms] = useState(params.get('terms') !== '0');
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(null);
+  // selection handed over by the global view (handoff.js): {title, claims}; shown page by page
+  const [subset, setSubset] = useState(null);
+  const [page, setPage] = useState(0);
   const exportRef = { current: null };
 
   useEffect(() => {
@@ -157,34 +184,91 @@ export default function App() {
       if (!keepFocus) setFocus('');
     } catch (e) { setError(`${name}: ${e.message}`); }
   }, []);
+  // ?handoff=1: take data (and the file text, for files opened from disk) and the claim list from the global view
+  useEffect(() => {
+    if (!params.has('handoff')) return;
+    getHandoff().then((h) => {
+      if (!h) { setError('no selection from the global view found (browser storage empty or blocked)'); return; }
+      if (h.text != null) { setSource(h.source); loadText(h.text, h.name, true); }
+      else if (h.source && h.source !== source) setSource(h.source);
+      setSubset({ title: h.title, claims: h.claims || [] }); setPage(0); setFocus('');
+    });
+  }, []);
   useEffect(() => {
     if (source.startsWith('local:')) return;
+    let live = true; // a response for a source that is no longer current (e.g. replaced by a hand-off) is ignored
     fetch('data/' + source).then((r) => { if (!r.ok) throw new Error(r.statusText); return r.text(); })
-      .then((t) => loadText(t, source, true)).catch((e) => setError(`${source}: ${e.message}`));
+      .then((t) => { if (live) loadText(t, source, true); }).catch((e) => { if (live) setError(`${source}: ${e.message}`); });
+    return () => { live = false; };
   }, [source]);
 
   // the profile's prefixes win; the file's own prefixes fill the gaps (all of them when there is no profile)
-  const P = useMemo(() => (profileJson && g
-    ? loadProfile({ ...profileJson, prefixes: { ...g.filePrefixes, ...profileJson.prefixes } }) : null), [profileJson, g]);
+  const P = useMemo(() => (profileJson && g0
+    ? loadProfile({ ...profileJson, prefixes: { ...g0.filePrefixes, ...profileJson.prefixes } }) : null), [profileJson, g0]);
+  // knowledge-graph snapshot named in the profile (as in the global view): stub cards for anchors the file does not
+  // describe, so claims of a selection meet on their shared knowledge-graph nodes (kgStubs.js)
+  const [snap, setSnap] = useState(null);
+  useEffect(() => {
+    const f = profileJson?.roles?.kg?.snapshot;
+    if (!f) { setSnap(null); return; }
+    fetch(f).then((r) => (r.ok ? r.json() : null)).then(setSnap).catch(() => setSnap(null));
+  }, [profileJson]);
+  const S = useMemo(() => (snap ? indexSnapshot(snap) : null), [snap]);
+  // a hand-over selection: the claims of the current page (only those present in the file)
+  const subsetAll = useMemo(() => (subset && g0 ? subset.claims.filter((c) => g0.out.has(c)) : null), [subset, g0]);
+  const nPages = subsetAll ? Math.max(1, Math.ceil(subsetAll.length / SUBSET_PAGE)) : 0;
+  const pageClaims = subsetAll && !focus ? subsetAll.slice(page * SUBSET_PAGE, (page + 1) * SUBSET_PAGE) : null;
+  const g = useMemo(() => (g0 && P && S && pageClaims
+    ? withKgStubs(g0, pageClaims, P.anchoredTo, S, profileJson?.roles?.kg?.name) : g0), [g0, P, S, pageClaims?.join('|')]);
   const roleOf = useMemo(() => (g && P ? makeRoles(g, P) : null), [g, P]);
   const terms = useTerms ? termTable : null;
   const L = useMemo(() => (g && P ? makeLabels(g, P, terms) : null), [g, P, terms]);
   const claims = useMemo(() => (roleOf ? [...g.out.keys()].filter((k) => roleOf(k) === 'claim') : []), [roleOf]);
   // big files open on their first claim
-  const effFocus = focus || (g && g.out.size > MAX_ALL && claims.length ? claims[0] : '');
-  const view = useMemo(() => (roleOf && L
-    ? buildView(g, focusSet(g, effFocus || null, roleOf), { P, roleOf, L, terms, runsAsCards }) : null),
-  [roleOf, L, effFocus, runsAsCards, terms]);
-  const viewKey = `${source}|${effFocus}|${runsAsCards}|${showMissing}|${slideLayout}|${profileFile}|${useTerms}|${g?.quads.length}`;
+  const effFocus = focus || (pageClaims ? '' : (g && g.out.size > MAX_ALL && claims.length ? claims[0] : ''));
+  const shown = useMemo(() => (roleOf
+    ? (pageClaims ? focusSetMany(g, pageClaims, roleOf) : focusSet(g, effFocus || null, roleOf)) : null),
+  [roleOf, effFocus, pageClaims?.join('|')]);
+  const view = useMemo(() => (shown && L
+    ? buildView(g, shown, { P, roleOf, L, terms, runsAsCards }) : null),
+  [shown, L, runsAsCards, terms]);
+  const viewKey = `${source}|${effFocus}|${pageClaims ? `sel${page}/${subsetAll.length}` : ''}|${runsAsCards}|${showMissing}|${slideLayout}|${profileFile}|${useTerms}|${g?.quads.length}|${pageClaims && S ? 'stubs' : ''}`;
   const nViol = g?.results.filter((r) => r.severity === 'violation').length ?? 0;
   const nWarn = g?.results.filter((r) => r.severity === 'warning').length ?? 0;
+  // RDF of the selected cards: the exportable part, and the proposal-only triples shown apart (not exported)
+  // (plus the shown subjects that are not drawn as cards and that a selected card points to, e.g. runs folded into
+  // evidence cards, so the export holds what the selected cards show)
+  const nSel = selected?.length ?? 0;
+  const selTtl = useMemo(() => {
+    if (!nSel || !g || !P || !view) return null;
+    const folded = selected.flatMap((k) => (g.out.get(k) || []).map((t) => key(t.o)))
+      .filter((o) => shown.has(o) && g.out.has(o) && !view.cards.has(o));
+    const keys = [...new Set([...selected, ...folded])];
+    return { data: turtleOf(g, keys, P.prefixes, (t) => !isProposal(t) && !t.stub), proposal: turtleOf(g, keys, P.prefixes, isProposal) };
+  }, [selected, g, P, view, shown]);
+  const saveTtl = (text, name) => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'text/turtle' }));
+    a.download = name; a.click(); URL.revokeObjectURL(a.href);
+  };
+  const download = () => saveTtl(selTtl.data, 'selection.ttl');
+  // everything that is open: all subjects of the shown subset (incl. runs folded into evidence cards), no proposals
+  // a selection: all its claims, all pages; never the knowledge-graph stubs (not in the file)
+  const exportAll = () => {
+    const keys = pageClaims ? [...focusSetMany(g0, subsetAll, roleOf)] : [...shown];
+    saveTtl(turtleOf(g0, keys.filter((k) => g0.out.has(k)), P.prefixes, (t) => !isProposal(t) && !t.stub),
+      pageClaims ? 'selection.ttl' : 'evidence-graph.ttl');
+  };
 
   return (
     <div className="app">
       <header>
+        <a className="note" href={params.has('handoff') ? handoffUrl('global.html', source)
+          : source.startsWith('local:') ? 'global.html' : `global.html?data=${encodeURIComponent(source)}`}
+          title="back to the global view (reloads it)">← Global view</a>
         <h1>Evidence graph viewer <small>prototype</small></h1>
         <label>Data
-          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(''); }}>
+          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(''); setSubset(null); }}>
             {datasets.map((d) => <option key={d.file} value={d.file}>{d.label}</option>)}
             {!datasets.some((d) => d.file === source) && <option value={source}>{source.replace('local:', '')}</option>}
           </select>
@@ -192,7 +276,7 @@ export default function App() {
         <label className="file">Open RDF file…
           <input type="file" accept=".ttl,.nq,.trig,.nt" onChange={async (e) => {
             const f = e.target.files[0]; if (!f) return;
-            setSource('local:' + f.name); loadText(await f.text(), f.name, false);
+            setSource('local:' + f.name); setSubset(null); loadText(await f.text(), f.name, false);
           }} />
         </label>
         <label>Profile
@@ -201,7 +285,11 @@ export default function App() {
           </select>
         </label>
         <label>Show
-          <select value={effFocus} onChange={(e) => { setFocus(e.target.value); setSelected(null); }}>
+          <select value={pageClaims ? '__subset__' : effFocus} onChange={(e) => {
+            const v = e.target.value; setSelected(null);
+            if (v === '__subset__') setFocus(''); else { setFocus(v); if (!v) setSubset(null); }
+          }}>
+            {subsetAll && <option value="__subset__">selection from the global view ({subsetAll.length} claims)</option>}
             <option value="" disabled={g && g.out.size > MAX_ALL && claims.length > 0}>everything ({g?.out.size ?? 0} subjects)</option>
             {L && claims.slice(0, 2000).map((k) => <option key={k} value={k}>{titleFor(g, k, 'claim', P, L)} — {P.compact(k)}</option>)}
           </select>
@@ -216,22 +304,47 @@ export default function App() {
         <span className="summary">{g?.hasReport ? `SHACL: ${nViol} violations, ${nWarn} warnings` : 'no SHACL report'} · {claims.length} claims</span>
         <button onClick={() => exportRef.current?.('png')}>PNG</button>
         <button onClick={() => exportRef.current?.('svg')}>SVG</button>
+        <button disabled={!shown || !P} onClick={exportAll}
+          title={pageClaims ? `RDF of the whole selection (${subsetAll.length} claims, all pages), as Turtle`
+            : 'RDF of everything shown, as Turtle (without proposal triples)'}>TTL</button>
       </header>
       {error && <div className="error">{error}</div>}
+      {pageClaims && (
+        <div className="subset-bar">
+          <b>{subset.title || 'Selection from the global view'}</b>
+          <span>claims {page * SUBSET_PAGE + 1}–{page * SUBSET_PAGE + pageClaims.length} of {subsetAll.length}
+            {subsetAll.length < subset.claims.length && ` (${subset.claims.length - subsetAll.length} not in this file)`}</span>
+          <button disabled={page === 0} onClick={() => { setPage(page - 1); setSelected(null); }}>‹ previous</button>
+          <span>page {page + 1} / {nPages}</span>
+          <button disabled={page >= nPages - 1} onClick={() => { setPage(page + 1); setSelected(null); }}>next ›</button>
+        </div>
+      )}
       <main>
         <div className="canvas">
           {view && P && (
             <ReactFlowProvider key={viewKey}>
               <Graph view={view} P={P} showMissing={showMissing} selected={selected} onSelect={setSelected} exportRef={exportRef}
-                mode={slideLayout ? 'slide' : 'compact'} />
+                mode={slideLayout ? 'slide' : 'compact'} grid={!!pageClaims && !slideLayout} />
             </ReactFlowProvider>
           )}
           {P && <Legend P={P} hasTerms={!!terms} />}
         </div>
-        {selected && g && P && (
+        {selTtl && (
           <aside>
-            <div className="aside-head"><b>RDF of this card</b><button onClick={() => setSelected(null)}>×</button></div>
-            <pre>{turtleOf(g, selected, P.prefixes)}</pre>
+            <div className="aside-head">
+              <b title="Shift/Ctrl/Cmd-click a card to add or remove it; Shift-drag on the background to select a box">
+                RDF of {nSel === 1 ? 'this card' : `${nSel} cards`}</b>
+              <span className="aside-actions">
+                <button disabled={!selTtl.data} onClick={() => navigator.clipboard?.writeText(selTtl.data)}>Copy</button>
+                <button disabled={!selTtl.data} onClick={download} title="download the selection as Turtle (without proposal triples)">.ttl</button>
+                <button onClick={() => setSelected(null)}>×</button>
+              </span>
+            </div>
+            {selTtl.data && <pre>{selTtl.data}</pre>}
+            {selTtl.proposal && <>
+              <div className="aside-sub">proposal, not in the RDF export</div>
+              <pre className="proposal">{selTtl.proposal}</pre>
+            </>}
           </aside>
         )}
       </main>

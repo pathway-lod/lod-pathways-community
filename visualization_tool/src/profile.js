@@ -15,6 +15,7 @@ export function loadProfile(json) {
   P.kgClassNamespaces = (r.kg?.classNamespaces || []).map((c) => expand(c, P.prefixes));
   P.hasEvidence = set(json.pattern?.hasEvidence, P); P.generatedBy = set(json.pattern?.generatedBy, P);
   P.anchoredTo = set(json.pattern?.anchoredTo, P);
+  P.sameEntity = set(json.pattern?.sameEntity, P); // links that name the same entity as the anchor (global view links)
   const ns = (l) => (l || []).map((c) => expand(c, P.prefixes));
   P.localNs = ns(json.terms?.localNamespaces); P.kgVocabNs = ns(json.terms?.kgVocabularyNamespaces); P.genericNs = ns(json.terms?.generic);
   P.labelProps = ns(json.titles?.labelProperties);

@@ -3,6 +3,8 @@
 Read this file first, then [docs/architecture.md](docs/architecture.md). Read [docs/layout.md](docs/layout.md)
 before touching `src/layout.js`, and [docs/decisions.md](docs/decisions.md) before changing anything that a
 decision there covers (most of the look and behaviour was decided by Martin Engst, who built the viewer).
+Before working on the PlantMetWiki part of the global view, read [docs/pmw-structure.md](docs/pmw-structure.md)
+(what PlantMetWiki contains, numbers, clustering options, queries).
 
 This folder is part of [pathway-lod/lod-pathways-community](https://github.com/pathway-lod/lod-pathways-community);
 the repository's own README and conventions apply too.
@@ -24,7 +26,7 @@ What the viewer uses from the rest of this repository (read-only; only for rebui
 
 Related:
 - [pathway-lod/developing-open-standards](https://github.com/pathway-lod/developing-open-standards): the paper.
-- PlantMetWiki SPARQL endpoint: <https://plantmetwiki.bioinformatics.nl/sparql> (the viewer itself never queries it).
+- PlantMetWiki SPARQL endpoint: <https://plantmetwiki.bioinformatics.nl/sparql> (the viewer itself never queries it live; `tools/build_pmw_snapshot.py` builds the snapshot for the global view's map from it).
 
 ## Run, build, check
 
