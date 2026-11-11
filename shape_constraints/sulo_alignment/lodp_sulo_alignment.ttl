@@ -1,0 +1,36 @@
+# Alignment of the lodp: vocabulary to SULO. Made by this file from alignment.csv.
+
+@prefix lodp: <https://example.org/lod-pathways/pilot/> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+<https://example.org/lod-pathways/pilot/sulo-alignment> a owl:Ontology ;
+   rdfs:label "Alignment of the lodp: vocabulary to SULO (draft)" ;
+   owl:imports <https://w3id.org/sulo/sulo.ttl>  .
+
+# sure: A claim is information: a statement that refers to a pathway or a metabolite, not a thing and not an event.
+lodp:Claim rdfs:subClassOf sulo:InformationObject .  # information object
+
+# sure: A measured MS feature is a record of a measurement. Not a sulo:Quality despite the word feature.
+lodp:MetaboliteFeature rdfs:subClassOf sulo:InformationObject .  # information object
+
+# discuss: A pattern learned by a model from many spectra; could also be classified as a sulo:Collection.
+lodp:Mass2Motif rdfs:subClassOf sulo:InformationObject .  # information object
+
+# sure: A run starts, takes time and ends; software and input files take part in it.
+lodp:Run rdfs:subClassOf sulo:Process .  # process
+
+# sure: The claim refers to the pathway it is about.
+lodp:anchoredInPathway rdfs:subPropertyOf sulo:refersTo .  # refers to
+
+# sure: The claim refers to the metabolite it is about.
+lodp:anchoredToMetabolite rdfs:subPropertyOf sulo:refersTo .  # refers to
+
+# sure: An annotation refers to the MS feature it annotates.
+lodp:feature rdfs:subPropertyOf sulo:refersTo .  # refers to
+
+# discuss: A feature is one item of a dataset; the dataset becomes a sulo:Collection.
+lodp:dataset rdfs:subPropertyOf sulo:isItemIn .  # is item in
+
+# discuss: The gene cluster is referred to in the evidence of its MIBiG match.
+lodp:mibigMatchEvidence rdfs:subPropertyOf sulo:isReferredToIn .  # is referred to in
