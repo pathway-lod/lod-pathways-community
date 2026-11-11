@@ -1,1 +1,1 @@
-gene,featureA,featureB,conversion,uniprot
+component,componentType,pathway,gene,substrateFeature,productFeature,uniprot

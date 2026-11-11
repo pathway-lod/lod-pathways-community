@@ -1,1 +1,1 @@
-cluster,geneA,geneB,functionalCluster
+component,componentType,cluster,partnerGene,functionalCluster

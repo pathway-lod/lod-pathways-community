@@ -1,1 +1,1 @@
-association,pathway,gene,feature
+component,componentType,pathway,supportingAssociations,supportingMetaboliteFeatures

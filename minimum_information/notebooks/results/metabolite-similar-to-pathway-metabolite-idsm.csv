@@ -1,8 +1,8 @@
-detectedMetabolite,similarChebi,score,pathway
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_36241,1.0,PC1053
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_58044,1.0,PC453
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_58044,1.0,PC550
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_16169,0.916667,PC1155
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_16169,0.916667,PC227
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_16169,0.916667,PC333
-"2,5-dihydroxybenzoate",http://purl.obolibrary.org/obo/CHEBI_16169,0.916667,PC358
+component,componentType,pathway,similarChebi,score
+"2,5-dihydroxybenzoate",metabolite,PC1053,http://purl.obolibrary.org/obo/CHEBI_36241,1.0
+"2,5-dihydroxybenzoate",metabolite,PC453,http://purl.obolibrary.org/obo/CHEBI_58044,1.0
+"2,5-dihydroxybenzoate",metabolite,PC550,http://purl.obolibrary.org/obo/CHEBI_58044,1.0
+"2,5-dihydroxybenzoate",metabolite,PC1155,http://purl.obolibrary.org/obo/CHEBI_16169,0.916667
+"2,5-dihydroxybenzoate",metabolite,PC227,http://purl.obolibrary.org/obo/CHEBI_16169,0.916667
+"2,5-dihydroxybenzoate",metabolite,PC333,http://purl.obolibrary.org/obo/CHEBI_16169,0.916667
+"2,5-dihydroxybenzoate",metabolite,PC358,http://purl.obolibrary.org/obo/CHEBI_16169,0.916667
