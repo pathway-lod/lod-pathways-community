@@ -263,7 +263,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <a className="note" href={params.has('handoff') ? handoffUrl('global.html', source)
+        <a className="back-link" href={params.has('handoff') ? handoffUrl('global.html', source)
           : source.startsWith('local:') ? 'global.html' : `global.html?data=${encodeURIComponent(source)}`}
           title="back to the global view (reloads it)">← Global view</a>
         <h1>Evidence graph viewer <small>prototype</small></h1>
@@ -273,7 +273,7 @@ export default function App() {
             {!datasets.some((d) => d.file === source) && <option value={source}>{source.replace('local:', '')}</option>}
           </select>
         </label>
-        <label className="file">Open RDF file…
+        <label className="file" title="Turtle (.ttl); N-Quads, TriG and N-Triples work too">Open Turtle file…
           <input type="file" accept=".ttl,.nq,.trig,.nt" onChange={async (e) => {
             const f = e.target.files[0]; if (!f) return;
             setSource('local:' + f.name); setSubset(null); loadText(await f.text(), f.name, false);

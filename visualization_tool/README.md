@@ -1,7 +1,7 @@
 # Evidence graph viewer (prototype)
 
 **Try it:** <https://pathway-lod.github.io/lod-pathways-community/visualization_tool/> (open your own Turtle file with
-"Open RDF file"; it stays in your browser).
+"Open Turtle file"; it stays in your browser).
 
 Shows a **subset** of the evidence RDF of this repository as cards, laid out like slides 24/25 of the
 community-call deck. Built for data submitters: what did I upload, which terms are agreed, what is missing.
@@ -79,7 +79,7 @@ named graphs, validates with the repository's SHACL shapes and vocabulary (pysha
 | `data/slide25/proposal.ttl` | the dashed/grey parts of slide 25, written as RDF; modelling choices marked `CHOICE` |
 
 Example datasets (`public/data/datasets.json`): slide 25 and the repo's sample graph (all four use cases, with SHACL
-report). Other files can be opened with "Open file".
+report). Other files can be opened with "Open Turtle file" (Turtle; N-Quads, TriG, N-Triples work too).
 
 **Data provenance.** The slide 25 subset (cut from the pilot RDF), the sample graph and the term table in
 `public/data/` come from this repository (MIT, `../LICENSE`); `data/slide25/plantmetwiki.ttl` is PlantMetWiki RDF

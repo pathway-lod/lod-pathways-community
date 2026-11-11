@@ -52,7 +52,7 @@ npm run shot -- out.png "data=slide25.nq"     # build + headless screenshot (too
 
 Only slide 25 and the sample graph ship with the viewer (decision D19). To test a big file (files with more than 60
 subjects open on their first claim), bundle a pilot RDF locally (example at the end of `tools/rebuild_bundles.sh`) and
-open it with "Open file"; do not add it to `public/data/`.
+open it with "Open Turtle file"; do not add it to `public/data/`.
 
 Rebuild the data bundles (only when the sample graph, shapes, term table or `data/slide25/*.ttl` change):
 `bash tools/rebuild_bundles.sh` (reads the repository root `..`; needs `pip install -r tools/requirements.txt`).

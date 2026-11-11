@@ -301,7 +301,7 @@ export default function Global() {
             {!datasets.some((d) => d.file === source) && <option value={source}>{source.replace('local:', '')}</option>}
           </select>
         </label>
-        <label className="file">Open RDF file…
+        <label className="file" title="Turtle (.ttl); N-Quads, TriG and N-Triples work too">Open Turtle file…
           <input type="file" accept=".ttl,.nq,.trig,.nt" onChange={async (e) => {
             const f = e.target.files[0]; if (!f) return;
             const text = await f.text(); rawRef.current = { name: f.name, text };
