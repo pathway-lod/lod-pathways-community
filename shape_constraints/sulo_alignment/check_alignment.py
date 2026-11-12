@@ -28,9 +28,11 @@ for path in sorted(glob.glob("../rdf/*.ttl")):
     data.parse(path)
 rows = list(csv.DictReader(open('alignement.csv', encoding='utf-8-sig')))
 
-family = vocab + sulo + alignment
+shared = Graph()
+for path in ("shared_ancestors.ttl", "shared_sulo_alignment.ttl"):
+    shared.parse(path)
 
-
+family = vocab + sulo + alignment + shared
 def ancestors(clas):
     return set(family.transitive_objects(clas, RDFS.subClassOf))
 

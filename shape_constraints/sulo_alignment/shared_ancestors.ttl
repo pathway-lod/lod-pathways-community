@@ -1,0 +1,231 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://edamontology.org/operation_3432> rdfs:label "Clustering" ;
+    rdfs:subClassOf <http://edamontology.org/operation_0004> .
+
+<http://edamontology.org/operation_3463> rdfs:label "Expression correlation analysis" ;
+    rdfs:subClassOf <http://edamontology.org/operation_0315>,
+        <http://edamontology.org/operation_3465> .
+
+<http://purl.obolibrary.org/obo/ECO_0000256> rdfs:label "match to sequence model evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000202>,
+        <http://purl.obolibrary.org/obo/ECO_0000249> .
+
+<http://purl.obolibrary.org/obo/ECO_0000266> rdfs:label "sequence orthology evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000201>,
+        <http://purl.obolibrary.org/obo/ECO_0000250> .
+
+<http://purl.obolibrary.org/obo/ECO_0000270> rdfs:label "expression pattern evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000008>,
+        <http://purl.obolibrary.org/obo/ECO_0000269> .
+
+<http://purl.obolibrary.org/obo/ECO_0000304> rdfs:label "author statement supported by traceable reference used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000033>,
+        <http://purl.obolibrary.org/obo/ECO_0000302> .
+
+<http://purl.obolibrary.org/obo/ECO_0000305> rdfs:label "curator inference used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000205>,
+        <http://purl.obolibrary.org/obo/ECO_0007751> .
+
+<http://purl.obolibrary.org/obo/ECO_0000314> rdfs:label "direct assay evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000002>,
+        <http://purl.obolibrary.org/obo/ECO_0000269> .
+
+<http://purl.obolibrary.org/obo/ECO_0001580> rdfs:label "liquid chromatography coupled with tandem mass spectrometry evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0001096> .
+
+<http://purl.obolibrary.org/obo/ECO_0007327> rdfs:label "genomic context evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000177>,
+        <http://purl.obolibrary.org/obo/ECO_0000251> .
+
+<http://purl.obolibrary.org/obo/ECO_0007590> rdfs:label "high throughput expression pattern evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0006057>,
+        <http://purl.obolibrary.org/obo/ECO_0007006>,
+        <http://purl.obolibrary.org/obo/ECO_0007298> .
+
+<http://purl.obolibrary.org/obo/ECO_0007653> rdfs:label "automatically integrated combinatorial computational evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000053>,
+        <http://purl.obolibrary.org/obo/ECO_0007651>,
+        <http://purl.obolibrary.org/obo/ECO_0007679> .
+
+<http://purl.obolibrary.org/obo/SO_0002357> rdfs:label "biosynthetic_gene_cluster" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0001411> .
+
+<http://edamontology.org/operation_0315> rdfs:label "Expression profile comparison" ;
+    rdfs:subClassOf <http://edamontology.org/operation_2495> .
+
+<http://edamontology.org/operation_2495> rdfs:label "Expression analysis" ;
+    rdfs:subClassOf <http://edamontology.org/operation_2945> .
+
+<http://edamontology.org/operation_2945> rdfs:label "Data analysis" ;
+    rdfs:subClassOf <http://edamontology.org/operation_0004> .
+
+<http://edamontology.org/operation_3465> rdfs:label "Correlation" ;
+    rdfs:subClassOf <http://edamontology.org/operation_0004> .
+
+<http://purl.obolibrary.org/obo/BFO_0000001> rdfs:label "entity"@en .
+
+<http://purl.obolibrary.org/obo/BFO_0000031> rdfs:label "generically dependent continuant"@en ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> .
+
+<http://purl.obolibrary.org/obo/ECO_0000002> rdfs:label "direct assay evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000006>,
+        <http://purl.obolibrary.org/obo/IAO_0000030> .
+
+<http://purl.obolibrary.org/obo/ECO_0000033> rdfs:label "author statement supported by traceable reference" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000204> .
+
+<http://purl.obolibrary.org/obo/ECO_0000053> rdfs:label "automatically integrated combinatorial evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000213>,
+        <http://purl.obolibrary.org/obo/ECO_0007673> .
+
+<http://purl.obolibrary.org/obo/ECO_0000177> rdfs:label "genomic context evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000041> .
+
+<http://purl.obolibrary.org/obo/ECO_0000201> rdfs:label "sequence orthology evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000044> .
+
+<http://purl.obolibrary.org/obo/ECO_0000202> rdfs:label "match to sequence model evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000044> .
+
+<http://purl.obolibrary.org/obo/ECO_0000205> rdfs:label "curator inference" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000361> .
+
+<http://purl.obolibrary.org/obo/ECO_0000249> rdfs:label "sequence similarity evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000044>,
+        <http://purl.obolibrary.org/obo/ECO_0000251>,
+        <http://purl.obolibrary.org/obo/ECO_0007669> .
+
+<http://purl.obolibrary.org/obo/ECO_0000250> rdfs:label "sequence similarity evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000044>,
+        <http://purl.obolibrary.org/obo/ECO_0000252>,
+        <http://purl.obolibrary.org/obo/ECO_0007668> .
+
+<http://purl.obolibrary.org/obo/ECO_0000252> rdfs:label "similarity evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000041>,
+        <http://purl.obolibrary.org/obo/ECO_0000352> .
+
+<http://purl.obolibrary.org/obo/ECO_0000302> rdfs:label "author statement used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000204>,
+        <http://purl.obolibrary.org/obo/ECO_0006155> .
+
+<http://purl.obolibrary.org/obo/ECO_0001096> rdfs:label "mass spectrometry evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002>,
+        <http://purl.obolibrary.org/obo/ECO_0005504> .
+
+<http://purl.obolibrary.org/obo/ECO_0005504> rdfs:label "spectrometry evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000006> .
+
+<http://purl.obolibrary.org/obo/ECO_0006057> rdfs:label "high throughput evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000501>,
+        <http://purl.obolibrary.org/obo/ECO_0006055> .
+
+<http://purl.obolibrary.org/obo/ECO_0006155> rdfs:label "documented statement evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000352>,
+        <http://purl.obolibrary.org/obo/ECO_0006151> .
+
+<http://purl.obolibrary.org/obo/ECO_0007006> rdfs:label "high throughput expression pattern evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000008>,
+        <http://purl.obolibrary.org/obo/ECO_0006055> .
+
+<http://purl.obolibrary.org/obo/ECO_0007297> rdfs:label "experimental evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000006>,
+        <http://purl.obolibrary.org/obo/ECO_0000501> .
+
+<http://purl.obolibrary.org/obo/ECO_0007298> rdfs:label "expression pattern evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000008>,
+        <http://purl.obolibrary.org/obo/ECO_0007297> .
+
+<http://purl.obolibrary.org/obo/ECO_0007651> rdfs:label "automatically integrated combinatorial computational evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0007673>,
+        <http://purl.obolibrary.org/obo/ECO_0007677> .
+
+<http://purl.obolibrary.org/obo/ECO_0007668> rdfs:label "computational evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000352>,
+        <http://purl.obolibrary.org/obo/ECO_0007672> .
+
+<http://purl.obolibrary.org/obo/ECO_0007669> rdfs:label "computational evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000501>,
+        <http://purl.obolibrary.org/obo/ECO_0007672> .
+
+<http://purl.obolibrary.org/obo/ECO_0007679> rdfs:label "combinatorial computational evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000213>,
+        <http://purl.obolibrary.org/obo/ECO_0007677> .
+
+<http://purl.obolibrary.org/obo/ECO_0007751> rdfs:label "inferential evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000352>,
+        <http://purl.obolibrary.org/obo/ECO_0000361> .
+
+<http://purl.obolibrary.org/obo/IAO_0000030> rdfs:label "information content entity"@en ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> .
+
+<http://purl.obolibrary.org/obo/SO_0000001> rdfs:label "region" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000110> .
+
+<http://purl.obolibrary.org/obo/SO_0000110> rdfs:label "sequence_feature" .
+
+<http://purl.obolibrary.org/obo/SO_0001411> rdfs:label "biological_region" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000001> .
+
+<http://purl.obolibrary.org/obo/BFO_0000002> rdfs:label "continuant"@en ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> .
+
+<http://purl.obolibrary.org/obo/ECO_0000204> rdfs:label "author statement" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0006151> .
+
+<http://purl.obolibrary.org/obo/ECO_0000213> rdfs:label "combinatorial evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000212>,
+        <http://purl.obolibrary.org/obo/ECO_0000501> .
+
+<http://purl.obolibrary.org/obo/ECO_0000251> rdfs:label "similarity evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000041>,
+        <http://purl.obolibrary.org/obo/ECO_0000501> .
+
+<http://purl.obolibrary.org/obo/ECO_0000269> rdfs:label "experimental evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000006>,
+        <http://purl.obolibrary.org/obo/ECO_0000352> .
+
+<http://purl.obolibrary.org/obo/ECO_0000361> rdfs:label "inferential evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0006055> rdfs:label "high throughput evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0006151> rdfs:label "documented statement evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0007673> rdfs:label "automatically integrated combinatorial evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000212> .
+
+<http://purl.obolibrary.org/obo/ECO_0007677> rdfs:label "combinatorial computational evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000212> .
+
+<http://edamontology.org/operation_0004> rdfs:label "Operation" .
+
+<http://purl.obolibrary.org/obo/ECO_0000008> rdfs:label "expression pattern evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000006> .
+
+<http://purl.obolibrary.org/obo/ECO_0000212> rdfs:label "combinatorial evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0007672> rdfs:label "computational evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0000041> rdfs:label "similarity evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0000044> rdfs:label "sequence similarity evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000041>,
+        <http://purl.obolibrary.org/obo/ECO_0007672> .
+
+<http://purl.obolibrary.org/obo/ECO_0000006> rdfs:label "experimental evidence" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0000352> rdfs:label "evidence used in manual assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0000501> rdfs:label "evidence used in automatic assertion" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+<http://purl.obolibrary.org/obo/ECO_0000000> rdfs:label "evidence" .
+
