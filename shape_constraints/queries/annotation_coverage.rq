@@ -1,0 +1,9 @@
+# Count observations at the supported connectivity resolution.
+# Do not count candidateMetabolite targets as individual detections.
+PREFIX lodp: <https://example.org/lod-pathways/pilot/>
+SELECT ?connectivity (COUNT(DISTINCT ?feature) AS ?n_features)
+WHERE {
+  ?annotation a lodp:MetaboliteAnnotation ;
+      lodp:feature ?feature ; lodp:connectivityKey ?connectivity .
+}
+GROUP BY ?connectivity

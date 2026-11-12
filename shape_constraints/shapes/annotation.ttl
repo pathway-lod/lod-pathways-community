@@ -45,6 +45,40 @@ lodps:AnnotationShape a sh:NodeShape ;
               FILTER NOT EXISTS { $this skos:closeMatch ?m }
             }""" ] ;
 
+    # Candidate targets are alternatives, never simultaneous detections.
+    sh:property [ sh:path lodp:identityStatus ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( "unresolved" "resolved" ) ;
+        sh:message "An annotation needs exactly one identity status: unresolved or resolved." ] ;
+    sh:property [ sh:path lodp:connectivityKey ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ; sh:pattern "^[A-Z]{14}$" ] ;
+    sh:property [ sh:path lodp:candidateMetabolite ; sh:minCount 1 ;
+        sh:nodeKind sh:IRI ; sh:equals lodp:anchoredToMetabolite ;
+        sh:message "Candidate alternatives must equal the metabolite anchors." ] ;
+    sh:sparql [
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Connectivity-only annotations must remain unresolved, even with one database candidate." ;
+        sh:select """
+            SELECT $this WHERE {
+              $this lodp:matchLevel "connectivity" ; lodp:identityStatus ?status .
+              FILTER(?status != "unresolved")
+            }""" ] ;
+    sh:sparql [
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Every candidate must share the declared connectivity key." ;
+        sh:select """
+            SELECT $this ?candidate WHERE {
+              $this lodp:candidateMetabolite ?candidate ; lodp:connectivityKey ?key .
+              FILTER(!STRSTARTS(STR(?candidate), CONCAT("https://identifiers.org/inchikey/", STR(?key), "-")))
+            }""" ] ;
+    sh:sparql [
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Resolved annotations require exactly one candidate." ;
+        sh:select """
+            SELECT $this WHERE {
+              $this lodp:identityStatus "resolved" ; lodp:candidateMetabolite ?a, ?b .
+              FILTER(?a != ?b)
+            }""" ] ;
+
     # every evidence node names its tier
     sh:sparql [
         a sh:SPARQLConstraint ;

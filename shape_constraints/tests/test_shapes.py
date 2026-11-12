@@ -158,6 +158,12 @@ def cases():
     yield "association without anchored side", lambda g: rm(g, ASSOC, LODP.anchoredSide), [(V, "exactly one lodp:anchoredSide")]
 
     # case 3: annotation
+    yield "connectivity identity cannot be resolved", lambda g: put(g, ANNOT, LODP.identityStatus, Literal("resolved")), [(V, "must remain unresolved")]
+    yield "annotation without candidates", lambda g: rm(g, ANNOT, LODP.candidateMetabolite), [(V, "Candidate alternatives")]
+    yield "candidate has different connectivity", lambda g: put(g, ANNOT, LODP.connectivityKey, Literal("AAAAAAAAAAAAAA")), [(V, "share the declared connectivity")]
+    yield "full match with multiple resolved candidates", lambda g: [put(g, ANNOT, LODP.matchLevel, Literal("full")), put(g, ANNOT, LODP.identityStatus, Literal("resolved")), g.add((ANNOT, LODP.candidateMetabolite, URIRef("https://identifiers.org/inchikey/AAAAAAAAAAAAAA-BBBBBBBBBB-C")))], [(V, "Resolved annotations require exactly one candidate")]
+    yield "annotation without identity status", lambda g: rm(g, ANNOT, LODP.identityStatus), [(V, "exactly one identity status")]
+
     yield "annotation uses skos:exactMatch", lambda g: g.add((ANNOT, SKOS.exactMatch, KEY)), [(V, "cannot be exact")]
     yield "annotation without feature", lambda g: rm(g, ANNOT, LODP.feature), [(V, "exactly one lodp:feature")]
     yield "annotation without match level", lambda g: rm(g, ANNOT, LODP.matchLevel), [(V, "exactly one lodp:matchLevel")]

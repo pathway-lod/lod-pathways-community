@@ -206,3 +206,7 @@ lodp:claim_GDQC_108527_MONOMER_PC992 a lodp:PathwayMembershipClaim ;
         lodp:originalEvidenceCode "EV-COMP-HINF-SEQ-ORTHOLOGY" ;
         dcterms:references pubmed:22186372
     ] .
+
+# Explicit unresolved candidate sets (connectivity matching).
+<https://example.org/lod-pathways/pilot/annotation_MTBLS14270_pos_741> lodp:identityStatus "unresolved" ; lodp:connectivityKey "GMMLNKINDDUDCF" ;
+    lodp:candidateMetabolite <https://identifiers.org/inchikey/GMMLNKINDDUDCF-BYNGITTOSA-M> .
