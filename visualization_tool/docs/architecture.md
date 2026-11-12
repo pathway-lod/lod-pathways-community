@@ -148,6 +148,16 @@ repeats both passes. Edge-label widths for the gap sizes are measured with a can
 Export: PNG/SVG of the whole graph with html-to-image. The SVG embeds HTML (`foreignObject`): fine in browsers,
 not editable in Inkscape/Illustrator.
 
+## Claims ordered by SHACL problems (App.jsx, D34)
+
+With a SHACL report (bundled, or from "Run SHACL validation"), `claimProblems` counts for every claim the violations
+and warnings whose focus node is in the claim's `focusSet` (what the view of that claim shows); `claimGroups` splits
+the claims into violation / warning / ok, file order inside. `claims` (Show menu, "all claims" paging, first claim of
+a big file) is the concatenation; the menu shows `<optgroup>`s with the counts in front of each entry (first 2000
+claims). Shared nodes (a run, a dataset) count for every claim that shows them: one run without a version puts every
+claim of that tool into the warnings group (all_pilots: 1 run warning -> about 140 annotation claims). Without a report
+the order is the file order, as before.
+
 ## URL parameters
 
 `data` (file in public/data, default `slide25.nq`), `focus` (claim IRI), `profile` (profile path; empty = none),
@@ -208,12 +218,13 @@ file's claims land in PlantMetWiki (PMW):
   get a dark ring. Shift-click collects a hand-picked set. Picks (group, pathway, shared node, set) dim the other
   claims, put halos on the picked ones and list them in the side panel.
 - **Open as cards / back** (`src/handoff.js`): every pick in the side panel has "Open these n claims in detail view →" (the detail view = the card viewer), and
-  the header has "Open file in detail view →" (a hand-off without claims: the whole file, no selection). The
+  the header starts with "← Detail view" (mirrors "← Global view" in the card viewer; a hand-off without claims: the whole file, no selection). The
   global view writes one record `{source, name, text, claims, title}` to IndexedDB (database `lodviz`) and goes to
   `./?handoff=1` (`&data=` too for bundled data). The card viewer reads it, shows the union of the claims' focus
   sets (`focusSetMany` in rdf.js) 100 claims per page (`SUBSET_PAGE`, page in `viewKey`), with a bar (title, claims
   i-j of n, previous/next) and the option "selection from the global view" in Show. The same paged mode is
-  available for any file as "all claims, 100 per page" in Show (big files, where "everything" is disabled, still
+  available for any file as "all claims, 100 per page" in Show, in the menu's order (see "Claims ordered by SHACL
+  problems" below; big files, where "everything" is disabled, still
   open on their first claim by default). TTL exports the whole selection
   (all pages), never the stubs. Layout in selection mode (compact only): `layoutGrid` in layout.js, each connected
   graph laid out with `layout()` and the graphs packed in rows, largest first (see docs/layout.md). Knowledge-graph

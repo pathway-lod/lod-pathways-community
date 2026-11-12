@@ -294,6 +294,8 @@ export default function Global() {
   return (
     <div className="app">
       <header>
+        <button className="detail-btn" disabled={!g} onClick={() => openCards([], null)}
+          title="open this file in the detail view (cards), without a selection">← Detail view</button>
         <h1>Global view <small>test (Cytoscape.js)</small></h1>
         <label>Data
           <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(null); setAnchor(null); }}>
@@ -323,8 +325,6 @@ export default function Global() {
           {model.claims.length} claims · {model.lay.anchors.size} anchors · {nLoose} not anchored ·
           {' '}parse {times.parse ?? '…'} ms · layout {times.layout ?? '…'} ms · Cytoscape {times.cytoscape ?? '…'} ms
         </span>}
-        <button className="detail-btn" disabled={!g} onClick={() => openCards([], null)}
-          title="open this file in the detail view (cards), without a selection">Open file in detail view →</button>
       </header>
       {error && <div className="error">{error}</div>}
       <main>

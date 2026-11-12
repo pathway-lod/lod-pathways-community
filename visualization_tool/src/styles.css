@@ -95,8 +95,9 @@ header .note { color: var(--grey); font-size: 12px; }
 .back-link { font-size: 15px; font-weight: 600; color: #2563eb; text-decoration: none; padding: 4px 10px;
   border: 1.5px solid #2563eb; border-radius: 6px; white-space: nowrap; }
 .back-link:hover { background: #eff6ff; }
-/* "Open file in detail view" in the global view header (2026-11-11) */
-.detail-btn { font-weight: 600; color: #2563eb; border: 1.5px solid #2563eb; background: #fff; border-radius: 6px;
+/* "← Detail view" in the global view header (2026-11-11; moved to the start and renamed 2026-11-12 to mirror
+   "← Global view") */
+.detail-btn { font-size: 15px; font-weight: 600; color: #2563eb; border: 1.5px solid #2563eb; background: #fff; border-radius: 6px;
   padding: 4px 10px; cursor: pointer; white-space: nowrap; }
 .detail-btn:hover { background: #eff6ff; }
 .detail-btn:disabled { color: #94a3b8; border-color: #cbd5e1; cursor: default; }

@@ -195,7 +195,7 @@ export default function App() {
       if (!h) { setError('no selection from the global view found (browser storage empty or blocked)'); return; }
       if (h.text != null) { setSource(h.source); loadText(h.text, h.name, true); }
       else if (h.source && h.source !== source) setSource(h.source);
-      // no claims = the whole file ("Open file in detail view" in the global view), not an empty selection
+      // no claims = the whole file ("← Detail view" in the global view header), not an empty selection
       if (h.claims?.length) { const sel = { title: h.title, claims: h.claims }; setSubset(sel); setHandoffSel(sel); setPage(0); setFocus(''); }
     });
   }, []);
@@ -228,8 +228,41 @@ export default function App() {
   const roleOf = useMemo(() => (g && P ? makeRoles(g, P) : null), [g, P]);
   const terms = useTerms ? termTable : null;
   const L = useMemo(() => (g && P ? makeLabels(g, P, terms) : null), [g, P, terms]);
-  const claims = useMemo(() => (roleOf ? [...g.out.keys()].filter((k) => roleOf(k) === 'claim') : []), [roleOf]);
-  // big files open on their first claim
+  const claimsInFile = useMemo(() => (roleOf ? [...g.out.keys()].filter((k) => roleOf(k) === 'claim') : []), [roleOf]);
+  // SHACL problems per claim: violations / warnings on the nodes of the claim's own view (focusSet: the claim, its
+  // evidence, runs, data and knowledge-graph nodes; a problem on a shared node, e.g. a run, counts for every claim
+  // that shows it). null when the file has no report.
+  const claimProblems = useMemo(() => {
+    if (!roleOf || !g?.results.length) return null;
+    const byNode = new Map();
+    for (const r of g.results) {
+      if (r.severity !== 'violation' && r.severity !== 'warning') continue;
+      const c = byNode.get(r.focus) || { v: 0, w: 0 };
+      if (r.severity === 'violation') c.v++; else c.w++;
+      byNode.set(r.focus, c);
+    }
+    const out = new Map();
+    for (const k of claimsInFile) {
+      let v = 0, w = 0;
+      for (const n of focusSet(g, k, roleOf)) { const c = byNode.get(n); if (c) { v += c.v; w += c.w; } }
+      out.set(k, { v, w });
+    }
+    return out;
+  }, [claimsInFile, roleOf, g]);
+  // claims with violations first, then with warnings, then the rest (file order inside each group): the Show menu,
+  // "all claims" paging and the first claim of a big file all use this order
+  const claimGroups = useMemo(() => {
+    if (!claimProblems) return null;
+    const grp = { violation: [], warning: [], ok: [] };
+    for (const k of claimsInFile) {
+      const c = claimProblems.get(k);
+      grp[c.v ? 'violation' : c.w ? 'warning' : 'ok'].push(k);
+    }
+    return grp;
+  }, [claimProblems, claimsInFile]);
+  const claims = useMemo(() => (claimGroups ? [...claimGroups.violation, ...claimGroups.warning, ...claimGroups.ok] : claimsInFile),
+    [claimGroups, claimsInFile]);
+  // big files open on their first claim (with a report: the first claim with a violation, else with a warning)
   const effFocus = focus || (pageClaims ? '' : (g && g.out.size > MAX_ALL && claims.length ? claims[0] : ''));
   const shown = useMemo(() => (roleOf
     ? (pageClaims ? focusSetMany(g, pageClaims, roleOf) : focusSet(g, effFocus || null, roleOf)) : null),
@@ -295,7 +328,23 @@ export default function App() {
             {handoffSel && <option value="__subset__">selection from the global view ({handoffSel.claims.length} claims)</option>}
             {claims.length > 0 && <option value="__all__">all claims, {SUBSET_PAGE} per page ({claims.length} claims)</option>}
             <option value="" disabled={g && g.out.size > MAX_ALL && claims.length > 0}>everything ({g?.out.size ?? 0} subjects)</option>
-            {L && claims.slice(0, 2000).map((k) => <option key={k} value={k}>{titleFor(g, k, 'claim', P, L)} — {P.compact(k)}</option>)}
+            {L && !claimGroups && claims.slice(0, 2000).map((k) => <option key={k} value={k}>{titleFor(g, k, 'claim', P, L)} — {P.compact(k)}</option>)}
+            {/* with a SHACL report: grouped by the worst problem in the claim's view, counts in front (first 2000 claims) */}
+            {L && claimGroups && [['violation', 'with SHACL violations'], ['warning', 'with SHACL warnings only'], ['ok', 'no SHACL problems']]
+              .map(([grp, label], gi, all) => {
+                const before = all.slice(0, gi).reduce((n, [x]) => n + claimGroups[x].length, 0);
+                const list = claimGroups[grp].slice(0, Math.max(0, 2000 - before));
+                if (!claimGroups[grp].length) return null;
+                return (
+                  <optgroup key={grp} label={`${label} (${claimGroups[grp].length} claims)`}>
+                    {list.map((k) => {
+                      const c = claimProblems.get(k);
+                      const marks = `${c.v ? `✕${c.v} ` : ''}${c.w ? `!${c.w} ` : ''}`;
+                      return <option key={k} value={k}>{marks}{titleFor(g, k, 'claim', P, L)} — {P.compact(k)}</option>;
+                    })}
+                  </optgroup>
+                );
+              })}
           </select>
         </label>
         <label className="chk"><input type="checkbox" checked={runsAsCards} onChange={(e) => setRunsAsCards(e.target.checked)} />runs as cards</label>

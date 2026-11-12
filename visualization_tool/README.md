@@ -55,6 +55,11 @@ The header has no profile chooser and no "slide layout" checkbox (removed 2026-1
 - **Run SHACL validation** for a file without a report: validates the whole file in the browser against the repo's
   shapes (shacl-engine, same results as pyshacl; nothing is uploaded), with progress bar and time estimate; then
   **Save data + report (.nq)**, which reopens with the report. See [docs/validation.md](docs/validation.md).
+- **Claims ordered by SHACL problems.** With a report, the Show menu groups the claims: *with SHACL violations*,
+  *with SHACL warnings only*, *no SHACL problems* (file order inside), each entry prefixed with its counts (`✕2 !1`).
+  The counts are the problems on the nodes of the claim's own view (claim, evidence, runs, data, knowledge-graph
+  nodes), so a problem on a shared node such as a run counts for every claim that uses it. "All claims, 100 per page"
+  uses the same order, and big files open on the first claim with a violation (else with a warning).
 - Click a card to see its RDF (Turtle); Shift-, Ctrl- or Cmd-click adds or removes cards, Shift-drag on the background
   selects a box of cards. The panel shows one combined Turtle of the selection, including the runs shown inside
   selected evidence cards (only the prefixes it uses), which
