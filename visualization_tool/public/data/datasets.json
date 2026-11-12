@@ -1,4 +1,5 @@
 [
   { "file": "slide25.nq", "label": "Slide 25: feature 589, three predictions" },
-  { "file": "sample_evidence_graph.nq", "label": "Sample graph: one claim of each use case" }
+  { "file": "sample_evidence_graph.nq", "label": "Sample graph: one claim of each use case" },
+  { "file": "all_pilots.ttl", "label": "All four pilots (4,884 claims, 4.4 MB; no report: try Run SHACL validation)" }
 ]

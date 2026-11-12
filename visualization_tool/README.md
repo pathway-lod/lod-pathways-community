@@ -85,7 +85,8 @@ named graphs, validates with the repository's SHACL shapes and vocabulary (pysha
 | `data/slide25/proposal.ttl` | the dashed/grey parts of slide 25, written as RDF; modelling choices marked `CHOICE` |
 
 Example datasets (`public/data/datasets.json`): slide 25 and the repo's sample graph (all four use cases, with SHACL
-report). Other files can be opened with "Open Turtle file" (Turtle; N-Quads, TriG, N-Triples work too).
+report), and all four pilots as one plain Turtle file (`all_pilots.ttl`, 4,884 claims, no report: for testing the
+global view, big files and "Run SHACL validation" on the Pages site). Other files can be opened with "Open Turtle file" (Turtle; N-Quads, TriG, N-Triples work too).
 
 **Data provenance.** The slide 25 subset (cut from the pilot RDF), the sample graph and the term table in
 `public/data/` come from this repository (MIT, `../LICENSE`); `data/slide25/plantmetwiki.ttl` is PlantMetWiki RDF

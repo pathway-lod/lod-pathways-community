@@ -52,9 +52,11 @@ npm run shot -- out.png "data=slide25.nq"     # build + headless screenshot (too
 
 `npm run shot -- shots/ "<query1>" "<query2>" ...` writes one PNG per query into `shots/` (git-ignored).
 
-Only slide 25 and the sample graph ship with the viewer (decision D19). To test a big file (files with more than 60
-subjects open on their first claim), bundle a pilot RDF locally (example at the end of `tools/rebuild_bundles.sh`) and
-open it with "Open Turtle file"; do not add it to `public/data/`.
+The menu has slide 25, the sample graph and, for testing on the Pages site, all four pilots as plain Turtle
+(`all_pilots.ttl`, made by `tools/rebuild_bundles.sh`, no SHACL report; decision D32, which replaced D19). Big files
+(more than 60 subjects) open on their first claim; `data=all_pilots.ttl` is the big-file test. Other files: bundle
+locally (example at the end of `tools/rebuild_bundles.sh`) and open them with "Open Turtle file"; do not add them to
+`public/data/` without a decision.
 
 After changing `src/validation/`, the shapes or the validator's dependencies, compare `node tools/validate.mjs <file>`
 (Node ≥ 22) with `python ../shape_constraints/validate.py <file> --no-references` (docs/validation.md, "How to check").

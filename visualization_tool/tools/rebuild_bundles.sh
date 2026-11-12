@@ -21,6 +21,14 @@ B --source "$REPO/shape_constraints/rdf/annotation.ttl" \
 # the repo's sample graph (one claim per use case), whole file
 B --source "$REPO/examples/sample_evidence_graph.ttl" --all --out public/data/sample_evidence_graph.nq
 
+# All four pilots as one plain Turtle file (no SHACL report, so the "Run SHACL validation" button can be tried on it):
+# the pilot RDF of shape_constraints/rdf/ concatenated (no named blank nodes, no @base, so this is valid Turtle).
+# A test dataset for the Pages site (decision D32): about 4.4 MB, 4,884 claims.
+{
+  echo "# All four pilots (shape_constraints/rdf/*.ttl) concatenated by visualization_tool/tools/rebuild_bundles.sh; do not edit."
+  cat "$REPO"/shape_constraints/rdf/*.ttl
+} > public/data/all_pilots.ttl
+
 # Shapes and vocabulary for the "Run SHACL validation" button (validation in the browser, src/validation/):
 # verbatim copies of shape_constraints/shapes/*.ttl and vocab/lodp.ttl, listed in index.json (the profile points to it).
 VAL=public/data/validation
