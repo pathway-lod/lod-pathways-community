@@ -390,8 +390,13 @@ Expression measurements and the statistics derived from them serve as evidence f
 - **Tomato RNA-seq expression matrix** (normalised; file `rnaseq.rpkm.csv`) from the MEANtools case study, Zenodo [15697913](https://zenodo.org/records/15697913); reads in BioProject PRJNA509154.
 - **Correlations and mutual ranks** between genes and metabolite features: the MEANtools output `Jeon_fungal.sqlite`, analysed in [`../pilots/pairedomics_overlap/`](../pilots/pairedomics_overlap/).
 - **PlantCyc expression evidence:** the code `EV-EXP-IEP` (inferred from expression pattern) on 53 PlantMetWiki nodes, mapped to `ECO:0000270` (PMN-02).
+- **Expression Atlas [E-MTAB-11876](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-11876)** (tomato cv. Moneymaker hairy roots, jasmonate 50 µM vs none, 24 h, 3 + 3; reads ENA PRJEB53936): raw counts, DESeq2 results, condensed SDRF. Gryffroy et al. 2023, *PNAS*, [10.1073/pnas.2210300120](https://doi.org/10.1073/pnas.2210300120). Covers TX-02 to TX-13 and TX-17 to TX-20 (DESeq2 rerun on the raw counts, or nf-core/rnaseq + nf-core/differentialabundance on the reads).
+- **ATTED-II v13 `Sly-r.c6-0`** (tomato, 1,608 RNA-seq runs, log2 ComBat-corrected expression; Zenodo [18679026](https://doi.org/10.5281/zenodo.18679026), CC BY 4.0). Method: Obayashi et al. 2022, *Plant Cell Physiol*, [10.1093/pcp/pcac041](https://doi.org/10.1093/pcp/pcac041). Covers TX-14 and TX-16 (correlation and mutual rank computed from the matrix).
+- **MEANtools `rnaseq.rpkm.csv`** (above; tomato leaves, 9 treatments × 12, 24, 48 h × 2 replicates, RPKM): Jeon et al. 2020, *Cell*, [10.1016/j.cell.2019.11.037](https://doi.org/10.1016/j.cell.2019.11.037); Singh et al. 2025, *PLOS Biol*, [10.1371/journal.pbio.3003307](https://doi.org/10.1371/journal.pbio.3003307). Covers TX-04, TX-06, TX-14, TX-16, TX-18 to TX-20.
+- **Gene ID mapping:** Ensembl Plants release 63 (SL4.0), Solyc ↔ NCBI Gene ID and Solyc ↔ RefSeq tables.
+- **Pilot results:** [`../pilots/transcriptomics_overlap/`](../pilots/transcriptomics_overlap/) (differential expression, response profile, gene and pathway co-expression of the PlantMetWiki tomato genes); generated RDF: [`../shape_constraints/rdf/transcriptomics.ttl`](../shape_constraints/rdf/transcriptomics.ttl).
+- **Reference set, *A. thaliana*** (not used yet): Expression Atlas E-MTAB-7609 (root wounding, 1–12 h vs 0 h; Rymen et al. 2019, *Commun Biol*, [10.1038/s42003-019-0646-5](https://doi.org/10.1038/s42003-019-0646-5)); ATTED-II v13 `Ath-r.c7-0` (Zenodo [18688124](https://doi.org/10.5281/zenodo.18688124)); heat-stress priming paired omics from #30 (SRA SRP589115; Thirumalaikumar et al. 2026, *Sci Data*, [10.1038/s41597-026-07813-z](https://doi.org/10.1038/s41597-026-07813-z)).
 
-> **TODO(Elena):** list the datasets with DESeq2 results or z-scores that should be used for testing.
 
 ### Specifications and fitting ontology terms
 
