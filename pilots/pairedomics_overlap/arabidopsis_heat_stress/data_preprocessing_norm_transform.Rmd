@@ -1,0 +1,351 @@
+
+---
+title: "Multi-omics data processing and analysis"
+output: html_notebook
+---
+
+This notebook processes transcriptomics, metabolomics, and proteomics data for cross-omics analysis.
+
+## 1. Transcriptomics
+
+### DESeq2 normalization, VST, and differential expression
+
+Load raw counts and sample metadata, filter low-expression genes, fit the DESeq2 model, and export VST values and the PRIMING-versus-CONTROL results.
+
+```{r transcriptomics-deseq2}
+
+library(DESeq2)
+library(edgeR)
+
+# Read CSV
+df <- read.csv(
+  "transcriptomics.csv",
+  header = TRUE,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+# Identify sample columns
+sample_cols <- 1:(ncol(df) - 2)
+
+# Extract metadata
+metadata <- data.frame(
+  SAMPLE = colnames(df)[sample_cols],
+  TREATMENT = as.character(unlist(df[1, sample_cols])),
+  TIME = paste0(unlist(df[2, sample_cols]), "d"),
+  stringsAsFactors = FALSE
+)
+
+# Set factors and reference levels
+metadata$TREATMENT <- factor(
+  metadata$TREATMENT,
+  levels = c("CONTROL", "PRIMING")
+)
+
+metadata$TIME <- factor(
+  metadata$TIME,
+  levels = c("1d", "2d", "3d", "4d")
+)
+
+rownames(metadata) <- metadata$SAMPLE
+
+# Extract expression matrix
+expression_matrix <- as.matrix(
+  data.frame(df[5:nrow(df), sample_cols], check.names = FALSE)
+)
+
+rownames(expression_matrix) <- make.unique(
+  as.character(df$AGI[5:nrow(df)])
+)
+
+storage.mode(expression_matrix) <- "numeric"
+
+# Check that values are valid raw counts
+stopifnot(
+  all(is.finite(expression_matrix)),
+  all(expression_matrix >= 0),
+  all(expression_matrix == round(expression_matrix))
+)
+
+# Ensure metadata and expression matrix are aligned
+metadata <- metadata[colnames(expression_matrix), , drop = FALSE]
+
+stopifnot(
+  identical(rownames(metadata), colnames(expression_matrix))
+)
+
+# Filter lowly expressed genes
+design_matrix <- model.matrix(
+  ~ TIME + TREATMENT,
+  data = metadata
+)
+
+keep <- filterByExpr(
+  expression_matrix,
+  design = design_matrix
+)
+
+counts_filtered <- expression_matrix[keep, , drop = FALSE]
+
+# Create DESeq2 dataset
+dds_general <- DESeqDataSetFromMatrix(
+  countData = round(counts_filtered),
+  colData = metadata,
+  design = ~ TIME + TREATMENT
+)
+
+# Estimate library size normalization factors and fit model
+dds_general <- DESeq(dds_general)
+
+# Inspect size factors
+sizeFactors(dds_general)
+
+# Variance stabilizing transformation (VST)
+vsd <- vst(dds_general, blind = FALSE)
+
+# Extract VST-transformed expression matrix
+vst_matrix <- assay(vsd)
+
+# Convert to dataframe and include gene identifiers
+vst_df <- as.data.frame(vst_matrix)
+vst_df$AGI <- rownames(vst_df)
+
+# Place gene identifiers in the first column
+vst_df <- vst_df[, c("AGI", colnames(vst_matrix))]
+
+# Save VST-transformed data
+write.csv(
+  vst_df,
+  "lod-pathways-community/pilots/pairedomics_overlap/arabidopsis_heat_stress/data/transcriptomics_deseqnorm+VST.csv",
+  row.names = FALSE
+)
+
+# Extract overall PRIMING vs CONTROL comparison
+results_general <- results(
+  dds_general,
+  contrast = c("TREATMENT", "PRIMING", "CONTROL")
+)
+
+# Convert results to dataframe
+results_general_df <- as.data.frame(results_general)
+
+results_general_df$AGI <- rownames(results_general_df)
+
+# Save results
+write.csv(
+  results_general_df,
+  "lod-pathways-community/pilots/pairedomics_overlap/arabidopsis_heat_stress/data/DESeq2_PRIMING_vs_CONTROL_general.csv",
+  row.names = FALSE
+)
+```
+
+## 2. Metabolomics
+
+### Load metabolomics measurements
+
+Read metabolomics data and extract sample metadata and the abundance matrix.
+
+```{r metabolomics-import}
+df_m <- read.csv("metabolomics.csv",
+               header = TRUE,
+               check.names = FALSE,
+               stringsAsFactors = FALSE)
+# Identify sample columns (exclude gene_id and AGI)
+sample_cols <- 2:(ncol(df_m))
+
+# Extract metadata from the first four rows
+m_metadata <- data.frame(
+  SAMPLE = colnames(df_m)[sample_cols],
+  TREATMENT = as.character(unlist(df_m[1, sample_cols])),
+  TIME = paste0(unlist(df_m[2, sample_cols]), "d"),
+  stringsAsFactors = TRUE
+)
+
+# Ignore the fourth metadata row
+
+# Extract expression matrix (rows 5 onwards)
+metabolite_matrix <- as.matrix(
+  data.frame(df_m[5:nrow(df_m), sample_cols], check.names = FALSE)
+)
+
+# Set AGI (last column) as row names
+rownames(metabolite_matrix) <- df_m$AGI[5:nrow(df_m)]
+
+# Ensure expression values are numeric
+storage.mode(metabolite_matrix) <- "numeric"
+
+```
+
+### Log transformation
+
+Calculate log2-transformed metabolite abundances.
+
+```{r metabolomics-log2}
+metabolite_log <- log2(metabolite_matrix)
+```
+
+### Export metabolomics matrix
+
+Export the metabolomics matrix.
+
+```{r metabolomics-export}
+write.csv(metabolite_matrix,"lod-pathways-community/pilots/pairedomics_overlap/arabidopsis_heat_stress/data/metabolomics_log.csv")
+```
+
+## 3. Proteomics
+
+### Load proteomics measurements
+
+Read protein abundances and inspect missing or zero-valued observations.
+
+```{r proteomics-import}
+# PROTEOMICS
+# Read proteomics data
+prot <- read.csv(
+  "proteomics.csv",
+  header = TRUE,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+# Keep protein annotations separately
+protein_info <- prot[, c("Accession", "Description")]
+
+# Extract sample columns (exclude Accession and Description)
+sample_cols <- names(prot)[-(1:2)]
+
+# Create numeric protein abundance matrix
+prot_matrix <- as.matrix(
+  data.frame(lapply(prot[, sample_cols], as.numeric),
+             check.names = FALSE)
+)
+
+# Set protein identifiers as row names
+rownames(prot_matrix) <- make.unique(as.character(prot$Accession))
+
+# Check missing values and zeros
+sum(is.na(prot_matrix))
+sum(prot_matrix == 0, na.rm = TRUE)
+```
+
+### Missing-value handling and transformation
+
+Treat zero abundances as missing, filter proteins, and apply log2 transformation.
+
+```{r proteomics-filter-log2}
+# Treat zero as missing (only if zero means not detected)
+prot_matrix[prot_matrix == 0] <- NA
+
+# Remove proteins with NA in more than 28 samples
+keep <- rowSums(is.na(prot_matrix)) <= 20
+
+prot_matrix <- prot_matrix[keep, , drop = FALSE]
+
+
+# Log2 transformation
+prot_log <- log2(prot_matrix)
+```
+
+### Median normalization
+
+Normalize the log-transformed protein abundances by sample medians.
+
+```{r proteomics-median-normalization}
+# Median normalization across samples
+sample_medians <- apply(
+  prot_log,
+  2,
+  median,
+  na.rm = TRUE
+)
+
+grand_median <- median(sample_medians, na.rm = TRUE)
+
+prot_normalized <- sweep(
+  prot_log,
+  2,
+  sample_medians,
+  FUN = "-"
+)
+
+prot_normalized <- prot_normalized + grand_median
+```
+
+### Export normalized protein abundances
+
+Save the normalized proteomics matrix.
+
+```{r proteomics-export-normalized}
+write.csv(prot_normalized, "lod-pathways-community/pilots/pairedomics_overlap/arabidopsis_heat_stress/data/proteomics_mediannorm+log.csv", row.names = TRUE)
+```
+
+### Differential abundance analysis with limma
+
+Construct sample metadata, fit the limma model, and extract the PRIMING-versus-CONTROL comparison.
+
+```{r proteomics-limma}
+metadata_prot <- data.frame(
+  Sample = colnames(prot_normalized),
+  TREATMENT = ifelse(
+    grepl("priming", colnames(prot_normalized), ignore.case = TRUE),
+    "PRIMING",
+    "CONTROL"
+  ),
+  TIME = sub("^.*?(\\d+)d_.*$", "\\1", colnames(prot_normalized)),
+  REPLICATE = sub("^.*_(\\d+)$", "\\1", colnames(prot_normalized))
+)
+
+metadata_prot$TIME <- factor(metadata_prot$TIME,
+                             levels = c("1", "2", "3", "4"))
+
+metadata_prot$TREATMENT <- factor(
+  metadata_prot$TREATMENT,
+  levels = c("CONTROL", "PRIMING")
+)
+
+rownames(metadata_prot) <- metadata_prot$Sample
+
+library(limma)
+
+# Set reference levels
+metadata_prot$TIME <- factor(
+  metadata_prot$TIME,
+  levels = c("1", "2", "3", "4")
+)
+
+metadata_prot$TREATMENT <- factor(
+  metadata_prot$TREATMENT,
+  levels = c("CONTROL", "PRIMING")
+)
+
+# Design matrix without interaction
+design <- model.matrix(
+  ~ TIME + TREATMENT,
+  data = metadata_prot
+)
+
+# Fit linear model
+fit <- lmFit(prot_normalized, design)
+
+# Empirical Bayes moderation
+fit <- eBayes(fit)
+
+# Overall PRIMING vs CONTROL
+results_general <- topTable(
+  fit,
+  coef = "TREATMENTPRIMING",
+  number = Inf,
+  adjust.method = "BH"
+)
+
+# Save results
+results_general$Accession <- rownames(results_general)
+```
+
+### Export limma results
+
+Save the proteomics differential-abundance results.
+
+```{r proteomics-export-limma}
+write.csv(results_general, "lod-pathways-community/pilots/pairedomics_overlap/arabidopsis_heat_stress/data/limma_proteomics.csv", row.names = TRUE)
+```
