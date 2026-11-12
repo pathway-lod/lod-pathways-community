@@ -10,6 +10,9 @@ on:
     paths:
       - "specification/**"
       - "visualization_tool/**"
+      # inputs of the viewer's data bundles (shapes, vocabulary, generated pilot RDF, sample graph)
+      - "shape_constraints/**"
+      - "examples/**"
       - ".github/workflows/specification-pages.yml"
   workflow_dispatch:
 
@@ -60,6 +63,24 @@ jobs:
         if: steps.pages.outputs.enabled != 'false'
         working-directory: specification
         run: python3 check_terms.py --render
+
+      - uses: actions/setup-python@v7
+        if: steps.pages.outputs.enabled != 'false'
+        continue-on-error: true   # viewer data only; the next step then falls back to the committed files
+        with:
+          python-version: "3.12"
+
+      # Same idea for the viewer: its data (public/data/*.nq with their SHACL reports, and terms.json) follows the term table,
+      # the shapes and the RDF of this commit. If the rebuild fails, the committed files are kept, so that a problem in
+      # the viewer's data never stops the specification dashboard from being published.
+      - name: Rebuild the viewer's data bundles and term table
+        if: steps.pages.outputs.enabled != 'false'
+        working-directory: visualization_tool
+        run: |
+          if ! { python -m pip install -r tools/requirements.txt && bash tools/rebuild_bundles.sh; }; then
+            git checkout -- public/data
+            echo "::warning title=Viewer data not rebuilt::tools/rebuild_bundles.sh failed; the viewer is published with the data committed in the repository."
+          fi
 
       - uses: actions/setup-node@v7
         if: steps.pages.outputs.enabled != 'false'

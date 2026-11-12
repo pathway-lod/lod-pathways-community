@@ -19,6 +19,7 @@ header .file input { display: none; }
 header .file { cursor: pointer; color: var(--data); text-decoration: underline; }
 header .chk { color: var(--ink); }
 header .spacer { flex: 1; }
+header .row-break { flex-basis: 100%; height: 0; } /* forces a new header row (export buttons) */
 header .summary { color: var(--grey); }
 header button { font-size: 13px; padding: 3px 10px; cursor: pointer; }
 .error { background: #fee2e2; color: var(--viol); padding: 6px 14px; font-size: 13px; }
@@ -27,6 +28,15 @@ main { flex: 1; display: flex; min-height: 0; }
 aside { width: 460px; border-left: 1px solid var(--line); background: #fff; display: flex; flex-direction: column; }
 .aside-head { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--line); }
 aside pre { margin: 0; padding: 12px; overflow: auto; font: 12px/1.5 var(--mono); white-space: pre-wrap; word-break: break-all; }
+aside { overflow-y: auto; }
+aside pre { flex-shrink: 0; overflow: visible; }
+.aside-head { position: sticky; top: 0; background: #fff; }
+.aside-actions { display: flex; gap: 6px; }
+.aside-actions button { font-size: 12px; padding: 2px 8px; cursor: pointer; }
+.aside-sub { padding: 6px 12px; border-top: 1px dashed var(--line); color: var(--grey); font-size: 12px; }
+aside pre.proposal { color: var(--grey); }
+/* multi-selection (box select): React Flow draws a frame for dragging the selection as a group; not wanted here */
+.react-flow__nodesselection-rect { display: none; }
 
 /* ---- cards */
 .card { width: 400px; background: #fff; border: 2.5px solid var(--c); border-radius: 10px; font-size: 12.5px; cursor: pointer; box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); }
@@ -76,3 +86,26 @@ aside pre { margin: 0; padding: 12px; overflow: auto; font: 12px/1.5 var(--mono)
 .issue.pattern { color: #1d4ed8; border-color: #1d4ed8; background: #eff6ff; }
 .cnt.pattern { color: #1d4ed8; }
 header .note { color: var(--grey); font-size: 12px; }
+
+/* selection handed over by the global view (App.jsx, 2026-11-11) */
+.subset-bar { display: flex; align-items: center; gap: 12px; padding: 6px 16px; background: #fff7ed;
+  border-bottom: 1px solid #fed7aa; font-size: 13px; }
+.subset-bar button { padding: 2px 10px; }
+/* "← Global view" in the card viewer header (2026-11-11): must stand out */
+.back-link { font-size: 15px; font-weight: 600; color: #2563eb; text-decoration: none; padding: 4px 10px;
+  border: 1.5px solid #2563eb; border-radius: 6px; white-space: nowrap; }
+.back-link:hover { background: #eff6ff; }
+/* "← Detail view" in the global view header (2026-11-11; moved to the start and renamed 2026-11-12 to mirror
+   "← Global view") */
+.detail-btn { font-size: 15px; font-weight: 600; color: #2563eb; border: 1.5px solid #2563eb; background: #fff; border-radius: 6px;
+  padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+.detail-btn:hover { background: #eff6ff; }
+.detail-btn:disabled { color: #94a3b8; border-color: #cbd5e1; cursor: default; }
+/* in-browser SHACL validation (ValidationControl.jsx) */
+header .validation { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+header .validation progress { width: 160px; height: 10px; }
+header .validation.running { color: var(--ink); }
+header .validate-btn { font-weight: 600; color: #b91c1c; border: 1.5px solid #b91c1c; background: #fff; border-radius: 6px; }
+header .validate-btn:hover { background: #fef2f2; }
+header .validate-btn:disabled { color: #94a3b8; border-color: #cbd5e1; }
+header .validation-error { color: var(--viol); max-width: 340px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

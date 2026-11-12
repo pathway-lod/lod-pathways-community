@@ -3,6 +3,10 @@
 Read this file first, then [docs/architecture.md](docs/architecture.md). Read [docs/layout.md](docs/layout.md)
 before touching `src/layout.js`, and [docs/decisions.md](docs/decisions.md) before changing anything that a
 decision there covers (most of the look and behaviour was decided by Martin Engst, who built the viewer).
+Before touching `src/validation/` or `src/ValidationControl.jsx` (SHACL validation in the browser), read
+[docs/validation.md](docs/validation.md): shacl-engine is pinned and patched, and results must stay identical to pyshacl.
+Before working on the PlantMetWiki part of the global view, read [docs/pmw-structure.md](docs/pmw-structure.md)
+(what PlantMetWiki contains, numbers, clustering options, queries).
 
 This folder is part of [pathway-lod/lod-pathways-community](https://github.com/pathway-lod/lod-pathways-community);
 the repository's own README and conventions apply too.
@@ -24,7 +28,7 @@ What the viewer uses from the rest of this repository (read-only; only for rebui
 
 Related:
 - [pathway-lod/developing-open-standards](https://github.com/pathway-lod/developing-open-standards): the paper.
-- PlantMetWiki SPARQL endpoint: <https://plantmetwiki.bioinformatics.nl/sparql> (the viewer itself never queries it).
+- PlantMetWiki SPARQL endpoint: <https://plantmetwiki.bioinformatics.nl/sparql> (the viewer itself never queries it live; `tools/build_pmw_snapshot.py` builds the snapshot for the global view's map from it).
 
 ## Run, build, check
 
@@ -48,9 +52,14 @@ npm run shot -- out.png "data=slide25.nq"     # build + headless screenshot (too
 
 `npm run shot -- shots/ "<query1>" "<query2>" ...` writes one PNG per query into `shots/` (git-ignored).
 
-Only slide 25 and the sample graph ship with the viewer (decision D19). To test a big file (files with more than 60
-subjects open on their first claim), bundle a pilot RDF locally (example at the end of `tools/rebuild_bundles.sh`) and
-open it with "Open file"; do not add it to `public/data/`.
+The menu has slide 25, the sample graph and, for testing on the Pages site, all four pilots as plain Turtle
+(`all_pilots.ttl`, made by `tools/rebuild_bundles.sh`, no SHACL report; decision D32, which replaced D19). Big files
+(more than 60 subjects) open on their first claim; `data=all_pilots.ttl` is the big-file test. Other files: bundle
+locally (example at the end of `tools/rebuild_bundles.sh`) and open them with "Open Turtle file"; do not add them to
+`public/data/` without a decision.
+
+After changing `src/validation/`, the shapes or the validator's dependencies, compare `node tools/validate.mjs <file>`
+(Node ≥ 22) with `python ../shape_constraints/validate.py <file> --no-references` (docs/validation.md, "How to check").
 
 Rebuild the data bundles (only when the sample graph, shapes, term table or `data/slide25/*.ttl` change):
 `bash tools/rebuild_bundles.sh` (reads the repository root `..`; needs `pip install -r tools/requirements.txt`).

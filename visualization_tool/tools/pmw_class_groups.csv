@@ -1,0 +1,398 @@
+class,n_pathways,group
+3-Dehydroquinate-Biosynthesis,1,Cofactors & vitamins
+4-Aminobenzoate-Biosynthesis,1,Amino acids & nitrogen
+4-Aminobutyraye-Degradation,2,Amino acids & nitrogen
+4-Hydroxybenzoate-Biosynthesis,2,Flavonoids & phenylpropanoids
+6-HM-Dihydropterin-PP-Biosynthesis,1,Cofactors & vitamins
+8-Oxo-GTP-Detoxification,1,Nucleotides
+Abscisic-Acid-Biosynthesis,2,Hormones
+Abscisic-Acid-Degradation,4,Hormones
+Acetaldehyde-Biosynthesis,2,Energy & central
+Acetate-Formation,2,Energy & central
+Acetlylenic-Fatty-Acid-Biosynthesis,2,Lipids
+Acetoin-Biosynthesis,1,Energy & central
+Acetyl-CoA-Biosynthesis,3,Cofactors & vitamins
+Activation,5,(bookkeeping)
+ACYLSUGAR-BIOSYNTHESIS,8,Other specialized
+Adenine-Adenosine-Salvage,2,Nucleotides
+Adenosine-Deoxy-Denovo-Bbiosynthesis,1,Nucleotides
+Adenosine-Nucleotides-Degradation,1,Nucleotides
+AEROBIC-RESPIRATION,2,Energy & central
+AIR-Biosynthesis,1,Nucleotides
+ALANINE-DEG,2,Amino acids & nitrogen
+ALANINE-SYN,2,Amino acids & nitrogen
+ALKALOIDS,1,Alkaloids & N/S compounds
+ALKALOIDS-SYN,17,Alkaloids & N/S compounds
+Alkanes-Biosynthesis,1,Other specialized
+Alkenes-Biosynthesis,2,Other specialized
+All-Trans-Farnesyl-PP-Biosynthesis,2,Terpenoids & sterols
+All-Trans-Polyprenyl-Biosynthesis,3,Terpenoids & sterols
+Allantoin-degradation,6,Amino acids & nitrogen
+Alpha-Linolenate-Biosynthesis,1,Lipids
+AMINO-ACID-FAMILY-SYN,1,Amino acids & nitrogen
+Amino-Acids-Modification,1,Amino acids & nitrogen
+Aminoacyl-tRNAs-Charging,2,Amino acids & nitrogen
+Ammonia-Assimilation,4,Amino acids & nitrogen
+ANTHOCYANIN-SYN,29,Flavonoids & phenylpropanoids
+APOCAROTENOID-SYN,3,Terpenoids & sterols
+Arachidonate-Biosynthesis,1,Lipids
+ARGININE-DEG,3,Amino acids & nitrogen
+ARGININE-SYN,2,Amino acids & nitrogen
+Aroma-Compound-Biosynthesis,10,Other specialized
+AROMATIC-COMPOUNDS-BIOSYN,14,Flavonoids & phenylpropanoids
+AROMATIC-COMPOUNDS-DEGRADATION,2,Flavonoids & phenylpropanoids
+Ascorbate-Biosynthesis,2,Cofactors & vitamins
+Ascorbate-Degradation,2,Cofactors & vitamins
+ASPARAGINE-DEG,2,Amino acids & nitrogen
+ASPARAGINE-SYN,2,Amino acids & nitrogen
+ASPARTATE-SYN,1,Amino acids & nitrogen
+Assimilatory-Sulfate-Reduction,1,Inorganic & detox
+AURONE-SYN,2,Flavonoids & phenylpropanoids
+Autotrophic-CO2-Fixation,1,Energy & central
+Auxin-Biosynthesis,5,Hormones
+BENZENOID-SYN,1,Flavonoids & phenylpropanoids
+Benzoate-Biosynthesis,3,Flavonoids & phenylpropanoids
+Bergamotene-Biosynthesis,2,Terpenoids & sterols
+Beta-Alanine-Biosynthesis,3,Amino acids & nitrogen
+Betaine-Biosynthesis,2,Lipids
+BETALAIN-ALKALOIDS,8,Alkaloids & N/S compounds
+BIOTIN-SYN,1,Cofactors & vitamins
+Brassinosteroid-Biosynthesis,3,Hormones
+C1-COMPOUNDS,1,Energy & central
+C40-Carotenoids-Biosynthesis,14,Terpenoids & sterols
+CAFFEINE,2,Alkaloids & N/S compounds
+Caffeine-Biosynthesis,2,Alkaloids & N/S compounds
+Camphor-Biosynthesis,2,Terpenoids & sterols
+CARBO-BIOSYNTHESIS,1,Carbohydrates & cell wall
+Carbohydrates-Degradation,1,Carbohydrates & cell wall
+Carboxylate-Biosynthesis,1,Energy & central
+CARBOXYLATES-DEG,1,Carbohydrates & cell wall
+Cardiolipin-Biosynthesis,1,Lipids
+CDP-diacylglycerol-Biosynthesis,2,Lipids
+CHALCONE-SYN,2,Flavonoids & phenylpropanoids
+Chitin-Degradation,2,Carbohydrates & cell wall
+CHLORINATED-COMPOUNDS-DEG,1,Inorganic & detox
+Chlorophyll-a-Biosynthesis,4,Cofactors & vitamins
+Chlorophyll-A-Degradation,3,Cofactors & vitamins
+Chlorophyllide-a-Biosynthesis,1,Cofactors & vitamins
+Choline-Biosynthesis,3,Lipids
+Choline-Degradation,1,Lipids
+Chorismate-Biosynthesis,2,Cofactors & vitamins
+CINNAMATE-SYN,13,Flavonoids & phenylpropanoids
+Citrulline-Biosynthesis,2,Amino acids & nitrogen
+CMP-KDO-Biosynthesis,2,Carbohydrates & cell wall
+CMP-Sugar-Biosynthesis,1,Carbohydrates & cell wall
+CO2-Fixation,2,Energy & central
+CoA-Biosynthesis,4,Cofactors & vitamins
+Cobamide-Salvage,1,Cofactors & vitamins
+Cofactor-Biosynthesis,2,Cofactors & vitamins
+Conjugated-Fatty-Acid-Biosynthesis,4,Lipids
+COUMARIN-PHYTOALEXINS,1,Flavonoids & phenylpropanoids
+COUMARIN-SYN,15,Flavonoids & phenylpropanoids
+Cyanide-Detoxification,1,Inorganic & detox
+CYANOGENIC-GLUCOSIDE-DEG,8,Alkaloids & N/S compounds
+CYANOGENIC-GLUCOSIDE-SYN,6,Alkaloids & N/S compounds
+CYCLITOLS,2,Carbohydrates & cell wall
+Cyclitols-Biosynthesis,6,Carbohydrates & cell wall
+CYCLITOLS-DEG,6,Carbohydrates & cell wall
+Cyclopropane-fatty-acid-biosyn,1,Lipids
+CYSTEINE-SYN,1,Amino acids & nitrogen
+CYTOKININ-BIOSYNTHESIS,6,Hormones
+CYTOKININS-DEGRADATION,1,Hormones
+D-Amino-Acid-Degradation,2,Amino acids & nitrogen
+D-Mannose-Degradation,1,Carbohydrates & cell wall
+Detoxification,8,Inorganic & detox
+DHNA-Biosynthesis,2,Other specialized
+Dimethylsulfoniopropionate-Biosynthesis,3,Inorganic & detox
+Dimethylsulfoniopropionate-Degradation,1,Inorganic & detox
+DITERPENOID-SYN,21,Terpenoids & sterols
+Divinyl-Ether-Biosynthesis,2,Lipids
+DMNT-Biosynthesis,2,Terpenoids & sterols
+Docosahexaenoate-Biosynthesis,1,Lipids
+dTDP-L-Rhamnose-Biosynthesis,1,Carbohydrates & cell wall
+dTDP-Sugar-Biosynthesis,1,Carbohydrates & cell wall
+Eicosapentaenoate-Biosynthesis,1,Lipids
+Electron-Transfer,3,Energy & central
+ELLAGITANNINS,1,Flavonoids & phenylpropanoids
+Energy-Metabolism,8,Energy & central
+EPIDERMAL-STRUCTURE,2,Carbohydrates & cell wall
+Ergosterol-Biosynthesis,2,Terpenoids & sterols
+Ethanol-Degradation,3,Energy & central
+Ethylene-Biosynthesis,1,Hormones
+Fatty-Acid-and-Lipid-Degradation,3,Lipids
+Fatty-Acid-Biosyn-Initiation,2,Lipids
+Fatty-acid-biosynthesis,5,Lipids
+Fatty-Acid-Degradation,5,Lipids
+FATTY-ACID-DERIVATIVE-SYN,5,Lipids
+FLAVANONES-SYN,5,Flavonoids & phenylpropanoids
+Flavin-Biosynthesis,1,Cofactors & vitamins
+FLAVONE-SYN,15,Flavonoids & phenylpropanoids
+FLAVONOID-DEG,3,Flavonoids & phenylpropanoids
+FLAVONOID-PHYTOALEXINS,1,Flavonoids & phenylpropanoids
+FLAVONOID-SYN,8,Flavonoids & phenylpropanoids
+FLAVONOL-SYN,33,Flavonoids & phenylpropanoids
+Folate-Biosynthesis,6,Cofactors & vitamins
+Folate-Transformations,1,Cofactors & vitamins
+Formaldehyde-Oxidation,1,Energy & central
+GALACTOSE-DEGRADATION,1,Carbohydrates & cell wall
+GALLOTANNINS,1,Flavonoids & phenylpropanoids
+Gamma-Glutamyl-Cycles,1,Amino acids & nitrogen
+Gamma-linolenate-Biosynthesis,1,Lipids
+GDP-Sugar-Biosynthesis,5,Carbohydrates & cell wall
+GGPP-Biosynthesis,3,Terpenoids & sterols
+Gibberellin-Inactivation,3,Terpenoids & sterols
+GIBBERELLIN-SYN,5,Terpenoids & sterols
+GIBBERELLINS-BIOSYNTHESIS,4,Terpenoids & sterols
+GIBBERELLINS-DEGRADATION,3,Terpenoids & sterols
+Gluconeogenesis,1,Energy & central
+GLUCOSINOLATE-DEG,4,Alkaloids & N/S compounds
+GLUCOSINOLATE-SYN,9,Alkaloids & N/S compounds
+GLUTAMATE-DEG,2,Amino acids & nitrogen
+GLUTAMATE-SYN,4,Amino acids & nitrogen
+GLUTAMINE-SYN,1,Amino acids & nitrogen
+Glycan-Pathways,11,Carbohydrates & cell wall
+GLYCEROL-DEG,1,Lipids
+GLYCINE-DEG,1,Amino acids & nitrogen
+GLYCINE-SYN,2,Amino acids & nitrogen
+GLYCOGEN-BIOSYN,1,Carbohydrates & cell wall
+Glycolate-Degradation,1,Energy & central
+Glycolipids-Biosynthesis,2,Lipids
+GLYCOLYSIS-VARIANTS,3,Energy & central
+Glycosylation-Pathways,22,Carbohydrates & cell wall
+Guanine-Guanosine-Salvage,2,Nucleotides
+Guanosine-Deoxy-Denovo-Biosynthesis,1,Nucleotides
+Guanosine-Nucleotides-Degradation,3,Nucleotides
+Heme-b-Biosynthesis,2,Cofactors & vitamins
+Heme-Degradation,1,Cofactors & vitamins
+HISTIDINE-SYN,1,Amino acids & nitrogen
+HMP-PP-Biosynthesis,1,Cofactors & vitamins
+Homospermidine-Biosynthesis,1,Alkaloids & N/S compounds
+Hydrocarbon-Degradation,1,Other specialized
+Hydrogen-Production,2,Energy & central
+Hydroxy-Fatty-Acids-Biosynthesis,3,Lipids
+IMP-Biosynthesis,1,Nucleotides
+Inactivation,3,(bookkeeping)
+IND-AMINO-ACID-SYN,3,Amino acids & nitrogen
+Indole-3-Acetate-Inactivation,11,Hormones
+INDOLE-ALKALOIDS,5,Alkaloids & N/S compounds
+INDOLE-PHYTOALEXIN-SYN,1,Alkaloids & N/S compounds
+Insecticides-Biosynthesis,1,Other specialized
+Interconversion,17,(bookkeeping)
+Iron-Metabolism,1,Inorganic & detox
+ISOFLAVONOID-PHYTOALEXINS,17,Flavonoids & phenylpropanoids
+ISOFLAVONOID-SYN,28,Flavonoids & phenylpropanoids
+ISOLEUCINE-DEG,1,Amino acids & nitrogen
+ISOLEUCINE-SYN,2,Amino acids & nitrogen
+ISOPRENOIDS,3,Terpenoids & sterols
+ISOQUINOLINE-ALKALOIDS,13,Alkaloids & N/S compounds
+Jasmonates-Biosynthesis,4,Hormones
+JH-III-Biosynthesis,1,Terpenoids & sterols
+L-Canavanine-Degradation,1,Alkaloids & N/S compounds
+L-Ornithine-Biosynthesis,3,Amino acids & nitrogen
+LEUCINE-DEG,1,Amino acids & nitrogen
+LEUCINE-SYN,1,Amino acids & nitrogen
+LEUCOANTHOCYANIDIN-SYN,2,Flavonoids & phenylpropanoids
+LIGNAN-SYN,11,Flavonoids & phenylpropanoids
+LIGNIN-SYN,4,Flavonoids & phenylpropanoids
+Linalool-Biosynthesis,3,Terpenoids & sterols
+Linoleate-Biosynthesis,1,Lipids
+Lipid-Biosynthesis,17,Lipids
+Lipid-IV-A-Biosynthesis,1,Lipids
+Lipoate-Biosynthesis,1,Cofactors & vitamins
+Lycopene-Biosynthesis,2,Terpenoids & sterols
+LYSINE-DEG,3,Amino acids & nitrogen
+LYSINE-SYN,1,Amino acids & nitrogen
+MALATE-OXALOACETATE-SHUTTLE,2,Energy & central
+Mannitol-Degradation,1,Carbohydrates & cell wall
+MEP-Pathways,2,Terpenoids & sterols
+Metabolic-Clusters,43,(bookkeeping)
+Metabolic-Regulators,2,Inorganic & detox
+Methionine-De-novo-Biosynthesis,1,Amino acids & nitrogen
+METHIONINE-DEG,2,Amino acids & nitrogen
+Methionine-Salvage,2,Amino acids & nitrogen
+Methylglyoxal-Detoxification,1,Energy & central
+Methylthioadenosine-Degradation,1,Nucleotides
+Mevalonate-Pathways,1,Terpenoids & sterols
+MISCELLANEOUS-DEG,2,(bookkeeping)
+Molybdenum-Cofactor-Biosynthesis,2,Cofactors & vitamins
+MONOTERPENOID-SYN,16,Terpenoids & sterols
+MTR-1P-Degradation,2,Nucleotides
+N-CONTAINING-GLUCOSIDE-SYN,1,Alkaloids & N/S compounds
+N-CONTAINING-SECONDARY-CMPD-SYN,6,Alkaloids & N/S compounds
+NAD-Metabolism,1,Cofactors & vitamins
+NAD-SYN,5,Cofactors & vitamins
+Neurotransmitter-Biosynthesis,1,Alkaloids & N/S compounds
+Nitrate-Reduction,1,Amino acids & nitrogen
+Nitric-Oxide-Biosynthesis,2,Amino acids & nitrogen
+Nitro-Toluene-Degradation,1,Alkaloids & N/S compounds
+NITROGEN-DEG,5,Amino acids & nitrogen
+NON-PROTEIN-AMINO-ACID-SYN,5,Alkaloids & N/S compounds
+Noncarbon-Nutrients,1,Inorganic & detox
+NORLIGNANS,1,Flavonoids & phenylpropanoids
+NUCLEO-DEG,1,Nucleotides
+Oleate-Biosynthesis,1,Lipids
+Olefins-Biosynthesis,1,Other specialized
+Oligosaccharides-Biosynthesis,6,Carbohydrates & cell wall
+Other-Amino-Acid-Biosynthesis,5,(bookkeeping)
+Other-biosynthesis,2,(bookkeeping)
+Other-Degradation,2,(bookkeeping)
+Oxalate-Degradation,2,Energy & central
+Palmitate-Biosynthesis,1,Lipids
+Palmitoleate-Biosynthesis,1,Lipids
+Pantothenate-Biosynthesis,2,Cofactors & vitamins
+Pathways,1,(bookkeeping)
+Pectin-Degradation,1,Carbohydrates & cell wall
+Pentose-Phosphate-Cycle,3,Energy & central
+PHENYLALANINE-DEG,2,Amino acids & nitrogen
+PHENYLALANINE-SYN,2,Amino acids & nitrogen
+PHENYLPROPANOID-DERIVATIVE-DEG,5,Flavonoids & phenylpropanoids
+PHENYLPROPANOID-SYN,14,Flavonoids & phenylpropanoids
+PhosphatidylcholineBiosynthesis,4,Lipids
+PhosphatidylethanolamineBiosynthesis,3,Lipids
+PhosphatidylglycerolBiosynthesis,2,Lipids
+Phosphatidylinositol-Biosynthesis,1,Lipids
+Phosphatidylserine-Biosynthesis,1,Lipids
+Phospholipid-Biosynthesis,5,Lipids
+Phosphorus-Compounds,1,Inorganic & detox
+Photorespiration,1,Energy & central
+Photosynthesis,7,Energy & central
+Phycobilin-Biosynthesis,1,Cofactors & vitamins
+Phylloquinone-Biosynthesis,2,Other specialized
+Phytate-Biosynthesis,4,Carbohydrates & cell wall
+Phytate-Degradation,2,Carbohydrates & cell wall
+PHYTOALEXIN-SYN,6,Other specialized
+Phytyl-Diphosphate-Biosynthesis,1,Terpenoids & sterols
+Pigment-Biosynthesis,1,Other specialized
+Pinitol-Biosynthesis,2,Carbohydrates & cell wall
+PLANT-CELL-STRUCTURE,3,Carbohydrates & cell wall
+Plant-Hormone-Biosynthesis,2,Hormones
+PLANT-HORMONE-DEG,1,Hormones
+Plastoquinone-Biosynthesis,2,Other specialized
+Polyamine-Biosynthesis,5,Amino acids & nitrogen
+POLYKETIDE-SYN,11,Flavonoids & phenylpropanoids
+Polysaccharides-Biosynthesis,6,Carbohydrates & cell wall
+POLYSACCHARIDES-DEG,1,Carbohydrates & cell wall
+POLYTERPENOID-SYN,1,Terpenoids & sterols
+Porphyrin-Compounds-Biosynthesis,1,Cofactors & vitamins
+PRENYLFLAVONOID-SYN,2,Flavonoids & phenylpropanoids
+PRIMARY-CELL-WALL,3,Carbohydrates & cell wall
+PROANTHOCYANIDIN-SYN,1,Flavonoids & phenylpropanoids
+PROLINE-DEG,1,Amino acids & nitrogen
+PROLINE-SYN,2,Amino acids & nitrogen
+Protein-Glycosylation,1,Carbohydrates & cell wall
+Protein-Modification,2,Amino acids & nitrogen
+PUFA-Biosynthesis,6,Lipids
+PUR-NUC-SYN,1,Nucleotides
+PURINE-ALKALOIDS,2,Alkaloids & N/S compounds
+Purine-Degradation,2,Nucleotides
+Purine-Nucleotide-De-Novo-Biosynthesis,2,Nucleotides
+Purine-Nucleotides-Salvage,2,Nucleotides
+Purine-Ribonuc-De-Novo-Biosynthesis,2,Nucleotides
+Putrescine-Biosynthesis,4,Amino acids & nitrogen
+Putrescine-Degradation,1,Amino acids & nitrogen
+PYR-NUC-SYN,2,Nucleotides
+Pyrimid-Deoxyribonucleot-De-Novo-Biosyn,4,Nucleotides
+Pyrimid-Ribonucleot-De-Novo-Biosyn,2,Nucleotides
+Pyrimidine-Base-Degradation,1,Nucleotides
+Pyrimidine-Nucleotide-Salvage,9,Nucleotides
+Pyrimidine-Ribonucleosides-Degradation,1,Nucleotides
+PYRROLIDINE-ALKALOIDS,4,Alkaloids & N/S compounds
+Pyruvate-Acetate-Fermentation,2,Energy & central
+Pyruvate-Degradation,1,Energy & central
+Pyruvate-Ethanol-Fermentation,2,Energy & central
+Pyruvate-Lactate-Fermentation,1,Energy & central
+QUINOLINE-ALKALOIDS,2,Alkaloids & N/S compounds
+QUINOLIZIDINE-ALKALOIDS,1,Alkaloids & N/S compounds
+Quinone-Biosynthesis,2,Other specialized
+QUINONE-SYN,8,Other specialized
+REACTIVE-OXYGEN-SPECIES-DEGRADATION,3,Inorganic & detox
+Reductants,6,Cofactors & vitamins
+REDUCTANTS,1,Cofactors & vitamins
+Reductive-TCA-Cycles,1,Energy & central
+Resin-Acids-Biosynthesis,7,Terpenoids & sterols
+Respiration,2,Energy & central
+Rosmarinate-Biosynthesis,2,Flavonoids & phenylpropanoids
+Rotenoids-Biosynthesis,3,Flavonoids & phenylpropanoids
+S-adenosyl-L-methionine-Biosynthesis,2,Cofactors & vitamins
+S-CONTAINING-SECONDARY-CMPD-SYN,9,Alkaloids & N/S compounds
+S-Reticuline-Biosynthesis,1,Alkaloids & N/S compounds
+Salicylate-Biosynthesis,3,Hormones
+Salicylate-Glycosylation,3,Hormones
+SECONDARY-CELL-WALL,3,Carbohydrates & cell wall
+SECONDARY-METABOLITE-BIOSYNTHESIS,7,Other specialized
+Selenium-Metabolism,1,Inorganic & detox
+Seleno-Amino-Acid-Detoxification,4,Amino acids & nitrogen
+Selenocysteine-Biosynthesis,1,Amino acids & nitrogen
+SERINE-BIOSYNTHESIS,2,Amino acids & nitrogen
+SESQUITERPENE-LACTONE,3,Terpenoids & sterols
+Sesquiterpenoid-Degradation,1,Terpenoids & sterols
+SESQUITERPENOID-SYN,24,Terpenoids & sterols
+Siderophores-Biosynthesis,2,Other specialized
+Sorbitol-Biosynthesis,1,Carbohydrates & cell wall
+Spermidine-Biosynthesis,1,Amino acids & nitrogen
+SPERMINE-SPERMIDINE-DEG,2,Amino acids & nitrogen
+Sphingolipid-Biosynthesis,1,Lipids
+Sphingolipid-Recyc-Deg,1,Lipids
+Starch-Degradation,2,Carbohydrates & cell wall
+Stearate-Biosynthesis,1,Lipids
+Sterol-Biosynthesis,12,Terpenoids & sterols
+STILBENE-PHYTOALEXINS,2,Flavonoids & phenylpropanoids
+STILBENE-SYN,3,Flavonoids & phenylpropanoids
+Sucrose-Biosynthesis,2,Carbohydrates & cell wall
+SUCROSE-DEG,4,Carbohydrates & cell wall
+Sugar-Alcohols-Biosynthesis,1,Carbohydrates & cell wall
+SUGAR-ALCOHOLS-DEG,1,Carbohydrates & cell wall
+Sugar-Derivatives,2,Carbohydrates & cell wall
+SUGAR-DERIVS,3,Carbohydrates & cell wall
+SUGAR-NUCLEOTIDES,1,Carbohydrates & cell wall
+Sugar-Phosphate-Biosynthesis,1,Carbohydrates & cell wall
+Sugars-And-Polysaccharides,1,Carbohydrates & cell wall
+Sugars-And-Polysaccharides-Degradation,1,Carbohydrates & cell wall
+Sulfite-Oxidation,1,Inorganic & detox
+Sulfur-Metabolism,2,Inorganic & detox
+Super-Pathways,113,(bookkeeping)
+TANNIN-SYN,2,Flavonoids & phenylpropanoids
+TCA-VARIANTS,2,Energy & central
+TERPENOID-ALKALOIDS,3,Terpenoids & sterols
+Terpenoid-Biosynthesis,2,Terpenoids & sterols
+TERPENOID-DEG,2,Terpenoids & sterols
+TERPENOID-PHYTOALEXINS,10,Terpenoids & sterols
+TERPENOPHENOLICS-SYN,8,Flavonoids & phenylpropanoids
+Tetrapyrrole-Biosynthesis,1,Cofactors & vitamins
+TETRATERPENOID-SYN,1,Terpenoids & sterols
+Thiamin-Diphosphate-Biosynthesis,1,Cofactors & vitamins
+Thiamin-Salvage,1,Cofactors & vitamins
+Thiamine-Biosynthesis,1,Cofactors & vitamins
+Thiazole-Biosynthesis,1,Cofactors & vitamins
+Thiosulfate-Disproportionation,1,Inorganic & detox
+THREONINE-BIOSYNTHESIS,2,Amino acids & nitrogen
+Toxin-Biosynthesis,3,Other specialized
+Transport-Pathways,10,(bookkeeping)
+Trehalose-biosynthesis,1,Carbohydrates & cell wall
+Trehalose-Degradation,1,Carbohydrates & cell wall
+TRITERPENOID-SYN,27,Terpenoids & sterols
+TROPANE-ALKALOIDS,5,Alkaloids & N/S compounds
+TRYPTOPHAN-BIOSYNTHESIS,1,Amino acids & nitrogen
+TRYPTOPHAN-DEG,2,Amino acids & nitrogen
+TYROSINE-SYN,2,Amino acids & nitrogen
+Ubiquinone-Biosynthesis,2,Other specialized
+UDP-NAc-Glucosamine-Biosynthesis,1,Carbohydrates & cell wall
+UDP-Sugar-Biosynthesis,11,Carbohydrates & cell wall
+UDP-Sugars,1,Carbohydrates & cell wall
+UMP-Biosynthesis,1,Nucleotides
+Unsaturated-Fatty-Acids-Biosynthesis,5,Lipids
+Unusual-fatty-acid-biosynthesis,2,Lipids
+Uracil-Degradation,1,Nucleotides
+Urate-Degradation,2,Amino acids & nitrogen
+Urea-Degradation,2,Amino acids & nitrogen
+UTP-CTP-Dephosphorylation,2,Nucleotides
+VALINE-BIOSYNTHESIS,1,Amino acids & nitrogen
+VALINE-DEG,1,Amino acids & nitrogen
+Vanillin-Biosynthesis,1,Flavonoids & phenylpropanoids
+Vernolate-Biosynthesis,3,Lipids
+Vitamin-B6-Biosynthesis,3,Cofactors & vitamins
+Vitamin-Biosynthesis,3,Cofactors & vitamins
+Volatile-Benzenoids-Biosynthesis,2,Flavonoids & phenylpropanoids
+XANTHONE-SYN,4,Flavonoids & phenylpropanoids
+Xylan-Degradation,1,Carbohydrates & cell wall
+Yatein-Biosynthesis,2,Flavonoids & phenylpropanoids

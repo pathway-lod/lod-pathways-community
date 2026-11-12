@@ -1,6 +1,7 @@
 {
   "name": "LOD-pathways draft (lodp: placeholders, 2026-11)",
   "comment": "Maps the terms of the evidence model to the roles the viewer knows. The viewer has no vocabulary of its own: when the ontologies are fixed, change this file (and the vocabulary shipped with the data), not the code. Values are CURIEs (prefixes below) or full IRIs.",
+  "validation": { "index": "data/validation/index.json", "label": "SHACL shapes of shape_constraints/ (copied by tools/rebuild_bundles.sh)" },
 
   "prefixes": {
     "lodp": "https://example.org/lod-pathways/pilot/",
@@ -47,6 +48,8 @@
     },
     "kg": {
       "label": "already in PlantMetWiki",
+      "name": "PlantMetWiki",
+      "snapshot": "data/pmw_snapshot.json",
       "objectOf": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"],
       "namespaces": ["pmw:", "pmwnode:"],
       "classNamespaces": ["wp:"],
@@ -57,7 +60,8 @@
   "pattern": {
     "hasEvidence": ["sio:SIO_000772", "lodp:mibigMatchEvidence"],
     "generatedBy": ["prov:wasGeneratedBy"],
-    "anchoredTo": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"]
+    "anchoredTo": ["lodp:anchoredInPathway", "lodp:anchoredToMetabolite"],
+    "sameEntity": ["skos:closeMatch"]
   },
 
   "terms": {
