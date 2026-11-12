@@ -8,7 +8,7 @@
 //
 // Arguments: an output .png (one query) or a directory (several queries, files named after the queries), then the
 // URL query strings (see README: data, focus, profile, runs, layout, terms). Options: --no-build (use existing dist/),
-// --size W,H (default 2200,1400), --port N (default 4199), --wait MS (virtual time budget, default 15000).
+// --page FILE (default index; e.g. global.html), --size W,H (default 2200,1400), --port N (default 4199), --wait MS (virtual time budget, default 15000).
 // Browser: $BROWSER, else Edge or Chrome in their usual places (Windows, macOS, Linux).
 import { spawn, spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync } from 'node:fs';
@@ -21,6 +21,7 @@ const opt = (name, def) => { const i = args.indexOf(name); if (i < 0) return def
 const flag = (name) => { const i = args.indexOf(name); if (i < 0) return false; args.splice(i, 1); return true; };
 const size = opt('--size', '2200,1400'), port = opt('--port', '4199'), wait = opt('--wait', '15000');
 const noBuild = flag('--no-build');
+const page = opt('--page', '');
 const [out, ...queries] = args;
 if (!out || !queries.length) { console.error('usage: node tools/screenshot.mjs <out.png | dir/> <query> [query ...] [--no-build] [--size W,H]'); process.exit(2); }
 
@@ -55,7 +56,7 @@ try {
   for (const q of queries) {
     const file = many ? join(out, q.replace(/[^A-Za-z0-9._-]+/g, '_').slice(0, 120) + '.png') : out;
     const r = spawnSync(browser, ['--headless=new', '--disable-gpu', `--window-size=${size}`, `--virtual-time-budget=${wait}`,
-      `--screenshot=${resolve(file)}`, `http://localhost:${port}/?${q}`], { encoding: 'utf8' });
+      `--screenshot=${resolve(file)}`, `http://localhost:${port}/${page}?${q}`], { encoding: 'utf8' });
     console.log(existsSync(file) ? `wrote ${file}  (?${q})` : `FAILED ${q}: ${r.stderr?.slice(0, 300)}`);
   }
 } finally { stop(); }

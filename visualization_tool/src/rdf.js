@@ -104,6 +104,13 @@ export const valueOf = (g, k, p) => (g.out.get(k) || []).find((t) => t.p.value =
 export const objectsOf = (g, k) => (g.out.get(k) || []).filter((t) => t.o.termType !== 'Literal').map((t) => key(t.o));
 
 // Subset ("focus"): one claim and its neighbourhood. null = every subject.
+// several claims at once (a selection from the global view): the union of their focus sets
+export function focusSetMany(g, claimKeys, roleOf) {
+  const all = new Set();
+  for (const k of claimKeys) for (const x of focusSet(g, k, roleOf)) all.add(x);
+  return all;
+}
+
 export function focusSet(g, claimKey, roleOf) {
   if (!claimKey) return new Set(g.out.keys());
   const keep = new Set([claimKey]);
@@ -118,17 +125,32 @@ export function focusSet(g, claimKey, roleOf) {
   return keep;
 }
 
-export function turtleOf(g, k, prefixes) {
-  const w = new Writer({ prefixes });
+// Turtle of one subject or a list of subjects, each with the blank nodes it points to (written once).
+// keep(triple) filters triples (e.g. by t.origins); returns '' when nothing is kept.
+// Output: the given subjects in the given order, then the blank nodes they point to, each subject in one block; only used prefixes.
+export function turtleOf(g, keys, prefixes, keep = () => true) {
+  const tops = new Set([].concat(keys));
+  const given = [], nested = [];
   const seen = new Set();
   const walk = (s) => {
     if (seen.has(s)) return; seen.add(s);
-    for (const t of g.out.get(s) || []) {
-      w.addQuad(t.s, t.p, t.o);
-      if (t.o.termType === 'BlankNode') walk(key(t.o));
+    // one block per predicate (written as "p o1, o2"), rdf:type first, then in order of first appearance
+    const byPred = new Map();
+    for (const t of (g.out.get(s) || []).filter(keep)) {
+      if (!byPred.has(t.p.value)) byPred.set(t.p.value, []);
+      byPred.get(t.p.value).push(t);
     }
+    const ts = [...(byPred.get(RDF_TYPE) || []), ...[...byPred].filter(([p]) => p !== RDF_TYPE).flatMap(([, v]) => v)];
+    if (ts.length) (tops.has(s) ? given : nested).push(ts);
+    for (const t of ts) if (t.o.termType === 'BlankNode') walk(key(t.o));
   };
-  walk(k);
+  for (const k of tops) walk(k);
+  const triples = [...given, ...nested].flat();
+  if (!triples.length) return '';
+  const iris = triples.flatMap((t) => [t.s, t.p, t.o, t.o.datatype].filter((x) => x?.termType === 'NamedNode').map((x) => x.value));
+  const used = Object.fromEntries(Object.entries(prefixes).filter(([, ns]) => iris.some((i) => i.startsWith(ns))));
+  const w = new Writer({ prefixes: used });
+  for (const t of triples) w.addQuad(t.s, t.p, t.o);
   let text = '';
   w.end((_, r) => { text = r; });
   return text;

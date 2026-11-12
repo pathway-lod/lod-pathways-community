@@ -1,0 +1,129 @@
+# Case 3: metabolite annotations from MS/MS tools (GNPS library, SIRIUS, MS2Query, DreaMS, and their consensus).
+# A feature is annotated as a PlantMetWiki metabolite. Matching compares the first InChIKey block
+# (connectivity), so the match level is "connectivity" and the relation is skos:closeMatch, never exactMatch.
+# One claim per feature and metabolite; every supporting tool or tier is its own evidence node.
+
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix lodps:  <https://example.org/lod-pathways/shapes/> .
+@prefix lodp:   <https://example.org/lod-pathways/pilot/> .
+@prefix obo:    <http://purl.obolibrary.org/obo/> .
+@prefix sio:    <http://semanticscience.org/resource/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+lodps:AnnotationShape a sh:NodeShape ;
+    sh:name "Metabolite annotation" ;
+    sh:targetClass lodp:MetaboliteAnnotation ;
+
+    sh:property [ sh:path lodp:feature ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:class lodp:MetaboliteFeature ;
+        sh:message "An annotation needs exactly one lodp:feature (a lodp:MetaboliteFeature)." ] ;
+
+    sh:property [ sh:path lodp:anchoredToMetabolite ; sh:minCount 1 ;
+        sh:message "An annotation is anchored to the PlantMetWiki metabolite it names (lodp:anchoredToMetabolite)." ] ;
+    sh:property [ sh:path lodp:anchorTier ; sh:hasValue "structure_match" ;
+        sh:message "Annotations are anchored by structure_match (first InChIKey block)." ] ;
+
+    sh:property [ sh:path lodp:matchLevel ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "connectivity" "full" ) ;
+        sh:message "An annotation needs exactly one lodp:matchLevel: connectivity (first InChIKey block) or full." ] ;
+
+    sh:property [ sh:path skos:closeMatch ; sh:nodeKind sh:IRI ;
+        sh:message "skos:closeMatch of an annotation must be an IRI (InChIKey or Wikidata)." ] ;
+    sh:property [ sh:path skos:exactMatch ; sh:maxCount 0 ;
+        sh:message "Do not use skos:exactMatch for an annotation: matching on the InChIKey connectivity block cannot be exact. Use skos:closeMatch." ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Every lodp:anchoredToMetabolite must also be a skos:closeMatch of the annotation." ;
+        sh:select """
+            SELECT $this ?m WHERE {
+              $this lodp:anchoredToMetabolite ?m .
+              FILTER NOT EXISTS { $this skos:closeMatch ?m }
+            }""" ] ;
+
+    # every evidence node names its tier
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Every evidence node of an annotation needs exactly one lodp:identificationTier: gnps_library, consensus_inchi, sirius, ms2query_exact or dreams." ;
+        sh:select """
+            SELECT $this ?ev WHERE {
+              $this sio:SIO_000772 ?ev .
+              FILTER( NOT EXISTS { ?ev lodp:identificationTier ?t }
+                      || EXISTS { ?ev lodp:identificationTier ?t . FILTER(?t NOT IN ("gnps_library", "consensus_inchi", "sirius", "ms2query_exact", "dreams")) } )
+            }""" ] ;
+
+    # LC-MS/MS evidence for all tiers; the consensus is additionally an automatically integrated combination
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Evidence class: every annotation evidence is obo:ECO_0001580 (LC-MS/MS); the consensus tier is also obo:ECO_0007653; single tools are also obo:ECO_0007669 (computational evidence)." ;
+        sh:select """
+            SELECT $this ?ev ?tier WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:identificationTier ?tier .
+              FILTER( NOT EXISTS { ?ev a obo:ECO_0001580 }
+                || (?tier = "consensus_inchi" && NOT EXISTS { ?ev a obo:ECO_0007653 })
+                || (?tier IN ("sirius", "ms2query_exact", "dreams") && NOT EXISTS { ?ev a obo:ECO_0007669 }) )
+            }""" ] ;
+
+    # the run must match the tier
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Run type: the consensus tier must come from a lodp:ConsensusAnnotationRun, all other tiers from a lodp:AnnotationToolRun." ;
+        sh:select """
+            SELECT $this ?ev ?tier WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:identificationTier ?tier ; prov:wasGeneratedBy ?run .
+              FILTER( (?tier = "consensus_inchi" && NOT EXISTS { ?run a lodp:ConsensusAnnotationRun })
+                   || (?tier != "consensus_inchi" && NOT EXISTS { ?run a lodp:AnnotationToolRun }) )
+            }""" ] ;
+
+    # consensus: agreement, score and the tools that agree
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "A consensus evidence needs lodp:matchType (full or partial), a consistent lodp:agreementScore (full = 1.0, partial = 0.5) and lodp:agreeingTool values (3 tools for full, at least 2 for partial)." ;
+        sh:select """
+            SELECT $this ?ev WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:identificationTier "consensus_inchi" .
+              OPTIONAL { ?ev lodp:matchType ?mt } OPTIONAL { ?ev lodp:agreementScore ?sc }
+              FILTER( !BOUND(?mt) || !BOUND(?sc) || ?mt NOT IN ("full", "partial")
+                || (?mt = "full" && ?sc != 1.0) || (?mt = "partial" && ?sc != 0.5)
+                || (?mt = "partial" && NOT EXISTS { ?ev lodp:agreeingTool ?t1 , ?t2 . FILTER(?t1 != ?t2) })
+                || (?mt = "full" && NOT EXISTS { ?ev lodp:agreeingTool ?a , ?b , ?c . FILTER(?a != ?b && ?a != ?c && ?b != ?c) }) )
+            }""" ] ;
+
+    sh:property [ sh:path ( sio:SIO_000772 lodp:agreeingTool ) ;
+        sh:in ( "SIRIUS" "MS2Query" "DreaMS" ) ;
+        sh:message "lodp:agreeingTool must be SIRIUS, MS2Query or DreaMS." ] ;
+
+    # scores in range
+    sh:property [ sh:path ( sio:SIO_000772 lodp:ms2queryModelScore ) ; sh:datatype xsd:double ; sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:ms2queryModelScore must be xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:siriusConfidenceApprox ) ; sh:datatype xsd:double ; sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:siriusConfidenceApprox must be xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:dreamsSimilarity ) ; sh:datatype xsd:double ; sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:dreamsSimilarity must be xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:precursorMzDifference ) ; sh:datatype xsd:double ;
+        sh:message "lodp:precursorMzDifference must be xsd:double." ] .
+
+# a tool tier without its score is allowed but flagged (severity belongs to the shape, so this is its own shape)
+lodps:AnnotationScoreShape a sh:NodeShape ;
+    sh:name "Metabolite annotation (scores)" ;
+    sh:severity sh:Warning ;
+    sh:targetClass lodp:MetaboliteAnnotation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "A tool evidence should carry its score: sirius needs lodp:siriusConfidenceApprox, ms2query_exact needs lodp:ms2queryModelScore, dreams needs lodp:dreamsSimilarity." ;
+        sh:select """
+            SELECT $this ?ev ?tier WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:identificationTier ?tier .
+              FILTER( (?tier = "sirius" && NOT EXISTS { ?ev lodp:siriusConfidenceApprox ?s })
+                   || (?tier = "ms2query_exact" && NOT EXISTS { ?ev lodp:ms2queryModelScore ?s })
+                   || (?tier = "dreams" && NOT EXISTS { ?ev lodp:dreamsSimilarity ?s }) )
+            }""" ] .

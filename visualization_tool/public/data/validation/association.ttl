@@ -1,0 +1,115 @@
+# Case 2: paired-omics gene-metabolite associations (MEANtools functional clusters).
+# A gene and a metabolite feature fall into the same functional cluster; the claim is anchored to
+# PlantMetWiki through the gene, the metabolite, or both. PlantMetWiki support is optional extra evidence:
+# the association must stand on its own correlation statistics.
+
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix lodps:  <https://example.org/lod-pathways/shapes/> .
+@prefix lodp:   <https://example.org/lod-pathways/pilot/> .
+@prefix obo:    <http://purl.obolibrary.org/obo/> .
+@prefix sio:    <http://semanticscience.org/resource/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+lodps:AssociationShape a sh:NodeShape ;
+    sh:name "Gene-metabolite association" ;
+    sh:targetClass lodp:GeneMetaboliteAssociation ;
+
+    # refers to: exactly one gene and one metabolite feature
+    sh:property [ sh:path sio:SIO_000628 ;
+        sh:qualifiedValueShape [ sh:nodeKind sh:IRI ;
+            sh:pattern "^https://plants[.]ensembl[.]org/[A-Za-z_]+/Gene/Summary[?]g=[A-Za-z0-9_.-]+$" ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "An association needs exactly one gene (an Ensembl Plants gene IRI) as sio:SIO_000628 'refers to' value." ] ;
+    sh:property [ sh:path sio:SIO_000628 ;
+        sh:qualifiedValueShape [ sh:class lodp:MetaboliteFeature ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "An association needs exactly one metabolite feature (a lodp:MetaboliteFeature) as sio:SIO_000628 'refers to' value." ] ;
+
+    # which side was found in PlantMetWiki
+    sh:property [ sh:path lodp:anchoredSide ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "gene" "metabolite" "both" ) ;
+        sh:message "An association needs exactly one lodp:anchoredSide: gene, metabolite or both." ] ;
+    sh:property [ sh:path lodp:geneAnchorTier ; sh:maxCount 1 ;
+        sh:in ( "gene_locus" "gene_uniprot" "gene_ec" ) ;
+        sh:message "lodp:geneAnchorTier must be gene_locus, gene_uniprot or gene_ec." ] ;
+    sh:property [ sh:path lodp:metaboliteAnchorTier ; sh:maxCount 1 ;
+        sh:in ( "mass_match" ) ;
+        sh:message "lodp:metaboliteAnchorTier must be mass_match (the only metabolite anchoring so far)." ] ;
+
+    # evidence: the MEANtools statistics
+    sh:property [ sh:path ( sio:SIO_000772 rdf:type ) ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0007590 obo:ECO_0007298 obo:ECO_0007829 ) ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Correlation evidence must be typed with an ECO expression/combinatorial evidence class: obo:ECO_0007590 (closest term), obo:ECO_0007298 or obo:ECO_0007829." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 prov:wasGeneratedBy ) ; sh:class lodp:MEANtoolsRun ;
+        sh:message "The association evidence must come from a lodp:MEANtoolsRun." ] ;
+
+    sh:property [ sh:path ( sio:SIO_000772 obo:STATO_0000280 ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive -1 ; sh:maxInclusive 1 ;
+        sh:message "Pearson's r (obo:STATO_0000280) is required once, as xsd:double between -1 and 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 obo:OBI_0000175 ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "The correlation p-value (obo:OBI_0000175) is required once, as xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:mutualRank ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive 1 ;
+        sh:message "lodp:mutualRank is required once, as xsd:double of at least 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:edgeWeight ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minExclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:edgeWeight is required once, as xsd:double above 0 and at most 1." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:functionalCluster ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:message "lodp:functionalCluster (the cluster identifier) is required once, as a string." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:clusterPValue ) ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:clusterPValue is required once, as xsd:double between 0 and 1." ] ;
+
+    # weak support, allowed but flagged
+    sh:property [ sh:path ( sio:SIO_000772 lodp:clusterPValue ) ;
+        sh:severity sh:Warning ; sh:maxExclusive 0.05 ;
+        sh:message "The functional cluster is not significant (ClusterONE p >= 0.05)." ] ;
+
+    # consistency of the anchor
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The anchored side needs its tier: gene or both needs lodp:geneAnchorTier; metabolite or both needs lodp:metaboliteAnchorTier." ;
+        sh:select """
+            SELECT $this ?side WHERE {
+              $this lodp:anchoredSide ?side .
+              FILTER( (?side IN ("gene", "both") && NOT EXISTS { $this lodp:geneAnchorTier ?g }) ||
+                      (?side IN ("metabolite", "both") && NOT EXISTS { $this lodp:metaboliteAnchorTier ?m }) )
+            }""" ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "lodp:anchorTier must be one of the side tiers (geneAnchorTier or metaboliteAnchorTier), and the weakest of them." ;
+        sh:select """
+            SELECT $this ?a ?x WHERE {
+              $this lodp:anchorTier ?a .
+              { $this lodp:geneAnchorTier ?x } UNION { $this lodp:metaboliteAnchorTier ?x }
+              BIND( IF(?a = "curated", 1, IF(?a = "gene_direct", 2, IF(?a = "gene_locus", 3, IF(?a = "structure_match", 4,
+                    IF(?a = "gene_uniprot", 5, IF(?a = "gene_ec", 6, IF(?a = "mass_match", 7, 0))))))) AS ?ra )
+              BIND( IF(?x = "curated", 1, IF(?x = "gene_direct", 2, IF(?x = "gene_locus", 3, IF(?x = "structure_match", 4,
+                    IF(?x = "gene_uniprot", 5, IF(?x = "gene_ec", 6, IF(?x = "mass_match", 7, 0))))))) AS ?rx )
+              FILTER(?rx > ?ra)
+            }""" ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "lodp:anchorTier does not match any side tier (geneAnchorTier or metaboliteAnchorTier)." ;
+        sh:select """
+            SELECT $this ?a WHERE {
+              $this lodp:anchorTier ?a .
+              FILTER NOT EXISTS { { $this lodp:geneAnchorTier ?a } UNION { $this lodp:metaboliteAnchorTier ?a } }
+            }""" ] .
+
+lodps:MEANtoolsRunShape a sh:NodeShape ;
+    sh:name "MEANtools run" ;
+    sh:targetClass lodp:MEANtoolsRun ;
+    sh:property [ sh:path lodp:decayRate ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:in ( 5 10 25 50 ) ;
+        sh:message "A MEANtools run needs exactly one lodp:decayRate (5, 10, 25 or 50): the functional clusters depend on it." ] .
