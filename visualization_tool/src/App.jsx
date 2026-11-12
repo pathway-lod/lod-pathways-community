@@ -152,19 +152,21 @@ function Legend({ P, hasTerms }) {
 export default function App() {
   const [datasets, setDatasets] = useState([]);
   const [termTable, setTermTable] = useState(null);
-  const [profileFile, setProfileFile] = useState(params.has('profile') ? (params.get('profile') || null) : PROFILES[0].file);
+  const [profileFile] = useState(params.has('profile') ? (params.get('profile') || null) : PROFILES[0].file);
   const [profileJson, setProfileJson] = useState(null);
   const [g0, setG] = useState(null); // the parsed file; `g` below adds knowledge-graph stubs in selection mode
   const [source, setSource] = useState(params.get('data') || 'slide25.nq');
   const [focus, setFocus] = useState(params.get('focus') || '');
   const [runsAsCards, setRunsAsCards] = useState(params.get('runs') === '1');
   const [showMissing, setShowMissing] = useState(true);
-  const [slideLayout, setSlideLayout] = useState(params.get('layout') === 'slide');
+  const [slideLayout] = useState(params.get('layout') === 'slide');
   const [useTerms, setUseTerms] = useState(params.get('terms') !== '0');
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(null);
   // selection handed over by the global view (handoff.js): {title, claims}; shown page by page
+  // subset shown page by page: a selection handed over by the global view, or "all claims" of the file
   const [subset, setSubset] = useState(null);
+  const [handoffSel, setHandoffSel] = useState(null); // the hand-over selection, to switch back to it
   const [page, setPage] = useState(0);
   const exportRef = { current: null };
 
@@ -191,7 +193,8 @@ export default function App() {
       if (!h) { setError('no selection from the global view found (browser storage empty or blocked)'); return; }
       if (h.text != null) { setSource(h.source); loadText(h.text, h.name, true); }
       else if (h.source && h.source !== source) setSource(h.source);
-      setSubset({ title: h.title, claims: h.claims || [] }); setPage(0); setFocus('');
+      // no claims = the whole file ("Open file in detail view" in the global view), not an empty selection
+      if (h.claims?.length) { const sel = { title: h.title, claims: h.claims }; setSubset(sel); setHandoffSel(sel); setPage(0); setFocus(''); }
     });
   }, []);
   useEffect(() => {
@@ -268,7 +271,7 @@ export default function App() {
           title="back to the global view (reloads it)">← Global view</a>
         <h1>Evidence graph viewer <small>prototype</small></h1>
         <label>Data
-          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(''); setSubset(null); }}>
+          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(''); setSubset(null); setHandoffSel(null); }}>
             {datasets.map((d) => <option key={d.file} value={d.file}>{d.label}</option>)}
             {!datasets.some((d) => d.file === source) && <option value={source}>{source.replace('local:', '')}</option>}
           </select>
@@ -276,32 +279,34 @@ export default function App() {
         <label className="file" title="Turtle (.ttl); N-Quads, TriG and N-Triples work too">Open Turtle file…
           <input type="file" accept=".ttl,.nq,.trig,.nt" onChange={async (e) => {
             const f = e.target.files[0]; if (!f) return;
-            setSource('local:' + f.name); setSubset(null); loadText(await f.text(), f.name, false);
+            setSource('local:' + f.name); setSubset(null); setHandoffSel(null); loadText(await f.text(), f.name, false);
           }} />
         </label>
-        <label>Profile
-          <select value={profileFile ?? ''} onChange={(e) => setProfileFile(e.target.value || null)}>
-            {PROFILES.map((p) => <option key={p.label} value={p.file ?? ''}>{p.label}</option>)}
-          </select>
-        </label>
+        {/* Profile chooser hidden 2026-11-12 (only one profile for now); ?profile= still selects one, ?profile= (empty) = none */}
         <label>Show
-          <select value={pageClaims ? '__subset__' : effFocus} onChange={(e) => {
+          <select value={pageClaims ? (subset.all ? '__all__' : '__subset__') : effFocus} onChange={(e) => {
             const v = e.target.value; setSelected(null);
-            if (v === '__subset__') setFocus(''); else { setFocus(v); if (!v) setSubset(null); }
+            if (v === '__subset__') { setSubset(handoffSel); setPage(0); setFocus(''); }
+            else if (v === '__all__') { setSubset({ title: 'All claims', claims, all: true }); setPage(0); setFocus(''); }
+            else { setFocus(v); if (!v) setSubset(null); }
           }}>
-            {subsetAll && <option value="__subset__">selection from the global view ({subsetAll.length} claims)</option>}
+            {handoffSel && <option value="__subset__">selection from the global view ({handoffSel.claims.length} claims)</option>}
+            {claims.length > 0 && <option value="__all__">all claims, {SUBSET_PAGE} per page ({claims.length} claims)</option>}
             <option value="" disabled={g && g.out.size > MAX_ALL && claims.length > 0}>everything ({g?.out.size ?? 0} subjects)</option>
             {L && claims.slice(0, 2000).map((k) => <option key={k} value={k}>{titleFor(g, k, 'claim', P, L)} — {P.compact(k)}</option>)}
           </select>
         </label>
         <label className="chk"><input type="checkbox" checked={runsAsCards} onChange={(e) => setRunsAsCards(e.target.checked)} />runs as cards</label>
-        <label className="chk" title="data | claims | evidence | PlantMetWiki, as on slides 24/25">
-          <input type="checkbox" checked={slideLayout} onChange={(e) => setSlideLayout(e.target.checked)} />slide layout</label>
-        <label className="chk"><input type="checkbox" checked={showMissing} onChange={(e) => setShowMissing(e.target.checked)} />missing properties</label>
-        <label className="chk" title="colours and requirement badges from specification/ontology_terms.csv">
+        {/* "slide layout" checkbox hidden 2026-11-12; the slide order is still reachable with ?layout=slide */}
+        <label className="chk" title={'Show an empty "missing" row for each required property that SHACL validation reports as absent, with the message under it.'
+          + (g && !g.hasReport ? '\nThis file has no SHACL report (only the bundled examples have one), so nothing is added.' : '')}>
+          <input type="checkbox" checked={showMissing} onChange={(e) => setShowMissing(e.target.checked)} />missing properties</label>
+        <label className="chk" title={'Colour each property row by its status in the project\'s term table (specification/ontology_terms.csv): existing term reused, decision open, local placeholder, not in the table; and show the requirement badges (e.g. MET-12).\nOff: rows coloured by namespace only, no badges.'
+          + (!termTable ? '\nTerm table not available.' : '')}>
           <input type="checkbox" checked={useTerms} disabled={!termTable} onChange={(e) => setUseTerms(e.target.checked)} />term table</label>
         <span className="spacer" />
         <span className="summary">{g?.hasReport ? `SHACL: ${nViol} violations, ${nWarn} warnings` : 'no SHACL report'} · {claims.length} claims</span>
+        <span className="row-break" />{/* export buttons always on a second row (2026-11-12) */}
         <button onClick={() => exportRef.current?.('png')}>PNG</button>
         <button onClick={() => exportRef.current?.('svg')}>SVG</button>
         <button disabled={!shown || !P} onClick={exportAll}

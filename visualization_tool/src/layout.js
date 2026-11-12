@@ -17,9 +17,11 @@ const COL_W = 400, GAP_X = 170, GAP_Y = 40, BLOCK_GAP = 90;
 const SIB_GAP = 60, KG_GAP_X = 80, KG_MARGIN = 40; // sibling subtrees; trees side by side (slide); min. distance of a tree from the column left of the KG column
 const V_MARGIN = 22, V_STEP = 14, V_LABEL = 34; // row gap of a KG tree: margin + one step per track + label room
 const LABEL_PAD = 70; // room around the widest label in a gap: arrowhead, tracks, margins
+const TRACK_STEP = 12; // minimum distance between two vertical edge tracks in a gap (assignTracks)
 
 // x of each column index. Every gap is as wide as the widest label of the edges crossing it (between neighbouring
-// columns) plus LABEL_PAD, and at least GAP_X, so labels never run into the cards.
+// columns) plus LABEL_PAD, and at least GAP_X, so labels never run into the cards. Gaps that need more room for
+// their edge tracks are widened after the y layout (widenGaps).
 function columnX(colOf, edges, labelWidth) {
   const gap = new Map();
   for (const e of edges) {
@@ -138,7 +140,7 @@ export function layout(cards, edges, sizes, mode = 'compact', labelWidth = estim
     const cols = [...new Set(colOf.values())].sort((a, b) => a - b);
     for (const ci of cols) placeColumn([...cards.keys()].filter((k) => colOf.get(k) === ci), X(ci), nbrs, pos, h, ci > 0);
     pos.colXs = cols.map(X);
-    return pos;
+    return widenGaps(pos, edges, sizes);
   }
 
   const L = LAYOUTS[mode] || LAYOUTS.compact;
@@ -160,6 +162,28 @@ export function layout(cards, edges, sizes, mode = 'compact', labelWidth = estim
   pos.vertical = kg.vertical;
   // the column each card belongs to (KG tree cards can sit right of their column): used to find skipped columns
   pos.colOf = new Map([...cards.values()].map((c) => [c.id, xOf(c.role)]));
+  return widenGaps(pos, edges, sizes);
+}
+
+// Gaps whose edge tracks would be closer than TRACK_STEP get wider (2026-11-12, D30): the edges are routed as App.jsx
+// will route them, the track slots each gap needs are counted (trackBands: only edges that run side by side at the
+// same height need separate slots), and every card right of a too-narrow gap moves right by the missing width.
+// Rightmost gaps first, so the shifts do not move gaps that are still to be checked.
+function widenGaps(pos, edges, sizes) {
+  const routed = edges.filter((e) => pos.has(e.source) && pos.has(e.target))
+    .map((e) => ({ ...e, ...handlesFor(e, pos, new Map()) }));
+  const gaps = trackBands(routed, pos, sizes, assignPorts(routed, pos, sizes));
+  const deficit = new Map(); // gap left border -> missing width
+  for (const g of gaps.values()) {
+    const d = (g.slots + 1) * TRACK_STEP - (g.right - g.left);
+    if (d > 0) deficit.set(g.left, Math.max(deficit.get(g.left) ?? 0, d));
+  }
+  const move = (x, left, d) => (x >= left ? x + d : x);
+  for (const [left, d] of [...deficit].sort((a, b) => b[0] - a[0])) {
+    for (const p of pos.values()) p.x = move(p.x, left, d);
+    if (pos.colXs) pos.colXs = pos.colXs.map((x) => move(x, left, d));
+    if (pos.colOf) for (const [k, x] of pos.colOf) pos.colOf.set(k, move(x, left, d));
+  }
   return pos;
 }
 
@@ -313,7 +337,12 @@ function placeKg(kg, nbrs, pos, h, x0, sideBySide, leftLimit) {
 // top card's band nearest to it). Inside a band, the card's upward edges (target above the connection point) bend
 // nearest-first from the top, its downward edges nearest-first from the bottom, so a card's own fan never crosses
 // itself; upward and downward edges never meet and can reuse the same tracks.
-export function assignTracks(edges, pos, sizes, ports = new Map()) {
+// Bands only need different slots when their cards' edges run at the same height (their y ranges overlap): a band
+// starts after the last band above it that it overlaps, and reuses the slots of bands it does not overlap (before
+// 2026-11-12 every band had its own slots, so a gap with many short, local edges spread them over the whole width).
+// Overlapping bands keep the order above, so the crossing rules are unchanged.
+const BAND_PAD = 20; // y ranges closer than this count as overlapping (two segments on one x stay visibly apart)
+function trackBands(edges, pos, sizes, ports) {
   const h = (k) => sizes.get(k)?.height ?? 200;
   const y = (k, off) => pos.get(k).y + h(k) / 2 + (off || 0);
   const gaps = new Map();
@@ -324,23 +353,36 @@ export function assignTracks(edges, pos, sizes, ports = new Map()) {
     const k = `${left}|${right}`;
     if (!gaps.has(k)) gaps.set(k, { left, right, owners: new Map() });
     const g = gaps.get(k);
-    if (!g.owners.has(e.source)) g.owners.set(e.source, { y: a.y, fromRight: a.x > b.x, up: [], down: [] });
+    if (!g.owners.has(e.source)) g.owners.set(e.source, { y: a.y, fromRight: a.x > b.x, up: [], down: [], lo: Infinity, hi: -Infinity });
     const p = ports.get(e.id) || {};
     const sy = y(e.source, p.sOff), ty = y(e.target, p.tOff);
-    g.owners.get(e.source)[ty < sy ? 'up' : 'down'].push({ id: e.id, sy });
+    const o = g.owners.get(e.source);
+    o[ty < sy ? 'up' : 'down'].push({ id: e.id, sy });
+    o.lo = Math.min(o.lo, sy, ty); o.hi = Math.max(o.hi, sy, ty);
   }
-  const centerX = new Map();
   for (const g of gaps.values()) {
-    const owners = [...g.owners.values()].sort((p, q) => p.y - q.y);
-    owners.forEach((o) => { o.up.sort((p, q) => p.sy - q.sy); o.down.sort((p, q) => q.sy - p.sy); });
-    const total = owners.reduce((n, o) => n + Math.max(1, o.up.length, o.down.length), 0);
-    const step = (g.right - g.left) / (total + 1);
-    let slot = 0;
-    for (const o of owners) {
-      const x = (i) => (o.fromRight ? g.right - (slot + i + 1) * step : g.left + (slot + i + 1) * step);
+    g.list = [...g.owners.values()].sort((p, q) => p.y - q.y);
+    g.slots = 0;
+    g.list.forEach((o, i) => {
+      o.up.sort((p, q) => p.sy - q.sy); o.down.sort((p, q) => q.sy - p.sy);
+      o.n = Math.max(1, o.up.length, o.down.length);
+      o.slot = 0;
+      for (const p of g.list.slice(0, i))
+        if (p.lo <= o.hi + BAND_PAD && o.lo <= p.hi + BAND_PAD) o.slot = Math.max(o.slot, p.slot + p.n);
+      g.slots = Math.max(g.slots, o.slot + o.n);
+    });
+  }
+  return gaps;
+}
+
+export function assignTracks(edges, pos, sizes, ports = new Map()) {
+  const centerX = new Map();
+  for (const g of trackBands(edges, pos, sizes, ports).values()) {
+    const step = (g.right - g.left) / (g.slots + 1);
+    for (const o of g.list) {
+      const x = (i) => (o.fromRight ? g.right - (o.slot + i + 1) * step : g.left + (o.slot + i + 1) * step);
       o.up.forEach((it, i) => centerX.set(it.id, x(i)));
       o.down.forEach((it, i) => centerX.set(it.id, x(i)));
-      slot += Math.max(1, o.up.length, o.down.length);
     }
   }
   return centerX;

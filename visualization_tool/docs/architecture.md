@@ -183,7 +183,7 @@ file's claims land in PlantMetWiki (PMW):
 - **Outer ring = all claims** (Cytoscape nodes, click → cards as before), in blocks by their primary group, then
   "only very common anchors" (all anchors in > 50 pathways) and "not found in PlantMetWiki". The claim ring is rotated
   so blocks sit near their sector. Each block has a bracket and a label "<group> · n claims" (curved along the
-  block; radial for blocks too small for that). A foldable "How to read this" box (`KgLegend` in Global.jsx)
+  block; radial for blocks too small for that). A foldable "How to read this" box (`KgLegend` in Global.jsx, starts folded)
   explains the placement rule.
 - **Ribbons** from each block to every group its claims reach (width = summed weight; strong = own group). Drawn as
   polar spirals so they never cut through the disk. Hover a claim → lines to each pathway it reaches. Click a
@@ -207,11 +207,14 @@ file's claims land in PlantMetWiki (PMW):
   bar over the cards ([select all n] picks that node). Hover: lighter arcs. Claims whose data node has other claims
   get a dark ring. Shift-click collects a hand-picked set. Picks (group, pathway, shared node, set) dim the other
   claims, put halos on the picked ones and list them in the side panel.
-- **Open as cards / back** (`src/handoff.js`): every pick in the side panel has "Open these n claims as cards →". The
+- **Open as cards / back** (`src/handoff.js`): every pick in the side panel has "Open these n claims in detail view →" (the detail view = the card viewer), and
+  the header has "Open file in detail view →" (a hand-off without claims: the whole file, no selection). The
   global view writes one record `{source, name, text, claims, title}` to IndexedDB (database `lodviz`) and goes to
   `./?handoff=1` (`&data=` too for bundled data). The card viewer reads it, shows the union of the claims' focus
   sets (`focusSetMany` in rdf.js) 100 claims per page (`SUBSET_PAGE`, page in `viewKey`), with a bar (title, claims
-  i-j of n, previous/next) and the option "selection from the global view" in Show. TTL exports the whole selection
+  i-j of n, previous/next) and the option "selection from the global view" in Show. The same paged mode is
+  available for any file as "all claims, 100 per page" in Show (big files, where "everything" is disabled, still
+  open on their first claim by default). TTL exports the whole selection
   (all pages), never the stubs. Layout in selection mode (compact only): `layoutGrid` in layout.js, each connected
   graph laid out with `layout()` and the graphs packed in rows, largest first (see docs/layout.md). Knowledge-graph
   stubs (`src/kgStubs.js`): anchors the file does not describe get cards from the snapshot (pathway: title, PWY id,

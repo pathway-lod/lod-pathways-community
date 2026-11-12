@@ -323,7 +323,8 @@ export default function Global() {
           {model.claims.length} claims · {model.lay.anchors.size} anchors · {nLoose} not anchored ·
           {' '}parse {times.parse ?? '…'} ms · layout {times.layout ?? '…'} ms · Cytoscape {times.cytoscape ?? '…'} ms
         </span>}
-        <a href="./" className="note">card viewer</a>
+        <button className="detail-btn" disabled={!g} onClick={() => openCards([], null)}
+          title="open this file in the detail view (cards), without a selection">Open file in detail view →</button>
       </header>
       {error && <div className="error">{error}</div>}
       <main>
@@ -364,7 +365,7 @@ export default function Global() {
 
 // "how to read this" box over the knowledge-graph map (TEST 2026-11-11); can be folded away
 function KgLegend({ centre }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false); // starts folded (Martin: takes a lot of space on small screens)
   const box = { position: 'absolute', top: 12, left: 12, zIndex: 5, background: 'rgba(255,255,255,0.94)',
     border: '1px solid #cbd5e1', borderRadius: 8, font: '13px/1.45 system-ui, sans-serif', color: '#0f172a' };
   if (!open) return <button style={{ ...box, padding: '4px 10px', cursor: 'pointer' }} onClick={() => setOpen(true)}>How to read this</button>;
@@ -437,8 +438,8 @@ function KgPanel({ picked, ids, kg, S, links, centre, label, nodeLabel, compact,
   const n = ids?.size ?? 0;
   const openBtn = n > 0 && (
     <div style={{ padding: '8px 12px', borderBottom: '1px solid #e2e8f0' }}>
-      <button onClick={() => onOpenCards([...ids], title)} title="open these claims in the card viewer, 20 per page">
-        Open {n === 1 ? 'this claim' : `these ${n} claims`} as cards →</button>
+      <button onClick={() => onOpenCards([...ids], title)} title="open these claims in the detail view (cards), 100 per page">
+        Open {n === 1 ? 'this claim' : `these ${n} claims`} in detail view →</button>
     </div>);
   if (picked.kind === 'node' || picked.kind === 'set') {
     const list = [...(ids || [])];

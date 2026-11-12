@@ -19,6 +19,7 @@ header .file input { display: none; }
 header .file { cursor: pointer; color: var(--data); text-decoration: underline; }
 header .chk { color: var(--ink); }
 header .spacer { flex: 1; }
+header .row-break { flex-basis: 100%; height: 0; } /* forces a new header row (export buttons) */
 header .summary { color: var(--grey); }
 header button { font-size: 13px; padding: 3px 10px; cursor: pointer; }
 .error { background: #fee2e2; color: var(--viol); padding: 6px 14px; font-size: 13px; }
@@ -94,3 +95,8 @@ header .note { color: var(--grey); font-size: 12px; }
 .back-link { font-size: 15px; font-weight: 600; color: #2563eb; text-decoration: none; padding: 4px 10px;
   border: 1.5px solid #2563eb; border-radius: 6px; white-space: nowrap; }
 .back-link:hover { background: #eff6ff; }
+/* "Open file in detail view" in the global view header (2026-11-11) */
+.detail-btn { font-weight: 600; color: #2563eb; border: 1.5px solid #2563eb; background: #fff; border-radius: 6px;
+  padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+.detail-btn:hover { background: #eff6ff; }
+.detail-btn:disabled { color: #94a3b8; border-color: #cbd5e1; cursor: default; }

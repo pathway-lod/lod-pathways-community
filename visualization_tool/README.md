@@ -34,12 +34,13 @@ requirement badges; a SHACL report (built in by `tools/build_viewer_bundle.py`);
 connected to any claim: always).
 
 URL parameters: `?data=<file in public/data>&focus=<claim IRI>&profile=<file or empty>&runs=1&layout=slide&terms=0`.
+The header has no profile chooser and no "slide layout" checkbox (removed 2026-11-12, Martin: only one profile for now; decision D29); use `profile=` and `layout=slide` instead.
 
 ## What it does
 
 - **Cards, not triples.** One card per resource. Literal values, types and links to resources outside the subset
   become rows. Only links between cards are drawn as edges.
-- **Columns by role**, derived from the evidence pattern. Default (compact): runs | data + evidence | claims | PlantMetWiki, so every link goes to a neighbouring column. "slide layout": data | claims | evidence | PlantMetWiki | runs, as on slides 24/25.
+- **Columns by role**, derived from the evidence pattern. Default (compact): runs | data + evidence | claims | PlantMetWiki, so every link goes to a neighbouring column. Slide layout (URL `layout=slide`; no checkbox since 2026-11-12): data | claims | evidence | PlantMetWiki | runs, as on slides 24/25.
   PlantMetWiki cards form trees growing downward (anchor on top, e.g. metabolite → its pathways side by side below).
   The layout is deterministic: claims centred on their evidence, linked claims adjacent, shared data between its
   claims, every edge on its own track, gaps as wide as their labels (see docs/layout.md). In the slide layout,

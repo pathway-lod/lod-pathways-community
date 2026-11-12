@@ -6,12 +6,12 @@ card sizes, the layout mode, and a function that gives a label's pixel width. Ou
 
 Constants: `COL_W` 400 (card width; must match `.card` in styles.css), `GAP_X` 170 (minimum gap between columns),
 `GAP_Y` 40 (between cards in a column), `BLOCK_GAP` 90 (between claim blocks), `LABEL_PAD` 70 (gap = widest label +
-this), `PORT_MARGIN` 18; KG trees: `SIB_GAP` 60 (between sibling subtrees), `KG_GAP_X` 80 (between trees side by
+this), `TRACK_STEP` 12 (minimum distance between vertical edge tracks in a gap), `PORT_MARGIN` 18; KG trees: `SIB_GAP` 60 (between sibling subtrees), `KG_GAP_X` 80 (between trees side by
 side, slide layout), `V_MARGIN` 22 + `V_STEP` 14 per track + `V_LABEL` 34 (gap between tree rows).
 
 ## 1. Columns
 
-Two arrangements (`LAYOUTS`), chosen with the "slide layout" checkbox / `layout=slide`:
+Two arrangements (`LAYOUTS`), chosen with `layout=slide` (the "slide layout" checkbox was removed from the header on 2026-11-12):
 
 | Mode | Columns (left → right) | Effect |
 |---|---|---|
@@ -29,6 +29,12 @@ Without any claim (unknown vocabulary, profile *none*): columns = link distance 
 **Column x positions** (`columnX`): each gap between neighbouring columns is
 `max(GAP_X, widest label of the edges that cross it + LABEL_PAD)`, so labels never run into cards. Labels of edges
 that skip columns (lanes) do not count.
+**Gap widening** (`widenGaps`, end of `layout()`, since 2026-11-12, D30): the edges are routed as App.jsx routes them,
+`trackBands` counts the track slots each gap needs, and if `(slots + 1) × TRACK_STEP` is wider than the gap, every
+card right of it moves right by the difference (rightmost gaps first). Slots are only needed for edges that run side
+by side at the same height (see Bend positions), so a gap full of short, local edges (claim → its own evidence and
+feature) keeps its width, while a gap where many claims converge on one PlantMetWiki node grows (e.g. 60 claims → one
+metabolite: 732 px instead of 255 px). The grid layout gets this per graph, since it calls `layout()` per graph.
 
 ## 2. Claims and their side column (`placeClaimBlocks`)
 
@@ -88,7 +94,10 @@ other rows never turn an edge into a lane. The slide layout does not use the gri
    (`centerX`). Per gap, each source card gets a band of tracks; bands are ordered by the card's height (the top
    card's band nearest to it). Inside a band, the card's upward edges (target above its connection point) bend
    nearest-first starting from the top connection point; downward edges nearest-first from the bottom one. Upward
-   and downward edges of one card never meet, so they share track slots (band width = max(#up, #down)). With the
+   and downward edges of one card never meet, so they share track slots (band width = max(#up, #down)). A band
+   starts after the last band above it whose y range (all its edges' ends) overlaps its own (closer than `BAND_PAD`
+   20 counts as overlapping) and reuses the slots of bands it does not overlap; tracks are spaced
+   `gap width / (slots + 1)`. Before 2026-11-12 every band had its own slots across the whole gap. With the
    cards arranged as above, this keeps a card's own fan from crossing itself and mostly avoids crossings between
    neighbouring claims.
    **Horizontal tracks** (`assignVTracks`, for top/bottom edges, drawn by `VTrackEdge.jsx`): in the gap below the
