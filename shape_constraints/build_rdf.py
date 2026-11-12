@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Create RDF for the four cases from the results of the pilots, and validate it against the shapes.
+Create RDF for the five cases from the results of the pilots, and validate it against the shapes.
 
-  python build_rdf.py all                     # all four cases -> rdf/*.ttl, each validated
+  python build_rdf.py all                     # all five cases -> rdf/*.ttl, each validated
   python build_rdf.py bgc --include-ec        # also the weak EC-only BGC-pathway links
   python build_rdf.py association --max-cluster-p 1.0
 
@@ -12,6 +12,8 @@ Cases and inputs (the pilots must have been run; their result files are committe
   annotation   pilots/metabolomics_overlap/results/*.csv       -> rdf/annotation.ttl
                (+ the Zenodo S6 node tables for scores, downloaded by the pilot)
   plantcyc     data/plantmetwiki_citations.csv (SPARQL snapshot) -> rdf/plantcyc.ttl
+  transcriptomics  pilots/transcriptomics_overlap/results/*.tsv   -> rdf/transcriptomics.ttl
+               (built by the pilot's to_turtle.py: differential expression, response profile, co-expression)
 
 The graphs are built with rdflib (never by pasting strings), so the Turtle is always syntactically valid.
 Policy choices are explicit options and are documented in README.md; weak support is not hidden:
@@ -450,7 +452,16 @@ def build_plantcyc():
 # ----------------------------
 # CLI
 # ----------------------------
-BUILDERS = {"bgc": build_bgc, "association": build_association, "annotation": build_annotation, "plantcyc": build_plantcyc}
+# ----------------------------
+# Case 5: transcriptomics (differential expression, response profile, gene and pathway co-expression)
+# ----------------------------
+def build_transcriptomics():
+    """The claims are built by the pilot (to_turtle.py reads its results/ and data/ snapshots)."""
+    return load_pilot(PILOTS / "transcriptomics_overlap/to_turtle.py", "transcriptomics_to_turtle").build()
+
+
+BUILDERS = {"bgc": build_bgc, "association": build_association, "annotation": build_annotation, "plantcyc": build_plantcyc,
+            "transcriptomics": build_transcriptomics}
 
 
 def main(argv=None):

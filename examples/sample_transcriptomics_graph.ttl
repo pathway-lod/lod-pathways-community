@@ -1,0 +1,297 @@
+# Sample transcriptomics graph (case 5): one claim of each type, from the results of pilots/transcriptomics_overlap.
+# Selected from the graph of the pilot's to_turtle.py (build()), keeping these claims and what they link to in lodp:
+# (evidence, runs, input and normalised-count nodes, contrast, conditions):
+#   lodp:claim_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none
+#   lodp:claim_G18C3-3_expressionDeviatesIn_meantools_Ct_24
+#   lodp:claim_HQ293016_correlatedWith_G18C3-3
+#   lodp:claim_PWY18C3-3_type_CoexpressedGenePathway
+# The differential expression claim keeps two of its three evidence nodes (nf-core Salmon and Atlas counts routes).
+# Validates with 0 violations and 3 warnings (two ATTED-II runs whose input has no unit term; one condition with
+# 2 replicates). Used by tests/test_shapes.py.
+# `lodp:` is a PLACEHOLDER namespace for terms that do not exist in any ontology yet
+# (defined in ../shape_constraints/vocab/lodp.ttl). The graph conforms to ../shape_constraints/shapes/.
+#
+# Shape shared by the four claims:
+#   claim (rdf:Statement) --rdf:subject / rdf:predicate / rdf:object--> the triple it states
+#   claim --sio:SIO_000628 (refers to)--> PlantMetWiki gene node or PlantCyc pathway (no anchor tier)
+#   claim --sio:SIO_000772 (has evidence)--> evidence node (typed with an ECO class; values; lodp:direction)
+#   evidence node --prov:wasGeneratedBy--> run (software, version, input data)
+
+@prefix edam: <http://edamontology.org/> .
+@prefix efo: <http://www.ebi.ac.uk/efo/> .
+@prefix lodp: <https://example.org/lod-pathways/pilot/> .
+@prefix ncbigene: <https://identifiers.org/ncbigene/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix plantcyc: <https://identifiers.org/plantcyc/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix swo: <http://www.ebi.ac.uk/swo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# PlantMetWiki nodes that the claims refer to (these already exist there; not repeated here)
+#   plantcyc:G18C3-3     GAME4
+#   ncbigene:HQ293016    GAME1
+#   plantcyc:PWY18C3-3   alpha-tomatine biosynthesis (PlantCyc ID, stable across PlantMetWiki builds)
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Runs: one per dataset and analysis, with their input and normalised-count nodes
+# ---------------------------------------------------------------------------
+
+lodp:run_differential_expression_EMTAB11876_atlas_counts a edam:operation_3223,
+        obo:OBI_0200036,
+        lodp:DifferentialExpressionRun ;
+    rdfs:label "Differential expression, EMTAB11876_atlas_counts (study E-MTAB-11876_atlas)" ;
+    swo:SWO_0004000 "nf-core/differentialabundance 2.0.0; DESeq2 1.34.0; test Wald, p adjustment BH (alpha 0.1), LFC shrinkage off" ;
+    prov:used lodp:input_differential_expression_EMTAB11876_atlas_counts,
+        <https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-11876> ;
+    lodp:software "nf-core/differentialabundance (DESeq2)" .
+
+lodp:input_differential_expression_EMTAB11876_atlas_counts a obo:STATO_0000064 ;
+    rdfs:label "salmon.merged.gene_counts.tsv, the count matrix DESeq2 read" .
+
+lodp:normalised_differential_expression_EMTAB11876_atlas_counts a obo:STATO_0000590 ;
+    rdfs:label "all.normalised_counts.tsv (differentialabundance output)" ;
+    prov:wasGeneratedBy lodp:run_differential_expression_EMTAB11876_atlas_counts .
+
+lodp:run_differential_expression_EMTAB11876_nfcore_salmon a edam:operation_3223,
+        obo:OBI_0200036,
+        lodp:DifferentialExpressionRun ;
+    rdfs:label "Differential expression, EMTAB11876_nfcore_salmon (study E-MTAB-11876_nfcore)" ;
+    swo:SWO_0004000 "nf-core/differentialabundance 2.0.0; DESeq2 1.34.0; test Wald, p adjustment BH (alpha 0.1), LFC shrinkage off; counts: nf-core/rnaseq 3.27.0, Salmon 2.7.0" ;
+    prov:used lodp:input_differential_expression_EMTAB11876_nfcore_salmon,
+        <https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-11876>,
+        <https://www.ebi.ac.uk/ena/browser/view/PRJEB53936> ;
+    lodp:software "nf-core/differentialabundance (DESeq2)" .
+
+lodp:input_differential_expression_EMTAB11876_nfcore_salmon a obo:STATO_0000064 ;
+    rdfs:label "salmon.merged.gene_counts.tsv, the count matrix DESeq2 read" .
+
+lodp:normalised_differential_expression_EMTAB11876_nfcore_salmon a obo:STATO_0000590 ;
+    rdfs:label "all.normalised_counts.tsv (differentialabundance output)" ;
+    prov:wasGeneratedBy lodp:run_differential_expression_EMTAB11876_nfcore_salmon .
+
+lodp:run_expression_profile_meantools_rpkm a edam:operation_0314,
+        lodp:ExpressionProfileRun ;
+    rdfs:label "Response profile (z-score per condition) of PlantMetWiki tomato genes, meantools_rpkm (MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py)" ;
+    swo:SWO_0004000 "run 2026-11-12; pandas 1.5.3, numpy 1.26.4; z-score per gene: (condition mean - mean of all condition means) / population SD of the condition means, on the transformed values; transform log2(x + 1); 27 conditions (treatment x time_h), 54 samples" ;
+    prov:used <https://doi.org/10.5281/zenodo.15697913>,
+        lodp:input_expression_profile_meantools_rpkm ;
+    lodp:software "pilots/transcriptomics_overlap/expression_profile_table.py (pandas)" .
+
+lodp:input_expression_profile_meantools_rpkm a obo:STATO_0000206 ;
+    rdfs:label "salmon.merged.gene_tpm.tsv (data/downloads/nfcore_shaped/meantools_rpkm/rnaseq/salmon/salmon.merged.gene_tpm.tsv), MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py" .
+
+lodp:run_coexpression_EMTAB11876_nfcore_salmon a edam:operation_3463,
+        lodp:CoexpressionRun ;
+    rdfs:label "Co-expression of PlantMetWiki tomato genes, EMTAB11876_nfcore_salmon (E-MTAB-11876 reads, nf-core/rnaseq 3.27.0 Salmon TPM)" ;
+    swo:SWO_0004000 "run 2026-11-12; scipy 1.13.1, numpy 1.26.4; transform log2(x + 1); 6 samples, mutual rank over 24243 genes" ;
+    prov:used lodp:input_coexpression_EMTAB11876_nfcore_salmon,
+        <https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-11876>,
+        <https://www.ebi.ac.uk/ena/browser/view/PRJEB53936> ;
+    lodp:software "pilots/transcriptomics_overlap/coexpression_table.py (numpy, scipy.stats)" .
+
+lodp:input_coexpression_EMTAB11876_nfcore_salmon a obo:STATO_0000589 ;
+    rdfs:label "salmon.merged.gene_tpm.tsv (data/downloads/nfcore/rnaseq_E-MTAB-11876/salmon/salmon.merged.gene_tpm.tsv), E-MTAB-11876 reads, nf-core/rnaseq 3.27.0 Salmon TPM" .
+
+lodp:run_coexpression_atted_Sly_r_c6_0 a edam:operation_3463,
+        lodp:CoexpressionRun ;
+    rdfs:label "Co-expression of PlantMetWiki tomato genes, atted_Sly_r_c6_0 (ATTED-II Sly-r.c6-0, log2 ComBat (NCBI Gene IDs mapped one-to-one to Ensembl Plants 63 where possible))" ;
+    swo:SWO_0004000 "run 2026-11-12; scipy 1.13.1, numpy 1.26.4; transform none (values as given); 1608 samples, mutual rank over 21645 genes" ;
+    prov:used <https://atted.jp/download/Sly-r.c6-0/exp/Sly-r.c6-0.expression.combat.txt.zip>,
+        lodp:input_coexpression_atted_Sly_r_c6_0,
+        <https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/tsv/solanum_lycopersicum_gca000188115v5cm/Solanum_lycopersicum_gca000188115v5cm.SL4.0.63.entrez.tsv.gz> ;
+    lodp:software "pilots/transcriptomics_overlap/coexpression_table.py (numpy, scipy.stats)" .
+
+lodp:input_coexpression_atted_Sly_r_c6_0 rdfs:label "salmon.merged.gene_tpm.tsv (data/downloads/nfcore_shaped/atted_Sly-r.c6-0/rnaseq/salmon/salmon.merged.gene_tpm.tsv), ATTED-II Sly-r.c6-0, log2 ComBat (NCBI Gene IDs mapped one-to-one to Ensembl Plants 63 where possible)" ;
+    rdfs:comment "values: log2 expression, ComBat-corrected (no TX-03/TX-04 term)" .
+
+lodp:run_coexpression_meantools_rpkm a edam:operation_3463,
+        lodp:CoexpressionRun ;
+    rdfs:label "Co-expression of PlantMetWiki tomato genes, meantools_rpkm (MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py)" ;
+    swo:SWO_0004000 "run 2026-11-12; scipy 1.13.1, numpy 1.26.4; transform log2(x + 1); 54 samples, mutual rank over 20575 genes" ;
+    prov:used <https://doi.org/10.5281/zenodo.15697913>,
+        lodp:input_coexpression_meantools_rpkm ;
+    lodp:software "pilots/transcriptomics_overlap/coexpression_table.py (numpy, scipy.stats)" .
+
+lodp:input_coexpression_meantools_rpkm a obo:STATO_0000206 ;
+    rdfs:label "salmon.merged.gene_tpm.tsv (data/downloads/nfcore_shaped/meantools_rpkm/rnaseq/salmon/salmon.merged.gene_tpm.tsv), MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py" .
+
+lodp:run_pathway_coexpression_atted_Sly_r_c6_0 a edam:operation_3463,
+        lodp:PathwayCoexpressionRun ;
+    rdfs:label "Pathway co-expression against random gene sets, atted_Sly_r_c6_0 (ATTED-II Sly-r.c6-0, log2 ComBat (NCBI Gene IDs mapped one-to-one to Ensembl Plants 63 where possible))" ;
+    swo:SWO_0004000 "run 2026-11-12; numpy 1.26.4, pandas 1.5.3; transform none (values as given); statistic: mean Pearson r over all pairs of the pathway's genes present in the matrix; null: 10000 random gene sets of the same size, without replacement, from the genes with variance; one null distribution per set size, numpy default_rng(20261112); p: (1 + #random >= observed) / (1 + n_random), one-sided; 1608 samples, 21645 genes with variance; PlantMetWiki pathways: data/plantmetwiki_tomato_gene_pathways_2026-11-12.tsv" ;
+    prov:used <https://atted.jp/download/Sly-r.c6-0/exp/Sly-r.c6-0.expression.combat.txt.zip>,
+        lodp:input_pathway_coexpression_atted_Sly_r_c6_0,
+        <https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/tsv/solanum_lycopersicum_gca000188115v5cm/Solanum_lycopersicum_gca000188115v5cm.SL4.0.63.entrez.tsv.gz> ;
+    lodp:software "pilots/transcriptomics_overlap/pathway_coexpression_table.py (numpy)" .
+
+lodp:input_pathway_coexpression_atted_Sly_r_c6_0 rdfs:label "salmon.merged.gene_tpm.tsv (data/downloads/nfcore_shaped/atted_Sly-r.c6-0/rnaseq/salmon/salmon.merged.gene_tpm.tsv), ATTED-II Sly-r.c6-0, log2 ComBat (NCBI Gene IDs mapped one-to-one to Ensembl Plants 63 where possible)" ;
+    rdfs:comment "values: log2 expression, ComBat-corrected (no TX-03/TX-04 term)" .
+
+lodp:run_pathway_coexpression_meantools_rpkm a edam:operation_3463,
+        lodp:PathwayCoexpressionRun ;
+    rdfs:label "Pathway co-expression against random gene sets, meantools_rpkm (MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py)" ;
+    swo:SWO_0004000 "run 2026-11-12; numpy 1.26.4, pandas 1.5.3; transform log2(x + 1); statistic: mean Pearson r over all pairs of the pathway's genes present in the matrix; null: 10000 random gene sets of the same size, without replacement, from the genes with variance; one null distribution per set size, numpy default_rng(20261112); p: (1 + #random >= observed) / (1 + n_random), one-sided; 54 samples, 20575 genes with variance; PlantMetWiki pathways: data/plantmetwiki_tomato_gene_pathways_2026-11-12.tsv" ;
+    prov:used <https://doi.org/10.5281/zenodo.15697913>,
+        lodp:input_pathway_coexpression_meantools_rpkm ;
+    lodp:software "pilots/transcriptomics_overlap/pathway_coexpression_table.py (numpy)" .
+
+lodp:input_pathway_coexpression_meantools_rpkm a obo:STATO_0000206 ;
+    rdfs:label "salmon.merged.gene_tpm.tsv (data/downloads/nfcore_shaped/meantools_rpkm/rnaseq/salmon/salmon.merged.gene_tpm.tsv), MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py" .
+
+# ===========================================================================
+# CASE 5a. Differential expression (E-MTAB-11876, tomato hairy root, jasmonate vs none)
+# GAME4 is over-expressed under jasmonate. One claim, two evidence nodes (two processing routes
+# of the same study, which agree in direction).
+# ===========================================================================
+
+lodp:claim_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none a lodp:DifferentialExpressionClaim ;
+    rdfs:label "GAME4 differentially expressed in jasmonate vs none" ;
+    sio:SIO_000628 plantcyc:G18C3-3 ;
+    sio:SIO_000772 lodp:evidence_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none_EMTAB11876_atlas_counts,
+        lodp:evidence_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none_EMTAB11876_nfcore_salmon ;
+    rdf:object lodp:contrast_EMTAB11876_jasmonate_vs_none ;
+    rdf:predicate lodp:differentiallyExpressedIn ;
+    rdf:subject plantcyc:G18C3-3 .
+
+lodp:contrast_EMTAB11876_jasmonate_vs_none rdfs:label "treatment: jasmonate vs none" ;
+    lodp:referenceCondition lodp:condition_EMTAB11876_treatment_none ;
+    lodp:testCondition lodp:condition_EMTAB11876_treatment_jasmonate .
+
+lodp:condition_EMTAB11876_treatment_jasmonate a efo:EFO_0000727 ;
+    rdfs:label "treatment: jasmonate" ;
+    rdfs:comment "plant structure: hairy root (Agrobacterium rhizogenes ATCC 15834); no PO term" ;
+    lodp:plantStructure obo:PO_0009005 ;
+    lodp:replicateCount 3 .
+
+lodp:condition_EMTAB11876_treatment_none a efo:EFO_0000727 ;
+    rdfs:label "treatment: none" ;
+    rdfs:comment "plant structure: hairy root (Agrobacterium rhizogenes ATCC 15834); no PO term" ;
+    lodp:plantStructure obo:PO_0009005 ;
+    lodp:replicateCount 3 .
+
+lodp:evidence_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none_EMTAB11876_atlas_counts a obo:ECO_0006069 ;
+    obo:OBI_0000175 "3.1029199795852204e-31"^^xsd:double ;
+    obo:STATO_0000401 "1203.04173181457"^^xsd:double ;
+    obo:STATO_0000562 "0.154046832394508"^^xsd:double ;
+    obo:STATO_0000584 "11.6242540129155"^^xsd:double ;
+    prov:wasGeneratedBy lodp:run_differential_expression_EMTAB11876_atlas_counts ;
+    lodp:adjustedPValue "7.30334209994129e-30"^^xsd:double ;
+    lodp:direction obo:RO_0002245 ;
+    lodp:log2FoldChange "1.79067950963878"^^xsd:double .
+
+lodp:evidence_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none_EMTAB11876_nfcore_salmon a obo:ECO_0006069 ;
+    obo:OBI_0000175 "5.11873333317129e-31"^^xsd:double ;
+    obo:STATO_0000401 "1208.24739609602"^^xsd:double ;
+    obo:STATO_0000562 "0.15618097798519"^^xsd:double ;
+    obo:STATO_0000584 "11.5814261227802"^^xsd:double ;
+    prov:wasGeneratedBy lodp:run_differential_expression_EMTAB11876_nfcore_salmon ;
+    lodp:adjustedPValue "1.16083517965868e-29"^^xsd:double ;
+    lodp:direction obo:RO_0002245 ;
+    lodp:log2FoldChange "1.80879845831905"^^xsd:double .
+
+# ===========================================================================
+# CASE 5b. Response profile (MEANtools RPKM, treatment Ct at 24 h)
+# GAME4 expression is unusually low in this condition compared with all 27 conditions (z = -2.26).
+# The condition has 2 replicates: the shapes flag this as a warning.
+# ===========================================================================
+
+lodp:claim_G18C3-3_expressionDeviatesIn_meantools_Ct_24 a lodp:ExpressionProfileClaim ;
+    rdfs:label "GAME4: expression unusual under treatment Ct, time_h 24" ;
+    sio:SIO_000628 plantcyc:G18C3-3 ;
+    sio:SIO_000772 lodp:evidence_G18C3-3_expressionDeviatesIn_meantools_Ct_24_meantools_rpkm ;
+    rdf:object lodp:condition_meantools_Ct_24 ;
+    rdf:predicate lodp:expressionDeviatesIn ;
+    rdf:subject plantcyc:G18C3-3 .
+
+lodp:condition_meantools_Ct_24 a efo:EFO_0000727 ;
+    rdfs:label "treatment Ct, time_h 24" ;
+    lodp:plantStructure obo:PO_0025034 ;
+    lodp:replicateCount 2 .
+
+lodp:evidence_G18C3-3_expressionDeviatesIn_meantools_Ct_24_meantools_rpkm a obo:ECO_0006069 ;
+    obo:STATO_0000104 "-2.258484431280268"^^xsd:double ;
+    obo:STATO_0000206 "15.125242320000002"^^xsd:double ;
+    prov:wasGeneratedBy lodp:run_expression_profile_meantools_rpkm ;
+    lodp:direction obo:RO_0002246 .
+
+# ===========================================================================
+# CASE 5c. Gene-pair co-expression (GAME1 and GAME4)
+# One claim (gene IRIs in alphabetical order), three evidence nodes, one per dataset
+# (E-MTAB-11876, ATTED-II, MEANtools); all three positively correlated.
+# ===========================================================================
+
+lodp:claim_HQ293016_correlatedWith_G18C3-3 a lodp:GeneCoexpressionAssociation ;
+    rdfs:label "GAME1 and GAME4: expression correlated" ;
+    sio:SIO_000628 ncbigene:HQ293016,
+        plantcyc:G18C3-3 ;
+    sio:SIO_000772 lodp:evidence_HQ293016_correlatedWith_G18C3-3_EMTAB11876_nfcore_salmon,
+        lodp:evidence_HQ293016_correlatedWith_G18C3-3_atted_Sly_r_c6_0,
+        lodp:evidence_HQ293016_correlatedWith_G18C3-3_meantools_rpkm ;
+    rdf:object plantcyc:G18C3-3 ;
+    rdf:predicate obo:RO_0002610 ;
+    rdf:subject ncbigene:HQ293016 .
+
+lodp:evidence_HQ293016_correlatedWith_G18C3-3_EMTAB11876_nfcore_salmon a obo:ECO_0006069,
+        obo:ECO_0007590 ;
+    obo:OBI_0000175 "0.0246452875909502"^^xsd:double ;
+    obo:STATO_0000201 "0.7714285714285715"^^xsd:double ;
+    obo:STATO_0000280 "0.8689242342696044"^^xsd:double ;
+    prov:wasGeneratedBy lodp:run_coexpression_EMTAB11876_nfcore_salmon ;
+    lodp:direction obo:RO_0017003 ;
+    lodp:mutualRank "1425.5497185296624"^^xsd:double .
+
+lodp:evidence_HQ293016_correlatedWith_G18C3-3_atted_Sly_r_c6_0 a obo:ECO_0006069,
+        obo:ECO_0007590 ;
+    obo:OBI_0000175 "9.12699997e-315"^^xsd:double ;
+    obo:STATO_0000201 "0.7694669343520276"^^xsd:double ;
+    obo:STATO_0000280 "0.7692727720430073"^^xsd:double ;
+    prov:wasGeneratedBy lodp:run_coexpression_atted_Sly_r_c6_0 ;
+    lodp:direction obo:RO_0017003 ;
+    lodp:mutualRank "10.583005244258365"^^xsd:double .
+
+lodp:evidence_HQ293016_correlatedWith_G18C3-3_meantools_rpkm a obo:ECO_0006069,
+        obo:ECO_0007590 ;
+    obo:OBI_0000175 "1.1799826955409812e-26"^^xsd:double ;
+    obo:STATO_0000201 "0.941680960548885"^^xsd:double ;
+    obo:STATO_0000280 "0.9437600939358232"^^xsd:double ;
+    prov:wasGeneratedBy lodp:run_coexpression_meantools_rpkm ;
+    lodp:direction obo:RO_0017003 ;
+    lodp:mutualRank "15.716233645501712"^^xsd:double .
+
+# ===========================================================================
+# CASE 5d. Pathway co-expression (alpha-tomatine biosynthesis, PWY18C3-3)
+# The pathway's genes are co-expressed more than 10,000 random gene sets of the same size.
+# One claim on the PlantCyc ID, two evidence nodes (MEANtools, ATTED-II).
+# ===========================================================================
+
+lodp:claim_PWY18C3-3_type_CoexpressedGenePathway a lodp:PathwayCoexpressionClaim ;
+    rdfs:label "Genes of α-tomatine biosynthesis are co-expressed more than random gene sets" ;
+    sio:SIO_000628 plantcyc:PWY18C3-3 ;
+    sio:SIO_000772 lodp:evidence_PWY18C3-3_type_CoexpressedGenePathway_atted_Sly_r_c6_0,
+        lodp:evidence_PWY18C3-3_type_CoexpressedGenePathway_meantools_rpkm ;
+    rdf:object lodp:CoexpressedGenePathway ;
+    rdf:predicate rdf:type ;
+    rdf:subject plantcyc:PWY18C3-3 .
+
+lodp:evidence_PWY18C3-3_type_CoexpressedGenePathway_atted_Sly_r_c6_0 a obo:ECO_0006069,
+        obo:ECO_0007590 ;
+    obo:OBI_0000175 "9.999000099990002e-05"^^xsd:double ;
+    rdfs:comment "genes used (4 of 7 PlantMetWiki genes with a Solyc locus): GAME1, GAME8, GAME4, GAME12; random sets: mean r 0.2889, SD 0.1211" ;
+    prov:wasGeneratedBy lodp:run_pathway_coexpression_atted_Sly_r_c6_0 ;
+    lodp:geneCount 4 ;
+    lodp:meanPairwiseCorrelation "0.7970096282591507"^^xsd:double ;
+    lodp:randomSetCount 10000 .
+
+lodp:evidence_PWY18C3-3_type_CoexpressedGenePathway_meantools_rpkm a obo:ECO_0006069,
+        obo:ECO_0007590 ;
+    obo:OBI_0000175 "9.999000099990002e-05"^^xsd:double ;
+    rdfs:comment "genes used (6 of 7 PlantMetWiki genes with a Solyc locus): GAME1, GAME8, GAME17, GAME18, GAME4, GAME12; random sets: mean r 0.0016, SD 0.0888" ;
+    prov:wasGeneratedBy lodp:run_pathway_coexpression_meantools_rpkm ;
+    lodp:geneCount 6 ;
+    lodp:meanPairwiseCorrelation "0.9601757214433204"^^xsd:double ;
+    lodp:randomSetCount 10000 .

@@ -174,3 +174,108 @@ lodp:motifProbability a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:labe
 lodp:massErrorPpm a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "mass error (ppm)" ; rdfs:comment "Difference between the measured and the calculated m/z of a mass match, in ppm." .
 lodp:massTolerancePpm a owl:DatatypeProperty ; rdfs:range xsd:double ; rdfs:label "mass tolerance (ppm)" ; rdfs:comment "Tolerance used for a mass match, in ppm." .
 lodp:candidateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label "candidate count" ; rdfs:comment "Number of PlantMetWiki metabolites matching the same feature and adduct." .
+
+# ---------------------------------------------------------------------------
+# Case 5: transcriptomics (TX), pilots/transcriptomics_overlap, shapes/transcriptomics.ttl
+# ---------------------------------------------------------------------------
+# Every TX claim is an rdf:Statement (rdf:subject, rdf:predicate, rdf:object) whose IRI is built from the
+# triple; the direction of the effect (up/down, positive/negative) is on each evidence node (lodp:direction),
+# so datasets that disagree give conflicting evidence on one claim instead of two opposite claims.
+# TX claims refer to the PlantMetWiki nodes they measure and are not anchored (see lodp:TranscriptomicsClaim).
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix efo:  <http://www.ebi.ac.uk/efo/> .
+
+lodp:TranscriptomicsClaim a owl:Class ; rdfs:subClassOf lodp:Claim ;
+    rdfs:label "transcriptomics claim" ;
+    rdfs:comment "A claim from expression data about the PlantMetWiki nodes it measures (gene nodes; a pathway for pathway co-expression), stated as an rdf:Statement. It refers (sio:SIO_000628) to those nodes and carries no lodp:anchoredInPathway, lodp:anchorTier or wp:organism: the pathway and the organism are reached from the gene nodes by query (dcterms:isPartOf, wp:organism). shapes/common.ttl exempts it from the anchor rule (case 5)." .
+
+lodp:GeneCoexpressionAssociation a owl:Class ;
+    rdfs:subClassOf lodp:TranscriptomicsClaim , rdf:Statement , sio:SIO_001437 ;   # SIO_001437: gene-gene association (SIO_001257, used by lodp:GeneMetaboliteAssociation, is chemical-gene association)
+    rdfs:label "gene co-expression association" ;
+    rdfs:comment "Two genes are co-expressed across the samples of a dataset: the statement <gene A> obo:RO_0002610 'correlated with' <gene B>, with the two PlantMetWiki gene IRIs in alphabetical order (the relation is symmetric, so each pair has one claim). The sign is on each evidence node (lodp:direction obo:RO_0017003 positively or obo:RO_0017004 negatively correlated with). Also refers (sio:SIO_000628) to both genes; pathway and organism are reached from the genes by query." .
+
+lodp:CoexpressionRun a owl:Class ;
+    rdfs:subClassOf lodp:Run ;
+    rdfs:label "co-expression run" ;
+    rdfs:comment "Computation of correlation and mutual rank between gene expression profiles." .
+
+# --- Differential expression -----------------------------------------------------------------------
+lodp:DifferentialExpressionClaim a owl:Class ;
+    rdfs:subClassOf lodp:TranscriptomicsClaim , rdf:Statement ;
+    rdfs:label "differential expression claim" ;
+    rdfs:comment "A gene's expression differs between the two conditions of a contrast: the statement <gene> lodp:differentiallyExpressedIn <contrast>. Also refers (sio:SIO_000628) to the PlantMetWiki gene node; the values (log2 fold change, test statistic, p-values) and the direction (lodp:direction) sit on the evidence node." .
+
+lodp:DifferentialExpressionRun a owl:Class ;
+    rdfs:subClassOf lodp:Run ;
+    rdfs:label "differential expression run" ;
+    rdfs:comment "A differential expression analysis (for example DESeq2 through nf-core/differentialabundance) over one dataset." .
+
+lodp:differentiallyExpressedIn a owl:ObjectProperty ;
+    rdfs:label "differentially expressed in" ;
+    rdfs:comment "Holds between a gene and a contrast (test vs reference condition) when the gene's expression differs between the two conditions; the direction is stated on the evidence (lodp:direction). Close existing term: obo:BCGO_0000185 'differential expression context' (gene to biological context)." ;
+    rdfs:seeAlso obo:BCGO_0000185 .
+
+lodp:direction a owl:ObjectProperty ;
+    rdfs:label "direction" ;
+    rdfs:comment "The direction an evidence node finds for the relation of its claim, as a relation term: obo:RO_0002245 over-expressed in or obo:RO_0002246 under-expressed in (differential expression, response profile; relative to the reference condition or to the mean over all conditions), obo:RO_0017003 positively or obo:RO_0017004 negatively correlated with (co-expression)." .
+
+lodp:testCondition a owl:ObjectProperty ;
+    rdfs:label "test condition" ;
+    rdfs:comment "The condition of a contrast whose expression is compared (numerator); lodp:log2FoldChange is positive when expression is higher here. nf-core/differentialabundance: 'target'." .
+
+lodp:referenceCondition a owl:ObjectProperty ;
+    rdfs:label "reference condition" ;
+    rdfs:comment "The condition of a contrast the test condition is compared against (denominator). nf-core/differentialabundance: 'reference'." .
+
+lodp:replicateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "replicate count" ;
+    rdfs:comment "Number of samples of a condition in the analysis, each in the role efo:EFO_0000683 'replicate' (TX-18). The claims have no sample nodes, so TX-18's class is used in this definition, not as a type." ;
+    rdfs:seeAlso efo:EFO_0000683 .
+
+lodp:plantStructure a owl:ObjectProperty ;
+    rdfs:label "plant structure" ;
+    rdfs:comment "The plant structure (tissue or organ) the samples of a condition were taken from: a subclass of obo:PO_0009011 'plant structure' (TX-19), e.g. obo:PO_0009005 root, obo:PO_0025034 leaf. Same term as MET-24 for metabolomics samples." ;
+    rdfs:seeAlso obo:PO_0009011 .
+
+# --- Response profile ------------------------------------------------------------------------------
+lodp:ExpressionProfileClaim a owl:Class ;
+    rdfs:subClassOf lodp:TranscriptomicsClaim , rdf:Statement ;
+    rdfs:label "expression profile claim" ;
+    rdfs:comment "A gene's expression in one condition is unusually high or low compared with its expression over all conditions of the experiment: the statement <gene> lodp:expressionDeviatesIn <condition>. Also refers (sio:SIO_000628) to the PlantMetWiki gene node; the z-score, the condition mean and the direction (lodp:direction) sit on the evidence node. Not a test against a control." .
+
+lodp:ExpressionProfileRun a owl:Class ;
+    rdfs:subClassOf lodp:Run ;
+    rdfs:label "expression profile run" ;
+    rdfs:comment "Computation of per-condition means and z-scores of gene expression over the conditions of one dataset." .
+
+lodp:expressionDeviatesIn a owl:ObjectProperty ;
+    rdfs:label "expression deviates in" ;
+    rdfs:comment "Holds between a gene and a condition when the gene's mean expression in that condition lies far from its mean over all conditions of the experiment (z-score on the evidence); the direction is stated on the evidence (lodp:direction)." .
+
+# --- Pathway co-expression -------------------------------------------------------------------------
+lodp:PathwayCoexpressionClaim a owl:Class ;
+    rdfs:subClassOf lodp:TranscriptomicsClaim , rdf:Statement ;
+    rdfs:label "pathway co-expression claim" ;
+    rdfs:comment "The genes of a pathway are co-expressed more than random gene sets of the same size: the statement <pathway> rdf:type lodp:CoexpressedGenePathway (a property of one pathway, stated as class membership). The only TX claim about a pathway; also refers (sio:SIO_000628) to the pathway (PlantCyc ID or PlantMetWiki pathway IRI, open); its genes and organism are reached by query. The statistic, the empirical p-value and the number of genes and random sets sit on the evidence node." .
+
+lodp:CoexpressedGenePathway a owl:Class ;
+    rdfs:label "co-expressed gene pathway" ;
+    rdfs:comment "A pathway whose genes are co-expressed more than random gene sets of the same size, in the data of the evidence. Used as the object of lodp:PathwayCoexpressionClaim statements." .
+
+lodp:PathwayCoexpressionRun a owl:Class ;
+    rdfs:subClassOf lodp:Run ;
+    rdfs:label "pathway co-expression run" ;
+    rdfs:comment "Computation of the mean pairwise correlation of a pathway's genes and its comparison with random gene sets of the same size (seed and number of sets in the version)." .
+
+lodp:meanPairwiseCorrelation a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:label "mean pairwise correlation" ;
+    rdfs:comment "Mean Pearson correlation coefficient (obo:STATO_0000280, TX-14) over all pairs of a gene set." ;
+    rdfs:seeAlso obo:STATO_0000280 .
+
+lodp:geneCount a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "gene count" ;
+    rdfs:comment "Number of genes a value was computed from (for a pathway: its genes found in the dataset)." .
+
+lodp:randomSetCount a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "random set count" ;
+    rdfs:comment "Number of random gene sets the empirical p-value was computed from; the smallest possible p-value is 1 / (count + 1)." .

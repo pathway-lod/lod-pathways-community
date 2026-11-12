@@ -8,6 +8,7 @@ SHACL shapes (the W3C standard for validating RDF) and the tools around them, fo
 | 2 | Paired transcriptomics and metabolomics (MEANtools) | Gene-metabolite associations from functional clusters |
 | 3 | MS/MS annotations (GNPS library, SIRIUS, MS2Query, DreaMS, consensus) | Metabolite annotations of LC-MS/MS features |
 | 4 | PlantCyc evidence codes on PlantMetWiki nodes | Typed evidence for pathway membership |
+| 5 | Transcriptomics (nf-core/rnaseq and differentialabundance outputs, Expression Atlas, MEANtools, ATTED-II) | Differential expression, response profile, gene and pathway co-expression of PlantMetWiki genes |
 
 The model behind the shapes is described in the [examples](../examples/README.md), with a sample graph that conforms to these shapes.
 
@@ -31,15 +32,16 @@ shape_constraints/
 │   ├── bgc.ttl               case 1: predicted BGCs, MIBiG matches, BGC-pathway links
 │   ├── association.ttl       case 2: gene-metabolite associations (MEANtools)
 │   ├── annotation.ttl        case 3: metabolite annotations (MS/MS tools)
-│   └── plantcyc.ttl          case 4: PlantCyc evidence on PlantMetWiki nodes
+│   ├── plantcyc.ttl          case 4: PlantCyc evidence on PlantMetWiki nodes
+│   └── transcriptomics.ttl   case 5: transcriptomics claims (differential expression, co-expression)
 ├── vocab/lodp.ttl          placeholder vocabulary for the terms that no ontology has yet
 ├── validate.py             validate RDF files against the shapes (+ reference check)
-├── build_rdf.py            create the RDF of the four cases from the pilot results, and validate it
+├── build_rdf.py            create the RDF of the five cases from the pilot results, and validate it
 ├── refresh_snapshots.py    snapshot which pathways and metabolites exist in PlantMetWiki
 ├── snapshots/              the dated snapshot used by the reference check
 ├── data/                   PlantMetWiki citation snapshot (input of case 4)
-├── rdf/                    the generated RDF (bgc, association, annotation, plantcyc)
-└── tests/test_shapes.py    84 tests that break a valid graph and check the break is reported
+├── rdf/                    the generated RDF (bgc, association, annotation, plantcyc, transcriptomics)
+└── tests/test_shapes.py    84 + 18 tests that break a valid graph (the two samples in examples/) and check the break is reported
 ```
 
 ## The model in one paragraph
@@ -96,8 +98,10 @@ uv pip install --python .venv/bin/python -r requirements.txt     # pinned versio
 | 2 Association | MEANtools tomato pilot | 1,293 associations from significant clusters (p < 0.05); 26,338 triples | 0 | **1,293** (all weak anchors) |
 | 3 Annotation | MS/MS pilot (Brassicaceae) | 2,722 annotations, 3,650 evidence nodes; 54,097 triples | 0 | 5 |
 | 4 PlantCyc | PlantMetWiki citations | 364 nodes, 409 evidence entries; 4,207 triples | 0 | 0 |
+| 5 Transcriptomics (2026-11) | transcriptomics pilot (tomato) | 619 claims, 831 evidence nodes; 10,252 triples | 0 | 604 (weak or incomplete support, 36 conflicting directions) |
 
 The sample graph in [`examples/`](../examples/) validates with 0 violations and 1 warning (its cluster is not significant, on purpose).
+The transcriptomics sample (`examples/sample_transcriptomics_graph.ttl`) validates with 0 violations and 3 warnings (two inputs without a unit term, one condition with 2 replicates). Transcriptomics claims are `rdf:Statement`s that refer to the PlantMetWiki gene nodes (or pathway) they measure and are not anchored: `common.ttl` exempts `lodp:TranscriptomicsClaim` from the anchor and anchor-tier rules (see [`../pilots/transcriptomics_overlap/`](../pilots/transcriptomics_overlap/)).
 
 ## What running real data through the shapes showed
 
