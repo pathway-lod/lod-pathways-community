@@ -71,8 +71,9 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
       return {
         id: e.id, source: e.source, target: e.target, sourceHandle: e.sourceHandle, targetHandle: e.targetHandle,
         type: e.type === 'lane' ? 'lane' : onTrack ? 'track' : onVTrack ? 'vtrack' : 'smoothstep',
-        data: e.type === 'lane' ? e.data : onTrack ? { centerX: tracks.get(e.id), ...ports.get(e.id) }
-          : onVTrack ? { trackY: vtracks.get(e.id), ...ports.get(e.id) } : undefined,
+        // tracks are fractions of the space between the two cards, so they follow dragged cards (layout.js)
+        data: e.type === 'lane' ? e.data : onTrack ? { trackFrac: tracks.get(e.id), ...ports.get(e.id) }
+          : onVTrack ? { trackFrac: vtracks.get(e.id), ...ports.get(e.id) } : undefined,
         label: e.label, labelStyle: { fill: color, fontWeight: 600, fontSize: 12, fontFamily: 'var(--mono)' },
         labelBgStyle: { fill: '#fff' }, labelBgPadding: [4, 2],
         style: { stroke: color, strokeWidth: 1.8, strokeDasharray: e.state === 'proposal' ? '7 5' : undefined },
@@ -378,7 +379,16 @@ export default function App() {
           <span>claims {page * SUBSET_PAGE + 1}–{page * SUBSET_PAGE + pageClaims.length} of {subsetAll.length}
             {subsetAll.length < subset.claims.length && ` (${subset.claims.length - subsetAll.length} not in this file)`}</span>
           <button disabled={page === 0} onClick={() => { setPage(page - 1); setSelected(null); }}>‹ previous</button>
-          <span>page {page + 1} / {nPages}</span>
+          {/* page number: type and press Enter (or leave the box); out-of-range numbers are clamped (2026-11-12) */}
+          <label title="type a page number and press Enter">page{' '}
+            <input key={page} className="page-input" type="number" min={1} max={nPages} defaultValue={page + 1}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }}
+              onBlur={(e) => {
+                const v = e.currentTarget.value.trim(), x = Math.round(Number(v)); // empty or not a number: stay
+                const n = v === '' || !Number.isFinite(x) ? page : Math.min(nPages, Math.max(1, x)) - 1;
+                if (n !== page) { setPage(n); setSelected(null); } else e.currentTarget.value = page + 1;
+              }} />
+            {' '}/ {nPages}</label>
           <button disabled={page >= nPages - 1} onClick={() => { setPage(page + 1); setSelected(null); }}>next ›</button>
         </div>
       )}

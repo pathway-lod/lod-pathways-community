@@ -53,8 +53,8 @@ claim shape applies). The reference check of `validate.py` (PlantMetWiki snapsho
 | `src/Global.jsx`, `src/global-main.jsx`, `global.html` | global view **test**: all claims on a Cytoscape.js canvas, click → `Graph` in a side panel | |
 | `src/globalLayout.js` | vocabulary-free ring layout for the global view | `globalLayout` |
 | `src/CardNode.jsx` | one card (header, IRI, rows, badges, problems) | |
-| `src/TrackEdge.jsx` | edge between neighbouring columns: own vertical track (`data.centerX`), spread ports (`data.sOff`, `data.tOff`), label at the target | |
-| `src/VTrackEdge.jsx` | edge leaving a card's bottom/top (KG trees, same-column links): spread ports (`data.sOff`, `data.tOff` as x offsets), own horizontal track (`data.trackY`), label beside the arrowhead | |
+| `src/TrackEdge.jsx` | edge between neighbouring columns: own vertical track (`data.trackFrac`: fraction of the gap, follows dragged cards), spread ports (`data.sOff`, `data.tOff`), label at the target | |
+| `src/VTrackEdge.jsx` | edge leaving a card's bottom/top (KG trees, same-column links): spread ports (`data.sOff`, `data.tOff` as x offsets), own horizontal track (`data.trackFrac`: fraction of the way source to target), label beside the arrowhead | |
 | `src/LaneEdge.jsx` | edge that skips a column: over a lane above all cards (`data.laneY`) | |
 | `src/styles.css` | all styling (role colours `--data` … `--run`, term-status colours `.st-*`) | |
 | `public/profiles/lod-pathways-draft.json` | the profile for today's `lodp:` draft | |
@@ -222,7 +222,8 @@ file's claims land in PlantMetWiki (PMW):
   global view writes one record `{source, name, text, claims, title}` to IndexedDB (database `lodviz`) and goes to
   `./?handoff=1` (`&data=` too for bundled data). The card viewer reads it, shows the union of the claims' focus
   sets (`focusSetMany` in rdf.js) 100 claims per page (`SUBSET_PAGE`, page in `viewKey`), with a bar (title, claims
-  i-j of n, previous/next) and the option "selection from the global view" in Show. The same paged mode is
+  i-j of n, previous/next, and a page-number box: type a number and press Enter or leave the box; numbers out of
+  range go to the first/last page, an empty box keeps the page; 2026-11-12) and the option "selection from the global view" in Show. The same paged mode is
   available for any file as "all claims, 100 per page" in Show, in the menu's order (see "Claims ordered by SHACL
   problems" below; big files, where "everything" is disabled, still
   open on their first claim by default). TTL exports the whole selection

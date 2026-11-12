@@ -1,12 +1,13 @@
 // Edge between a card and one below it (knowledge-graph trees, same-column links): vertical out of the source's
-// bottom (or top), horizontal on its own track in the gap between the rows (data.trackY, from assignVTracks), vertical
-// into the target. Connection points are spread along the border (data.sOff / data.tOff: x offsets, assignPorts).
-// The label sits just outside the target card, beside the arrowhead.
+// bottom (or top), horizontal on its own track in the gap between the rows, vertical into the target. The track is
+// stored as a fraction of the way from source to target (data.trackFrac, from assignVTracks) and mapped onto the live
+// ends here, so it follows when a card is dragged (2026-11-12). Connection points are spread along the border
+// (data.sOff / data.tOff: x offsets, assignPorts). The label sits just outside the target card, beside the arrowhead.
 import { BaseEdge, EdgeLabelRenderer } from '@xyflow/react';
 
 export default function VTrackEdge({ id, sourceX, sourceY, targetX, targetY, data, style, markerEnd, label, labelStyle }) {
   const sx = sourceX + (data.sOff || 0), tx = targetX + (data.tOff || 0);
-  const y = data.trackY ?? (sourceY + targetY) / 2, r = 8;
+  const y = sourceY + (data.trackFrac ?? 0.5) * (targetY - sourceY), r = 8;
   const down = targetY > sourceY;
   const dir = tx > sx ? 1 : -1;
   const bend = Math.min(r, Math.abs(tx - sx) / 2);

@@ -375,17 +375,19 @@ function trackBands(edges, pos, sizes, ports) {
   return gaps;
 }
 
+// Returned as the fraction of the gap (0 = left card's edge, 1 = right card's edge), not as an x coordinate, so the
+// vertical segment follows when a card is dragged (TrackEdge.jsx maps it onto the live gap; 2026-11-12).
 export function assignTracks(edges, pos, sizes, ports = new Map()) {
-  const centerX = new Map();
+  const frac = new Map();
   for (const g of trackBands(edges, pos, sizes, ports).values()) {
-    const step = (g.right - g.left) / (g.slots + 1);
+    const step = 1 / (g.slots + 1);
     for (const o of g.list) {
-      const x = (i) => (o.fromRight ? g.right - (o.slot + i + 1) * step : g.left + (o.slot + i + 1) * step);
-      o.up.forEach((it, i) => centerX.set(it.id, x(i)));
-      o.down.forEach((it, i) => centerX.set(it.id, x(i)));
+      const f = (i) => (o.fromRight ? 1 - (o.slot + i + 1) * step : (o.slot + i + 1) * step);
+      o.up.forEach((it, i) => frac.set(it.id, f(i)));
+      o.down.forEach((it, i) => frac.set(it.id, f(i)));
     }
   }
-  return centerX;
+  return frac;
 }
 
 // Connection points spread along a card's side: the k edges on one (left or right) side of a card get k evenly
@@ -443,6 +445,8 @@ export function handlesFor(e, pos, lanes) {
 // The edges of one upper card ("hub") fan out left and right; on each side the edge to the farthest card turns
 // first (highest track), so the fan never crosses itself. Fans of different hubs in one row do not overlap (tidy
 // tree), so they reuse the same track heights.
+// Returned as the fraction of the way from the source's border to the target's border (0 = source, 1 = target), so
+// the horizontal segment follows when a card is dragged (VTrackEdge.jsx maps it onto the live ends; 2026-11-12).
 export function assignVTracks(edges, pos, sizes, ports = new Map()) {
   const h = (k) => sizes.get(k)?.height ?? 200;
   const hubs = new Map();
@@ -454,16 +458,19 @@ export function assignVTracks(edges, pos, sizes, ports = new Map()) {
     const hubX = pos.get(hub).x + COL_W / 2 + ((down ? p.sOff : p.tOff) || 0);
     const otherX = pos.get(other).x + COL_W / 2 + ((down ? p.tOff : p.sOff) || 0);
     if (!hubs.has(hub)) hubs.set(hub, []);
-    hubs.get(hub).push({ id: e.id, d: otherX - hubX });
+    // y of the two connection points: bottom border of the upper card, top border of the lower one
+    const sy = pos.get(e.source).y + (down ? h(e.source) : 0), ty = pos.get(e.target).y + (down ? 0 : h(e.target));
+    hubs.get(hub).push({ id: e.id, d: otherX - hubX, sy, ty });
   }
-  const trackY = new Map();
+  const frac = new Map();
+  const set = (it, y) => frac.set(it.id, Math.abs(it.ty - it.sy) < 1 ? 0.5 : (y - it.sy) / (it.ty - it.sy));
   for (const [hub, items] of hubs) {
     const y0 = pos.get(hub).y + h(hub) + V_MARGIN;
     const left = items.filter((it) => it.d < -1).sort((a, b) => a.d - b.d);
     const right = items.filter((it) => it.d > 1).sort((a, b) => b.d - a.d);
-    left.forEach((it, i) => trackY.set(it.id, y0 + i * V_STEP));
-    right.forEach((it, i) => trackY.set(it.id, y0 + i * V_STEP));
-    items.filter((it) => Math.abs(it.d) <= 1).forEach((it) => trackY.set(it.id, y0));
+    left.forEach((it, i) => set(it, y0 + i * V_STEP));
+    right.forEach((it, i) => set(it, y0 + i * V_STEP));
+    items.filter((it) => Math.abs(it.d) <= 1).forEach((it) => set(it, y0));
   }
-  return trackY;
+  return frac;
 }

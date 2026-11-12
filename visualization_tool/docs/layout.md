@@ -91,7 +91,7 @@ other rows never turn an edge into a lane. The slide layout does not use the gri
    at the other end. Stored as offsets from the
    side's middle (`sOff`, `tOff`), so they survive dragging a card.
 3. **Bend positions** (`assignTracks`): every edge between neighbouring columns gets its own vertical segment
-   (`centerX`). Per gap, each source card gets a band of tracks; bands are ordered by the card's height (the top
+   (stored as `trackFrac`, the fraction of the gap, so it follows a dragged card). Per gap, each source card gets a band of tracks; bands are ordered by the card's height (the top
    card's band nearest to it). Inside a band, the card's upward edges (target above its connection point) bend
    nearest-first starting from the top connection point; downward edges nearest-first from the bottom one. Upward
    and downward edges of one card never meet, so they share track slots (band width = max(#up, #down)). A band
@@ -103,9 +103,11 @@ other rows never turn an edge into a lane. The slide layout does not use the gri
    **Horizontal tracks** (`assignVTracks`, for top/bottom edges, drawn by `VTrackEdge.jsx`): in the gap below the
    upper card of each edge; that card's fan splits into edges going left and right, and on each side the edge to the
    farthest card turns first (highest track), so a fan never crosses itself. Fans of different cards in one tree row
-   do not overlap (tidy tree) and reuse the same track heights.
+   do not overlap (tidy tree) and reuse the same track heights. Also stored as a fraction (`trackFrac`, of the way
+   from the source's border to the target's), mapped onto the live card positions in `VTrackEdge.jsx`.
 4. **Labels**: on the last horizontal piece, anchored at the target card's edge (`TrackEdge.jsx`). The same label
-   at the same arrowhead is shown once.
+   at the same arrowhead is shown once. The side is taken from the side of the card the arrow enters
+   (`targetPosition`), so the label stays outside the card when cards are dragged.
 5. **Fit**: `fitBounds` over the cards and the lanes above them.
 
 ## Why not a general graph layout
