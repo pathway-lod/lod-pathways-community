@@ -48,6 +48,10 @@ Two **co-expressed genes** (from the same transcriptomic data) are looked at tog
 
 Order by support: `coexpressed-in-cluster-both-in-pathway` is the strongest. `coexpressed-in-cluster-one-in-pathway` is a different kind of result (a lead for new knowledge), so it is listed with its own flag and not simply below `coexpressed-in-cluster-both-in-pathway`. The cluster-to-pathway links of the plantiSMASH pilot (`gene_direct`, `gene_uniprot`, `gene_ec`) are the "matches" in `coexpressed-in-cluster-one-in-pathway` and `coexpressed-in-cluster-both-in-pathway`.
 
+## Reading the scores
+
+[`scoring.md`](scoring.md) explains exactly how the score of the ranked queries is computed (families of tiers, the strongest tier of each family, a noisy-OR over the families), with worked examples from the results, and lists every piece of evidence that is checked, its weight and whether it has data.
+
 ## Running the tiers
 
 The queries start from the evidence graphs of the pilots. The **results of each tier** (how many hits, with the first rows, and what is missing) are kept in [`notebooks/`](notebooks/) as executed Jupyter notebooks, one per case, with a table of the first run. How to serve the graphs from a SPARQL endpoint (Oxigraph) is described in [`oxigraph-endpoint.md`](oxigraph-endpoint.md) (a plan, not implemented).
