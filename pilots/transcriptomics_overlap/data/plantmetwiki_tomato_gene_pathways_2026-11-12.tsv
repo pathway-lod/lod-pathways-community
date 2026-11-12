@@ -1,0 +1,54 @@
+# PlantMetWiki pathways (dcterms:isPartOf, wp:Pathway) of the gene nodes with a Solyc locus, https://plantmetwiki.bioinformatics.nl/sparql, 2026-11-12; query in pilots/transcriptomics_overlap/to_turtle.py
+gene_node	pathway	plantcyc	title
+https://identifiers.org/plantcyc/G18C3-29	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC1009	https://identifiers.org/plantcyc/PWY18C3-9	diacylsucrose biosynthesis (Solanum)
+https://identifiers.org/ncbigene/HQ293016	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC296	https://identifiers.org/plantcyc/PWY18C3-4	solasodine glycosylation
+https://identifiers.org/plantcyc/G-63049	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC302	https://identifiers.org/plantcyc/PWY-2541	phytosterol biosynthesis (plants)
+https://identifiers.org/plantcyc/G18C3-369	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC302	https://identifiers.org/plantcyc/PWY-2541	phytosterol biosynthesis (plants)
+https://identifiers.org/plantcyc/G18C3-372	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC302	https://identifiers.org/plantcyc/PWY-2541	phytosterol biosynthesis (plants)
+https://identifiers.org/plantcyc/G18C3-374	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC302	https://identifiers.org/plantcyc/PWY-2541	phytosterol biosynthesis (plants)
+https://identifiers.org/plantcyc/G18C3-375	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC302	https://identifiers.org/plantcyc/PWY-2541	phytosterol biosynthesis (plants)
+https://identifiers.org/plantcyc/G18C3-29	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC350	https://identifiers.org/plantcyc/PWY18C3-16	acylsucrose biosynthesis (Solanum habrochaites)
+https://identifiers.org/plantcyc/G18C3-31	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC350	https://identifiers.org/plantcyc/PWY18C3-16	acylsucrose biosynthesis (Solanum habrochaites)
+https://identifiers.org/plantcyc/G18C3-27	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC434	https://identifiers.org/plantcyc/PWY18C3-15	acylsucrose biosynthesis (Solanum pennellii)
+https://identifiers.org/plantcyc/G18C3-27	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC448	https://identifiers.org/plantcyc/PWY18C3-12	superpathway of acylsucrose biosynthesis (cultivated tomato)
+https://identifiers.org/plantcyc/G18C3-29	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC448	https://identifiers.org/plantcyc/PWY18C3-12	superpathway of acylsucrose biosynthesis (cultivated tomato)
+https://identifiers.org/plantcyc/G18C3-31	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC448	https://identifiers.org/plantcyc/PWY18C3-12	superpathway of acylsucrose biosynthesis (cultivated tomato)
+https://identifiers.org/plantcyc/G18C3-32	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC448	https://identifiers.org/plantcyc/PWY18C3-12	superpathway of acylsucrose biosynthesis (cultivated tomato)
+https://identifiers.org/plantcyc/G18C3-27	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC512	https://identifiers.org/plantcyc/PWY18C3-8	monoacylsucrose biosynthesis (Solanum)
+https://identifiers.org/plantcyc/G18C3-31	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC577	https://identifiers.org/plantcyc/PWY18C3-10	triacylsucrose biosynthesis (Solanum)
+https://identifiers.org/ncbigene/HQ293016	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/ncbigene/HQ293018	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/plantcyc/G18C3-10	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/plantcyc/G18C3-2	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/plantcyc/G18C3-3	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/plantcyc/G18C3-4	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/plantcyc/G18C3-9	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC70	https://identifiers.org/plantcyc/PWY18C3-6	superpathway of glycoalkaloid metabolism (Solanaceae)
+https://identifiers.org/plantcyc/G18C3-376	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC709	https://identifiers.org/plantcyc/PWY66-341	cholesterol biosynthesis I
+https://identifiers.org/plantcyc/G18C3-379	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC709	https://identifiers.org/plantcyc/PWY66-341	cholesterol biosynthesis I
+https://identifiers.org/plantcyc/G18C3-32	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC731	https://identifiers.org/plantcyc/PWY18C3-11	tetraacylsucrose biosynthesis (Solanum)
+https://identifiers.org/plantcyc/G-63048	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G-63049	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-368	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-369	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-372	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-373	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-374	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-375	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-376	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-379	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC94	https://identifiers.org/plantcyc/PWY18C3-1	cholesterol biosynthesis (plants, early side-chain reductase)
+https://identifiers.org/plantcyc/G18C3-27	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC962	https://identifiers.org/plantcyc/PWY18C3-17	superpathway of acylsucrose biosynthesis (wild tomato)
+https://identifiers.org/plantcyc/G18C3-29	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC962	https://identifiers.org/plantcyc/PWY18C3-17	superpathway of acylsucrose biosynthesis (wild tomato)
+https://identifiers.org/plantcyc/G18C3-31	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC962	https://identifiers.org/plantcyc/PWY18C3-17	superpathway of acylsucrose biosynthesis (wild tomato)
+https://identifiers.org/ncbigene/HQ293016	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/ncbigene/HQ293018	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/plantcyc/G18C3-10	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/plantcyc/G18C3-2	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/plantcyc/G18C3-3	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/plantcyc/G18C3-4	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/plantcyc/G18C3-9	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC968	https://identifiers.org/plantcyc/PWY18C3-3	α-tomatine biosynthesis
+https://identifiers.org/plantcyc/G18C3-2	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC975	https://identifiers.org/plantcyc/PWY18C3-2	solasodine and soladulcidine biosynthesis
+https://identifiers.org/plantcyc/G18C3-3	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC975	https://identifiers.org/plantcyc/PWY18C3-2	solasodine and soladulcidine biosynthesis
+https://identifiers.org/plantcyc/G18C3-4	http://rdf-plantmetwiki.bioinformatics.nl/pathways/PC975	https://identifiers.org/plantcyc/PWY18C3-2	solasodine and soladulcidine biosynthesis
+https://identifiers.org/plantcyc/G18C3-373	http://rdf-plantmetwiki.bioinformatics.nl/pathways/RC121	https://identifiers.org/plantcyc/RXN-19832	RXN-19832
+https://identifiers.org/plantcyc/G18C3-373	http://rdf-plantmetwiki.bioinformatics.nl/pathways/RC592	https://identifiers.org/plantcyc/RXN-19833	RXN-19833
+https://identifiers.org/plantcyc/G18C3-373	http://rdf-plantmetwiki.bioinformatics.nl/pathways/RC649	https://identifiers.org/plantcyc/RXN-19831	RXN-19831

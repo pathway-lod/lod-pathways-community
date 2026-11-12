@@ -1,0 +1,33 @@
+{
+  "software": "nf-core/differentialabundance (DESeq2)",
+  "version": "nf-core/differentialabundance 2.0.0; DESeq2 1.34.0; test Wald, p adjustment BH (alpha 0.1), LFC shrinkage off",
+  "note": "study E-MTAB-11876_atlas",
+  "input": "salmon.merged.gene_counts.tsv, the count matrix DESeq2 read",
+  "p_adjust": "BH",
+  "normalised": "all.normalised_counts.tsv (differentialabundance output)",
+  "exported_by": "pilots/transcriptomics_overlap/export_differential.py",
+  "exported_on": "2026-11-12",
+  "source_folder": "differentialabundance_E-MTAB-11876_atlas",
+  "plantmetwiki_genes": "data/plantmetwiki_tomato_gene_nodes_2026-11-11.tsv",
+  "contrasts": [
+    {
+      "id": "jasmonate_vs_none",
+      "variable": "treatment",
+      "target": "jasmonate",
+      "reference": "none",
+      "blocking": "",
+      "conditions": {
+        "jasmonate": {
+          "replicates": 3,
+          "plant_structure": "PO:0009005",
+          "plant_structure_note": "hairy root (Agrobacterium rhizogenes ATCC 15834); no PO term"
+        },
+        "none": {
+          "replicates": 3,
+          "plant_structure": "PO:0009005",
+          "plant_structure_note": "hairy root (Agrobacterium rhizogenes ATCC 15834); no PO term"
+        }
+      }
+    }
+  ]
+}

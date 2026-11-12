@@ -1,0 +1,21 @@
+{
+  "script": "pilots/transcriptomics_overlap/coexpression_table.py",
+  "run_on": "2026-11-12",
+  "matrix": "data/downloads/nfcore/rnaseq_E-MTAB-11876/salmon/salmon.merged.gene_tpm.tsv",
+  "matrix_md5": "6b87f1ea2f4ea4c43e0802651739f2ca",
+  "source_note": "E-MTAB-11876 reads, nf-core/rnaseq 3.27.0 Salmon TPM",
+  "unit": "TPM",
+  "transform": "log2(x + 1)",
+  "genes_with_variance": 24243,
+  "samples": 6,
+  "pairs": 136,
+  "plantmetwiki_genes": "data/plantmetwiki_tomato_gene_nodes_2026-11-11.tsv",
+  "plantmetwiki_genes_present": 17,
+  "methods": "Pearson r (scipy.stats.pearsonr), Spearman rho (scipy.stats.spearmanr), mutual rank over all genes with variance",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  }
+}

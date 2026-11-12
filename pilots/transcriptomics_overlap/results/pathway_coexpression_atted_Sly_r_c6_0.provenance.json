@@ -1,0 +1,25 @@
+{
+  "script": "pilots/transcriptomics_overlap/pathway_coexpression_table.py",
+  "run_on": "2026-11-12",
+  "matrix": "data/downloads/nfcore_shaped/atted_Sly-r.c6-0/rnaseq/salmon/salmon.merged.gene_tpm.tsv",
+  "matrix_md5": "f33ac1ff890a2168c39199510d9bfe12",
+  "source_note": "ATTED-II Sly-r.c6-0, log2 ComBat (NCBI Gene IDs mapped one-to-one to Ensembl Plants 63 where possible)",
+  "unit": "log2 expression, ComBat-corrected",
+  "transform": "none (values as given)",
+  "statistic": "mean Pearson r over all pairs of the pathway's genes present in the matrix",
+  "null": "10000 random gene sets of the same size, without replacement, from the genes with variance; one null distribution per set size, numpy default_rng(20261112)",
+  "empirical_p": "(1 + #random >= observed) / (1 + n_random), one-sided",
+  "n_random": 10000,
+  "seed": 20261112,
+  "min_genes": 3,
+  "genes_with_variance": 21645,
+  "samples": 1608,
+  "pathways": 5,
+  "plantmetwiki_genes": "data/plantmetwiki_tomato_gene_nodes_2026-11-11.tsv",
+  "plantmetwiki_pathways": "data/plantmetwiki_tomato_gene_pathways_2026-11-12.tsv",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  }
+}

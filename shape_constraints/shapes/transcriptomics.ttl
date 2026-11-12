@@ -1,0 +1,392 @@
+# Case 5: transcriptomics claims (TX), from pilots/transcriptomics_overlap (build_rdf.py transcriptomics).
+#
+# Pattern: an experimental claim refers only to the PlantMetWiki nodes it measures (gene nodes; the
+# pathway for pathway co-expression); pathway and organism are reached from the genes by query, so the
+# claim carries no anchor, anchor tier or organism (common.ttl exempts lodp:TranscriptomicsClaim from the
+# anchor rule). Each claim is an rdf:Statement (rdf:subject, rdf:predicate, rdf:object) with one fixed
+# predicate per claim class, and its IRI is built from the triple; it also refers (sio:SIO_000628) to the
+# same nodes. The direction (up/down, positive/negative) is on each evidence node (lodp:direction), must
+# match the sign of its value, and opposite directions on one claim give a warning. Evidence nodes are
+# IRIs. Values sit on the evidence node; a claim can have one evidence node per dataset, so each evidence
+# node is checked on its own (sh:node).
+#
+# Warnings are not put inside the node shapes used with sh:node: any result there, warnings included,
+# makes the node fail and is reported as a violation on the claim. Warnings sit on the claim instead,
+# with paths through sio:SIO_000772 (a minCount warning is then met if any evidence node has the value).
+#
+# Every TX run should use (prov:used) a node for the matrix it read, typed with its value type (TX-03,
+# TX-04); co-expression evidence should name its assay (ECO RNA-seq or microarray class, which also covers
+# TX-01). Differential expression runs: multiple-testing method (TX-13) and normalised count output
+# (TX-05). Conditions: plant structure as a PO term (TX-19), replicate count (TX-18).
+#
+# Not checked here: that the gene IRI exists in PlantMetWiki (validate.py's reference check covers
+# pathways and InChIKeys only; the pilot's gene snapshot is pilots/transcriptomics_overlap/data/).
+# Terms: vocab/lodp.ttl (transcriptomics section) and specification/ontology_terms.csv (TX-01 to TX-22).
+
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix lodps:  <https://example.org/lod-pathways/shapes/> .
+@prefix lodp:   <https://example.org/lod-pathways/pilot/> .
+@prefix obo:    <http://purl.obolibrary.org/obo/> .
+@prefix efo:    <http://www.ebi.ac.uk/efo/> .
+@prefix edam:   <http://edamontology.org/> .
+@prefix sio:    <http://semanticscience.org/resource/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix wp:     <http://vocabularies.wikipathways.org/wp#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------------------------------
+# Shared: a TX claim refers only to PlantMetWiki gene nodes
+# ---------------------------------------------------------------------------------------------------
+lodps:TxGeneReferenceShape a sh:NodeShape ;
+    sh:name "Transcriptomics claim: gene reference" ;
+    sh:targetClass lodp:DifferentialExpressionClaim , lodp:GeneCoexpressionAssociation , lodp:ExpressionProfileClaim ;
+    sh:property [ sh:path sio:SIO_000628 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://identifiers[.]org/(plantcyc|ncbigene)/[A-Za-z0-9_.-]+$" ;
+        sh:message "A transcriptomics claim refers (sio:SIO_000628) to PlantMetWiki gene nodes: identifiers.org plantcyc or ncbigene IRIs, the forms PlantMetWiki uses." ] ;
+    sh:property [ sh:path lodp:anchoredInPathway ; sh:maxCount 0 ;
+        sh:message "A transcriptomics claim has no lodp:anchoredInPathway: the pathway is reached from the gene node (dcterms:isPartOf) by query." ] ;
+    sh:property [ sh:path lodp:anchorTier ; sh:maxCount 0 ;
+        sh:message "A transcriptomics claim has no lodp:anchorTier: it refers to the PlantMetWiki gene node itself." ] ;
+    sh:property [ sh:path wp:organism ; sh:maxCount 0 ;
+        sh:message "A transcriptomics claim has no wp:organism: the organism is reached from the gene node (wp:organism) by query." ] ;
+    sh:property [ sh:path rdf:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://identifiers[.]org/(plantcyc|ncbigene)/[A-Za-z0-9_.-]+$" ;
+        sh:message "A transcriptomics gene claim is an rdf:Statement whose rdf:subject is one PlantMetWiki gene node (identifiers.org plantcyc or ncbigene IRI)." ] ;
+    sh:property [ sh:path rdf:predicate ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "A transcriptomics claim states exactly one rdf:predicate." ] ;
+    sh:property [ sh:path rdf:object ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:message "A transcriptomics claim states exactly one rdf:object, as an IRI." ] ;
+    sh:property [ sh:path sio:SIO_000772 ; sh:minCount 1 ; sh:nodeKind sh:IRI ;
+        sh:message "A transcriptomics claim has evidence nodes (sio:SIO_000772) that are IRIs, not blank nodes, so they can be referred to." ] ;
+    sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A claim should have an rdfs:label." ] .
+
+# ---------------------------------------------------------------------------------------------------
+# Differential expression (TX-02, TX-07 to TX-13, TX-17 to TX-20)
+# ---------------------------------------------------------------------------------------------------
+lodps:DifferentialExpressionShape a sh:NodeShape ;
+    sh:name "Differential expression claim" ;
+    sh:targetClass lodp:DifferentialExpressionClaim ;
+    sh:property [ sh:path sio:SIO_000628 ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "A differential expression claim refers to exactly one gene (sio:SIO_000628)." ] ;
+    sh:property [ sh:path rdf:predicate ; sh:hasValue lodp:differentiallyExpressedIn ;
+        sh:message "The predicate of a differential expression claim is lodp:differentiallyExpressedIn." ] ;
+    sh:property [ sh:path rdf:object ; sh:node lodps:ContrastShape ;
+        sh:message "The object of a differential expression claim is a contrast (one test and one reference condition)." ] ;
+    sh:property [ sh:path sio:SIO_000772 ; sh:node lodps:DifferentialExpressionEvidenceShape ;
+        sh:message "Each evidence node of a differential expression claim must pass the differential expression evidence checks." ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The direction on an evidence node (lodp:direction) does not match the sign of its log2 fold change: obo:RO_0002245 for a positive value, obo:RO_0002246 for a negative one." ;
+        sh:select """
+            SELECT $this ?ev ?d ?v WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:direction ?d ; lodp:log2FoldChange ?v .
+              FILTER( (?v > 0 && ?d != obo:RO_0002245) || (?v < 0 && ?d != obo:RO_0002246) )
+            }""" ] ;
+
+    # incomplete or weak, allowed but flagged
+    sh:property [ sh:path ( sio:SIO_000772 lodp:adjustedPValue ) ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "No adjusted p-value (TX-12), for example removed by DESeq2 independent filtering: the result cannot be judged as significant." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:adjustedPValue ) ; sh:maxExclusive 0.05 ; sh:severity sh:Warning ;
+        sh:message "Not significant: adjusted p-value >= 0.05." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 obo:STATO_0000584 ) ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "No Wald statistic (TX-09): incomplete DESeq2 results (for example published results, or DESeq2 with LFC shrinkage)." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 obo:STATO_0000562 ) ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "No standard error of the log2 fold change (TX-10)." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 obo:STATO_0000401 ) ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "No mean of normalised counts (TX-11)." ] .
+
+lodps:DifferentialExpressionEvidenceShape a sh:NodeShape ;
+    sh:name "Differential expression evidence" ;
+    sh:property [ sh:path rdf:type ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0006069 obo:ECO_0006068 obo:ECO_0000295 ) ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Differential expression evidence must be typed with an RNA-seq ECO class (TX-02): obo:ECO_0006069 (automatic assertion), obo:ECO_0006068 or obo:ECO_0000295." ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:class lodp:DifferentialExpressionRun ;
+        sh:message "Differential expression evidence must come from a lodp:DifferentialExpressionRun." ] ;
+    sh:property [ sh:path lodp:direction ; sh:maxCount 1 ; sh:in ( obo:RO_0002245 obo:RO_0002246 ) ;
+        sh:message "lodp:direction of differential expression evidence at most once: obo:RO_0002245 over-expressed in or obo:RO_0002246 under-expressed in." ] ;
+    sh:property [ sh:path lodp:log2FoldChange ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:message "lodp:log2FoldChange (TX-08) is required once, as xsd:double." ] ;
+    sh:property [ sh:path lodp:adjustedPValue ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "lodp:adjustedPValue (TX-12) at most once, as xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path obo:OBI_0000175 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "The p-value (obo:OBI_0000175) at most once, as xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path obo:STATO_0000584 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:message "The Wald statistic (obo:STATO_0000584, TX-09) at most once, as xsd:double." ] ;
+    sh:property [ sh:path obo:STATO_0000562 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive 0 ;
+        sh:message "The standard error of the log2 fold change (obo:STATO_0000562, TX-10) at most once, as xsd:double of at least 0." ] ;
+    sh:property [ sh:path obo:STATO_0000401 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive 0 ;
+        sh:message "The mean of normalised counts (obo:STATO_0000401, TX-11) at most once, as xsd:double of at least 0." ] .
+
+lodps:ContrastShape a sh:NodeShape ;      # used with sh:node from the differential expression claim (no warnings here)
+    sh:name "Contrast" ;
+    sh:property [ sh:path lodp:testCondition ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:disjoint lodp:referenceCondition ;
+        sh:message "A contrast needs exactly one lodp:testCondition, different from its reference condition." ] ;
+    sh:property [ sh:path lodp:referenceCondition ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:message "A contrast needs exactly one lodp:referenceCondition." ] .
+
+lodps:ConditionShape a sh:NodeShape ;
+    sh:name "Condition" ;
+    sh:targetObjectsOf lodp:testCondition , lodp:referenceCondition ;
+    sh:targetClass efo:EFO_0000727 ;          # conditions that are the object of a response profile claim
+    sh:property [ sh:path rdfs:label ; sh:minCount 1 ;
+        sh:message "A condition needs an rdfs:label (what was applied, e.g. 'treatment: jasmonate')." ] ;
+    sh:property [ sh:path lodp:replicateCount ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "A condition needs exactly one lodp:replicateCount (TX-18), as xsd:integer of at least 1." ] ;
+    sh:property [ sh:path rdf:type ; sh:hasValue efo:EFO_0000727 ; sh:severity sh:Warning ;
+        sh:message "A condition should be typed efo:EFO_0000727 'treatment' (TX-20)." ] ;
+    sh:property [ sh:path lodp:replicateCount ; sh:minInclusive 3 ; sh:severity sh:Warning ;
+        sh:message "Fewer than 3 replicates in a condition." ] ;
+    sh:property [ sh:path lodp:plantStructure ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^http://purl[.]obolibrary[.]org/obo/PO_[0-9]{7}$" ;
+        sh:message "lodp:plantStructure (TX-19) at most once, as a Plant Ontology IRI (obo:PO_...)." ] ;
+    sh:property [ sh:path lodp:plantStructure ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "The condition does not say which plant structure the samples come from (lodp:plantStructure, a PO term, TX-19)." ] .
+
+lodps:DifferentialExpressionRunShape a sh:NodeShape ;
+    sh:name "Differential expression run" ;
+    sh:targetClass lodp:DifferentialExpressionRun ;
+    sh:property [ sh:path rdf:type ; sh:hasValue edam:operation_3223 ; sh:severity sh:Warning ;
+        sh:message "A differential expression run should also be typed edam:operation_3223 'Differential gene expression profiling' (TX-07)." ] ;
+    sh:property [ sh:path rdf:type ; sh:hasValue obo:OBI_0200036 ; sh:severity sh:Warning ;
+        sh:message "A differential expression run should be typed with its multiple-testing correction, obo:OBI_0200036 Benjamini-Hochberg (TX-13), the DESeq2 default." ] ;
+    sh:property [ sh:path [ sh:inversePath prov:wasGeneratedBy ] ;
+        sh:qualifiedValueShape [ sh:class obo:STATO_0000590 ] ; sh:qualifiedMinCount 1 ; sh:severity sh:Warning ;
+        sh:message "A differential expression run should generate a normalised count node typed obo:STATO_0000590 median of ratios (TX-05), the DESeq2 normalisation." ] .
+
+# ---------------------------------------------------------------------------------------------------
+# Gene co-expression (TX-14 to TX-16)
+# ---------------------------------------------------------------------------------------------------
+lodps:CoexpressionShape a sh:NodeShape ;
+    sh:name "Gene co-expression claim" ;
+    sh:targetClass lodp:GeneCoexpressionAssociation ;
+    sh:property [ sh:path sio:SIO_000628 ; sh:minCount 2 ; sh:maxCount 2 ;
+        sh:message "A co-expression claim refers to exactly two different genes (sio:SIO_000628)." ] ;
+    sh:property [ sh:path rdf:predicate ; sh:hasValue obo:RO_0002610 ;
+        sh:message "The predicate of a co-expression claim is obo:RO_0002610 'correlated with' (symmetric; the sign is on the evidence)." ] ;
+    sh:property [ sh:path rdf:object ; sh:pattern "^https://identifiers[.]org/(plantcyc|ncbigene)/[A-Za-z0-9_.-]+$" ;
+        sh:message "The object of a co-expression claim is a PlantMetWiki gene node." ] ;
+    sh:property [ sh:path rdf:subject ; sh:disjoint rdf:object ;
+        sh:message "The subject and object of a co-expression claim are two different genes." ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The genes of a co-expression claim must be in alphabetical order of IRI (rdf:subject before rdf:object), so that each pair has one claim." ;
+        sh:select """
+            SELECT $this ?s ?o WHERE {
+              $this rdf:subject ?s ; rdf:object ?o .
+              FILTER( STR(?s) > STR(?o) )
+            }""" ] ;
+    sh:property [ sh:path sio:SIO_000772 ; sh:node lodps:CoexpressionEvidenceShape ;
+        sh:message "Each evidence node of a co-expression claim must pass the co-expression evidence checks." ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The direction on an evidence node (lodp:direction) does not match the sign of its Pearson r: obo:RO_0017003 for a positive value, obo:RO_0017004 for a negative one." ;
+        sh:select """
+            SELECT $this ?ev ?d ?v WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:direction ?d ; obo:STATO_0000280 ?v .
+              FILTER( (?v > 0 && ?d != obo:RO_0017003) || (?v < 0 && ?d != obo:RO_0017004) )
+            }""" ] ;
+
+    # weak, allowed but flagged
+    sh:property [ sh:path ( sio:SIO_000772 obo:OBI_0000175 ) ; sh:maxExclusive 0.05 ; sh:severity sh:Warning ;
+        sh:message "Correlation not significant: p >= 0.05." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 obo:STATO_0000280 ) ; sh:minInclusive 0 ; sh:severity sh:Warning ;
+        sh:message "Negative correlation: the genes are anti-correlated, not co-expressed." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 rdf:type ) ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0006069 obo:ECO_0006068 obo:ECO_0000295 obo:ECO_0007301 ) ] ;
+        sh:qualifiedMinCount 1 ; sh:severity sh:Warning ;
+        sh:message "The co-expression evidence does not say which assay produced the data (TX-01): add obo:ECO_0006069 (RNA-seq) or obo:ECO_0007301 (expression microarray) next to obo:ECO_0007590." ] .
+
+lodps:CoexpressionEvidenceShape a sh:NodeShape ;
+    sh:name "Co-expression evidence" ;
+    sh:property [ sh:path rdf:type ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0007590 obo:ECO_0006069 ) ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Co-expression evidence must be typed obo:ECO_0007590 (high throughput expression pattern evidence, as the paired-omics claims) or obo:ECO_0006069." ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:class lodp:CoexpressionRun ;
+        sh:message "Co-expression evidence must come from a lodp:CoexpressionRun." ] ;
+    sh:property [ sh:path obo:STATO_0000280 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive -1 ; sh:maxInclusive 1 ;
+        sh:message "Pearson's r (obo:STATO_0000280, TX-14) is required once, as xsd:double between -1 and 1." ] ;
+    sh:property [ sh:path obo:OBI_0000175 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "The correlation p-value (obo:OBI_0000175) at most once, as xsd:double between 0 and 1." ] ;
+    sh:property [ sh:path obo:STATO_0000201 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive -1 ; sh:maxInclusive 1 ;
+        sh:message "Spearman's rho (obo:STATO_0000201) at most once, as xsd:double between -1 and 1." ] ;
+    sh:property [ sh:path lodp:mutualRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive 1 ;
+        sh:message "lodp:mutualRank (TX-16) is required once, as xsd:double of at least 1." ] ;
+    sh:property [ sh:path lodp:direction ; sh:maxCount 1 ; sh:in ( obo:RO_0017003 obo:RO_0017004 ) ;
+        sh:message "lodp:direction of co-expression evidence at most once: obo:RO_0017003 positively or obo:RO_0017004 negatively correlated with." ] .
+
+# ---------------------------------------------------------------------------------------------------
+# Response profile, z-score per gene and condition (TX-04, TX-06, TX-18 to TX-20)
+# ---------------------------------------------------------------------------------------------------
+lodps:ExpressionProfileShape a sh:NodeShape ;
+    sh:name "Expression profile claim" ;
+    sh:targetClass lodp:ExpressionProfileClaim ;
+    sh:property [ sh:path sio:SIO_000628 ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "An expression profile claim refers to exactly one gene (sio:SIO_000628)." ] ;
+    sh:property [ sh:path rdf:predicate ; sh:hasValue lodp:expressionDeviatesIn ;
+        sh:message "The predicate of an expression profile claim is lodp:expressionDeviatesIn." ] ;
+    sh:property [ sh:path rdf:object ; sh:class efo:EFO_0000727 ;
+        sh:message "The object of an expression profile claim is a condition typed efo:EFO_0000727 'treatment' (TX-20)." ] ;
+    sh:property [ sh:path sio:SIO_000772 ; sh:minCount 1 ; sh:node lodps:ExpressionProfileEvidenceShape ;
+        sh:message "Each evidence node of an expression profile claim must pass the expression profile evidence checks." ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "The direction on an evidence node (lodp:direction) does not match the sign of its z-score: obo:RO_0002245 for a positive value, obo:RO_0002246 for a negative one." ;
+        sh:select """
+            SELECT $this ?ev ?d ?v WHERE {
+              $this sio:SIO_000772 ?ev . ?ev lodp:direction ?d ; obo:STATO_0000104 ?v .
+              FILTER( (?v > 0 && ?d != obo:RO_0002245) || (?v < 0 && ?d != obo:RO_0002246) )
+            }""" ] ;
+
+    # weak, allowed but flagged
+    sh:property [ sh:path ( sio:SIO_000772 obo:STATO_0000104 ) ;
+        sh:or ( [ sh:minInclusive 2 ] [ sh:maxInclusive -2 ] ) ; sh:severity sh:Warning ;
+        sh:message "|z| < 2: the condition is not unusual for this gene." ] .
+
+lodps:ExpressionProfileEvidenceShape a sh:NodeShape ;
+    sh:name "Expression profile evidence" ;
+    sh:property [ sh:path rdf:type ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0006069 obo:ECO_0006068 obo:ECO_0000295 ) ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Expression profile evidence must be typed with an RNA-seq ECO class (TX-02): obo:ECO_0006069 (automatic assertion), obo:ECO_0006068 or obo:ECO_0000295." ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:class lodp:ExpressionProfileRun ;
+        sh:message "Expression profile evidence must come from a lodp:ExpressionProfileRun." ] ;
+    sh:property [ sh:path lodp:direction ; sh:maxCount 1 ; sh:in ( obo:RO_0002245 obo:RO_0002246 ) ;
+        sh:message "lodp:direction of expression profile evidence at most once: obo:RO_0002245 over-expressed in or obo:RO_0002246 under-expressed in." ] ;
+    sh:property [ sh:path obo:STATO_0000104 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:message "The z-score (obo:STATO_0000104, TX-06) is required once, as xsd:double." ] ;
+    sh:property [ sh:path [ sh:alternativePath ( obo:STATO_0000589 obo:STATO_0000172 obo:STATO_0000206 ) ] ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ; sh:minInclusive 0 ;
+        sh:message "The mean expression of the condition (TX-04) is required once, as xsd:double of at least 0, with its unit as the property: obo:STATO_0000589 TPM, obo:STATO_0000172 FPKM or obo:STATO_0000206 RPKM." ] .
+
+# ---------------------------------------------------------------------------------------------------
+# Pathway co-expression against random gene sets (TX-14; the only TX claim about a pathway)
+# ---------------------------------------------------------------------------------------------------
+lodps:PathwayCoexpressionShape a sh:NodeShape ;
+    sh:name "Pathway co-expression claim" ;
+    sh:targetClass lodp:PathwayCoexpressionClaim ;
+    sh:property [ sh:path sio:SIO_000628 ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^(https://identifiers[.]org/plantcyc/[A-Za-z0-9_.-]+|http://rdf-plantmetwiki[.]bioinformatics[.]nl/pathways/PC[0-9]+)$" ;
+        sh:message "A pathway co-expression claim refers (sio:SIO_000628) to exactly one pathway: its PlantCyc ID (identifiers.org/plantcyc) or its PlantMetWiki IRI (pathways/PC<n>)." ] ;
+    sh:property [ sh:path rdf:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^(https://identifiers[.]org/plantcyc/[A-Za-z0-9_.-]+|http://rdf-plantmetwiki[.]bioinformatics[.]nl/pathways/PC[0-9]+)$" ;
+        sh:equals sio:SIO_000628 ;
+        sh:message "A pathway co-expression claim is an rdf:Statement whose rdf:subject is the pathway it refers to (PlantCyc ID or pathways/PC<n>)." ] ;
+    sh:property [ sh:path rdf:predicate ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue rdf:type ;
+        sh:message "The predicate of a pathway co-expression claim is rdf:type." ] ;
+    sh:property [ sh:path rdf:object ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue lodp:CoexpressedGenePathway ;
+        sh:message "The object of a pathway co-expression claim is lodp:CoexpressedGenePathway." ] ;
+    sh:property [ sh:path sio:SIO_000772 ; sh:nodeKind sh:IRI ;
+        sh:message "Evidence nodes (sio:SIO_000772) are IRIs, not blank nodes." ] ;
+    sh:property [ sh:path lodp:anchoredInPathway ; sh:maxCount 0 ;
+        sh:message "A pathway co-expression claim refers to the pathway with sio:SIO_000628, not lodp:anchoredInPathway." ] ;
+    sh:property [ sh:path lodp:anchorTier ; sh:maxCount 0 ;
+        sh:message "A pathway co-expression claim has no lodp:anchorTier." ] ;
+    sh:property [ sh:path wp:organism ; sh:maxCount 0 ;
+        sh:message "A pathway co-expression claim has no wp:organism: the organism is reached from the pathway's genes by query." ] ;
+    sh:property [ sh:path sio:SIO_000772 ; sh:minCount 1 ; sh:node lodps:PathwayCoexpressionEvidenceShape ;
+        sh:message "Each evidence node of a pathway co-expression claim must pass the pathway co-expression evidence checks." ] ;
+
+    # weak, allowed but flagged
+    sh:property [ sh:path ( sio:SIO_000772 obo:OBI_0000175 ) ; sh:maxExclusive 0.05 ; sh:severity sh:Warning ;
+        sh:message "Not more co-expressed than random gene sets: empirical p >= 0.05." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 rdf:type ) ;
+        sh:qualifiedValueShape [ sh:in ( obo:ECO_0006069 obo:ECO_0006068 obo:ECO_0000295 obo:ECO_0007301 ) ] ;
+        sh:qualifiedMinCount 1 ; sh:severity sh:Warning ;
+        sh:message "The pathway co-expression evidence does not say which assay produced the data: add obo:ECO_0006069 (RNA-seq) or obo:ECO_0007301 (expression microarray) next to obo:ECO_0007590." ] ;
+    sh:property [ sh:path ( sio:SIO_000772 lodp:randomSetCount ) ; sh:minInclusive 1000 ; sh:severity sh:Warning ;
+        sh:message "Fewer than 1000 random gene sets: the empirical p-value cannot go below 0.001." ] ;
+    sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A claim should have an rdfs:label." ] .
+
+lodps:PathwayCoexpressionEvidenceShape a sh:NodeShape ;
+    sh:name "Pathway co-expression evidence" ;
+    sh:property [ sh:path rdf:type ; sh:hasValue obo:ECO_0007590 ;
+        sh:message "Pathway co-expression evidence must be typed obo:ECO_0007590 (high throughput expression pattern evidence)." ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:class lodp:PathwayCoexpressionRun ;
+        sh:message "Pathway co-expression evidence must come from a lodp:PathwayCoexpressionRun." ] ;
+    sh:property [ sh:path lodp:meanPairwiseCorrelation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minInclusive -1 ; sh:maxInclusive 1 ;
+        sh:message "lodp:meanPairwiseCorrelation is required once, as xsd:double between -1 and 1." ] ;
+    sh:property [ sh:path obo:OBI_0000175 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ;
+        sh:minExclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "The empirical p-value against random gene sets (obo:OBI_0000175) is required once, as xsd:double in (0, 1]." ] ;
+    sh:property [ sh:path lodp:geneCount ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 3 ;
+        sh:message "lodp:geneCount (genes of the pathway found in the data) is required once, as xsd:integer of at least 3." ] ;
+    sh:property [ sh:path lodp:randomSetCount ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ;
+        sh:message "lodp:randomSetCount is required once, as xsd:integer of at least 1." ] .
+
+# ---------------------------------------------------------------------------------------------------
+# All TX runs: the matrix the run read, typed with its value type (TX-03, TX-04)
+# ---------------------------------------------------------------------------------------------------
+lodps:TxRunInputShape a sh:NodeShape ;
+    sh:name "Transcriptomics run: input matrix" ;
+    sh:targetClass lodp:DifferentialExpressionRun , lodp:CoexpressionRun , lodp:ExpressionProfileRun , lodp:PathwayCoexpressionRun ;
+    sh:property [ sh:path prov:used ;
+        sh:qualifiedValueShape [ sh:or ( [ sh:class obo:STATO_0000064 ] [ sh:class obo:STATO_0000589 ]
+                                         [ sh:class obo:STATO_0000172 ] [ sh:class obo:STATO_0000206 ] ) ] ;
+        sh:qualifiedMinCount 1 ; sh:severity sh:Warning ;
+        sh:message "The run should use (prov:used) an input matrix node typed with its value type: obo:STATO_0000064 read counts (TX-03), or obo:STATO_0000589 TPM, obo:STATO_0000172 FPKM, obo:STATO_0000206 RPKM (TX-04)." ] .
+
+lodps:DifferentialExpressionInputShape a sh:NodeShape ;
+    sh:name "Differential expression run: counts" ;
+    sh:targetClass lodp:DifferentialExpressionRun ;
+    sh:property [ sh:path prov:used ;
+        sh:qualifiedValueShape [ sh:class obo:STATO_0000064 ] ; sh:qualifiedMinCount 1 ; sh:severity sh:Warning ;
+        sh:message "A differential expression run (DESeq2) should use a matrix of raw read counts (obo:STATO_0000064, TX-03)." ] .
+
+# ---------------------------------------------------------------------------------------------------
+# Conflicting evidence: opposite directions on one claim (own shapes, as the severity belongs to the shape)
+# ---------------------------------------------------------------------------------------------------
+lodps:DifferentialExpressionConflictShape a sh:NodeShape ;
+    sh:targetClass lodp:DifferentialExpressionClaim ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Conflicting evidence: the evidence nodes of this claim find opposite directions (lodp:direction)." ;
+        sh:select """
+            SELECT $this WHERE {
+              $this sio:SIO_000772 ?e1 , ?e2 . ?e1 lodp:direction obo:RO_0002245 . ?e2 lodp:direction obo:RO_0002246 .
+            }""" ] .
+
+lodps:CoexpressionConflictShape a sh:NodeShape ;
+    sh:targetClass lodp:GeneCoexpressionAssociation ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Conflicting evidence: the evidence nodes of this claim find opposite directions (lodp:direction)." ;
+        sh:select """
+            SELECT $this WHERE {
+              $this sio:SIO_000772 ?e1 , ?e2 . ?e1 lodp:direction obo:RO_0017003 . ?e2 lodp:direction obo:RO_0017004 .
+            }""" ] .
+
+lodps:ExpressionProfileConflictShape a sh:NodeShape ;
+    sh:targetClass lodp:ExpressionProfileClaim ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:prefixes <https://example.org/lod-pathways/shapes/> ;
+        sh:message "Conflicting evidence: the evidence nodes of this claim find opposite directions (lodp:direction)." ;
+        sh:select """
+            SELECT $this WHERE {
+              $this sio:SIO_000772 ?e1 , ?e2 . ?e1 lodp:direction obo:RO_0002245 . ?e2 lodp:direction obo:RO_0002246 .
+            }""" ] .
