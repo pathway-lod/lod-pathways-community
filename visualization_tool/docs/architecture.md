@@ -242,8 +242,8 @@ Known limits:
   with partitions per role) is the candidate if this matters.
 - Shared side cards are placed after the first claim's block, not exactly centred between the claims.
 - With many edges in one gap the tracks get dense (gap width follows labels, not edge count).
-- Uploaded files are not validated (no SHACL in the browser: most annotation rules are `sh:sparql`; would need a
-  backend or Pyodide).
+- In-browser validation (docs/validation.md): results are not shown in the global view yet, and are lost when going
+  back to it (save the `.nq`); the PlantMetWiki reference check of validate.py is not included.
 - No dark mode.
 
 Candidate features (discussed, not built):

@@ -100,3 +100,11 @@ header .note { color: var(--grey); font-size: 12px; }
   padding: 4px 10px; cursor: pointer; white-space: nowrap; }
 .detail-btn:hover { background: #eff6ff; }
 .detail-btn:disabled { color: #94a3b8; border-color: #cbd5e1; cursor: default; }
+/* in-browser SHACL validation (ValidationControl.jsx) */
+header .validation { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+header .validation progress { width: 160px; height: 10px; }
+header .validation.running { color: var(--ink); }
+header .validate-btn { font-weight: 600; color: #b91c1c; border: 1.5px solid #b91c1c; background: #fff; border-radius: 6px; }
+header .validate-btn:hover { background: #fef2f2; }
+header .validate-btn:disabled { color: #94a3b8; border-color: #cbd5e1; }
+header .validation-error { color: var(--viol); max-width: 340px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

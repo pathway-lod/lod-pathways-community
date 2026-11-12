@@ -7,6 +7,7 @@ import { toPng, toSvg } from 'html-to-image';
 import '@xyflow/react/dist/style.css';
 import './styles.css';
 import CardNode from './CardNode.jsx';
+import ValidationControl from './ValidationControl.jsx';
 import LaneEdge from './LaneEdge.jsx';
 import TrackEdge from './TrackEdge.jsx';
 import VTrackEdge from './VTrackEdge.jsx';
@@ -163,6 +164,7 @@ export default function App() {
   const [useTerms, setUseTerms] = useState(params.get('terms') !== '0');
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(null);
+  const [validated, setValidated] = useState(null); // result of a validation run in this page for the current file
   // selection handed over by the global view (handoff.js): {title, claims}; shown page by page
   // subset shown page by page: a selection handed over by the global view, or "all claims" of the file
   const [subset, setSubset] = useState(null);
@@ -182,7 +184,7 @@ export default function App() {
   const loadText = useCallback((text, name, keepFocus) => {
     try {
       const graph = indexGraph(parseRdf(text, name));
-      setG(graph); setSelected(null); setError(null);
+      setG(graph); setSelected(null); setError(null); setValidated(null);
       if (!keepFocus) setFocus('');
     } catch (e) { setError(`${name}: ${e.message}`); }
   }, []);
@@ -299,13 +301,20 @@ export default function App() {
         <label className="chk"><input type="checkbox" checked={runsAsCards} onChange={(e) => setRunsAsCards(e.target.checked)} />runs as cards</label>
         {/* "slide layout" checkbox hidden 2026-11-12; the slide order is still reachable with ?layout=slide */}
         <label className="chk" title={'Show an empty "missing" row for each required property that SHACL validation reports as absent, with the message under it.'
-          + (g && !g.hasReport ? '\nThis file has no SHACL report (only the bundled examples have one), so nothing is added.' : '')}>
+          + (g && !g.hasReport ? '\nThis file has no SHACL report yet (use "Run SHACL validation"), so nothing is added.' : '')}>
           <input type="checkbox" checked={showMissing} onChange={(e) => setShowMissing(e.target.checked)} />missing properties</label>
         <label className="chk" title={'Colour each property row by its status in the project\'s term table (specification/ontology_terms.csv): existing term reused, decision open, local placeholder, not in the table; and show the requirement badges (e.g. MET-12).\nOff: rows coloured by namespace only, no badges.'
           + (!termTable ? '\nTerm table not available.' : '')}>
           <input type="checkbox" checked={useTerms} disabled={!termTable} onChange={(e) => setUseTerms(e.target.checked)} />term table</label>
         <span className="spacer" />
-        <span className="summary">{g?.hasReport ? `SHACL: ${nViol} violations, ${nWarn} warnings` : 'no SHACL report'} · {claims.length} claims</span>
+        <span className="summary">{g?.hasReport ? `SHACL: ${nViol} violations, ${nWarn} warnings · `
+          : (profileJson?.validation ? '' : 'no SHACL report · ')}{claims.length} claims</span>
+        {/* in-browser SHACL validation (src/validation/, profile "validation"): a button where there is no report */}
+        {profileJson?.validation && g0 && (
+          <ValidationControl g={g0} config={profileJson.validation} done={validated}
+            fileName={source.replace(/^local:/, '').replace(/\.[^./]+$/, '')}
+            onReport={(quads, result) => { setG(indexGraph(quads)); setSelected(null); setValidated(result); }} />
+        )}
         <span className="row-break" />{/* export buttons always on a second row (2026-11-12) */}
         <button onClick={() => exportRef.current?.('png')}>PNG</button>
         <button onClick={() => exportRef.current?.('svg')}>SVG</button>

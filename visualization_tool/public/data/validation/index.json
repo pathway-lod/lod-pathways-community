@@ -1,0 +1,5 @@
+{
+  "comment": "Copied from shape_constraints/ by tools/rebuild_bundles.sh; do not edit.",
+  "shapes": ["annotation.ttl", "association.ttl", "bgc.ttl", "common.ttl", "plantcyc.ttl"],
+  "vocab": "vocab_lodp.ttl"
+}
