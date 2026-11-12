@@ -1,0 +1,6 @@
+# Large downloads, re-created by match_meantools.py (MD5-checked)
+data/Jeon_*.sqlite
+data/xcms_feature_table.csv
+.venv/
+.ipynb_checkpoints/
+__pycache__/

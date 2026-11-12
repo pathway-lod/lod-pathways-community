@@ -1,0 +1,6 @@
+Feature_1,Feature_2,Spearman_rho,p_value,n_samples,padj,Omics_Comparison
+Q9LF37,Sinapate,1.0,0.0,6,0.0,Proteomics_vs_Metabolomics
+AT2G01755.2,Adenosine5-P,1.0,0.0,6,0.0,Proteomics_vs_Metabolomics
+P18612,Sinapate,0.9999999999999999,1.4042654220543672e-24,5,5.7996161930845364e-21,Proteomics_vs_Metabolomics
+O04309,Ethanolamine,0.8272162619988708,2.053981345006566e-06,22,0.006176107643465181,Proteomics_vs_Metabolomics
+F4JQG6,Glutamine,-0.8970588235294116,2.4923759658858677e-06,16,0.006176107643465181,Proteomics_vs_Metabolomics
