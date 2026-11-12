@@ -1,4 +1,5 @@
-# Pilot: paired omics (transcriptomics, proteomics, and metabolomics) vs PlantMetWiki
+# Case study: representing multi-omics evidence from heat-stress memory in Arabidopsis (transcriptomics, proteomics, and metabolomics)
+
 Thirumalaikumar, V.P., Yu, L., Arora, D. et al. Multi-Omics Dataset of Heat Stress-Induced Memory in Arabidopsis. Sci Data 13, 1447 (2026). https://doi.org/10.1038/s41597-026-07813-z
 
 **Heat stress priming of Arabidopsis seedlings, measured paired omics data for timepoints: 1d, 2d, 3d, 4d**
@@ -25,15 +26,33 @@ _Metabolomics_: GC-TOF-MS untargeted metabolomics workflow using two-step deriva
 ## Data processing (done additionally for this project):
 
 - Samples names harmonization across omics layers
-- Selecting samples neasured for all omics layers: 22
+- Selecting samples measured for all omics layers: 22
 
-Transcriptomics: lowly expressed genes removed by filterByExpr edgeR, normalization by DeSEQ2, VST trsansformed
+Transcriptomics: lowly expressed genes removed by filterByExpr edgeR, normalization by DeSEQ2, VST transformed
+
 Proteomics: entries measured in less than 20 samples removed, central median normalization, log2 transformation
+
 Metabolomics: log2 transformation, names mapped to IDs and InChIKey by Metabolite Translation Service BioCyc
 
 DGE and differential adundance analysis: DeSEQ2 and limma, model ~ TIME + TREATMENT
+
 Significant transcripts (padj<0.05 and abs(LFC)>1.5) and proteins (padj<0.05) are correlated with metabolites abundances (Pearson correlation, Spearman/mutual ranks)
 
 All IDs are compared vs PlantMetWiki entries:
 
 ![alt text](image.png)
+
+
+| Method | Role in representation | Evidence type or outcome | Metric to capture |
+|---|---|---|---|
+| RNA-seq | Assay | Transcript abundance measurement | Read count, normalized abundance |
+| HISAT2 | Processing activity | Read alignment | Mapping quality, mapped read count if available |
+| featureCounts | Quantification activity | Gene abundance | Counts per gene |
+| DESeq2 | Statistical inference | Differential expression | log2FC, p, adjusted p |
+| LC-MS/MS | Assay | Peptide/protein detection | MS intensity, precursor information |
+| SEQUEST HT | Identification activity | Peptide identification | PSM score, identification FDR |
+| LFQ | Quantification method | Protein abundance measurement | Normalized intensity |
+| GC-TOF-MS | Assay | Metabolite feature detection | Peak area/intensity |
+| TargetSearch | Annotation activity | Putative metabolite identity | Annotation identifier and score, if available |
+| Student's t-test | Statistical inference | Differential abundance | p-value, group difference |
+
