@@ -146,6 +146,7 @@ Label-free protein quantification was based on MS1 precursor ion intensities usi
 
 Metabolite identification and annotation provide the molecular identifiers required for connecting metabolite abundances to biochemical knowledge resources.
 
+## Summary
 
 | Method | Role in representation | Evidence type or outcome | Metric to capture |
 |---|---|---|---|
