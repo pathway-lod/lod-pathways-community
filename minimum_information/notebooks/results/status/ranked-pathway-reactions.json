@@ -1,1 +1,1 @@
-{"tier": "ranked-pathway-reactions", "case": "ranked", "status": "rows", "n_rows": 7772, "seconds": 14.3, "timeout_s": 280, "date": "2026-11-12", "pmw_release": "r17.0.0_20260605-171052"}
+{"tier": "ranked-pathway-reactions", "case": "ranked", "status": "rows", "n_rows": 7772, "seconds": 2.9, "timeout_s": 280, "date": "2026-11-12", "pmw_release": "r17.0.0_20260605-171052"}

@@ -1,1 +1,1 @@
-{"tier": "ranked-pathway-metabolites", "case": "ranked", "status": "rows", "n_rows": 2735, "seconds": 5.7, "timeout_s": 280, "date": "2026-11-12", "pmw_release": "r17.0.0_20260605-171052"}
+{"tier": "ranked-pathway-metabolites", "case": "ranked", "status": "rows", "n_rows": 3688, "seconds": 620.9, "timeout_s": 1200, "date": "2026-11-12", "pmw_release": "r17.0.0_20260605-171052"}

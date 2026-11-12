@@ -3,14 +3,14 @@ metabolite,identity,inchikey-exact,0.95,yes,data,full InChIKey incl. stereo/char
 metabolite,identity,inchikey-first-block,0.80,yes,data,first block (connectivity) equal; same support factor
 metabolite,relatedness,shared-chemical-class,0.20,yes,no data yet,NPClassifier class shared with a pathway metabolite
 metabolite,relatedness,similarity-link,0.40,yes,no data yet,0.40 x similarity score
-metabolite,relatedness,structure-similarity,0.30,no,heavy,same InChI formula layer (proxy)
-metabolite,relatedness,idsm-similar-metabolites,0.50,no,runs separately,IDSM/Sachem similarity to a pathway metabolite
-metabolite,reaction,rhea-step-between-metabolites,0.70,no,heavy,Rhea reaction connects two detected metabolites with a known enzyme
+metabolite,relatedness,structure-similarity,0.30,yes,data (about 10 min),same InChI formula layer (proxy)
+metabolite,relatedness,idsm-similar-metabolites-in-pathway,0.50,yes,data (pathway PC968 only),IDSM/Sachem similarity to a substrate of a pathway; the component is a ChEBI IRI
+metabolite,reaction,rhea-step-between-metabolites,0.70,no,too slow for the endpoint (60 s proxy limit),Rhea reaction connects two detected metabolites with a known enzyme
 reaction,database identifiers,rhea,0.60,yes,data,Rhea identifier on the reaction
 reaction,database identifiers,ec,0.40,yes,data,EC number on the reaction
 reaction,enzyme,uniprot,0.70,yes,data,UniProt enzyme on the reaction
 reaction,omics,gene-catalyses-the-transformation,0.70,yes,no data yet,co-expressed gene whose enzyme catalyses the conversion between two associated metabolites
-reaction,omics,rhea-step-between-metabolites,0.60,no,heavy,Rhea reaction between two detected metabolites
+reaction,omics,rhea-step-between-metabolites,0.60,no,too slow for the endpoint (60 s proxy limit),Rhea reaction between two detected metabolites
 reaction,omics,idsm-similar-metabolite-with-coexpressed-catalysing-gene,0.50,no,example only,
 reaction,prediction,ml-predicted-reaction,0.30,yes,no data yet,reaction predicted by a machine-learning model (ghost edge)
 gene,membership,gene-in-plantmetwiki-pathway,0.90,yes,data,gene listed in a pathway by Solyc or Araport identifier
@@ -19,3 +19,4 @@ gene,membership,bgc-partner-in-pathway,0.50,yes,data (sample graph),a gene of th
 gene,membership,genes-in-same-bgc,0.30,yes,data (sample graph),two or more genes in one BGC (no pathway)
 gene,omics,coexpressed-with-pathway-gene,0.50,yes,data,same MEANtools functional cluster as a gene of the pathway
 gene,sequence,ortholog-in-pathway-species,0.50,yes,no data yet,ortholog of a pathway gene in another species
+gene,omics,gene-and-metabolite-in-same-pathway,0.60,yes,no data yet,gene associated with a detected metabolite annotated as a metabolite of the pathway
