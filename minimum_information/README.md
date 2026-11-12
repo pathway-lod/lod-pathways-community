@@ -1,5 +1,32 @@
 # Minimum information standard: evidence tiers for the pilot data
 
+## Start here: how to read this folder
+
+**Where do the numbers come from?** From the executed notebook [`notebooks/05_ranked_components.ipynb`](notebooks/05_ranked_components.ipynb). It runs the three ranked queries and keeps their outputs as CSV files in [`notebooks/results/`](notebooks/results/) (`ranked-pathway-metabolites.csv`, `ranked-pathway-reactions.csv`, `ranked-pathway-genes.csv`; run summary in `results/summary.csv`, with the date and the PlantMetWiki release). The queries themselves are not in this folder: they are in the repository [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw) (folder `examples/MinimumInformationTiers`; site: <https://pathway-lod.github.io/sparql-examples-pmw/>). The weights are in [`notebooks/weights.csv`](notebooks/weights.csv).
+
+**Read it in this order:**
+
+| Step | File | What you get |
+|---|---|---|
+| 1 | this README, the sections A to C below | The tiers in words: the rule, the minimum information and the status of each |
+| 2 | [`scoring.md`](scoring.md) | How the score is computed (families, strongest tier, noisy-OR), worked examples, every evidence checked with its weight |
+| 3 | [`notebooks/README.md`](notebooks/README.md) | Which notebook covers which case, and the tables of results |
+| 4 | [`notebooks/05_ranked_components.ipynb`](notebooks/05_ranked_components.ipynb) | **The ranked results** (scores, tiers passed, figures); the numbers of the paper come from here |
+| 5 | `notebooks/results/*.csv` | The raw rows behind every table and figure (one CSV per query) |
+| 6 | [`pathway-component-tiers.md`](pathway-component-tiers.md) | The reasoning behind the tiers of the PlantMetWiki reactions (discussion) |
+
+**What is outdated or superseded** (kept for the record, do not use as a source of numbers):
+
+- **The `Status` column** in the tables A to C (done / needs / to check) is the state of the first draft, before the notebooks. The status of every tier now is in [`notebooks/README.md`](notebooks/README.md) and `notebooks/results/summary.csv`.
+- **Notebooks 01 to 04** (one tier per query, run on 2026-11-11) are superseded by notebook 05 for ranking. Keep them for the single-tier outputs and the "For discussion" cells; the four tiers that timed out or ran out of memory there (`structure-similarity`, `rhea-step-between-metabolites`, `coexpressed-in-cluster-one-in-pathway`, `coexpressed-in-cluster-both-in-pathway`) are not part of the live ranked queries (except `structure-similarity`, as a formula-layer proxy).
+- **[`pathway-component-tiers.md`](pathway-component-tiers.md)** (the former `prioritization/` folder) describes the tiers as an ordered ladder (EC, Rhea, UniProt, orthologs). The score now treats the tiers as families and combines them ([`scoring.md`](scoring.md)); the ladder is background only. Its links to `examples/PlantMetWiki/` point to the single-tier queries `00` to `05`, which are still on the site but are not used in the ranked queries.
+- **[`oxigraph-endpoint.md`](oxigraph-endpoint.md)** is a plan. The only part that was run is the local in-process store of the notebooks (`pyoxigraph`); there is no public endpoint for the evidence graphs.
+- **`sparql-examples-pmw/examples-local/01-claims-with-pathway-tiers.ttl`** is an earlier local example, before the minimum-information tiers.
+- **The target of the tier queries** is a placeholder (`https://pathway-lod.github.io/sparql-examples-pmw/evidence-graph`), not a live endpoint.
+- **Caveats on the numbers** (not deprecated, but read them first): the exact-InChIKey tier is inflated; the weights are drafts; only a few tiers have data (see `scoring.md`).
+
+## What this folder is
+
 Draft tiers that say **how much evidence a result of one of our pilots carries**, written as the minimum information that a claim has to contain to reach each tier. They are for discussion; nothing here is decided. The tiers for the components of PlantMetWiki pathways themselves (EC number, Rhea, UniProt, orthologs) are in [`pathway-component-tiers.md`](pathway-component-tiers.md) (formerly the `prioritization/` folder) and implemented as queries in [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw).
 
 How to read the tables:
