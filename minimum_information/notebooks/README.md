@@ -6,10 +6,15 @@ One notebook per case. Each runs the SPARQL queries of the tiers (the files of [
 |---|---|---|
 | [`01_metabolomics.ipynb`](01_metabolomics.ipynb) | 5. Metabolomics: metabolite annotations | `annotation-matches-plantmetwiki`, `shared-chemical-class`, `similarity-link`, `structure-similarity`, `rhea-step-between-metabolites` |
 | [`02_paired_omics.ipynb`](02_paired_omics.ipynb) | 6. Paired omics (with cases 5 and 7) | `gene-and-metabolite-in-same-pathway`, `gene-in-plantmetwiki-pathway`, `ortholog-in-pathway-species`, `gene-catalyses-the-transformation`, `ortholog-plus-ml-prediction` |
+| [`05_ranked_components.ipynb`](05_ranked_components.ipynb) | All scopes: **ranked** reactions, metabolites and genes | the three megaqueries `ranked-pathway-metabolites`, `ranked-pathway-reactions`, `ranked-pathway-genes` (all evidence as optional branches, a noisy-OR score over families of tiers that are not independent), with figures in [`figures/`](figures/) and the draft weights in [`weights.csv`](weights.csv) |
 | [`04_idsm_similarity.ipynb`](04_idsm_similarity.ipynb) | 5 (with 2, 4 and 6). Chemical similarity with IDSM | `idsm-similar-metabolites-in-pathway`, `metabolite-similar-to-pathway-metabolite-idsm`, `idsm-similar-metabolite-with-coexpressed-catalysing-gene` (these run on the public PlantMetWiki endpoint, with IDSM called by `SERVICE`) |
 | [`03_gene_clusters.ipynb`](03_gene_clusters.ipynb) | 3 and 4. Gene clusters and co-expression (with case 6) | `genes-in-same-bgc`, `coexpressed-in-same-cluster`, `coexpressed-in-cluster-one-in-pathway`, `coexpressed-in-cluster-both-in-pathway` |
 
 Each tier has a cell with the query's description, the run (status, number of rows, seconds, first rows) and a **For discussion** cell for comments. The results of each tier are also saved as CSV in [`results/`](results/), with [`results/summary.csv`](results/summary.csv) for all tiers.
+
+## Ranked megaqueries (run on 2026-11-12)
+
+On the evidence graphs of the pilots: **2,735** metabolite-pathway pairs (447 metabolites in 669 pathways), **7,772** reactions (all PlantMetWiki reactions, scored by their Rhea, EC and UniProt evidence) and **12** gene rows (the sample graph's *A. thaliana* cluster and one tomato association; none of the 1,293 MEANtools genes is listed in PlantMetWiki by locus). The queries ran in 6 s, 14 s and 127 s. The notebook shows the score distributions, the tiers passed, the pathways with most high-score or low-score components, a funnel per level of evidence, and how stable the ranking is when the weights change by 20%. **Caveat:** in the current annotation graph the exact-InChIKey tier is inflated, because the stored key is the PlantMetWiki key that the pilot matched (see the notebook).
 
 ## Results (run on 2026-11-11, PlantMetWiki release r17.0.0_20260605-171052)
 

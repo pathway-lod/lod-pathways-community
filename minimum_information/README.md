@@ -1,6 +1,6 @@
 # Minimum information standard: evidence tiers for the pilot data
 
-Draft tiers that say **how much evidence a result of one of our pilots carries**, written as the minimum information that a claim has to contain to reach each tier. They are for discussion; nothing here is decided. The tiers for the components of PlantMetWiki pathways themselves (EC number, Rhea, UniProt, orthologs) are in [`../prioritization/`](../prioritization/) and implemented as queries in [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw).
+Draft tiers that say **how much evidence a result of one of our pilots carries**, written as the minimum information that a claim has to contain to reach each tier. They are for discussion; nothing here is decided. The tiers for the components of PlantMetWiki pathways themselves (EC number, Rhea, UniProt, orthologs) are in [`pathway-component-tiers.md`](pathway-component-tiers.md) (formerly the `prioritization/` folder) and implemented as queries in [`sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw).
 
 How to read the tables:
 

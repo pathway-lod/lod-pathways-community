@@ -16,3 +16,6 @@ gene-catalyses-the-transformation,6 paired omics,no rows,0,0.0,150,2026-11-11,r1
 gene-in-plantmetwiki-pathway,6 paired omics,no rows,0,1.8,240,2026-11-11,r17.0.0_20260605-171052
 ortholog-in-pathway-species,6 paired omics,no rows,0,4.4,150,2026-11-11,r17.0.0_20260605-171052
 ortholog-plus-ml-prediction,6 paired omics,no rows,0,0.0,150,2026-11-11,r17.0.0_20260605-171052
+ranked-pathway-genes,ranked,rows,12,127.4,280,2026-11-12,r17.0.0_20260605-171052
+ranked-pathway-metabolites,ranked,rows,2735,5.7,280,2026-11-12,r17.0.0_20260605-171052
+ranked-pathway-reactions,ranked,rows,7772,14.3,280,2026-11-12,r17.0.0_20260605-171052

@@ -1,0 +1,13 @@
+component,componentType,pathway,score,tiersPassed,wMembership,wOmics,wSequence,cluster
+https://identifiers.org/tair.name/AT5G48000,gene,PC382,0.9,"bgc-both-in-pathway, gene-in-plantmetwiki-pathway, bgc-partner-in-pathway",0.9,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G47990,gene,PC382,0.9,"bgc-both-in-pathway, gene-in-plantmetwiki-pathway, bgc-partner-in-pathway",0.9,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://plants.ensembl.org/Solanum_lycopersicum/Gene/Summary?g=Solyc07g043480,gene,PC968,0.9,gene-in-plantmetwiki-pathway,0.9,,,
+https://identifiers.org/tair.name/AT5G48010,gene,PC382,0.9,"bgc-both-in-pathway, gene-in-plantmetwiki-pathway, bgc-partner-in-pathway",0.9,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://plants.ensembl.org/Solanum_lycopersicum/Gene/Summary?g=Solyc07g043480,gene,PC70,0.9,gene-in-plantmetwiki-pathway,0.9,,,
+https://identifiers.org/tair.name/AT5G47950,gene,PC382,0.5,bgc-partner-in-pathway,0.5,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G47980,gene,PC382,0.5,bgc-partner-in-pathway,0.5,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G48010,gene,,0.3,genes-in-same-bgc,0.3,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G47990,gene,,0.3,genes-in-same-bgc,0.3,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G48000,gene,,0.3,genes-in-same-bgc,0.3,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G47950,gene,,0.3,genes-in-same-bgc,0.3,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60
+https://identifiers.org/tair.name/AT5G47980,gene,,0.3,genes-in-same-bgc,0.3,,,https://plantismash.bioinformatics.nl/precalc/v2/Arabidopsis_thaliana_GCF_000001735.4/index.html#cluster-60

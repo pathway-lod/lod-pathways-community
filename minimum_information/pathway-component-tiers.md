@@ -1,4 +1,4 @@
-# Prioritisation: evidence tiers for the components of a pathway
+# Evidence tiers for the components of a pathway (reactions of PlantMetWiki)
 
 A place to **discuss and decide** the scoring and prioritisation tiers of pathway components (reactions, enzymes, genes, metabolites). The tiers that are agreed here are **implemented as SPARQL queries** in the repository [`pathway-lod/sparql-examples-pmw`](https://github.com/pathway-lod/sparql-examples-pmw) (SIB SPARQL-examples format; some queries are federated with Rhea, UniProt and OrthoDB). This folder holds the discussion; that repository holds the queries.
 
@@ -37,7 +37,7 @@ The tiers overlap and are **not yet an ordered scale**: a reaction can have an E
 
 ## Tiers for the pilot data (minimum information)
 
-The tiers above grade the **components of a pathway** in PlantMetWiki. A second set grades **the results of our pilots** (annotations, associations, clusters) and is written as the minimum information a claim has to carry. It is in [`../minimum_information/`](../minimum_information/):
+The tiers above grade the **components of a pathway** in PlantMetWiki. A second set, in the [README of this folder](README.md), grades **the results of our pilots** (annotations, associations, clusters) and is written as the minimum information a claim has to carry. It is in [`./`](./):
 
 | Family | Tiers (summary) |
 |---|---|
