@@ -1,165 +1,131 @@
-# Extended PlantCyc Pathway Relationships
 
-Extend the *Arabidopsis thaliana* heat-stress multi-omics pathway-mapping workflow with **explicit pathway hierarchy** and optional **shared-reaction evidence**.
+# Extended PlantCyc pathway relationships
 
-`add_extended_pathway_relationships.py` is **offline-only**. It does not contact BioCyc, PlantCyc, or other online services. It reads either an existing pathway hierarchy CSV or an official local PlantCyc `pathways.dat` file.
+This offline Python script adds **shared reaction** and **parent–subpathway** comparisons to the annotated correlation CSV files produced by the basic Arabidopsis pathway mapper. It preserves all original data columns and does not overwrite the original annotations.
 
-> **Prerequisite:** Run the basic pathway mapper first to create `results/annotated_correlations/*_annotated.csv`. If those annotated files already exist and are up to date, you do not need to rerun the mapper. This extender does not map molecular identifiers or calculate correlations.
-
-## Installation
-
-Python 3.9+ is recommended. The only external dependency is `pandas`:
+## Requirements
 
 ```bash
 pip install pandas
 ```
 
-Place `add_extended_pathway_relationships.py` in the root of your `arabidopsis_heat_stress` project. Alternatively, specify `--project-dir`.
+The **basic mapper must have run first**, producing files under `results/annotated_correlations/*_annotated.csv`. You do not need to rerun it if those files already exist.
 
-## Running with the official PlantCyc database
+## Recommended: extract hierarchy and reaction membership from PlantCyc
 
-Obtain the official PlantCyc flat-file export through the Plant Metabolic Network's permitted download process, then place `pathways.dat` in your project, for example at `data/plantcyc/pathways.dat`.
+Obtain the official PlantCyc database export according to PMN's download terms and locate its `pathways.dat` file. Run:
 
 ```bash
 python add_extended_pathway_relationships.py --plantcyc-dat data/plantcyc/pathways.dat
 ```
 
-The script reads `UNIQUE-ID`, `SUPER-PATHWAYS`, and `SUB-PATHWAYS` records, validates referenced IDs against the pathways represented in the file, and writes explicit parent–subpathway links to:
+The script reads two documented fields from `pathways.dat`:
 
-```text
-results/mapping_tables/pathway_hierarchy.csv
+- `SUPER-PATHWAYS` / `SUB-PATHWAYS` for explicit pathway containment.
+- `REACTION-LIST` for **direct** pathway-to-reaction memberships.
+
+For stricter filtering, also supply the official `reactions.dat` file from the **same PlantCyc release**:
+
+```bash
+python add_extended_pathway_relationships.py \
+  --plantcyc-dat data/plantcyc/pathways.dat \
+  --reactions-dat data/plantcyc/reactions.dat
 ```
 
-The output has the schema:
+This excludes `REACTION-LIST` references that are not defined in `reactions.dat`. The script also excludes entries that resolve to known pathway IDs. The `reactions.dat` file is used **for validation**, not for discovering pathway membership; pathway memberships come from `pathways.dat`.
 
-```csv
-child_pathway_id,parent_pathway_id
-SUBPATHWAY_ID,PARENT_PATHWAY_ID
-```
+## Reuse existing CSV inputs
 
-The example IDs are placeholders, not actual biological relationships. If references cannot be resolved, the script also writes `results/mapping_tables/pathway_hierarchy_skipped.csv`. If the `.dat` file provides zero valid hierarchy links, the script exits without overwriting any existing hierarchy CSV.
-
-**Hierarchy means pathway containment**, not pathway classification or similarity between names. The hierarchy is followed recursively when comparing pairs of pathway IDs.
-
-## Running with an existing hierarchy CSV
-
-If you have already produced `results/mapping_tables/pathway_hierarchy.csv`, run:
+After extraction, you may rerun the comparison without the original `.dat` file:
 
 ```bash
 python add_extended_pathway_relationships.py
 ```
 
-Or supply a different hierarchy CSV:
+The script reads:
 
-```bash
-python add_extended_pathway_relationships.py --hierarchy data/curated_pathway_hierarchy.csv
+```text
+results/mapping_tables/pathway_hierarchy.csv
+results/mapping_tables/pathway_reactions.csv
 ```
 
-Only use evidence-backed parent–subpathway links. A partial CSV may miss genuine relationships.
+Their required column headers are:
 
-## Optional: shared biochemical reactions
+```csv
+child_pathway_id,parent_pathway_id
+```
 
-You may provide `results/mapping_tables/pathway_reactions.csv` with the following columns:
+and
 
 ```csv
 pathway_id,reaction_id
-PATHWAY_A,REACTION_1
-PATHWAY_B,REACTION_1
 ```
 
-These are illustrative IDs. Populate this file with **verified reaction memberships**, using consistent identifiers across pathways. The script does not generate this table from `pathways.dat`.
+You may also provide alternate CSV paths with `--hierarchy` and `--reactions`.
 
-To supply another reaction table:
-
-```bash
-python add_extended_pathway_relationships.py --reactions data/pathway_reactions.csv
-```
-
-Both hierarchy and reaction tables may be provided together; hierarchy matches take precedence over reaction overlap.
-
-## Inputs and outputs
+## Output
 
 ```text
-arabidopsis_heat_stress/
-├── add_extended_pathway_relationships.py
-├── data/
-│   └── plantcyc/
-│       └── pathways.dat                         # optional, local database
-└── results/
-    ├── annotated_correlations/
-    │   └── *_annotated.csv                       # required: basic mapper output
-    ├── mapping_tables/
-    │   ├── pathway_hierarchy.csv                 # existing or generated
-    │   ├── pathway_reactions.csv                 # optional
-    │   └── pathway_hierarchy_skipped.csv         # optional extraction diagnostic
-    └── annotated_correlations_extended/
-        └── *_annotated.csv                       # output, one per input
+results/
+├── mapping_tables/
+│   ├── pathway_hierarchy.csv
+│   ├── pathway_reactions.csv
+│   ├── pathway_hierarchy_skipped.csv   # if applicable
+│   └── pathway_reactions_skipped.csv   # if applicable
+├── annotated_correlations/            # unchanged source files
+└── annotated_correlations_extended/
+    └── *_annotated.csv
 ```
 
-Required columns in each annotated CSV:
+Every extended correlation table retains the original fields and adds:
 
-- `Feature1_mapped_pathway`
-- `Feature2_mapped_pathway`
-
-Multiple pathway IDs can be separated by commas or semicolons. The script compares **all IDs from Feature 1 against all IDs from Feature 2**; it does not stop at the first listed ID.
-
-The script preserves all original columns (including `pathway_relationship`) and adds:
-
-| Added column | Meaning |
+| Column | Meaning |
 | --- | --- |
-| `pathway_relationship_extended` | Highest-priority relationship supported by the supplied data |
-| `extended_related_pathway_pairs` | Supporting `Feature1Pathway\|Feature2Pathway` pairs, separated by semicolons |
-| `extended_shared_reaction_ids` | Shared reaction IDs if a reaction-level match is identified |
+| `pathway_relationship_extended` | Highest-priority supported relationship |
+| `extended_related_pathway_pairs` | Supporting feature-1/feature-2 pathway ID pairs (`ID1\|ID2`) |
+| `extended_shared_reaction_ids` | Shared PlantCyc reaction IDs when the result is `shared_reaction` |
 
-Original CSVs are **not modified**. Extended CSVs are written under `results/annotated_correlations_extended/` with the same filenames and relative subdirectory structure as the inputs.
+Classification priority:
 
-## Relationship categories
+1. `same_pathway`: at least one exactly identical pathway ID.
+2. `hierarchy_related`: one pathway is an ancestor or descendant of another, using explicit PlantCyc containment links.
+3. `shared_reaction`: the two different pathways share a direct `REACTION-LIST` entry.
+4. `no_extended_match`: no relationship is found in the supplied hierarchy or reaction data.
+5. `not_evaluated`: neither hierarchy nor reaction data is available.
+6. `not_comparable`: at least one feature lacks mapped pathways.
 
-Comparison follows this order:
+The original `pathway_relationship` column is **not changed**. A higher-priority classification does not report additional lower-priority relationships in that same row.
 
-| Label | Interpretation |
-| --- | --- |
-| `same_pathway` | One or more identical pathway IDs on the two features |
-| `hierarchy_related` | One mapped pathway is a direct or indirect ancestor/descendant of another |
-| `shared_reaction` | Different pathways share a reaction ID in the supplied reaction-membership file |
-| `no_extended_match` | No match found **within the provided evidence**; not proof of biological unrelatedness |
-| `not_evaluated` | Neither usable hierarchy nor reaction-membership evidence was provided |
-| `not_comparable` | One or both features have no mapped pathway IDs |
+## Diagnostics
 
-The relationship column is priority-ranked: `same_pathway` > `hierarchy_related` > `shared_reaction`. For example, when exact overlap exists, lower-priority relationships are not added to the supporting-pairs column.
+The terminal shows counts for hierarchy links, direct reaction memberships, unique mapped pathway IDs, mapped IDs present in the hierarchy, mapped IDs having reaction membership, and correlations with both sides mapped. These statistics are important when interpreting `no_extended_match`: a negative comparison **does not demonstrate that two features are biologically unrelated**, especially when pathway coverage is incomplete.
 
-**Coverage limitation:** A small or incomplete hierarchy/reaction CSV can produce `no_extended_match` even when a relationship exists elsewhere in PlantCyc. Interpret this label only in the context of the files and database release used.
-
-## Command-line options
+## Options
 
 ```bash
 python add_extended_pathway_relationships.py --help
 ```
 
-| Option | Purpose |
-| --- | --- |
-| `--project-dir PATH` | Project root (defaults to script's directory) |
-| `--plantcyc-dat PATH` | Read local PlantCyc `pathways.dat` and generate hierarchy CSV |
-| `--hierarchy PATH` | Read hierarchy CSV, or set its output path in `.dat` mode |
-| `--reactions PATH` | Optional pathway-to-reaction CSV |
-| `--output-dir PATH` | Output directory for extended correlation CSVs |
+- `--project-dir`: project directory containing `results/` (defaults to script directory).
+- `--plantcyc-dat`: extract hierarchy and reaction membership from local PlantCyc `pathways.dat`.
+- `--reactions-dat`: optionally validate reaction IDs against local PlantCyc `reactions.dat`; requires `--plantcyc-dat`.
+- `--hierarchy`: existing hierarchy CSV or extraction destination.
+- `--reactions`: existing reaction-membership CSV or extraction destination.
+- `--output-dir`: directory for extended correlation tables.
 
-Relative paths are resolved against `--project-dir`.
+No online BioCyc authentication or network requests are performed.
 
-## Troubleshooting
+## Interpretation and limitations
 
-- **No annotated CSV files:** Run the basic mapping script or check `--project-dir`.
-- **No hierarchy relationships:** Check that the official `pathways.dat` contains explicit `SUPER-PATHWAYS` or `SUB-PATHWAYS` fields, or supply a curated hierarchy CSV.
-- **Many `not_evaluated` rows:** Neither relationship file is available or both are empty; provide hierarchy or reaction memberships.
-- **Many `no_extended_match` rows:** The supplied relationships do not establish overlap; check data coverage and identifier consistency.
-- **No `shared_reaction` results:** Reaction membership is optional and must be supplied separately; hierarchy matches take precedence.
+- Shared reactions indicate **overlap in pathway annotation**, not a direct protein–metabolite interaction, enzymatic reaction between the two features, or causal biological mechanism.
+- The script uses exact reaction IDs and exact pathway IDs; it does not infer equivalences between different identifiers.
+- `REACTION-LIST` is interpreted as direct pathway membership. The script does not automatically expand subpathways to include all descendant reactions.
+- With no `reactions.dat`, non-pathway identifiers in `REACTION-LIST` are assumed to be reactions, and may require additional validation.
+- The mapping quality of the **basic mapper** (direct vs. EC-based vs. InChIKey connectivity) is unchanged by this extension.
+- Database licensing and citation requirements for PMN/PlantCyc still apply.
 
-## Scientific interpretation
+### References
 
-The extended labels describe overlap or relatedness between **pathway annotations**, not causal mechanisms. A correlation between a protein and a metabolite is statistical evidence, and shared pathways or reactions do not prove a direct molecular interaction. Mapping confidence remains defined by the original mapper's AGI, UniProt, EC, and InChIKey evidence tiers; this script does not change those tiers.
-
-Record the PlantCyc release/date and the origin of any curated hierarchy or reaction files when reporting your results.
-
-## Relationship to the Turtle exporter
-
-The separate Turtle exporter currently reads `results/annotated_correlations/` by default. It **does not automatically read** `results/annotated_correlations_extended/` or serialize the new extended columns. To include them in RDF, its input-directory handling and predicate serialization would need to be updated.
+- [PMN download information](https://plantcyc.org/downloads/)
+- [Pathway Tools flat-file specification](https://pathwaytools.org/flatfile-format.html)
+- [Pathway Tools schema documentation](https://pathway.yeastgenome.org/schema.shtml)
