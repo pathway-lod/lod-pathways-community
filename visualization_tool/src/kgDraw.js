@@ -58,7 +58,7 @@ function arcText(ctx, text, r, mid, ccw, size, color, weight, room, minScale = 0
   ctx.restore();
 }
 
-export function drawKg(canvas, cy, lay, S, { centre, hover, selected, arcs = [], marks = [] } = {}) {
+export function drawKg(canvas, cy, lay, S, { centre, hover, selected, arcs = [], marks = [], dots = [] } = {}) {
   const dpr = window.devicePixelRatio || 1;
   const w = canvas.clientWidth, h = canvas.clientHeight;
   if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
@@ -208,6 +208,15 @@ export function drawKg(canvas, cy, lay, S, { centre, hover, selected, arcs = [],
     ctx.stroke();
   }
   ctx.globalAlpha = 1; ctx.setLineDash([]);
+  // score highlight (D36): coloured dots of fixed screen size, so the colours read at any zoom (the Cytoscape dots
+  // vanish when the whole map is shown); when zoomed in they sit under the Cytoscape dot of the same colour
+  for (const d of dots) {
+    const p = lay.claims.get(d.id);
+    if (!p) continue;
+    ctx.fillStyle = d.color; ctx.globalAlpha = d.alpha ?? 1;
+    ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(3.5 * px, 5), 0, 2 * Math.PI); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
   // halos around picked / opened claims: fixed screen size, so they stay visible at any zoom
   ctx.strokeStyle = INK; ctx.lineWidth = 2 * px;
   for (const id of marks) {

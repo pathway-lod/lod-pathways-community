@@ -73,7 +73,10 @@ The header has no profile chooser and no "slide layout" checkbox (removed 2026-1
   its cards beside the ring. Experimental: it checks whether Cytoscape.js is fast enough for thousands of claims
   (see docs/decisions.md D21-D22). Default layout since 2026-11-11: the **PlantMetWiki map** (`?layout=kg`): a fixed
   ring of PlantMetWiki groups and pathways that lights up where the file's claims land, claims around it in blocks
-  per group, ribbons between them; `?layout=ring` is the earlier anchor ring (D25).
+  per group, ribbons between them; `?layout=ring` is the earlier anchor ring (D25). The page opens on all four pilots
+  (`all_pilots.ttl`); the header has no Layout menu (removed 2026-11-12, D39), the ring is only reachable by URL.
+  **Score…** (D36): colour the claims by a score defined in `public/profiles/lod-pathways-draft.scores.csv` and
+  select the top N (open them as cards); `?score=<CURIE>&top=N` opens it directly.
 
 ## Data
 

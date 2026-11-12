@@ -305,7 +305,7 @@ export default function App() {
         <a className="back-link" href={params.has('handoff') ? handoffUrl('global.html', source)
           : source.startsWith('local:') ? 'global.html' : `global.html?data=${encodeURIComponent(source)}`}
           title="back to the global view (reloads it)">← Global view</a>
-        <h1>Evidence graph viewer <small>prototype</small></h1>
+        <h1>Evidence graph viewer</h1>
         <label>Data
           <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(''); setSubset(null); setHandoffSel(null); }}>
             {datasets.map((d) => <option key={d.file} value={d.file}>{d.label}</option>)}

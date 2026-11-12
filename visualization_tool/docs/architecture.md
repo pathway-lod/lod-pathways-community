@@ -113,7 +113,8 @@ claim-to-claim edge.
 | `terms.kgVocabularyNamespaces` | the knowledge graph's own vocabulary (purple, never "not in spec") |
 | `terms.generic` | rdf/rdfs/owl/xsd: never flagged |
 | `titles.labelProperties`, `titles.byClass` | card titles: first value found; per-class lists win |
-| `predicateLabels` | edge label overrides (e.g. `sio:SIO_000772` → "has evidence") |
+| `predicateLabels` | edge label overrides (e.g. `sio:SIO_000772` → "sio:SIO_000772: has evidence") |
+| `scores.definitions` | CSV of the scores the global view's Score panel offers (see "Score highlight"); no key = no Score button |
 
 Card titles (`titleFor`): claim `<type> · → <anchor labels>` (or `not anchored`); evidence `Evidence · <run summary>`;
 run `<run summary>`; others `<type> · <label>`.
@@ -162,9 +163,10 @@ the order is the file order, as before.
 
 `data` (file in public/data, default `slide25.nq`), `focus` (claim IRI), `profile` (profile path; empty = none),
 `runs=1` (runs as cards), `layout=slide`, `terms=0` (term table off).
-Global view (`global.html`): `data` (default `sample_evidence_graph.nq`), `focus` (claim IRI opened in the detail panel),
-`layout` (`kg` = knowledge-graph map, default when the profile names a snapshot; `ring` = anchor ring),
-`pick` (`node:<IRI>`: start with the claims that share this node picked; map only).
+Global view (`global.html`): `data` (default `all_pilots.ttl`, D39), `focus` (claim IRI opened in the detail panel),
+`layout` (`kg` = knowledge-graph map, default when the profile names a snapshot; `ring` = anchor ring; URL only, no menu since D39),
+`pick` (`node:<IRI>`: start with the claims that share this node picked; map only),
+`score` (CURIE, IRI or label of a defined score: open the Score panel with it), `top` (N of the top N, default 100).
 Screenshots of it: `npm run shot -- shots/ --page global.html "data=..."`.
 
 ## Global view (test, `global.html`)
@@ -238,6 +240,28 @@ file's claims land in PlantMetWiki (PMW):
   from disk cannot be reopened by URL. Both pages ignore fetch responses for a source that is no longer current.
   Known limit: claims that all share one node (e.g. 100 claims of one pathway) are ONE graph, laid out as one very
   tall column of claim blocks around that node.
+- **Stubs in the global view's claim panel** (D37, 2026-11-12): the panel that opens on a claim click (`view` in
+  Global.jsx) wraps the graph with `withKgStubs(g, [focus], ...)` and rebuilds roles/labels on the wrapped graph; the
+  panel's ReactFlowProvider key includes whether the snapshot has loaded, so a `?focus=` URL re-lays out once the
+  stubs arrive. D38: with no claim clicked, a map pick of at most `PANEL_MAX` (100) claims is shown the same way
+  (`focusSetMany`, `Graph grid`); the provider key is the joined claim list.
+- **Score highlight** (D36, 2026-11-12, `src/scores.js`, `ScorePanel` in Global.jsx): the header button
+  "Score (n)…" opens a side panel (closes a map pick; a new pick closes it). The scores come from a CSV named in the
+  profile (`scores.definitions`, now `public/profiles/lod-pathways-draft.scores.csv`), one row per score property:
+  `property, label, better (higher|lower), min, max, scale (linear|log), kind, order, attached_to (claim|evidence),
+  status (confirmed|assumed), note`. `min`/`max` = the tool's **theoretical** range (Martin); it sets the colour
+  scale; a log scale needs `min` > 0 (the p-value uses 1e-10 as its floor). Only `kind=numeric` is read so far.
+  `attached_to=evidence`: values are read from the objects of `pattern.hasEvidence`; a claim with several values takes
+  its best one. The menu lists only the scores present in the file, with claim counts. The panel shows the
+  definition, the range in the file (min, max, median), claims with the score, values outside the theoretical range
+  (counted, drawn in the end colour), the note, and a histogram over the theoretical range (worse left, bars in the
+  ramp colour, grey strip = the file's range, dashed line = cut-off). **Top N** (number box + slider, default 100):
+  ranking best first, equal values in claim-IRI order (so the set is deterministic; ties at the cut-off are reported);
+  the top N are listed and open as cards through the hand-off ("Top N by <score>"). On the map: claims with the score
+  get a blue ramp colour (dataviz reference ramp, steps 250 → 700, light = worse), drawn as fixed-size dots on the
+  canvas (`dots` in kgDraw.js) so they read at full zoom; top N get halos, the other scored claims are faded, claims
+  without the score turn light grey. The ring layout gets the colours on its Cytoscape dots only (too small at full
+  zoom). No combined cross-pilot score (open WG3 question).
 - **Removing it** (if the map does not work out): delete `src/kgMap.js`, `src/kgDraw.js`,
   `tools/build_pmw_snapshot.py`, `tools/pmw_class_groups.csv`, `public/data/pmw_snapshot.json`, the `snapshot` line
   in the profile, and the blocks marked "TEST 2026-11-11" / `useKg` in `src/Global.jsx`. Or just open `?layout=ring`.
