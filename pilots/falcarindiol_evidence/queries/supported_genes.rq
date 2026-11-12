@@ -1,0 +1,15 @@
+PREFIX demo: <https://example.org/falcarindiol-demo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?gene ?route ?source
+WHERE {
+  { ?claim a demo:GenePathwayClaim ; demo:hasGene ?gene ; demo:supportedBy ?evidence .
+    ?evidence a demo:GeneticEvidence ; dcterms:source ?source .
+    BIND("genetic involvement" AS ?route) }
+  UNION
+  { ?gene demo:encodes ?protein .
+    ?reaction demo:catalyzedBy ?protein .
+    ?claim a demo:BiochemicalReactionClaim ; demo:aboutReaction ?reaction ; demo:supportedBy ?evidence .
+    ?evidence a demo:BiochemicalEvidence ; dcterms:source ?source .
+    BIND("biochemical reaction" AS ?route) }
+}
+ORDER BY ?gene ?route

@@ -1,0 +1,10 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Deliberately INVALID: missing provenance and lag, out-of-range correlation.
+demo:BrokenFinding a demo:OmicsFinding, demo:QuantifiedLagFinding ;
+    demo:hasGene demo:Solyc12g100270 ;
+    demo:hasMetabolite demo:Falcarindiol ;
+    demo:correlationAtBestLag "1.42"^^xsd:decimal ;
+    demo:pairedObservations 2 ;
+    demo:adjustedPValue "1.5"^^xsd:decimal .

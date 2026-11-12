@@ -1,0 +1,39 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+# QUALITATIVE teaching scenario based on exploratory discussion, NOT verified numerical
+# results of Jeon et al. or the manuscript's original expression study.
+
+demo:ScenarioTranscriptomics a demo:OmicsDataset ;
+    rdfs:label "Illustrative expression time series; raw data not deposited" .
+demo:ScenarioMetabolomics a demo:OmicsDataset ;
+    rdfs:label "Illustrative metabolite time series; raw data not deposited" .
+demo:ScenarioClustering a demo:AnalysisRun ;
+    prov:used demo:ScenarioTranscriptomics ;
+    demo:method "Clustering method to be specified" .
+demo:CoreExpressionModule a demo:ExpressionModule ;
+    demo:hasMemberGene demo:Solyc12g100240, demo:Solyc12g100250,
+                       demo:Solyc12g100260 ;
+    prov:wasGeneratedBy demo:ScenarioClustering .
+demo:Finding_270_WeakAffinity a demo:OmicsFinding, demo:ModuleAffinityFinding ;
+    demo:hasGene demo:Solyc12g100270 ;
+    demo:comparedWithModule demo:CoreExpressionModule ;
+    demo:affinityCategory demo:WeakRelativeAffinity ;
+    demo:basedOnDataset demo:ScenarioTranscriptomics ;
+    prov:wasGeneratedBy demo:ScenarioClustering ;
+    demo:interpretationStatus demo:IllustrativeUnverified .
+
+demo:ScenarioLagAnalysis a demo:AnalysisRun ;
+    prov:used demo:ScenarioTranscriptomics, demo:ScenarioMetabolomics ;
+    demo:method "Lag estimation method to be specified" ;
+    demo:lagSignConvention "Not supplied; do not infer direction" ;
+    demo:sampleAlignment "Sample and time alignment not yet documented" .
+
+demo:Finding_270_FalcarindiolLag a demo:OmicsFinding, demo:QualitativeLagFinding ;
+    demo:hasGene demo:Solyc12g100270 ;
+    demo:hasMetabolite demo:Falcarindiol ;
+    demo:lagDirection demo:UnknownLagDirection ;
+    demo:basedOnDataset demo:ScenarioTranscriptomics, demo:ScenarioMetabolomics ;
+    prov:wasGeneratedBy demo:ScenarioLagAnalysis ;
+    demo:interpretationStatus demo:IllustrativeUnverified .

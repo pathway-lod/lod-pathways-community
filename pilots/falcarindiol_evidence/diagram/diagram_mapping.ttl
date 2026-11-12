@@ -1,0 +1,10 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix diagram: <https://example.org/falcarindiol-demo/diagram/> .
+
+# A GPML diagram element is not the same thing as the biological entity.
+diagram:n_linoleic a demo:DiagramElement ; demo:gpmlElementId "n_linoleic" ; demo:depicts demo:LinoleicAcid .
+diagram:n_crepenynic a demo:DiagramElement ; demo:gpmlElementId "n_crepenynic" ; demo:depicts demo:CrepenynicAcid .
+diagram:n_acet1a a demo:DiagramElement ; demo:gpmlElementId "n_acet1a" ; demo:depicts demo:ACET1aProtein .
+diagram:n_acet1b a demo:DiagramElement ; demo:gpmlElementId "n_acet1b" ; demo:depicts demo:ACET1bProtein .
+diagram:n_cer1like a demo:DiagramElement ; demo:gpmlElementId "n_cer1like" ; demo:depicts demo:CER1LikeProtein .
+diagram:i_conversion a demo:DiagramElement ; demo:gpmlElementId "i_conversion" ; demo:depicts demo:ACET1Conversion .

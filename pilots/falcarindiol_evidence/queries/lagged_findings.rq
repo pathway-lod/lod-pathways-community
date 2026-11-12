@@ -1,0 +1,11 @@
+PREFIX demo: <https://example.org/falcarindiol-demo/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+SELECT ?gene ?metabolite ?rBest ?lagValue ?unit ?analysis ?status
+WHERE {
+  ?finding a demo:QuantifiedLagFinding ;
+    demo:hasGene ?gene ; demo:hasMetabolite ?metabolite ;
+    demo:correlationAtBestLag ?rBest ; demo:bestLag ?quantity ;
+    demo:interpretationStatus ?status ; prov:wasGeneratedBy ?analysis .
+  ?quantity qudt:numericValue ?lagValue ; qudt:unit ?unit .
+}

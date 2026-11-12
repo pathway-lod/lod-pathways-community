@@ -1,0 +1,8 @@
+PREFIX demo: <https://example.org/falcarindiol-demo/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?gene ?metabolite ?analysis ?interpretation
+WHERE {
+  ?finding a demo:QualitativeLagFinding ; demo:hasGene ?gene ;
+           demo:hasMetabolite ?metabolite ; prov:wasGeneratedBy ?analysis ;
+           demo:interpretationStatus ?interpretation .
+}

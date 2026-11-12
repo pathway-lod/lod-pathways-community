@@ -1,0 +1,8 @@
+PREFIX demo: <https://example.org/falcarindiol-demo/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?claim ?status ?evidence ?source
+WHERE {
+ ?claim a demo:ScientificClaim ; demo:status ?status ; demo:supportedBy ?evidence ;
+        prov:wasDerivedFrom ?source .
+}
+ORDER BY ?claim

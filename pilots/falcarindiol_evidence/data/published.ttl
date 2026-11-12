@@ -1,0 +1,65 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+# Curated biological example based on Jeon et al., Cell 2020.
+# DOI provenance identifies the paper; specific assertion-to-figure mapping requires curator review.
+# No specific reaction is assigned to Solyc12g100270.
+
+demo:Solyc12g100240 a demo:Gene ; rdfs:label "Solyc12g100240 (ACET1a)" ; demo:encodes demo:ACET1aProtein .
+demo:Solyc12g100250 a demo:Gene ; rdfs:label "Solyc12g100250" .
+demo:Solyc12g100260 a demo:Gene ; rdfs:label "Solyc12g100260 (ACET1b)" ; demo:encodes demo:ACET1bProtein .
+demo:Solyc12g100270 a demo:Gene ; rdfs:label "Solyc12g100270 (CER1-like)" ; demo:encodes demo:CER1LikeProtein .
+demo:ACET1aProtein a demo:Protein ; rdfs:label "ACET1a protein" .
+demo:ACET1bProtein a demo:Protein ; rdfs:label "ACET1b protein" .
+demo:CER1LikeProtein a demo:Protein ; rdfs:label "CER1-like protein" .
+demo:LinoleicAcid a demo:Metabolite ; rdfs:label "Linoleic acid" .
+demo:CrepenynicAcid a demo:Metabolite ; rdfs:label "Crepenynic acid" .
+demo:Falcarindiol a demo:Metabolite ; rdfs:label "Falcarindiol" .
+demo:FalcarindiolPathway a demo:Pathway ; rdfs:label "Falcarindiol biosynthesis" .
+
+demo:Chr12BGC a demo:GenomicCluster ;
+    rdfs:label "Tomato chromosome 12 biosynthetic gene cluster" ;
+    demo:hasMemberGene demo:Solyc12g100240, demo:Solyc12g100250,
+                       demo:Solyc12g100260, demo:Solyc12g100270 ;
+    dcterms:source <https://doi.org/10.1016/j.cell.2019.11.037> .
+
+demo:ACET1Conversion a demo:CharacterizedReaction ;
+    demo:hasSubstrate demo:LinoleicAcid ;
+    demo:hasProduct demo:CrepenynicAcid ;
+    demo:catalyzedBy demo:ACET1aProtein, demo:ACET1bProtein .
+
+demo:Evidence_ACET1 a demo:Evidence, demo:LiteratureEvidence, demo:BiochemicalEvidence ;
+    demo:method "Heterologous expression and chemical analysis" ;
+    dcterms:source <https://doi.org/10.1016/j.cell.2019.11.037> .
+
+demo:Claim_ACET1 a demo:ScientificClaim, demo:BiochemicalReactionClaim ;
+    demo:aboutReaction demo:ACET1Conversion ;
+    demo:hasPathway demo:FalcarindiolPathway ;
+    demo:supportedBy demo:Evidence_ACET1 ;
+    demo:status demo:Characterized ;
+    prov:wasDerivedFrom <https://doi.org/10.1016/j.cell.2019.11.037> .
+
+demo:Evidence_270_Genetic a demo:Evidence, demo:LiteratureEvidence, demo:GeneticEvidence ;
+    demo:method "Loss-of-function and complementation" ;
+    dcterms:source <https://doi.org/10.1016/j.cell.2019.11.037> .
+
+demo:Claim_270_Pathway a demo:ScientificClaim, demo:GenePathwayClaim ;
+    demo:hasGene demo:Solyc12g100270 ;
+    demo:hasPathway demo:FalcarindiolPathway ;
+    demo:supportedBy demo:Evidence_270_Genetic ;
+    demo:status demo:GeneticallySupported ;
+    prov:wasDerivedFrom <https://doi.org/10.1016/j.cell.2019.11.037> .
+
+demo:Evidence_270_Homology a demo:Evidence, demo:LiteratureEvidence, demo:ComputationalEvidence ;
+    demo:method "CER1 homology and biosynthetic context" ;
+    dcterms:source <https://doi.org/10.1016/j.cell.2019.11.037> .
+
+demo:Claim_270_Catalysis a demo:ScientificClaim, demo:ProposedFunctionClaim ;
+    demo:proposedProtein demo:CER1LikeProtein ;
+    demo:proposedRole demo:Decarbonylation ;
+    demo:hasPathway demo:FalcarindiolPathway ;
+    demo:supportedBy demo:Evidence_270_Homology ;
+    demo:status demo:ProposedNotConfirmed ;
+    prov:wasDerivedFrom <https://doi.org/10.1016/j.cell.2019.11.037> .

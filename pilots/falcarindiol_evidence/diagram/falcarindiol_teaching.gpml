@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2021" title="Falcarindiol biosynthesis - teaching segment" organism="Solanum lycopersicum" version="0.1">
+  <Description>Teaching diagram of the supported linoleic acid to crepenynic acid conversion catalyzed by ACET1a/ACET1b. The CER1-like protein is genetically associated with the pathway, but not assigned a specific enzymatic step here. This is a simplified representation, not a balanced biochemical reconstruction.</Description>
+  <Graphics boardWidth="860" boardHeight="480" backgroundColor="ffffff"/>
+  <DataNodes>
+    <DataNode elementId="n_linoleic" textLabel="Linoleic acid" type="Metabolite">
+      <Graphics centerX="155" centerY="220" width="150" height="50" fillColor="e6f5f0" borderColor="555555" fontSize="13" shapeType="RoundedRectangle"/>
+    </DataNode>
+    <DataNode elementId="n_crepenynic" textLabel="Crepenynic acid" type="Metabolite">
+      <Graphics centerX="705" centerY="220" width="156" height="50" fillColor="e6f5f0" borderColor="555555" fontSize="13" shapeType="RoundedRectangle"/>
+    </DataNode>
+    <DataNode elementId="n_acet1a" textLabel="ACET1a protein" type="Protein">
+      <Graphics centerX="354" centerY="77" width="146" height="45" fillColor="e9e6f7" borderColor="555555" fontSize="13" shapeType="RoundedRectangle"/>
+    </DataNode>
+    <DataNode elementId="n_acet1b" textLabel="ACET1b protein" type="Protein">
+      <Graphics centerX="523" centerY="77" width="146" height="45" fillColor="e9e6f7" borderColor="555555" fontSize="13" shapeType="RoundedRectangle"/>
+    </DataNode>
+    <DataNode elementId="n_cer1like" textLabel="CER1-like protein" type="Protein">
+      <Graphics centerX="435" centerY="380" width="184" height="46" fillColor="fff2df" borderColor="555555" fontSize="13" shapeType="RoundedRectangle"/>
+      <Comment>Encoded by Solyc12g100270. Its involvement in falcarindiol biosynthesis is supported by knockout and complementation; its precise catalytic transformation was not demonstrated.</Comment>
+      <CitationRef elementRef="cite_jeon"/>
+    </DataNode>
+  </DataNodes>
+  <Interactions>
+    <Interaction elementId="i_conversion">
+      <Waypoints>
+        <Point elementId="i_conversion_start" x="230" y="220" elementRef="n_linoleic"/>
+        <Point elementId="i_conversion_end" x="625" y="220" elementRef="n_crepenynic" arrowHead="Conversion"/>
+        <Anchor elementId="a_conversion1" position="0.35" shapeType="None"/>
+      </Waypoints>
+      <Graphics lineColor="4a5568" lineWidth="2" connectorType="Straight"/>
+      <CitationRef elementRef="cite_jeon"/>
+    </Interaction>
+    <Interaction elementId="i_cat1">
+      <Waypoints>
+        <Point elementId="i_cat1_start" x="354" y="100" elementRef="n_acet1a"/>
+        <Point elementId="i_cat1_end" x="368.25" y="220" elementRef="a_conversion1" arrowHead="Catalysis"/>
+      </Waypoints>
+      <Graphics lineColor="4a5568" lineWidth="2" connectorType="Straight"/>
+      <CitationRef elementRef="cite_jeon"/>
+    </Interaction>
+    <Interaction elementId="i_cat2">
+      <Waypoints>
+        <Point elementId="i_cat2_start" x="523" y="100" elementRef="n_acet1b"/>
+        <Point elementId="i_cat2_end" x="368.25" y="220" elementRef="a_conversion1" arrowHead="Catalysis"/>
+      </Waypoints>
+      <Graphics lineColor="4a5568" lineWidth="2" connectorType="Straight"/>
+      <CitationRef elementRef="cite_jeon"/>
+    </Interaction>
+  </Interactions>
+  <Labels>
+    <Label elementId="l_confirmed" textLabel="Experimentally supported initial biosynthetic conversion">
+      <Graphics centerX="425" centerY="270" width="520" height="28" textColor="2e6950" fontSize="13"/>
+    </Label>
+    <Label elementId="l_cer1" textLabel="Genetic pathway involvement; exact reaction unresolved">
+      <Graphics centerX="435" centerY="428" width="520" height="30" textColor="965b10" fontSize="13"/>
+    </Label>
+  </Labels>
+  <Citations>
+    <Citation elementId="cite_jeon">
+      <Xref identifier="31923394" dataSource="pubmed"/>
+      <Url link="https://doi.org/10.1016/j.cell.2019.11.037"/>
+    </Citation>
+  </Citations>
+</Pathway>

@@ -1,0 +1,73 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Use inferred-type-free validation; explicit types required in example files.
+demo:GeneShape a sh:NodeShape ; sh:targetClass demo:Gene ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:nodeKind sh:Literal ] .
+
+demo:GenePathwayClaimShape a sh:NodeShape ; sh:targetClass demo:GenePathwayClaim ;
+  sh:property [ sh:path demo:hasGene ; sh:minCount 1 ; sh:maxCount 1 ; sh:class demo:Gene ] ;
+  sh:property [ sh:path demo:hasPathway ; sh:minCount 1 ; sh:maxCount 1 ; sh:class demo:Pathway ] ;
+  sh:property [ sh:path demo:supportedBy ; sh:minCount 1 ; sh:class demo:Evidence ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+demo:BiochemicalClaimShape a sh:NodeShape ; sh:targetClass demo:BiochemicalReactionClaim ;
+  sh:property [ sh:path demo:aboutReaction ; sh:minCount 1 ; sh:maxCount 1 ; sh:class demo:CharacterizedReaction ] ;
+  sh:property [ sh:path demo:supportedBy ;
+                sh:qualifiedValueShape [ sh:class demo:BiochemicalEvidence ] ;
+                sh:qualifiedMinCount 1 ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+demo:ProposedClaimShape a sh:NodeShape ; sh:targetClass demo:ProposedFunctionClaim ;
+  sh:property [ sh:path demo:proposedProtein ; sh:minCount 1 ; sh:class demo:Protein ] ;
+  sh:property [ sh:path demo:supportedBy ; sh:minCount 1 ; sh:class demo:Evidence ] ;
+  sh:property [ sh:path demo:status ; sh:hasValue demo:ProposedNotConfirmed ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+demo:EvidenceShape a sh:NodeShape ; sh:targetClass demo:LiteratureEvidence ;
+  sh:property [ sh:path demo:method ; sh:minCount 1 ; sh:nodeKind sh:Literal ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+# Analytical evidence is not required to have a paper DOI; it must have data and an analysis activity.
+demo:OmicsFindingShape a sh:NodeShape ; sh:targetClass demo:OmicsFinding ;
+  sh:property [ sh:path demo:basedOnDataset ; sh:minCount 1 ; sh:class demo:OmicsDataset ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class demo:AnalysisRun ] ;
+  sh:property [ sh:path demo:interpretationStatus ; sh:minCount 1 ] .
+
+demo:QuantifiedLagShape a sh:NodeShape ; sh:targetClass demo:QuantifiedLagFinding ;
+  sh:property [ sh:path demo:hasGene ; sh:minCount 1 ; sh:maxCount 1 ; sh:class demo:Gene ] ;
+  sh:property [ sh:path demo:hasMetabolite ; sh:minCount 1 ; sh:maxCount 1 ; sh:class demo:Metabolite ] ;
+  sh:property [ sh:path demo:correlationAtBestLag ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:datatype xsd:decimal ; sh:minInclusive -1.0 ; sh:maxInclusive 1.0 ] ;
+  sh:property [ sh:path demo:adjustedPValue ; sh:maxCount 1 ;
+                sh:datatype xsd:decimal ; sh:minInclusive 0.0 ; sh:maxInclusive 1.0 ] ;
+  sh:property [ sh:path demo:pairedObservations ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 3 ] ;
+  sh:property [ sh:path demo:lagDirection ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ( demo:TranscriptLeadsMetabolite demo:MetaboliteLeadsTranscript ) ] ;
+  sh:property [ sh:path demo:bestLag ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:node [
+      sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:maxCount 1 ;
+                    sh:datatype xsd:decimal ; sh:minExclusive 0.0 ] ;
+      sh:property [ sh:path qudt:unit ; sh:hasValue unit:HR ; sh:minCount 1 ]
+    ] ] .
+
+demo:QualitativeLagShape a sh:NodeShape ; sh:targetClass demo:QualitativeLagFinding ;
+  sh:property [ sh:path demo:hasGene ; sh:minCount 1 ; sh:class demo:Gene ] ;
+  sh:property [ sh:path demo:hasMetabolite ; sh:minCount 1 ; sh:class demo:Metabolite ] ;
+  sh:property [ sh:path demo:lagDirection ; sh:minCount 1 ;
+                sh:in ( demo:TranscriptLeadsMetabolite demo:MetaboliteLeadsTranscript demo:UnknownLagDirection ) ] .
+
+demo:ModuleAffinityShape a sh:NodeShape ; sh:targetClass demo:ModuleAffinityFinding ;
+  sh:property [ sh:path demo:hasGene ; sh:minCount 1 ; sh:class demo:Gene ] ;
+  sh:property [ sh:path demo:comparedWithModule ; sh:minCount 1 ; sh:class demo:ExpressionModule ] .
+
+demo:CharacterizedReactionShape a sh:NodeShape ; sh:targetClass demo:CharacterizedReaction ;
+  sh:property [ sh:path demo:hasSubstrate ; sh:minCount 1 ; sh:class demo:Metabolite ] ;
+  sh:property [ sh:path demo:hasProduct ; sh:minCount 1 ; sh:class demo:Metabolite ] ;
+  sh:property [ sh:path demo:catalyzedBy ; sh:minCount 1 ; sh:class demo:Protein ] .
