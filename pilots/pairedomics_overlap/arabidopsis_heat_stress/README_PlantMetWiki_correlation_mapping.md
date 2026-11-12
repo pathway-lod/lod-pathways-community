@@ -699,6 +699,8 @@ Possible values:
 | different | Both have pathway mappings but share none |
 | not_comparable | At least one feature has no pathway mapping |
 
+In case biological feature is mapped to more than 1 pathway, all pathways are listed, and the comparison of sets of asssociated IDs is performed between features.
+
 A shared pathway does not necessarily imply a direct molecular interaction.
 
 ### 9.3 Mapping Status
