@@ -47,7 +47,8 @@ export default function Global() {
   // knowledge-graph map: ?layout=kg (default, needs a snapshot named in the profile) or ring (old anchor ring, only
   // via the URL since the Layout menu was removed 2026-11-12)
   const mode = params.get('layout') || 'kg';
-  const [snap, setSnap] = useState(null);
+  const [snap, setSnap] = useState(undefined);
+  const [snapError, setSnapError] = useState(null); // kept apart from `error`, which loading a file clears
   // picked set of claims: {kind: 'group', g} | {kind: 'pathway', p} | {kind: 'node', key} (claims sharing a node)
   // | {kind: 'set', ids} (shift-click)
   const [picked, setPicked] = useState(params.get('pick')?.startsWith('node:') ? { kind: 'node', key: params.get('pick').slice(5) } : null);
@@ -55,8 +56,11 @@ export default function Global() {
   // score highlight (D36): definitions CSV named in the profile; ?score=<CURIE, IRI or label>&top=N opens it
   const [scoreCsv, setScoreCsv] = useState(null);
   const [scoreOpen, setScoreOpen] = useState(params.has('score'));
+  const scoreOpenRef = useRef(scoreOpen); // for the Cytoscape click handler, built once per map
+  scoreOpenRef.current = scoreOpen;
   const [scoreSel, setScoreSel] = useState(params.get('score'));
-  const [topN, setTopN] = useState(params.has('top') ? Number(params.get('top')) : null);
+  // ?top=N: a positive number, else the default (a non-number gave NaN and crashed the score panel, 2026-11-13)
+  const [topN, setTopN] = useState(() => { const n = Math.round(Number(params.get('top'))); return params.has('top') && n >= 1 ? n : null; });
   const scoreDots = useRef(null); // {dots, top} for the map's canvas (kgDraw)
   const [cyGen, setCyGen] = useState(0); // bumped when a Cytoscape graph is (re)built, so the score classes are re-applied
 
@@ -101,10 +105,13 @@ export default function Global() {
     window.location.href = handoffUrl('./', source);
   };
 
+  // snap: undefined while the profile or the snapshot is loading, null when there is none (or it failed)
   useEffect(() => {
-    const f = profileJson?.roles?.kg?.snapshot;
+    if (!profileJson) return;
+    const f = profileJson.roles?.kg?.snapshot;
     if (!f) { setSnap(null); return; }
-    fetch(f).then((r) => (r.ok ? r.json() : null)).then(setSnap).catch(() => setSnap(null));
+    fetch(f).then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json(); }).then(setSnap)
+      .catch((e) => { setSnap(null); setSnapError(`${profileJson.roles?.kg?.name || 'knowledge graph'} snapshot ${f}: ${e.message}; the map cannot be drawn (the anchor ring is still available with ?layout=ring)`); });
   }, [profileJson]);
   const S = useMemo(() => (snap ? indexSnapshot(snap) : null), [snap]);
   useEffect(() => {
@@ -160,7 +167,7 @@ export default function Global() {
     if (!scoreOpen || !scoreData.length) return null;
     const s = scoreData.find((x) => [x.def.iri, x.def.curie, x.def.label].includes(scoreSel)) || scoreData[0];
     const ranked = ranking(s.def, s.values);
-    const n = Math.min(Math.max(1, topN ?? SCORE_TOP), ranked.length);
+    const n = Math.min(Math.max(1, Number.isFinite(topN) ? topN : SCORE_TOP), ranked.length);
     return { ...s, ranked, n, top: new Set(ranked.slice(0, n).map((r) => r[0])), stats: summary(s.def, s.values) };
   }, [scoreOpen, scoreData, scoreSel, topN]);
   // a map pick and the score panel exclude each other (both dim claims)
@@ -168,6 +175,9 @@ export default function Global() {
 
   const centre = profileJson?.roles?.kg?.name || 'knowledge graph';
   const useKg = mode === 'kg' && !!kg;
+  // the anchor ring only when asked for (?layout=ring) or when the profile names no snapshot at all; not while the
+  // snapshot is still loading (it flashed up before the map, 2026-11-13) and not when it failed (error shown instead)
+  const useRing = mode === 'ring' || (snap === null && !!profileJson && !profileJson.roles?.kg?.snapshot);
 
   // knowledge-graph map: claims are Cytoscape nodes, the map itself is drawn on a canvas underneath (kgDraw.js)
   useEffect(() => {
@@ -238,7 +248,11 @@ export default function Global() {
         });
         return;
       }
+      // plain click (D42): a selection of this one claim, as a shift-click would start it (list panel with "Open in
+      // detail view", other claims dimmed), and its cards opened; a shift-click then adds to it. With the score panel
+      // open, only its cards (a pick would close the score panel)
       setFocus(id); setAnchor(null);
+      if (!scoreOpenRef.current) setPicked({ kind: 'set', ids: [id] });
     });
     cy.on('tap', (e) => { if (e.target === cy) { setPicked(kgHit(lay, S, e.position.x, e.position.y)); setFocus(null); } });
     cy.one('render', () => {
@@ -273,7 +287,7 @@ export default function Global() {
 
   // build the Cytoscape graph once per file (anchor ring)
   useEffect(() => {
-    if (!model || !cyBox.current || useKg) return;
+    if (!model || !cyBox.current || useKg || !useRing) return;
     const t0 = performance.now();
     const { claims, lay } = model;
     const els = [];
@@ -332,7 +346,7 @@ export default function Global() {
     cyRef.current = cy;
     setCyGen((n) => n + 1);
     return () => cy.destroy();
-  }, [model, useKg]);
+  }, [model, useKg, useRing]);
 
   // score highlight: colour the claims that have the score, enlarge the top N, fade the rest
   useEffect(() => {
@@ -375,6 +389,9 @@ export default function Global() {
     const rs = gs === g ? roleOf : makeRoles(gs, P), ls = gs === g ? L : makeLabels(gs, P, terms);
     return buildView(gs, focusSetMany(gs, panelIds, rs), { P, roleOf: rs, L: ls, terms, runsAsCards: false });
   }, [panelKey, roleOf, L, S]);
+  // the pick is just the open claim (a plain click, D42): closing the cards or the list closes both
+  const onlyFocusPicked = !!focus && pickedIds?.size === 1 && pickedIds.has(focus);
+  const closePick = () => { if (onlyFocusPicked) setFocus(null); setPicked(null); };
   const nLoose = model?.claims.filter((c) => !c.anchors.length).length ?? 0;
   const anchorClaims = anchor && model ? model.claims.filter((c) => c.anchors.includes(anchor)) : [];
 
@@ -385,7 +402,8 @@ export default function Global() {
           title="open this file in the detail view (cards), without a selection">← Detail view</button>
         <h1>Global view</h1>
         <label>Data
-          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(null); setAnchor(null); }}>
+          {/* a new file: the pick (shared node, hand-picked claims) belonged to the old one (2026-11-13) */}
+          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(null); setAnchor(null); setPicked(null); }}>
             {datasets.map((d) => <option key={d.file} value={d.file}>{d.label}</option>)}
             {!datasets.some((d) => d.file === source) && <option value={source}>{source.replace('local:', '')}</option>}
           </select>
@@ -393,6 +411,7 @@ export default function Global() {
         <label className="file" title="Turtle (.ttl); N-Quads, TriG and N-Triples work too">Open Turtle file…
           <input type="file" accept=".ttl,.nq,.trig,.nt" onChange={async (e) => {
             const f = e.target.files[0]; if (!f) return;
+            e.target.value = ''; // so that choosing the same file again reloads it
             const text = await f.text(); rawRef.current = { name: f.name, text };
             setFocus(null); setAnchor(null); setPicked(null); setSource('local:' + f.name); loadText(text, f.name);
           }} />
@@ -407,12 +426,14 @@ export default function Global() {
           {kg.lay.stats.claims} claims · {kg.lay.stats.mapped} placed · {kg.lay.stats.hub} only very common anchors ·
           {' '}{kg.lay.stats.none} not in {centre} · parse {times.parse ?? '…'} ms · map {times.layout ?? '…'} ms
         </span>}
-        {model && !useKg && <span className="summary">
+        {model && !useKg && !useRing && !snapError && <span className="summary">loading the {centre} map…</span>}
+        {model && !useKg && useRing && <span className="summary">
           {model.claims.length} claims · {model.lay.anchors.size} anchors · {nLoose} not anchored ·
           {' '}parse {times.parse ?? '…'} ms · layout {times.layout ?? '…'} ms · Cytoscape {times.cytoscape ?? '…'} ms
         </span>}
       </header>
       {error && <div className="error">{error}</div>}
+      {snapError && mode === 'kg' && <div className="error">{snapError}</div>}
       <main>
         <div className="canvas">
           {useKg && <canvas ref={ringRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />}
@@ -421,7 +442,7 @@ export default function Global() {
         </div>
         {useKg && picked && <KgPanel picked={picked} ids={pickedIds} kg={kg} S={S} links={links} centre={centre}
           label={(id) => titleFor(g, id, 'claim', P, L)} nodeLabel={(k) => L.labelOf(k) || P.compact(k)} compact={P.compact}
-          onClaim={(id) => setFocus(id)} onPathway={(p) => { setPicked({ kind: 'pathway', p }); setFocus(null); }} onClose={() => setPicked(null)}
+          onClaim={(id) => setFocus(id)} onPathway={(p) => { setPicked({ kind: 'pathway', p }); setFocus(null); }} onClose={closePick}
           onOpenCards={openCards} />}
         {score && <ScorePanel score={score} all={scoreData} nClaims={model.claims.length} compact={P.compact}
           label={(id) => titleFor(g, id, 'claim', P, L)}
@@ -453,12 +474,13 @@ export default function Global() {
         {view && (
           <div className="canvas" style={{ flex: 1.3, borderLeft: '1px solid #cbd5e1', background: '#f8fafc' }}>
             <button style={{ position: 'absolute', top: 8, right: 8, zIndex: 10 }}
-              title={focus && pickedIds?.size ? 'back to the cards of the selection' : 'close the cards'}
-              onClick={() => (focus ? setFocus(null) : setPicked(null))}>× close</button>
+              title={focus && pickedIds?.size && !onlyFocusPicked ? 'back to the cards of the selection' : 'close the cards'}
+              onClick={() => (focus && !onlyFocusPicked ? setFocus(null) : closePick())}>× close</button>
             {focus && links && <LinksBar id={focus} links={links} label={(id) => titleFor(g, id, 'claim', P, L)}
               nodeLabel={(k) => L.labelOf(k) || P.compact(k)} compact={P.compact} color={linkColor}
               onClaim={(id) => setFocus(id)} onNode={(k) => { setPicked({ kind: 'node', key: k }); setFocus(null); }} />}
-            <ReactFlowProvider key={`${panelKey}|${S ? 'stubs' : ''}`}>
+            {/* terms: the term table may arrive after the first layout; a new key re-lays out (2026-11-13) */}
+            <ReactFlowProvider key={`${panelKey}|${S ? 'stubs' : ''}|${terms ? 'terms' : ''}`}>
               <Graph view={view} P={P} showMissing selected={null} onSelect={() => {}} exportRef={exportRef} mode="compact"
                 grid={panelIds.length > 1} />
             </ReactFlowProvider>
@@ -486,7 +508,7 @@ function KgLegend({ centre }) {
       </div>
       <div><span style={dot(ROLE_COLOR.claim)} /><b>Outer ring: your claims</b>, every one. They are grouped in blocks
         (bracket + label) by the {centre} group most of their anchors fall into. An anchor that sits in n pathways
-        counts 1/n for each. Click a claim for its cards.</div>
+        counts 1/n for each. Click a claim to select it and see its cards; shift-click to add more.</div>
       <div style={{ marginTop: 6 }}><span style={sw('rgba(124,58,237,0.25)')} /><b>Ribbons</b> lead from each block to
         every group its claims reach; the strong one is its own group.</div>
       <div style={{ marginTop: 6 }}><span style={sw('#6d28d9')} /><b>Inner ring: {centre}</b>, the same for every file.
@@ -553,7 +575,7 @@ function KgPanel({ picked, ids, kg, S, links, centre, label, nodeLabel, compact,
     return (
       <aside>
         <div className="aside-head">
-          <b>{e ? nodeLabel(picked.key) : `${picked.title || 'Selection'}: ${list.length} claims`}</b>
+          <b>{e ? nodeLabel(picked.key) : `${picked.title || 'Selection'}: ${list.length} claim${list.length === 1 ? '' : 's'}`}</b>
           <button onClick={onClose}>×</button>
         </div>
         {openBtn}

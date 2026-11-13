@@ -226,7 +226,8 @@ file's claims land in PlantMetWiki (PMW):
   (the claim points at it directly); grey = same source (reached only through evidence, e.g. the cited paper).
   Opened claim: halo, sibling arcs in these colours (nodes shared by > 30 claims are listed, not drawn) and a "Shares with other claims"
   bar over the cards ([select all n] picks that node). Hover: lighter arcs. Claims whose data node has other claims
-  get a dark ring. Shift-click collects a hand-picked set. Picks (group, pathway, shared node, set) dim the other
+  get a dark ring. A click on a claim dot selects that claim (a set of one, D42) and opens its cards; shift-click adds
+  to the set or removes from it (with the Score panel open, a click only opens the cards). Picks (group, pathway, shared node, set) dim the other
   claims, put halos on the picked ones and list them in the side panel.
 - **Open as cards / back** (`src/handoff.js`): every pick in the side panel has "Open these n claims in detail view →" (the detail view = the card viewer), and
   the header starts with "← Detail view" (mirrors "← Global view" in the card viewer; a hand-off without claims: the whole file, no selection). The

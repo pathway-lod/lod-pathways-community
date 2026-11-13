@@ -12,9 +12,12 @@ const fmt = (s) => (s < 60 ? `${Math.round(s)} s` : `${Math.floor(s / 60)} min $
  * @param {object} p.config     profile.validation: { index, label }
  * @param {string} p.fileName   base name for the saved file
  * @param {object|null} p.done  result of a validation of this file in this page ({seconds, counts}), or null
- * @param {(quads: object[], result: object) => void} p.onReport  called with the quads + report when finished
+ * @param {(quads: object[], result: object, from: object) => void} p.onReport  called with the quads + report when
+ *   finished; `from` is the `g` the validation started on (the caller ignores a report for a file no longer open)
+ * @param {(running: boolean) => void} [p.onBusy]  called when a validation starts and ends (the caller blocks its data
+ *   pickers meanwhile, 2026-11-13)
  */
-export default function ValidationControl({ g, config, fileName, done, onReport }) {
+export default function ValidationControl({ g, config, fileName, done, onReport, onBusy }) {
   const [run, setRun] = useState(null); // { phase, start, est, cancel }
   const [now, setNow] = useState(0);
   const [error, setError] = useState(null);
@@ -33,6 +36,7 @@ export default function ValidationControl({ g, config, fileName, done, onReport 
     setError(null);
     const t0 = performance.now();
     setRun({ phase: 'loading the shapes', start: t0, est }); setNow(t0);
+    onBusy?.(true);
     try {
       const { shapes, vocab } = await loadShapes(config.index);
       const job = startValidation({
@@ -42,11 +46,11 @@ export default function ValidationControl({ g, config, fileName, done, onReport 
       runRef.current = job;
       setRun((r) => ({ ...r, phase: 'starting', cancel: job.cancel }));
       const result = await job.promise;
-      onReport(withReport(g.quads, result.reportNq), { ...result, browserSeconds: (performance.now() - t0) / 1000 });
+      onReport(withReport(g.quads, result.reportNq), { ...result, browserSeconds: (performance.now() - t0) / 1000 }, g);
     } catch (e) {
       if (e.message !== 'cancelled') setError(e.message);
     } finally {
-      runRef.current = null; setRun(null);
+      runRef.current = null; setRun(null); onBusy?.(false);
     }
   };
 
