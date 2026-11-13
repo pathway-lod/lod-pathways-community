@@ -17,11 +17,14 @@ datasets that disagree give conflicting evidence on one claim. The claim also re
 PlantMetWiki gene nodes or the pathway, next to rdf:subject/rdf:object (redundant; kept for review). There is
 no anchor, anchor tier or organism on the claims: pathway and organism are reached from the PlantMetWiki gene
 node by query (dcterms:isPartOf, wp:organism). Gene nodes are found by their Solyc locus ("gene-" prefix and
-version suffix removed); the locus itself is not written. Values sit on the evidence node. Each run uses
-(prov:used) a node for the matrix it read, typed with its value type (STATO counts, TPM, FPKM or RPKM); a
-differential expression run is also typed with its multiple-testing method (OBI:0200036) and generates a
-median-of-ratios normalised count node (STATO:0000590). Conditions carry the plant structure
-(lodp:plantStructure, a PO term) and the replicate count.
+version suffix removed); the locus itself is not written. Values sit on the evidence node.
+Details are statements, not extra nodes: the contrast or condition that is the object of a claim is an IRI
+with no statements of its own, and what it stands for is stated on the claim (lodp:conditionType treatment,
+lodp:testCondition and lodp:referenceCondition as text, lodp:testReplicateCount and lodp:referenceReplicateCount
+or lodp:replicateCount, lodp:plantStructure as a PO term). The matrix a run read is stated on the run
+(lodp:inputUnit: STATO counts, TPM, FPKM or RPKM; lodp:inputFile); a differential expression run is also typed
+with its multiple-testing method (OBI:0200036) and states its normalisation (lodp:normalisationMethod
+STATO:0000590 median of ratios; lodp:normalisedFile).
 
 Usage (from this folder; rdflib and pandas, e.g. the shape_constraints venv):
   python to_turtle.py [-o transcriptomics.ttl]
@@ -212,7 +215,7 @@ def refresh_pathways():
 
 
 # --- Input matrix of a run (TX-03, TX-04) --------------------------------------------------------------
-INPUT_TYPES = {                         # what the matrix a run read holds -> value type
+INPUT_UNITS = {                         # what the matrix a run read holds -> value type
     "COUNTS": OBO.STATO_0000064,        # TX-03 sequence read count
     "TPM": OBO.STATO_0000589,           # TX-04
     "FPKM": OBO.STATO_0000172,
@@ -224,27 +227,25 @@ ASSAY_ECO = {"rnaseq": OBO.ECO_0006069, "microarray": OBO.ECO_0007301}
 
 
 def add_input(g, run, unit, label):
-    """The matrix the run read, as its own node: run prov:used <input>; typed with its value type when it is
-    counts, TPM, FPKM or RPKM (no type for other values, e.g. log2 ComBat; the shapes warn)."""
-    node = LODP["input_" + str(run)[len(str(LODP)) + len("run_"):]]
-    g.add((run, PROV.used, node))
-    t = INPUT_TYPES.get(str(unit).upper())
+    """The matrix the run read, as statements on the run: lodp:inputFile (file and source) and lodp:inputUnit
+    (its value type) when it is counts, TPM, FPKM or RPKM (none for other values, e.g. log2 ComBat: a comment
+    instead; the shapes warn)."""
+    g.add((run, LODP.inputFile, Literal(label)))
+    t = INPUT_UNITS.get(str(unit).upper())
     if t is not None:
-        g.add((node, RDF.type, t))
-    g.add((node, RDFS.label, Literal(label)))
-    if t is None:
-        g.add((node, RDFS.comment, Literal(f"values: {unit} (no TX-03/TX-04 term)")))
-    return node
+        g.add((run, LODP.inputUnit, t))
+    else:
+        g.add((run, RDFS.comment, Literal(f"input values: {unit} (no TX-03/TX-04 term)")))
 
 
 # --- Reading an nf-core differentialabundance folder (or an adapter folder) ------------------------
-def add_structure(g, cond, curie, note=None):
-    """TX-19: plant structure of the samples of a condition, as a Plant Ontology term (samplesheet column
+def add_structure(g, claim, curie, note=None):
+    """TX-19: plant structure of the samples, as a Plant Ontology term on the claim (samplesheet column
     plant_structure, e.g. PO:0009005 root); plant_structure_note as a comment (e.g. hairy root, no PO term)."""
     if isinstance(curie, str) and re.fullmatch(r"PO:\d{7}", curie):
-        g.add((cond, LODP.plantStructure, OBO[curie.replace(":", "_")]))
+        g.add((claim, LODP.plantStructure, OBO[curie.replace(":", "_")]))
     if isinstance(note, str) and note and note != "nan":
-        g.add((cond, RDFS.comment, Literal(f"plant structure: {note}")))
+        g.add((claim, RDFS.comment, Literal(f"plant structure: {note}")))
 
 
 # --- Differential expression claims ------------------------------------------------------------------
@@ -270,25 +271,14 @@ def differential(d, datasets, study, experiment):
     if info["p_adjust"] == "BH":
         g.add((run, RDF.type, OBO.OBI_0200036))            # TX-13 Benjamini-Hochberg correction
     # TX-05: DESeq2 normalises by median of ratios; the normalised matrix is an output of the run
-    norm = LODP["normalised_" + str(run)[len(str(LODP)) + len("run_"):]]
-    g.add((norm, RDF.type, OBO.STATO_0000590))
-    g.add((norm, PROV.wasGeneratedBy, run))
-    g.add((norm, RDFS.label, Literal(info["normalised"])))
+    g.add((run, LODP.normalisationMethod, OBO.STATO_0000590))
+    g.add((run, LODP.normalisedFile, Literal(info["normalised"])))
 
     n = 0
     for c in info["contrasts"]:
+        # the contrast is the claim's object, an IRI with no statements; what it compares is stated on the claim
         contrast = LODP[f"contrast_{slug(experiment)}_{slug(c['id'])}"]
-        g.add((contrast, RDFS.label, Literal(f"{c['variable']}: {c['target']} vs {c['reference']}")))
-        for prop, value in [(LODP.testCondition, c["target"]), (LODP.referenceCondition, c["reference"])]:
-            cond = LODP[f"condition_{slug(experiment)}_{slug(c['variable'])}_{slug(value)}"]
-            meta = c["conditions"][value]
-            g.add((contrast, prop, cond))
-            g.add((cond, RDF.type, EFO.EFO_0000727))       # TX-20 treatment
-            g.add((cond, RDFS.label, Literal(f"{c['variable']}: {value}")))
-            g.add((cond, LODP.replicateCount, Literal(int(meta["replicates"]))))
-            add_structure(g, cond, meta.get("plant_structure"), meta.get("plant_structure_note"))
-        if c.get("blocking"):
-            g.add((contrast, RDFS.comment, Literal(f"blocking factor(s): {c['blocking']}")))
+        test, ref = c["conditions"][c["target"]], c["conditions"][c["reference"]]
         for r in res_all[res_all["contrast"] == c["id"]].itertuples():
             if r.locus not in genes.index or pd.isna(r.log2FoldChange):
                 continue
@@ -296,6 +286,15 @@ def differential(d, datasets, study, experiment):
             claim = add_statement(g, LODP.DifferentialExpressionClaim, gene["gene_node"], LODP.differentiallyExpressedIn,
                                   contrast, f"{gene['label']} differentially expressed in {c['target']} vs {c['reference']}",
                                   refers=[gene["gene_node"]])
+            g.add((claim, LODP.conditionType, EFO.EFO_0000727))                 # TX-20 treatment
+            g.add((claim, LODP.testCondition, Literal(f"{c['variable']}: {c['target']}")))
+            g.add((claim, LODP.referenceCondition, Literal(f"{c['variable']}: {c['reference']}")))
+            g.add((claim, LODP.testReplicateCount, Literal(int(test["replicates"]))))        # TX-18
+            g.add((claim, LODP.referenceReplicateCount, Literal(int(ref["replicates"]))))
+            for meta in (test, ref):                                                         # TX-19
+                add_structure(g, claim, meta.get("plant_structure"), meta.get("plant_structure_note"))
+            if c.get("blocking"):
+                g.add((claim, RDFS.comment, Literal(f"blocking factor(s): {c['blocking']}")))
             ev = add_evidence(g, claim, run, study, [OBO.ECO_0006069])   # TX-02 RNA-sequencing evidence (automatic)
             direction = sign_term(r.log2FoldChange, OBO.RO_0002245, OBO.RO_0002246)   # over- / under-expressed in
             if direction is not None:
@@ -462,13 +461,14 @@ def profile(d, datasets, out, study, experiment=None):
             continue
         gene = genes.loc[r["gene"]]
         what = ", ".join(f"{f} {r[f]}" for f in factors)
+        # the condition is the claim's object, an IRI with no statements; what it stands for is stated on the claim
         cond = LODP[f"condition_{slug(experiment)}_{slug(r['condition'])}"]
-        g.add((cond, RDF.type, EFO.EFO_0000727))           # TX-20 treatment
-        g.add((cond, RDFS.label, Literal(what)))
-        g.add((cond, LODP.replicateCount, Literal(int(r["replicates"]))))
-        add_structure(g, cond, r.get("plant_structure"), r.get("plant_structure_note"))
         claim = add_statement(g, LODP.ExpressionProfileClaim, gene["gene_node"], LODP.expressionDeviatesIn, cond,
                               f"{gene['label']}: expression unusual under {what}", refers=[gene["gene_node"]])
+        g.add((claim, LODP.conditionType, EFO.EFO_0000727))                     # TX-20 treatment
+        g.add((claim, LODP.testCondition, Literal(what)))
+        g.add((claim, LODP.replicateCount, Literal(int(r["replicates"]))))      # TX-18
+        add_structure(g, claim, r.get("plant_structure"), r.get("plant_structure_note"))   # TX-19
         ev = add_evidence(g, claim, run, study, [OBO.ECO_0006069])   # TX-02 RNA-sequencing evidence (automatic)
         direction = sign_term(r["zscore"], OBO.RO_0002245, OBO.RO_0002246)   # over- / under-expressed in
         if direction is not None:

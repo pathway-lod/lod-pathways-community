@@ -31,11 +31,12 @@ The input standard is the output of existing [nf-core](https://nf-co.re) pipelin
   - `RO:0017003` positively or `RO:0017004` negatively correlated with, from the sign of r.
 
   Datasets that disagree therefore give conflicting evidence on one claim (a warning), not two opposite claims. For a gene pair, the two gene IRIs are in alphabetical order, as the relation is symmetric. The claim also refers (`sio:SIO_000628`) to the same nodes, which is redundant with `rdf:subject` and `rdf:object`. It is kept for review.
+- **Details as statements, not extra nodes.** The contrast or condition that is the object of a claim is an IRI with no statements of its own; what it stands for is stated on the claim (conditions as text, replicate counts, condition type, plant structure). The matrix a run read and the normalisation are stated on the run (`lodp:inputUnit`, `lodp:inputFile`, `lodp:normalisationMethod`, `lodp:normalisedFile`). Runs, evidence and the PlantMetWiki nodes stay nodes.
 - **Differential expression.** DESeq2 through nf-core/differentialabundance (`--deseq2_shrink_lfc false`, so the Wald statistic is kept), on the counts of nf-core/rnaseq (Salmon) and on the Expression Atlas HTSeq counts. The published Atlas results are the third route; their `p-value` column is the adjusted p-value. Values on the evidence node:
   - log2FC, Wald statistic, lfcSE, baseMean, p-value, adjusted p-value (TX-08 to TX-12);
-  - the contrast with its test and reference conditions (TX-17), replicate count (TX-18), plant structure as a PO term (TX-19), treatment (TX-20).
+  - on the claim: the contrast's test and reference conditions (`lodp:testCondition`, `lodp:referenceCondition`; TX-17), their replicate counts (`lodp:testReplicateCount`, `lodp:referenceReplicateCount`; TX-18), plant structure as a PO term (TX-19), condition type treatment (`lodp:conditionType`; TX-20).
 
-  The run is typed with `OBI:0200036` Benjamini-Hochberg (TX-13), uses a count-matrix node typed `STATO:0000064` (TX-03), and generates a `STATO:0000590` median-of-ratios node (TX-05).
+  The run is typed with `OBI:0200036` Benjamini-Hochberg (TX-13), reads read counts (`lodp:inputUnit STATO:0000064`, TX-03) and normalises by median of ratios (`lodp:normalisationMethod STATO:0000590`, TX-05).
 - **Response profile.** The z-score of each condition mean across all condition means of a gene, on log2(RPKM + 1) with population SD (TX-06), with the mean in RPKM (TX-04). This is not a test against a control. Only the MEANtools set has enough conditions; E-MTAB-11876 has 2, where z is always ±0.71.
 - **Gene co-expression.** Pearson r and its p-value, Spearman ρ, and the mutual rank over all genes with variance (TX-14, TX-16), for all pairs of PlantMetWiki genes in a matrix.
 - **Pathway co-expression.** For each PlantMetWiki pathway with at least 3 genes in the matrix: the mean pairwise Pearson r, against 10,000 random gene sets of the same size (seed 20261112), with an empirical one-sided p-value.
@@ -87,11 +88,11 @@ The RDF is written by `shape_constraints/build_rdf.py transcriptomics` (`to_turt
 | Gene co-expression | 163 gene pairs (120 + 78 + 136 evidence nodes from the three datasets) | E-MTAB-11876 has only 6 samples: 89 pairs p ≥ 0.05, and 36 pairs conflict in sign with the other datasets |
 | Pathway co-expression | 5 pathways, MEANtools and ATTED-II | all p = 0.0001, the smallest possible with 10,000 sets. α-tomatine biosynthesis: mean r 0.96 (MEANtools) and 0.80 (ATTED-II, where random sets give 0.29) |
 
-Validation: 10,252 triples, 619 claims, 831 evidence nodes, **0 violations**, 604 warnings. The warnings are weak or incomplete support:
+Validation: 11,980 triples, 619 claims, 831 evidence nodes, **0 violations**, 1,009 warnings. The warnings are weak or incomplete support:
+- 432 response profile claims whose condition has 2 replicates (all 27 MEANtools conditions);
 - 395 response profiles with |z| < 2;
 - 89 co-expression pairs with p ≥ 0.05, and 44 negative correlations;
 - 36 conflicting directions;
-- 27 conditions with 2 replicates;
 - 11 differential expression results that are not significant or have no adjusted p-value;
 - 2 ATTED-II runs whose log2 ComBat input has no unit term.
 
