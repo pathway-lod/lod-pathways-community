@@ -182,6 +182,9 @@ lodp:candidateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label
 # triple; the direction of the effect (up/down, positive/negative) is on each evidence node (lodp:direction),
 # so datasets that disagree give conflicting evidence on one claim instead of two opposite claims.
 # TX claims refer to the PlantMetWiki nodes they measure and are not anchored (see lodp:TranscriptomicsClaim).
+# Details are statements, not extra nodes: the contrast or condition that is a claim's object is an IRI with
+# no statements of its own, and what it stands for is stated on the claim; the input matrix and the
+# normalisation are stated on the run.
 @prefix obo:  <http://purl.obolibrary.org/obo/> .
 @prefix efo:  <http://www.ebi.ac.uk/efo/> .
 
@@ -203,7 +206,7 @@ lodp:CoexpressionRun a owl:Class ;
 lodp:DifferentialExpressionClaim a owl:Class ;
     rdfs:subClassOf lodp:TranscriptomicsClaim , rdf:Statement ;
     rdfs:label "differential expression claim" ;
-    rdfs:comment "A gene's expression differs between the two conditions of a contrast: the statement <gene> lodp:differentiallyExpressedIn <contrast>. Also refers (sio:SIO_000628) to the PlantMetWiki gene node; the values (log2 fold change, test statistic, p-values) and the direction (lodp:direction) sit on the evidence node." .
+    rdfs:comment "A gene's expression differs between the two conditions of a contrast: the statement <gene> lodp:differentiallyExpressedIn <contrast>. The contrast is an IRI with no statements of its own; its conditions (lodp:testCondition, lodp:referenceCondition), replicate counts, condition type and plant structure are stated on the claim. Also refers (sio:SIO_000628) to the PlantMetWiki gene node; the values (log2 fold change, test statistic, p-values) and the direction (lodp:direction) sit on the evidence node." .
 
 lodp:DifferentialExpressionRun a owl:Class ;
     rdfs:subClassOf lodp:Run ;
@@ -219,29 +222,62 @@ lodp:direction a owl:ObjectProperty ;
     rdfs:label "direction" ;
     rdfs:comment "The direction an evidence node finds for the relation of its claim, as a relation term: obo:RO_0002245 over-expressed in or obo:RO_0002246 under-expressed in (differential expression, response profile; relative to the reference condition or to the mean over all conditions), obo:RO_0017003 positively or obo:RO_0017004 negatively correlated with (co-expression)." .
 
-lodp:testCondition a owl:ObjectProperty ;
-    rdfs:label "test condition" ;
-    rdfs:comment "The condition of a contrast whose expression is compared (numerator); lodp:log2FoldChange is positive when expression is higher here. nf-core/differentialabundance: 'target'." .
+lodp:conditionType a owl:ObjectProperty ;
+    rdfs:label "condition type" ;
+    rdfs:comment "What kind of condition a claim's contrast or condition is, as a class: efo:EFO_0000727 'treatment' (TX-20)." ;
+    rdfs:seeAlso efo:EFO_0000727 .
 
-lodp:referenceCondition a owl:ObjectProperty ;
+lodp:testCondition a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "test condition" ;
+    rdfs:comment "On a differential expression claim: the condition of its contrast whose expression is compared (numerator), as text, e.g. 'treatment: jasmonate'; lodp:log2FoldChange is positive when expression is higher here (nf-core/differentialabundance: 'target'). On an expression profile claim: the condition of its object, as text, e.g. 'treatment Ct, time_h 24'." .
+
+lodp:referenceCondition a owl:DatatypeProperty ; rdfs:range xsd:string ;
     rdfs:label "reference condition" ;
-    rdfs:comment "The condition of a contrast the test condition is compared against (denominator). nf-core/differentialabundance: 'reference'." .
+    rdfs:comment "On a differential expression claim: the condition of its contrast the test condition is compared against (denominator), as text (nf-core/differentialabundance: 'reference')." .
 
 lodp:replicateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ;
     rdfs:label "replicate count" ;
-    rdfs:comment "Number of samples of a condition in the analysis, each in the role efo:EFO_0000683 'replicate' (TX-18). The claims have no sample nodes, so TX-18's class is used in this definition, not as a type." ;
+    rdfs:comment "On an expression profile claim: number of samples of its condition in the analysis, each in the role efo:EFO_0000683 'replicate' (TX-18). There are no sample nodes, so TX-18's class is used in this definition, not as a type." ;
+    rdfs:seeAlso efo:EFO_0000683 .
+
+lodp:testReplicateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "test replicate count" ;
+    rdfs:comment "On a differential expression claim: number of samples of the test condition (TX-18, as lodp:replicateCount)." ;
+    rdfs:seeAlso efo:EFO_0000683 .
+
+lodp:referenceReplicateCount a owl:DatatypeProperty ; rdfs:range xsd:integer ;
+    rdfs:label "reference replicate count" ;
+    rdfs:comment "On a differential expression claim: number of samples of the reference condition (TX-18, as lodp:replicateCount)." ;
     rdfs:seeAlso efo:EFO_0000683 .
 
 lodp:plantStructure a owl:ObjectProperty ;
     rdfs:label "plant structure" ;
-    rdfs:comment "The plant structure (tissue or organ) the samples of a condition were taken from: a subclass of obo:PO_0009011 'plant structure' (TX-19), e.g. obo:PO_0009005 root, obo:PO_0025034 leaf. Same term as MET-24 for metabolomics samples." ;
+    rdfs:comment "The plant structure (tissue or organ) the samples of a claim's condition or contrast were taken from: a subclass of obo:PO_0009011 'plant structure' (TX-19), e.g. obo:PO_0009005 root, obo:PO_0025034 leaf. Same term as MET-24 for metabolomics samples." ;
     rdfs:seeAlso obo:PO_0009011 .
+
+# --- Run: input matrix and normalisation (all TX runs) ----------------------------------------------
+lodp:inputUnit a owl:ObjectProperty ;
+    rdfs:label "input unit" ;
+    rdfs:comment "Value type of the expression matrix a run read, as a class: obo:STATO_0000064 read counts (TX-03), obo:STATO_0000589 TPM, obo:STATO_0000172 FPKM or obo:STATO_0000206 RPKM (TX-04)." .
+
+lodp:inputFile a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "input file" ;
+    rdfs:comment "The expression matrix a run read: file name, path and source, as text." .
+
+lodp:normalisationMethod a owl:ObjectProperty ;
+    rdfs:label "normalisation method" ;
+    rdfs:comment "Normalisation a run applied to the counts, as a class: obo:STATO_0000590 median of ratios (TX-05), the DESeq2 normalisation." ;
+    rdfs:seeAlso obo:STATO_0000590 .
+
+lodp:normalisedFile a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:label "normalised file" ;
+    rdfs:comment "The normalised matrix a run wrote: file name and path, as text." .
 
 # --- Response profile ------------------------------------------------------------------------------
 lodp:ExpressionProfileClaim a owl:Class ;
     rdfs:subClassOf lodp:TranscriptomicsClaim , rdf:Statement ;
     rdfs:label "expression profile claim" ;
-    rdfs:comment "A gene's expression in one condition is unusually high or low compared with its expression over all conditions of the experiment: the statement <gene> lodp:expressionDeviatesIn <condition>. Also refers (sio:SIO_000628) to the PlantMetWiki gene node; the z-score, the condition mean and the direction (lodp:direction) sit on the evidence node. Not a test against a control." .
+    rdfs:comment "A gene's expression in one condition is unusually high or low compared with its expression over all conditions of the experiment: the statement <gene> lodp:expressionDeviatesIn <condition>. The condition is an IRI with no statements of its own; what it stands for (lodp:testCondition), its replicate count, condition type and plant structure are stated on the claim. Also refers (sio:SIO_000628) to the PlantMetWiki gene node; the z-score, the condition mean and the direction (lodp:direction) sit on the evidence node. Not a test against a control." .
 
 lodp:ExpressionProfileRun a owl:Class ;
     rdfs:subClassOf lodp:Run ;

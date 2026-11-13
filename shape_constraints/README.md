@@ -98,10 +98,10 @@ uv pip install --python .venv/bin/python -r requirements.txt     # pinned versio
 | 2 Association | MEANtools tomato pilot | 1,293 associations from significant clusters (p < 0.05); 26,338 triples | 0 | **1,293** (all weak anchors) |
 | 3 Annotation | MS/MS pilot (Brassicaceae) | 2,722 annotations, 3,650 evidence nodes; 54,097 triples | 0 | 5 |
 | 4 PlantCyc | PlantMetWiki citations | 364 nodes, 409 evidence entries; 4,207 triples | 0 | 0 |
-| 5 Transcriptomics (2026-11) | transcriptomics pilot (tomato) | 619 claims, 831 evidence nodes; 10,252 triples | 0 | 604 (weak or incomplete support, 36 conflicting directions) |
+| 5 Transcriptomics (2026-11) | transcriptomics pilot (tomato) | 619 claims, 831 evidence nodes; 11,980 triples | 0 | 1,009 (weak or incomplete support, 36 conflicting directions) |
 
 The sample graph in [`examples/`](../examples/) validates with 0 violations and 1 warning (its cluster is not significant, on purpose).
-The transcriptomics sample (`examples/sample_transcriptomics_graph.ttl`) validates with 0 violations and 3 warnings (two inputs without a unit term, one condition with 2 replicates). Transcriptomics claims are `rdf:Statement`s that refer to the PlantMetWiki gene nodes (or pathway) they measure and are not anchored: `common.ttl` exempts `lodp:TranscriptomicsClaim` from the anchor and anchor-tier rules (see [`../pilots/transcriptomics_overlap/`](../pilots/transcriptomics_overlap/)).
+The transcriptomics sample (`examples/sample_transcriptomics_graph.ttl`) validates with 0 violations and 3 warnings (two runs whose input has no unit term, one claim whose condition has 2 replicates). Transcriptomics claims are `rdf:Statement`s that refer to the PlantMetWiki gene nodes (or pathway) they measure and are not anchored: `common.ttl` exempts `lodp:TranscriptomicsClaim` from the anchor and anchor-tier rules (see [`../pilots/transcriptomics_overlap/`](../pilots/transcriptomics_overlap/)).
 
 ## What running real data through the shapes showed
 

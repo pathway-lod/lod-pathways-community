@@ -225,7 +225,6 @@ TX_S3B = LODP["claim_PWY18C3-3_type_CoexpressedGenePathway"]
 TX_S1_EV = LODP["evidence_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none_EMTAB11876_nfcore_salmon"]
 TX_S3A_EV = LODP["evidence_HQ293016_correlatedWith_G18C3-3_meantools_rpkm"]
 TX_RUN_S1 = LODP.run_differential_expression_EMTAB11876_nfcore_salmon
-TX_COND = LODP.condition_EMTAB11876_treatment_jasmonate
 
 
 def tx_swap_subject_object(g):
@@ -260,9 +259,12 @@ def tx_cases():
     yield "differential expression without log2 fold change", lambda g: rm(g, TX_S1_EV, LODP.log2FoldChange), [(V, "lodp:log2FoldChange (TX-08) is required")]
     yield "differential expression direction against the sign", lambda g: put(g, TX_S1_EV, LODP.direction, OBO.RO_0002246), [(V, "does not match the sign")]
     yield "differential expression run without BH type is a warning", lambda g: rm(g, TX_RUN_S1, RDF.type, OBO.OBI_0200036), [(W, "multiple-testing correction")]
-    yield "condition with a plant structure that is not PO", lambda g: put(g, TX_COND, LODP.plantStructure, URIRef("http://example.org/root")), [(V, "Plant Ontology IRI")]
-    yield "condition without plant structure is a warning", lambda g: rm(g, TX_COND, LODP.plantStructure), [(W, "which plant structure")]
-    yield "replicate count as text", lambda g: put(g, TX_COND, LODP.replicateCount, Literal("three")), [(V, "lodp:replicateCount (TX-18)")]
+    yield "differential expression run without normalisation is a warning", lambda g: rm(g, TX_RUN_S1, LODP.normalisationMethod), [(W, "state its normalisation")]
+    yield "run without input unit is a warning", lambda g: rm(g, TX_RUN_S1, LODP.inputUnit), [(W, "value type of the matrix")]
+    yield "differential expression without reference condition", lambda g: rm(g, TX_S1, LODP.referenceCondition), [(V, "exactly one lodp:referenceCondition")]
+    yield "plant structure that is not PO", lambda g: put(g, TX_S1, LODP.plantStructure, URIRef("http://example.org/root")), [(V, "Plant Ontology IRI")]
+    yield "claim without plant structure is a warning", lambda g: rm(g, TX_S2, LODP.plantStructure), [(W, "which plant structure")]
+    yield "replicate count as text", lambda g: put(g, TX_S1, LODP.testReplicateCount, Literal("three")), [(V, "lodp:testReplicateCount (TX-18)")]
     yield "response profile with another predicate", lambda g: put(g, TX_S2, RDF_NS.predicate, OBO.RO_0002610), [(V, "predicate of an expression profile claim")]
     yield "response profile about a gene, not a condition", lambda g: put(g, TX_S2, RDF_NS.object, URIRef("https://identifiers.org/plantcyc/G18C3-2")), [(V, "object of an expression profile claim")]
     yield "co-expression genes not in alphabetical order", tx_swap_subject_object, [(V, "alphabetical order")]
@@ -278,8 +280,8 @@ class TranscriptomicsSampleIsValid(unittest.TestCase):
         res = validate.validate([TX_SAMPLE])
         self.assertEqual(res["violations"], 0, validate.format_report(res))
         self.assertEqual(sorted(r["message"][:39] for r in res["results"]),
-                         ["Fewer than 3 replicates in a condition.", "The run should use (prov:used) an input",
-                          "The run should use (prov:used) an input"])
+                         ["Fewer than 3 replicates in the conditio", "The run should state the value type of ",
+                          "The run should state the value type of "])
 
 
 class BrokenTranscriptomicsSamples(unittest.TestCase):
