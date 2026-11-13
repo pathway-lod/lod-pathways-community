@@ -2,7 +2,8 @@
 
 The card viewer can validate the loaded file against the repository's SHACL shapes in the browser ("Run SHACL
 validation" in the header, where a file without a report used to say "no SHACL report"). Nothing is uploaded; it
-works on GitHub Pages. Decision D31 (2026-11-12). Built and checked 2026-11-12; details in Martin's session notes.
+works on GitHub Pages. Decision D31 (2026-11-12). Built and checked 2026-11-12. Everything needed to maintain it is in this file; the upstream status of the
+shacl-engine bugs is in "Upstream status" below.
 
 ## What the user sees
 
@@ -45,11 +46,14 @@ shacl-engine found 54 of 83 expected problems in the repository's shape tests an
 
 1. **Several `sh:sparql` on one shape** (a bug): shacl-engine compiles them as one constraint whose query is empty, so
    every focus node gets a false violation and the real constraints never run. engine.js compiles each `sh:sparql`
-   node on its own. (A fix for upstream is drafted, not submitted.)
+   node on its own. Also skips SPARQL constraints with `sh:deactivated true` (stock 1.1.3 ignores that, a second bug).
+   See "Upstream status".
 2. **Subclasses**: shacl-engine follows `rdfs:subClassOf` (for `sh:targetClass`, `sh:class`) only in the shapes graph;
    the vocabulary is therefore added to the shapes as well as to the data (pyshacl reads it from the data).
 3. **Message of a SPARQL constraint**: shacl-engine prefers the shape's `sh:message`; engine.js uses the constraint's
-   own, as pyshacl does.
+   own, as pyshacl does. Note: shacl-engine is the one that follows the spec here (SHACL §2.1.5: a shape's
+   `sh:message` applies to all its results); pyshacl differs. We follow pyshacl so both validators agree. The cleaner
+   fix is in our shapes (no shape-level `sh:message` next to SPARQL constraints, seen in the BGC link shapes).
 
 ## Speed
 
@@ -82,6 +86,18 @@ There are no automated tests. After changing `src/validation/`, the shapes or th
    path, value).
 2. In a browser: open a file without a report (e.g. a pilot RDF bundled locally, see CLAUDE.md), click the button,
    check the progress bar, the marks on the cards, the saved `.nq` and that reopening it shows the report.
+
+## Upstream status (checked 2026-11-12)
+
+| Problem | Spec | Upstream | Here |
+|---|---|---|---|
+| Several `sh:sparql` on one shape: none runs, every focus node gets one fused violation | §5.2: each `sh:sparql` value is its own constraint | **not reported**; same code on `master` (`6418118`) and branch `experimental`. Patch ready, not submitted: [upstream/shacl-engine-multiple-sparql.patch](upstream/shacl-engine-multiple-sparql.patch) (against `master` `6418118`, adds `test/assets/sparql/multiple.ttl`; 155/155 upstream tests pass with it, the new test fails without) | correction 1 |
+| `sh:deactivated true` on a SPARQL constraint ignored | §5.3 | **not reported**; would be a two-line follow-up to the patch | correction 1; only the literal `"true"` is recognised, `"1"^^xsd:boolean` would slip through |
+| `rdfs:subClassOf` read from the shapes graph only | SHACL instance definition uses the data graph | already reported: rdf-ext/shacl-engine issue #84 (open) | correction 2 |
+| Comunica 5.4.1: `NOT EXISTS { … UNION … }` with `$this` unbound returns no rows | | not reported | such queries run per node (see Speed) |
+
+Posting the issue/PR upstream is a decision for the maintainers of this viewer (not done as of 2026-11-13). If
+shacl-engine releases a fix, re-run "How to check a change" before unpinning: engine.js imports files from its `lib/`.
 
 ## Open
 

@@ -53,9 +53,23 @@ The side column is the evidence column (slide) or the data + evidence column (co
 
 ## 3. Other columns
 
-- **data** (slide layout only; in compact it is part of the blocks) and **runs**: `placeColumn` sorts the cards by
+- **data** (slide layout only; in compact it is part of the blocks): `placeColumn` sorts the cards by
   their *desired* y (mean centre of their already placed neighbours) and places each at that y, pushed down to
   avoid overlapping the card above.
+- **runs** (2026-11-13, D40) as trees, with the same placement as the knowledge graph (`placeKg`, below), but the
+  groups come from `runTrees`: one tree per run that a card outside the run column points to (evidence, a claim);
+  its parts (agent, parameters, the agent's organisation; role `run`, see architecture.md "Roles") hang below it
+  along the links (directed, not either direction as in the KG). A part reachable from several linked runs belongs
+  to the first (input order). A run that evidence points to is always its own root, even if another run points to
+  it: inside another run's tree the evidence edge into it would cross the cards above. Trees are stacked (never
+  side by side). Compact: the run column is the leftmost one, so the trees are mirrored and grow to the left, and
+  no card goes right of the column (the gap to the right stays free); slide: they grow to the right, no card left
+  of the column. A run without parts is a one-card tree, placed like `placeColumn` would (centred on its
+  neighbours) but `BLOCK_GAP/2` instead of `GAP_Y` below the previous one. Run → run links that are not tree links
+  (`prov:wasInformedBy` between two linked runs) are **loops** (`pos.loops`, `LoopEdge.jsx`): out of one card's
+  side, along the column, into the other's same side, on the side the trees do not grow into (right in compact,
+  left in slide); nested by vertical span, shortest innermost, `LOOP_STEP` 14 px apart. They are left out of the
+  gap-track counting (`trackBands`).
 - **knowledge graph** as trees growing downward (`kgTrees`, `placeKg`): cards linked to each other (KG-to-KG edges,
   e.g. metabolite → pathways) form a group (connected component). Depth inside a group = link distance in either
   direction from the cards linked from outside the group (the anchors of claims; a group nothing outside links to

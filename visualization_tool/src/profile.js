@@ -31,7 +31,7 @@ const startsAny = (iri, list) => list.some((ns) => iri.startsWith(ns));
 export function makeRoles(g, P) {
   const cache = new Map();
   const isA = (k, classes) => classes.size && typesOf(g, k).some((t) => [...g.supers(t)].some((c) => classes.has(c)));
-  return (k) => {
+  const roleOf = (k) => {
     if (cache.has(k)) return cache.get(k);
     const outs = g.out.get(k) || [], ins = g.inc.get(k) || [];
     let role = 'data';
@@ -40,9 +40,18 @@ export function makeRoles(g, P) {
     else if (isA(k, P.claimClasses) || outs.some((t) => P.claimHas.has(t.p.value))) role = 'claim';
     else if (ins.some((t) => P.evidenceObjectOf.has(t.p.value))) role = 'evidence';
     else if (isA(k, P.runClasses) || ins.some((t) => P.runObjectOf.has(t.p.value))) role = 'run';
+    // run part (2026-11-13, D40): a node with triples that only runs (or other run parts) point to, e.g. the run's
+    // software agent, its parameter set, the organisation behind the agent, belongs to the run. A node that a claim,
+    // evidence or data node also points to (e.g. a dataset the run used and a feature names) stays data.
+    // Provisional 'data' in the cache stops cycles.
+    else if (outs.length && ins.length) {
+      cache.set(k, 'data');
+      if (ins.every((t) => { const s = key(t.s); return s !== k && roleOf(s) === 'run'; })) role = 'run';
+    }
     cache.set(k, role);
     return role;
   };
+  return roleOf;
 }
 
 // --- labels and titles ---------------------------------------------------------------------------
@@ -78,7 +87,8 @@ export function titleFor(g, k, role, P, L) {
     const run = (g.out.get(k) || []).find((t) => P.generatedBy.has(t.p.value));
     return `Evidence · ${run ? L.runSummary(key(run.o)) : lab || tn || ''}`;
   }
-  if (role === 'run') return L.runSummary(k);
+  // a run with software/version: its summary; a run part (agent, parameter set; D40): type and label as other cards
+  if (role === 'run' && P.runSummary.some((p) => valueOf(g, k, p))) return L.runSummary(k);
   if (tn && lab) return `${tn} · ${lab}`;
   return lab || tn || (k.startsWith('_:') ? 'blank node' : P.compact(k));
 }

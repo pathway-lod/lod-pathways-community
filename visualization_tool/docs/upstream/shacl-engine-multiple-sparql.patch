@@ -1,0 +1,124 @@
+diff --git a/lib/validations/sparql.js b/lib/validations/sparql.js
+index 5b8770d..456ecfe 100644
+--- a/lib/validations/sparql.js
++++ b/lib/validations/sparql.js
+@@ -18,19 +18,28 @@ function stringifyPrefixes (ptr, prefixes = []) {
+ }
+ 
+ function compileSparql (shape) {
+-  const select = shape.sparql.out([ns.sh.select]).value
+-  const prefixes = stringifyPrefixes(shape.sparql.out([ns.sh.prefixes]))
+   const sparqlPath = stringifyPath(shape.path)
+-  const message = shape.sparql.out([ns.sh.message]).terms
+ 
+-  const query = [...prefixes, select]
+-    .filter(Boolean)
+-    .join('\n')
+-    .split('$PATH')
+-    .join(sparqlPath)
++  const validations = [...shape.sparql].map(sparql => {
++    const select = sparql.out([ns.sh.select]).value
++    const prefixes = stringifyPrefixes(sparql.out([ns.sh.prefixes]))
++    const message = sparql.out([ns.sh.message]).terms
++
++    const query = [...prefixes, select]
++      .filter(Boolean)
++      .join('\n')
++      .split('$PATH')
++      .join(sparqlPath)
++
++    return validateSparql({ message, query, source: sparql.terms })
++  })
+ 
+   return {
+-    generic: validateSparql({ message, query, source: shape.sparql.terms })
++    generic: async context => {
++      for (const validation of validations) {
++        await validation(context)
++      }
++    }
+   }
+ }
+ 
+diff --git a/test/assets/sparql/manifest.ttl b/test/assets/sparql/manifest.ttl
+index 034dc9f..ffb98bd 100644
+--- a/test/assets/sparql/manifest.ttl
++++ b/test/assets/sparql/manifest.ttl
+@@ -6,6 +6,7 @@
+   mf:include
+     <debug.ttl>,
+     <message.ttl>,
++    <multiple.ttl>,
+     <path.ttl>,
+     <source.ttl>.
+ 
+diff --git a/test/assets/sparql/multiple.ttl b/test/assets/sparql/multiple.ttl
+new file mode 100644
+index 0000000..0bb68e7
+--- /dev/null
++++ b/test/assets/sparql/multiple.ttl
+@@ -0,0 +1,64 @@
++@prefix ex: <http://example.org/>.
++@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#>.
++@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
++@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
++@prefix sh: <http://www.w3.org/ns/shacl#>.
++@prefix sht: <http://www.w3.org/ns/shacl-test#>.
++
++<> a mf:Manifest;
++  mf:entries (<multiple>).
++
++ex:shape a sh:NodeShape;
++  sh:targetNode ex:valid, ex:invalid;
++  sh:sparql ex:constraintA, ex:constraintB.
++
++ex:constraintA
++  sh:message "A";
++  sh:select """
++    SELECT $this WHERE {
++      FILTER NOT EXISTS { $this <http://example.org/propertyA> ?a }
++    }
++  """.
++
++ex:constraintB
++  sh:message "B";
++  sh:select """
++    SELECT $this ?value WHERE {
++      $this <http://example.org/propertyB> ?value.
++      FILTER (?value > 10)
++    }
++  """.
++
++ex:valid
++  ex:propertyA 1;
++  ex:propertyB 5.
++
++ex:invalid
++  ex:propertyB 20.
++
++<multiple> a sht:Validate;
++  rdfs:label "Test multiple sh:sparql constraints in a single shape";
++  mf:action [
++      sht:dataGraph <>;
++      sht:shapesGraph <>
++    ];
++  mf:result [ a sh:ValidationReport;
++    sh:conforms false;
++    sh:result [ a sh:ValidationResult;
++      sh:focusNode ex:invalid;
++      sh:resultMessage "A";
++      sh:resultSeverity sh:Violation;
++      sh:sourceConstraint ex:constraintA;
++      sh:sourceConstraintComponent sh:SPARQLConstraintComponent;
++      sh:sourceShape ex:shape;
++      sh:value ex:invalid
++    ], [ a sh:ValidationResult;
++      sh:focusNode ex:invalid;
++      sh:resultMessage "B";
++      sh:resultSeverity sh:Violation;
++      sh:sourceConstraint ex:constraintB;
++      sh:sourceConstraintComponent sh:SPARQLConstraintComponent;
++      sh:sourceShape ex:shape;
++      sh:value 20
++    ]
++  ].

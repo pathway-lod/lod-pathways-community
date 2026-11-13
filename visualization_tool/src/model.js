@@ -15,6 +15,17 @@ export function buildView(g, keep, { P, roleOf, L, terms, runsAsCards = false })
   const isCard = (k) => keep.has(k) && g.out.has(k) && (runsAsCards || roleOf(k) !== 'run');
   const cards = new Map();
   const edges = new Map();
+  // a node and the run nodes above it (run parts hang below their run; D40), up to the first run that a non-run node
+  // points to (not further along run -> run links, e.g. to a run informed by it)
+  const linked = (s) => (g.inc.get(s) || []).some((t) => roleOf(key(t.s)) !== 'run');
+  const runRoots = (k) => {
+    const seen = new Set([k]), st = linked(k) ? [] : [k];
+    while (st.length) for (const t of g.inc.get(st.pop()) || []) {
+      const s = key(t.s);
+      if (!seen.has(s) && roleOf(s) === 'run') { seen.add(s); if (!linked(s)) st.push(s); }
+    }
+    return seen;
+  };
 
   for (const k of keep) {
     if (!isCard(k)) continue;
@@ -78,8 +89,10 @@ export function buildView(g, keep, { P, roleOf, L, terms, runsAsCards = false })
   for (const r of problems) {
     const card = cards.get(r.focus);
     if (!card) {
+      // a hidden run, or a hidden part of one (D40): on the rows that point at the run
+      const runs = runRoots(r.focus);
       for (const c of cards.values()) for (const row of c.rows)
-        if (row.values.some((v) => v.ref === r.focus)) row.issues.push({ ...r, via: P.compact(r.focus) });
+        if (row.values.some((v) => runs.has(v.ref))) row.issues.push({ ...r, via: P.compact(r.focus) });
       continue;
     }
     if (r.path) {

@@ -11,6 +11,7 @@ import ValidationControl from './ValidationControl.jsx';
 import LaneEdge from './LaneEdge.jsx';
 import TrackEdge from './TrackEdge.jsx';
 import VTrackEdge from './VTrackEdge.jsx';
+import LoopEdge from './LoopEdge.jsx';
 import { parseRdf, indexGraph, focusSet, focusSetMany, turtleOf, key } from './rdf.js';
 import { getHandoff, handoffUrl } from './handoff.js';
 import { loadProfile, makeRoles, makeLabels, titleFor } from './profile.js';
@@ -26,7 +27,7 @@ const PROFILES = [
 ];
 const EMPTY_PROFILE = { name: 'none', prefixes: {} };
 const nodeTypes = { card: CardNode };
-const edgeTypes = { lane: LaneEdge, track: TrackEdge, vtrack: VTrackEdge };
+const edgeTypes = { lane: LaneEdge, track: TrackEdge, vtrack: VTrackEdge, loop: LoopEdge };
 const MAX_ALL = 60;
 const isProposal = (t) => t.origins.size === 1 && t.origins.has('proposal'); // as in model.js
 const MULTI_KEYS =['Shift', 'Control', 'Meta']; // held while clicking a card: add it to / remove it from the selection
@@ -70,9 +71,9 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
       const onTrack = tracks.has(e.id), onVTrack = vtracks.has(e.id);
       return {
         id: e.id, source: e.source, target: e.target, sourceHandle: e.sourceHandle, targetHandle: e.targetHandle,
-        type: e.type === 'lane' ? 'lane' : onTrack ? 'track' : onVTrack ? 'vtrack' : 'smoothstep',
+        type: e.type === 'lane' || e.type === 'loop' ? e.type : onTrack ? 'track' : onVTrack ? 'vtrack' : 'smoothstep',
         // tracks are fractions of the space between the two cards, so they follow dragged cards (layout.js)
-        data: e.type === 'lane' ? e.data : onTrack ? { trackFrac: tracks.get(e.id), ...ports.get(e.id) }
+        data: e.type === 'lane' ? e.data : e.type === 'loop' ? { ...e.data, ...ports.get(e.id) } : onTrack ? { trackFrac: tracks.get(e.id), ...ports.get(e.id) }
           : onVTrack ? { trackFrac: vtracks.get(e.id), ...ports.get(e.id) } : undefined,
         label: e.label, labelStyle: { fill: color, fontWeight: 600, fontSize: 12, fontFamily: 'var(--mono)' },
         labelBgStyle: { fill: '#fff' }, labelBgPadding: [4, 2],
@@ -157,7 +158,7 @@ export default function App() {
   const [profileFile] = useState(params.has('profile') ? (params.get('profile') || null) : PROFILES[0].file);
   const [profileJson, setProfileJson] = useState(null);
   const [g0, setG] = useState(null); // the parsed file; `g` below adds knowledge-graph stubs in selection mode
-  const [source, setSource] = useState(params.get('data') || 'slide25.nq');
+  const [source, setSource] = useState(params.get('data') || 'all_pilots.ttl');
   const [focus, setFocus] = useState(params.get('focus') || '');
   const [runsAsCards, setRunsAsCards] = useState(params.get('runs') === '1');
   const [showMissing, setShowMissing] = useState(true);
@@ -280,9 +281,12 @@ export default function App() {
   const nSel = selected?.length ?? 0;
   const selTtl = useMemo(() => {
     if (!nSel || !g || !P || !view) return null;
-    const folded = selected.flatMap((k) => (g.out.get(k) || []).map((t) => key(t.o)))
-      .filter((o) => shown.has(o) && g.out.has(o) && !view.cards.has(o));
-    const keys = [...new Set([...selected, ...folded])];
+    // folded nodes at any depth: a hidden run brings its hidden parts (agent, parameters; D40)
+    const keys = [...new Set(selected)], st = [...keys];
+    while (st.length) for (const t of g.out.get(st.pop()) || []) {
+      const o = key(t.o);
+      if (shown.has(o) && g.out.has(o) && !view.cards.has(o) && !keys.includes(o)) { keys.push(o); st.push(o); }
+    }
     return { data: turtleOf(g, keys, P.prefixes, (t) => !isProposal(t) && !t.stub), proposal: turtleOf(g, keys, P.prefixes, isProposal) };
   }, [selected, g, P, view, shown]);
   const saveTtl = (text, name) => {

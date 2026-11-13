@@ -157,9 +157,29 @@ export function layout(cards, edges, sizes, mode = 'compact', labelWidth = estim
   // columns right of the knowledge graph (runs in the slide layout) start after the widest tree
   const shift = Math.max(0, kgRight - (colX('kg') + COL_W));
   const xOf = (role) => colX(role) + (L.columns[role] > L.columns.kg ? shift : 0);
-  placeColumn(ids('run'), xOf('run'), nbrs, pos, h);
+  // runs: trees of a run and its parts (agent, parameters, runs it was informed by; D40), growing downward; in the
+  // compact layout (runs leftmost) to the left, never into the column right of it
+  const runs = kgTrees(cards, edges, nbrs, 'run', true);
+  const runLeft = L.columns.run === 0;
+  const nextX = Math.min(...Object.values(L.columns).filter((c) => c > L.columns.run).map(X), Infinity);
+  // (left-growing trees stay left of the column's right border, so the gap to its right is free for loop edges)
+  placeKg(runs, nbrs, pos, h, xOf('run'), false, xOf('run'), runLeft ? xOf('run') : nextX - KG_MARGIN - COL_W, runLeft);
   pos.colXs = [...new Set(Object.keys(L.columns).map(xOf))];
-  pos.vertical = kg.vertical;
+  pos.vertical = new Set([...kg.vertical, ...runs.vertical]);
+  // run -> run links that are not tree links (prov:wasInformedBy between two linked runs): loops beside the column on
+  // the side the trees do not grow into (LoopEdge; right in compact, left in slide), nested by span (shortest innermost)
+  pos.loopSide = runLeft ? 'right' : 'left';
+  const isRun = (k) => cards.get(k)?.role === 'run';
+  const mid = (k) => pos.get(k).y + h(k) / 2;
+  const loops = edges.filter((e) => e.source !== e.target && isRun(e.source) && isRun(e.target)
+    && !pos.vertical.has(`${e.source}|${e.target}`) && !pos.vertical.has(`${e.target}|${e.source}`))
+    .map((e) => ({ k: `${e.source}|${e.target}`, lo: Math.min(mid(e.source), mid(e.target)), hi: Math.max(mid(e.source), mid(e.target)) }))
+    .sort((a, b) => a.hi - a.lo - (b.hi - b.lo) || a.lo - b.lo);
+  pos.loops = new Map();
+  loops.forEach((l, i) => {
+    const below = loops.slice(0, i).filter((m) => m.lo <= l.hi && l.lo <= m.hi).map((m) => pos.loops.get(m.k));
+    pos.loops.set(l.k, 1 + Math.max(0, ...below));
+  });
   // the column each card belongs to (KG tree cards can sit right of their column): used to find skipped columns
   pos.colOf = new Map([...cards.values()].map((c) => [c.id, xOf(c.role)]));
   return widenGaps(pos, edges, sizes);
@@ -214,7 +234,7 @@ export function layoutGrid(cards, edges, sizes, mode = 'compact', labelWidth = e
   const area = comps.reduce((s, c) => s + (c.w + GRID_GAP_X) * (c.h + GRID_GAP_Y), 0);
   const ROW_W = Math.max(...comps.map((c) => c.w), GRID_ASPECT * Math.sqrt(area));
   const pos = new Map();
-  pos.colXsOf = new Map(); pos.colOf = new Map(); pos.vertical = new Set(); pos.colXs = [];
+  pos.colXsOf = new Map(); pos.colOf = new Map(); pos.vertical = new Set(); pos.loops = new Map(); pos.colXs = [];
   let x = 0, y = 0, rowH = 0;
   for (const c of comps) {
     if (x > 0 && x + c.w > ROW_W) { y += rowH + GRID_GAP_Y; x = 0; rowH = 0; }
@@ -227,6 +247,8 @@ export function layoutGrid(cards, edges, sizes, mode = 'compact', labelWidth = e
       if (c.p.colOf?.has(k)) pos.colOf.set(k, c.p.colOf.get(k) + dx);
     }
     for (const v of c.p.vertical || []) pos.vertical.add(v);
+    for (const [k, v] of c.p.loops || []) pos.loops.set(k, v);
+    if (c.p.loopSide) { pos.loopSideOf ??= new Map(); for (const k of c.list) pos.loopSideOf.set(k, c.p.loopSide); }
     x += c.w + GRID_GAP_X; rowH = Math.max(rowH, c.h);
   }
   return pos;
@@ -235,8 +257,9 @@ export function layoutGrid(cards, edges, sizes, mode = 'compact', labelWidth = e
 // Knowledge-graph trees. KG cards linked to each other (e.g. metabolite -> its pathways) form a group (connected
 // component over KG-to-KG links). Depth inside a group = link distance (either direction) from the cards linked from
 // outside the group (the anchors of claims); a group that nothing outside links to starts at its first card.
-function kgTrees(cards, edges, nbrs) {
-  const kg = [...cards.values()].filter((c) => c.role === 'kg').map((c) => c.id);
+function kgTrees(cards, edges, nbrs, role = 'kg', directed = false) {
+  if (directed) return runTrees(cards, edges, role);
+  const kg = [...cards.values()].filter((c) => c.role === role).map((c) => c.id);
   const isKg = new Set(kg);
   const adj = new Map(kg.map((k) => [k, []]));
   for (const e of edges) if (isKg.has(e.source) && isKg.has(e.target) && e.source !== e.target) {
@@ -262,6 +285,36 @@ function kgTrees(cards, edges, nbrs) {
   return { groups, depth, maxDepth: Math.max(0, ...depth.values()) };
 }
 
+// Run trees (2026-11-13, D40): one tree per run that a card outside the run column points to (evidence, a claim);
+// its parts (agent, parameters, the agent's organisation, ...) hang below it along the links. A part reachable from
+// several such runs belongs to the first one (input order); a run that evidence points to is always a root of its
+// own, even if another run points to it (prov:wasInformedBy), so edges from evidence never have to cross a tree.
+// Links that are not tree links (run -> run, a second run -> a shared part) are drawn as ordinary edges.
+function runTrees(cards, edges, role) {
+  const ids = [...cards.values()].filter((c) => c.role === role).map((c) => c.id);
+  const is = new Set(ids);
+  const down = new Map(ids.map((k) => [k, []]));
+  const fromOutside = new Set();
+  for (const e of edges) {
+    if (is.has(e.source) && is.has(e.target) && e.source !== e.target) down.get(e.source).push(e.target);
+    else if (is.has(e.target) && !is.has(e.source)) fromOutside.add(e.target);
+  }
+  const depth = new Map(), groups = [];
+  const grow = (r) => {
+    const g = [], queue = [[r, 0]];
+    while (queue.length) {
+      const [a, d] = queue.shift();
+      if (depth.has(a)) continue;
+      depth.set(a, d); g.push(a);
+      for (const b of down.get(a)) if (!depth.has(b) && !fromOutside.has(b)) queue.push([b, d + 1]);
+    }
+    groups.push(g);
+  };
+  for (const k of ids) if (fromOutside.has(k)) grow(k);
+  for (const k of ids) if (!depth.has(k)) grow(k); // parts no linked run reaches
+  return { groups, depth, maxDepth: Math.max(0, ...depth.values()) };
+}
+
 // Place the trees (tidy tree, growing downward). Parent of a card = its first neighbour one level up. Width of a
 // subtree = max(card width, its children's subtrees side by side); a card is centred over its subtree. The tree is then shifted so that its first anchor is at the KG column (the gap
 // to the claims stays as wide as the label), but no card goes left of leftLimit (the column left of the KG column +
@@ -270,7 +323,9 @@ function kgTrees(cards, edges, nbrs) {
 // stacked below each other (BLOCK_GAP/2 apart; compact) or side by side (slide). Rows are as far apart as the edge
 // tracks between them need.
 // Returns the right edge of the widest tree; sets kg.vertical (parent|child pairs drawn top-to-bottom).
-function placeKg(kg, nbrs, pos, h, x0, sideBySide, leftLimit) {
+// Run trees use the same placement (D40); mirror = the tree grows to the left of its column (compact layout, where the
+// run column is the leftmost one), with no card right of rightLimit.
+function placeKg(kg, nbrs, pos, h, x0, sideBySide, leftLimit, rightLimit = Infinity, mirror = false) {
   kg.vertical = new Set();
   if (!kg.groups.length) return x0 + COL_W;
   const outsideY = (g) => {
@@ -310,10 +365,17 @@ function placeKg(kg, nbrs, pos, h, x0, sideBySide, leftLimit) {
     const limit = base === x0 ? Math.min(leftLimit, x0) : base; // later trees side by side: not into the previous one
     let left = base;
     for (const r of roots) { placeX(r, left); left += w(r) + SIB_GAP; }
-    // first anchor at the column, as far as the free space on the left allows
-    const minX = Math.min(...g.map((k) => xs.get(k)));
-    const shift = Math.max(base - xs.get(roots[0]), limit - minX);
-    for (const k of g) xs.set(k, xs.get(k) + shift);
+    if (mirror) { // grows to the left (runs in the compact layout): first root at the column, no card past rightLimit
+      for (const k of g) xs.set(k, -xs.get(k) - COL_W);
+      const maxX = Math.max(...g.map((k) => xs.get(k)));
+      const shift = Math.min(base - xs.get(roots[0]), rightLimit - maxX);
+      for (const k of g) xs.set(k, xs.get(k) + shift);
+    } else {
+      // first anchor at the column, as far as the free space on the left allows
+      const minX = Math.min(...g.map((k) => xs.get(k)));
+      const shift = Math.max(base - xs.get(roots[0]), limit - minX);
+      for (const k of g) xs.set(k, xs.get(k) + shift);
+    }
     // rows: top row at the height of the claims, each further row below the tallest card of the row above
     const maxD = Math.max(...g.map(d));
     const rowH = (r) => Math.max(...g.filter((k) => d(k) === r).map(h));
@@ -347,7 +409,7 @@ function trackBands(edges, pos, sizes, ports) {
   const y = (k, off) => pos.get(k).y + h(k) / 2 + (off || 0);
   const gaps = new Map();
   for (const e of edges) {
-    if (e.sourceHandle !== 's-left' && e.sourceHandle !== 's-right') continue;
+    if ((e.sourceHandle !== 's-left' && e.sourceHandle !== 's-right') || e.type === 'loop') continue;
     const a = pos.get(e.source), b = pos.get(e.target);
     const left = Math.min(a.x, b.x) + COL_W, right = Math.max(a.x, b.x);
     const k = `${left}|${right}`;
@@ -427,6 +489,11 @@ export function assignPorts(edges, pos, sizes) {
 export function handlesFor(e, pos, lanes) {
   const a = pos.get(e.source), b = pos.get(e.target);
   if (!a || !b) return {};
+  const loop = pos.loops?.get(`${e.source}|${e.target}`);
+  if (loop) {
+    const side = pos.loopSideOf?.get(e.source) ?? pos.loopSide ?? 'right';
+    return { sourceHandle: `s-${side}`, targetHandle: `t-${side}`, type: 'loop', data: { level: loop, side } };
+  }
   // an edge that has another column between its ends goes over the top (grid: only the columns of its own graph)
   const ca = pos.colOf?.get(e.source) ?? a.x, cb = pos.colOf?.get(e.target) ?? b.x;
   const lo = Math.min(ca, cb), hi = Math.max(ca, cb);
