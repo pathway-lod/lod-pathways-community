@@ -13,9 +13,11 @@ npm run build      # static site in dist/ (base './'; needs any static web serve
 npm run shot -- out.png "data=slide25.nq"   # build + headless screenshot (needs Edge or Chrome)
 ```
 
-Documentation: [CLAUDE.md](CLAUDE.md) (guide for agents and developers: rules, how to check changes),
+Documentation: [docs/handover.md](docs/handover.md) (start here if you take over: state, pending reviews, parked ideas),
+[docs/profile-and-scores.md](docs/profile-and-scores.md) (how to edit the profile and the score definitions when terms change),
+[CLAUDE.md](CLAUDE.md) (guide for agents and developers: rules, how to check changes),
 [docs/architecture.md](docs/architecture.md) (pipeline, data structures, roles, profile reference, open work),
-[docs/layout.md](docs/layout.md) (the layout algorithm), [docs/decisions.md](docs/decisions.md) (why it looks like this), [docs/pmw-structure.md](docs/pmw-structure.md)
+[docs/layout.md](docs/layout.md) (the layout algorithm), [docs/decisions.md](docs/decisions.md) (why it looks like this), [docs/validation.md](docs/validation.md) (SHACL in the browser), [docs/pmw-structure.md](docs/pmw-structure.md)
 (PlantMetWiki structure and clustering options for the global view).
 
 ## Design: works for any data that fits the evidence model
@@ -68,12 +70,15 @@ The header has no profile chooser and no "slide layout" checkbox (removed 2026-1
   including runs folded into evidence cards; without proposal triples). Open a local `.ttl`/`.nq`/`.trig` file (no report
   then, until "Run SHACL validation"; a saved `.validated.nq` brings its report).
   Files with more than 60 subjects open on the first claim.
-- **Global view (test, `global.html`)**: all claims of a file on one Cytoscape.js canvas: knowledge graph in the
+- **Global view (`global.html`)**: all claims of a file on one Cytoscape.js canvas: knowledge graph in the
   middle, anchors on its rim, claims on an outer ring, unanchored claims in a separate wedge. Click a claim to open
   its cards beside the ring. Experimental: it checks whether Cytoscape.js is fast enough for thousands of claims
   (see docs/decisions.md D21-D22). Default layout since 2026-11-11: the **PlantMetWiki map** (`?layout=kg`): a fixed
   ring of PlantMetWiki groups and pathways that lights up where the file's claims land, claims around it in blocks
-  per group, ribbons between them; `?layout=ring` is the earlier anchor ring (D25).
+  per group, ribbons between them; `?layout=ring` is the earlier anchor ring (D25). The page opens on all four pilots
+  (`all_pilots.ttl`); the header has no Layout menu (removed 2026-11-12, D39), the ring is only reachable by URL.
+  **Score…** (D36): colour the claims by a score defined in `public/profiles/lod-pathways-draft.scores.csv` and
+  select the top N (open them as cards); `?score=<CURIE>&top=N` opens it directly.
 
 ## Data
 
@@ -89,9 +94,9 @@ named graphs, validates with the repository's SHACL shapes and vocabulary (pysha
 | `data/slide25/plantmetwiki.ttl` | PlantMetWiki RDF (CONSTRUCT on the endpoint, 2026-11-10); raw response in `raw_pmw.ttl` |
 | `data/slide25/proposal.ttl` | the dashed/grey parts of slide 25, written as RDF; modelling choices marked `CHOICE` |
 
-Example datasets (`public/data/datasets.json`): slide 25 and the repo's sample graph (all four use cases, with SHACL
-report), and all four pilots as one plain Turtle file (`all_pilots.ttl`, 4,884 claims, no report: for testing the
-global view, big files and "Run SHACL validation" on the Pages site). Other files can be opened with "Open Turtle file" (Turtle; N-Quads, TriG, N-Triples work too).
+Example datasets (`public/data/datasets.json`): all four pilots as one plain Turtle file (`all_pilots.ttl`, 4,884
+claims, no report; the default of both pages) and the repo's sample graph (all four use cases, with SHACL report).
+Slide 25 (`slide25.nq`) is not in the menu since 2026-11-13 (D41) but still opens with `?data=slide25.nq`. Other files can be opened with "Open Turtle file" (Turtle; N-Quads, TriG, N-Triples work too).
 
 **Data provenance.** The slide 25 subset (cut from the pilot RDF), the sample graph and the term table in
 `public/data/` come from this repository (MIT, `../LICENSE`); `data/slide25/plantmetwiki.ttl` is PlantMetWiki RDF
@@ -106,7 +111,7 @@ global view, big files and "Run SHACL validation" on the Pages site). Other file
 | `src/model.js` | cards, rows, edges; attaching SHACL results and pattern checks |
 | `src/ValidationControl.jsx`, `src/validation/` | in-browser SHACL validation: header control, Web Worker, shacl-engine with corrections (docs/validation.md) |
 | `src/layout.js` | column layouts (compact / slide; by link distance without claims): claim blocks, linked claims adjacent, KG groups, edge sides |
-| `src/CardNode.jsx`, `src/TrackEdge.jsx`, `src/VTrackEdge.jsx`, `src/LaneEdge.jsx`, `src/App.jsx` | ReactFlow rendering (cards, edges on own tracks between columns or between tree rows, edges over the top) |
+| `src/CardNode.jsx`, `src/TrackEdge.jsx`, `src/VTrackEdge.jsx`, `src/LoopEdge.jsx`, `src/LaneEdge.jsx`, `src/App.jsx` | ReactFlow rendering (cards, edges on own tracks between columns or between tree rows, edges over the top) |
 | `global.html`, `src/Global.jsx`, `src/globalLayout.js` | global view test (Cytoscape.js; deterministic ring layout); reuses `Graph` from `src/App.jsx` for the detail |
 | `src/kgStubs.js` | card viewer, selections: stub cards for knowledge-graph anchors the file does not describe (from the snapshot) |
 | `src/handoff.js` | hand-off of a selection (and the file text) between global view and card viewer via IndexedDB |

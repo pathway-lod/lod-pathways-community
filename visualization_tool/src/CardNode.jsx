@@ -3,6 +3,9 @@ import { Handle, Position } from '@xyflow/react';
 
 
 const SIDES = [['left', Position.Left], ['right', Position.Right], ['top', Position.Top], ['bottom', Position.Bottom]];
+// only web IRIs become links: an IRI in a loaded file can be anything, e.g. "javascript:...", which would run as code
+// in this page when clicked (2026-11-13); other IRIs are shown as text
+const linkable = (iri) => /^(https?|ftp):\/\//i.test(iri || '');
 
 function Issue({ r }) {
   return (
@@ -32,7 +35,7 @@ function Row({ row, showMissing, inProposal, compact }) {
         ? row.values.some((v) => v.note) && <div className="val note">{row.values.map((v) => v.note).filter(Boolean).join('; ')}</div>
         : row.values.map((v, i) => (
           <div key={i} className={`val ${v.state === 'proposal' && row.state !== 'proposal' ? 'proposal' : ''}`}>
-            {v.href ? <a href={v.href} target="_blank" rel="noreferrer">{v.text}</a> : v.text}
+            {linkable(v.href) ? <a href={v.href} target="_blank" rel="noreferrer">{v.text}</a> : v.text}
             {v.note ? <span className="note"> {v.note}</span> : null}
           </div>
         ))}

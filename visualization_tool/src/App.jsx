@@ -11,8 +11,9 @@ import ValidationControl from './ValidationControl.jsx';
 import LaneEdge from './LaneEdge.jsx';
 import TrackEdge from './TrackEdge.jsx';
 import VTrackEdge from './VTrackEdge.jsx';
+import LoopEdge from './LoopEdge.jsx';
 import { parseRdf, indexGraph, focusSet, focusSetMany, turtleOf, key } from './rdf.js';
-import { getHandoff, handoffUrl } from './handoff.js';
+import { getHandoff, putHandoff, handoffUrl } from './handoff.js';
 import { loadProfile, makeRoles, makeLabels, titleFor } from './profile.js';
 import { buildView } from './model.js';
 import { layout, layoutGrid, handlesFor, assignTracks, assignVTracks, assignPorts } from './layout.js';
@@ -26,7 +27,7 @@ const PROFILES = [
 ];
 const EMPTY_PROFILE = { name: 'none', prefixes: {} };
 const nodeTypes = { card: CardNode };
-const edgeTypes = { lane: LaneEdge, track: TrackEdge, vtrack: VTrackEdge };
+const edgeTypes = { lane: LaneEdge, track: TrackEdge, vtrack: VTrackEdge, loop: LoopEdge };
 const MAX_ALL = 60;
 const isProposal = (t) => t.origins.size === 1 && t.origins.has('proposal'); // as in model.js
 const MULTI_KEYS =['Shift', 'Control', 'Meta']; // held while clicking a card: add it to / remove it from the selection
@@ -44,7 +45,7 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
     })));
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const initialized = useNodesInitialized();
-  const { getNodes, fitBounds } = useReactFlow();
+  const { getNodes, fitBounds, screenToFlowPosition } = useReactFlow();
   const [done, setDone] = useState(false);
 
   // pass 2: the cards have been measured -> lay out, then draw the edges
@@ -70,9 +71,10 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
       const onTrack = tracks.has(e.id), onVTrack = vtracks.has(e.id);
       return {
         id: e.id, source: e.source, target: e.target, sourceHandle: e.sourceHandle, targetHandle: e.targetHandle,
-        type: e.type === 'lane' ? 'lane' : onTrack ? 'track' : onVTrack ? 'vtrack' : 'smoothstep',
-        data: e.type === 'lane' ? e.data : onTrack ? { centerX: tracks.get(e.id), ...ports.get(e.id) }
-          : onVTrack ? { trackY: vtracks.get(e.id), ...ports.get(e.id) } : undefined,
+        type: e.type === 'lane' || e.type === 'loop' ? e.type : onTrack ? 'track' : onVTrack ? 'vtrack' : 'smoothstep',
+        // tracks are fractions of the space between the two cards, so they follow dragged cards (layout.js)
+        data: e.type === 'lane' ? e.data : e.type === 'loop' ? { ...e.data, ...ports.get(e.id) } : onTrack ? { trackFrac: tracks.get(e.id), ...ports.get(e.id) }
+          : onVTrack ? { trackFrac: vtracks.get(e.id), ...ports.get(e.id) } : undefined,
         label: e.label, labelStyle: { fill: color, fontWeight: 600, fontSize: 12, fontFamily: 'var(--mono)' },
         labelBgStyle: { fill: '#fff' }, labelBgPadding: [4, 2],
         style: { stroke: color, strokeWidth: 1.8, strokeDasharray: e.state === 'proposal' ? '7 5' : undefined },
@@ -104,8 +106,28 @@ export function Graph({ view, P, showMissing, selected, onSelect, exportRef, mod
     if (pushed.current) onSelect(sel.map((n) => n.id));
   }, [onSelect]);
 
-  exportRef.current = async (kind) => {
+  // bounds of everything drawn, in flow coordinates: the cards, the edge paths (lanes above the cards, loops beside
+  // them) and the edge labels; the cards alone would cut off lanes and loops in the export (2026-11-13)
+  const drawnBounds = () => {
     const b = getNodesBounds(getNodes());
+    let x0 = b.x, y0 = b.y, x1 = b.x + b.width, y1 = b.y + b.height;
+    const add = (x, y, w, h) => { x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x + w); y1 = Math.max(y1, y + h); };
+    const vpEl = document.querySelector('.react-flow__viewport');
+    const ARROW = 10; // getBBox leaves out stroke and arrowheads
+    for (const el of vpEl?.querySelectorAll('.react-flow__edge-path, .react-flow__edge-textwrapper') || []) {
+      const r = el.getBBox(); // SVG inside the viewport: already flow coordinates
+      if (r.width || r.height) add(r.x - ARROW, r.y - ARROW, r.width + 2 * ARROW, r.height + 2 * ARROW);
+    }
+    for (const el of vpEl?.querySelectorAll('.edge-label') || []) { // HTML labels (EdgeLabelRenderer): screen -> flow
+      const r = el.getBoundingClientRect();
+      const a = screenToFlowPosition({ x: r.left, y: r.top }), z = screenToFlowPosition({ x: r.right, y: r.bottom });
+      add(a.x, a.y, z.x - a.x, z.y - a.y);
+    }
+    return { x: x0, y: y0, width: x1 - x0, height: y1 - y0 };
+  };
+
+  exportRef.current = async (kind) => {
+    const b = drawnBounds();
     const w = Math.ceil(b.width + 80), h = Math.ceil(b.height + 80);
     const vp = getViewportForBounds(b, w, h, 0.1, 2, 0.02);
     const url = await (kind === 'svg' ? toSvg : toPng)(document.querySelector('.react-flow__viewport'), {
@@ -156,7 +178,7 @@ export default function App() {
   const [profileFile] = useState(params.has('profile') ? (params.get('profile') || null) : PROFILES[0].file);
   const [profileJson, setProfileJson] = useState(null);
   const [g0, setG] = useState(null); // the parsed file; `g` below adds knowledge-graph stubs in selection mode
-  const [source, setSource] = useState(params.get('data') || 'slide25.nq');
+  const [source, setSource] = useState(params.get('data') || 'all_pilots.ttl');
   const [focus, setFocus] = useState(params.get('focus') || '');
   const [runsAsCards, setRunsAsCards] = useState(params.get('runs') === '1');
   const [showMissing, setShowMissing] = useState(true);
@@ -165,6 +187,14 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(null);
   const [validated, setValidated] = useState(null); // result of a validation run in this page for the current file
+  // a validation is running: the data pickers are disabled until it ends (its report belongs to the file it started
+  // on; switching files meanwhile brought the old file back when it finished, 2026-11-13)
+  const [validating, setValidating] = useState(false);
+  const g0Ref = useRef(null);
+  // text of a file opened from disk (or handed over with one), so "← Global view" can take it back; and the source
+  // the stored hand-off record describes (2026-11-13)
+  const rawRef = useRef(null);
+  const handedSource = useRef(null);
   // selection handed over by the global view (handoff.js): {title, claims}; shown page by page
   // subset shown page by page: a selection handed over by the global view, or "all claims" of the file
   const [subset, setSubset] = useState(null);
@@ -193,7 +223,8 @@ export default function App() {
     if (!params.has('handoff')) return;
     getHandoff().then((h) => {
       if (!h) { setError('no selection from the global view found (browser storage empty or blocked)'); return; }
-      if (h.text != null) { setSource(h.source); loadText(h.text, h.name, true); }
+      handedSource.current = h.source;
+      if (h.text != null) { rawRef.current = { name: h.name, text: h.text }; setSource(h.source); loadText(h.text, h.name, true); }
       else if (h.source && h.source !== source) setSource(h.source);
       // no claims = the whole file ("← Detail view" in the global view header), not an empty selection
       if (h.claims?.length) { const sel = { title: h.title, claims: h.claims }; setSubset(sel); setHandoffSel(sel); setPage(0); setFocus(''); }
@@ -208,6 +239,7 @@ export default function App() {
   }, [source]);
 
   // the profile's prefixes win; the file's own prefixes fill the gaps (all of them when there is no profile)
+  g0Ref.current = g0;
   const P = useMemo(() => (profileJson && g0
     ? loadProfile({ ...profileJson, prefixes: { ...g0.filePrefixes, ...profileJson.prefixes } }) : null), [profileJson, g0]);
   // knowledge-graph snapshot named in the profile (as in the global view): stub cards for anchors the file does not
@@ -270,7 +302,9 @@ export default function App() {
   const view = useMemo(() => (shown && L
     ? buildView(g, shown, { P, roleOf, L, terms, runsAsCards }) : null),
   [shown, L, runsAsCards, terms]);
-  const viewKey = `${source}|${effFocus}|${pageClaims ? `sel${page}/${subsetAll.length}` : ''}|${runsAsCards}|${showMissing}|${slideLayout}|${profileFile}|${useTerms}|${g?.quads.length}|${pageClaims && S ? 'stubs' : ''}`;
+  // !!terms: the term table may arrive after the first layout; subset.all: "all claims" and a hand-over selection of the
+  // same length are different pictures (2026-11-13)
+  const viewKey = `${source}|${effFocus}|${pageClaims ? `${subset.all ? 'all' : 'sel'}${page}/${subsetAll.length}` : ''}|${runsAsCards}|${showMissing}|${slideLayout}|${profileFile}|${useTerms}|${!!terms}|${g?.quads.length}|${pageClaims && S ? 'stubs' : ''}`;
   const nViol = g?.results.filter((r) => r.severity === 'violation').length ?? 0;
   const nWarn = g?.results.filter((r) => r.severity === 'warning').length ?? 0;
   // RDF of the selected cards: the exportable part, and the proposal-only triples shown apart (not exported)
@@ -279,9 +313,12 @@ export default function App() {
   const nSel = selected?.length ?? 0;
   const selTtl = useMemo(() => {
     if (!nSel || !g || !P || !view) return null;
-    const folded = selected.flatMap((k) => (g.out.get(k) || []).map((t) => key(t.o)))
-      .filter((o) => shown.has(o) && g.out.has(o) && !view.cards.has(o));
-    const keys = [...new Set([...selected, ...folded])];
+    // folded nodes at any depth: a hidden run brings its hidden parts (agent, parameters; D40)
+    const keys = [...new Set(selected)], st = [...keys];
+    while (st.length) for (const t of g.out.get(st.pop()) || []) {
+      const o = key(t.o);
+      if (shown.has(o) && g.out.has(o) && !view.cards.has(o) && !keys.includes(o)) { keys.push(o); st.push(o); }
+    }
     return { data: turtleOf(g, keys, P.prefixes, (t) => !isProposal(t) && !t.stub), proposal: turtleOf(g, keys, P.prefixes, isProposal) };
   }, [selected, g, P, view, shown]);
   const saveTtl = (text, name) => {
@@ -298,23 +335,39 @@ export default function App() {
       pageClaims ? 'selection.ttl' : 'evidence-graph.ttl');
   };
 
+  // "← Global view": the stored hand-off record only while it still describes the open data (it holds the selection
+  // that came from the global view); a file opened from disk here writes a new record (no claims) so its text travels
+  // back; other data goes back by URL (2026-11-13: after switching data here, the old hand-off file came back)
+  const handoffCurrent = params.has('handoff') && handedSource.current === source;
+  const backHref = handoffCurrent ? handoffUrl('global.html', source)
+    : source.startsWith('local:') ? 'global.html' : `global.html?data=${encodeURIComponent(source)}`;
+  const backToGlobal = async (e) => {
+    if (handoffCurrent || !source.startsWith('local:') || !rawRef.current) return; // the plain link does it
+    e.preventDefault();
+    const ok = await putHandoff({ source, name: rawRef.current.name, text: rawRef.current.text, claims: [], title: null });
+    window.location.href = ok ? handoffUrl('global.html', source) : 'global.html';
+  };
+  const busy = validating ? 'wait until the SHACL validation has finished (or cancel it)' : undefined;
+
   return (
     <div className="app">
       <header>
-        <a className="back-link" href={params.has('handoff') ? handoffUrl('global.html', source)
-          : source.startsWith('local:') ? 'global.html' : `global.html?data=${encodeURIComponent(source)}`}
+        <a className="back-link" href={backHref} onClick={backToGlobal}
           title="back to the global view (reloads it)">← Global view</a>
-        <h1>Evidence graph viewer <small>prototype</small></h1>
-        <label>Data
-          <select value={source} onChange={(e) => { setSource(e.target.value); setFocus(''); setSubset(null); setHandoffSel(null); }}>
+        <h1>Evidence graph viewer</h1>
+        <label title={busy}>Data
+          <select value={source} disabled={validating} onChange={(e) => { setSource(e.target.value); setFocus(''); setSubset(null); setHandoffSel(null); }}>
             {datasets.map((d) => <option key={d.file} value={d.file}>{d.label}</option>)}
             {!datasets.some((d) => d.file === source) && <option value={source}>{source.replace('local:', '')}</option>}
           </select>
         </label>
-        <label className="file" title="Turtle (.ttl); N-Quads, TriG and N-Triples work too">Open Turtle file…
-          <input type="file" accept=".ttl,.nq,.trig,.nt" onChange={async (e) => {
+        <label className={`file ${validating ? 'disabled' : ''}`} title={busy || 'Turtle (.ttl); N-Quads, TriG and N-Triples work too'}>Open Turtle file…
+          <input type="file" accept=".ttl,.nq,.trig,.nt" disabled={validating} onChange={async (e) => {
             const f = e.target.files[0]; if (!f) return;
-            setSource('local:' + f.name); setSubset(null); setHandoffSel(null); loadText(await f.text(), f.name, false);
+            e.target.value = ''; // so that choosing the same file again reloads it
+            const text = await f.text();
+            rawRef.current = { name: f.name, text }; handedSource.current = null; // a new file, even with the same name
+            setSource('local:' + f.name); setSubset(null); setHandoffSel(null); loadText(text, f.name, false);
           }} />
         </label>
         {/* Profile chooser hidden 2026-11-12 (only one profile for now); ?profile= still selects one, ?profile= (empty) = none */}
@@ -362,7 +415,11 @@ export default function App() {
         {profileJson?.validation && g0 && (
           <ValidationControl g={g0} config={profileJson.validation} done={validated}
             fileName={source.replace(/^local:/, '').replace(/\.[^./]+$/, '')}
-            onReport={(quads, result) => { setG(indexGraph(quads)); setSelected(null); setValidated(result); }} />
+            onBusy={setValidating}
+            onReport={(quads, result, from) => {
+              if (from !== g0Ref.current) return; // a report for a file that is no longer open (should not happen: pickers are disabled)
+              setG(indexGraph(quads)); setSelected(null); setValidated(result);
+            }} />
         )}
         <span className="row-break" />{/* export buttons always on a second row (2026-11-12) */}
         <button onClick={() => exportRef.current?.('png')}>PNG</button>
@@ -378,7 +435,16 @@ export default function App() {
           <span>claims {page * SUBSET_PAGE + 1}–{page * SUBSET_PAGE + pageClaims.length} of {subsetAll.length}
             {subsetAll.length < subset.claims.length && ` (${subset.claims.length - subsetAll.length} not in this file)`}</span>
           <button disabled={page === 0} onClick={() => { setPage(page - 1); setSelected(null); }}>‹ previous</button>
-          <span>page {page + 1} / {nPages}</span>
+          {/* page number: type and press Enter (or leave the box); out-of-range numbers are clamped (2026-11-12) */}
+          <label title="type a page number and press Enter">page{' '}
+            <input key={page} className="page-input" type="number" min={1} max={nPages} defaultValue={page + 1}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }}
+              onBlur={(e) => {
+                const v = e.currentTarget.value.trim(), x = Math.round(Number(v)); // empty or not a number: stay
+                const n = v === '' || !Number.isFinite(x) ? page : Math.min(nPages, Math.max(1, x)) - 1;
+                if (n !== page) { setPage(n); setSelected(null); } else e.currentTarget.value = page + 1;
+              }} />
+            {' '}/ {nPages}</label>
           <button disabled={page >= nPages - 1} onClick={() => { setPage(page + 1); setSelected(null); }}>next ›</button>
         </div>
       )}

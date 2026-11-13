@@ -116,6 +116,9 @@ export function focusSet(g, claimKey, roleOf) {
   const keep = new Set([claimKey]);
   const add = (k) => { if (g.out.has(k)) keep.add(k); };
   for (const o of objectsOf(g, claimKey)) { add(o); for (const o2 of objectsOf(g, o)) add(o2); } // evidence -> run
+  // the parts of every kept run (agent, parameters, ...), at any depth (D40)
+  const st = [...keep].filter((k) => roleOf(k) === 'run');
+  while (st.length) for (const o of objectsOf(g, st.pop())) if (g.out.has(o) && !keep.has(o) && roleOf(o) === 'run') { keep.add(o); st.push(o); }
   // knowledge-graph context: follow KG-to-KG links (e.g. metabolite -> pathways)
   for (const k of [...keep]) if (roleOf(k) === 'kg')
     for (const o of objectsOf(g, k)) if (g.out.has(o) && roleOf(o) === 'kg') keep.add(o);

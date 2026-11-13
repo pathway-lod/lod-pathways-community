@@ -1,0 +1,4 @@
+property,label,better,min,max,scale,kind,order,attached_to,status,note
+lodp:dreamsSimilarity,DreaMS similarity,higher,0,1,linear,numeric,,evidence,assumed,"Similarity of the DreaMS top hit (annotation pilot). Range 0-1 assumed: DreaMS similarity is a cosine of embeddings, theoretically -1 to 1; the pilot data lies in 0.44-0.97."
+lodp:siriusConfidenceApprox,SIRIUS approximate confidence,higher,0,1,linear,numeric,,evidence,assumed,"SIRIUS (COSMIC) approximate confidence, 0-1 (annotation pilot). Four SIRIUS annotations have -Infinity in the source and carry no value (term table T067)."
+obo:OBI_0000175,correlation p-value,lower,1e-10,1,log,numeric,,evidence,assumed,"p-value of the gene-metabolite correlation (paired-omics pilot). Theoretical range 0-1; a log scale needs a lower end above 0, so 1e-10 is used as the floor and smaller values get the end colour. The pilot seems filtered at p < 0.05."

@@ -50,11 +50,14 @@ claim shape applies). The reference check of `validate.py` (PlantMetWiki snapsho
 | `src/model.js` | cards / rows / edges, problems attached | `buildView` |
 | `src/layout.js` | positions and edge routing | `layout`, `handlesFor`, `assignPorts`, `assignTracks`, `assignVTracks`, `LAYOUTS` (details: docs/layout.md) |
 | `src/App.jsx` | state, controls, ReactFlow graph, export, legend | `Graph` (also used by the global view), `ROLE_COLOR` |
-| `src/Global.jsx`, `src/global-main.jsx`, `global.html` | global view **test**: all claims on a Cytoscape.js canvas, click → `Graph` in a side panel | |
+| `src/Global.jsx`, `src/global-main.jsx`, `global.html` | global view: all claims on a Cytoscape.js canvas (PlantMetWiki map), click → `Graph` in a side panel | |
+| `src/kgMap.js`, `src/kgDraw.js`, `src/kgStubs.js`, `src/siblings.js`, `src/scores.js`, `src/handoff.js` | global view: claim → pathway mapping, canvas drawing, stub cards, links between claims, scores, hand-off to the card viewer (see Global view) | |
+| `src/ValidationControl.jsx`, `src/validation/` | SHACL validation in the browser (docs/validation.md) | |
 | `src/globalLayout.js` | vocabulary-free ring layout for the global view | `globalLayout` |
 | `src/CardNode.jsx` | one card (header, IRI, rows, badges, problems) | |
-| `src/TrackEdge.jsx` | edge between neighbouring columns: own vertical track (`data.centerX`), spread ports (`data.sOff`, `data.tOff`), label at the target | |
-| `src/VTrackEdge.jsx` | edge leaving a card's bottom/top (KG trees, same-column links): spread ports (`data.sOff`, `data.tOff` as x offsets), own horizontal track (`data.trackY`), label beside the arrowhead | |
+| `src/TrackEdge.jsx` | edge between neighbouring columns: own vertical track (`data.trackFrac`: fraction of the gap, follows dragged cards), spread ports (`data.sOff`, `data.tOff`), label at the target | |
+| `src/VTrackEdge.jsx` | edge leaving a card's bottom/top (KG trees, same-column links): spread ports (`data.sOff`, `data.tOff` as x offsets), own horizontal track (`data.trackFrac`: fraction of the way source to target), label beside the arrowhead | |
+| `src/LoopEdge.jsx` | run → run link beside the run column (D40): out of one card's side, along the column, into the other's same side (`data.side`, `data.level` from `pos.loops`), label beside the arrowhead | |
 | `src/LaneEdge.jsx` | edge that skips a column: over a lane above all cards (`data.laneY`) | |
 | `src/styles.css` | all styling (role colours `--data` … `--run`, term-status colours `.st-*`) | |
 | `public/profiles/lod-pathways-draft.json` | the profile for today's `lodp:` draft | |
@@ -79,7 +82,8 @@ claim shape applies). The reference check of `validate.py` (PlantMetWiki snapsho
 - An **edge** is one source→target pair (several predicates merged): `{id, source, target, preds, label, state}`.
 - **Problems** (SHACL results and pattern checks) are attached: focus is a card and the result has a path → that
   row (or a new dashed *missing* row); no path → the card footer; focus not shown (an inline run) → the rows that
-  refer to it.
+  refer to it; focus a hidden run part → the rows that refer to its run (walking up through run parts, not past the
+  first run that a non-run node points to; D40).
 
 ## Roles (`makeRoles` in src/profile.js)
 
@@ -91,13 +95,17 @@ First rule that matches, in this order:
 2. **claim** (orange): a type is (a subclass of) a class in `roles.claim.classes`, or the node has a predicate in
    `roles.claim.hasPredicates`.
 3. **evidence** (green): object of a predicate in `roles.evidence.objectOf`.
-4. **run** (grey): a type is (a subclass of) `roles.run.classes`, or object of `roles.run.objectOf`.
+4. **run** (grey): a type is (a subclass of) `roles.run.classes`, or object of `roles.run.objectOf`; **or** (D40,
+   structural, no profile key) a *run part*: a node with triples whose incoming links all come from runs or run
+   parts (a software agent, its organisation, a parameter set). A node that anything else also points to stays data.
 5. **data** (blue): everything else (in practice the submitter's data, e.g. MS features).
 
 Consequence worth knowing: a BGC is a *claim* (it has evidence), so the BGC-pathway link claim → BGC is a
 claim-to-claim edge.
 
 ## Profile reference (`public/profiles/*.json`)
+
+How-to with recipes and pitfalls: [profile-and-scores.md](profile-and-scores.md).
 
 | Key | Meaning |
 |---|---|
@@ -113,10 +121,11 @@ claim-to-claim edge.
 | `terms.kgVocabularyNamespaces` | the knowledge graph's own vocabulary (purple, never "not in spec") |
 | `terms.generic` | rdf/rdfs/owl/xsd: never flagged |
 | `titles.labelProperties`, `titles.byClass` | card titles: first value found; per-class lists win |
-| `predicateLabels` | edge label overrides (e.g. `sio:SIO_000772` → "has evidence") |
+| `predicateLabels` | edge label overrides (e.g. `sio:SIO_000772` → "sio:SIO_000772: has evidence") |
+| `scores.definitions` | CSV of the scores the global view's Score panel offers (see "Score highlight"); no key = no Score button |
 
 Card titles (`titleFor`): claim `<type> · → <anchor labels>` (or `not anchored`); evidence `Evidence · <run summary>`;
-run `<run summary>`; others `<type> · <label>`.
+run `<run summary>` (when the run has a summary predicate; run parts, D40, get `<type> · <label>`); others `<type> · <label>`.
 
 Term status (`termInfo`), only with the term table: `reuse` (green), `review` (teal), `local`/`request` (orange),
 `unlisted` (grey, "not in spec"), `kg` (purple), `none` (no colour). Badge = the requirement IDs (`req_id`) of the
@@ -130,7 +139,8 @@ to any claim (always).
 
 Files with more than 60 subjects open on their first claim (`MAX_ALL` in App.jsx). For one claim the subset is: the
 claim, the nodes it points to and the nodes those point to (evidence → run), knowledge-graph nodes reached from kept
-knowledge-graph nodes (metabolite → pathways), and non-claim nodes that point to kept data nodes.
+knowledge-graph nodes (metabolite → pathways), all parts of every kept run at any depth (agent → organisation;
+D40), and non-claim nodes that point to kept data nodes.
 It does **not** include nodes that point *into* an anchor (e.g. GAME17 → α-tomatine) nor claims that point to the
 focused claim.
 
@@ -160,16 +170,17 @@ the order is the file order, as before.
 
 ## URL parameters
 
-`data` (file in public/data, default `slide25.nq`), `focus` (claim IRI), `profile` (profile path; empty = none),
+`data` (file in public/data, default `all_pilots.ttl` since D41; `slide25.nq` by URL only), `focus` (claim IRI), `profile` (profile path; empty = none),
 `runs=1` (runs as cards), `layout=slide`, `terms=0` (term table off).
-Global view (`global.html`): `data` (default `sample_evidence_graph.nq`), `focus` (claim IRI opened in the detail panel),
-`layout` (`kg` = knowledge-graph map, default when the profile names a snapshot; `ring` = anchor ring),
-`pick` (`node:<IRI>`: start with the claims that share this node picked; map only).
+Global view (`global.html`): `data` (default `all_pilots.ttl`, D39), `focus` (claim IRI opened in the detail panel),
+`layout` (`kg` = knowledge-graph map, default when the profile names a snapshot; `ring` = anchor ring; URL only, no menu since D39),
+`pick` (`node:<IRI>`: start with the claims that share this node picked; map only),
+`score` (CURIE, IRI or label of a defined score: open the Score panel with it), `top` (N of the top N, default 100).
 Screenshots of it: `npm run shot -- shots/ --page global.html "data=..."`.
 
-## Global view (test, `global.html`)
+## Global view (`global.html`)
 
-Answers two questions before the global view is designed properly: is Cytoscape.js fast enough for thousands of
+Started on 2026-11-10 as a test (code comments still say "TEST"); since D39 it is the page the menu opens on. It first answered two questions before the global view is designed properly: is Cytoscape.js fast enough for thousands of
 claims, and does global → detail work. Claims = role `claim`; anchors = objects of the profile's `pattern.anchoredTo`
 predicates. `globalLayout` (deterministic, no forces): claims sorted by first anchor, then IRI, on an outer ring;
 each anchor at the circular mean angle of its claims on an inner ring, on the rim of a disk that stands for the
@@ -182,7 +193,7 @@ Seen on the metabolomics pilot (2,722 claims, 673 anchors): it renders, but the 
 the edges a haze, so the real global view needs grouping (e.g. one node per anchor). Long anchor labels overlap
 where anchors bunch. Interactive speed is not measured yet (headless screenshots use virtual time).
 
-### Knowledge-graph map (test, 2026-11-11, `?layout=kg`)
+### Knowledge-graph map (2026-11-11, `?layout=kg`)
 
 The default layout of the global view when the profile names a snapshot (`roles.kg.snapshot`). Shows where the
 file's claims land in PlantMetWiki (PMW):
@@ -215,14 +226,16 @@ file's claims land in PlantMetWiki (PMW):
   (the claim points at it directly); grey = same source (reached only through evidence, e.g. the cited paper).
   Opened claim: halo, sibling arcs in these colours (nodes shared by > 30 claims are listed, not drawn) and a "Shares with other claims"
   bar over the cards ([select all n] picks that node). Hover: lighter arcs. Claims whose data node has other claims
-  get a dark ring. Shift-click collects a hand-picked set. Picks (group, pathway, shared node, set) dim the other
+  get a dark ring. A click on a claim dot selects that claim (a set of one, D42) and opens its cards; shift-click adds
+  to the set or removes from it (with the Score panel open, a click only opens the cards). Picks (group, pathway, shared node, set) dim the other
   claims, put halos on the picked ones and list them in the side panel.
 - **Open as cards / back** (`src/handoff.js`): every pick in the side panel has "Open these n claims in detail view →" (the detail view = the card viewer), and
   the header starts with "← Detail view" (mirrors "← Global view" in the card viewer; a hand-off without claims: the whole file, no selection). The
   global view writes one record `{source, name, text, claims, title}` to IndexedDB (database `lodviz`) and goes to
   `./?handoff=1` (`&data=` too for bundled data). The card viewer reads it, shows the union of the claims' focus
   sets (`focusSetMany` in rdf.js) 100 claims per page (`SUBSET_PAGE`, page in `viewKey`), with a bar (title, claims
-  i-j of n, previous/next) and the option "selection from the global view" in Show. The same paged mode is
+  i-j of n, previous/next, and a page-number box: type a number and press Enter or leave the box; numbers out of
+  range go to the first/last page, an empty box keeps the page; 2026-11-12) and the option "selection from the global view" in Show. The same paged mode is
   available for any file as "all claims, 100 per page" in Show, in the menu's order (see "Claims ordered by SHACL
   problems" below; big files, where "everything" is disabled, still
   open on their first claim by default). TTL exports the whole selection
@@ -237,6 +250,28 @@ file's claims land in PlantMetWiki (PMW):
   from disk cannot be reopened by URL. Both pages ignore fetch responses for a source that is no longer current.
   Known limit: claims that all share one node (e.g. 100 claims of one pathway) are ONE graph, laid out as one very
   tall column of claim blocks around that node.
+- **Stubs in the global view's claim panel** (D37, 2026-11-12): the panel that opens on a claim click (`view` in
+  Global.jsx) wraps the graph with `withKgStubs(g, [focus], ...)` and rebuilds roles/labels on the wrapped graph; the
+  panel's ReactFlowProvider key includes whether the snapshot has loaded, so a `?focus=` URL re-lays out once the
+  stubs arrive. D38: with no claim clicked, a map pick of at most `PANEL_MAX` (100) claims is shown the same way
+  (`focusSetMany`, `Graph grid`); the provider key is the joined claim list.
+- **Score highlight** (D36, 2026-11-12, `src/scores.js`, `ScorePanel` in Global.jsx): the header button
+  "Score (n)…" opens a side panel (closes a map pick; a new pick closes it). The scores come from a CSV named in the
+  profile (`scores.definitions`, now `public/profiles/lod-pathways-draft.scores.csv`), one row per score property:
+  `property, label, better (higher|lower), min, max, scale (linear|log), kind, order, attached_to (claim|evidence),
+  status (confirmed|assumed), note`. `min`/`max` = the tool's **theoretical** range (Martin); it sets the colour
+  scale; a log scale needs `min` > 0 (the p-value uses 1e-10 as its floor). Only `kind=numeric` is read so far.
+  `attached_to=evidence`: values are read from the objects of `pattern.hasEvidence`; a claim with several values takes
+  its best one. The menu lists only the scores present in the file, with claim counts. The panel shows the
+  definition, the range in the file (min, max, median), claims with the score, values outside the theoretical range
+  (counted, drawn in the end colour), the note, and a histogram over the theoretical range (worse left, bars in the
+  ramp colour, grey strip = the file's range, dashed line = cut-off). **Top N** (number box + slider, default 100):
+  ranking best first, equal values in claim-IRI order (so the set is deterministic; ties at the cut-off are reported);
+  the top N are listed and open as cards through the hand-off ("Top N by <score>"). On the map: claims with the score
+  get a blue ramp colour (dataviz reference ramp, steps 250 → 700, light = worse), drawn as fixed-size dots on the
+  canvas (`dots` in kgDraw.js) so they read at full zoom; top N get halos, the other scored claims are faded, claims
+  without the score turn light grey. The ring layout gets the colours on its Cytoscape dots only (too small at full
+  zoom). No combined cross-pilot score (open WG3 question).
 - **Removing it** (if the map does not work out): delete `src/kgMap.js`, `src/kgDraw.js`,
   `tools/build_pmw_snapshot.py`, `tools/pmw_class_groups.csv`, `public/data/pmw_snapshot.json`, the `snapshot` line
   in the profile, and the blocks marked "TEST 2026-11-11" / `useKg` in `src/Global.jsx`. Or just open `?layout=ring`.
@@ -256,16 +291,23 @@ Known limits:
 - In-browser validation (docs/validation.md): results are not shown in the global view yet, and are lost when going
   back to it (save the `.nq`); the PlantMetWiki reference check of validate.py is not included.
 - No dark mode.
+- `global.html?focus=` with an IRI that is not a claim of the file opens an empty panel without a message.
+- The global view → card viewer hand-off cannot be checked with screenshot.mjs (needs clicks).
+- SVG export garbles on a Mac (reported, not reproduced; candidate causes in docs/handover.md).
+- Edges after a drag (D35): tracks of different cards can overlap; lane edges do not follow.
 
 Candidate features (discussed, not built):
 - "Requirements not covered" panel: requirements of the term table a card should fulfil but has no term for
   (e.g. MET-04 has no term yet; 9 of 188 term-table rows have no IRI).
 - Different colours/roles for kinds of data (features, genes, samples) via the profile.
+- More (network paging, SPARQL of a selection, ordinal scores, anchor-tier filter, PlantCyc layer): docs/handover.md,
+  "Designed or discussed, not built".
 
 Findings about the data (found while building the viewer, 2026-11-10; to be fixed in the RDF and term table, not here):
 - PlantMetWiki PC numbers changed after the 2026-10-01 snapshot (1162 → 2478 pathway IRIs; e.g. PC1159 is now
-  coenzyme A biosynthesis, α-tomatine is PC968), so `pmw:PC<n>` anchors in the pilot RDF and sample graph probably
-  point to the wrong pathways.
+  coenzyme A biosynthesis, α-tomatine is PC968). Measured 2026-11-11: 0 of 1,162 PC numbers kept their pathway, so
+  every `pmw:PC<n>` anchor in the pilot RDF points to a different pathway today; all can be remapped through the PWY
+  id (the snapshot's `alias` table does this). Details: docs/handover.md.
 - `lodp:identificationTier`, `lodp:precursorMzDifference`, `lodp:libraryCompoundName` are in `lodp.ttl` and the
   RDF but not in `ontology_terms.csv` (the viewer shows "not in spec").
 - `lodp:run_gnps_library` has no version (SHACL warning).

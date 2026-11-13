@@ -53,9 +53,23 @@ The side column is the evidence column (slide) or the data + evidence column (co
 
 ## 3. Other columns
 
-- **data** (slide layout only; in compact it is part of the blocks) and **runs**: `placeColumn` sorts the cards by
+- **data** (slide layout only; in compact it is part of the blocks): `placeColumn` sorts the cards by
   their *desired* y (mean centre of their already placed neighbours) and places each at that y, pushed down to
   avoid overlapping the card above.
+- **runs** (2026-11-13, D40) as trees, with the same placement as the knowledge graph (`placeKg`, below), but the
+  groups come from `runTrees`: one tree per run that a card outside the run column points to (evidence, a claim);
+  its parts (agent, parameters, the agent's organisation; role `run`, see architecture.md "Roles") hang below it
+  along the links (directed, not either direction as in the KG). A part reachable from several linked runs belongs
+  to the first (input order). A run that evidence points to is always its own root, even if another run points to
+  it: inside another run's tree the evidence edge into it would cross the cards above. Trees are stacked (never
+  side by side). Compact: the run column is the leftmost one, so the trees are mirrored and grow to the left, and
+  no card goes right of the column (the gap to the right stays free); slide: they grow to the right, no card left
+  of the column. A run without parts is a one-card tree, placed like `placeColumn` would (centred on its
+  neighbours) but `BLOCK_GAP/2` instead of `GAP_Y` below the previous one. Run → run links that are not tree links
+  (`prov:wasInformedBy` between two linked runs) are **loops** (`pos.loops`, `LoopEdge.jsx`): out of one card's
+  side, along the column, into the other's same side, on the side the trees do not grow into (right in compact,
+  left in slide); nested by vertical span, shortest innermost, `LOOP_STEP` 14 px apart. They are left out of the
+  gap-track counting (`trackBands`).
 - **knowledge graph** as trees growing downward (`kgTrees`, `placeKg`): cards linked to each other (KG-to-KG edges,
   e.g. metabolite → pathways) form a group (connected component). Depth inside a group = link distance in either
   direction from the cards linked from outside the group (the anchors of claims; a group nothing outside links to
@@ -91,7 +105,7 @@ other rows never turn an edge into a lane. The slide layout does not use the gri
    at the other end. Stored as offsets from the
    side's middle (`sOff`, `tOff`), so they survive dragging a card.
 3. **Bend positions** (`assignTracks`): every edge between neighbouring columns gets its own vertical segment
-   (`centerX`). Per gap, each source card gets a band of tracks; bands are ordered by the card's height (the top
+   (stored as `trackFrac`, the fraction of the gap, so it follows a dragged card). Per gap, each source card gets a band of tracks; bands are ordered by the card's height (the top
    card's band nearest to it). Inside a band, the card's upward edges (target above its connection point) bend
    nearest-first starting from the top connection point; downward edges nearest-first from the bottom one. Upward
    and downward edges of one card never meet, so they share track slots (band width = max(#up, #down)). A band
@@ -103,9 +117,11 @@ other rows never turn an edge into a lane. The slide layout does not use the gri
    **Horizontal tracks** (`assignVTracks`, for top/bottom edges, drawn by `VTrackEdge.jsx`): in the gap below the
    upper card of each edge; that card's fan splits into edges going left and right, and on each side the edge to the
    farthest card turns first (highest track), so a fan never crosses itself. Fans of different cards in one tree row
-   do not overlap (tidy tree) and reuse the same track heights.
+   do not overlap (tidy tree) and reuse the same track heights. Also stored as a fraction (`trackFrac`, of the way
+   from the source's border to the target's), mapped onto the live card positions in `VTrackEdge.jsx`.
 4. **Labels**: on the last horizontal piece, anchored at the target card's edge (`TrackEdge.jsx`). The same label
-   at the same arrowhead is shown once.
+   at the same arrowhead is shown once. The side is taken from the side of the card the arrow enters
+   (`targetPosition`), so the label stays outside the card when cards are dragged.
 5. **Fit**: `fitBounds` over the cards and the lanes above them.
 
 ## Why not a general graph layout

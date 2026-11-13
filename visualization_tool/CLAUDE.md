@@ -1,6 +1,7 @@
 # Evidence graph viewer: guide for agents
 
-Read this file first, then [docs/architecture.md](docs/architecture.md). Read [docs/layout.md](docs/layout.md)
+If you are taking over the viewer, start with [docs/handover.md](docs/handover.md) (current state, what waits for
+review, parked ideas, known issues). Read this file first, then [docs/architecture.md](docs/architecture.md). Read [docs/layout.md](docs/layout.md)
 before touching `src/layout.js`, and [docs/decisions.md](docs/decisions.md) before changing anything that a
 decision there covers (most of the look and behaviour was decided by Martin Engst, who built the viewer).
 Before touching `src/validation/` or `src/ValidationControl.jsx` (SHACL validation in the browser), read
@@ -50,10 +51,25 @@ npm run shot -- out.png "data=slide25.nq"     # build + headless screenshot (too
 | `data=sample_evidence_graph.nq&runs=1&focus=https://example.org/lod-pathways/pilot/annotation_MTBLS14270_pos_741` | runs as cards, a claim with four evidence/data edges |
 | `data=sample_evidence_graph.nq&profile=` | no profile: the generic fallback must still work |
 
+After any change to the global view (`global.html`, `src/Global.jsx`, `src/globalLayout.js`, `src/kg*.js`,
+`src/siblings.js`, `src/scores.js`), check with `npm run shot -- shots/ --page global.html "<query>" ...`:
+
+| Query (`--page global.html`) | Why |
+|---|---|
+| `data=all_pilots.ttl` | the default page: PlantMetWiki map with all 4,884 pilot claims, blocks, ribbons |
+| `data=all_pilots.ttl&focus=https://example.org/lod-pathways/pilot/annotation_MTBLS14270_pos_741_GMMLNKINDDUDCF` | claim panel: cards with a PlantMetWiki stub (D37) and the "Shares with other claims" bar |
+| `data=all_pilots.ttl&pick=node:https://identifiers.org/inchikey/CJXMVKYNVIGQBS-OWOJBTEDSA-N` | a shared-node pick: 22 claims listed and shown as a grid of cards in the panel (D38) |
+| `data=all_pilots.ttl&score=lodp:dreamsSimilarity&top=50` | Score panel: histogram, top 50, blue dots on the map (D36) |
+| `data=sample_evidence_graph.nq&layout=ring` | the older anchor ring, URL only (D39) |
+
+A `focus=` IRI that is not a claim of the file gives an empty panel, so copy IRIs from the file. The hand-off between
+the two pages (IndexedDB) needs clicks, which screenshot.mjs cannot do: check it by hand (docs/handover.md, "Known issues").
+
 `npm run shot -- shots/ "<query1>" "<query2>" ...` writes one PNG per query into `shots/` (git-ignored).
 
-The menu has slide 25, the sample graph and, for testing on the Pages site, all four pilots as plain Turtle
-(`all_pilots.ttl`, made by `tools/rebuild_bundles.sh`, no SHACL report; decision D32, which replaced D19). Big files
+The Data menu (`public/data/datasets.json`, shared by both pages) has all four pilots as plain Turtle (`all_pilots.ttl`,
+made by `tools/rebuild_bundles.sh`, no SHACL report; the default of both pages) and the sample graph (D32, D41).
+`slide25.nq` is no longer in the menu but stays in `public/data/` for the checks above (`data=slide25.nq`). Big files
 (more than 60 subjects) open on their first claim; `data=all_pilots.ttl` is the big-file test. Other files: bundle
 locally (example at the end of `tools/rebuild_bundles.sh`) and open them with "Open Turtle file"; do not add them to
 `public/data/` without a decision.
@@ -68,7 +84,8 @@ Rebuild the data bundles (only when the sample graph, shapes, term table or `dat
 
 1. **The core knows no vocabulary.** `src/rdf.js`, `src/model.js`, `src/layout.js` and the React components must
    not contain evidence terms (`lodp:`, SIO, ECO, PROV, WikiPathways IRIs, tier names, slide-specific strings).
-   Anything vocabulary-specific goes into the profile (`public/profiles/*.json`), read by `src/profile.js`.
+   Anything vocabulary-specific goes into the profile (`public/profiles/*.json`), read by `src/profile.js`;
+   how to edit it and the score CSV: [docs/profile-and-scores.md](docs/profile-and-scores.md).
    Reason: the ontologies are not decided yet; when they are, only the profile (and the vocabulary in the bundles)
    should change. See decision D8.
 2. **Layout is deterministic.** Same input, same picture. No force layout, no randomness. See docs/layout.md.
@@ -100,5 +117,6 @@ Rebuild the data bundles (only when the sample graph, shapes, term table or `dat
 
 ## Where things stand
 
-See the "Open work" section of [docs/architecture.md](docs/architecture.md#open-work) for known limits and the next
-candidate features, and docs/decisions.md for how the current behaviour came about.
+See [docs/handover.md](docs/handover.md) (state, branch, pending reviews, parked ideas, known issues), the "Open
+work" section of [docs/architecture.md](docs/architecture.md#open-work) for known limits, and docs/decisions.md for
+how the current behaviour came about. Keep handover.md current when you finish a piece of work.

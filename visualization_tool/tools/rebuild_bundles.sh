@@ -41,6 +41,6 @@ cp "$REPO/shape_constraints/vocab/lodp.ttl" "$VAL/vocab_lodp.ttl"
   printf '],\n  "vocab": "vocab_lodp.ttl"\n}\n'
 } > "$VAL/index.json"
 
-# Other files (e.g. a whole pilot RDF) can be bundled the same way for local tests, but only slide 25 and the
+# Other files (e.g. a whole pilot RDF) can be bundled the same way for local tests, but only all_pilots.ttl and the
 # sample graph are in the menu (public/data/datasets.json). Example:
 #   B --source "$REPO/shape_constraints/rdf/bgc.ttl" --all --out /tmp/pilot_bgc.nq   # then open it with "Open file"
