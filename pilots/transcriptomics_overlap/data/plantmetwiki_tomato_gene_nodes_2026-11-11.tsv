@@ -1,0 +1,23 @@
+# PlantMetWiki gene nodes with a Solyc locus (GPML property), https://plantmetwiki.bioinformatics.nl/sparql, 2026-11-11; query in pilots/transcriptomics_overlap/to_turtle.py
+gene_node	label	solyc
+https://identifiers.org/plantcyc/G18C3-373	CYP51	Solyc01g008110
+https://identifiers.org/plantcyc/G18C3-369	SDR	Solyc01g073640
+https://identifiers.org/plantcyc/G-63048	SMO3	Solyc01g091320
+https://identifiers.org/plantcyc/G18C3-32	ASAT4	Solyc01g105580
+https://identifiers.org/plantcyc/G-63049	3βHSD-2	Solyc02g081730
+https://identifiers.org/plantcyc/G18C3-376	C5-SD2	Solyc02g086180
+https://identifiers.org/plantcyc/G18C3-29	ASAT2	Solyc04g012020
+https://identifiers.org/plantcyc/G18C3-368	SMO4	Solyc06g005750
+https://identifiers.org/plantcyc/G18C3-379	7-DR2	Solyc06g074090
+https://identifiers.org/plantcyc/G18C3-375	8,7 SI	Solyc06g082980
+https://identifiers.org/ncbigene/HQ293018	GAME2	Solyc07g043410
+https://identifiers.org/ncbigene/HQ293016	GAME1	Solyc07g043420
+https://identifiers.org/plantcyc/G18C3-2	GAME8	Solyc07g043460.2
+https://identifiers.org/plantcyc/G18C3-9	GAME17	Solyc07g043480
+https://identifiers.org/plantcyc/G18C3-10	GAME18	Solyc07g043500
+https://identifiers.org/plantcyc/G18C3-374	C14-R	Solyc09g009040
+https://identifiers.org/plantcyc/G18C3-31	ASAT3	Solyc11g067270
+https://identifiers.org/plantcyc/G18C3-27	ASAT1	Solyc12g006330
+https://identifiers.org/plantcyc/G18C3-3	GAME4	Solyc12g006460
+https://identifiers.org/plantcyc/G18C3-4	GAME12	Solyc12g006470
+https://identifiers.org/plantcyc/G18C3-372	CPI	Solyc12g098640

@@ -1,0 +1,5 @@
+# Inputs and intermediate files, re-created by download_inputs.py and adapters.py (MD5-checked);
+# nf-core reads, genome and pipeline outputs (nfcore/)
+data/downloads/
+.venv/
+__pycache__/

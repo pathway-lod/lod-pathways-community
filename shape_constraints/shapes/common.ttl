@@ -46,6 +46,7 @@ lodps:ClaimShape a sh:NodeShape ;
     sh:or (
         [ sh:path lodp:anchoredInPathway ; sh:minCount 1 ]
         [ sh:path lodp:anchoredToMetabolite ; sh:minCount 1 ]
+        [ sh:class lodp:TranscriptomicsClaim ]
     ) ;
     sh:message "A claim must be anchored to PlantMetWiki: give lodp:anchoredInPathway or lodp:anchoredToMetabolite." ;
 
@@ -68,7 +69,8 @@ lodps:ClaimShape a sh:NodeShape ;
 
     sh:property [
         sh:path lodp:anchorTier ;
-        sh:minCount 1 ; sh:maxCount 1 ;
+        # sh:minCount 1 ;                               # moved to lodps:ClaimAnchorTierShape (exception for lodp:TranscriptomicsClaim)
+        sh:maxCount 1 ;
         sh:datatype xsd:string ;
         sh:in ( "curated" "gene_direct" "gene_locus" "structure_match" "gene_uniprot" "gene_ec" "mass_match" ) ;
         sh:message "A claim needs exactly one lodp:anchorTier: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec or mass_match." ] ;
@@ -79,6 +81,16 @@ lodps:ClaimShape a sh:NodeShape ;
         sh:severity sh:Warning ;
         sh:not [ sh:in ( "gene_ec" "mass_match" ) ] ;
         sh:message "Weak anchor: gene_ec (EC number only) or mass_match (MS1 mass only). Review before treating this as a PlantMetWiki-supported claim." ] .
+
+# Every claim needs an anchor tier, except transcriptomics claims, which are not anchored.
+lodps:ClaimAnchorTierShape a sh:NodeShape ;
+    sh:name "Claim: anchor tier" ;
+    sh:targetClass lodp:Claim ;
+    sh:or (
+        [ sh:path lodp:anchorTier ; sh:minCount 1 ]
+        [ sh:class lodp:TranscriptomicsClaim ]
+    ) ;
+    sh:message "A claim needs exactly one lodp:anchorTier: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec or mass_match." .
 
 # ---------------------------------------------------------------------------
 # Evidence nodes (also the MIBiG match evidence of a BGC)

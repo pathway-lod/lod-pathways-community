@@ -1,0 +1,6 @@
+# Pinned versions used for the results in results/ (Python 3.12). to_turtle.py also needs rdflib (the
+# shape_constraints venv has it, with the same pandas and numpy).
+pandas==3.0.6
+numpy==2.5.3
+scipy==1.18.1
+rdflib==7.6.0
