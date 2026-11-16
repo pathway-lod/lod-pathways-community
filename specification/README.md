@@ -60,6 +60,7 @@ Do these after this branch has been merged into the default branch (`main`): Git
 | [`SPECIFICATION.md`](SPECIFICATION.md) | The written specification; the tables in it are generated from the CSV. |
 | [`ontology_terms.csv`](ontology_terms.csv) | The term table: one row per requirement and candidate term. Source of truth. |
 | [`ols_search_phrases.csv`](ols_search_phrases.csv) | The phrases that were searched in the Ontology Lookup Service to find the first candidate terms (reconstructed from the working session; not the final terms). |
+| [`isa/`](isa/) | The mapping of each requirement to ISA-Tab and ISA-JSON (`isa_mapping.csv`) and its README. |
 | [`index.html`](index.html) | The dashboard, generated; do not edit by hand. |
 | [`dashboard_template.html`](dashboard_template.html) | The design and the code of the dashboard; edit this to change how it looks or works. |
 | [`check_terms.py`](check_terms.py) | Validates the CSV, fills in term labels from the Ontology Lookup Service, regenerates the tables and the dashboard. |
