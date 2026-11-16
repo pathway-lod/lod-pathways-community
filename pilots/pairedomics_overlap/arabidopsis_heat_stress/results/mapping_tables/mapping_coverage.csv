@@ -1,0 +1,4 @@
+input,rows,not_comparable,different
+input\Significant_Proteomics_Metabolomics_Pearson.csv,107,100,7
+input\Significant_Transcriptomics_Metabolomics_Pearson.csv,132,128,4
+input\Significant_Transcriptomics_Proteomics_Pearson.csv,1599,1553,46
