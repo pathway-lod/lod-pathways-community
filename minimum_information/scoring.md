@@ -62,13 +62,15 @@ Each branch of a megaquery is one piece of evidence, with a comment `family ...`
 
 | Family | Tier (what is checked) | Weight | In the live query | Data today | Note |
 |---|---|---|---|---|---|
-| membership | `gene-in-plantmetwiki-pathway` | 0.90 | yes | data | gene listed in a pathway by Solyc or Araport identifier |
+| membership | `gene-in-plantmetwiki-pathway` | 0.90 | yes | data | gene listed in a pathway by Solyc or Araport identifier (locus) |
+| membership | `gene-uniprot-in-pathway` | 0.80 | yes | data (paired-omics pilot, gene_annotation.ttl) | the UniProt entry of the gene is listed in the pathway (the pilot's tier gene_uniprot) |
+| membership | `gene-ec-in-pathway` | 0.40 | yes | data (paired-omics pilot, gene_annotation.ttl) | an EC number of the gene's UniProt entry is on a reaction of the pathway (weak: shared by many genes; the pilot's tier gene_ec) |
 | membership | `bgc-both-in-pathway` | 0.70 | yes | data (sample graph) | gene and a gene of the same BGC are in the same pathway |
 | membership | `bgc-partner-in-pathway` | 0.50 | yes | data (sample graph) | a gene of the same BGC is in the pathway |
 | membership | `genes-in-same-bgc` | 0.30 | yes | data (sample graph) | two or more genes in one BGC (no pathway) |
 | omics | `coexpressed-with-pathway-gene` | 0.50 | yes | data | same MEANtools functional cluster as a gene of the pathway |
-| sequence | `ortholog-in-pathway-species` | 0.50 | yes | no data yet | ortholog of a pathway gene in another species |
-| omics | `gene-and-metabolite-in-same-pathway` | 0.60 | yes | no data yet | gene associated with a detected metabolite annotated as a metabolite of the pathway |
+| sequence | `ortholog-in-pathway-species` | 0.50 | yes | data (23 of 315 genes, OrthoDB via gene_annotation.ttl) | ortholog (same OrthoDB group) of an enzyme that a pathway lists, in another species |
+| omics | `gene-and-metabolite-in-same-pathway` | 0.60 | yes | no rows: 0 of 721 pairs share a pathway (computed, not missing data) | gene associated with a detected metabolite annotated as a metabolite of the pathway |
 
 ## Where to look
 

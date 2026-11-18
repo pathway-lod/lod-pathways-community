@@ -30,6 +30,9 @@ DATA = {
     "annotation": REPO / "shape_constraints/rdf/annotation.ttl",
     "association": REPO / "shape_constraints/rdf/association.ttl",
     "bgc": REPO / "shape_constraints/rdf/bgc.ttl",
+    "bgc_tomato": REPO / "pilots/plantismash_overlap/results/bgc_tomato.ttl",
+    "gene_annotation": REPO / "pilots/pairedomics_overlap/results/gene_annotation.ttl",
+    "feature_annotation": REPO / "pilots/pairedomics_overlap/results/feature_annotation.ttl",
     "sample": REPO / "examples/sample_evidence_graph.ttl",
 }
 
