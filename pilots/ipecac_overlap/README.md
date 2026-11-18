@@ -4,6 +4,29 @@ Which metabolites and which pathway steps of *Ipecac alkaloid biosynthesis in tw
 
 This pilot belongs to the PO (paired omics) and MET use cases of the [specification](../../specification/SPECIFICATION.md). It has two parts: [part 1](#part-1-structures-pathway-and-co-expression) uses the Zenodo deposit (structures and co-expression), and [part 2](#part-2-the-paired-data-sequences-and-experiments) adds the supplementary tables of the paper (metabolite measurements per tissue, protein sequences and the heterologous expression experiments).
 
+## Data sources and what they contain
+
+| Source | File | Content |
+|---|---|---|
+| Zenodo [10.5281/zenodo.23661892](https://doi.org/10.5281/zenodo.23661892) | `smiles.xlsx` | PubChem IDs and SMILES of the 12 metabolites of Figure 2 |
+| | `Ci_transcriptome_pearson.xlsx` | *Carapichea ipecacuanha* (Ci): 137,713 transcripts, expression in 6 tissues, Pearson correlation with a bait gene |
+| | `As_transcriptome_pearson.xlsx` | *Alangium salviifolium* (As): 178,877 transcripts, expression in 12 tissues, Pearson correlation with a bait gene |
+| Supplementary Information, Nature Chemical Biology (article 41589_2025_1926) | `MOESM1` (PDF) | Supplementary Information, including the metabolomics methods |
+| | `MOESM3` (xlsx) | Protein sequences for the phylogenetic trees (sheets OMT, glucosidase, reductase): cloned genes ("this study") and reference genes, with accession details |
+| | `MOESM4` (xlsx) | Source Data Fig. 2: normalised peak areas, three biological replicates each: 2e *C. ipecacuanha* tissues, 2f *A. salviifolium* tissues, 2g and 2h *N. benthamiana* leaves infiltrated with dopamine plus secologanin or secologanic acid, 2i *C. roseus* petals infiltrated with dopamine |
+| | `MOESM5` (xlsx) | Source Data Fig. 3b, 3c: *N. benthamiana* leaves expressing the protoemetine pathway genes of *C. ipecacuanha* (3b) or *A. salviifolium* (3c) |
+| | `MOESM6` (xlsx) | Source Data Fig. 4c, 4f: *N. benthamiana* gene combinations (ipecoside; O-methylated DAIA) |
+| | `MOESM7` (xlsx) | Source Data Fig. 5b, 5d: *N. benthamiana* gene combinations (ipecoside; O-methylated DAIA) |
+
+Key points about the data:
+
+- **Metabolomics.** The methods of the paper describe untargeted UPLC-MS (method 1 for *C. ipecacuanha*, method 2 for *A. salviifolium*, method 3 for the comparable traces of Fig. 2). The deposited tables, however, contain only the normalised peak areas of the named (annotated) compounds, not the full feature table. Whether raw data or a feature table is deposited elsewhere has not been checked.
+- **Transcriptomes.** De novo assemblies from Illumina short reads (about 2021), used without redundancy filtering, hence the more than 100,000 transcripts per species. The IDs are those of the assemblies (`NODE_...`); functional annotation is by eggNOG-mapper, so there are no UniProt identifiers and no sequences in the deposit.
+- **Co-expression.** The Pearson value is the correlation of a transcript's expression across tissues with a bait gene: the published OMT1 for *Carapichea*, the ortholog of tyrosine decarboxylase for *Alangium*. Metabolite data were not used as bait and the transcriptome was not correlated with the metabolome. The cut-offs were Pearson >= 0.75 and an expression of at least 50 in the tissue of highest expression (leaf buds in *Alangium*, young leaf in *Carapichea*). For *Alangium*, paralogs of genes with a function confirmed by agroinfiltration (the OMTs) were also considered at lower correlation. Candidates were filtered by their eggNOG description.
+- **Heterologous expression.** In the Source Data of Figs. 3 to 5, each row is a combination of genes expressed in *N. benthamiana* by agroinfiltration (Agrobacterium strains mixed) and each data point is one biological replicate, i.e. one plant.
+- **Metabolites.** Structures are given as SMILES (PubChem IDs for the Fig. 2 metabolites), not InChIKeys.
+- **Sequence identity.** Four OMT sequences had been published before (three in one paper, one in another from a different plant source, which is the same gene); the identity to the published sequences is given in the Methods and in Extended Data Fig. 2.
+
 ## Part 1: structures, pathway and co-expression
 
 ### Inputs
@@ -18,7 +41,7 @@ This pilot belongs to the PO (paired omics) and MET use cases of the [specificat
 
 The three Zenodo files are downloaded on the first run and checked against the MD5 sums that Zenodo lists.
 
-**What the transcript tables are.** The author's description (personal communication): the transcriptomes are de novo assemblies from short reads. The Pearson value is the correlation of a transcript's expression across the tissues with a *bait* gene; metabolite data were not used as bait and the transcriptome was not correlated with the metabolome. The author's cut-offs were Pearson ≥ 0.75 and an expression of at least 50 in the tissue of highest expression of the genes (leaf buds in *Alangium*, young leaf in *Carapichea*). Candidates were then filtered by their eggNOG-mapper description. The IDs are those of the assembly; there are no UniProt identifiers and no sequences in the deposit.
+**What the transcript tables are.** See [Data sources](#data-sources-and-what-they-contain). The tables hold the expression per tissue and the Pearson correlation with the bait gene; the p-value is not given.
 
 ### Method
 
@@ -79,12 +102,12 @@ Five steps have a UniProt-linked enzyme, one has only a PlantCyc monomer, and tw
 
 - **Carapichea: the correlation filter carries little information.** With 6 tissues, r ≥ 0.75 is reached by roughly 4% of unrelated profiles, about what is observed (5,546 of 136,736). Only the expression cut-off and the annotation make the 369 a usable shortlist.
 - **Alangium: well above chance.** 14,214 transcripts against about 440 expected, with 12 tissues. Raw expression values are heavy-tailed, so the chance estimate is rough.
-- **The *Alangium* bait is not a tyrosine decarboxylase in this table.** The author describes the bait as the ortholog of tyrosine decarboxylase, but the transcript with r = 1 is annotated as a cytochrome P450 (gene g9907, with two further isoforms at r ≥ 0.99). Transcripts annotated tyrosine (dopa) decarboxylase are co-expressed with it (for example `NODE_37865`, r = 0.90, expression 402 in leaf buds). Either the table was calculated with a different bait than described, or the P450 is one of the candidates; this should be confirmed with the author.
+- **The *Alangium* bait is not a tyrosine decarboxylase in this table.** The bait is described as the ortholog of tyrosine decarboxylase, but the transcript with r = 1 is annotated as a cytochrome P450 (gene g9907, with two further isoforms at r ≥ 0.99). Transcripts annotated tyrosine (dopa) decarboxylase are co-expressed with it (for example `NODE_37865`, r = 0.90, expression 402 in leaf buds). Either the table was calculated with a different bait than described, or the P450 is one of the candidates; this should be confirmed with the authors.
 - **Classes.** After correction only one class is enriched: SAM-dependent methyltransferases among the *Carapichea* co-expressed transcripts (13, 3.1-fold, FDR 0.006), which is expected when the bait is itself a methyltransferase and its paralogs are co-expressed. In *Alangium*, reductases/dehydrogenases (FDR 0.06) and decarboxylases (FDR 0.21) are not significant. No strictosidine-synthase-like transcript is among the co-expressed ones in either species.
 
 ## Part 2: the paired data, sequences and experiments
 
-The Supplementary Information of the paper (Nature Chemical Biology, article 41589_2025_1926) was added by the person who contributed the data: `MOESM3` (protein sequences of the cloned genes and of reference genes), `MOESM4` to `MOESM7` (Source Data of Figures 2 to 5) and `MOESM1` (the Supplementary Information PDF). They are not committed (the licence of the Source Data has not been checked); put them in `supplementaries/` to run `pair_ipecac.py`. Metabolomics used three individual plants and the RNA-seq one plant of the same age (Supplementary Fig. 1), so the pairing is by tissue and not by sample.
+The Supplementary Information of the paper (Nature Chemical Biology, article 41589_2025_1926) was added: `MOESM3` (protein sequences of the cloned genes and of reference genes), `MOESM4` to `MOESM7` (Source Data of Figures 2 to 5) and `MOESM1` (the Supplementary Information PDF). They are not committed (the licence of the Source Data has not been checked); put them in `supplementaries/` to run `pair_ipecac.py`. Metabolomics used three individual plants and the RNA-seq one plant of the same age (Supplementary Fig. 1), so the pairing is by tissue and not by sample.
 
 ### Pairing metabolites and transcripts by tissue
 
@@ -119,7 +142,7 @@ The Supplementary Information of the paper (Nature Chemical Biology, article 415
 | *Alangium* genes (AsDOMT1-7, AsDPOMT1-2, AsDGD1-2, AsS6DGD) | the same enzymes | 17 to 46% |
 | CiDR1-2, AsDR1-2 (reductases) | no reductase in the pathway | n/a |
 
-- The *Carapichea* O-methyltransferases and glucosidases are 94 to 98% identical to the enzymes that PlantMetWiki already lists, which fits the author's remark that these sequences were published before (from plants of other sources). This links the new experiments to existing enzyme nodes.
+- The *Carapichea* O-methyltransferases and glucosidases are 94 to 98% identical to the enzymes that PlantMetWiki already lists, which fits the fact that these OMT sequences were published before (from plants of other sources). This links the new experiments to existing enzyme nodes.
 - The *Alangium* genes are far from them (at most 46%): they are new enzymes for the same chemistry in a distant plant, not copies of the listed ones.
 - The reductases have no counterpart in PWY-7135, whose steps from the aglycon to protoemetine have no enzyme listed; the reductases are candidates for those steps (the paper's products are protoemetinol and 10-O-demethylprotoemetinol, not protoemetine).
 - The sequences of CiDE and CiIpS are not in the file, and the accession numbers are listed as "to be announced".

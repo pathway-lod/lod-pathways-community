@@ -20,7 +20,7 @@ The model behind the shapes is described in the [examples](../examples/README.md
 5. **Reproducible RDF.** Generate the RDF from the results of the [pilots](../pilots/) with scripts that build the graphs programmatically, and validate every file they write.
 6. **Check references, not only structure.** Test that the PlantMetWiki pathways and metabolites a claim attaches to actually exist (a dated snapshot), which SHACL alone cannot do.
 
-**Not goals.** The shapes do not judge whether a prediction is *true*. They do not load data into the PlantMetWiki triple store, and they do not change PlantMetWiki's own data model.
+**Warning.** The shapes do not judge whether a prediction is *true*. They do not load data into the PlantMetWiki triple store, and they do not change PlantMetWiki's own data model.
 
 ## What is in this folder
 
@@ -111,9 +111,9 @@ The sample graph in [`examples/`](../examples/) validates with 0 violations and 
 
 ## Decisions to confirm
 
-These are my defaults; each is a one-line change.
+These are the current defaults, but can be changed in the codebase. 
 
-- [ ] **SHACL, not ShEx.** pyshacl is used; the SPARQL constraints (consistency rules) are SHACL-SPARQL.
+- [ ] **SHACL, not ShEx.** pyshacl is used; the SPARQL constraints (consistency rules) are SHACL-SPARQL. The two languages are easily interchangeable. 
 - [ ] **Namespace.** `lodp:` is a placeholder (`example.org`). A permanent namespace is needed before publishing, for example under w3id.org.
 - [ ] **Which claims enter the KG.** BGC links of the direct and UniProt tiers only (EC-only links would add 24,000 weak links, 18 MB); associations from significant clusters with at least one anchored side; annotations of all detection tiers (MS2Query analogues excluded, since they are related compounds, not detections). Should weak anchors be loaded at all, or kept in a separate graph?
 - [ ] **`skos:closeMatch` for annotations**, with `lodp:matchLevel "connectivity"`. SKOS mapping relations are meant for concepts, not measurements, so a dedicated "annotated as" property would be cleaner.
