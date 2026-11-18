@@ -13,6 +13,7 @@
 | 3 | [`notebooks/README.md`](notebooks/README.md) | Which notebook covers which case, and the tables of results |
 | 4 | [`notebooks/05_ranked_components.ipynb`](notebooks/05_ranked_components.ipynb) | **The ranked results** (scores, tiers passed, figures); the numbers of the paper come from here |
 | 5 | `notebooks/results/*.csv` | The raw rows behind every table and figure (one CSV per query) |
+| 5a | [`meantools-use-case.md`](meantools-use-case.md) | **A one-page summary of the MEANtools use case**: how the knowledge graph and the broader tiers explain a correlation, with the figures |
 | 5b | [`notebooks/06_meantools_tht_example.ipynb`](notebooks/06_meantools_tht_example.ipynb) | **A worked example**: one MEANtools association followed through every tier, and how to interpret the correlations |
 | 6 | [`pathway-component-tiers.md`](pathway-component-tiers.md) | The reasoning behind the tiers of the PlantMetWiki reactions (discussion) |
 
