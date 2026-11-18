@@ -13,6 +13,7 @@
 | 3 | [`notebooks/README.md`](notebooks/README.md) | Which notebook covers which case, and the tables of results |
 | 4 | [`notebooks/05_ranked_components.ipynb`](notebooks/05_ranked_components.ipynb) | **The ranked results** (scores, tiers passed, figures); the numbers of the paper come from here |
 | 5 | `notebooks/results/*.csv` | The raw rows behind every table and figure (one CSV per query) |
+| 5b | [`notebooks/06_meantools_tht_example.ipynb`](notebooks/06_meantools_tht_example.ipynb) | **A worked example**: one MEANtools association followed through every tier, and how to interpret the correlations |
 | 6 | [`pathway-component-tiers.md`](pathway-component-tiers.md) | The reasoning behind the tiers of the PlantMetWiki reactions (discussion) |
 
 **What is outdated or superseded** (kept for the record, do not use as a source of numbers):
