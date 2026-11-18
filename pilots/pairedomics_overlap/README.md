@@ -88,3 +88,7 @@ Open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kernel an
 - [ ] Match at reaction level: gene EC and metabolite in the *same* reaction.
 - [ ] Request the ECO term; define the `lodp:` properties in a small vocabulary.
 - [ ] Report the `NPDB_annotations` issue to the MEANtools authors.
+
+## Orphan features (use case, draft)
+
+`orphan_features.py` (baseline) and `orphan_features_v2.py` (specificity weighting, mass-delta tier, mass-defect gate) rank PlantMetWiki pathways for MEANtools features that have no PlantMetWiki compound, through their correlated genes; results in `results/orphan_*.csv`, OrthoDB caches in `data/orthodb_*.json`. Summary and negative result: [`minimum_information/orphan-features-usecase.md`](../../minimum_information/orphan-features-usecase.md).

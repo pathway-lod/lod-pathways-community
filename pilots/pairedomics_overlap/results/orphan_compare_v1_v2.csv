@@ -1,0 +1,70 @@
+compound,features,mz,rt_s,pc,pathway,score,w_membership,w_sequence,mass_delta,mass_defect_ok,n_genes_link,n_genes_pathway,genes,p_pathway,p_any,pathway_v1,score_v1,p_any_v1
+M264T1547,M241T1547;M242T1547;M263T1547;M264T1547,241.0858,1547,PC1141,PRPP biosynthesis,0.7,0.4,0.5,False,True,65,1,Solyc10g007760,0.012,0.1299,superpathway of purines degradation in plants,0.7,0.7542
+M323T1528,M323T1528,323.1466,1528,PC689,calmodulin regulated calcium transport,0.7,0.4,0.5,False,True,42,1,Solyc04g077870,0.018,0.0689,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",0.7,0.5864
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC689,calmodulin regulated calcium transport,0.7,0.4,0.5,False,True,50,1,Solyc04g077870,0.017,0.1009,α-tomatine biosynthesis,0.9,0.1568
+M530T485,M530T485,530.1603,485,PC843,secologanin and strictosidine biosynthesis,0.6,0.0,0.5,True,True,62,3,"Solyc07g055740,Solyc08g079310,Solyc11g071800",0.022,0.1489,1D-myo-inositol hexakisphosphate biosynthesis III (Spirodela polyrrhiza),0.7,0.7403
+M600T1093,M600T1093,600.2937,1093,PC967,glutathione-mediated detoxification II,0.577,0.155,0.5,False,True,41,1,Solyc12g094430,0.01,0.0799,glutathione-mediated detoxification II,0.7,0.5824
+M962T828,M962T828,962.3389,828,PC123,L-valine degradation I,0.577,0.155,0.5,False,True,56,1,Solyc12g011160,0.006,0.1169,divinyl ether biosynthesis I,0.7,0.6993
+M342T713,M342T713,342.1331,713,PC843,secologanin and strictosidine biosynthesis,0.5,0.0,0.5,False,True,34,2,"Solyc08g079310,Solyc11g071800",0.013,0.2048,monolignol biosynthesis,0.7,0.4975
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC199,arabidopyrone biosynthesis,0.5,0.0,0.5,False,True,69,1,Solyc01g090180,0.023,0.3936,suberin monomers biosynthesis,0.7,0.7842
+M328T594,M328T594,328.1178,594,PC843,secologanin and strictosidine biosynthesis,0.5,0.0,0.5,False,True,17,1,Solyc11g071800,0.006,0.1239,suberin monomers biosynthesis,0.7,0.2957
+M328T655,M328T655,328.118,655,PC843,secologanin and strictosidine biosynthesis,0.5,0.0,0.5,False,True,32,1,Solyc11g071800,0.013,0.2088,chitin degradation III (carnivorous plants),0.5,0.7892
+M330T707,M330T707,330.1332,707,PC989,phospholipases,0.5,0.0,0.5,False,True,43,1,Solyc01g008790,0.012,0.2827,"cholesterol biosynthesis (plants, early side-chain reductase)",0.9,0.1329
+M331T806,M331T806,331.1374,806,PC199,arabidopyrone biosynthesis,0.5,0.0,0.5,False,True,11,1,Solyc01g090180,0.003,0.0839,chitin degradation III (carnivorous plants),0.7,0.2008
+M514T803,M492T803;M514T803,492.1861,803,PC989,phospholipases,0.5,0.0,0.5,False,True,74,1,Solyc01g008790,0.036,0.4046,α-tomatine biosynthesis,0.9,0.2188
+M772T844,M771T844;M772T844,771.3849,844,PC402,coniferin metabolism,0.5,0.0,0.5,False,True,42,1,Solyc12g014010,0.049,0.2358,aerobic respiration I (cytochrome c),0.5,0.8671
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC402,coniferin metabolism,0.5,0.0,0.5,False,True,20,1,Solyc07g043050,0.026,0.1588,coniferin metabolism,0.5,0.6174
+M544T534,M544T534,544.1787,534,PC220,"cholesterol biosynthesis (plants, early side-chain reductase)",0.45,0.9,0.0,False,False,94,1,Solyc06g005750,0.0519,0.5195,"cholesterol biosynthesis (plants, early side-chain reductase)",0.9,0.2847
+M185T919,M185T919,184.5433,919,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,17,2,"Solyc04g072000,Solyc07g005090",0.013,0.1369,chitin degradation III (carnivorous plants),0.7,0.2877
+M352T921,M330T918;M331T919;M352T921,330.1332,918,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,20,2,"Solyc04g072000,Solyc07g005090",0.012,0.3966,coumarins biosynthesis (engineered),0.7,0.3147
+M360T930,M360T930,360.1442,930,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,34,2,"Solyc04g072000,Solyc07g005090",0.032,0.5425,chitin degradation III (carnivorous plants),0.7,0.5375
+M189T676,M189T676,189.1262,676,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,12,1,Solyc10g055800,0.009,0.1888,chitin degradation III (carnivorous plants),0.7,0.1998
+M251T775,M251T775,250.5648,775,PC1021,D-galactose degradation I (Leloir pathway),0.4,0.4,0.0,False,True,28,1,Solyc03g113030,0.008,0.1848,superpathway of ergosterol biosynthesis II,0.7,0.4675
+M266T597,M266T597,265.5706,597,PC686,galactolipid biosynthesis I,0.4,0.4,0.0,False,True,30,1,Solyc07g007620,0.011,0.2038,phytosterol biosynthesis (plants),0.95,0.019
+M266T805,M266T805,265.5702,805,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,67,1,Solyc02g082920,0.0559,0.3756,superpathway of glycoalkaloid metabolism (Solanaceae),0.9,0.2168
+M298T530,M298T530,298.1071,530,PC25,trehalose biosynthesis I,0.4,0.4,0.0,False,True,22,1,Solyc03g083960,0.015,0.3457,suberin monomers biosynthesis,0.7,0.3477
+M328T773,M328T773,328.118,773,PC108,glycine biosynthesis,0.4,0.4,0.0,False,True,15,1,Solyc04g009960,0.003,0.2438,chitin degradation III (carnivorous plants),0.5,0.4945
+M328T849,M328T849,328.1185,849,PC108,glycine biosynthesis,0.4,0.4,0.0,False,True,17,1,Solyc04g009960,0.003,0.2887,chitin degradation III (carnivorous plants),0.5,0.5455
+M328T929,M328T929,328.1175,929,PC662,nitrate reduction II (assimilatory),0.4,0.4,0.0,False,True,36,1,Solyc10g050890,0.007,0.5275,phytosterol biosynthesis (plants),0.5,0.8162
+M352T804,M330T805;M352T804,330.1331,805,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,30,1,Solyc02g082920,0.018,0.4456,superpathway of ergosterol biosynthesis II,0.7,0.4915
+M606T1513,M606T1513,606.398,1513,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,16,1,Solyc10g055800,0.022,0.2268,TCA cycle variation V (plant),0.7,0.2747
+M649T1036,M649T1036,649.2489,1036,PC532,2-oxoisovalerate decarboxylation to isobutanoyl-CoA,0.4,0.4,0.0,False,True,84,1,Solyc01g028900,0.009,0.8122,NAD(P)/NADPH interconversion,0.5,0.982
+M161T1547,M161T1547,160.5333,1547,PC8,glycerol degradation I,0.38,0.4,0.5,True,False,54,1,Solyc03g117490,0.005,0.4296,glycerol degradation I,0.7,0.6773
+M210T1547,M209T1547;M210T1547,209.0596,1547,PC8,glycerol degradation I,0.35,0.4,0.5,False,False,18,1,Solyc03g117490,0.006,0.3896,glycerol degradation I,0.7,0.3417
+M190T888,M190T888,190.051,888,PC491,suberin monomers biosynthesis,0.339,0.1,0.082,True,True,26,3,"Solyc02g093270,Solyc08g079420,Solyc11g007980",0.004,0.7133,suberin monomers biosynthesis,0.7,0.3976
+M514T601,M514T601,514.1678,601,PC1059,mevalonate pathway I (eukaryotes and bacteria),0.318,0.155,0.193,False,True,17,1,Solyc02g082260,0.005,0.3746,mevalonate pathway I (eukaryotes and bacteria),0.7,0.2807
+M162T1011,M162T1011,161.5393,1011,PC402,coniferin metabolism,0.3,0.0,0.5,True,False,41,1,Solyc12g014010,0.04,0.4855,coniferin metabolism,0.5,0.8681
+M338T671,M298T672;M299T671;M316T672;M317T672;M338T671,298.107,672,PC218,taxiphyllin biosynthesis,0.265,0.0,0.082,True,True,13,2,"Solyc08g079420,Solyc10g083690",0.041,0.3666,flavonoid biosynthesis (in equisetum),0.5,0.4545
+M283T761,M282T761;M283T761,282.1122,761,PC660,prunasin and amygdalin biosynthesis,0.265,0.0,0.082,True,True,12,1,Solyc02g092860,0.039,0.3367,flavonoid biosynthesis (in equisetum),0.5,0.4166
+M312T799,M312T799,312.1226,799,PC660,prunasin and amygdalin biosynthesis,0.265,0.0,0.082,True,True,13,1,Solyc10g083690,0.037,0.3427,TCA cycle variation V (plant),0.7,0.2328
+M1051T1182,M1051T1182,1050.5465,1182,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,11,1,Solyc10g055820,0.017,0.2458,superpathway of C28 brassinosteroid biosynthesis,0.7,0.1968
+M202T625,M202T625,202.1775,625,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,13,1,Solyc10g055820,0.017,0.2527,chitin degradation III (carnivorous plants),0.5,0.4286
+M341T1347,M341T1347,341.196,1347,PC1121,xyloglucan biosynthesis,0.25,0.0,0.5,False,False,68,1,Solyc07g044960,0.029,0.8262,superpathway of C28 brassinosteroid biosynthesis,0.5,0.963
+M343T825,M342T826;M343T825,342.1336,826,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,11,1,Solyc10g055820,0.008,0.3057,chitin degradation III (carnivorous plants),0.5,0.4046
+M415T1199,M415T1199,415.3387,1199,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,11,1,Solyc10g055820,0.019,0.2388,chitin degradation III (carnivorous plants),0.5,0.4146
+M444T1514,M444T1514,444.3435,1514,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,11,1,Solyc10g055820,0.016,0.2418,chitin degradation III (carnivorous plants),0.5,0.4086
+M590T820,M590T820,590.3678,820,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,11,1,Solyc10g055820,0.013,0.2348,chitin degradation III (carnivorous plants),0.5,0.4036
+M592T837,M592T837,592.3825,837,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,11,1,Solyc10g055820,0.013,0.2458,TCA cycle variation V (plant),0.7,0.1918
+M771T749,M771T749,771.3842,749,PC632,aerobic respiration I (cytochrome c),0.25,0.0,0.5,False,False,44,1,Solyc08g067020,0.005,0.7333,aerobic respiration I (cytochrome c),0.5,0.8731
+M636T912,M635T910;M636T912,635.2875,910,PC461,UDP-α-D-xylose biosynthesis,0.2,0.4,0.0,False,False,88,2,"Solyc01g009420,Solyc02g067080",0.028,0.979,superpathway of L-phenylalanine and L-tyrosine biosynthesis,0.7,0.8551
+M286T1011,M286T1011,286.1234,1011,PC934,superpathway of photosynthetic hydrogen production,0.2,0.4,0.0,False,False,18,1,Solyc02g079750,0.011,0.5415,superpathway of C28 brassinosteroid biosynthesis,0.5,0.5804
+M301T764,M300T767;M301T764,300.1229,767,PC1097,oxalate degradation VI,0.2,0.4,0.0,False,False,6,1,Solyc02g086880,0.006,0.2448,flavonoid biosynthesis (in equisetum),0.5,0.2577
+M681T918,M681T918,681.236,918,PC925,coumarins biosynthesis (engineered),0.181,0.1,0.09,False,True,15,2,"Solyc02g093270,Solyc12g042460",0.006,1.0,coumarins biosynthesis (engineered),0.7,0.2737
+M330T596,M330T596,330.1324,596,PC620,tropane alkaloids biosynthesis,0.167,0.0,0.167,False,True,33,1,Solyc07g053720,0.009,1.0,tropane alkaloids biosynthesis,0.5,0.7802
+M300T668,M300T668,300.1223,668,PC34,superpathway of acetyl-CoA biosynthesis,0.155,0.155,0.0,False,True,6,1,Solyc12g099260,0.007,0.3217,reductive TCA cycle I,0.4,0.5025
+M624T1347,M624T1347,624.3646,1347,PC778,indole glucosinolate activation (intact plant cell),0.155,0.155,0.0,False,True,30,1,Solyc10g084960,0.0919,0.8242,camalexin biosynthesis,0.4,0.971
+M627T1347,M627T1347,626.842,1347,PC967,glutathione-mediated detoxification II,0.155,0.155,0.0,False,True,48,1,Solyc10g084960,0.1209,0.9171,camalexin biosynthesis,0.4,0.993
+M775T1347,M775T1347,774.5498,1347,PC967,glutathione-mediated detoxification II,0.155,0.155,0.0,False,True,29,1,Solyc10g084960,0.0729,0.8132,camalexin biosynthesis,0.4,0.956
+M1050T786,M1049T785;M1050T786,1048.5303,785,PC113,superpathway of C28 brassinosteroid biosynthesis,0.141,0.155,0.151,False,False,26,1,Solyc02g084740,0.004,0.7652,superpathway of C28 brassinosteroid biosynthesis,0.7,0.4076
+M621T761,M621T761,621.2198,761,PC360,superpathway of anaerobic sucrose degradation,0.12,0.12,0.0,False,True,11,2,"Solyc09g009260,Solyc10g076510",0.033,0.6144,superpathway of anaerobic sucrose degradation,0.4,0.7283
+M722T804,M722T804,722.3142,804,PC360,superpathway of anaerobic sucrose degradation,0.12,0.12,0.0,False,True,13,2,"Solyc09g009260,Solyc10g076510",0.043,0.6503,superpathway of anaerobic sucrose degradation,0.4,0.7702
+M432T1182,M432T1182,432.3445,1182,PC345,TCA cycle variation V (plant),0.115,0.105,0.139,False,False,11,1,Solyc02g085350,0.002,0.5155,TCA cycle variation V (plant),0.7,0.1888
+M490T797,M490T797,489.6193,797,PC345,TCA cycle variation V (plant),0.115,0.105,0.139,False,False,7,1,Solyc02g085350,0.001,0.3347,TCA cycle variation V (plant),0.7,0.1289
+M594T1181,M594T1181,594.3985,1181,PC345,TCA cycle variation V (plant),0.115,0.105,0.139,False,False,7,1,Solyc02g085350,0.001,1.0,TCA cycle variation V (plant),0.7,0.1429
+M390T527,M390T527,390.2058,527,PC1058,sesamin biosynthesis,0.112,0.112,0.0,False,True,30,2,"Solyc02g092580,Solyc09g007520",0.0599,1.0,sesamin biosynthesis,0.4,0.97
+M204T718,M204T718,204.0491,718,PC1058,sesamin biosynthesis,0.112,0.112,0.0,False,True,11,1,Solyc01g006300,0.029,0.6414,sesamin biosynthesis,0.4,0.7083
+M329T717,M328T717;M329T717,328.1175,717,PC1058,sesamin biosynthesis,0.112,0.112,0.0,False,True,12,1,Solyc01g006300,0.028,1.0,sesamin biosynthesis,0.4,0.7293
+M368T718,M368T718,368.11,718,PC1058,sesamin biosynthesis,0.112,0.112,0.0,False,True,19,1,Solyc01g006300,0.044,1.0,superpathway of flavones and derivatives biosynthesis,0.5,0.5934
+M536T784,M536T784,535.7601,784,PC464,betanidin degradation,0.112,0.112,0.0,False,True,18,1,Solyc03g006700,0.045,0.7043,sesamin biosynthesis,0.4,0.8761
+M592T784,M592T784,592.3816,784,PC464,betanidin degradation,0.112,0.112,0.0,False,True,14,1,Solyc03g006700,0.033,0.6703,sesamin biosynthesis,0.4,0.7832
+M835T973,M834T969;M835T973,834.4654,969,PC1058,sesamin biosynthesis,0.112,0.112,0.0,False,True,10,1,Solyc03g006700,0.026,0.5375,sesamin biosynthesis,0.4,0.6643
