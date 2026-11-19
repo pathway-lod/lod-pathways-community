@@ -1,0 +1,310 @@
+compound,features,mz,rt_s,pc,pathway,score,w_membership,w_sequence,mass_delta,mass_defect_ok,n_genes_link,n_genes_pathway,genes,p_pathway,p_any
+M328T773,M328T773,328.118,773,PC108,glycine biosynthesis,0.7,0.4,0.5,False,True,5,1,Solyc04g009960,0.003,0.0529
+M544T534,M544T534,544.1787,534,PC381,phosphate acquisition,0.7,0.4,0.5,False,True,9,1,Solyc07g008570,0.002,0.1069
+M530T485,M530T485,530.1603,485,PC843,secologanin and strictosidine biosynthesis,0.6,0.0,0.5,True,True,6,1,Solyc11g071800,0.003,0.0939
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC516,"vindoline, vindorosine and vinblastine biosynthesis",0.5,0.0,0.5,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.001,0.1708
+M500T601,M478T602;M500T601,478.1706,602,PC140,triacylglycerol degradation,0.5,0.0,0.5,False,True,4,1,Solyc04g050730,0.006,0.1399
+M514T803,M492T803;M514T803,492.1861,803,PC989,phospholipases,0.5,0.0,0.5,False,True,12,1,Solyc01g008790,0.007,0.3107
+M514T803,M492T803;M514T803,492.1861,803,PC804,"D-myo-inositol (1,4,5)-trisphosphate biosynthesis",0.5,0.0,0.5,False,True,12,1,Solyc06g060410,0.005,0.3107
+M514T803,M492T803;M514T803,492.1861,803,PC861,cytokinin-O-glucosides biosynthesis,0.5,0.0,0.5,False,True,12,1,Solyc07g043480,0.003,0.3107
+M530T485,M530T485,530.1603,485,PC42,malonly-CoA biosynthesis via biotin-carboxyl carrier protein,0.5,0.0,0.5,False,True,6,1,Solyc12g056940,0.003,0.0939
+M514T803,M492T803;M514T803,492.1861,803,PC1159,α-tomatine biosynthesis,0.45,0.45,0.0,False,True,12,1,Solyc07g043480,0.005,0.3107
+M514T803,M492T803;M514T803,492.1861,803,PC426,superpathway of glycoalkaloid metabolism (Solanaceae),0.45,0.45,0.0,False,True,12,1,Solyc07g043480,0.005,0.3107
+M266T805,M266T805,265.5702,805,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,6,1,Solyc02g082920,0.009,0.0799
+M360T930,M360T930,360.1442,930,PC1072,chitin degradation III (carnivorous plants),0.4,0.2,0.25,False,True,8,1,Solyc04g072000,0.009,0.2847
+M360T930,M360T930,360.1442,930,PC518,chitin degradation II (Vibrio),0.4,0.2,0.25,False,True,8,1,Solyc04g072000,0.009,0.2847
+M544T534,M544T534,544.1787,534,PC482,1D-myo-inositol hexakisphosphate biosynthesis III (Spirodela polyrrhiza),0.4,0.2,0.25,False,True,9,1,Solyc04g054740,0.004,0.1069
+M544T534,M544T534,544.1787,534,PC81,myo-inositol biosynthesis,0.4,0.2,0.25,False,True,9,1,Solyc04g054740,0.003,0.1069
+M162T1011,M162T1011,161.5393,1011,PC980,glutathione-peroxide redox reactions,0.38,0.4,0.5,True,False,8,1,Solyc09g091840,0.001,0.2098
+M190T888,M190T888,190.051,888,PC911,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",0.37,0.1,0.125,True,True,2,1,Solyc09g009260,0.01,0.1818
+M190T888,M190T888,190.051,888,PC360,superpathway of anaerobic sucrose degradation,0.37,0.1,0.125,True,True,2,1,Solyc09g009260,0.007,0.1818
+M190T888,M190T888,190.051,888,PC524,sucrose biosynthesis I (from photosynthesis),0.37,0.1,0.125,True,True,2,1,Solyc09g009260,0.004,0.1818
+M190T888,M190T888,190.051,888,PC190,glycolysis II (from fructose 6-phosphate),0.37,0.1,0.125,True,True,2,1,Solyc09g009260,0.006,0.1818
+M190T888,M190T888,190.051,888,PC308,glycolysis I (from glucose 6-phosphate),0.37,0.1,0.125,True,True,2,1,Solyc09g009260,0.006,0.1818
+M190T888,M190T888,190.051,888,PC163,glycolysis IV,0.37,0.1,0.125,True,True,2,1,Solyc09g009260,0.004,0.1818
+M264T1547,M241T1547;M242T1547;M263T1547;M264T1547,241.0858,1547,PC8,glycerol degradation I,0.35,0.4,0.5,False,False,9,1,Solyc03g117490,0.002,0.3986
+M286T1011,M286T1011,286.1234,1011,PC934,superpathway of photosynthetic hydrogen production,0.35,0.4,0.5,False,False,2,1,Solyc02g079750,0.001,0.0869
+M323T1528,M323T1528,323.1466,1528,PC934,superpathway of photosynthetic hydrogen production,0.35,0.4,0.5,False,False,6,1,Solyc01g096420,0.002,0.2248
+M331T806,M331T806,331.1374,806,PC1097,oxalate degradation VI,0.35,0.4,0.5,False,False,2,1,Solyc02g086880,0.001,0.0889
+M301T764,M300T767;M301T764,300.1229,767,PC34,superpathway of acetyl-CoA biosynthesis,0.318,0.155,0.193,False,True,1,1,Solyc12g099260,0.001,0.0579
+M301T764,M300T767;M301T764,300.1229,767,PC256,acetyl-CoA biosynthesis from citrate,0.318,0.155,0.193,False,True,1,1,Solyc12g099260,0.001,0.0579
+M341T1347,M341T1347,341.196,1347,PC778,indole glucosinolate activation (intact plant cell),0.318,0.155,0.193,False,True,9,1,Solyc10g084960,0.021,0.3327
+M341T1347,M341T1347,341.196,1347,PC967,glutathione-mediated detoxification II,0.318,0.155,0.193,False,True,9,1,Solyc10g084960,0.021,0.3327
+M162T1011,M162T1011,161.5393,1011,PC632,aerobic respiration I (cytochrome c),0.3,0.0,0.5,True,False,8,1,Solyc12g008630,0.004,0.2098
+M162T1011,M162T1011,161.5393,1011,PC1097,oxalate degradation VI,0.3,0.0,0.5,True,False,8,1,Solyc02g091100,0.006,0.2098
+M771T749,M771T749,771.3842,749,PC225,Rubisco shunt,0.278,0.133,0.167,False,True,4,1,Solyc05g007260,0.01,0.1968
+M772T844,M771T844;M772T844,771.3849,844,PC225,Rubisco shunt,0.278,0.133,0.167,False,True,5,1,Solyc05g007260,0.005,0.2328
+M266T597,M266T597,265.5706,597,PC1155,cholesterol biosynthesis I,0.259,0.45,0.125,False,False,4,1,Solyc02g086180,0.003,0.1269
+M266T597,M266T597,265.5706,597,PC220,"cholesterol biosynthesis (plants, early side-chain reductase)",0.259,0.45,0.125,False,False,4,1,Solyc02g086180,0.007,0.1269
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC360,superpathway of anaerobic sucrose degradation,0.253,0.12,0.151,False,True,6,2,"Solyc09g009260,Solyc10g076510",0.007,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC1053,pyruvate fermentation to ethanol II,0.253,0.12,0.151,False,True,6,1,Solyc10g076510,0.001,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC701,pyruvate fermentation to acetoin,0.253,0.12,0.151,False,True,6,1,Solyc10g076510,0.001,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC782,acetaldehyde biosynthesis II,0.253,0.12,0.151,False,True,6,1,Solyc10g076510,0.001,0.1708
+M600T1093,M600T1093,600.2937,1093,PC1070,L-isoleucine biosynthesis I (from threonine),0.253,0.12,0.151,False,True,8,1,Solyc07g061940,0.005,0.4016
+M600T1093,M600T1093,600.2937,1093,PC562,superpathway of isoleucine and valine biosynthesis,0.253,0.12,0.151,False,True,8,1,Solyc07g061940,0.005,0.4016
+M600T1093,M600T1093,600.2937,1093,PC645,superpathway of L-isoleucine biosynthesis I,0.253,0.12,0.151,False,True,8,1,Solyc07g061940,0.005,0.4016
+M600T1093,M600T1093,600.2937,1093,PC655,L-valine biosynthesis,0.253,0.12,0.151,False,True,8,1,Solyc07g061940,0.005,0.4016
+M600T1093,M600T1093,600.2937,1093,PC69,superpathway of branched chain amino acid biosynthesis,0.253,0.12,0.151,False,True,8,1,Solyc07g061940,0.011,0.4016
+M266T597,M266T597,265.5706,597,PC506,phytosterol biosynthesis (plants),0.25,0.0,0.5,False,False,4,1,Solyc02g086180,0.005,0.1269
+M266T805,M266T805,265.5702,805,PC989,phospholipases,0.25,0.0,0.5,False,False,6,1,Solyc01g008790,0.004,0.0799
+M328T849,M328T849,328.1185,849,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,6,1,Solyc10g055820,0.011,0.4166
+M328T849,M328T849,328.1185,849,PC518,chitin degradation II (Vibrio),0.25,0.0,0.25,False,True,6,1,Solyc10g055820,0.011,0.4166
+M330T596,M330T596,330.1324,596,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,5,1,Solyc07g005100,0.01,0.3556
+M330T596,M330T596,330.1324,596,PC518,chitin degradation II (Vibrio),0.25,0.0,0.25,False,True,5,1,Solyc07g005100,0.01,0.3556
+M352T804,M330T805;M352T804,330.1331,805,PC312,sorgoleone biosynthesis,0.25,0.0,0.25,False,True,5,1,Solyc12g100250,0.004,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC226,calendate biosynthesis,0.25,0.0,0.25,False,True,5,1,Solyc12g100250,0.003,0.3656
+M415T1199,M415T1199,415.3387,1199,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,2,1,Solyc10g055820,0.007,0.1369
+M444T1514,M444T1514,444.3435,1514,PC1072,chitin degradation III (carnivorous plants),0.25,0.0,0.25,False,True,2,1,Solyc10g055820,0.002,0.1259
+M772T844,M771T844;M772T844,771.3849,844,PC632,aerobic respiration I (cytochrome c),0.25,0.0,0.5,False,False,5,1,Solyc08g067020,0.001,0.2328
+M298T530,M298T530,298.1071,530,PC1058,sesamin biosynthesis,0.235,0.112,0.139,False,True,7,2,"Solyc05g052280,Solyc06g050440",0.014,0.4995
+M298T530,M298T530,298.1071,530,PC31,matairesinol biosynthesis,0.235,0.112,0.139,False,True,7,2,"Solyc05g052280,Solyc06g050440",0.013,0.4995
+M298T530,M298T530,298.1071,530,PC464,betanidin degradation,0.235,0.112,0.139,False,True,7,2,"Solyc05g052280,Solyc06g050440",0.013,0.4995
+M298T530,M298T530,298.1071,530,PC727,justicidin B biosynthesis,0.235,0.112,0.139,False,True,7,2,"Solyc05g052280,Solyc06g050440",0.013,0.4995
+M202T625,M202T625,202.1775,625,PC464,betanidin degradation,0.235,0.112,0.139,False,True,2,1,Solyc03g006700,0.005,0.1269
+M328T655,M328T655,328.118,655,PC1058,sesamin biosynthesis,0.235,0.112,0.139,False,True,5,1,Solyc05g052280,0.012,0.4146
+M328T655,M328T655,328.118,655,PC31,matairesinol biosynthesis,0.235,0.112,0.139,False,True,5,1,Solyc05g052280,0.011,0.4146
+M328T655,M328T655,328.118,655,PC464,betanidin degradation,0.235,0.112,0.139,False,True,5,1,Solyc05g052280,0.011,0.4146
+M328T655,M328T655,328.118,655,PC727,justicidin B biosynthesis,0.235,0.112,0.139,False,True,5,1,Solyc05g052280,0.011,0.4146
+M360T930,M360T930,360.1442,930,PC1058,sesamin biosynthesis,0.235,0.112,0.139,False,True,8,1,Solyc03g025380,0.025,0.2847
+M360T930,M360T930,360.1442,930,PC31,matairesinol biosynthesis,0.235,0.112,0.139,False,True,8,1,Solyc03g025380,0.024,0.2847
+M360T930,M360T930,360.1442,930,PC464,betanidin degradation,0.235,0.112,0.139,False,True,8,1,Solyc03g025380,0.024,0.2847
+M360T930,M360T930,360.1442,930,PC727,justicidin B biosynthesis,0.235,0.112,0.139,False,True,8,1,Solyc03g025380,0.024,0.2847
+M368T718,M368T718,368.11,718,PC1058,sesamin biosynthesis,0.235,0.112,0.139,False,True,2,1,Solyc01g006300,0.005,0.1908
+M368T718,M368T718,368.11,718,PC31,matairesinol biosynthesis,0.235,0.112,0.139,False,True,2,1,Solyc01g006300,0.005,0.1908
+M368T718,M368T718,368.11,718,PC464,betanidin degradation,0.235,0.112,0.139,False,True,2,1,Solyc01g006300,0.005,0.1908
+M368T718,M368T718,368.11,718,PC727,justicidin B biosynthesis,0.235,0.112,0.139,False,True,2,1,Solyc01g006300,0.005,0.1908
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC1058,sesamin biosynthesis,0.235,0.112,0.139,False,True,7,1,Solyc11g010120,0.019,0.5025
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC31,matairesinol biosynthesis,0.235,0.112,0.139,False,True,7,1,Solyc11g010120,0.019,0.5025
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC464,betanidin degradation,0.235,0.112,0.139,False,True,7,1,Solyc11g010120,0.019,0.5025
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC727,justicidin B biosynthesis,0.235,0.112,0.139,False,True,7,1,Solyc11g010120,0.019,0.5025
+M592T837,M592T837,592.3825,837,PC464,betanidin degradation,0.235,0.112,0.139,False,True,1,1,Solyc03g006700,0.002,0.0819
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC911,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",0.213,0.1,0.125,False,True,6,1,Solyc09g009260,0.036,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC190,glycolysis II (from fructose 6-phosphate),0.213,0.1,0.125,False,True,6,1,Solyc09g009260,0.024,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC308,glycolysis I (from glucose 6-phosphate),0.213,0.1,0.125,False,True,6,1,Solyc09g009260,0.024,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC163,glycolysis IV,0.213,0.1,0.125,False,True,6,1,Solyc09g009260,0.021,0.1708
+M544T534,M544T534,544.1787,534,PC911,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",0.213,0.1,0.125,False,True,9,1,Solyc02g062340,0.046,0.1069
+M544T534,M544T534,544.1787,534,PC360,superpathway of anaerobic sucrose degradation,0.213,0.1,0.125,False,True,9,1,Solyc02g062340,0.036,0.1069
+M544T534,M544T534,544.1787,534,PC190,glycolysis II (from fructose 6-phosphate),0.213,0.1,0.125,False,True,9,1,Solyc02g062340,0.027,0.1069
+M544T534,M544T534,544.1787,534,PC308,glycolysis I (from glucose 6-phosphate),0.213,0.1,0.125,False,True,9,1,Solyc02g062340,0.027,0.1069
+M544T534,M544T534,544.1787,534,PC163,glycolysis IV,0.213,0.1,0.125,False,True,9,1,Solyc02g062340,0.026,0.1069
+M722T804,M722T804,722.3142,804,PC911,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",0.213,0.1,0.125,False,True,1,1,Solyc09g009260,0.005,0.1059
+M722T804,M722T804,722.3142,804,PC360,superpathway of anaerobic sucrose degradation,0.213,0.1,0.125,False,True,1,1,Solyc09g009260,0.002,0.1059
+M722T804,M722T804,722.3142,804,PC190,glycolysis II (from fructose 6-phosphate),0.213,0.1,0.125,False,True,1,1,Solyc09g009260,0.002,0.1059
+M722T804,M722T804,722.3142,804,PC308,glycolysis I (from glucose 6-phosphate),0.213,0.1,0.125,False,True,1,1,Solyc09g009260,0.002,0.1059
+M722T804,M722T804,722.3142,804,PC163,glycolysis IV,0.213,0.1,0.125,False,True,1,1,Solyc09g009260,0.003,0.1059
+M266T805,M266T805,265.5702,805,PC518,chitin degradation II (Vibrio),0.2,0.2,0.25,False,False,6,1,Solyc02g082920,0.009,0.0799
+M266T805,M266T805,265.5702,805,PC272,superpathway of thiamine pyrophosphate biosynthesis III (eukaryotes),0.2,0.2,0.25,False,False,6,1,Solyc07g064160,0.002,0.0799
+M266T805,M266T805,265.5702,805,PC43,thiazole component of thiamine pyrophosphate biosynthesis III,0.2,0.2,0.25,False,False,6,1,Solyc07g064160,0.002,0.0799
+M328T849,M328T849,328.1185,849,PC934,superpathway of photosynthetic hydrogen production,0.2,0.2,0.25,False,False,6,1,Solyc02g024050,0.008,0.4166
+M328T849,M328T849,328.1185,849,PC440,photosynthesis light reactions I (plastocyanin),0.2,0.2,0.25,False,False,6,1,Solyc02g024050,0.005,0.4166
+M352T804,M330T805;M352T804,330.1331,805,PC1019,superpathway of ergosterol biosynthesis II,0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.01,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC634,taxadiene biosynthesis (engineered),0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.007,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC1059,mevalonate pathway I (eukaryotes and bacteria),0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.01,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC542,isoprene biosynthesis II (engineered),0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.01,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC835,superpathway of geranylgeranylpyrophosphate biosynthesis I (via mevalonate),0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.01,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC1145,all-trans-farnesol biosynthesis,0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.004,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC210,bisabolene biosynthesis (engineered),0.192,0.09,0.112,False,True,5,1,Solyc04g056390,0.004,0.3656
+M190T888,M190T888,190.051,888,PC358,Calvin-Benson-Bassham cycle,0.185,0.1,0.125,True,False,2,1,Solyc09g009260,0.01,0.1818
+M190T888,M190T888,190.051,888,PC212,gluconeogenesis I,0.185,0.1,0.125,True,False,2,1,Solyc09g009260,0.004,0.1818
+M162T1011,M162T1011,161.5393,1011,PC113,superpathway of C28 brassinosteroid biosynthesis,0.177,0.0,0.193,True,False,8,1,Solyc02g089160,0.004,0.2098
+M162T1011,M162T1011,161.5393,1011,PC561,brassinolide biosynthesis II,0.177,0.0,0.193,True,False,8,1,Solyc02g089160,0.004,0.2098
+M162T1011,M162T1011,161.5393,1011,PC858,brassinolide biosynthesis I,0.177,0.0,0.193,True,False,8,1,Solyc02g089160,0.004,0.2098
+M162T1011,M162T1011,161.5393,1011,PC117,abscisic acid degradation to neophaseic acid,0.16,0.0,0.151,True,False,8,1,Solyc02g089160,0.007,0.2098
+M162T1011,M162T1011,161.5393,1011,PC456,abscisic acid degradation to phaseic acid,0.16,0.0,0.151,True,False,8,1,Solyc02g089160,0.007,0.2098
+M301T764,M300T767;M301T764,300.1229,767,PC883,reductive TCA cycle I,0.159,0.155,0.193,False,False,1,1,Solyc12g099260,0.002,0.0579
+M341T1347,M341T1347,341.196,1347,PC615,camalexin biosynthesis,0.159,0.155,0.193,False,False,9,1,Solyc10g084960,0.021,0.3327
+M342T713,M342T713,342.1331,713,PC1056,sucrose degradation II (sucrose synthase),0.155,0.155,0.0,False,True,3,1,Solyc09g098590,0.003,0.3367
+M342T713,M342T713,342.1331,713,PC360,superpathway of anaerobic sucrose degradation,0.155,0.155,0.0,False,True,3,1,Solyc09g098590,0.019,0.3367
+M342T713,M342T713,342.1331,713,PC526,UDP-glucose biosynthesis (from sucrose),0.155,0.155,0.0,False,True,3,1,Solyc09g098590,0.003,0.3367
+M251T775,M251T775,250.5648,775,PC551,putrescine degradation IV,0.139,0.105,0.193,False,False,3,1,Solyc06g071290,0.001,0.2338
+M251T775,M251T775,250.5648,775,PC558,choline degradation I,0.139,0.105,0.193,False,False,3,1,Solyc06g071290,0.001,0.2338
+M251T775,M251T775,250.5648,775,PC963,glycine betaine biosynthesis III (plants),0.139,0.105,0.193,False,False,3,1,Solyc06g071290,0.001,0.2338
+M771T749,M771T749,771.3842,749,PC261,pentose phosphate pathway,0.139,0.133,0.167,False,False,4,1,Solyc05g007260,0.012,0.1968
+M771T749,M771T749,771.3842,749,PC358,Calvin-Benson-Bassham cycle,0.139,0.133,0.167,False,False,4,1,Solyc05g007260,0.017,0.1968
+M771T749,M771T749,771.3842,749,PC757,pentose phosphate pathway (non-oxidative branch) I,0.139,0.133,0.167,False,False,4,1,Solyc05g007260,0.009,0.1968
+M772T844,M771T844;M772T844,771.3849,844,PC261,pentose phosphate pathway,0.139,0.133,0.167,False,False,5,1,Solyc05g007260,0.011,0.2328
+M772T844,M771T844;M772T844,771.3849,844,PC358,Calvin-Benson-Bassham cycle,0.139,0.133,0.167,False,False,5,1,Solyc05g007260,0.011,0.2328
+M772T844,M771T844;M772T844,771.3849,844,PC757,pentose phosphate pathway (non-oxidative branch) I,0.139,0.133,0.167,False,False,5,1,Solyc05g007260,0.005,0.2328
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC705,superpathway of fermentation (Chlamydomonas reinhardtii),0.126,0.12,0.151,False,False,6,1,Solyc10g076510,0.001,0.1708
+M266T597,M266T597,265.5706,597,PC1136,cuticular wax biosynthesis,0.125,0.0,0.125,False,True,4,1,Solyc02g086180,0.007,0.1269
+M415T1199,M415T1199,415.3387,1199,PC518,chitin degradation II (Vibrio),0.125,0.0,0.25,False,False,2,1,Solyc10g055820,0.007,0.1369
+M444T1514,M444T1514,444.3435,1514,PC518,chitin degradation II (Vibrio),0.125,0.0,0.25,False,False,2,1,Solyc10g055820,0.002,0.1259
+M544T534,M544T534,544.1787,534,PC454,leucopelargonidin and leucocyanidin biosynthesis,0.12,0.0,0.12,False,True,9,1,Solyc11g013110,0.008,0.1069
+M544T534,M544T534,544.1787,534,PC1118,flavonoid biosynthesis,0.12,0.0,0.12,False,True,9,1,Solyc11g013110,0.009,0.1069
+M544T534,M544T534,544.1787,534,PC164,flavonoid biosynthesis (in equisetum),0.12,0.0,0.12,False,True,9,1,Solyc11g013110,0.011,0.1069
+M544T534,M544T534,544.1787,534,PC50,superpathway of flavones and derivatives biosynthesis,0.12,0.0,0.12,False,True,9,1,Solyc11g013110,0.004,0.1069
+M544T534,M544T534,544.1787,534,PC99,flavonol biosynthesis,0.12,0.0,0.12,False,True,9,1,Solyc11g013110,0.004,0.1069
+M544T534,M544T534,544.1787,534,PC866,pinobanksin biosynthesis,0.12,0.0,0.12,False,True,9,1,Solyc11g013110,0.006,0.1069
+M298T530,M298T530,298.1071,530,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,7,2,"Solyc05g052280,Solyc06g050440",0.013,0.4995
+M298T530,M298T530,298.1071,530,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,7,2,"Solyc05g052280,Solyc06g050440",0.013,0.4995
+M202T625,M202T625,202.1775,625,PC1058,sesamin biosynthesis,0.118,0.112,0.139,False,False,2,1,Solyc03g006700,0.005,0.1269
+M202T625,M202T625,202.1775,625,PC31,matairesinol biosynthesis,0.118,0.112,0.139,False,False,2,1,Solyc03g006700,0.005,0.1269
+M202T625,M202T625,202.1775,625,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,2,1,Solyc03g006700,0.005,0.1269
+M202T625,M202T625,202.1775,625,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,2,1,Solyc03g006700,0.005,0.1269
+M202T625,M202T625,202.1775,625,PC727,justicidin B biosynthesis,0.118,0.112,0.139,False,False,2,1,Solyc03g006700,0.005,0.1269
+M328T655,M328T655,328.118,655,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,5,1,Solyc05g052280,0.011,0.4146
+M328T655,M328T655,328.118,655,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,5,1,Solyc05g052280,0.011,0.4146
+M360T930,M360T930,360.1442,930,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,8,1,Solyc03g025380,0.024,0.2847
+M360T930,M360T930,360.1442,930,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,8,1,Solyc03g025380,0.024,0.2847
+M368T718,M368T718,368.11,718,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,2,1,Solyc01g006300,0.005,0.1908
+M368T718,M368T718,368.11,718,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,2,1,Solyc01g006300,0.005,0.1908
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,7,1,Solyc11g010120,0.019,0.5025
+M484T775,M462T775;M463T775;M484T775,462.1757,775,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,7,1,Solyc11g010120,0.019,0.5025
+M592T837,M592T837,592.3825,837,PC1058,sesamin biosynthesis,0.118,0.112,0.139,False,False,1,1,Solyc03g006700,0.003,0.0819
+M592T837,M592T837,592.3825,837,PC31,matairesinol biosynthesis,0.118,0.112,0.139,False,False,1,1,Solyc03g006700,0.002,0.0819
+M592T837,M592T837,592.3825,837,PC599,baicalein degradation (hydrogen peroxide detoxification),0.118,0.112,0.139,False,False,1,1,Solyc03g006700,0.002,0.0819
+M592T837,M592T837,592.3825,837,PC653,luteolin triglucuronide degradation,0.118,0.112,0.139,False,False,1,1,Solyc03g006700,0.002,0.0819
+M592T837,M592T837,592.3825,837,PC727,justicidin B biosynthesis,0.118,0.112,0.139,False,False,1,1,Solyc03g006700,0.002,0.0819
+M606T1513,M606T1513,606.398,1513,PC345,TCA cycle variation V (plant),0.115,0.105,0.139,False,False,3,1,Solyc02g085350,0.005,0.3377
+M606T1513,M606T1513,606.398,1513,PC911,"superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle",0.115,0.105,0.139,False,False,3,1,Solyc02g085350,0.012,0.3377
+M606T1513,M606T1513,606.398,1513,PC977,TCA cycle II (plants and fungi),0.115,0.105,0.139,False,False,3,1,Solyc02g085350,0.005,0.3377
+M606T1513,M606T1513,606.398,1513,PC349,aerobic respiration III (alternative oxidase pathway),0.115,0.105,0.139,False,False,3,1,Solyc02g085350,0.005,0.3377
+M606T1513,M606T1513,606.398,1513,PC632,aerobic respiration I (cytochrome c),0.115,0.105,0.139,False,False,3,1,Solyc02g085350,0.008,0.3377
+M606T1513,M606T1513,606.398,1513,PC194,superpathway of glyoxylate cycle and fatty acid degradation,0.115,0.105,0.139,False,False,3,1,Solyc02g085350,0.002,0.3377
+M600T1093,M600T1093,600.2937,1093,PC590,Organic Nitrogen Assimilation,0.112,0.0,0.112,False,True,8,1,Solyc11g065930,0.012,0.4016
+M600T1093,M600T1093,600.2937,1093,PC21,superpathway of purines degradation in plants,0.112,0.0,0.112,False,True,8,1,Solyc11g065930,0.014,0.4016
+M600T1093,M600T1093,600.2937,1093,PC955,L-tryptophan degradation VI (via tryptamine),0.112,0.0,0.112,False,True,8,1,Solyc11g065930,0.003,0.4016
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC590,Organic Nitrogen Assimilation,0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.007,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC21,superpathway of purines degradation in plants,0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.007,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC293,guanosine nucleotides degradation II,0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.005,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC549,adenosine nucleotides degradation I,0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.006,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC567,guanosine nucleotides degradation I,0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.005,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC641,superpathway of guanosine nucleotides degradation (plants),0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.005,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC824,purine nucleotides degradation I (plants),0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.006,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC955,L-tryptophan degradation VI (via tryptamine),0.112,0.0,0.112,False,True,3,1,Solyc11g065930,0.004,1.0
+M251T775,M251T775,250.5648,775,PC600,dimethylsulfoniopropanoate biosynthesis II (Spartina),0.111,0.105,0.131,False,False,3,1,Solyc06g071290,0.001,0.2338
+M251T775,M251T775,250.5648,775,PC830,dimethylsulfoniopropanoate biosynthesis I (Wollastonia),0.111,0.105,0.131,False,False,3,1,Solyc06g071290,0.001,0.2338
+M251T775,M251T775,250.5648,775,PC837,β-alanine biosynthesis I,0.111,0.105,0.131,False,False,3,1,Solyc06g071290,0.001,0.2338
+M251T775,M251T775,250.5648,775,PC266,L-lysine degradation I,0.111,0.105,0.131,False,False,3,1,Solyc06g071290,0.003,0.2338
+M606T1513,M606T1513,606.398,1513,PC883,reductive TCA cycle I,0.111,0.105,0.131,False,False,3,1,Solyc02g085350,0.009,0.3377
+M544T534,M544T534,544.1787,534,PC1124,gibberellin biosynthesis III (early C-13 hydroxylation),0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.013,0.1069
+M544T534,M544T534,544.1787,534,PC32,gibberellin biosynthesis II (early C-3 hydroxylation),0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.011,0.1069
+M544T534,M544T534,544.1787,534,PC483,"gibberellin biosynthesis I (non C-3, non C-13 hydroxylation)",0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.011,0.1069
+M544T534,M544T534,544.1787,534,PC620,tropane alkaloids biosynthesis,0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.015,0.1069
+M544T534,M544T534,544.1787,534,PC665,ethene biosynthesis I (plants),0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.017,0.1069
+M544T534,M544T534,544.1787,534,PC857,superpathway of gibberellin biosynthesis,0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.013,0.1069
+M544T534,M544T534,544.1787,534,PC925,coumarins biosynthesis (engineered),0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.018,0.1069
+M544T534,M544T534,544.1787,534,PC953,superpathway of hyoscyamine (atropine) and scopolamine biosynthesis,0.109,0.0,0.109,False,True,9,1,Solyc11g013110,0.017,0.1069
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC524,sucrose biosynthesis I (from photosynthesis),0.106,0.1,0.125,False,False,6,1,Solyc09g009260,0.018,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC358,Calvin-Benson-Bassham cycle,0.106,0.1,0.125,False,False,6,1,Solyc09g009260,0.03,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC212,gluconeogenesis I,0.106,0.1,0.125,False,False,6,1,Solyc09g009260,0.02,0.1708
+M544T534,M544T534,544.1787,534,PC524,sucrose biosynthesis I (from photosynthesis),0.106,0.1,0.125,False,False,9,1,Solyc02g062340,0.018,0.1069
+M544T534,M544T534,544.1787,534,PC358,Calvin-Benson-Bassham cycle,0.106,0.1,0.125,False,False,9,1,Solyc02g062340,0.04,0.1069
+M544T534,M544T534,544.1787,534,PC212,gluconeogenesis I,0.106,0.1,0.125,False,False,9,1,Solyc02g062340,0.018,0.1069
+M722T804,M722T804,722.3142,804,PC524,sucrose biosynthesis I (from photosynthesis),0.106,0.1,0.125,False,False,1,1,Solyc09g009260,0.001,0.1059
+M722T804,M722T804,722.3142,804,PC358,Calvin-Benson-Bassham cycle,0.106,0.1,0.125,False,False,1,1,Solyc09g009260,0.004,0.1059
+M722T804,M722T804,722.3142,804,PC212,gluconeogenesis I,0.106,0.1,0.125,False,False,1,1,Solyc09g009260,0.001,0.1059
+M298T530,M298T530,298.1071,530,PC1022,simplecoumarins biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.008,0.4995
+M298T530,M298T530,298.1071,530,PC1043,free phenylpropanoid acid biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.005,0.4995
+M298T530,M298T530,298.1071,530,PC491,suberin monomers biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.031,0.4995
+M298T530,M298T530,298.1071,530,PC50,superpathway of flavones and derivatives biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.01,0.4995
+M298T530,M298T530,298.1071,530,PC523,superpathway of scopolin and esculin biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.006,0.4995
+M298T530,M298T530,298.1071,530,PC828,tricin biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.006,0.4995
+M298T530,M298T530,298.1071,530,PC44,phenylpropanoids methylation (ice plant),0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.011,0.4995
+M298T530,M298T530,298.1071,530,PC418,guaiacol biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC685,pterostilbene biosynthesis,0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC887,polymethylated myricetin biosynthesis (tomato),0.1,0.0,0.1,False,True,7,1,Solyc03g080180,0.004,0.4995
+M328T594,M328T594,328.1178,594,PC1022,simplecoumarins biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.003,1.0
+M328T594,M328T594,328.1178,594,PC1043,free phenylpropanoid acid biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC491,suberin monomers biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.009,1.0
+M328T594,M328T594,328.1178,594,PC50,superpathway of flavones and derivatives biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.01,1.0
+M328T594,M328T594,328.1178,594,PC523,superpathway of scopolin and esculin biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.002,1.0
+M328T594,M328T594,328.1178,594,PC828,tricin biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.003,1.0
+M328T594,M328T594,328.1178,594,PC44,phenylpropanoids methylation (ice plant),0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.003,1.0
+M328T594,M328T594,328.1178,594,PC418,guaiacol biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC685,pterostilbene biosynthesis,0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC887,polymethylated myricetin biosynthesis (tomato),0.1,0.0,0.1,False,True,4,1,Solyc03g080180,0.001,1.0
+M649T1036,M649T1036,649.2489,1036,PC201,NAD(P)/NADPH interconversion,0.097,0.0,0.193,False,False,8,1,Solyc04g080570,0.008,0.7003
+M649T1036,M649T1036,649.2489,1036,PC349,aerobic respiration III (alternative oxidase pathway),0.097,0.0,0.193,False,False,8,1,Solyc04g080570,0.011,0.7003
+M649T1036,M649T1036,649.2489,1036,PC632,aerobic respiration I (cytochrome c),0.097,0.0,0.193,False,False,8,1,Solyc04g080570,0.015,0.7003
+M352T804,M330T805;M352T804,330.1331,805,PC61,isoprene biosynthesis I,0.096,0.09,0.112,False,False,5,1,Solyc04g056390,0.007,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC628,methylerythritol phosphate pathway I,0.096,0.09,0.112,False,False,5,1,Solyc04g056390,0.007,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC743,superpathway of geranylgeranyl pyrophosphate biosynthesis II (via MEP),0.096,0.09,0.112,False,False,5,1,Solyc04g056390,0.007,0.3656
+M352T804,M330T805;M352T804,330.1331,805,PC766,methylerythritol phosphate pathway II,0.096,0.09,0.112,False,False,5,1,Solyc04g056390,0.007,0.3656
+M298T530,M298T530,298.1071,530,PC925,coumarins biosynthesis (engineered),0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.029,0.4995
+M298T530,M298T530,298.1071,530,PC956,superpathway of betalain biosynthesis,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.01,0.4995
+M298T530,M298T530,298.1071,530,PC504,monolignol biosynthesis,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.022,0.4995
+M298T530,M298T530,298.1071,530,PC795,chlorogenic acid biosynthesis I,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.018,0.4995
+M298T530,M298T530,298.1071,530,PC629,capsaicin biosynthesis,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.014,0.4995
+M298T530,M298T530,298.1071,530,PC729,curcuminoid biosynthesis,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.014,0.4995
+M298T530,M298T530,298.1071,530,PC2,serotonin and melatonin biosynthesis I,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.008,0.4995
+M298T530,M298T530,298.1071,530,PC216,ferulate and sinapate biosynthesis,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC274,betaxanthin biosynthesis,0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.005,0.4995
+M298T530,M298T530,298.1071,530,PC406,"3,5-dimethoxytoluene biosynthesis",0.091,0.0,0.091,False,True,7,1,Solyc03g080180,0.004,0.4995
+M328T594,M328T594,328.1178,594,PC925,coumarins biosynthesis (engineered),0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.018,1.0
+M328T594,M328T594,328.1178,594,PC956,superpathway of betalain biosynthesis,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.002,1.0
+M328T594,M328T594,328.1178,594,PC504,monolignol biosynthesis,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.016,1.0
+M328T594,M328T594,328.1178,594,PC795,chlorogenic acid biosynthesis I,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.009,1.0
+M328T594,M328T594,328.1178,594,PC629,capsaicin biosynthesis,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.006,1.0
+M328T594,M328T594,328.1178,594,PC729,curcuminoid biosynthesis,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.007,1.0
+M328T594,M328T594,328.1178,594,PC2,serotonin and melatonin biosynthesis I,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.003,1.0
+M328T594,M328T594,328.1178,594,PC216,ferulate and sinapate biosynthesis,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC274,betaxanthin biosynthesis,0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.002,1.0
+M328T594,M328T594,328.1178,594,PC406,"3,5-dimethoxytoluene biosynthesis",0.091,0.0,0.091,False,True,4,1,Solyc03g080180,0.001,1.0
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC164,flavonoid biosynthesis (in equisetum),0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.027,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC1022,simplecoumarins biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.026,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC1023,naringenin C-glucosylation,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.02,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC1043,free phenylpropanoid acid biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.021,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC1082,flavonoid di-C-glucosylation,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.026,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC1138,phaselate biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.024,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC148,superpathway of nicotine biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.022,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC218,taxiphyllin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC248,linear furanocoumarin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC265,luteolin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC297,4-hydroxyindole-3-carbonyl nitrile biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC346,superpathway of isoflavonoids (via naringenin),0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC427,Amaryllidacea alkaloids biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.023,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC477,salvigenin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC491,suberin monomers biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.044,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC50,superpathway of flavones and derivatives biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.024,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC501,chlorogenic acid biosynthesis II,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.024,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC504,monolignol biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.037,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC523,superpathway of scopolin and esculin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.021,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC613,dolabralexins biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC660,prunasin and amygdalin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC676,pinocembrin C-glucosylation,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.02,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC722,glucosinolate biosynthesis from tryptophan,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC795,chlorogenic acid biosynthesis I,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.029,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC816,isoflavonoid biosynthesis II,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC817,nicotine biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC819,dhurrin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.02,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC828,tricin biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.021,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC843,secologanin and strictosidine biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.023,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC913,glucosinolate biosynthesis from phenylalanine,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC99,flavonol biosynthesis,0.082,0.0,0.082,False,True,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M266T597,M266T597,265.5706,597,PC1019,superpathway of ergosterol biosynthesis II,0.062,0.0,0.125,False,False,4,1,Solyc02g086180,0.008,0.1269
+M266T597,M266T597,265.5706,597,PC75,ergosterol biosynthesis II,0.062,0.0,0.125,False,False,4,1,Solyc02g086180,0.003,0.1269
+M266T597,M266T597,265.5706,597,PC898,plant sterol biosynthesis II,0.062,0.0,0.125,False,False,4,1,Solyc02g086180,0.007,0.1269
+M266T597,M266T597,265.5706,597,PC217,7-dehydroporiferasterol biosynthesis,0.062,0.0,0.125,False,False,4,1,Solyc02g086180,0.002,0.1269
+M544T534,M544T534,544.1787,534,PC171,leucodelphinidin biosynthesis,0.06,0.0,0.12,False,False,9,1,Solyc11g013110,0.008,0.1069
+M544T534,M544T534,544.1787,534,PC147,syringetin biosynthesis,0.06,0.0,0.12,False,False,9,1,Solyc11g013110,0.004,0.1069
+M544T534,M544T534,544.1787,534,PC152,rutin biosynthesis,0.06,0.0,0.12,False,False,9,1,Solyc11g013110,0.002,0.1069
+M600T1093,M600T1093,600.2937,1093,PC244,ureide biosynthesis,0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.011,0.4016
+M600T1093,M600T1093,600.2937,1093,PC293,guanosine nucleotides degradation II,0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.008,0.4016
+M600T1093,M600T1093,600.2937,1093,PC525,inosine 5'-phosphate degradation,0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.008,0.4016
+M600T1093,M600T1093,600.2937,1093,PC549,adenosine nucleotides degradation I,0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.011,0.4016
+M600T1093,M600T1093,600.2937,1093,PC567,guanosine nucleotides degradation I,0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.01,0.4016
+M600T1093,M600T1093,600.2937,1093,PC641,superpathway of guanosine nucleotides degradation (plants),0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.01,0.4016
+M600T1093,M600T1093,600.2937,1093,PC824,purine nucleotides degradation I (plants),0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.011,0.4016
+M600T1093,M600T1093,600.2937,1093,PC405,nucleobase ascorbate transport I,0.056,0.0,0.112,False,False,8,1,Solyc11g065930,0.003,0.4016
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC244,ureide biosynthesis,0.056,0.0,0.112,False,False,3,1,Solyc11g065930,0.006,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC525,inosine 5'-phosphate degradation,0.056,0.0,0.112,False,False,3,1,Solyc11g065930,0.005,1.0
+M830T1198,M829T1198;M830T1198,829.3252,1198,PC405,nucleobase ascorbate transport I,0.056,0.0,0.112,False,False,3,1,Solyc11g065930,0.002,1.0
+M544T534,M544T534,544.1787,534,PC968,scopoletin biosynthesis,0.055,0.0,0.109,False,False,9,1,Solyc11g013110,0.018,0.1069
+M298T530,M298T530,298.1071,530,PC147,syringetin biosynthesis,0.05,0.0,0.1,False,False,7,1,Solyc03g080180,0.006,0.4995
+M298T530,M298T530,298.1071,530,PC1104,quercetin sulfate biosynthesis,0.05,0.0,0.1,False,False,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC1111,methylquercetin biosynthesis,0.05,0.0,0.1,False,False,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC1130,chrysoeriol biosynthesis,0.05,0.0,0.1,False,False,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC1139,polymethylated quercetin biosynthesis,0.05,0.0,0.1,False,False,7,1,Solyc03g080180,0.004,0.4995
+M298T530,M298T530,298.1071,530,PC455,tricetin methylation,0.05,0.0,0.1,False,False,7,1,Solyc03g080180,0.004,0.4995
+M328T594,M328T594,328.1178,594,PC147,syringetin biosynthesis,0.05,0.0,0.1,False,False,4,1,Solyc03g080180,0.007,1.0
+M328T594,M328T594,328.1178,594,PC1104,quercetin sulfate biosynthesis,0.05,0.0,0.1,False,False,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC1111,methylquercetin biosynthesis,0.05,0.0,0.1,False,False,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC1130,chrysoeriol biosynthesis,0.05,0.0,0.1,False,False,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC1139,polymethylated quercetin biosynthesis,0.05,0.0,0.1,False,False,4,1,Solyc03g080180,0.001,1.0
+M328T594,M328T594,328.1178,594,PC455,tricetin methylation,0.05,0.0,0.1,False,False,4,1,Solyc03g080180,0.001,1.0
+M298T530,M298T530,298.1071,530,PC968,scopoletin biosynthesis,0.045,0.0,0.091,False,False,7,1,Solyc03g080180,0.025,0.4995
+M328T594,M328T594,328.1178,594,PC968,scopoletin biosynthesis,0.045,0.0,0.091,False,False,4,1,Solyc03g080180,0.013,1.0
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC351,"phytocassanes biosynthesis, shared reactions",0.041,0.0,0.082,False,False,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC372,capsidiol biosynthesis,0.041,0.0,0.082,False,False,6,2,"Solyc08g079420,Solyc11g007980",0.019,0.1708
+M322T887,M300T887;M301T887;M322T887,300.1225,887,PC771,orientin and isoorientin biosynthesis I,0.041,0.0,0.082,False,False,6,2,"Solyc08g079420,Solyc11g007980",0.02,0.1708

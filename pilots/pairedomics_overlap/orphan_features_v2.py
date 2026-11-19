@@ -83,10 +83,10 @@ def main(max_mr=v1.MAX_MR):
     annotated = set(pd.read_csv(RES / "metabolite_pathway_map.csv").feature)
     orphans = sorted(set(cor.metabolite) - annotated)
     grp, t = v1.compound_groups(set(cor.metabolite))
-    gp = pd.read_csv(RES / "gene_pathway_all.csv")                # v1 output: gene, pc, tier, weight, plantcyc_id, pathway
+    gp = pd.read_csv(RES / f"gene_pathway_all{v1.SEQ_SUF}.csv")                # v1 output: gene, pc, tier, weight, plantcyc_id, pathway
     pcmap = pd.read_csv(DATA / "plantmetwiki_pc_pathways.csv")
     # 1. specificity weighting
-    gp["family"] = np.where(gp.tier == "ortholog", "sequence", "membership")
+    gp["family"] = np.where(gp.tier.isin(["ortholog", "seq_ec"]), "sequence", "membership")
     k = gp.groupby(["gene", "tier"]).pc.transform("nunique")
     gp["w_eff"] = gp.weight / (1 + np.log2(k))
     fam = gp.groupby(["gene", "pc", "family"]).w_eff.max().unstack("family").fillna(0.0)
@@ -138,7 +138,7 @@ def main(max_mr=v1.MAX_MR):
                             n_genes_link=n, n_genes_pathway=len(gg), genes=",".join(gg[:6]),
                             p_pathway=round(float((np.sum(ns[:, j] >= score[j]) + 1) / (len(ns) + 1)), 4), p_any=round(float(p_any), 4)))
     cand = pd.DataFrame(out).sort_values(["score", "n_genes_pathway"], ascending=False)
-    suf = "" if max_mr == v1.MAX_MR else f"_mr{max_mr}"
+    suf = ("" if max_mr == v1.MAX_MR else f"_mr{max_mr}") + v1.SEQ_SUF
     cand.to_csv(RES / f"orphan_candidates_v2{suf}.csv", index=False)
     best = cand.drop_duplicates("compound")
     v1c = pd.read_csv(RES / f"orphan_candidates{suf}.csv").sort_values(["score", "n_genes_pathway"], ascending=False).drop_duplicates("compound")

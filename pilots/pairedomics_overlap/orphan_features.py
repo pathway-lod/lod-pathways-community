@@ -25,7 +25,10 @@ sys.path.insert(0, str(HERE))
 import build_gene_annotation as bga
 
 MAX_MR = 10
-W = {"locus": 0.90, "uniprot": 0.80, "ec": 0.40, "ortholog": 0.50}
+import os
+SEQ = os.environ.get("ORPHAN_SEQ") == "1"          # add the transferred-EC tier (sequence_transfer.py); outputs get the suffix _seq
+SEQ_SUF = "_seq" if SEQ else ""
+W = {"locus": 0.90, "uniprot": 0.80, "ec": 0.40, "ortholog": 0.50, "seq_ec": 0.50}
 SHIFTS = {"13C isotope": 1.003355, "[M+Na]+ vs [M+H]+": 21.981944, "[M+K]+ vs [M+H]+": 37.955882, "[M+NH4]+ vs [M+H]+": 17.026549,
           "[M+H-H2O]+ vs [M+H]+": -18.010565}
 
@@ -80,6 +83,9 @@ def gene_pathway_scores(genes, up):
         for og in g_og.get(r.Entry, ()):
             for p in og_pc.get(og, ()):
                 rows.append((r.locus, p, "ortholog"))
+    if SEQ:                                     # EC transferred from proteins of the same UniRef50 cluster -> pathway (sequence family)
+        sq = pd.read_csv(RES / "gene_seq_ec.csv").dropna(subset=["pc"])
+        rows += [(r.gene, r.pc, "seq_ec") for r in sq.itertuples()]
     d = pd.DataFrame(rows, columns=["gene", "pc", "tier"]).drop_duplicates()
     d = d[d.gene.isin(genes)]
     d["weight"] = d.tier.map(W)
@@ -123,7 +129,7 @@ def main(max_mr=MAX_MR):
     up = uniprot_table()
     genes = sorted(set(cor.locus))
     gp = gene_pathway_scores(set(genes), up)
-    gp.to_csv(RES / "gene_pathway_all.csv", index=False)
+    gp.to_csv(RES / f"gene_pathway_all{SEQ_SUF}.csv", index=False)
     print(f"{len(genes)} genes, {gp.gene.nunique()} reach a pathway, {gp.pc.nunique()} pathways", file=sys.stderr)
 
     sel = cor[(cor.MR <= max_mr) & (cor.correlation > 0) & cor.metabolite.isin(orphans)]
@@ -131,7 +137,7 @@ def main(max_mr=MAX_MR):
     print(f"{len(sel)} orphan feature-gene links with MR <= {max_mr}, r > 0", file=sys.stderr)
 
     # family maxima per gene and pathway
-    gp["family"] = np.where(gp.tier == "ortholog", "sequence", "membership")
+    gp["family"] = np.where(gp.tier.isin(["ortholog", "seq_ec"]), "sequence", "membership")
     fam = gp.groupby(["gene", "pc", "family"]).weight.max().unstack("family").fillna(0.0)
     pcs = {p: i for i, p in enumerate(fam.index.get_level_values("pc").unique())}
     all_genes = pd.Index(genes)
@@ -167,7 +173,7 @@ def main(max_mr=MAX_MR):
                             n_genes_link=n, n_genes_pathway=len(gg), genes=",".join(gg[:6]), tiers=",".join(tiers), p_pathway=round(float(p_emp), 4), p_any=round(float(p_any), 4)))
         comp_rows.append(dict(compound=comp, n_links=len(d), n_genes=n, best=float(score.max())))
     cand = pd.DataFrame(out).sort_values(["score", "n_genes_pathway"], ascending=False)
-    suf = "" if max_mr == MAX_MR else f"_mr{max_mr}"
+    suf = ("" if max_mr == MAX_MR else f"_mr{max_mr}") + SEQ_SUF
     cand.to_csv(RES / f"orphan_candidates{suf}.csv", index=False)
     pd.DataFrame(comp_rows).to_csv(RES / f"orphan_compounds{suf}.csv", index=False)
     print(f"{cand.compound.nunique()} of {sel.compound.nunique()} orphan compounds have a candidate pathway", file=sys.stderr)
