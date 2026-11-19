@@ -1,0 +1,95 @@
+{
+ "pathway": {
+  "plantcyc": "PWY-5474",
+  "pc": "PC536",
+  "thT_reactions": [
+   "TYRAMINE + CINNAMOYL-COA => PROTON + CPD-8941 + CO-A",
+   "TYRAMINE + SINAPOYL-COA => PROTON + CPD-8942 + CO-A",
+   "P-COUMAROYL-COA + TYRAMINE => PROTON + CPD-8943 + CO-A",
+   "FERULOYL-COA + TYRAMINE <=> PROTON + CPD-440 + CO-A"
+  ],
+  "acyl_donors_in_pathway": [
+   "CINNAMOYL-COA",
+   "FERULOYL-COA",
+   "P-COUMAROYL-COA",
+   "SINAPOYL-COA"
+  ]
+ },
+ "feature": {
+  "id": "M300T887",
+  "mz": 300.1225,
+  "neutral_M_H": 299.1152,
+  "links_to_pathway_products": [
+   {
+    "pathway_product": "cinnamoyltyramine",
+    "mass": 267.1259,
+    "feature_minus_product": 31.9892
+   },
+   {
+    "pathway_product": "p-coumaroyltyramine",
+    "mass": 283.1208,
+    "feature_minus_product": 15.9943
+   },
+   {
+    "pathway_product": "feruloyltyramine",
+    "mass": 313.1314,
+    "feature_minus_product": -14.0162
+   },
+   {
+    "pathway_product": "sinapoyltyramine",
+    "mass": 343.142,
+    "feature_minus_product": -44.0268
+   }
+  ],
+  "reading": "+15.9949 (O) from p-coumaroyltyramine, -14.0157 (CH2) from feruloyltyramine: both fit one more hydroxyl on the ring"
+ },
+ "putative_reaction": {
+  "equation": "caffeoyl-CoA + tyramine => caffeoyltyramine + CoA (EC 2.3.1.110, by analogy with RXN_8713/8714/8715 and the feruloyl reaction)",
+  "amide_formula": "C17H17NO4",
+  "amide_[M+H]+": 300.123,
+  "adduct_error_ppm": 1.93,
+  "implied_acid_mass": 180.0417,
+  "caffeic_acid_mass": 180.0423,
+  "acid_error_ppm": -3.22,
+  "balanced": true,
+  "left": {
+   "C": 38,
+   "H": 53,
+   "N": 8,
+   "O": 20,
+   "P": 3,
+   "S": 1
+  },
+  "right": {
+   "O": 20,
+   "C": 38,
+   "N": 8,
+   "H": 53,
+   "P": 3,
+   "S": 1
+  }
+ },
+ "plantmetwiki_has": {
+  "caffeoyl-CoA": [
+   "(E)-caffeoyl-CoA"
+  ],
+  "caffeate": [
+   "trans-caffeate",
+   "cis-caffeate"
+  ],
+  "caffeic acid": []
+ },
+ "rhea_reactions_for_ec": [
+  "(E)-feruloyl-CoA + tyramine = N-[(E)-feruloyl]tyramine + CoA + H(+)",
+  "(E)-4-coumaroyl-CoA + tyramine = N-[(E)-4-coumaroyl]tyramine + CoA + H(+)",
+  "(E)-cinnamoyl-CoA + tyramine = N-[(E)-cinnamoyl]tyramine + CoA + H(+)",
+  "(E)-sinapoyl-CoA + tyramine = N-[(E)-sinapoyl]tyramine + CoA + H(+)"
+ ],
+ "rhea_has_caffeoyl": false,
+ "null": {
+  "features": 1131,
+  "features_with_implied_acid_in_plantmetwiki": 41,
+  "random_masses_hit_rate": 0.009,
+  "plantmetwiki_masses": 2475
+ }
+}

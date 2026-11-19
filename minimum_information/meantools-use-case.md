@@ -50,6 +50,16 @@ The same chain, counted for all genes of the associations: 315 of 350 genes have
 
 So the zero of the first pilot was mostly an **annotation gap**: the evidence is there, but only broader tiers can see it, and they must be read with their weights and their dependence.
 
+## 4b. From a link to a putative reaction (ghost edge)
+
+The graph can also propose a **new reaction inside the pathway**, not only a pathway label. For the THT example ([`putative_reaction.py`](../pilots/pairedomics_overlap/putative_reaction.py), output `results/putative_reaction_tht.json`):
+
+1. **Template.** PlantMetWiki has four reactions with EC 2.3.1.110 in PWY-5474: *cinnamoyl-, p-coumaroyl-, feruloyl-, sinapoyl-CoA + tyramine => amide + CoA*. The caffeoyl member of the series is missing.
+2. **Mass link.** The feature M300T887 (neutral mass 299.1152) is 15.994 above p-coumaroyltyramine (+O) and 14.016 below feruloyltyramine (-CH2).
+3. **Proposed reaction.** *caffeoyl-CoA + tyramine => caffeoyltyramine + CoA* (EC 2.3.1.110). Checks: caffeoyltyramine C17H17NO4 gives [M+H]+ 300.1230 (1.9 ppm from the feature); the implied acid (180.0417) is caffeic acid (3.2 ppm); the equation is balanced (C38H53N8O20P3S on both sides); **caffeoyl-CoA and caffeate are in PlantMetWiki**; Rhea has the four neighbouring reactions for the EC and **none with caffeoyl**.
+
+How specific is step 3's mass inference? A random mass finds a PlantMetWiki compound as the implied acid in 0.9 % of cases; 41 of 1,131 features (3.6 %) do, so it is selective but not unique. The reaction is a **hypothesis** that needs a standard or MS/MS; the gene side (THT genes) supports the enzyme class but not the substrate specificity.
+
 ## 5. How to read a MEANtools association
 
 ![Reading guide](notebooks/figures/tht_how_to_read.png)
