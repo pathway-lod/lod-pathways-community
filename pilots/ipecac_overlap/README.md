@@ -169,3 +169,7 @@ uv pip install --python .venv/bin/python -r requirements.txt   # pinned versions
 ```
 
 The first run reads the two large workbooks (about a minute) and caches them as `.pkl` files in `data/`.
+
+## Prioritization framework (draft)
+
+How the evidence tiers and the score could rank the steps and candidate enzymes of this pathway, with the paper's validated genes as a positive control: [`prioritization-framework.md`](prioritization-framework.md).
