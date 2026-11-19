@@ -48,6 +48,8 @@ The same chain, counted for all genes of the associations: 315 of 350 genes have
 
 ![Funnel](notebooks/figures/tht_funnel.png)
 
+**Outside the significant clusters.** The 350 genes are those of the clustered associations; the THT genes are not among them. For all 5,380 correlated genes (`funnel_all_genes.py`, with an EC transferred by sequence similarity through UniRef50): 4,776 have a UniProt entry, 1,035 an EC of their own and 1,457 a transferred EC; 409 reach a pathway by own EC, 688 by transferred EC, 238 by ortholog, 2 by UniProt entry and 16 by locus. **Both THT genes are reached only by the transferred EC.** The strict combined tier now finds 7 genes (8 pairs) against 1.9 expected from a shuffled annotation (p = 0.003), but the hits rest on mass-only annotations (for example "catharanthine" or "norbelladine" in tomato) and on orthology, so they need checking before they count as evidence.
+
 So the zero of the first pilot was mostly an **annotation gap**: the evidence is there, but only broader tiers can see it, and they must be read with their weights and their dependence.
 
 ## 4b. From a link to a putative reaction (ghost edge)

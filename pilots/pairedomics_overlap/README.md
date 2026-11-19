@@ -92,3 +92,7 @@ Open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kernel an
 ## Orphan features (use case, draft)
 
 `orphan_features.py` (baseline) and `orphan_features_v2.py` (specificity weighting, mass-delta tier, mass-defect gate) rank PlantMetWiki pathways for MEANtools features that have no PlantMetWiki compound, through their correlated genes; results in `results/orphan_*.csv`, OrthoDB caches in `data/orthodb_*.json`. Summary and negative result: [`minimum_information/orphan-features-usecase.md`](../../minimum_information/orphan-features-usecase.md).
+
+## Sequence tier and funnel for all correlated genes (draft)
+
+`sequence_transfer.py` transfers an EC number to each tomato gene from proteins of the same UniRef50 cluster (at least 50 % identical; clusters with more than 3,000 members are skipped) and `funnel_all_genes.py` counts, for all 5,380 correlated genes, which tiers reach a pathway (`results/gene_seq_ec.csv`, `results/funnel_all_genes.csv`). The two large UniProt caches (`data/uniref50_ec_*.json`, about 10 MB) are not committed; the scripts rebuild them (about 15 minutes, needs internet).
