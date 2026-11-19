@@ -85,13 +85,13 @@ The paper's experiments give **held-out labels**: genes that make a product in *
 
 ## 6. Known obstacles
 
-1. **The cloned genes and the transcripts are not linked.** The cloned genes are known by protein sequence, the expression by assembly IDs (`NODE_…`) with no sequences. Until the authors give the IDs or the transcript sequences, the omics tiers cannot be computed for the validated genes, and only the sequence and family tiers can be tested.
-2. **The *Alangium* bait is a P450, not the described tyrosine decarboxylase.** The co-expression set may come from a different bait than the author states. Confirm with the author.
+1. **The cloned genes and the transcripts are linked only through Extended Data Fig. 2 of the paper** (author's answer: the tables carry the sequence IDs; the gene names are listed in that figure). The figure is not in the pilot's files, so the join `gene name → NODE ID` is still to be made from it. Until then the omics tiers cannot be computed for the validated genes.
+2. **The *Alangium* bait problem is resolved:** version 1 of the table was calculated with another transcript; version 2 of the Zenodo record has the correct table (bait `NODE_37865`, tyrosine dopa decarboxylase). The co-expression set shrank (1,034 transcripts after the expression cut-off, was 1,413) and no class is enriched any more.
 3. **Six tissues in *Carapichea*** give almost no statistical power; the shortlist rests on expression and annotation.
 4. **Pairing is by tissue, not by sample** (one RNA-seq plant, three metabolomics plants).
 5. **eggNOG descriptions are family-level text**, not functions; the family tier can only filter.
 6. **CiDE and CiIpS have no sequence in the file**, and accession numbers are "to be announced".
-7. **Compounds without structure** (protoemetinol, 10-O-demethylprotoemetinol, 7-O-Me-DAIA) cannot be matched or used for the mass tier.
+7. **Structures:** protoemetinol, 10-O-demethylprotoemetinol and 7-O-Me-DAIA were added from PubChem (CIDs given by the author) and are not in PlantMetWiki, so they are level C candidates (new nodes).
 
 ## 7. Outputs
 
@@ -114,4 +114,4 @@ The paper's experiments give **held-out labels**: genes that make a product in *
 1. Write `step_priority.py` for level A and check the table against the data.
 2. Build the candidate table for the three steps with a family signal (methylation, deglycosylation, reduction) from the committed co-expression and correlation tables.
 3. Run the held-out test with the sequence and family tiers; run the omics tiers once the transcript link exists.
-4. Ask the authors for the transcript IDs or sequences, the *Alangium* bait, and the structures.
+4. Get Extended Data Fig. 2 (gene name ↔ transcript ID) from the paper or the author.

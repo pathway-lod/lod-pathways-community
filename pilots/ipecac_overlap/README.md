@@ -12,7 +12,7 @@ This pilot belongs to the PO (paired omics) and MET use cases of the [specificat
 |---|---|
 | SMILES of the 12 metabolites of Figure 2 | Zenodo [10.5281/zenodo.23661892](https://doi.org/10.5281/zenodo.23661892), `smiles.xlsx` |
 | Expression and Pearson correlation of 137,713 transcripts of *Carapichea ipecacuanha* (Ci), 6 tissues | same record, `Ci_transcriptome_pearson.xlsx` |
-| Expression and Pearson correlation of 178,877 transcripts of *Alangium salviifolium* (As), 12 tissues | same record, `As_transcriptome_pearson.xlsx` |
+| Expression and Pearson correlation of 178,877 transcripts of *Alangium salviifolium* (As), 12 tissues | Zenodo [version 2 of the record, 10.5281/zenodo.23914773](https://doi.org/10.5281/zenodo.23914773) (2026-11-03), `As_transcriptome_pearson2.xlsx`. Version 1 had a table that was calculated with a different transcript than the described bait (the author, personal communication); this pilot used it until 2026-11 |
 | PlantMetWiki metabolites, the pathway *emetine biosynthesis* (PlantCyc PWY-7135) and its enzymes | SPARQL endpoint, snapshots in `data/plantmetwiki_*.csv` (date in `data/SNAPSHOT_INFO.txt`) |
 | Names and EC numbers of the enzymes of PWY-7135 | UniProt REST, snapshot `data/uniprot_pwy7135_enzymes.tsv` |
 
@@ -31,7 +31,7 @@ The three Zenodo files are downloaded on the first run and checked against the M
 
 #### Metabolites
 
-`results/metabolite_matches.csv`. Of the 12 metabolites, 6 have a PlantMetWiki node with the same first InChIKey block.
+`results/metabolite_matches.csv`. Of the 12 metabolites of the deposit, 6 have a PlantMetWiki node (the three compounds that were added later from PubChem, see below, are not in PlantMetWiki) with the same first InChIKey block.
 
 | Metabolite | Match level | PlantMetWiki node | Pathway |
 |---|---|---|---|
@@ -45,7 +45,8 @@ The three Zenodo files are downloaded on the first run and checked against the M
 
 - All six matched metabolites are in the one pathway *emetine biosynthesis*. Secologanin is also in two other pathways.
 - **Protoemetine differs in the stereo block.** The paper's key is `BBVFHYCHEWCGBH-ZQIUZPCESA-N`, PlantMetWiki's `BBVFHYCHEWCGBH-KVULBXGLSA-O`. This could be a different stereoisomer or a different stereo depiction in PlantCyc; it should be checked before the two are treated as the same compound.
-- **Six metabolites have no node.** Five are carboxylic acids (secologanic acid and the four *-A* intermediates, for example 6-O-Me-DAIIA is PubChem 6-O-Me-deacetylisoipecosidic acid), and ipecoside is a known glycoside. PlantMetWiki's pathway has the corresponding methyl esters instead. These are candidates for new nodes if the pathway of the paper goes through the acids.
+- **Nine of the 15 metabolites have no node** (the six below, and protoemetinol, 10-O-demethylprotoemetinol and 7-O-Me-DAIA, whose structures were added from PubChem in 2026-11, see `data/pubchem_additional.csv`).
+- **Six of them:** Five are carboxylic acids (secologanic acid and the four *-A* intermediates, for example 6-O-Me-DAIIA is PubChem 6-O-Me-deacetylisoipecosidic acid), and ipecoside is a known glycoside. PlantMetWiki's pathway has the corresponding methyl esters instead. These are candidates for new nodes if the pathway of the paper goes through the acids.
 
 #### The pathway in PlantMetWiki
 
@@ -71,16 +72,16 @@ Five steps have a UniProt-linked enzyme, one has only a PlantCyc monomer, and tw
 | | Carapichea (Ci) | Alangium (As) |
 |---|---|---|
 | Transcripts, tissues | 137,713; 6 | 178,877; 12 |
-| Bait (Pearson = 1) | `NODE_49441`, SAM-binding methyltransferase | `NODE_27464`, cytochrome P450 |
-| Pearson ≥ 0.75 | 5,546 | 14,214 |
+| Bait (Pearson = 1) | `NODE_49441`, SAM-binding methyltransferase | `NODE_37865`, tyrosine (dopa) decarboxylase |
+| Pearson ≥ 0.75 | 5,546 | 10,592 |
 | expected by chance (normal null, rough) | about 5,900 | about 440 |
-| Pearson ≥ 0.75 and expression ≥ 50 | 369 | 1,413 |
+| Pearson ≥ 0.75 and expression ≥ 50 | 369 | 1,034 |
 | p-value at r = 0.75 (derived) | 0.086 | 0.005 |
 
 - **Carapichea: the correlation filter carries little information.** With 6 tissues, r ≥ 0.75 is reached by roughly 4% of unrelated profiles, about what is observed (5,546 of 136,736). Only the expression cut-off and the annotation make the 369 a usable shortlist.
-- **Alangium: well above chance.** 14,214 transcripts against about 440 expected, with 12 tissues. Raw expression values are heavy-tailed, so the chance estimate is rough.
-- **The *Alangium* bait is not a tyrosine decarboxylase in this table.** The author describes the bait as the ortholog of tyrosine decarboxylase, but the transcript with r = 1 is annotated as a cytochrome P450 (gene g9907, with two further isoforms at r ≥ 0.99). Transcripts annotated tyrosine (dopa) decarboxylase are co-expressed with it (for example `NODE_37865`, r = 0.90, expression 402 in leaf buds). Either the table was calculated with a different bait than described, or the P450 is one of the candidates; this should be confirmed with the author.
-- **Classes.** After correction only one class is enriched: SAM-dependent methyltransferases among the *Carapichea* co-expressed transcripts (13, 3.1-fold, FDR 0.006), which is expected when the bait is itself a methyltransferase and its paralogs are co-expressed. In *Alangium*, reductases/dehydrogenases (FDR 0.06) and decarboxylases (FDR 0.21) are not significant. No strictosidine-synthase-like transcript is among the co-expressed ones in either species.
+- **Alangium: well above chance.** 10,592 transcripts against about 440 expected, with 12 tissues. Raw expression values are heavy-tailed, so the chance estimate is rough.
+- **The *Alangium* bait (resolved).** Version 1 of the table had a cytochrome P450 as the transcript with r = 1, not the tyrosine decarboxylase that the author described. The author confirmed that version 1 was calculated with another transcript (one of the SLAS transcripts) and published version 2, whose bait is `NODE_37865` (tyrosine dopa decarboxylase). All *Alangium* numbers here are from version 2.
+- **Classes.** After correction only one class is enriched: SAM-dependent methyltransferases among the *Carapichea* co-expressed transcripts (13, 3.1-fold, FDR 0.006), which is expected when the bait is itself a methyltransferase and its paralogs are co-expressed. In *Alangium* (version 2) no class is enriched after correction: reductases/dehydrogenases (47, 1.4-fold, FDR 0.087) and decarboxylases (4, 2.1-fold, FDR 0.45) are not significant. No strictosidine-synthase-like transcript is among the co-expressed ones in either species.
 
 ## Part 2: the paired data, sequences and experiments
 
@@ -139,7 +140,7 @@ The Supplementary Information of the paper (Nature Chemical Biology, article 415
 | Fig. 4f | each of AsDOMT1-7 methylates DAIA, at the 6-O or 7-O position or both (AsDOMT3 only 6-O; AsDOMT5 mostly 7-O) |
 | Fig. 5b, 5d | CiDGD removes ipecoside (0 against 1.4e4), CiS6DGD does not; AsDGD1 and AsDGD2 lower the methylated DAIA forms |
 
-Of the compounds measured in these experiments, only DAII (stereo level) and DAI (connectivity) are in PlantMetWiki. DAIIA, DAIA, 6-O-Me-DAIIA, 6-O-Me-DAIA and ipecoside are not; protoemetinol, 10-O-demethylprotoemetinol and 7-O-Me-DAIA have no structure in the deposit, so they could not be matched.
+Of the compounds measured in these experiments, only DAII (stereo level) and DAI (connectivity) are in PlantMetWiki. DAIIA, DAIA, 6-O-Me-DAIIA, 6-O-Me-DAIA and ipecoside are not; protoemetinol, 10-O-demethylprotoemetinol and 7-O-Me-DAIA (structures added from PubChem CIDs 11162971, 13855673 and 178183434, given by the author) are not in PlantMetWiki either.
 
 ## What this gives PlantMetWiki
 
@@ -152,10 +153,10 @@ Of the compounds measured in these experiments, only DAII (stereo level) and DAI
 
 ## What is missing
 
-1. **The link between the cloned genes and the transcripts.** The cloned genes are known by protein sequence, the expression by transcript ID (`NODE_...`), with no sequences. The transcript sequences (or the IDs of the cloned genes) would put each gene's expression and its correlation with the metabolites in the same table.
+1. **The link between the cloned genes and the transcripts.** The author's answer: the table has the sequence IDs, and the gene names that belong to them are listed in Extended Data Fig. 2 of the paper. That figure is not in the files of this pilot (it is not in the Supplementary Information), so the names are not yet joined to the `NODE_…` IDs; this needs a copy of Extended Data Fig. 2 or its table. The transcript sequences of the whole assembly are not needed.
 2. **Sequences of CiDE and CiIpS, and the accession numbers** ("to be announced").
-3. **The bait of the *Alangium* table** (see part 1).
-4. **Structures** of protoemetinol, 10-O-demethylprotoemetinol and 7-O-Me-DAIA.
+3. ~~The bait of the *Alangium* table~~ resolved: the table of version 2 of the Zenodo record is used (see part 1).
+4. ~~Structures of protoemetinol, 10-O-demethylprotoemetinol and 7-O-Me-DAIA~~ resolved: PubChem CIDs given by the author, structures in `data/pubchem_additional.csv`.
 5. **A decision on the evidence terms** for gene-to-reaction evidence from heterologous expression and from infiltration of substrates, and for co-expression with a bait gene; neither is in the specification yet. The RDF of the evidence is not written yet.
 
 ## Setup and run

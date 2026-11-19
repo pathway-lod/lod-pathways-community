@@ -36,10 +36,13 @@ RDLogger.DisableLog("rdApp.*")
 HERE = Path(__file__).parent
 DATA, RESULTS = HERE / "data", HERE / "results"
 ZENODO = "https://zenodo.org/api/records/23661892/files"
-FILES = {  # name -> MD5 listed by Zenodo
-    "smiles.xlsx": "8b56c7ee2c66ea05382501b848317045",
-    "Ci_transcriptome_pearson.xlsx": "12c1a621cb7da66432edda517efee3e3",
-    "As_transcriptome_pearson.xlsx": "c867a1b402917fd0da7536ef0e244b0a",
+ZENODO_V2 = "https://zenodo.org/api/records/23914773/files"      # version 2 (2026-11-03): the corrected Alangium table
+FILES = {  # name -> (MD5 listed by Zenodo, record)
+    "smiles.xlsx": ("8b56c7ee2c66ea05382501b848317045", ZENODO),
+    "Ci_transcriptome_pearson.xlsx": ("12c1a621cb7da66432edda517efee3e3", ZENODO),
+    # the first Alangium table (As_transcriptome_pearson.xlsx, MD5 c867a1b4...) was calculated with a different transcript than the
+    # described bait (the author, personal communication, 2026-11); version 2 of the record has the correct table
+    "As_transcriptome_pearson2.xlsx": ("81a84719c3e41f46bb3c7de5f67eb6b2", ZENODO_V2),
 }
 ENDPOINT = "https://plantmetwiki.bioinformatics.nl/sparql"
 PREFIXES = """PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
@@ -55,7 +58,7 @@ PATHWAY_ID = "PWY-7135"          # PlantCyc "emetine biosynthesis"
 PEARSON_MIN, EXPR_MIN = 0.75, 50
 SETS = {  # short name -> (file, description column, tissue of the expression cut-off)
     "Ci": ("Ci_transcriptome_pearson.xlsx", "eggNOGmapper description", "YL"),
-    "As": ("As_transcriptome_pearson.xlsx", "eggnogmapper description", "As_LB"),
+    "As": ("As_transcriptome_pearson2.xlsx", "eggnogmapper description", "As_LB"),
 }
 # family-level classes, searched in the eggNOG description (case-insensitive). These are hypotheses about what a
 # transcript might do, not annotations of a function.
@@ -83,11 +86,11 @@ def md5_of(path):
 
 def fetch_inputs():
     DATA.mkdir(exist_ok=True)
-    for name, md5 in FILES.items():
+    for name, (md5, record) in FILES.items():
         path = DATA / name
         if not path.exists():
             print(f"downloading {name} from Zenodo", file=sys.stderr)
-            r = requests.get(f"{ZENODO}/{name}/content", timeout=600)
+            r = requests.get(f"{record}/{name}/content", timeout=600)
             r.raise_for_status()
             path.write_bytes(r.content)
         if md5_of(path) != md5:
@@ -122,6 +125,9 @@ def snapshot(name, query_fn, refresh):
 
 def metabolites_from_smiles():
     s = pd.read_excel(DATA / "smiles.xlsx").rename(columns={"Unnamed: 0": "name", "Pubchem": "pubchem", "Smiles": "smiles"})
+    extra = DATA / "pubchem_additional.csv"            # structures of three compounds that the deposit does not have (PubChem CIDs from the author)
+    if extra.exists():
+        s = pd.concat([s, pd.read_csv(extra)[["name", "pubchem", "smiles"]]], ignore_index=True)
     rows = []
     for r in s.itertuples():
         mol = Chem.MolFromSmiles(r.smiles)
