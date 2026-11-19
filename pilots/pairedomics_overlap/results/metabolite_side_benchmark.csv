@@ -1,0 +1,16 @@
+method,compounds,pathways,top1,top5,top10,median_rank_fraction,random_top1,random_top5,random_top10
+baseline: pathway size,2158,962,0.024,0.046,0.068,0.154,0.005,0.022,0.039
+baseline: random,2158,962,0.005,0.02,0.034,0.292,0.005,0.022,0.039
+"mass-only: mass delta, specific conjugations",2158,962,0.047,0.138,0.172,0.501,0.005,0.022,0.039
+"mass-only: mass delta, specific + generic (2H, O, CH2, H2O)",2158,962,0.218,0.517,0.62,0.005,0.005,0.022,0.039
+mass-only: relative mass defect close to the pathway's,2158,962,0.119,0.239,0.278,0.055,0.005,0.022,0.039
+"structure: Morgan r2 bits, max",2158,962,0.299,0.712,0.808,0.002,0.005,0.022,0.039
+"structure: Morgan r2 bits, top-3 mean",2158,962,0.413,0.75,0.834,0.002,0.005,0.022,0.039
+"structure: Morgan r2 counts, max",2158,962,0.317,0.744,0.829,0.002,0.005,0.022,0.039
+"structure: Morgan r2 counts, top-3 mean",2158,962,0.452,0.77,0.839,0.002,0.005,0.022,0.039
+"structure: atom pairs counts, max",2158,962,0.317,0.725,0.81,0.002,0.005,0.022,0.039
+"structure: atom pairs counts, top-3 mean",2158,962,0.443,0.749,0.816,0.002,0.005,0.022,0.039
+"structure: topological torsion counts, max",2158,962,0.297,0.717,0.797,0.002,0.005,0.022,0.039
+"structure: topological torsion counts, top-3 mean",2158,962,0.403,0.732,0.808,0.002,0.005,0.022,0.039
+"structure: RDKit path bits, max",2158,962,0.282,0.68,0.785,0.003,0.005,0.022,0.039
+"structure: RDKit path bits, top-3 mean",2158,962,0.374,0.685,0.766,0.002,0.005,0.022,0.039

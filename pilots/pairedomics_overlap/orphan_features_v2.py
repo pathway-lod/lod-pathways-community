@@ -33,6 +33,10 @@ W_MASS, GATE_OUT, RMD_MARGIN, PPM = 0.20, 0.5, 75.0, 5.0
 H, NA = 1.007276, 22.989218
 DELTAS = {"acetyl": 42.010565, "hexose": 162.052824, "pentose": 132.042259, "deoxyhexose": 146.057909, "caffeoyl": 162.031694,
           "feruloyl": 176.047344, "coumaroyl": 146.036779, "sulfate": 79.956815, "glucuronide": 176.032088}   # specific conjugations only (2H, O, CH2, H2O are too generic: they hit by chance)
+import os
+GENERIC = os.environ.get("ORPHAN_GENERIC") == "1"      # also the generic deltas 2H, O, CH2, H2O (the benchmark shows that they are informative); outputs get the suffix _gen
+if GENERIC:
+    DELTAS = {**DELTAS, "2H": 2.01565, "O": 15.994915, "CH2": 14.01565, "H2O": 18.010565}
 DELTA_LIST = sorted(set(DELTAS.values()) | {-d for d in DELTAS.values()})     # the compound itself (delta 0) is a mass match: those features are not orphans
 MAX_PATHWAYS_PER_METABOLITE = 20          # cofactors and common metabolites (ATP, CoA, NADPH ...) are left out of the mass profile of a pathway
 
@@ -123,25 +127,30 @@ def main(max_mr=v1.MAX_MR):
         gene_part = np.maximum(m, s) > 0
         if not gene_part.any():
             continue
-        parts = []
+        parts, agree_null = [], []
         for _ in range(4):
             R = rng.integers(0, len(genes), size=(250, n))
-            parts.append(sc(M[R].max(1), S[R].max(1)))
+            nm_, ns_ = M[R].max(1), S[R].max(1)
+            parts.append(sc(nm_, ns_))
+            agree_null.append(((np.maximum(nm_, ns_) > 0) & (mw > 0)).any(1))          # a random gene set reaches a pathway that the mass also points to
+        p_agree = (np.sum(np.concatenate(agree_null)) + 1) / (len(ns) + 1) if False else None
         ns = np.vstack(parts)
         best = score[gene_part].max()
         p_any = (np.sum(ns.max(1) >= best) + 1) / (len(ns) + 1)
+        p_agree = (np.sum(np.concatenate(agree_null)) + 1) / (len(ns) + 1)
+        agree = bool(((np.maximum(m, s) > 0) & (mw > 0)).any())
         for j in np.where(gene_part)[0]:
             gg = [g for g in gl if M[gi[g], j] > 0 or S[gi[g], j] > 0]
             out.append(dict(compound=comp, features=";".join(feats), mz=round(t.mzmed[feats[0]], 4), rt_s=round(t.rtmed[feats[0]]),
                             pc=pcs[j], pathway=names.get(pcs[j]), score=round(float(score[j]), 3), w_membership=round(m[j], 3),
                             w_sequence=round(s[j], 3), mass_delta=bool(mw[j] > 0), mass_defect_ok=bool(gate[j] == 1.0),
                             n_genes_link=n, n_genes_pathway=len(gg), genes=",".join(gg[:6]),
-                            p_pathway=round(float((np.sum(ns[:, j] >= score[j]) + 1) / (len(ns) + 1)), 4), p_any=round(float(p_any), 4)))
+                            p_pathway=round(float((np.sum(ns[:, j] >= score[j]) + 1) / (len(ns) + 1)), 4), p_any=round(float(p_any), 4), compound_agrees=agree, p_agree=round(float(p_agree), 4)))
     cand = pd.DataFrame(out).sort_values(["score", "n_genes_pathway"], ascending=False)
-    suf = ("" if max_mr == v1.MAX_MR else f"_mr{max_mr}") + v1.SEQ_SUF
+    suf = ("" if max_mr == v1.MAX_MR else f"_mr{max_mr}") + v1.SEQ_SUF + ("_gen" if GENERIC else "")
     cand.to_csv(RES / f"orphan_candidates_v2{suf}.csv", index=False)
     best = cand.drop_duplicates("compound")
-    v1c = pd.read_csv(RES / f"orphan_candidates{suf}.csv").sort_values(["score", "n_genes_pathway"], ascending=False).drop_duplicates("compound")
+    v1c = pd.read_csv(RES / f"orphan_candidates{suf.replace('_gen', '')}.csv").sort_values(["score", "n_genes_pathway"], ascending=False).drop_duplicates("compound")
     cmp = best.merge(v1c[["compound", "pathway", "score", "p_any"]], on="compound", how="left", suffixes=("", "_v1"))
     cmp.to_csv(RES / f"orphan_compare_v1_v2{suf}.csv", index=False)
     print(f"v2: {len(best)} compounds with a candidate; p_any<0.05: {(best.p_any < 0.05).sum()} (v1: {(v1c.p_any < 0.05).sum()}); "
