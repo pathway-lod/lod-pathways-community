@@ -82,7 +82,7 @@ How specific is step 3's mass inference? A random mass finds a PlantMetWiki comp
 
 ## 7. Limits
 
-One compound and one pathway, identified at level 3-4 (mass, retention time and a plausible biochemical family; no MS/MS), with hand-written structures. The example **illustrates** the tiers and does not estimate how often they succeed. The fingerprint comparison was made knowing the answer. Weights, the sequence-identity cut-off (about 40 %) and the dependence assumptions are drafts. The supporting graphs (UniProt entries, ECs, OrthoDB orthologs) are lower bounds built from public sources on 2026-11-18.
+One compound and one pathway, identified at level 3-4 (mass, retention time and a plausible biochemical family; no MS/MS), with hand-written structures. The example **illustrates** the tiers and does not estimate how often they succeed. The masses are computed from hand-written structures; the hypothesis, caffeic acid and tyramine were cross-checked in PubChem (same InChIKey, same formula and exact mass) and ChEBI (notebook 06), which checks the structure and mass, not the identity of the feature. The fingerprint comparison was made knowing the answer. Weights, the sequence-identity cut-off (about 40 %) and the dependence assumptions are drafts. The supporting graphs (UniProt entries, ECs, OrthoDB orthologs) are lower bounds built from public sources on 2026-11-18.
 
 ## 8. Reproduce
 
