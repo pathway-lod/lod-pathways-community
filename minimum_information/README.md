@@ -15,6 +15,7 @@
 | 5 | `notebooks/results/*.csv` | The raw rows behind every table and figure (one CSV per query) |
 | 5a | [`meantools-use-case.md`](meantools-use-case.md) | **A one-page summary of the MEANtools use case**: how the knowledge graph and the broader tiers explain a correlation, with the figures |
 | 5b | [`notebooks/06_meantools_tht_example.ipynb`](notebooks/06_meantools_tht_example.ipynb) | **A worked example**: one MEANtools association followed through every tier, and how to interpret the correlations |
+| 5c | [`notebooks/07_orphan_candidates_tht.ipynb`](notebooks/07_orphan_candidates_tht.ipynb) and [`orphan-features-usecase.md`](orphan-features-usecase.md) | **Prioritization of orphan features** (no PlantMetWiki compound): all candidate pathways, where the THT example is found, the benchmark of the metabolite side, and the agreement method |
 | 6 | [`pathway-component-tiers.md`](pathway-component-tiers.md) | The reasoning behind the tiers of the PlantMetWiki reactions (discussion) |
 
 **What is outdated or superseded** (kept for the record, do not use as a source of numbers):
