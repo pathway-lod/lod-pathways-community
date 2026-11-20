@@ -47,6 +47,7 @@ Figures: `../notebooks/figures/` (library coverage, overlap and network, unique 
 - Matching on the first block merges stereoisomers (for example cis and trans) and charge forms; it counts skeletons, not the same stereoisomer.
 - Many matches are probably common primary metabolites or drugs (`drug_plus` matches 442), not specifically plant metabolites.
 - `spectraverse` (20 matches) is almost disjoint from all other libraries (19 unique). This is unexpected for an aggregation of public libraries and has not been checked (key format or a different part of chemical space).
+- **The usefulness for annotation is untested.** We have not tested whether the spectra help annotate real orphan features; the overlap shows only that reference spectra exist.
 - The pathway category is derived from the PlantCyc classes with a priority rule (specialized, then hormones, then primary); a compound counts in every category in which it has a pathway.
 
 ## Not done
