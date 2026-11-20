@@ -1,6 +1,15 @@
 # CASMI 2026 (Enveda) training spectra: metabolite and pathway overlap (pilot, not run yet)
 
-**Status.** Plan only. The data are not downloaded yet: the Kaggle competition files need a login and acceptance of the competition rules. Everything below about the data comes from the competition's dataset description, not from the files. Check it against the files once they are in `data/`.
+**Status.** Data downloaded (git-ignored `data/`), columns checked, first overlap run (steps 1 to 4 and 6 of the plan below). Steps 5 and 7 are not done. Download and first look: [notebooks/00_download_and_columns.ipynb](notebooks/00_download_and_columns.ipynb); script: [casmi_overlap.py](casmi_overlap.py); tables in `results/`. The Kaggle token is in `kaggle.env` (git-ignored; never commit it).
+
+## First results (inchikey14 match, training set only)
+
+- The columns match the description: `train.parquet` has 2,539,608 spectra, 18 columns, including `inchikey`, `inchikey14` and `normalized_smiles`. There are 275,810 unique `inchikey14`.
+- **1,258 of 2,732 PlantMetWiki compounds (46 %) have at least one spectrum**; 1,145 of them are in a non-reaction pathway (of 2,384 PlantMetWiki compounds in pathways).
+- **By library:** `enveda-180` (183k synthetic structures) matches none. The matches come from RIKEN (1,019), GNPS (981), MassBank (882), MS-DIAL (848), MoNA (829), pluskal_ms2 (502) and `drug_plus` (442, mostly primary metabolites that are also drugs). 1,086 of the 1,258 compounds have spectra in two or more libraries.
+- **Pathways:** 1,125 of 1,162 non-reaction pathways have at least one compound with a spectrum; 782 have at least 4 members with at least half of them covered.
+- **THT example:** caffeoyltyramine is not in PlantMetWiki but has **22 reference spectra** (MoNA, pluskal_ms2, RIKEN; 11 as [M+H]+). The pathway PWY-5474 has 7 of its 21 compounds with spectra. The structural hypothesis can therefore be checked against reference MS/MS if the MS/MS of the feature becomes available (the MetaboLights files have none).
+- **Caveats:** matching on the first block merges stereoisomers (cis/trans) and charge forms; the 46 % counts skeletons, not the same stereoisomer. Spectra with a large precursor error were not removed from the counts (2,360,254 of 2,539,608 are within 10 ppm; 1,223 matches keep a good spectrum).
 
 **Question.** Do the structures with MS/MS spectra in the training set overlap with PlantMetWiki compounds and pathways? If so, which pathways, and can the spectra give the structural evidence that MS-only features (as in the MEANtools example) lack?
 
@@ -31,7 +40,7 @@ Caveats from the description: libraries overlap in compounds (exact duplicate sp
 
 ## Plan
 
-1. Download into `data/` (kept out of git; commit scripts and result tables only). Print the columns and check them against the description.
+1. Download into `data/` (kept out of git; commit scripts and result tables only). Print the columns and check them against the description. **Done.**
 2. Deduplicate to unique `inchikey14` per library. Drop spectra with a large `precursor_error_ppm` and report how many.
 3. Match against PlantMetWiki compounds (`../metabolomics_overlap/data/`) on `inchikey14`; report full-key matches separately.
 4. Report the overlap per library (expect RIKEN and GNPS to carry most of it) and the overlap with compounds in a non-reaction PlantCyc pathway.
@@ -54,5 +63,5 @@ These are for annotation and pretraining. Only the ones marked "use" are relevan
 
 ## Open points
 
-- Whether PlantMetWiki structures are in the data at all is not known until the files are read.
+- The overlap does not yet say how many of the 1,258 compounds are plant-specific versus primary metabolites or drugs; the library breakdown suggests many are common metabolites.
 - Class 1 to 3 in the test set (public spectra, known structure without spectra, novel structure) do not apply to the overlap, but they matter for how far database retrieval of a structure can go: class 2 compounds are in PubChem or COCONUT, not in the spectral libraries.

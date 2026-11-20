@@ -1,0 +1,1259 @@
+inchikey14,spectra,libraries,adducts,formula,full_key_matches,name,n_pathways
+AAWZDTNXLSGCEK,224,enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+2Na-H]+;[M+H]+,C7H12O6,1,L-quinate,8
+ABVCUBUIXWJYSE,65,gnps;massbank;mona;msdial;riken,[M+H]+;[M-2H]-;[M-H2]2-;[M]+,C21H21O10+,1,pelargonidin-3-O-β-D-glucoside,18
+ACFIXJIJDZMPPO,22,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C21H30N7O17P3,1,NADPH,608
+ACTIUHUUMQJHFO,54,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Li]+;[M+NH4]+;[M+Na]+;[M-H]-,C59H90O4,1,ubiquinone-10,2
+ACZVSMNFVFBOTM,1,spectraverse,[M+H]+,C6H13NO2,1,β-alanine betaine,2
+ADSYMQORONDIDD,7,pluskal_ms2,[M+Cl]-;[M-H]-,C22H24O11,1,hesperitin-7-O-β-D-glucoside,2
+ADVPTQAUNPRNPO,73,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C3H7NO4S,1,3-sulfino-L-alanine,4
+AEMFNILZOJDQLW,111,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-2H2O+H]+,C19H26O2,1,androstenedione,2
+AEMOLEFTQBMNLQ,141,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+,C6H10O7,1,D-glucopyranuronate,8
+AEMRFAOFKBGASW,18,gnps;massbank;mona;msdial;riken,[M-H]-,C2H4O3,1,glycolate,20
+AEQDJSLRWYMAQI,315,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M]+,C21H25NO4,1,(S)-tetrahydropalmatine,2
+AERBNCYCJBRYDG,71,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+,C18H39NO3,1,phytosphingosine,2
+AEWHYWSPVRZHCT,44,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]-,C25H42N7O17P3S,1,isobutanoyl-CoA,32
+AEXBRBWRPNGGEZ,1,riken,[M+H]+,C22H26N2O3,1,16-methoxytabersonine,4
+AFHJQYHRLPMKHU,533,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C21H22O9,1,aloin A,2
+AFVFQIVMOAPDHO,40,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,CH4O3S,1,methanesulfonate,6
+AGBCLJAHARWNLA,130,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+,C42H72O13,1,ginsenoside Rg2,2
+AGBQKNBQESQNJD,123,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C8H14O2S2,1,(R)-lipoate,2
+AGPKZVBTJJNPAG,328,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C6H13NO2,1,L-isoleucine,31
+AGZMFTKKLPHOMT,3,gnps;massbank;riken,[M+H]+,C20H22N2O2,1,akuammicine,2
+AHCYMLUZIRLXAA,33,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C9H15N2O14P3,1,dUTP,12
+AHLPHDHHMVZTML,287,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C5H12N2O2,1,L-ornithine,46
+AIJULSRZWUXGPQ,9,drug_plus;gnps;massbank;msdial,[M+H]+,C3H4O2,1,methylglyoxal,6
+AIONOLUJZLIMTK,1303,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C16H14O6,1,(2S)-hesperetin,2
+AIQDYKMWENWVQJ,17,massbank;mona;msdial;riken,[M-H]-,C6H11O10P,1,α-D-glucuronate 1-phosphate,2
+AJPADPZSRRUGHI,1,massbank,[M-H]-,C5H11O7P,1,1-deoxy-D-xylulose 5-phosphate,12
+AKIHYQWCLCDMMI,5,massbank;msdial;riken,[M+H]+,C14H20N4O2,1,4-coumaroylagmatine,2
+AKNNEGZIBPJZJG,309,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[M+H3O]+;[M+HO]-;[M+H]+,C22H23NO7,1,noscapine,2
+ALRHLSYJTWAHJZ,32,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H6O3,1,3-hydroxypropanoate,4
+ALYNCZNDIQEVRV,169,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C7H7NO2,1,4-aminobenzoate,12
+ALZAZMCIBRHMFF,44,riken,[M+H]+;[M+Na]+,C21H19NO4,1,dihydrochelerythrine,2
+AMBQHHVBBHTQBF,184,gnps;massbank;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C17H26O10,1,loganin,4
+ANVAOWXLWRTKGA,5,drug_plus;gnps;riken,[M+H]+;[M]+,C40H56,1,α-carotene,6
+APJYDQYYACXCRM,189,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2N]+;[M-H]-,C10H12N2,1,tryptamine,12
+AQBZCCQCDWNNJQ,61,gnps;mona;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C23H22O7,1,tephrosin,2
+ARBHXJXXVVHMET,3,gnps,[M+H]+,C6H11N3O3,1,5-guanidino-2-oxopentanoate,2
+ARSRJFRKVXALTF,274,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O7,1,tricetin,6
+ASBJGPTTYPEMLP,4,pluskal_ms2,[M+H]+,C3H6ClNO2,1,3-chloro-L-alanine,2
+ASUTZQLVASHGKV,419,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C17H21NO3,1,galanthamine,2
+ATEFPOUAMCWAQS,235,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C9H6O4,1,daphnetin,4
+ATHGHQPFGPMSJY,119,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+,C7H19N3,1,spermidine,24
+AUNGANRZJHBGPY,407,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[2M-H]-;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-,C17H20N4O6,1,riboflavin,4
+AUNLIRXIJAVBNM,2,massbank,[M+H]+,C27H42O,1,zymosterone,4
+AURFZBICLPNKBZ,44,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C21H34O2,1,3β-hydroxy-5α-pregnane-20-one,2
+AUTOLBMXDDTRRT,122,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C10H18N2O3,1,dethiobiotin,8
+AVPAEFHIEZLSLZ,2,gnps;riken,[M]+,C30H40O2,1,β-citraurin,2
+AVSXSVCZWQODGV,12,gnps;massbank;msdial;riken,[M+H]+;[M-H2O+H]+,C27H44O,1,desmosterol,2
+AVXURJPOCDRRFD,3,gnps,[M+H]+,H3NO,1,hydroxylamine,24
+AWUCVROLDVIAJX,77,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H9O6P,1,glycerol 1-phosphate,2
+AXFYFNCPONWUHW,37,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C5H10O3,1,3-hydroxy-3-methylbutanoate,2
+AXMVYSVVTMKQSL,2,massbank,[M+H]+;[M-H]-,C9H8O3,1,caffealdehyde,2
+AYEKOFBPNLCAJY,150,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-2H]-;[M-H]-;[M]+,C12H19N4O7P2S+,2,thiamine pyrophosphate,12
+AYFVYJQAPQTCCC,339,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2Na-H]+;[M+H]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-;[M]+,C4H9NO3,2,L-threonine,22
+AYKYOOPFBCOXSL,4,msdial;riken,[M-H]-,C8H7NO,1,(4-hydroxyphenyl)acetonitrile,4
+AYMYWHCQALZEGT,36,gnps;msdial;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H12O5,1,butein,4
+AYRXSINWFIIFAE,105,gnps;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C12H22O11,1,gentiobiose,4
+BAVONGHXFVOKBV,6,gnps;mona;riken,[M-H2O+H]+,C10H16O,1,(-)-trans-carveol,2
+BAWFJGJZGIEFAR,132,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M+Na3]3+;[M+Na]+;[M-2H]-;[M-H]-,C21H28N7O14P2+,2,NAD⁺,404
+BBMLTTOFEBDQIR,1,massbank,[M+H]+,C15H20O2,1,8-epi-inunolide,2
+BDERNNFJNOPAEC,4,drug_plus;gnps,[M+H]+,C3H8O,1,propan-1-ol,2
+BGEBZHIAGXMEMV,311,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+H]+;[M+Na]+;[M-H]-,C12H8O4,1,bergapten,2
+BGWGXPAPYGQALX,41,gnps;massbank;mona;msdial;riken,[2M-H]-;[3M-H]-;[M+H]+;[M+Na]+;[M-H]-,C6H13O9P,1,β-D-fructofuranose 6-phosphate,52
+BHHGXPLMPWCGHP,91,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2N]+,C8H11N,1,2-phenylethylamine,2
+BHLYRWXGMIUIHG,12,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C19H23NO4,1,(R)-reticuline,6
+BIPAHAFBQLWRMC,2,gnps;riken,[M]+,C40H56O2,1,lactucaxanthin,2
+BIRSGZKFKXLSJQ,76,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C6H13O10P,1,D-gluconate 6-phosphate,46
+BITHHVVYSMSWAG,12,gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M-H]-,C20H38O2,1,gondoate,4
+BITPRCODIALMOV,138,mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C27H30O16,1,kaempferol 3-O-β-gentiobioside,8
+BITYXLXUCSKTJS,70,gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C7H12O5,1,(2S)-2-isopropylmalate,6
+BIWLELKAFXRPDE,4,gnps;riken,[M+H]+;[M]+,C40H60,1,"9,9'-di-cis-ζ-carotene",6
+BJEPYKJPYRNKOW,597,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C4H6O5,1,(S)-malate,52
+BJHIKXHVCXFQLS,54,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[2M-H3O2]+;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C6H12O6,1,D-fructose,14
+BJIOGJUNALELMI,8,massbank;mona,[M+H]+;[M-H]-,C10H12O2,1,isoeugenol,4
+BKAJNAXTPSGJCU,65,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C6H10O3,1,4-methyl-2-oxopentanoate,21
+BKAWJIRCKVUVED,82,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+,C6H9NOS,1,5-(2-hydroxyethyl)-4-methylthiazole,6
+BLUAFEHZUWYNDE,227,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+C2H4N]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C15H22O5,1,artemisinin,4
+BMRSEYFENKXDIS,97,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C16H18O8,1,trans-5-O-(4-coumaroyl)-D-quinate,6
+BNABBHGYYMZMOA,1,massbank,[M-H]-,C42H72O36,1,maltoheptaose,2
+BNDDTTIRGZIQSE,4,massbank;mona;msdial;riken,[M+H]+,C26H28N2O8,1,deoxypumiloside,2
+BNSCASRSSGJHQH,8,msdial;riken,[M-H]-,C27H30O17,1,"quercetin 3,7-O-diglucoside",8
+BOKVLBSSPUTWLV,6,gnps;mona;msdial;riken,[M+H]+,C18H21NO3,1,(R)-N-methylcoclaurine,2
+BOPGDPNILDQYTO,75,drug_plus;gnps;massbank;mona;msdial;riken,[M+2H]2+;[M+H]+;[M-H]-;[M]-,C21H29N7O14P2,1,NADH,410
+BOPIMTNSYWYZOC,17,gnps;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H2O-H]-,C15H26O,1,β-eudesmol,2
+BOTWFXYSPFMFNR,38,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M]+,C20H40O,1,phytol,10
+BPYKTIZUTYGOLE,193,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C33H36N4O6,1,"(Z,Z)-bilirubin-IX α",2
+BQJCRHHNABKAKU,89,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M+Na]+,C17H19NO3,1,morphine,2
+BRGMHAYQAZFZDJ,16,massbank;msdial;riken,[M-H]-,C8H16NO9P,1,N-acetyl-D-glucosamine 6-phosphate,4
+BRJNQOSDCDNITN,2,gnps,[M+H]+,C21H22N2O3,1,polyneuridine aldehyde,2
+BROOMPUVDPTGEG,17,riken,[M+H]+;[M+Na]+,C45H78O10,1,1-18:2-2-18:2-monogalactosyldiacylglycerol,2
+BTCSSZJGUNDROE,163,drug_plus;gnps;massbank;mona;msdial;riken,[M+2Na-H]+;[M+H]+;[M+NH4]+;[M-H2O+H]+;[M-H2]2-;[M-H]-,C4H9NO2,1,4-aminobutanoate,9
+BTJIUGUIPKRLHP,83,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C6H5NO3,1,4-nitrophenol,2
+BTNMPGBKDVTSJY,64,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C9H8O3,1,3-phenyl-2-oxopropanoate,19
+BVQVLAIMHVDZEL,13,gnps;pluskal_ms2,[M+H]+;[M-H]-,C9H8O2,1,"1-phenyl-1,2-propanedione",2
+BWORNNDZQGOKBY,5,pluskal_ms2,[M+H]+,C17H14O7,1,"7,4'-dimethylquercetin",2
+BWUQAWCUJMATJS,1,gnps,[M+H]+,C19H21NO4,1,(S)-coreximine,16
+BXIPALATIYNHJN,22,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2]2-;[M-H]-;[M]+;[M]-,C26H42N7O17P3S,1,3-methylcrotonyl-CoA,4
+BXNJHAXVSOCGBA,456,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C13H12N2O,1,harmine,2
+BXRLWGXPSRYJDZ,7,massbank;mona;msdial;riken,[M-H]-;[M]+,C4H6N2O2,1,3-cyano-L-alanine,4
+BYBLEWFAAKGYCD,63,drug_plus;gnps;massbank;mona;pluskal_ms2;riken,[M+H]+,C18H14Cl4N2O,1,miconazole,6
+BYHJHXPTQMMKCA,1,spectraverse,[M+H]+,C11H12N2O4,1,N-formyl-L-kynurenine,4
+BYWLLSQTJBXAPV,19,gnps;mona;pluskal_ms2;riken,[M+H]+;[M-H]-,C18H16O8,1,"3,6,7-trimethylquercetagetin",4
+BYXCFUMGEBZDDI,53,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C8H10N4O3,1,"1,3,7-trimethylurate",2
+BZQFBWGGLXLEPQ,214,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C3H8NO6P,1,O-phospho-L-serine,2
+CABVTRNMFUVUDM,6,massbank,[M-H]-,C27H44N7O20P3S,1,(S)-3-hydroxy-3-methylglutaryl-CoA,8
+CAHGCLMLTWQZNJ,9,gnps;massbank;mona;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M-H2O+H]+;[M]+,C30H50O,1,lanosterol,8
+CAOMCZAIALVUPA,6,gnps;msdial,[M-H]-,C4H8O2S,1,3-(methylsulfanyl)propanoate,2
+CBIDRCWHNCKSTO,13,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C5H12O7P2,1,prenyl pyrophosphate,84
+CCPPLLJZDQAOHD,45,gnps;massbank;mona;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C18H32O3,1,vernolate,6
+CCRCUPLGCSFEDV,20,gnps;massbank;mona;riken,[M+H]+;[M+Na]+,C10H10O2,1,methylcinnamate,2
+CCVYRRGZDBSHFU,131,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C8H8O3,1,(2-hydroxyphenyl)acetate,2
+CDAISMWEOUEBRE,124,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C6H12O6,1,myo-inositol,42
+CDICDSOGTRCHMG,68,gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C11H12O4,1,sinapaldehyde,6
+CDOSHBSSFJOMGT,33,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H18O,1,(3R)-linalool,6
+CFYMYCCYMJIYAB,11,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C16H12O8,1,laricitrin,8
+CGSJXLIKVBJVRY,5,gnps;massbank,[M+H]+;[M-H2O+H]+,C27H44O,1,zymosterol,4
+CIKGWCTVFSRMJU,35,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H15N5O10P2,1,dGDP,10
+CIUHLXZTZWTVFL,56,gnps;pluskal_ms2;riken,[M+H]+;[M+Na]+,C20H15NO4,1,dihydrosanguinarine,2
+CIWBSHSKHKDKBQ,547,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C6H8O6,1,L-ascorbate,52
+CJBDUOMQLFKVQC,44,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C9H10O3,1,melilotate,2
+CJGRGYBLAHPYOM,73,gnps;mona;msdial;riken,[2M+NH4]+;[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+,C15H18O7,1,cinnamoyl-β-D-glucoside,2
+CJXMVKYNVIGQBS,35,massbank;riken,[M+H]+;[M-H]-,C9H8O2,1,4-coumaraldehyde,4
+CKLJMWTZIZZHCS,333,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na2-H3]+;[2M+Na3-H4]-;[2M-H]+;[2M-H]-;[M+2Na-H]+;[M+H]+,C4H7NO4,1,L-aspartate,116
+CKTSBUTUHBMZGZ,230,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-,C9H13N3O4,1,2'-deoxycytidine,8
+CKUVNOCSBYYHIS,286,gnps;massbank;riken,[2M+CH2O2-H]-;[2M+H]+;[M+C2F3O2]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C36H62O8,1,(20S)-ginsenoside Rh2,4
+CMHWMOGWFZWDMR,4,gnps;mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+,C29H44O9,1,(digitoxigenin-3β-yl)-β-D-glucoside,2
+CMKFQVZJOWHHDV,446,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C21H24N2O2,1,catharanthine,2
+CNVZJPUDSLNTQU,17,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C18H34O2,1,petroselinate,2
+COHYTHOBJLSHDF,34,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C16H10N2O2,1,indigo,2
+COLNVLDHVKWLRT,413,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+Na]+;[M-2H2O+H]+;[M-H]-,C9H11NO2,1,L-phenylalanine,67
+CPEXFJVZFNYXGU,11,mona;msdial;riken,[M+H]+;[M-H]-,C13H10O4,1,"2,4,6-trihydroxybenzophenone",6
+CQIKWXUXPNUNDV,15,gnps;msdial;riken,[M+H]+;[M]+,C55H74N4O5,1,pheophytin a,2
+CQLRUIIRRZYHHS,499,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C22H22O12,1,isorhamnetin 3-O-glucoside,2
+CQRYARSYNCAZFO,5,gnps;mona;msdial;riken,[M-H]-,C7H8O2,1,salicyl alcohol,4
+CQSLTKIXAJTQGA,12,gnps;massbank;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C18H34O4,1,"12,13-DiHOME",2
+CRBYNQCDRNZCNX,4,gnps;msdial;riken,[M+H]+;[M-H]-,C15H12O6,1,"2',3,4,4',6'-pentahydroxychalcone",4
+CRDAMVZIKSXKFV,146,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H26O,1,"(2E,6E)-farnesol",8
+CRFNGMNYKDXRTN,26,gnps;massbank;msdial;riken,[M+H]+;[M]-,C25H42N7O17P3S,1,butanoyl-CoA,2
+CRPUJAZIXJMDBK,2,massbank;msdial,[M+H]+,C10H16,1,(-)-camphene,4
+CSCPPACGZOOCGX,3,gnps,[M+H]+,C3H6O,1,acetone,8
+CSDPVAKVEWETFG,8,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H9NO2,1,1-piperideine 6-carboxylate,4
+CSKKDSFETGLMSB,41,massbank;mona;msdial;pluskal_ms2;riken,[2M+NH4]+;[2M-HO]+;[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+,C17H24O10,1,secologanin,6
+CTSPAMFJBXKSOY,134,gnps;massbank;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C17H14N2,1,ellipticine,8
+CWVRJTMFETXNAD,875,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+,C16H18O9,1,chlorogenate,8
+CXBGOBGJHGGWIE,107,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O+H]+,C25H32N2O6,1,vindoline,2
+CXENHBSYCFFKJS,1,massbank,[M+H]+,C15H24,1,"(Z,E)-α-farnesene",2
+CXQWRCVTCMQVQX,283,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H2O-H]-,C15H12O7,1,(+)-taxifolin,16
+CYHOMWAPJJPNMW,47,drug_plus;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+,C8H15NO,1,tropine,4
+CYQFCXCEBYINGO,85,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M-H]-,C21H30O2,1,Δ⁹-tetrahydrocannabinol,2
+CZDNLUMNELLDDD,23,gnps;massbank;mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+NH4]+;[M+Na]+;[M-H]-,C20H24O10,1,salicortin,4
+CZEMYYICWZPENF,8,massbank;msdial;riken,[M-H]-,C20H28O5,1,gibberellin A₅₃,6
+CZMRCDWAGMRECN,185,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C12H22O11,1,sucrose,44
+CZSBHMFVVLYIQQ,29,gnps;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C38H54O19,1,crocin-2,2
+DAEAPNUQQAICNR,13,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H15N5O9P2,1,dADP,12
+DANYIYRPLHHOCZ,349,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C16H12O5,1,acacetin,2
+DAYLJWODMCOQEW,84,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M-H]-;[M]+,C11H15N2O8P,2,β-nicotinamide D-ribonucleotide,4
+DBXBTMSZEOQQDU,5,gnps;mona,[M-H]-,C4H8O3,1,(S)-3-hydroxy-isobutanoate,2
+DCTLYFZHFGENCW,97,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H13N4O9P,1,XMP,18
+DCWXELXMIBXGTH,7,drug_plus;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C9H12NO6P,1,O-phospho-L-tyrosine,2
+DCXYFEDJOCDNAF,246,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O-H]-,C4H8N2O3,1,L-asparagine,34
+DEFVIWRASFVYLL,6,gnps,[M+H]+;[M+Na]+,C14H24N2O10,1,EGTA,8
+DFMAXQKDIGCMTL,147,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C13H10O5,1,isopimpinellin,2
+DFMMVLFMMAQXHZ,100,riken,[M+H]+;[M+Na]+,C30H40O,1,8'-apo-β-carotenal,2
+DFNMSBYEEKBETA,2,massbank;riken,[M+H]+,C40H54O2,1,3-hydroxyechinenone,4
+DFPAKSUCGFBDDF,228,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C6H6N2O,1,nicotinamide,12
+DFPMSGMNTNDNHN,604,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C27H32O14,1,naringin,2
+DFPOZTRSOAQFIK,1,gnps,[M+H]+,C5H10O2S,1,dimethylsulfoniopropanoate,8
+DGEZNRSVGBDHLK,102,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+,C12H8N2,1,o-phenanthroline,40
+DGVVWUTYPXICAM,3,massbank,[M+H]+,C2H6OS,1,2-sulfanylethan-1-ol,36
+DHCDFWKWKRSZHF,4,drug_plus;gnps,[M+H]+,H2O3S2,1,thiosulfate,2
+DHCLVCXQIBBOPH,57,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H9O6P,1,glycerol 2-phosphate,6
+DHLPMLVSBRRUGA,10,gnps;pluskal_ms2,[M-H]-,C10H10O4,1,6-hydroxymellein,2
+DHMQDGOQFOQNFH,85,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C2H5NO2,1,glycine,87
+DJJCXFVJDGTHFX,138,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O-H]-,C9H13N2O9P,1,UMP,32
+DJOJDHGQRNZXQQ,282,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C16H14O5,1,(2S)-sakuranetin,4
+DJSISFGPUUYILV,188,gnps;massbank;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C21H18O12,1,scutellarin,2
+DKPFZGUDAPQIHT,11,gnps;msdial,[2M+Na-2H]-;[2M+Na]+;[M+H]+,C6H12O2,1,butyl acetate,2
+DKZBBWMURDFHNE,189,gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C10H10O3,1,coniferaldehyde,10
+DLIKSSGEMUFQOK,353,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C21H22O10,1,prunin,2
+DLRVVLDZNNYCBX,247,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C12H22O11,1,melibiose,4
+DMASLKHVQRHNES,6,gnps;msdial;riken,[M+H]+;[M]+,C40H56O,1,β-cryptoxanthin,6
+DMCPFOBLJMLSNX,76,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C10H8N2,1,(indol-3-yl)acetonitrile,10
+DNVPQKQSNYMLRS,172,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C28H44O,1,ergosterol,4
+DNXHEGUUPJUMQT,311,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+,C18H22O2,1,estrone,2
+DOBMPNYZJYQDGZ,36,gnps;massbank;pluskal_ms2,[M+H]+;[M-H2O+H]+;[M-H]-,C19H12O6,1,dicoumarol,8
+DOUMFZQKYFQNTF,428,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+2H]2+;[M+Cl]-,C18H16O8,1,(R)-rosmarinate,6
+DQQDLYVHOTZLOR,17,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C14H22N2O16P2,1,UDP-β-L-arabinopyranose,14
+DQUHDYWUEKWRLN,3,mona;msdial;riken,[M+H]+,C20H32,1,ent-isokaurene,8
+DRAVOWXCEBXPTN,8,gnps;pluskal_ms2,[M+H]+,C5H5N5O,1,isoguanine,2
+DRDCJEIZVLVWNC,11,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C15H24N2O16P2,1,UDP-β-L-rhamnose,44
+DRLFMBDRBRZALE,368,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[M+H]+;[M+K]+;[M+NH4]+,C13H16N2O2,1,melatonin,2
+DRSKVOAJKLUMCL,73,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C38H60O18,1,rebaudioside B,2
+DRTQHJPVMGBUCF,465,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K-H2]-,C9H12N2O6,1,uridine,14
+DSCFFEYYQKSRSV,52,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C7H14O6,1,D-pinitol,6
+DSLZVSRJTYRBFB,142,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O-H]-,C6H10O8,1,D-glucarate,4
+DSNCQKUYZOSARM,5,massbank;msdial,[M-H2O+H]+;[M-H]-,C15H18O8,1,1-O-(4-coumaroyl)-β-D-glucose,12
+DSSYKIVIOFKYAU,18,gnps;masaryk;massbank;msdial,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C10H16O,1,(S)-camphor,2
+DSXFHNSGLYXPNG,76,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C16H24O9,1,7-deoxyloganate,4
+DTBNBXWJWCWCIK,91,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M-H]-,C3H5O6P,1,phosphoenolpyruvate,46
+DTOSIQBPPRVQHS,407,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C18H30O2,1,α-linolenate,20
+DTUQWGWMVIHBKE,11,drug_plus;gnps;mona;msdial;riken,[M+H]+,C8H8O,1,phenylacetaldehyde,6
+DVGGLGXQSFURLP,403,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+,C30H26O13,1,"kaempferol 3-O-(6""-O-4-coumaroyl)-glucoside",2
+DWAKNKKXGALPNW,2,msdial;riken,[M+H]+,C5H7NO2,1,pyrroline 5-carboxylate,2
+DXDRHHKMWQZJHT,293,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C15H12O4,1,isoliquiritigenin,10
+DZGWFCGJZKJUFP,217,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2N]+;[M-H]-,C8H11NO,1,tyramine,12
+FACUYWPMDKTVFU,10,mona;msdial;riken,[M+H]+;[M-H]-,C7H9N3O4,1,L-willardiine,2
+FAMPSKZZVDUYOS,43,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C15H24,1,α-humulene,4
+FBOZXECLQNJBKD,206,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C20H22N8O5,1,methotrexate,8
+FBPFZTCFMRRESA,453,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C6H14O6,1,D-sorbitol,4
+FBUKMFOXMZRGRB,41,gnps;massbank;mona;riken,[M+H]+;[M-H2O+H]+;[M-H2O-H]-;[M-H]-,C18H32O3,1,"(12Z)-9,10-epoxyocta-dec-12-enoate",2
+FBWIRBFZWNIGJC,1,massbank,[M+H]+,C7H15NO2S,1,L-dihomomethionine,6
+FDABVSXGAMFQQH,1,gnps,[M+H]+,C36H40N2O6,1,berbamunine,2
+FDGQSTZJBFJUBT,199,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C5H4N4O,1,hypoxanthine,10
+FDRQPMVGJOQVTL,108,massbank;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C27H30O17,1,quercetin-3-gentiobioside,8
+FDSDTBUPSURDBL,58,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M]+,C40H52O2,1,canthaxanthin,10
+FELCJAPFJOPHSD,41,riken,[M+H]+;[M+Na]+,C30H48O2,1,betulinic aldehyde,2
+FEMXZDUTFRTWPE,17,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C9H13N5O3,1,"a 7,8-dihydrobiopterin",2
+FERIUCNNQQJTOY,200,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C4H8O2,1,butanoate,2
+FEWJPZIEWOKRBE,754,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C4H6O6,1,L-tartrate,4
+FFEARJCKVFRZRR,286,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M-H]-,C5H11NO2S,1,L-methionine,72
+FFFHZYDWPBMWHY,83,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C4H9NO2S,1,L-homocysteine,18
+FGSBNBBHOZHUBO,57,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M-H]-,C6H8O5,1,2-oxoadipate,4
+FGYKUFVNYVMTAM,4,gnps;riken,[M+Li-H]+;[M+Na-H]+,C28H42O2,1,β-tocotrienol,2
+FIDUIAPDSKSUGO,13,gnps;pluskal_ms2,[M+H]+;[M-H]-,C14H14O3,1,demethylsuberosin,2
+FJKROLUGYXJWQN,192,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-O3]+;[M+H]+;[M-H2O+H]+;[M-H]-,C7H6O3,1,4-hydroxybenzoate,22
+FJLBFSROUSIWMA,52,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+,C14H14N2O,1,metyrapone,10
+FKRCODPIKNYEAC,1,masaryk,[M+H]+,C5H10O2,1,ethyl propanoate,2
+FLDFNEBHEXLZRX,15,gnps;massbank;msdial;pluskal_ms2,[M+CH2O2-H]-;[M+H]+;[M-H]-,C24H42O21,1,"1,1-kestotetraose",2
+FLUADVWHMHPUCG,3,mona;msdial;riken,[M-H]-,C30H52O26,1,verbascose,4
+FMEHGPQTMOPUGM,1,gnps,[M+H]+,C17H14O7,1,"3,3'-dimethylquercetin",2
+FNGGIPWAZSFKCN,230,gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+Na]+,C21H24N2O2,1,tabersonine,4
+FNKQXYHWGSIFBK,10,gnps;pluskal_ms2,[M+H]+;[M]+,C9H15N5O3,1,"5,6,7,8-tetrahydrobiopterin",10
+FNRBOAGVUNHDIL,1,gnps,[M+CH2O2-H]-,C30H48O3,1,soyasapogenol E,2
+FNZLKVNUWIIPSJ,9,gnps;massbank;msdial,[M+H]+;[M-H]-,C5H11O8P,1,D-xylulose 5-phosphate,8
+FOHXFLPXBUAOJM,218,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C21H20O13,1,myricetin 3-O-β-D-glucoside,2
+FPIOBTBNRZPWJW,15,pluskal_ms2,[M+H]+;[M-H]-,C16H12O6,1,pratensein,4
+FPJQGFLUORYYPE,73,gnps;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M]+,C20H18NO4+,1,epiberberine,2
+FQTLCLSUCSAZDY,75,gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+,C15H26O,1,"(3S,6E)-nerolidol",2
+FQXXSQDCDRQNQE,23,gnps;mona;msdial;riken,[M+H]+,C19H21NO3,1,thebaine,2
+FRASJONUBLZVQX,4,massbank;riken,[M+H]+;[M]-,C10H6O2,1,"1,4-naphthoquinone",2
+FSBIGDSBMBYOPN,131,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C5H12N4O3,1,L-canavanine,4
+FSLPMRQHCOLESF,98,riken,[M+H]+;[M+Na]+,C30H50O,1,α-amyrin,8
+FSYDWKPCKNCRDI,18,massbank,[M+H]+;[M-H]-,C15H14O6,1,luteoforol,2
+FSYKKLYZXJSNPZ,88,drug_plus;gnps;massbank;mona;msdial;riken,[M+2Na-H]+;[M+H]+;[M-H]-,C3H7NO2,1,sarcosine,2
+FTDHDKPUHBLBTL,53,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C9H15N3O10P2,1,dCDP,14
+FTVWIRXFELQLPI,725,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C15H12O5,1,(2R)-naringenin,4
+FULZLIGZKMKICU,39,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C7H8N2S,1,N-phenylthiourea,4
+FURUXTVZLHCCNA,283,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H12O4,1,(2S)-liquiritigenin,8
+FUSADYLVRMROPL,2,massbank;msdial,[M-H]-,C20H20O5,1,desmethylxanthohumol,2
+FUZOZPRKGAXGOB,1,spectraverse,[M+H]+,C9H16N2O5,1,γ-L-glutamyl-(S)-2-aminobutanoate,2
+FUZZWVXGSFPDMH,28,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C6H12O2,1,hexanoate,2
+FVEMXQCEJGGXJB,1,massbank,[M+H]+,C18H21NO4,1,(S)-norreticuline,18
+FVIZARNDLVOMSU,60,gnps;massbank;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C36H62O8,1,ginsenoside C-K,2
+FVQGNFUBHWGFCY,7,spectraverse,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+,C44H80NO8P,1,phosphatidylcholine (1-18:1-2-18:3),2
+FVTCRASFADXXNN,85,drug_plus;gnps;massbank;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-;[M-O3P]+,C17H21N4O9P,1,FMN,8
+FVWJYYTZTCVBKE,209,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C30H50O2,1,betulin,2
+FVXCQULKSPVRPK,3,massbank;msdial;riken,[M+H]+,C19H19NO4,1,(S)-cheilanthifoline,6
+FVXDQWZBHIXIEJ,14,gnps;massbank;mona;msdial;riken,[M+C2H4O2-H]-;[M+H]+,C44H80NO8P,1,phosphatidylcholine (1-18:2-2-18:2),2
+FWYSBEAFFPBAQU,72,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+,C14H14O4,1,(+)-marmesin,2
+FXHGMKSSBGDXIY,2,gnps,[M+NH4]+,C7H14O,1,1-heptanal,2
+FXNFHKRTJBSTCS,240,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O5,1,baicalein,4
+FXUFRJQCBVSCRZ,5,gnps;massbank;mona;msdial;riken,[M+H]+,C21H24N2O3,1,16-hydroxytabersonine,2
+FYGDTMLNYKFZSV,163,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C18H32O16,1,maltotriose,6
+FYTOTHFWELWOCG,112,gnps;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C27H30O15,1,vitexin 2''-O-β-D-glucoside,2
+FZAGOOYMTPGPGF,61,riken,[M+H]+;[M+Na]+,C20H19NO4,1,"7,8-dihydroberberine",2
+FZLJPEPAYPUMMR,35,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C8H16NO9P,1,N-acetyl-α-D-glucosamine 1-phosphate,4
+GACDQMDRPRGCTN,1,massbank,[M-H]-,C10H15N5O13P2S,1,3'-phosphoadenylyl-sulfate,46
+GACTWZZMVMUKNG,96,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H15O9P,1,D-mannitol 1-phosphate,8
+GBUUKFRQPCPYPW,1,massbank,[M+H]+,C20H20NO4+,1,(S)-cis-N-methylstylopine,2
+GDNIGMNXEKGFIP,40,gnps;massbank;pluskal_ms2;riken,[M+H]+;[M-H]-;[M]+,C15H10O5,2,luteolinidin,2
+GDVRUDXLQBVIKP,5,massbank;msdial;riken,[M-H]-;[M]-,C13H16O10,1,1-O-galloyl-β-D-glucose,8
+GDWULUGDXGHJIJ,4,massbank;mona;msdial;riken,[M+C2H4O2-H]-,C44H82NO8P,1,1-oleoyl-2-linoleoyl-phosphatidylcholine,2
+GEWDNTWNSAZUDX,208,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C13H20O3,1,(-)-methyl jasmonate,44
+GFFGJBXGBJISGV,366,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C5H5N5,1,adenine,22
+GFXYTQPNNXGICT,3,drug_plus;massbank;riken,[M+H]+,C6H11NO3,1,(S)-2-amino-6-oxohexanoate,6
+GGGUGZHBAOMSFJ,23,riken,[M+H]+;[M+Na]+,C30H50O,1,taraxerol,2
+GGHMUJBZYLPWFD,54,riken,[M+H]+;[M+Na]+,C15H26O,1,(-)-patchoulol,2
+GGLZPLKKBSSKCX,37,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H13NO2S,1,L-ethionine,14
+GHOKWGTUZJEAQD,462,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+2Na-H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C9H17NO5,1,(R)-pantothenate,8
+GHVNFZFCNZKVNT,56,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-,C10H20O2,1,decanoate,2
+GIHNTRQPEMKFKO,9,gnps;pluskal_ms2,[M+H]+;[M-H2O+H]+,C15H22O,1,zerumbone,2
+GIJHDGJRTUSBJR,105,gnps;massbank;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C11H6O4,1,bergaptol,2
+GJAWHXHKYYXBSV,126,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C7H5NO4,1,quinolinate,10
+GJBXIPOYHVMPQJ,18,gnps;massbank;msdial;riken,[M+H]+,C16H34O2,1,"1,16-hexadecane-diol",2
+GKUMMDFLKGFCKH,118,gnps;massbank;mona;msdial;riken,[M+H-O3S]+;[M+H]+;[M-H]-;[M]+,C12H23NO9S3,1,glucoerucin,2
+GLZPCOQZEFWAFX,245,drug_plus;gnps;massbank;mona;riken,[2M-H3O2]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C10H18O,1,geraniol,12
+GMKMEZVLHJARHF,151,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C7H14N2O4,1,meso-diaminopimelate,4
+GMMLNKINDDUDCF,158,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H-O3S]+;[M+H]+;[M+K]+;[M+NH4]+;[M-C6H9O8S]+;[M-H]-,C12H23NO10S3,1,glucoraphanin,2
+GMSNIKWWOQHZGF,108,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M-H2O+H]+;[M-H]-,C6H6N4O2,1,3-methylxanthine,8
+GNGACRATGGDKBX,51,gnps;massbank;mona;msdial;riken,[M+Na]+;[M-H]-,C3H7O6P,1,glycerone phosphate,50
+GNISQJGXJIDKDJ,65,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C8H13NO6,1,O-succinyl-L-homoserine,2
+GOSWTRUMMSCNCW,329,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C15H21N5O5,1,cis-zeatin riboside,2
+GPTFURBXHJWNHR,234,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C20H19NO5,1,protopine,2
+GPZYYYGYCRFPBU,68,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H10O3,1,6-hydroxyflavone,2
+GRSZFWQUAKGDAV,206,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C10H13N4O8P,1,IMP,26
+GRWFGVWFFZKLTI,12,gnps;massbank,[M+H]+,C10H16,1,(+)-α-pinene,2
+GSSOWCUOWLMMRJ,3,massbank;msdial,[M+H]+;[M-H]-,C15H10O6,1,2'-hydroxygenistein,6
+GSXOAOHZAIYLCY,67,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2Na-H]+;[M+H]+;[M+Na]+;[M-H]-,C6H13O9P,1,keto-D-fructose 6-phosphate,2
+GTQKOJVFDJDUGN,2,spectraverse,[M+H]+;[M-H]-,C13H17NO7,1,anthraniloyl-O-glucopyranose,4
+GTZCVFVGUGFEME,226,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C6H6O6,1,cis-aconitate,14
+GUAFOGOEJLSQBT,212,gnps;massbank;mona;pluskal_ms2;riken,[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C11H10O4,1,scoparone,2
+GUBGYTABKSRVRQ,327,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C12H22O11,1,β-maltose,4
+GUNURVWAJRRUAV,108,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+,C12H28N4O,1,N¹-acetylspermine,2
+GVEZIHKRYBHEFX,24,drug_plus;gnps;massbank;msdial;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C12H17NO3,1,cerulenin,4
+GVJHHUAWPYXKBD,465,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C29H50O2,1,α-tocopherol,2
+GVOIABOMXKDDGU,2,gnps;riken,[M]+,C40H56O4,1,capsorubin,2
+GVRIYIMNJGULCZ,56,gnps;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C15H18O8,1,trans-β-D-glucosyl-2-hydroxycinnamate,2
+GVTRUVGBZQJVTF,117,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C19H21NO4,1,salutaridine,2
+GVVPGTZRZFNKDS,20,gnps;massbank;mona;riken,[M+H]+;[M-H]-,C10H20O7P2,1,geranyl pyrophosphate,84
+GWYFCOCPABKNJV,417,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C5H10O2,1,3-methylbutanoate,4
+GXIURPTVHJPJLF,46,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M-H]-,C3H7O7P,1,2-phospho-D-glycerate,24
+GYLUFQJZYAJQDI,139,gnps;massbank;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C15H10O5,1,"6,7,4'-trihydroxyisoflavone",2
+GYOZYWVXFNDGLU,123,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C10H15N2O8P,1,dTMP,20
+GYZWNQLEQAGWGD,2,gnps;riken,[M]+,C40H56O2,1,isozeaxanthin,4
+GZCGUPFRVQAUEE,35,gnps;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C6H12O6,1,D-mannose,6
+GZIFEOYASATJEH,95,gnps;msdial;riken,[M+H]+;[M+Na]+,C27H46O2,1,δ-tocopherol,2
+GZYPWOGIYAIIPV,429,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2F3O2]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C54H92O23,1,ginsenoside Rb1,2
+HAAZLUGHYHWQIW,9,drug_plus;gnps;massbank;mona,[M+H]+;[M-H]-,C10H16N5O13P3,1,dGTP,12
+HAQWEMHXSIRYBE,2,massbank,[M+H]+;[M-H]-,C10H8O4,1,7-hydroxy-8-methoxycoumarin,2
+HAVWRBANWNTOJX,155,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+NH4]+;[2M+Na-2H]-;[2M+Na]+;[5M+Ca]2+;[M+H]+;[M+NH4]+,C10H8O5,1,fraxetin,2
+HCXVJBMSMIARIN,460,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C29H48O,1,stigmasterol,4
+HDFGOPSGAURCEO,12,drug_plus;massbank;mona;msdial;riken,[M+H]+,C6H7NO2,1,N-ethylmaleimide,70
+HDTIFOGXOGLRCB,1,spectraverse,[M-H]-,C32H60O10,1,Tween 80,4
+HDTRYLNUVZCQOY,190,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+CH2O2-H]-;[2M+H]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C12H22O11,1,"α,α-trehalose",6
+HDYANYHVCAPMJV,47,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M-H]-,C15H22N2O18P2,1,UDP-α-D-glucuronate,32
+HELXLJCILKEWJH,96,enveda-np-examples;gnps;massbank;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C44H70O23,1,rebaudioside A,2
+HFCYZXMHUIHAQI,77,gnps;masaryk;massbank;mona;msdial;riken,[M+Cl]-;[M+H]+;[M-H]-,C9H8N4OS,1,thidiazuron,2
+HGUVPEBGCAVWID,127,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C27H30O15,1,isovitexin 7-O-galactoside,2
+HGXBRUKMWQGOIE,98,gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H22O6,1,(+)-pinoresinol,8
+HHDDCCUIIUWNGJ,4,mona;msdial;riken,[M-H]-,C3H4O4,1,3-hydroxypyruvate,10
+HHGPYJLEJGNWJA,12,gnps;massbank;pluskal_ms2,[M+H]+;[M+Na]+;[M-H2O+H]+,C19H18O7,1,"3,7,3',4'-tetramethylquercetin",4
+HHLFWLYXYJOTON,18,gnps;massbank;mona;msdial;riken,[M-H]-,C2H2O3,1,glyoxylate,41
+HIGQPQRQIQDZMP,176,mona;riken,[M+H]+;[M+Na]+,C12H20O2,1,geranyl acetate,2
+HIIZAGQWABAMRR,1,spectraverse,[M-H]-,C7H10O5,1,(2S)-2-isopropyl-3-oxosuccinate,4
+HIPIENNKVJCMAP,28,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M-H2O+H]+;[M-H]-,C10H18O,1,"(R,R)-chrysanthemol",2
+HJCIUNMVLYBADX,8,gnps,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H10O5,1,"7,8,4'-trihydroxyflavone",2
+HJIKODJJEORHMZ,4,gnps,[2M+H]+;[2M+Na]+,C29H50O6,1,28-homobrassinolide,4
+HKBNQXMLSMKLJV,3,gnps;massbank,[M+H]+,C11H19N3O6S,1,homoglutathione,4
+HKIKAXXIWJHWLY,91,gnps;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C19H22O9,1,aloesin,2
+HKOOXMFOFWEVGF,2,massbank;msdial,[M+H]+,C6H8N2,1,phenylhydrazine,12
+HKQYGTCOTHHOMP,515,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C16H12O4,1,formononetin,14
+HLBPOYVRLSXWJJ,100,gnps;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C22H22O8,1,β-peltatin,4
+HLKXYZVTANABHZ,100,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C5H8N2O5,1,N-carbamoyl-L-aspartate,6
+HLVPIMVSSMJFPS,4,gnps,[2M-H]-;[M-H]-,C21H30O9,1,β-D-glucopyranosyl abscisate,2
+HMFHBZSHGGEWLO,49,drug_plus;gnps;massbank;mona;msdial;riken,[M+C2H4O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C5H10O5,1,α-L-arabinofuranose,2
+HNDVDQJCIGZPNO,350,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[M+H]+;[M+K]+;[M+Na]+;[M-2H2O+H]+,C6H9N3O2,1,L-histidine,8
+HNJBEVLQSNELDL,21,gnps;mona,[2M+H]+;[M+H]+,C4H7NO,1,2-pyrrolidone,2
+HOBAELRKJCKHQD,24,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C20H34O2,1,di-homo-γ-linolenate,4
+HOIXTKAYCMNVMY,8,gnps,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H16O9,1,daphnin,2
+HOOOPXDSCKBLFG,10,drug_plus;mona;msdial;riken,[M+H]+;[M-H]-,C8H7NO2,1,(R)-4-hydroxymandelonitrile,2
+HOVAGTYPODGVJG,33,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C7H14O6,1,methyl-β-D-galactoside,2
+HPMZBILYSWLILX,1,mona,[M+H]+,C43H66O14,1,α-acetyldigitoxin,2
+HQPCSDADVLFHHO,7,gnps,[M+H]+;[M-H]-,C20H32O2,1,icosatetraenoate,2
+HRGUSFBJBOKSML,37,gnps;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M-H]-,C17H14O7,1,tricin,8
+HRPVXLWXLXDGHG,10,gnps;mona,[M+H]+,C3H5NO,1,acrylamide,2
+HRQKOYFGHJYEFS,3,gnps;riken,[M]+,C40H56,1,γ-carotene,6
+HRTOQFBQOFIFEE,3,mona;msdial;riken,[M-H]-,C6H8O3,1,2-dehydropantolactone,2
+HRYLQFBHBWLLLL,145,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M+Na]+;[M-H]-,C15H20O2,1,"(+)-costunolide (12,6α)",8
+HSCJRCZFDFQWRP,204,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C15H24N2O17P2,1,UDP-α-D-galactose,54
+HSHNITRMYYLLCV,310,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C10H8O3,1,4-methylumbelliferone,2
+HUJXHFRXWWGYQH,95,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C16H23NO5,2,O-sinapoylcholine,2
+HUKSJTUUSUGIDC,173,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-;[M]+,C16H12O5,1,(-)-maackiain,10
+HUMNYLRZRPPJDN,11,gnps;massbank;msdial;riken,[M+H]+,C7H6O,1,benzaldehyde,20
+HUTDUHSNJYTCAR,25,gnps;massbank;mona;msdial;riken,[M+H]+,C15H16N2O2,1,ancymidol,18
+HVYWMOMLDIMFJA,458,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C27H46O,1,cholesterol,20
+HWXBTNAVRSUOJR,45,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C5H8O5,1,(S)-2-hydroxyglutarate,2
+HXEACLLIILLPRG,204,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C6H11NO2,1,L-pipecolate,2
+HXTFHSYLYXVTHC,164,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-2H2O+H]+;[M-H2O-H]-,C27H32O14,1,narirutin,2
+HXXFSFRBOHSIMQ,284,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C6H13O9P,1,α-D-galactose 1-phosphate,8
+HYBRYAPKQCZIAE,144,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M]+,C21H23NO5,1,allocryptopine,2
+HYVABZIGRDEKCD,108,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C10H13N5,1,N⁶-dimethylallyladenine,14
+HZAXFHJVJLSVMW,30,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+,C2H7NO,1,ethanolamine,20
+HZGAVPNEGHQJID,4,massbank;mona;msdial;riken,[M+C2H4O2-H]-,C44H78NO8P,1,1-linoleoyl-2-α-linolenoyl-phosphatidylcholine,2
+HZKBHRZARZUXPO,16,spectraverse,[M+C2H4O2-H]-;[M+CH2O2-H]-,C42H80NO9P,1,1-palmitoyl-2-vernoloyl-phosphatidylcholine,2
+HZSAJDVWZRBGIF,107,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-2H]-;[M-H]-;[M]+,C12H18N4O4PS+,2,thiamine phosphate,10
+IAIHUHQCLTYTSF,11,gnps;massbank,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H18O,1,(-)-endo-fenchol,6
+IAJILQKETJEXLJ,18,gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M-H]-,C6H10O7,1,aldehydo-D-galacturonate,2
+IAKHMKGGTNLKSZ,512,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+,C22H25NO6,1,(S)-colchicine,2
+IBGBGRVKPALMCQ,47,gnps;massbank;mona;pluskal_ms2;riken,[M+H-CO]+;[M+H]+;[M-H]-,C7H6O3,1,"3,4-dihydroxybenzaldehyde",6
+IBZYPBGPOGJMBF,13,gnps;massbank;mona,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C18H29NO4,1,(+)-7-epi-jasmonoyl-L-isoleucine,6
+ICFIZJQGJAJRSU,2,massbank,[M+H]+,C49H74O4,1,ubiquinone-8,2
+IDGKMGZVTKHZDA,7,gnps,[M+H]+,C33H53NO6,1,γ-chaconine,2
+IDIDJDIHTAOVLG,12,drug_plus;gnps;massbank;msdial;riken,[M+H]+,C4H9NO2S,1,S-methyl-L-cysteine,2
+IEDBNTAKVGBZEP,16,pluskal_ms2,[M+H]+;[M-H]-,C19H21NO5,1,sinapoyltyramine,2
+IEGFOTASSBZIBZ,4,massbank;mona;riken,[M+CH2O2-H]-;[M-H]-,C21H36O10,1,geranyl β-primeveroside,4
+IERHLVCPSMICTF,190,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C9H14N3O8P,1,CMP,80
+IFYOHQQBIKDHFT,1,riken,[M]+,C27H31O14+,1,pelargonidin-3-O-rutinoside,4
+IGMNYECMUMZDDF,127,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C8H8O4,1,homogentisate,8
+IIBOGKHTXBPGEI,12,mona,[M+H]+;[M-H]-,C8H9NO,1,N-benzylformamide,2
+IJFXRHURBJZNAO,62,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C7H6O3,1,3-hydroxybenzoate,4
+IKHGUXGNUITLKF,3,gnps,[M+H]+,C2H4O,1,acetaldehyde,26
+IKIIZLYTISPENI,265,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C21H18O11,1,baicalin,4
+IKMDFBPHZNJCSN,544,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H10O8,1,myricetin,12
+ILEDWLMCKZNDJK,378,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C9H6O4,1,esculetin,16
+ILRCGYURZSFMEG,137,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C14H20O7,1,salidroside,2
+ILRYLPWNYFXEMH,224,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C7H14N2O4S,1,L-cystathionine,10
+ILUZPRRJJSFYEH,1,spectraverse,[M+NH4]+,C34H56O6,1,brassicasterol 3-O-β-D-glucoside,2
+ILXHFXFPPZGENN,18,massbank;mona;msdial;riken,[M-H]-,C5H11O8P,1,β-L-arabinose 1-phosphate,4
+IMQLKJBTEOYOSI,601,gnps;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C6H18O24P6,1,phytate,26
+IMYZYCNQZDBZBQ,2,massbank;riken,[M-H]-,C18H34O3,1,"9,10-epoxystearate",4
+INAPMGSXUVUWAF,1,massbank,[M-H]-,C6H13O9P,1,1D-myo-inositol 3-monophosphate,4
+INAXVXBDKKUCGI,5,gnps,[M+H]+,C6H8O3,1,furaneol,2
+INVGWHRKADIJHF,256,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H14NO4+,1,sanguinarine,2
+IOSAAWHGJUZBOG,1,gnps,[M+H]+,C14H23N5O,1,EHNA,6
+IOVCWXUNBOPUCH,3,gnps,[M-H]-,HNO2,1,nitrite,6
+IPCSVZSSVZVIGE,173,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C16H32O2,1,palmitate,16
+IPQKDIRUZHOIOM,152,pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C21H20O10,1,baicalein 7-O-β-D-glucoside,2
+IPVSUYLZIAYTOK,61,gnps;massbank;mona;msdial;riken,[M+H]+;[M-2H]-;[M]+,C28H32O16,2,"peonidin 3,5-diglucoside",2
+IQBMWEYFKNVACH,17,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C33H40O22,1,quercetin 3-O-β-D-glucosyl-(1->2)-glucosyl-(1->2)-β-D-glucoside,2
+IQFYYKKMVGJFEH,292,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+,C10H14N2O5,1,thymidine,6
+IQPNAANSBPBGFQ,598,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+C2F3O2]-;[M+H]+;[M+Na]+;[M-H]-,C15H10O6,1,luteolin,20
+IRLPACMLTUPBCL,12,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C10H14N5O10PS,1,adenosine 5'-phosphosulfate,12
+IRMPFYJSHJGOPE,2,mona,[M-H]-,C11H16O2,1,olivetol,4
+ISAKRJDGNUQOIC,92,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C4H4N2O2,1,uracil,18
+IVOMOUWHDPKRLL,257,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[2M-H]-;[M+2Na-H]+;[M+H]+;[M+Na]+,C10H12N5O6P,1,cyclic-AMP,14
+IVYPNXXAYMYVSP,33,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C9H9NO,1,indole-3-carbinol,4
+IWBJJCOKGLUQIZ,2,msdial;riken,[M-H]-,C35H52O4,1,hyperforin,2
+IXVMHGVQKLDRKH,194,gnps;massbank;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+,C28H48O6,1,24-epibrassinolide,2
+IYBDDRJHJMFFBB,20,mona;msdial;riken,[2M+Na]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C21H22O6,1,(-)-bursehernin,2
+IYODIJVWGPRBGQ,21,gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M-H]-,C11H8N2S,1,camalexin,4
+IYRMWMYZSQPJKC,478,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O6,1,kaempferol,24
+IZFHEQBZOYJLPK,11,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C8H16O2S2,1,dihydrolipoate,2
+IZQSVPBOUDKVDZ,388,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C16H12O7,1,isorhamnetin,12
+IZSRJDGCGRAUAR,12,gnps;mona;msdial;riken,[M+Na]+;[M-H]-,C6H10O7,1,5-dehydro-D-gluconate,2
+IZVFFXVYBHFIHY,1,gnps,[M+H]+,C27H46O,1,lathosterol,4
+JAYAGJDXJIDEKI,182,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2]2-;[M-H]-,C49H76O20,1,lanatoside C,2
+JAZBEHYOTPTENJ,44,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M-H]-,C20H30O2,1,"(5Z,8Z,11Z,14Z,17Z)-icosapentaenoate",2
+JCRCKXUPYKELBT,4,gnps;riken,[M]+,C40H56O,1,isocryptoxanthin,4
+JDLKFOPOAOFWQN,4,drug_plus;massbank;msdial;riken,[M+H]+,C6H10OS2,1,allicin,4
+JDSRHVWSAMTSSN,14,gnps;mona;riken,[M-H]-,C18H32O4,1,(13S)-HPODE,6
+JDTUMPKOJBQPKX,21,massbank;mona;msdial;riken,[M-H]-,C7H15O10P,1,D-sedoheptulose 7-phosphate,8
+JEJLGIQLPYYGEE,14,massbank,[M+C2H4O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C35H68O5,1,"1,2-dipalmitoyl-sn-glycerol",2
+JFCQEDHGNNZCLN,77,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-;[M]+,C5H8O4,1,glutarate,4
+JFSHUTJDVKUMTJ,4,gnps;riken,[M+H]+;[M+K]+;[M-H2O+H]+,C30H50O,1,β-amyrin,20
+JFVKWCYZKMUTLH,71,gnps;mona;msdial;riken,[2M+Na]+;[2M-H3O2]+;[2M-HO]+;[M+C2H4N]+;[M+H]+;[M+K]+,C23H22O7,1,rotenolone,2
+JGUNZIWGNMQSBM,28,gnps;massbank;mona;msdial;riken,[M-H]-,C18H32O4,1,(9S)-HPODE,8
+JGUZGNYPMHHYRK,40,gnps;massbank;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M-H]-,C16H12O7,1,rhamnetin,4
+JIWBIWFOSCKQMA,11,gnps;massbank;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C18H28O2,1,stearidonate,2
+JJMDCOVWQOJGCB,132,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[M+2Na-H]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C5H11NO2,1,5-aminopentanoate,4
+JKHRCGUTYDNCLE,51,gnps;massbank;riken,[M+H]+;[M-2H]-;[M-H2]2-;[M-H]-;[M]+,C15H10O7,2,delphinidin,4
+JKQXZKUSFCKOGQ,489,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M]+,C40H56O2,1,zeaxanthin,20
+JLIDBLDQVAYHNE,358,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+H]+,C15H20O4,1,2-cis-abscisate,24
+JLPULHDHAOZNQI,18,gnps;massbank;mona;msdial;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M-CH3]-;[M-H]-,C42H80NO8P,1,1-palmitoyl-2-linoleoyl-phosphatidylcholine,4
+JMAYDGBZRHQJAT,4,massbank;mona;msdial;riken,[M+C2H4O2-H]-,C42H78NO8P,1,1-palmitoyl-2-α-linolenoyl-phosphatidylcholine,2
+JMFRWRFFLBVWSI,56,gnps;massbank;mona;riken,[2M-HO]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H12O3,1,coniferyl alcohol,16
+JMQMNWIBUCGUDO,39,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C7H14N2O4S2,1,L-djenkolate,4
+JNNGEAWILNVFFD,272,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C16H24O10,1,loganate,2
+JOUIQRNQJGXQDC,23,drug_plus;gnps;massbank;riken,[M+H]+;[M-H]-;[M]+,C11H15NO9P+,2,β-nicotinate D-ribonucleotide,12
+JPIJQSOTBSSVTP,39,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C4H8O5,1,L-threonate,4
+JPMYFOBNRRGFNO,157,gnps;massbank;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C16H12O5,1,genkwanin,2
+JPUKWEQWGBDDQB,348,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C21H20O11,1,kaempferol 3-O-β-D-galactoside,2
+JPXZQMKKFWMMGK,34,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H14N4O11P2,1,IDP,2
+JQKOHRZNEOQNJE,15,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C41H80NO8P,1,1-18:0-2-18:1-phosphatidylethanolamine,2
+JRLGPAXAGHMNOL,136,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C7H14N2O3,1,N-acetyl-L-ornithine,6
+JSJWCHRYRHKBBW,116,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2Na-H]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C4H8N2O3,1,3-ureidopropanoate,2
+JSNRRGGBADWTMC,76,riken,[M+H]+;[M+Na]+,C15H24,1,(E)-β-farnesene,2
+JSRLJPSBLDHEIO,82,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C9H13N2O8P,1,dUMP,20
+JTEDVYBZBROSJT,238,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+,C12H13NO2,1,4-(indol-3-yl)butanoate,4
+JTEYKUFKXGDTEU,2,massbank;msdial,[M-H]-,C5H10O4,1,"(2R)-2,3-dihydroxy-3-methylbutanoate",6
+JUVIOZPCNVVQFO,258,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C23H22O6,1,rotenone,4
+JVGVDSSUAVXRDY,140,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C9H10O4,1,(R)-3-(4-hydroxyphenyl)lactate,4
+JVNVHNHITFVWIX,2,mona;riken,[M+H]+,C30H42N7O17P3S,1,(E)-cinnamoyl-CoA,26
+JVQYSWDUAOAHFM,42,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M+Na]+;[M+H]+;[M-H]-,C6H10O3,1,(3S)-3-methyl-2-oxopentanoate,17
+JVTAAEKCZFNVCJ,72,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M-H]-,C3H6O3,1,(S)-lactate,6
+JVXZRQGOGOXCEC,119,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C15H10O6,1,scutellarein,2
+JWAZRIHNYRIHIV,34,gnps;massbank;mona;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H8O,1,2-naphthol,2
+JWRQVQWBNRGGPK,5,massbank;msdial;riken,[M+H]+;[M-H]-,C16H20O9,1,1-O-feruloyl-β-D-glucose,16
+JWVYQQGERKEAHW,110,massbank;riken,[M+H]+;[M+Na]+,C11H6O4,1,xanthotoxol,2
+JXHZTRXZIXRIDX,3,massbank,[M+H]+;[M-C6H9O5]+,C16H31NO6S2,1,8-(methylsulfanyl)octyl-desulfoglucosinolate,2
+JXOHGGNKMLTUBP,150,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C7H10O5,1,shikimate,16
+JXTHNDFMNIQAHM,35,massbank;mona;msdial;pluskal_ms2;riken,[M-H]-,C2H2Cl2O2,1,"2,2-dichloroacetate",2
+JYGAZEJXUVDYHI,26,riken,[M+H]+;[M+Na]+,C15H24O2,1,dihydroartemisinate,2
+JYGFTBXVXVMTGB,23,gnps;massbank;mona;riken,[M+H]+,C8H7NO,1,indolin-2-one,4
+JYGXADMDTFJGBT,366,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C21H30O5,1,cortisol,2
+JYVXNLLUYHCIIH,77,gnps;massbank;mona;msdial;riken,[2M+Na]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C6H10O3,1,mevalonolactone,2
+JYXSWDCPHRTYGU,197,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C27H30O15,1,kaempferol-3-O-β-D-glucopyranoside-7-O-α-L-rhamnopyranoside,8
+JZRWCGZRTZMZEH,267,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-2H]-;[M-H2]2-,C12H17N4OS+,1,thiamine,6
+KBDKAJNTYKVSEK,17,massbank;mona;msdial;riken,[M-H]-;[M]+,C5H11O7P,1,2-deoxy-α-D-ribose 1-phosphate,2
+KBPHJBAIARWVSC,135,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C40H56O2,1,lutein,6
+KCXVZYZYPLLWCC,70,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C10H16N2O8,1,EDTA,82
+KDCGOANMDULRCW,138,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C5H4N4,1,purine,2
+KDFKJOFJHSVROC,68,gnps;massbank;riken,[M+H]+;[M+Na]+,C20H23NO4,1,(S)-tetrahydrocolumbamine,8
+KDTSHFARGAKYJN,46,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C21H35N7O13P2S,1,3'-dephospho-CoA,8
+KDXKERNSBIXSRK,315,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C6H14N2O2,1,L-lysine,24
+KDYFGRWQOYBRFD,109,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M-H2O+H]+;[M-H]-,C4H6O4,1,succinate,182
+KDZOASGQNOPSCU,88,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C10H18N4O6,1,L-arginino-succinate,10
+KEZLDSPIRVZOKZ,10,pluskal_ms2,[M+H]+;[M-H]-,C15H10O4,1,hispidol,2
+KFDVPJUYSDEJTH,3,massbank,[M+H]+,C7H7N,1,4-vinylpyridine,2
+KFJNVVJUICKJEQ,319,gnps;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C19H22O10,1,aloenin,2
+KFWWCMJSYSSPSK,30,gnps;massbank;mona;msdial;riken,[M+H]+;[M]-,C25H40N7O17P3S,1,crotonyl-CoA,8
+KHPXUQMNIQBQEV,15,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C4H4O5,1,oxaloacetate,72
+KHWCHTKSEGGWEX,130,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C10H14N5O6P,1,dAMP,8
+KIDHWZJUCRJVML,106,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-;[M]+,C4H12N2,1,putrescine,32
+KJCVRFUGPWSIIH,24,gnps;massbank;mona;riken,[M+H]+;[M-H]-,C10H8O,1,1-naphthol,2
+KJGPBYUQZLUKLL,8,gnps;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C17H14O5,1,afrormosin,2
+KJPRLNWUNMBNBZ,35,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+,C9H8O,1,cinnamaldehyde,6
+KJQFBVYMGADDTQ,59,gnps;pluskal_ms2,[M+Cl]-;[M+H]+;[M-H2O+H]+;[M-H]-,C8H18N2O3S,1,buthionine sulfoximine,2
+KJRQQECDVUXBCO,9,gnps,[M+CH2O2-H]-;[M+H]+;[M+Na]+,C17H14O4,1,"7,8-dimethoxy-flavone",2
+KJTLQQUUPVSXIM,20,drug_plus;gnps;massbank;mona;pluskal_ms2,[M+H]+;[M+Na]+;[M-H]-,C6H12O4,1,(R)-mevalonate,8
+KKADPXVIOXHVKN,94,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M-H2O+H]+,C9H8O4,1,3-(4-hydroxyphenyl)pyruvate,25
+KMAKOBLIOCQGJP,108,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C9H7NO2,1,indole-3-carboxylate,2
+KMOUJOKENFFTPU,319,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-C6H9O5]+,C21H20O10,1,apigenin 7-O-β-D-glucoside,2
+KMYWVDDIPVNLME,139,gnps;massbank;mona;riken,[2M+H]+;[2M+Na]+;[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C10H12N5O6P,1,"adenosine 2',3'-cyclic monophosphate",2
+KNJNBKINYHZUGC,21,gnps;massbank;mona;msdial;pluskal_ms2,[M+H]+;[M-H]-,C16H10O5,1,pseudobaptigenin,6
+KNWVMRVOBAFFMH,35,gnps;massbank;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-;[M]+,C19H21NO4,1,(S)-scoulerine,16
+KPCRYSMUMBNTCK,15,massbank;pluskal_ms2,[M+H]+;[M-H]-,C18H16O7,1,"3,7,4'-trimethylquercetin",4
+KPGXRSRHYNQIFN,84,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M-H]-,C5H6O5,1,2-oxoglutarate,310
+KQDOTXAUJBODDM,8,gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C28H32O14,1,"1,2-di-O-sinapoyl-β-D-glucose",2
+KQMVAGISDHMXJJ,153,massbank;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C16H12O5,1,prunetin,4
+KQNPFQTWMSNSAP,159,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C4H8O2,1,isobutanoate,4
+KQPYUDDGWXQXHS,42,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C10H6O3,1,juglone,14
+KRFBMPVGAYGGJE,129,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C18H16O7,1,nevadensin,2
+KRGPXXHMOXVMMM,7,mona;riken,[M-H]-,C12H21N3O6,1,L-nicotianamine,6
+KRKNYBCHXYNGOX,941,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C6H8O7,1,citrate,48
+KSEBMYQBYZTDHS,834,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-CH4]-,C10H10O4,1,ferulate,18
+KSFOVUSSGSKXFI,2,mona;riken,[M+H]+,C34H34N4O4,1,protoporphyrin IX,8
+KTHADMDGDNYQRX,56,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C11H11NO2,1,methyl (indol-3-yl)acetate,4
+KTVPXOYAKDPRHY,72,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[3M-H]-;[M+H]+;[M+Na]+;[M-H]-,C5H11O8P,1,D-ribofuranose 5-phosphate,12
+KUWZXOMQXYWKBS,7,massbank;pluskal_ms2,[M+H]+;[M-H]-,C15H14O3,1,"3-methoxy-4',5-dihydroxy-trans-stilbene",2
+KVJWZTLXIROHIL,3,mona;msdial;riken,[M-H]-,C68H130N2O23P2,1,lipid IVA (E. coli),2
+KWGRBVOPPLSCSI,146,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+,C10H15NO,1,"(1S,2S)-pseudoephedrine",2
+KWIUHFFTVRNATP,354,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C5H11NO2,2,glycine betaine,4
+KWVISVAMQJWJSZ,222,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C27H43NO2,1,dehydrotomatidine,8
+KXGVEGMKQFWNSR,416,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+CH2O2-H]-;[M+Cl]-,C24H40O4,1,deoxycholate,10
+KYOBSHFOBAOFBF,44,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H13N2O11P,1,orotidine 5'-phosphate,6
+KYQZWONCHDNPDP,367,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-C6H11O5]-,C21H20O9,1,daidzin,2
+KZBAXKKOXPLOBX,4,pluskal_ms2,[M+H]+,C17H14O6,1,"7,4'-dimethylkaempferol",2
+KZJWDPNRJALLNS,204,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C29H50O,1,sitosterol,8
+KZNIFHPLKGYRTM,388,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O5,1,apigenin,22
+KZSNJWFQEVHDMF,231,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C5H11NO2,1,L-valine,33
+LABSPYBHMPDTEL,51,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C12H23O14P,1,"α,α-trehalose 6-phosphate",2
+LAYXSTYJRSVXIH,5,spectraverse,[M-H]-,C21H43O7P,1,1-stearoyl-sn-glycerol 3-phosphate,2
+LBRPLJCNRZUXLS,144,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C26H30N2O8,1,strictosamide,4
+LCTONWCANYUPML,702,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H]-;[M]+,C3H4O3,1,pyruvate,226
+LDCYZAJDBXYCGN,277,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+2Na-H]+;[M+H]+;[M+Na]+,C11H12N2O3,1,5-hydroxy-L-tryptophan,2
+LEHOTFFKMJEONL,119,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[2M+Na-2H]-;[M+H]+;[M-H]-,C5H4N4O3,1,urate,22
+LFEUICHQZGNOHD,252,gnps;massbank;mona;msdial;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C22H22O10,1,biochanin A-7-O-glucoside,2
+LFTYTUAZOPRMMI,196,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2]2-;[M-H]-,C17H27N3O17P2,1,UDP-N-acetyl-D-galactosamine,2
+LHGVFZTZFXWLCP,4,gnps;massbank,[M+H]+;[M-H2O+H]+,C7H8O2,1,guaiacol,4
+LHNLHJJGLDWGFS,1,gnps,[M+H]+,C18H16O8,1,"3',4',5'-trimethylmyricetin",2
+LIPOUNRJVLNBCD,11,drug_plus;gnps;mona;msdial;riken,[M+C2H4O2-H]-;[M+H]+;[M]+,C2H5O5P,1,acetyl phosphate,8
+LJFYQZQUAULRDF,62,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C15H18O8,1,4-O-β-D-glucosyl-4-hydroxycinnamate,2
+LJVKMVSYTWPNGA,2,msdial;riken,[M+H]+,C18H19NO3,1,neopinone,2
+LKUDPHPHKOZXCD,15,gnps,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C9H12O3,1,"1,3,5-trimethoxybenzene",2
+LLEJIEBFSOEYIV,74,gnps;massbank;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M]+,C21H18NO4+,1,chelerythrine,2
+LLENXGNWVNSBQG,16,gnps;mona;pluskal_ms2;riken,[M+Cl]-;[M+NH4]+;[M-H]-,C27H24O18,1,"1,2,6-trikis-O-galloyl-β-D-glucose",4
+LLSADFZHWMEBHH,3,massbank;msdial;riken,[M+H]+;[M-H]-,C19H23NO4,1,salutaridinol,2
+LMBWSYZSUOEYSN,1,msdial,[M-H]-,C5H11NS2,1,diethyldithiocarbamate,26
+LNOHXHDWGCMVCO,175,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C22H20O11,1,wogonin 7-O-β-D-glucuronate,2
+LNQVTSROQXJCDD,71,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C10H14N5O7P,1,adenosine 3'-monophosphate,4
+LNTHITQWFMADLM,485,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+2H]2+;[M+H]+;[M+K]+;[M+Na]+,C7H6O5,1,gallate,10
+LOUPRKONTZGTKE,905,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+C2H5N]2+;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C20H24N2O2,1,quinine,2
+LOYXTWZXLWHMBX,16,pluskal_ms2,[M+H]+;[M-H]-,C15H12O4,1,pinocembrin chalcone,4
+LPEPZZAVFJPLNZ,175,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C20H20O5,1,sophoraflavanone B,2
+LQEBEXMHBLQMDB,36,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C16H25N5O15P2,1,GDP-β-L-fucose,16
+LQGUBLBATBMXHT,118,gnps;massbank;mona;msdial;riken,[M+CH3O2]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O4,1,chrysophanol,2
+LRFVTYWOQMYALW,123,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C5H4N4O2,1,xanthine,30
+LSDULPZJLTZEFD,2,gnps,[M+H]+;[M-H]-,C26H38O4,1,lupulone,4
+LSHVYAFMTMFKBA,816,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C22H18O10,1,(-)-epicatechin-3-O-gallate,2
+LSNNMFCWUKXFEE,15,gnps;msdial;riken,[M+C4H8N2]+;[M+H]+;[M-H]-,H2O3S,1,sulfite,16
+LTFMZDNNPPEQNG,123,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H14N5O7P,1,dGMP,8
+LTMHDMANZUZIPE,226,drug_plus;gnps;massbank;mona;msdial;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C41H64O14,1,digoxin,2
+LTYOQGRJFJAKNA,19,massbank;msdial,[M+H]+;[M-H]-,C24H38N7O19P3S,1,malonyl-CoA,192
+LUEWUZLMQUOBSB,47,drug_plus;gnps;massbank;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C24H42O21,1,maltotetraose,6
+LUJAXSNNYBCFEE,5,gnps;msdial;riken,[M+H]+;[M-H]-,C17H14O7,1,"3,7-dimethylquercetin",8
+LUKBXSAWLPMMSZ,821,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C14H12O3,1,trans-resveratrol,6
+LVFCLUMIBMHAFL,6,pluskal_ms2;riken,[M+CH2O2-H]-;[M+Na]+,C13H16O7,1,benzoyl-β-D-glucopyranose,6
+LVVKXRQZSRUVPY,25,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M-2H2O+H]+;[M-H]-,C17H19NO3,1,(S)-coclaurine,4
+LXEVSYZNYDZSOB,106,pluskal_ms2;riken,[M+H]+;[M+Na]+,C19H18O7,1,gardenin B,4
+LXJXRIRHZLFYRP,16,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H7O6P,1,D-glyceraldehyde 3-phosphate,48
+LXNHXLLTXMVWPM,345,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-2H2O+H]+,C8H11NO3,1,pyridoxine,4
+LYGPBZVKGHHTIE,319,gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C27H30O14,1,vitexin 2''-O-β-L-rhamnoside,2
+LYGRISUQIZNHGM,76,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H20O14,1,"1-O,6-O-digalloyl-β-D-glucose",4
+LZERJKGWTQYMBB,130,gnps;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C17H14O5,1,"apigenin-7,4'-dimethyl ether",2
+LZFOPEXOUVTGJS,101,gnps;massbank;mona;msdial;riken,[M+H3]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C11H14O4,1,sinapyl alcohol,4
+LZMRDTLRSDRUSU,3,mona;msdial;riken,[M-H2O+H]+,C17H14O6,1,(+)-pisatin,4
+MATGKVZWFZHCLI,232,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H22O6,1,(-)-matairesinol,14
+MBDOYVRWFFCFHM,6,gnps;massbank;mona;msdial;riken,[M+H]+,C6H10O,1,(E)-2-hexenal,8
+MBXJCHZRHROMQA,3,gnps,[M+H]+;[M-H2O+H]+,C21H26N2O3,1,stemmadenine,2
+MCGXOCXFFNKASF,13,gnps;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C8H16N2O5,1,N-acetyl-β-glucosaminylamine,2
+MCJGNVYPOGVAJF,44,drug_plus;gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+K]+;[M-H2O+H]+;[M-H]-,C9H7NO,1,8-hydroxyquinoline,4
+MCKAJXMRULSUKI,1,gnps,[M+H]+,C6H14O12P2,1,"D-myo-inositol (3,4)-bisphosphate",2
+MDHYEMXUFSJLGV,2,mona;riken,[M+H]+,C10H12O2,1,phenylethyl acetate,4
+MDKCFLQDBWCQCV,40,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C8H7NS,1,benzylisothiocyanate,2
+MEFKEPWMEQBLKI,105,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M]+,C15H22N6O5S,2,S-adenosyl-L-methionine,396
+MEFPHTVXBPLRLX,2,massbank;riken,[M-H]-,C13H25NO9S3,1,glucoberteroin,2
+MERHMOCEIBOOMA,19,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C20H20O6,1,kievitone,4
+MFYSYFVPBJMHGN,454,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C21H28O5,1,cortisone,2
+MGJLSBDCWOSMHL,371,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C22H22O9,1,ononin,4
+MHASSCPGKAMILD,3,gnps;mona;riken,[M+H]+,C19H20N2O,1,vellosimine,2
+MHUWZNTUIIFHAS,6,spectraverse,[M-H]-,C39H73O8P,1,bisoleoyl phosphatidate,2
+MHXCIKYXNYCMHY,47,gnps;massbank;pluskal_ms2;riken,[2M+H]+;[M+CH2O2-H]-;[M+Na]+;[M-H]-,C20H24O6,1,(-)-lariciresinol,2
+MICBIPJWKDDGNL,2,mona;riken,[M+H]+;[M]+,C40H58,1,β-zeacarotene,4
+MIEILDYWGANZNH,1,spectraverse,[M+H]+,C10H13NO5,1,L-arogenate,8
+MIJYXULNPSFWEK,688,gnps;massbank;mona;msdial;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C30H48O3,1,oleanolate,8
+MLRIJUWUQTVDQE,137,gnps;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C14H20O6,1,2-phenylethyl β-D-glucopyranoside,2
+MMPBHSBVPREJQC,15,mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M-H]-,C15H16O9,1,daphnetin-8-glucoside,2
+MMWCIQZXVOZEGG,3,spectraverse,[M+H]+,C6H15O15P3,1,"D-myo-inositol (1,4,5)-trisphosphate",28
+MNBKLUUYKPBKDU,21,gnps;massbank;riken,[M+H]+;[M-H]-;[M]-,C37H66N7O17P3S,1,palmitoyl-CoA,18
+MNWFXJYAOYHMED,26,drug_plus;gnps;massbank;mona;msdial;riken,[M+C2H4O2-H]-;[M+H]+;[M-H]-,C7H14O2,1,heptanoate,2
+MOYAFQVGZZPNRA,1,massbank,[M+H]+,C10H16,1,terpinolene,2
+MPYHGNAJOKCMAQ,4,massbank;msdial;riken,[M+H]+;[M-H]-,C20H25NO4,1,(R)-laudanine,2
+MQGPSCMMNJKMHQ,110,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O3,1,7-hydroxyflavone,2
+MQTAVJHICJWXBR,111,gnps,[M+H]+,C9H21N3O,1,N¹-acetylspermidine,2
+MQYXUWHLBZFQQO,271,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C30H50O,1,lupeol,8
+MQZIGYBFDRPAKN,52,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-;[M]+,C40H52O4,1,"(3S,3'S)-astaxanthin",8
+MTCFGRXMJLQNBG,221,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H7NO3,1,D-serine,6
+MUBZPKHOEPUJKR,8,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C2H2O4,1,oxalate,34
+MUPFEKGTMRGPLJ,160,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2F3O2]-;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C18H32O16,1,raffinose,12
+MUVSVZOWXAYLSD,1,massbank,[M-H]-,C20H30O2,1,11-hydroxyferruginol,2
+MVAWJSIDNICKHF,230,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[M+CH2O2-H]-;[M+H]+;[M+K]+,C12H14N2O2,1,N-acetyl-serotonin,2
+MVMSCBBUIHUTGJ,132,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C16H25N5O16P2,1,GDP-α-D-mannose,22
+MWHKPYATGMFFPI,6,gnps,[M+CH2O2-H]-;[M+Na]+;[M-H]-,C16H18O6,1,2-naphthol glucoside,2
+MWOOGOJBHIARFG,566,gnps;massbank;mona;msdial;riken,[M+H-CO]+;[M+H]+;[M+Na]+;[M-H]-,C8H8O3,1,vanillin,6
+MXHRCPNRJAMMIM,139,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+,C9H12N2O5,1,2'-deoxyuridine,8
+MXTLAHSTUOXGQF,66,gnps;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+Na]+;[M]+;[M]-,C20H20NO4+,2,jatrorrhizine,16
+MXXWOMGUGJBKIW,413,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+C2H4N]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C17H19NO3,1,piperine,2
+MXYATHGRPJZBNA,8,gnps;mona;msdial;riken,[M+H]+,C20H30O2,1,"(-)-9β-pimara-7,15-dien-19-oate",4
+MYMGKIQXYXSRIJ,2,massbank,[M+H]+;[M-H]-,C17H14O7,1,"7,3'-dimethylquercetin",2
+MYXNWGACZJSMBT,324,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C21H20O10,1,isovitexin,8
+MZFOKIKEPGUZEN,12,massbank,[M+H]+;[M-H]-,C25H40N7O19P3S,1,(R)-methylmalonyl-CoA,2
+NARQRJFIZNOSJV,2,massbank;riken,[M-H]-,C36H58O9,1,soyasapogenol B-3-O-β-glucuronide,2
+NBAKTGXDIBVZOO,35,gnps;mona;riken,[M+H]+;[M-H]-,C5H8N2O2,1,"5,6-dihydrothymine",2
+NBBJYMSMWIIQGU,3,gnps,[M+H]+,C3H6O,1,1-propanal,8
+NBIIXXVUZAFLBC,15,massbank;mona;msdial;riken,[M+H]+;[M-H]-,H3O4P,1,dihydrogen phosphate,2
+NBSCHQHZLSJFNQ,232,drug_plus;gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C6H13O9P,1,D-mannopyranose 6-phosphate,10
+NBVTYGIYKCPHQN,91,gnps;pluskal_ms2;riken,[2M+K]+;[2M+Na]+;[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C19H18O8,1,"3,6,7,3'-tetramethylquercetagetin",4
+NBZANZVJRKXVBH,2,msdial;riken,[M+H]+,C40H56O,1,zeinoxanthin,4
+NCMVOABPESMRCP,83,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C9H14N3O7P,1,dCMP,12
+NCUJRUDLFCGVOE,10,pluskal_ms2,[M+H]+;[M-H]-,C10H8O4,1,"5,7-dihydroxy-2-methylchromone",2
+NCYCYZXNIZJOKI,32,gnps;massbank;mona;riken,[M+H]+;[M-H2O+H]+,C20H28O,1,all-trans-retinal,2
+NDTYTMIUWGWIMO,8,drug_plus;gnps;massbank;mona,[2M-HO]+;[M+H]+;[M+Na]+;[M-H2O+H]+,C10H16O,1,perillyl alcohol,2
+NDVASEGYNIMXJL,13,gnps;massbank;msdial;riken,[M+H]+,C10H16,1,sabinene,2
+NEZONWMXZKDMKF,4,gnps;massbank,[M-H]-,C16H16O5,1,shikonin,2
+NFLGAXVYCFJBMK,12,gnps,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C10H18O,1,(-)-menthone,2
+NFWKVWVWBFBAOV,89,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H28O2,1,dehydroabietate,6
+NGFMICBWJRZIBI,229,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C13H18O7,1,salicin,2
+NGHMDNPXVRFFGS,3,drug_plus;massbank;msdial,[M+H]+;[M-H]-,C4H9O7P,1,D-erythrose 4-phosphate,22
+NGSWKAQJJWESNS,315,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C9H8O3,1,4-coumarate,60
+NGVDGCNFYWLIFO,118,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H2O-H]-,C8H10NO6P,1,pyridoxal 5'-phosphate,26
+NHNODHRSCRALBF,2,mona;riken,[M+H]+,C26H42N7O18P3S,1,2-methylacetoacetyl-CoA,2
+NHVNXKFIZYSCEB,15,gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C10H17N2O14P3,1,dTTP,20
+NHZMQXZHNVQTQA,138,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C8H12N2O2,1,pyridoxamine,4
+NIKHGUQULKYIGE,78,gnps;mona;msdial;riken,[2M+Na-2H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H30O2,1,ent-kaur-16-en-19-oate,12
+NIXOWILDQLNWCW,7,gnps;massbank;msdial,[M+H]+;[M-H]-,C3H4O2,1,acrylate,8
+NJGBTKGETPDVIK,27,gnps;massbank;mona;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C10H12O2,1,4-hydroxyphenylbutan-2-one,2
+NJMQSVWMCODQIP,127,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C18H26O10,1,benzyl acuminose,2
+NLDDIKRKFXEWBK,384,gnps;massbank;mona;msdial;riken,[2M+Ca]2+;[2M+Na]+;[M+H]+;[M+NH4]+;[M+Na]+;[M-2H2O+H]+,C17H26O4,1,6-gingerol,2
+NMPZCCZXCOMSDQ,51,gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C9H12N3O7P,1,"cytidine 2',3'-cyclic monophosphate",2
+NNWHUJCUHAELCL,13,pluskal_ms2,[M+CH2O2-H]-,C11H14O2,1,isomethyleugenol,2
+NOOLISFMXDJSKH,43,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-;[M]+,C10H20O,1,(+)-neoisomenthol,2
+NOTCZLKDULMKBR,2,massbank,[M-H]-,C8H10O2,1,3-methoxy-5-hydroxytoluene,2
+NOTGFIUVDGNKRI,109,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C9H15N4O8P,1,5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide,8
+NPJICTMALKLTFW,74,mona;riken,[M+H]+;[M+Na]+,C35H60O6,1,β-sitosterol 3-O-β-D-glucoside,2
+NPNNKDMSXVRADT,161,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C18H19NO4,1,N-feruloyltyramine,4
+NPNUFJAVOOONJE,138,gnps;massbank;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C15H24,1,(-)-β-caryophyllene,6
+NQRYJNQNLNOLGT,39,gnps;massbank;mona;msdial;riken,[M+H]+,C5H11N,1,1-piperidinium,4
+NQWVSMVXKMHKTF,186,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C21H24O6,1,arctigenin,2
+NSRJSISNDPOJOP,83,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C16H14O4,1,(-)-medicarpin,14
+NSYSSMYQPLSPOD,76,gnps;mona;msdial;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C6H6O3,1,triacetate lactone,2
+NUCLJNSWZCHRKL,79,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C4H8N4O4,1,allantoate,16
+NUHSROFQTUXZQQ,4,drug_plus;massbank;mona,[M+H]+;[M-H]-,C5H12O7P2,1,3-methylbut-3-en-1-yl pyrophosphate,72
+NWBJYWHLCVSVIJ,121,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C12H11N5,1,benzyladenine,6
+NXTHTMNXJOEVLR,2,massbank,[M]+,C50H57O30+,1,cyanidin 3-O-[6-O-(4-O-β-D-glucosyl-p-coumaroyl)-2-O-(β-D-xylosyl)-β-D-glucosyl]-5-O-(6-O-malonyl-β-D-glucoside),2
+NYHBQMYGNKIUIF,307,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C10H13N5O5,1,guanosine,22
+OAIJSZIZWZSQBC,82,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M+Na]+;[M]+,C40H56,1,all-trans-lycopene,20
+OBATZBGFDSVCJD,60,pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+,C47H74O19,1,deacetyl-lanatoside C,2
+OCDGBSUVYYVKQZ,197,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C11H14N2,1,gramine,4
+OCIBBXPLUVYKCH,1,massbank,[M-H]-,C36H62O31,1,maltohexaose,4
+ODADKLYLWWCHNB,22,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M]+,C27H40O2,1,δ-tocotrienol,2
+ODBLHEXUDAPZAU,76,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H2O-H]-;[M-H]-,C6H8O7,1,D-isocitrate,14
+ODBRNZZJSYPIDI,384,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C21H20O11,1,isoorientin,6
+ODHCTXKNWHHXJC,323,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+2Na-H]+;[M+Cl]-,C5H7NO3,1,5-oxo-L-proline,6
+ODKSFYDXXFIFQN,338,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+,C6H14N4O2,1,L-arginine,44
+ODMIEGVTNZNSLD,4,massbank;msdial,[M-H]-,C15H12O4,1,"(6aR,11aR)-3,9-dihydroxypterocarpan",6
+ODQBQUXGRYBRTP,21,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C26H28N2O9,1,pumiloside,2
+OENHQHLEOONYIE,122,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M]+,C40H56,1,β-carotene,22
+OEYIOHPDSNJKLS,55,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M]+,C5H14NO+,1,choline,24
+OFCNXPDARWKPPY,114,drug_plus;gnps;masaryk;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+K]+;[M-H]-,C5H4N4O,1,allopurinol,20
+OFMXGFHWLZPCFL,226,gnps;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C30H50O,1,friedelin,2
+OFNSUWBAQRCHAV,6,gnps;massbank;msdial;riken,[M+H]+;[M]+,C40H56O3,1,antheraxanthin,6
+OFOBLEOULBTSOW,247,gnps;masaryk;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C3H4O4,1,malonate,24
+OGSPWJRAVKPPFI,5,drug_plus;gnps,[M+H]+,C4H13NO7P2,1,alendronate,24
+OGWKCGZFUXNPDA,98,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C46H56N4O10,1,vincristine,2
+OILXMJHPFNGGTO,26,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M]+,C28H46O,1,brassicasterol,4
+OINNEUNVOZHBOX,17,gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C20H36O7P2,1,"2-cis,6-trans,10-trans-geranylgeranyl pyrophosphate",6
+OIPILFWXSMYKGL,112,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M]+,C7H16NO2+,1,acetylcholine,2
+OIPPWFOQEKKFEE,32,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C7H8O2,1,orcinol,2
+OIRDTQYFTABQOQ,776,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+,C10H13N5O4,1,adenosine,32
+OIVLITBTBDPEFK,45,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M-H]-,C4H6N2O2,1,"5,6-dihydrouracil",2
+OJFDKHTZOUZBOS,6,drug_plus;massbank;mona;msdial;riken,[M+H]+,C25H40N7O18P3S,1,acetoacetyl-CoA,12
+OJOLFAIGOXZBCI,7,gnps;mona,[M-H]-,C3H4O3S,1,2-oxo-3-sulfanylpropanoate,6
+OKIHRVKXRCAJFQ,9,gnps;massbank;msdial;riken,[M-H]-,C42H68O14,1,soyasaponin III,2
+OKKJLVBELUTLKV,2,gnps,[M+H]+,CH4O,1,methanol,22
+OKNPZRJNRSGKME,22,gnps;mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+NH4]+;[M+Na]+,C21H36O10,1,linalyl β-primeveroside,2
+OKZYCXHTTZZYSK,1,massbank,[M-H]-,C6H13O7P,1,(R)-5-phosphomevalonate,6
+OLNJUISKUQQNIM,93,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C9H7NO,1,indole-3-carbaldehyde,2
+OLXZPDWKRNYJJZ,214,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+,C10H13N5O3,1,2'-deoxyadenosine,8
+OMIXKOJEIRRAJW,2,massbank,[M+H]+;[M-H]-,C15H16O11,1,2-O-caffeoylglucarate,2
+ONIBWKKTOPOVIA,256,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-H]-,C5H9NO2,1,L-proline,24
+ONVABDHFQKWOSV,4,mona;msdial;riken,[M+H]+,C20H32,1,ent-kaurene,16
+OOCCDEMITAIZTP,8,drug_plus;gnps;massbank;msdial,[M+H]+;[M-H2O+H]+,C9H10O,1,cinnamyl alcohol,2
+OOUTWVMJGMVRQF,2,gnps;riken,[M]+,C40H52O3,1,adonirubin,6
+OOXBEOHCOCMKAC,56,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C21H30O2,1,5-pentadecatrienyl resorcinol,2
+OPTASPLRGRRNAP,123,gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C4H5N3O,1,cytosine,2
+OQPOFZJZPYRNFF,13,pluskal_ms2,[M+CH2O2-H]-;[M+Cl]-,C26H40O8,1,19-O-β-glucopyranosyl-steviol,2
+OQZGLOBKVNEEPK,26,mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C35H54O13,1,glucodigitoxigenin 3-O-β-D-quinovoside,2
+ORDAZKGHSNRHTD,27,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C23H22O6,1,deguelin,2
+ORHBXUUXSCNDEV,453,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C9H6O3,1,umbelliferone,10
+ORJDDOBAOGKRJV,40,gnps;mona;msdial;riken,[M+H]+;[M-H]-,C16H14O4,1,(2S)-pinostrobin,2
+ORNBQBCIOKFOEO,67,drug_plus;gnps;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C21H32O2,1,pregnenolone,6
+OROGSEYTTFOCAN,122,drug_plus;gnps;massbank;mona;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C18H21NO3,1,codeine,2
+ORUWKZNXHJIZKV,10,massbank;msdial;riken,[M+H]+,C16H23N5O5,1,isopentenyladenine-7-N-glucoside,2
+ORXQGKIUCDPEAJ,237,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C21H22O5,1,xanthohumol,2
+OSELKOCHBMDKEJ,92,riken,[M+H]+;[M+Na]+,C29H48O,1,isofucosterol,6
+OSJPPGNTCRNQQC,56,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H7O7P,1,3-phospho-D-glycerate,32
+OSWPMRLSEDHDFF,8,drug_plus;gnps;massbank;riken,[M+H]+;[M-H]-;[M]+,C8H8O3,1,methylsalicylate,10
+OTKJDMGTUTTYMP,156,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C18H39NO2,1,sphinganine,2
+OTUCXMIQUNROBJ,151,gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C27H30O16,1,quercetin-3-O-glucoside-7-O-rhamnoside,6
+OTXNTMVVOOBZCV,13,gnps;massbank;msdial;riken,[M+H]+;[M+Li-H]+;[M+Na-H]+,C28H42O2,1,γ-tocotrienol,2
+OUSLYTBGQGKTME,17,massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C14H17NO9,1,DIBOA-β-D-glucoside,6
+OUYCCCASQSFEME,449,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+2Na-H]+;[M+H]+;[M+Na]+,C9H11NO3,1,L-tyrosine,61
+OVMSOCFBDVBLFW,219,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C31H38O11,1,baccatin III,2
+OVRNDRQMDRJTHS,321,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C8H15NO6,1,N-acetyl-D-glucosamine,2
+OVSKIKFHRZPJSS,53,gnps;massbank;mona;riken,[M-H]-,C8H6Cl2O3,1,"2,4-dichlorophenoxyacetate",4
+OVSQVDMCBVZWGM,877,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C21H20O12,1,quercetin-3-O-β-D-glucoside,20
+OVSVTCFNLSGAMM,4,gnps;msdial;riken,[M+H]+;[M]+,C40H62,1,"15,9'-di-cis-phytofluene",4
+OWBTYPJTUOEWEK,9,drug_plus;gnps;mona;msdial;riken,[M+H]+,C4H10O2,1,"(R,R)-2,3-butanediol",8
+OYHQOLUKZRVURQ,917,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+CH2O2-H]-;[M+H]+;[M+Na]+,C18H32O2,1,linoleate,20
+OYIFNHCXNCRBQI,196,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H2O-H]-;[M-H]-;[M]-,C6H11NO4,1,L-2-aminoadipate,6
+OYTCTPHTVUEGCL,7,mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Na]+,C17H22O9,1,sinapaldehyde glucoside,2
+OZRNSSUDZOLUSN,4,drug_plus;msdial;riken,[M+H]+;[M-H]-,C19H21N7O6,1,"7,8-dihydrofolate monoglutamate",10
+PACBGANPVNHGNP,164,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C16H14O4,1,2'-O-methylisoliquiritigenin,2
+PADQINQHPQKXNL,134,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M-H2O+H]+;[M-H]-,C15H12O6,1,(-)-dihydrokaempferol,2
+PAFLSMZLRSPALU,59,gnps;riken,[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C9H10O5,1,"(R)-3-(3,4-dihydroxyphenyl)lactate",12
+PAFZNILMFXTMIY,41,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+,C6H13N,1,cyclohexylamine,8
+PAJPWUMXBYXFCZ,62,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[M+2Na-H]+;[M+H]+;[M-H]-,C4H7NO2,1,1-aminocyclopropane-1-carboxylate,8
+PANKHBYNKQNAHN,119,riken,[M+H]+;[M+Na]+,C20H24O4,1,crocetin,4
+PAYRUJLWNCNPSJ,83,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H7N,1,aniline,2
+PBBVWJQPAZYQDB,15,massbank;msdial;pluskal_ms2,[M+H]+;[M-H]-,C27H26O18,1,luteolin 7-O-β-D-diglucuronide,4
+PCDQPRRSZKQHHS,48,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C9H16N3O14P3,1,CTP,102
+PCKPVGOLPKLUHR,10,gnps;mona,[M+H]+;[M-H]-,C8H7NO,1,indoxyl,4
+PCMORTLOPMLEFB,684,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C11H12O5,1,sinapate,12
+PEDCQBHIVMGVHV,22,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H8O3,1,glycerol,12
+PEFNSGRTCBGNAN,324,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+C2F3O2]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C21H20O11,1,luteolin 7-O-β-D-glucoside,2
+PETSAYFQSGAEQY,59,gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C8H8N2O2,1,ricinine,2
+PEYUIKBAABKQKQ,279,gnps;massbank;mona;riken,[2M+H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C20H18O6,1,(+)-sesamin,4
+PFBSOANQDDTNGJ,2,msdial;riken,[M+H]+,C17H17NO3,1,morphinone,2
+PFCHFHIRKBAQGU,3,gnps,[M+H]+,C6H12O,1,hexan-3-one,2
+PFDVWJCSCYDRMZ,13,gnps;massbank;msdial;riken,[M+H]+;[M-H]-;[M]-,C34H37N3O6,1,tricoumaroyl spermidine,2
+PFNFFQXMRSDOHW,287,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C10H26N4,1,spermine,10
+PFTAWBLQPZVEMU,1468,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+NH4]+;[2M+Na]+;[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C15H14O6,1,(+)-catechin,2
+PFWLFWPASULGAN,59,gnps;massbank;mona;riken,[M+H]+;[M-H]-,C6H6N4O2,1,7-methylxanthine,6
+PGAVKCOVUIYSFO,33,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M-H]-,C9H15N2O15P3,1,UTP,66
+PGOYMURMZNDHNS,69,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C30H48O4,1,hederagenin,2
+PGYAYSRVSAJXTE,8,gnps;msdial;riken,[M+H]+;[M-H]-;[M]+,C40H56O4,1,trans-neoxanthin,4
+PHNGFPPXDJJADG,37,gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C10H13N4O7P,1,dIMP,2
+PHOQVHQSTUBQQK,50,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M-H]-,C6H10O6,1,"D-glucono-1,5-lactone",24
+PHZOWSSBXJXFOR,183,gnps;massbank;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C10H17NO9S2,1,sinigrin,2
+PIGOPELHGLPKLL,10,mona;msdial;riken,[M+H]+;[M-H]-,C6H9N3O2,1,3-(pyrazol-1-yl)-L-alanine,2
+PJFKUPRDDXTASO,3,massbank;msdial;riken,[M+CH2O2-H]-,C16H20O8,1,coniferaldehyde glucoside,2
+PJQLSMYMOKWUJG,173,gnps;mona;pluskal_ms2;riken,[2M+K]+;[2M+Na]+;[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C19H18O8,1,"3,6,7,4'-tetramethylquercetagetin",4
+PLQMEXSCSAIXGB,20,riken,[M+H]+;[M+Na]+,C15H22O2,1,artemisinate,4
+PLYQBXHVYUJNQB,26,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K-H2]-;[M+K]+;[M-H]-;[M]+,C11H19NO9S2,1,gluconapin,2
+PMMYEEVYMWASQN,325,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+2Na-H]+;[M+H]+;[M+Na]+,C5H9NO3,1,trans-4-hydroxy-L-proline,2
+PMOWTIHVNWZYFI,79,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C9H8O3,1,cis-2-coumarate,2
+PMTMAFAPLCGXGK,49,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C18H28O3,1,"(9S,13S,15Z)-12-oxophyto-10,15-dienoate",4
+PMWATMXOQQZNBX,1,massbank,[M-H]-,C26H42N7O17P3S,1,(E)-2-methylcrotonoyl-CoA,6
+PNNNRSAQSRJVSB,5,drug_plus;massbank;riken,[M+Na]+;[M-H]-,C6H12O5,1,aldehydo-L-fucose,2
+POJWUDADGALRAB,584,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C4H6N4O3,1,allantoin,2
+PORPENFLTBBHSG,10,gnps;mona;msdial;riken,[M+NH4]+;[M-H]-,C35H69O8P,1,dipalmitoyl phosphatidate,4
+POULHZVOKOAJMA,37,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M-H]-;[M]+,C12H24O2,1,laurate,10
+PPQRONHOSHZGFQ,49,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2Na-H]+;[M+H]+;[M+Na]+;[M-H]-,C5H11O8P,1,aldehydo-D-arabinose 5-phosphate,2
+PQECCKIOFCWGRJ,1,gnps,[M+H]+,C19H19NO4,1,(S)-nandinine,2
+PQGCEDQWHSBAJP,19,drug_plus;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C5H13O14P3,1,5-phospho-α-D-ribose 1-pyrophosphate,48
+PSZDOEIIIJFCFE,3,gnps,[M+H]+;[M-H2O+H]+,C30H50O2,1,erythrodiol,2
+PTDAHAWQAGSZDD,221,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C48H78O18,1,soyasaponin I,2
+PTNLHDGQWUGONS,11,massbank;riken,[M-H]-,C9H10O2,1,4-coumaryl alcohol,10
+PTVXQARCLQPGIR,16,gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C6H13O8P,1,β-L-fucose 1-phosphate,2
+PUETUDUXMCLALY,157,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C20H26O6,1,(-)-secoisolariciresinol,6
+PUPKKEQDLNREIM,436,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+,C27H30O14,1,"kaempferol-3,7-bis-O-α-L-rhamnoside",6
+PVAMXWLZJKTXFW,106,gnps;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C23H34O5,1,gitoxigenin,2
+PVEMGMOWXQUWRD,1,gnps,[M+H]+,C22H24O9,1,(-)-medicarpin-3-O-glucoside,2
+PVNIIMVLHYAWGP,279,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[M+C6H11N3]+;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C6H5NO2,1,nicotinate,12
+PXQPEWDEAKTCGB,193,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C5H4N2O4,1,orotate,12
+PYMYPHUHKUWMLA,114,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C5H10O5,1,aldehydo-L-arabinose,2
+PYXFVCFISTUSOO,186,gnps;mona;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+,C30H52O3,1,(20S)-protopanaxadiol,4
+QAIPRVGONGVQAS,714,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C9H8O4,1,trans-caffeate,18
+QANMHLXAZMSUEX,331,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C10H9N5O,1,kinetin,6
+QAQREVBBADEHPA,37,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M-H]-;[M]-,C24H40N7O17P3S,1,propanoyl-CoA,14
+QBKSWRVVCFFDOT,233,drug_plus;gnps;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C30H30O8,1,gossypol,2
+QBUVFDKTZJNUPP,4,drug_plus;msdial;riken,[M+H]+;[M-H]-,C33H34N4O6,1,"(Z,Z)-biliverdin-IX α",10
+QCDYOIZVELGOLZ,7,gnps;pluskal_ms2,[M+H]+,C18H16O6,1,salvigenin,4
+QCDYQQDYXPDABM,10,drug_plus;masaryk;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H6O3,1,phloroglucinol,2
+QCHPKSFMDHPSNR,48,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C4H9NO2,1,(R)-3-amino-2-methylpropanoate,2
+QDFHPFSBQFLLSW,1,riken,[M-H]-,C10H14N5O7P,1,adenosine 2'-monophosphate,4
+QEFRNWWLZKMPFJ,72,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M-H]-,C5H11NO3S,1,L-methionine-(R)-S-oxide,2
+QFSDWLPMRWDFID,6,massbank;mona;riken,[M+H]+;[M-H]-,C33H40O20,1,kaempferol-3-O-β-gentiobioside-7-O-α-L-rhamnoside,8
+QFYFLJZBZITPGX,4,mona;riken,[M+NH4]+;[M+Na]+,C16H24O8,1,dihydroconiferyl alcohol glucoside,2
+QGWNDRXFNXRZMB,85,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C10H15N5O11P2,1,GDP,64
+QHHKKMYHDBRONY,3,drug_plus;mona;riken,[M+H]+,C25H42N7O18P3S,1,(S)-3-hydroxybutanoyl-CoA,4
+QHKABHOOEWYVLI,36,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C5H8O3,1,3-methyl-2-oxobutanoate,21
+QHWZTVCCBMIIKE,3,gnps;msdial;riken,[M+H]+,C9H14N2O11P2,1,dUDP,10
+QIQNNBXHAYSQRY,59,drug_plus;gnps;massbank;mona;riken,[M+H]+,C10H17NO3,1,ecgonine methyl ester,2
+QIQXTHQIDYTFRH,136,gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C18H36O2,1,stearate,6
+QIVBCDIJIAJPQS,670,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[3M-H]-;[M+CH2O2-H]-;[M+H]+,C11H12N2O2,1,L-tryptophan,50
+QJKMIJNRNRLQSS,47,gnps;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C16H14O4,1,echinatin,2
+QJVXKWHHAMZTBY,145,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C17H24O9,1,syringin,2
+QJYNZEYHSMRWBK,74,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2]2-;[M-H]-,C41H32O26,1,"1,2,3,4,6-pentagalloylglucose",8
+QLTCHMYAEJEXBT,15,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C10H17NO6,1,linamarin,8
+QMPHZIPNNJOWQI,9,mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M-H]-,C16H16O8,1,5-O-caffeoylshikimate,10
+QMVODIKHHIRSGI,21,pluskal_ms2,[M+Cl]-;[M+H]+;[M-H]-,C21H22O10,1,butein 4'-β-D-glucoside,4
+QNAYBMKLOCPYGJ,165,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+2Na-H]+;[M+H]+;[M-H]-,C3H7NO2,1,D-alanine,2
+QPJVMBTYPHYUOC,6,massbank,[M+H]+,C8H8O2,1,methyl benzoate,2
+QQBSPLCHDUCBNM,2,gnps,[M+H]+;[M-H]-,C18H16O8,1,"3,7,3'-trimethylquercetagetin",4
+QQGLQYQXUKHWPX,64,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M-H]-;[M]-,C14H19NO9S2,1,glucotropaeolin,4
+QQHJDPROMQRDLA,120,gnps;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C16H30O4,1,hexadecanedioate,2
+QQRSSHFHXYSOMF,7,massbank;msdial;riken,[M-H]-,C20H26O5,1,gibberellin A₂₄,4
+QQXLDOJGLXJCSE,46,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+,C8H13NO,1,tropinone,10
+QRYRORQUOLYVBU,79,gnps;mona;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C20H28O4,1,carnosate,4
+QSHWIQZFGQKFMA,18,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M-H2N]+;[M-H]-,C10H14N2O4,1,porphobilinogen,12
+QSJXEFYPDANLFS,12,gnps;mona;msdial;riken,[M+H]+;[M-H]-,C4H6O2,1,diacetyl,30
+QTBSBXVTEAMEQO,21,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C2H4O2,1,acetate,76
+QUCQEUCGKKTEBI,124,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M]+,C21H22NO4+,1,palmatine,8
+QUEDXNHFTDJVIY,17,drug_plus;gnps;massbank;msdial;riken,[M+H]+,C28H48O2,1,γ-tocopherol,2
+QUKGYYKBILRGFE,16,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C9H10O2,1,benzyl acetate,2
+QUNWUDVFRNGTCO,135,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C7H8N4O2,1,paraxanthine,2
+QUQPHWDTPGMPEX,841,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C28H34O15,1,hesperidin,2
+QUZHZFAQJATMCA,3,mona;msdial;riken,[M+Na]+,C45H74O10,1,1-18:3-2-18:3-monogalactosyldiacylglycerol,2
+QWCKQJZIFLGMSD,121,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M-H]-,C4H9NO2,1,(S)-2-aminobutanoate,2
+QWRYPHZJTWQLFX,55,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C13H10O5,1,"2,3',4,6-tetrahydroxybenzophenone",6
+QXAUTQFAWKKNLM,9,pluskal_ms2,[M-H]-,C10H9NO2,1,methyl indole-3-carboxylate,2
+QXKHYNVANLEOEG,495,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[M+H]+;[M+K]+;[M+NH4]+,C12H8O4,1,xanthotoxin,2
+QXNWZXMBUKUYMD,5,gnps;massbank;riken,[M+H]+;[M]+,C40H54O,1,echinenone,6
+QXPOWGXRDUFAQW,1,gnps,[M-H]-,C26H38O4,1,adlupulone,4
+QXTUQXRFEBHUBA,2,gnps,[M+H]+,C19H22O5,1,(+)-5-deoxystrigol,2
+QYIXCDOBOSTCEI,127,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M-H2O+H]+;[M-H]-,C27H48O,1,epi-cholestanol,2
+QYPPJABKJHAVHS,114,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+,C5H14N4,1,agmatine,12
+QZAYGJVTTNCVMB,164,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H12N2O,1,serotonin,4
+RADKZDMFGJYCBB,177,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C8H9NO3,1,pyridoxal,4
+RAJWOBJTTGJROA,122,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C19H28O2,1,5α-androstanedione,2
+RAQNTCRNSXYLAH,401,gnps;massbank;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+;[M]-,C36H62O9,1,ginsenoside Rh1,2
+RATQVALKDAUZBW,85,gnps;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C34H28O22,1,"1,2,3,6-tetrakis-O-galloyl-β-D-glucose",4
+RBNPOMFGQQGHHO,74,gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+2Na-H]+;[M+H]+;[M-H]-,C3H6O4,1,D-glycerate,12
+RCINICONZNJXQF,298,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C47H51NO14,1,paclitaxel,4
+RDFLLVCQYHQOBU,52,gnps;massbank;msdial;riken,[M+H]+;[M-2H]-;[M]+,C27H30O16,2,"cyanidin 3,5-di-O-β-D-glucoside",10
+RDUAJIJVNHKTQC,95,gnps;massbank;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C27H30O17,1,quercetin 3-O-β-D-glucosylgalactoside,2
+REFJWTPEDVJJIY,909,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C15H10O7,1,quercetin,58
+REJLGAUYTKNVJM,148,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C50H83NO21,1,α-tomatine,4
+RERZNCLIYCABFS,103,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C13H14N2O,1,harmaline,2
+RFDMNXDDRXVJTM,13,mona;pluskal_ms2;riken,[M+H]+,C21H20O7,1,(-)-4'-demethyl-deoxypodophyllotoxin,2
+RFMMMVDNIPUKGG,206,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+H]+,C7H11NO5,1,N-acetyl-L-glutamate,6
+RFSUNEUAIZKAJO,18,drug_plus;gnps;massbank;msdial;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C6H12O6,1,D-fructofuranose,6
+RGCKGOZRHPZPFP,113,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C14H8O4,1,alizarin,2
+RGHHSNMVTDWUBI,105,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C7H6O2,1,4-hydroxybenzaldehyde,10
+RGHNJXZEOKUKBD,145,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C6H12O7,1,L-idonate,2
+RGJOEKWQDUBAIZ,77,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C21H36N7O16P3S,1,coenzyme A,588
+RGNXWPVNPFAADO,67,enveda-np-examples;gnps;massbank;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C15H10O5,1,sulfuretin,2
+RGWHQCVHVJXOKC,3,massbank;msdial,[M+H]+;[M-H]-,C9H16N3O13P3,1,dCTP,16
+RGZSQWQPBWRIAQ,106,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H2O-H]-,C15H26O,1,(-)-α-bisabolol,2
+RHGKLRLOHDJJDR,320,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C6H13N3O3,1,L-citrulline,24
+RHMXXJGYXNZAPX,238,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C15H10O5,1,emodin,6
+RHVPEFQDYMMNSY,25,gnps;mona;pluskal_ms2,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C12H12N2O,1,harmalol,2
+RIGYMJVFEJNCKD,87,gnps;pluskal_ms2;riken,[2M+Na]+;[M+H]+;[M+Na]+,C20H20O8,1,"3,6,7,3',4'-pentamethylquercetagetin",4
+RIKWDZWVHUIUAM,12,gnps,[M+H]+;[M+K]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-,C15H20O3,1,(+)-trans-abscisic aldehyde,2
+RITKHVBHSGLULN,31,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C8H14N2O5S,1,γ-L-glutamyl-L-cysteine,8
+RJCJVIFSIXKSAH,13,gnps;pluskal_ms2,[M+H]+;[M-H]-,C17H14O6,1,"3,4'-dimethylkaempferol",2
+RJFAYQIBOAGBLC,61,gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M-H]-,C5H11NO2Se,1,L-selenomethionine,12
+RJKFOVLPORLFTN,428,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-CH3]-;[M-H]-,C21H30O2,2,progesterone,4
+RKUNBYITZUJHSG,749,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C17H23NO3,1,(S)-atropine,4
+RKWHWFONKJEUEF,287,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-2H]-;[M-H2]2-;[M-H]-;[M]+,C21H20O11,2,cyanidin-3-O-β-D-glucoside,22
+RLDVZILFNVRJTL,462,gnps;massbank;mona;msdial;riken,[M+C2F3O2]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C48H82O18,1,ginsenoside Rd,4
+RMMXLHZEVYNSJO,5,pluskal_ms2,[M+CH2O2-H]-,C16H28O6,1,geranyl β-D-glucopyranoside,2
+RNBGYGVWRKECFJ,61,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H14O12P2,1,"β-D-fructofuranose 1,6-bisphosphate",22
+RNQHMTFBUSSBJQ,1,spectraverse,[M-H]-,C7H12O5,1,"(2R,3S)-3-isopropylmalate",8
+RNSBFHHWMMKJAM,1,massbank,[M+H]+,C21H16NO5+,1,chelirubine,2
+ROBFUDYVXSDBQM,16,massbank;mona;msdial;riken,[M-H]-,C3H4O5,1,2-hydroxymalonate,2
+RODXRVNMMDRFIK,338,enveda-np-examples;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C10H8O4,1,scopoletin,14
+ROFVEXUMMXZLPA,3,massbank;mona;riken,[M+H]+,C10H8N2,1,"2,2'-dipyridyl",2
+ROHFNLRQFUQHCH,262,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C6H13NO2,1,L-leucine,23
+RONAGRFBGGXGHB,2,gnps;riken,[M]+,C40H54O2,1,4'-hydroxyechinenone,6
+ROVGZAWFACYCSP,7,gnps,[M+H]+,C21H28O3,1,pyrethrin I,2
+ROWKJAVDOGWPAT,10,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M-H]-,C4H8O2,1,acetoin,2
+RPAORVSEYNOMBR,2,msdial;riken,[M+H]+,C16H17NO3,1,crinine,2
+RPVIQWDFJPYNJM,127,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-;[M]+,C27H30O17,1,"quercetin 3,4'-O-diglucoside",4
+RQFCJASXJCIDSX,210,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C10H14N5O8P,1,GMP,42
+RRAFCDWBNXTKKO,30,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H12O2,1,eugenol,8
+RSTKLPZEZYGQPY,170,gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C11H9NO3,1,(indol-3-yl)pyruvate,10
+RSWGJHLUYNHPMX,138,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H30O2,1,"abieta-7,13-diene-18-oate",6
+RSYUFYQTACJFML,84,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C15H14O5,1,(+)-afzelechin,2
+RTAZWRZKFSTMOY,2,mona;riken,[M-CH3]-,C44H82NO8P,1,1-linoleoyl-2-oleoyl-phosphatidylcholine,2
+RTDRYYULUYRTAN,8,massbank;mona;riken,[M+H]+,C21H16O6,1,justicidin B,6
+RUMOYJJNUMEFDD,5,gnps;massbank,[M+H]+,C10H14O,1,(4S)-perillyl aldehyde,2
+RUVINXPYWBROJD,35,drug_plus;gnps;mona;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C10H12O,1,trans-anethole,4
+RWHOZGRAXYWRNX,21,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M-H]-,C6H14O12P2,1,"α-D-glucose 1,6-bisphosphate",4
+RWKJTIHNYSIIHW,20,gnps;massbank;mona;msdial;riken,[M-H2O+H]+;[M-H]-,C18H30O4,1,9(S)-HpOTre,12
+RWQNBRDOKXIBIV,133,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C5H6N2O2,1,thymine,4
+RWSXRVCMGQZWBV,309,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M-H]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+,C10H17N3O6S,1,glutathione,106
+RWXIFXNRCLMQCD,1171,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2F3O2]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+,C42H72O13,1,(20S)-ginsenoside Rg3,4
+RWZYAGGXGHYGMB,169,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M+Na]+;[M+H]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-,C7H7NO2,1,anthranilate,16
+RXGUTQNKCXHALN,100,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C17H17NO3,1,(4-coumaroyl)tyramine,2
+RYYVLZVUVIJVGH,645,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C8H10N4O2,2,caffeine,10
+RZFHLOLGZPDCHJ,19,gnps;massbank;msdial;riken,[M+H]+,C29H44O2,1,α-tocotrienol,2
+RZGFUGXQKMEMOO,28,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C12H18O4,1,cis-tuberonic acid,4
+RZZPDXZPRHQOCG,139,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H2]2-;[M-H]-;[M]+,C14H26N4O11P2,2,CDP-choline,14
+SATMZMMKDDTOSQ,107,gnps;massbank;riken,[M+H]+;[M+Na]+;[M-H]-,C12H10N2O,1,harmol,2
+SBVRPBAVNZNLKX,2,massbank,[M+H]+;[M]+,C22H18NO6+,1,macarpine,2
+SBZWTSHAFILOTE,10,gnps;massbank,[M-H]-,C15H14O7,1,"(2R,3S,4S)-leucocyanidin",8
+SCZVLDHREVKTSH,51,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M-H]-,C16H12O6,1,chrysoeriol,4
+SDLILULALIDNSO,3,mona;msdial;riken,[M+H]+,C16H19NO3,1,4'-O-methylnorbelladine,2
+SEBIKDIMAPSUBY,74,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C44H64O24,1,crocin-1,2
+SECPZKHBENQXJG,64,gnps;massbank;mona;msdial;riken,[2M-H]-;[M+H]+;[M-CH3]-;[M-H2O+H]+;[M-H]-;[M]+,C16H30O2,1,palmitoleate,2
+SEEZIOZEUUMJME,6,gnps,[M+H]+;[M-H2O+H]+;[M-H]-,C22H32O4,1,cannabigerolate,2
+SENPVEZBRZQVST,24,drug_plus;gnps;msdial;riken,[M+H]+;[M-H]-;[M]+,C21H27N6O15P2+,2,nicotinate adenine dinucleotide,8
+SEOVTRFCIGRIMH,297,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H9NO2,1,(indol-3-yl)acetate,68
+SEPQTYODOKLVSB,1,massbank,[M+C4H8N2]+,C5H8O,1,3-methylbut-2-enal,4
+SERHXTVXHNVDKA,11,mona;riken,[2M+Na]+;[M+H]+,C6H10O3,1,(R)-pantolactone,2
+SESFRYSPDFLNCH,18,drug_plus;gnps;mona;riken,[M+H]+;[M+K]+,C14H12O2,1,benzyl benzoate,10
+SFLMUHDGSQZDOW,203,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C16H22O8,1,coniferin,2
+SFRQRNJMIIUYDI,1,massbank,[M-H]-,C5H12O9P2,1,"2-C-methyl-D-erythritol-2,4-cyclopyrophosphate",12
+SFSJZXMDTNDWIX,1,spectraverse,[M-H]-,C6H13NO2S,1,L-homomethionine,6
+SGAWOGXMMPSZPB,7,gnps,[M+H]+;[M-H2O+H]+,C10H14O,1,safranal,2
+SGEWCQFRYRRZDC,275,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C21H20O10,1,vitexin,6
+SGNBVLSWZMBQTH,104,massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C28H48O,1,24-epi-campesterol,4
+SGTCGCCQZOUMJJ,133,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-C6H9O5]+,C16H18O9,1,scopolin,6
+SHCBCKBYTHZQGZ,160,gnps;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+,C30H52O4,1,protopanaxatriol,2
+SHGAZHPCJJPHSC,108,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-;[M]+,C20H28O2,1,all-trans-retinoate,2
+SHPPXMGVUDNKLV,84,mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C27H30O15,1,luteolin 7-O-neohesperidoside,2
+SHZGCJCMOBCMKK,69,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O-H]-,C6H12O5,1,L-rhamnopyranose,2
+SIKJAQJRHWYJAI,56,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C8H7N,1,indole,12
+SIMKGHMLPVDSJE,3,gnps,[M+H]+;[M+NH4]+,C7H10O3,1,mesifurane,2
+SIOXPEMLGUPBBT,81,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C6H5NO2,1,picolinate,10
+SJZRECIVHVDYJC,3,gnps;riken,[M+H]+;[M+K]+,C4H8O3,1,4-hydroxybutanoate,6
+SLWWJZMPHJJOPH,22,drug_plus;gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C7H8O5,1,3-dehydroshikimate,10
+SMQUZDBALVYZAC,6,gnps;mona;msdial;riken,[M+H]+;[M-H]-,C7H6O2,1,salicylaldehyde,4
+SNICXCGAKADSCV,157,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+,C10H14N2,1,(S)-nicotine,6
+SNKAWJBJQDLSFF,28,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+H]+;[M+Na]+;[M]+,C44H84NO8P,2,1-oleoyl-2-oleoyl-phosphatidylcholine,2
+SOSLMHZOJATCCP,313,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[2M-H]-;[M+C2F3O2]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C21H20O10,1,kaempferol-3-O-α-L-rhamnopyranoside,6
+SPSSULHKWOKEEL,4,massbank;mona;riken,[M]-,C7H5N3O6,1,"2,4,6-trinitrotoluene",2
+SQFSKOYWJBQGKQ,216,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C16H12O6,1,kaempferide,4
+SRBFZHDQGSBBOR,69,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H3O2]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O-H]-,C5H10O5,1,β-D-xylopyranose,4
+SRDGSXVLAVRBLU,6,gnps;pluskal_ms2,[M]+,C12H16N3O2S+,1,oxythiamine,2
+SRNWOUGRCWSEMX,64,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C15H23N5O14P2,1,ADP-D-ribose,10
+STECJAGHUSJQJN,277,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+,C17H21NO4,1,scopolamine,4
+SUHOOTKUPISOBE,115,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na]+;[2M-H]-;[M+H]+;[M-H]-,C2H8NO4P,1,O-phosphoethanolamine,18
+SUHOQUVVVLNYQR,102,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M-H]-;[M]+,C8H21NO6P+,2,sn-glycero-3-phosphocholine,2
+SUNUQCQIFHHEOW,1,massbank,[M+H]+,C20H20O8,1,"3,7,3',4',5'-pentamethylmyricetin",2
+SUYVUBYJARFZHO,12,drug_plus;gnps;massbank;mona;riken,[M+H]+;[M-H]-,C10H16N5O12P3,1,dATP,14
+SVOZVFTXNDIEBH,1,massbank,[M+H]+,C15H16O9,1,sinapoyl-(S)-malate,2
+SWIROVJVGRGSPO,186,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2F3O2]-;[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C42H72O13,1,ginsenoside F2,2
+SXFKFRRXJUJGSS,15,mona;msdial;riken,[2M+Na-2H]-;[2M-H]-;[M-H]-,C12H16O4,1,olivetolate,6
+SXFSQZDSUWACKX,7,mona;msdial;riken,[M+H]+;[M-H]-,C5H8O3S,1,4-(methylsulfanyl)-2-oxobutanoate,25
+SXKNCCSPZDCRFD,23,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M]+,C5H12NO+,1,betaine aldehyde,6
+SXZYCXMUPBBULW,81,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C6H10O6,1,"L-gulono-1,4-lactone",4
+SYJPAKDNFZLSMV,2,mona;riken,[M+H]+,C4H9NO,1,(E)-2-methylpropanal-oxime,6
+SYKWLIJQEHRDNH,3,gnps;massbank;msdial,[M+H]+,C26H42N7O19P3S,1,glutaryl-CoA,4
+SYTYLPHCLSSCOJ,146,gnps;massbank;riken,[M+H]+;[M+Na]+;[M-H]-,C10H8O4,1,isoscopoletin,2
+SZCBXWMUOPQSOX,4,gnps;msdial;riken,[M+H]+;[M]+,C40H56O4,1,violaxanthin,14
+TUNFSRHWOTWDNC,130,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C14H28O2,1,tetradecanoate,2
+TXHIPUZLOILIIU,1,spectraverse,[M-H]-,C18H29NO5,1,(+)-7-epi-12-hydroxyjasmonoyl-L-isoleucine,2
+TYEYBOSBBBHJIV,20,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M-H]-;[M]+,C4H6O3,1,2-oxobutanoate,26
+TZBJGXHYKVUXJN,1018,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O5,1,genistein,8
+TZPBMNKOLMSJPF,7,massbank;msdial,[M+Na]+;[M-H]-,C13H16O8,1,salicylate 2-O-β-D-glucoside,4
+UAHWPYUMFXYFJY,611,gnps;massbank;riken,[M+H]+;[M+Na]+;[M-H]-,C10H16,1,β-myrcene,8
+UBORTCNDUKBEOP,177,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+,C10H12N4O6,1,xanthosine,20
+UCMIRNVEIXFBKS,78,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H7NO2,1,β-alanine,20
+UCTLRSWJYQTBFZ,5,gnps;massbank,[M+H]+;[M-H2O+H]+,C27H44O,1,7-dehydrocholesterol,4
+UDEWPOVQBGFNGE,5,spectraverse,[M+H]+,C10H12O2,1,propyl benzoate,2
+UDMBCSSLTHHNCD,442,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[3M-H]-;[M+H]+;[M+Na]+;[M-H]-,C10H14N5O7P,1,AMP,356
+UEDUENGHJMELGK,297,enveda-np-examples;gnps;massbank;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C38H60O18,1,stevioside,2
+UELITFHSCLAHKR,23,gnps;masaryk;massbank;riken,[M+H]+,C8H6N2OS2,1,acibenzolar-S-methyl,4
+UEPVWRDHSPMIAZ,3,massbank;msdial;riken,[M-H]-,C20H18O5,1,demethoxycurcumin,6
+UFIVEPVSAGBUSI,80,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M-H]-,C5H6N2O4,1,(S)-dihydroorotate,12
+UFULAYFCSOUIOV,16,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+,C2H7NS,1,cysteamine,2
+UGAGPNKCDRTDHP,75,gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C16H32O3,1,16-hydroxypalmitate,10
+UGQMRVRMYYASKQ,364,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[2M-H]-;[M+Cl]-;[M+H]+,C10H12N4O5,1,inosine,16
+UHDGCWIWMRVCDJ,451,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+,C9H13N3O5,1,cytidine,12
+UIUJIQZEACWQSV,6,gnps;massbank;msdial;riken,[M+H]+;[M-H]-;[M]+,C4H6O3,1,succinate semialdehyde,9
+UJFQJDAESQJXTG,9,mona;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C20H28O4,1,gibberellin A₁₂,18
+UJLXYODCHAELLY,30,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H16N2O11P2,1,dTDP,22
+UJOYFRCOTPUKAK,13,pluskal_ms2,[M+H]+,C9H11NO2,1,(3R)-β-phenylalanine,6
+UKAUYVFTDYCKQA,136,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C4H9NO3,1,L-homoserine,16
+ULDHMXUKGWMISQ,16,gnps;massbank;mona,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C10H14O,1,(-)-carvone,2
+ULEDCQDCQAHGFD,2,spectraverse,[M+CH2O2-H]-,C43H74O10,1,1-18:1-2-16:3-monogalactosyldiacylglycerol,2
+UNCDMWKTFLUPHZ,2,gnps,[M+H]+;[M-H]-,C25H36O4,1,colupulone,4
+UOOOPKANIPLQPU,43,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C9H14N3O8P,1,cytidine-3'-monophosphate,4
+UQZIYBXSHAGNOE,80,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C24H42O21,1,stachyose,8
+USNPULRDBDVJAO,112,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-2H]-;[M-H]-;[M]+,C27H30O15,2,cyanidin-3-O-rutinoside,2
+USRGIUJOYOXOQJ,5,drug_plus;mona;riken,[M+H]+;[M-H]-,C4H10NO6P,1,L-threonine 3-O-phosphate,2
+USVMJSALORZVDV,92,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C15H21N5O4,1,isopentenyl adenosine,4
+UUPDCCPAOMDMPT,10,massbank;mona;msdial;riken,[M+H]+,C16H23N5O6,1,trans-zeatin-O-glucoside,4
+UVOLYTDXHDXWJU,4,gnps,[M+H]+;[M-H]-,C21H30O2,1,cannabichromene,2
+UWARRXZVZDFPQU,16,gnps;massbank;msdial;riken,[M-H]-,C16H12O6,1,scutellarein 7-methyl ether,2
+UWEHVAXMSWXKRW,56,pluskal_ms2;riken,[M+H]+;[M+Na]+,C20H21NO4,1,sinactine,2
+UWHZIFQPPBDJPM,15,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C18H34O2,1,cis-vaccenate,2
+UXNWJLSRLNSHSI,2,gnps,[M+2H]2+;[M+H]+,C30H48AsN9O18S3,1,arsenic triglutathione,2
+UXYJCYXWJGAKQY,75,gnps;massbank;pluskal_ms2;riken,[M+H]+;[M+Na]+,C19H17NO4,1,(S)-stylopine,4
+UYOJEKMKWXYOEQ,2,msdial;riken,[M-H]-,C17H14O6,1,"2',7-dihydroxy-4',5'-dimethoxyisoflavone",2
+UYQGVDXDXBAABN,13,gnps;mona;riken,[M-H]-,C18H30O4,1,13(S)-HpOTre,6
+UYTPUPDQBNUYGX,135,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C5H5N5O,1,guanine,14
+UYVZIWWBJMYRCD,1,massbank,[M-H]-,C26H44N7O17P3S,1,3-methylbutanoyl-CoA,32
+UYXTWWCETRIEDR,36,drug_plus;gnps;mona;msdial;riken,[M+K]+;[M+NH4]+;[M+Na]+,C15H26O6,1,tributyrin,2
+UZKQTCBAMSWPJD,343,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+,C10H13N5O,1,cis-zeatin,10
+UZMAPBJVXOGOFT,21,gnps;massbank;pluskal_ms2,[M+H]+;[M-H]-,C17H14O8,1,syringetin,8
+UZSSGAOAYPICBZ,12,gnps;pluskal_ms2,[M+H]+;[M+Na]+;[M-H]-,C11H13N5O4,1,decoyinine,6
+VADSVXSGIFBZLI,105,pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+,C16H22O7,1,eugenyl-O-β-D-glucopyranoside,2
+VAWYEUIPHLMNNF,19,gnps;massbank;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C18H32O16,1,1-kestotriose,4
+VBGLYOIFKLUMQG,8,drug_plus;gnps;mona;riken,[M+H]+;[M-H]-,C21H26O2,1,cannabinol,2
+VBUYCZFBVCCYFD,39,gnps;mona;msdial;riken,[M+H]+;[M-H]-,C6H10O7,1,2-keto-L-gulonate,2
+VCKPUUFAIGNJHC,182,gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+H]+;[M+Na]+,C10H12N2O4,1,3-hydroxy-L-kynurenine,6
+VCMMXZQDRFWYSE,28,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C11H8O3,1,plumbagin,14
+VCWMRQDBPZKXKG,53,gnps;massbank;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C12H22O11,1,fagopyritol A1,2
+VDIPNVCWMXZNFY,1,masaryk,[M+H]+,C4H9NO2,1,N-methyl-β-alanine,2
+VDYDCVUWILIYQF,71,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C13H21N3O8S,1,(R)-S-lactoylglutathione,4
+VEAUNWQYYMXIRB,11,gnps;pluskal_ms2,[M+CH2O2-H]-;[M-H]-,C17H16O2,1,(7S)-trans-hinokiresinol,2
+VEVJTUNLALKRNO,2,mona;riken,[M+H]+,C28H40N7O17P3S,1,benzoyl-CoA,32
+VEVZSMAEJFVWIL,592,gnps;massbank;riken,[M+H]+;[M+Na]+;[M-2H]-;[M-H2]2-;[M-O]+;[M]+,C15H10O6,2,cyanidin,16
+VFTRKSBEFQDZKX,15,gnps;msdial,[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C17H14N2,1,"3,3'-di(indol-3-yl)methane",2
+VFZIJLPRJAQGFO,100,riken,[M+H]+;[M+Na]+,C17H14O5,1,7-hydroxy-4'5'-dimethoxyisoflavone,2
+VGEREEWJJVICBM,356,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+;[M-C7H5O]+,C15H14O5,1,phloretin,4
+VGSYCWGXBYZLLE,192,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C22H22O10,1,(-)-maackiain-3-O-glucoside,2
+VHJLVAABSRFDPM,2,msdial;riken,[M-H]-,C4H10O2S2,1,L-dithiothreitol,34
+VHRGRCVQAFMJIZ,66,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+,C5H14N2,1,cadaverine,12
+VHUNCYDAXJGCLO,130,gnps;mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+,C19H26O12,1,methylsalicylate O-β-D-xylopyranosyl-(1->6)-O-β-D-glucopyranoside,4
+VJJZJBUCDWKPLC,152,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C16H12O6,1,3-O-methylkaempferol,2
+VLEUZFDZJKSGMX,83,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C16H16O3,1,pterostilbene,4
+VLXDPFLIRFYIME,3,gnps;massbank;msdial,[M+H]+,C15H24,1,α-copaene,2
+VMEJANRODATDOF,25,mona;pluskal_ms2;riken,[M+H]+;[M-H]-,C21H16O7,1,diphyllin,2
+VMUXSMXIQBNMGZ,8,mona;msdial;riken,[M+H]+;[M-H]-,C9H8O2,1,"3,4-dihydrocoumarin",2
+VNCQCPQAMDQEBY,7,massbank;msdial;riken,[M-H]-,C20H26O6,1,gibberellin A₁₉,4
+VNFPBHJOKIVQEB,38,drug_plus;gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+,C22H17ClN2,1,clotrimazol,4
+VNOYUJKHFWYWIR,10,massbank;msdial;riken,[M+H]+;[M-H2]2-;[M-H]-,C25H40N7O19P3S,1,succinyl-CoA,14
+VOXXWSYKYCBWHO,166,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C9H10O3,1,(R)-3-(phenyl)lactate,4
+VOXZDWNPVJITMN,263,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+Na2]2+;[M+Na]+;[M-H2O+H]+;[M-H]-,C18H24O2,1,17β-estradiol,2
+VRCBYTZZZFFKEN,5,massbank;msdial;riken,[M+H]+,C25H24O13,1,biochanin A-7-O-glucoside-6''-malonate,2
+VRYWDBDPXMHHGE,124,riken,[M+H]+;[M+Na]+,C33H40O20,1,kaempferol 3-O-β-D-glucosyl-(1->2)-β-D-glucoside-7-O-α-L-rhamnoside,6
+VSDWHZGJGWMIRN,9,gnps;mona;pluskal_ms2;riken,[M+H]+;[M-H]-,C11H14O4,1,phlorisovalerophenone,6
+VSJKWCGYPAHWDS,141,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C20H16N2O4,1,camptothecin,4
+VWDLOXMZIGUBKM,30,mona;riken,[M+H]+;[M+Na]+,C35H58O6,1,stigmasterol 3-O-β-D-glucoside,2
+VWFJDQUYCIWHTN,2,massbank,[M-H]-,C15H28O7P2,1,"(2Z,6Z)-farnesyl pyrophosphate",4
+VXIXUWQIVKSKSA,420,drug_plus;gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C9H6O3,1,4-hydroxycoumarin,4
+VXTDUGOBAOLMED,46,gnps;massbank;mona;riken,[M+H]+;[M-H]-,C19H22N2O,1,10-deoxysarpagine,2
+VYFYYTLLBUKUHU,298,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+Na]+;[M-H2N]+;[M-H2O+H]+,C8H11NO2,1,dopamine,12
+VYIRVAXUEZSDNC,5,gnps;msdial;riken,[M+H]+;[M]+,C40H56O3,1,capsanthin,2
+VYRAJOITMBSQSE,34,gnps;massbank;mona;msdial;riken,[M+H]+,C16H23N5O6,1,cis-zeatin-9-N-glucoside,2
+VYZAHLCBVHPDDF,3,massbank;riken,[M]-,C6H3ClN2O4,1,"1-chloro-2,4-dinitrobenzene",2
+VZBPTZZTCBNBOZ,17,pluskal_ms2,[M+H]+;[M-H2O+H]+;[M-H]-,C21H24O10,1,nothofagin,2
+VZCYOOQTPOCHFL,622,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+H3O]+;[M+H]+;[M+Na]+,C4H4O4,1,fumarate,56
+VZTUIEROBZXUFA,68,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-H]-,C20H21NO4,1,(R)-canadine,4
+VZXPDPZARILFQX,101,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H2O+H]+;[M-H]-,C5H9NO4,1,O-acetyl-L-serine,18
+WACBUPFEGWUGPB,110,gnps;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+,C22H22O10,1,calycosin 7-O-glucoside,2
+WAPNOHKVXSQRPX,4,drug_plus;gnps;riken,[M+H]+,C8H10O,1,(S)-1-phenylethanol,2
+WAWHTTXPRUWFCZ,4,gnps;massbank;msdial;riken,[M+H]+,C27H34O15,1,"3',5'-di-C-glucosylphloretin",2
+WBHHMMIMDMUBKC,56,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H2O-H]-;[M-H]-,C18H34O3,1,ricinoleate,8
+WBYWAXJHAXSJNI,463,gnps;massbank;mona;msdial;riken,[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M-H2O+H]+,C9H8O2,1,trans-cinnamate,34
+WDJHALXBUFZDSR,18,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C4H6O3,1,acetoacetate,10
+WDJUZGPOPHTGOT,114,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C41H64O13,1,digitoxin,2
+WEEGYLXZBRQIMU,12,drug_plus;gnps;msdial,[M+H]+;[M+Na]+;[M-H2O+H]+,C10H18O,1,"1,8-cineole",4
+WEPBGSIAWZTEJR,66,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C16H12O7,1,3-O-methylquercetin,10
+WEWBWVMTOYUPHH,52,gnps;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C11H19NO6,1,lotaustralin,8
+WEYVVCKOOFYHRW,28,gnps;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[M+CH5O]+;[M+H]+;[M-H]-,C18H16O7,1,(-)-usnate,2
+WFOFKRKDDKGRIK,1,gnps,[M+H]+,C5H7NO3,1,"(3R,5S)-3-hydroxy-1-pyrroline-5-carboxylate",4
+WFPZSXYXPSUOPY,65,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C16H25N5O15P2,1,ADP-α-D-glucose,6
+WGCNASOHLSPBMP,3,mona,[M+H]+,C2H4O2,1,glycolaldehyde,10
+WGHKJYWENWLOMY,14,pluskal_ms2,[M+CH2O2-H]-;[M+H]+;[M-H]-,C20H20N2O4,1,feruloylserotonin,2
+WGVKWNUPNGFDFJ,6,gnps;massbank;msdial,[M+H]+,C28H48O2,1,β-tocopherol,2
+WHOOUMGHGSPMGR,30,gnps;massbank;mona;riken,[M+H]+;[M+Na]+;[M-H]-,C10H9NO,1,(indol-3-yl)acetaldehyde,4
+WHTCPDAXWFLDIH,60,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H15N5O10P2,1,"adenosine 3',5'-bisphosphate",50
+WHUUTDBJXJRKMK,438,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+2Na-H]+;[M+H]+;[M-H2O+H]+;[M-H2O-H]-;[M-H]-,C5H9NO4,1,D-glutamate,2
+WJMMBVSOQPALFO,101,pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+,C36H58O9,1,hederagenin-28-O-β-D-glucoside,2
+WJXSWCUQABXPFS,180,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C7H7NO3,1,3-hydroxyanthranilate,4
+WKOLLVMJNQIZCI,291,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C8H8O4,1,vanillate,8
+WKWHYFHGTWZCLM,3,gnps;mona;riken,[M+H]+,C21H24N2O3,1,19E-geissoschizine,4
+WLGDDELKYAWBBL,2,massbank;msdial,[M-H]-,C9H16O3,1,9-oxononanoate,4
+WLZPAFGVOWCVMG,13,pluskal_ms2,[M+H]+;[M-H]-,C19H18N2O3,1,(4-coumaroyl)serotonin,2
+WMBWREPUVVBILR,711,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+,C22H18O11,1,(-)-gallocatechin-3-O-gallate,2
+WNBCMONIPIJTSB,14,pluskal_ms2,[M+H]+;[M-H]-,C15H16O9,1,cichoriin,2
+WPYMKLBDIGXBTP,529,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H-O2]+;[2M+Na-2H]-;[2M+Na-O2]+;[M+H]+;[M+K]+;[M+Na]+,C7H6O2,1,benzoate,26
+WQCJOKYOIJVEFN,2,msdial;riken,[M-H]-,C16H14O5,1,(3R)-vestitone,6
+WQMLFJWIKARBFW,14,enveda-np-examples;mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C29H44O8,1,(digitoxigenin-3β-yl)-β-D-quinovoside,2
+WQSDYZZEIBAPIN,4,massbank;msdial;riken,[M-H]-,C15H18O9,1,1-O-caffeoyl-β-D-glucose,2
+WQXXXVRAFAKQJM,11,gnps;pluskal_ms2,[M+H]+;[M-H]-,C8H14N2O5,1,an α-(γ-L-glutamyl)-L-amino acid,2
+WQZGKKKJIJFFOK,289,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+,C6H12O6,2,D-glucopyranose,184
+WRGQSWVCFNIUNZ,8,gnps,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C21H41O7P,1,1-oleoyl-sn-glycerol 3-phosphate,4
+WRMNZCZEMHIOCP,6,gnps,[M+H]+,C8H10O,1,2-phenylethanol,14
+WTARULDDTDQWMU,11,gnps;massbank,[M+H]+,C10H16,1,(-)-β-pinene,6
+WTDRDQBEARUVNC,304,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+,C9H11NO4,1,L-dopa,26
+WTEVQBCEXWBHNA,9,gnps;massbank,[M+H]+;[M-H]-,C10H16O,1,neral,2
+WTFXTQVDAKGDEY,9,gnps;massbank;mona;riken,[M+H]+,C10H10O6,1,chorismate,34
+WTGXAWKVZMQEDA,8,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C15H19NO10,1,DIMBOA-β-D-glucoside,10
+WTJKGGKOPKCXLL,59,gnps;massbank;mona;msdial;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+Na]+;[M-CH3]-,C42H82NO8P,1,1-palmitoyl-2-oleoyl-phosphatidylcholine,2
+WTKZEGDFNFYCGP,16,massbank;mona;msdial;riken,[M+H]+,C3H4N2,1,pyrazole,16
+WUADCCWRTIWANL,405,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H]-,C16H12O5,1,biochanin-A,6
+WUOACPNHFRMFPN,10,gnps;massbank,[M+H]+;[M+Na]+;[M-H2O+H]+,C10H18O,1,(-)-(4S)-α-terpineol,4
+WUUGFSXJNOTRMR,202,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C11H15N5O3S,1,S-methyl-5'-thioadenosine,22
+WVDDGKGOMKODPV,8,drug_plus;gnps;mona;msdial;riken,[M+H]+;[M-H]-,C7H8O,1,benzyl alcohol,20
+WVIMUEUQJFPNDK,10,gnps;massbank;mona;riken,[M+H]+;[M-H]-,C11H20N4O11P2,1,CDP-ethanolamine,14
+WVMBPWMAQDVZCM,100,gnps;massbank;mona;msdial;riken,[2M+Na-2H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-2H2O+H]+,C8H9NO2,1,N-methylanthranilate,6
+WVOLTBSCXRRQFR,8,gnps,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C22H30O4,1,cannabidiolate,4
+WWNNZCOKKKDOPX,181,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2]2-,C7H7NO2,2,trigonelline,2
+WWZKQHOCKIZLMA,28,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C8H16O2,1,octanoate,4
+WXTMDXOMEHJXQO,176,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C7H6O4,1,gentisate,4
+WZRCQWQRFZITDX,84,gnps;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+,C16H17NO3,1,(S)-norcoclaurine,2
+XBAMJZTXGWPTRM,8,gnps;massbank;mona;msdial;riken,[M+H]+,C27H34N2O9,1,3-α(S)-strictosidine,10
+XBDQKXXYIPTUBI,294,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H]-,C3H6O2,1,propanoate,6
+XCCTYIAWTASOJW,116,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M-H]-,C9H14N2O12P2,1,UDP,488
+XCTGXGVGJYACEI,1,riken,[M]+,C27H31O17+,1,"delphinidin 3,5-di-O-β-D-glucoside",6
+XDSSPSLGNGIIHP,4,gnps,[M+H]+,C4H9NO2Se,1,Se-methyl-L-selenocysteine,4
+XEHLLUQVSRLWMH,15,massbank;mona;msdial;riken,[M+H]+,C16H23N5O5,1,isopentenyladenine-9-N-glucoside,2
+XEYBRNLFEZDVAW,109,gnps;massbank;mona;pluskal_ms2;riken,[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C20H32O5,2,prostaglandin E₂,2
+XFDQJKDGGOEYPI,10,gnps;massbank;riken,[M+H]+;[M-2H]-;[M]+,C16H12O6,2,peonidin,2
+XFFQVRFGLSBFON,22,msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C27H30O16,1,"kaempferol 3,7-bis-O-β-D-glucoside",6
+XFNJVJPLKCPIBV,52,gnps;masaryk;massbank;mona;msdial;riken,[M+H]+,C3H10N2,1,"propane-1,3-diamine",18
+XGVJWXAYKUHDOO,241,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+,C16H17NO4,1,lycorine,2
+XGYIMTFOTBMPFP,111,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Br]-;[M+C2H4O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C10H13N5O3,1,5'-deoxyadenosine,14
+XHCADAYNFIFUHF,326,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+NH4]+;[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+,C15H16O9,1,esculin,4
+XHMJOUIAFHJHBW,139,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-,C6H14NO8P,1,D-glucosamine 6-phosphate,2
+XJLXINKUBYWONI,61,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M-H]-;[M]+,C21H29N7O17P3+,2,NADP⁺,602
+XKHHKXCBFHUOHM,2,msdial;riken,[M-H]-,C16H12O5,1,2-hydroxyformononetin,6
+XKMLYUALXHKNFT,56,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H16N5O14P3,1,GTP,68
+XLJMAIOERFSOGZ,3,gnps,[M+H]+,CHNO,1,cyanate,6
+XLOPRKKSAJMMEW,43,gnps;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C10H16O2,1,"(R,R)-chrysanthemate",2
+XLTFNNCXVBYBSX,188,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C16H12O5,1,wogonin,2
+XMAYWYJOQHXEEK,207,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M+Na]+,C26H28Cl2N4O4,1,ketoconazole,24
+XMGQYMWWDOXHJM,51,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C10H16,1,(4S)-limonene,16
+XMIIGOLPHOKFCH,101,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+H]+;[M-H2O+H]+;[M-H]-,C9H10O2,1,3-phenylpropanoate,2
+XMJFVIGTHMOGNZ,9,gnps;msdial;riken,[M+H]+;[M-H]-,C12H21NO9S2,1,glucobrassicanapin,2
+XMOCLSLCDHWDHP,499,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H14O7,1,(-)-epigallocatechin,4
+XNGXWSFSJIQMNC,157,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-;[M]-,C36H62O9,1,ginsenoside F1,2
+XNHKMZHWRNMFCU,1,massbank,[M-H]-,C13H16O8,1,salicylate β-D-glucose ester,2
+XOHUEYCVLUUEJJ,37,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C3H8O10P2,1,"2,3-diphospho-D-glycerate",26
+XPKKFTKCRVIDAG,2,mona;spectraverse,[M+H]+,C7H11NO6S,1,S-(2-succinyl)-L-cysteine,2
+XPPKVPWEQAFLFU,4,drug_plus;gnps,[M+H]+,H4O7P2,1,pyrophosphate,830
+XQDNFAMOIPNVES,26,gnps;mona,[M+H]+;[M-H]-,C8H10O3,1,"3,5-dimethoxyphenol",2
+XQWFHGOIUZFQPJ,15,pluskal_ms2,[M+H]+;[M-H]-,C21H22O9,1,isoliquiritigenin 4'-glucoside,4
+XQYZDYMELSJDRZ,343,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+,C20H21NO4,1,papaverine,2
+XRKBRPFTFKKHEF,53,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-C6H11O6]+;[M-H]-,C17H22O10,1,1-O-sinapoyl-β-D-glucose,12
+XRVFNNUXNVWYTI,107,msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C16H16O4,1,(-)-vestitol,2
+XRYVAQQLDYTHCL,143,riken,[M+H]+;[M+Na]+,C25H28O6,1,sophoraflavanone G,2
+XSQUKJJJFZCRTK,13,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M+K]+,CH4N2O,1,urea,40
+XSSDYIMYZONMBL,14,massbank;msdial;pluskal_ms2,[M+CH2O2-H]-;[M-H]-,C13H16O8,1,4-(β-D-glucosyloxy)benzoate,2
+XTWYTFMLZFPYCI,150,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M-H]-,C10H15N5O10P2,1,ADP,430
+XUARCIYIVXVTAE,63,gnps;massbank;riken,[M+H]+;[M+Na]+,C30H50O2,1,uvaol,2
+XUCIJNAGGSZNQT,358,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H27NO11,1,(R)-amygdalin,4
+XUHLIQGRKRUKPH,172,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C6H11NO3S,1,alliin,4
+XUIIKFGFIJCVMT,126,gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M-H]-,C15H11I4NO4,1,thyroxine,2
+XUJNEKJLAYXESH,97,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]+;[M+H]+;[M-H]-,C3H7NO2S,1,L-cysteine,80
+XVARCVCWNFACQC,10,massbank;mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+NH4]+;[M-H]-,C14H17NO6,1,indican,2
+XVFMGWDSJLBXDZ,2,massbank;riken,[M]+,C15H11O5+,1,pelargonidin,4
+XVOUMQNXTGKGMA,4,gnps,[M-H]-,C5H6O4,1,(E)-glutaconate,2
+XVOYSCVBGLVSOL,103,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-H]-,C3H7NO5S,1,L-cysteate,4
+XVULBTBTFGYVRC,152,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-2H2O+H]+,C20H36O2,1,sclareol,4
+XXFACTAYGKKOQB,32,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H15N5O,1,dihydrozeatin,6
+XXKFQTJOJZELMD,4,gnps;massbank,[M+H]+,C44H76NO8P,1,1-α-linolenoyl-2-α-linolenoyl-phosphatidylcholine,2
+XYHOBCMEDLZUMP,59,gnps;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+Na]+;[M]+;[M]-,C19H14NO4+,1,coptisine,2
+XYNPYHXGMWJBLV,351,gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C27H45NO2,1,tomatidine,4
+XYYVYLMBEZUESM,18,massbank;msdial;riken,[M+H]+,C18H19NO3,1,codeinone,2
+XZKIHKMTEMTJQX,77,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C6H6NO6P,1,4-nitrophenyl phosphate,2
+XZTUSOXSLKTKJQ,87,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C23H34O4,1,digitoxigenin,6
+YAHZABJORDUQGO,27,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C5H12O11P2,1,"D-ribulose-1,5-bisphosphate",6
+YAPQBXQYLJRXSA,294,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C7H8N4O2,1,theobromine,6
+YBHILYKTIRIUTE,383,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C20H18NO4+,1,berberine,22
+YBJHBAHKTGYVGT,598,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C10H16N2O3S,1,biotin,12
+YCCILVSKPBXVIP,7,gnps;msdial,[M+H]+;[M-H2O+H]+;[M-H]-,C8H10O2,1,4-tyrosol,2
+YCIMNLLNPGFGHC,90,drug_plus;gnps;masaryk;massbank;mona;msdial;riken,[M+H]+;[M-H]-;[M]+,C6H6O2,1,catechol,4
+YCVPRTHEGLPYPB,5,pluskal_ms2,[M-H]-,C14H12O2,1,pinosylvin,4
+YDBYJHTYSHBBAU,18,mona;pluskal_ms2,[M+H]+;[M]+,C6H13NO2S,2,S-methyl-L-methionine,6
+YDTWOEYVDRKKCR,18,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C41H78NO8P,1,1-18:0-2-18:2-phosphatidylethanolamine,2
+YDXXLJMIHMIOIF,2,spectraverse,[M+H]+;[M-H]-,C12H12N2O3,1,(indol-3-yl)acetyl-glycine,2
+YECXHLPYMXGEBI,2,gnps;riken,[M]+,C40H54O3,1,adonixanthin,6
+YFGQJKBUXPKSAW,64,riken,[M+H]+;[M+Na]+,C49H76O19,1,lanatoside A,2
+YFXWTVLDSKSYLW,8,massbank;mona;msdial;riken,[M+H]+;[M-H]-,C10H10O5,1,5-hydroxyferulate,2
+YGHRJJRRZDOVPD,3,gnps,[M+H]+,C5H10O,1,3-methylbutanal,4
+YGPRSGKVLATIHT,3,gnps;mona,[M+H]+,C17H19NO4,1,hemanthamine,2
+YGPSJZOEDVAXAB,386,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+,C10H12N2O3,1,L-kynurenine,6
+YGSDEFSMJLZEOE,785,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[M+H]+;[M+K]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C7H6O3,1,salicylate,34
+YGWKXXYGDYYFJU,6,gnps,[M+H]+,C10H14O,1,(+)-menthofuran,2
+YHEDRJPUIRMZMP,9,mona;msdial;riken,[M+H]+,C18H40NO5P,1,sphinganine 1-phosphate,2
+YHHSONZFOIEMCP,85,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-2H]-;[M]+,C5H15NO4P+,2,phosphocholine,14
+YHRUHBBTQZKMEX,2,gnps,[M+H]+;[M-H2O+H]+,C15H24O,1,"(2E,6E)-farnesal",4
+YHVFECVVGNXFKO,2,massbank;mona,[M+H]+,C5H12N4O,1,4-guanidinobutanamide,2
+YIBNHAJFJUQSRA,3,gnps,[M-H]-,C20H32O5,1,prostaglandin H₂,2
+YJCJVMMDTBEITC,58,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-,C10H20O3,1,10-hydroxydecanoate,2
+YJGVMLPVUAXIQN,355,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na]+;[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+,C22H22O8,1,(-)-epipodophyllotoxin,2
+YKBGVTZYEHREMT,196,gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+K]+;[2M+Na]+;[2M-H]-;[M+Cl]-;[M+H]+,C10H13N5O4,1,2'-deoxyguanosine,6
+YKFLAYDHMOASIY,11,gnps;massbank;msdial,[M+H]+;[M-H]-,C10H16,1,γ-terpinene,2
+YKPUWZUDDOIDPM,244,drug_plus;enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+,C18H27NO3,1,capsaicin,2
+YLOZPZMPWNUOJV,16,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C22H22O10,1,wogonin 7-O-β-D-glucoside,2
+YLRXAIKMLINXQY,133,gnps;mona;pluskal_ms2;riken,[M+H]+;[M+K]+;[M+Na]+;[M]+,C20H24NO4+,1,(S)-magnoflorine,2
+YLYJXNTZVUEFJZ,30,gnps;massbank;mona;msdial;riken,[M+CH2O2-H]-;[M+H]+;[M-H]-,C23H24O10,1,afrormosin-7-O-glucoside,2
+YNDYKPRNFWPPFU,1,riken,[M+Na]+,C19H39O7P,1,1-palmitoyl-sn-glycerol 3-phosphate,2
+YNJBWRMUSHSURL,3,mona;msdial;riken,[M-H]-,C2HCl3O2,1,"2,2,2-trichloroacetate",2
+YPHMISFOHDHNIV,129,drug_plus;gnps;massbank;mona;msdial;riken,[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C15H23NO4,1,cycloheximide,2
+YPZRHBJKEMOYQH,3,gnps,[M+H]+,C27H35N9O15P2,1,FADH₂,8
+YPZRWBKMTBYPTK,175,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2H]2+;[M+H]+;[M+Na]+;[M-H]-,C20H32N6O12S2,1,glutathione disulfide,16
+YQHMWTPYORBCMF,46,gnps;mona;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C15H12O5,1,naringenin chalcone,16
+YQIFAMYNGGOTFB,7,drug_plus;gnps;mona,[M+H]+;[M-H]-,C9H13N5O4,1,"7,8-dihydromonapterin",4
+YQUVCSBJEUQKSH,334,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M-H]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C7H6O4,1,protocatechuate,2
+YROOZUQRTLHXIO,3,gnps;massbank,[M+NH4]+;[M-H]-,C14H18O9,1,1-O-vanilloyl-β-D-glucose,6
+YRRAGUMVDQQZIY,68,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+,C15H10O8,1,gossypetin,4
+YSYKRGRSMLTJNL,22,drug_plus;gnps;massbank;mona;msdial;riken,[M+NH4]+;[M-H]-,C16H26N2O16P2,1,dTDP-α-D-glucose,4
+YTBSYETUWUMLBZ,1,msdial,[M-H2O-H]-,C4H8O4,1,D-threose,2
+YUDPTGPSBJVHCN,17,gnps;mona;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+,C16H18O8,1,4-methylumbelliferyl glucoside,4
+YUFFSWGQGVEMMI,11,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C22H34O2,1,"(7Z,10Z,13Z,16Z,19Z)-docosa-7,10,13,16,19-pentenoate",2
+YURJSTAIMNSZAE,576,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C42H72O14,1,ginsenoside Rg1,2
+YVCVYCSAAZQOJI,209,gnps;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C21H20O8,1,(-)-4'-demethyl-epipodophyllotoxin,2
+YVLPJIGOMTXXLP,4,gnps;riken,[M]+,C40H64,1,15-cis-phytoene,16
+YWLXLRUDGLRYDR,136,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C29H36O10,1,10-deacetylbaccatin III,2
+YWPVROCHNBYFTP,124,gnps;massbank;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+Cl]-;[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C32H50O13,1,rubusoside,2
+YXAKCQIIROBKOP,11,mona;msdial;riken,[M+H]+;[M-H]-,C19H16O4,1,bisdemethoxycurcumin,4
+YXJDFQJKERBOBM,19,massbank;mona;msdial;riken,[M-H]-,C5H11O8P,1,α-D-ribose-1-phosphate,8
+YXOLAZRVSSWPPT,191,gnps;massbank;mona;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C15H10O7,1,morin,2
+YXWOAJXNVLXPMU,16,massbank;mona;msdial;riken,[M-H]-,C6H14O12P2,1,"β-D-fructose 2,6-bisphosphate",6
+YYFOFDHQVIODOQ,60,gnps;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M]+;[M]-,C20H20NO4+,1,columbamine,8
+YYGNTYWPHWGJRM,101,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M+Na]+,C30H50,1,squalene,18
+ZCCUUQDIBDJBTK,193,gnps;massbank;mona;msdial;riken,[2M+Na]+;[2M-H]-;[M+H]+;[M+Na]+,C11H6O3,1,psoralen,8
+ZCOLJUOHXJRHDI,483,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+CH2O2-H]-;[M+H]+;[M+Na]+;[M-H]-,C21H20O10,1,genistin,4
+ZCZCVJVUJGULMO,59,massbank;mona;msdial;riken,[M-H]-,C11H21NO9S3,1,glucoiberverin,2
+ZDGJAHTZVHVLOT,56,drug_plus;gnps;massbank;msdial;riken,[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C11H20N2O6,1,L-saccharopine,6
+ZDHCZVWCTKTBRY,31,drug_plus;gnps;massbank;mona;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-2H2O+H]+;[M-H2O+H]+;[M-H]-,C12H24O3,1,12-hydroxylaurate,4
+ZDKMPOJNYNVYLA,3,mona;msdial;riken,[M+H]+,C23H30N2O5,1,17-O-deacetylvindoline,2
+ZDXPYRJPNDTMRX,437,drug_plus;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na-H5N]-;[2M-H]-;[M+H]+;[M+K]+;[M+NH4]+,C5H10N2O3,1,L-glutamine,112
+ZEVOCXOZYFLVKN,2,massbank,[M+H]+,C9H17NO6,1,a [protein]-N⁴-(N-acetyl-β-D-glucosaminyl)-L-asparagine,2
+ZFAHNWWNDFHPOH,11,gnps;pluskal_ms2,[M+H]+;[M+Na]+;[M-H2O+H]+,C6H11NO2S,1,S-allyl-L-cysteine,6
+ZFMSMUAANRJZFM,23,gnps;massbank;mona;msdial;riken,[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+;[M-H]-,C10H12O,1,methylchavicol,2
+ZFXYFBGIUFBOJW,581,drug_plus;enveda-np-examples;gnps;masaryk;massbank;mona;msdial;pluskal_ms2;riken,[2M+Na-2H]-;[2M+Na]+;[2M-H]-;[M+H]+;[M+K]+;[M+Na]+,C7H8N4O2,1,theophylline,6
+ZGLXUQQMLLIKAN,18,enveda-np-examples;gnps;pluskal_ms2,[M+H]+;[M+NH4]+;[M+Na]+,C22H22O7,1,(-)-deoxypodophyllotoxin,6
+ZGXJTSGNIOSYLO,118,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+2Na-H]+;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H2O-H]-;[M-H]-,C5H9NO3,1,5-aminolevulinate,4
+ZIIAJIWLQUVGHB,85,gnps;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+K]+;[M+Na]+;[M-H]-,C17H14O6,1,cirsimaritin,2
+ZIUSSTSXXLLKKK,75,gnps;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H]-,C21H20O6,1,curcumin,6
+ZJMLELXRQUXRIU,116,gnps;massbank;mona;riken,[M+H]+;[M+Na]+;[M-H]-,C23H22O7,1,amorphigenin,2
+ZJUKTBDSGOFHSH,166,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M-H]-;[M+2H]2+;[M+H]+;[M+Na]+;[M-H]-,C14H20N6O5S,1,S-adenosyl-L-homocysteine,366
+ZKHQWZAMYRWXGA,41,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H2]2-;[M-H]-,C10H16N5O13P3,1,ATP,686
+ZKSZEJFBGODIJW,58,gnps;mona;msdial;pluskal_ms2;riken,[M+C2H4O2-H]-;[M+CH2O2-H]-;[M+H]+;[M+K]+;[M+NH4]+;[M+Na]+,C14H17NO6,1,(R)-prunasin,4
+ZMJGSOSNSPKHNH,52,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C8H13N2O5P,1,pyridoxamine 5'-phosphate,4
+ZMZDMBWJUHKJPS,5,gnps;massbank,[M-H]-,CHNS,1,thiocyanate,8
+ZNCUMLJVNWXVLT,1,massbank,[M+H]+,C23H28N2O4,1,stemmadenine acetate,2
+ZNJFBWYDHIGLCU,62,enveda-np-examples;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+H]+;[M-H]-,C12H18O3,1,(+)-7-epi-jasmonate,4
+ZOAMBXDOGPRZLP,123,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M+Na]+;[M+H]+;[M+Na]+;[M-H]-,C10H10N2O,1,(indol-3-yl)acetamide,2
+ZONYXWQDUYMKFB,59,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C15H12O2,1,a flavanone,8
+ZOOGRGPOEVQQDX,137,drug_plus;gnps;massbank;mona;msdial;riken,[2M+H]+;[M+H]+;[M+Na]+;[M-H]-,C10H12N5O7P,1,"3',5'-cyclic GMP",14
+ZPUCINDJVBIVPJ,92,drug_plus;gnps;massbank;mona;riken,[M+H]+,C17H21NO4,1,cocaine,2
+ZQGOYEJYAYJFTL,11,gnps;riken,[M+H]+;[M]+,C55H72N4O6,1,pheophytin b,2
+ZQISRDCJNBUVMM,153,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+Cl]-;[M+H]+;[M+Na]+;[M-H2O+H]+;[M-H]-,C6H11N3O,1,histidinol,4
+ZQPPMHVWECSIRJ,134,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H2O+H]+;[M-H]-;[M]+,C18H34O2,1,oleate,18
+ZQSIJRDFPHDXIC,810,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[2M+H]+;[2M-H]-;[M+Cl]-;[M+H]+;[M+Na]+;[M-H]-,C15H10O4,1,daidzein,14
+ZRGXCWYRIBRSQA,17,mona;pluskal_ms2;riken,[M+CH2O2-H]-;[M+NH4]+;[M+Na]+,C19H28O10,1,2-phenylethyl β-primeveroside,2
+ZSLZBFCDCINBPY,77,gnps;massbank;mona;msdial;riken,[M+2H]2+;[M+H]+;[M-H2]2-;[M-H]-;[M]-,C23H38N7O17P3S,1,acetyl-CoA,198
+ZTQSAGDEMFDKMZ,10,gnps;mona;riken,[M+H]+,C4H8O,1,1-butanal,4
+ZUKPVRWZDMRIEO,21,gnps;massbank;mona;msdial;riken,[M+H]+;[M-H]-,C5H10N2O3S,1,L-cysteinylglycine,8
+ZWEHNKRNPOVVGH,6,gnps;massbank;msdial,[M+H]+,C4H8O,1,butan-2-one,6
+ZWIADYZPOWUWEW,105,drug_plus;gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M-H21]-;[M-H2O-H]-;[M-H]-,C9H15N3O11P2,1,CDP,22
+ZYEMGPIYFIJGTP,19,gnps;riken,[M+H]+;[M+Na]+,C11H14O2,1,methyleugenol,2
+ZYGHJZDHTFUPRJ,215,drug_plus;gnps;massbank;mona;msdial;riken,[M+H]+;[M+NH4]+;[M+Na]+;[M-H]-,C9H6O2,1,coumarin,4
+ZZAJQOPSWWVMBI,113,gnps;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C16H12O5,1,calycosin,10
+ZZBWSNKBZKPGAK,1,mona,[M+H]+,C15H12O3,1,chrysophanol-9-anthrone,6
+ZZIALNLLNHEQPJ,179,gnps;massbank;mona;msdial;pluskal_ms2;riken,[M+H]+;[M+Na]+;[M-H]-,C15H8O5,1,coumestrol,2
+ZZMNWJVJUKMZJY,57,massbank;riken,[M+H]+;[M+Na]+;[M-H2O+H]+,C20H18O7,1,(+)-sesamolin,2
+ZZWPMFROUHHAKY,58,gnps;massbank;msdial;riken,[M-2H]-;[M]+,C22H23O11+,1,peonidin 3-O-glucoside,2

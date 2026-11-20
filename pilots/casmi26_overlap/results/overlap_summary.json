@@ -1,0 +1,25 @@
+{
+ "spectra": 2539608,
+ "structures": 275810,
+ "spectra_precursor_error_le_10ppm": 2360254,
+ "structures_with_good_spectrum": 273530,
+ "pmw_compounds": 2732,
+ "pmw_compounds_in_pathway": 2384,
+ "overlap_compounds": 1258,
+ "overlap_compounds_in_pathway": 1145,
+ "overlap_pct_of_pmw": 46.0,
+ "n_libraries_per_compound": {
+  "1": 172,
+  "2": 124,
+  "3": 132,
+  "4": 139,
+  "5": 194,
+  "6": 248,
+  "7": 192,
+  "8": 47,
+  "9": 10
+ },
+ "pathways": 1162,
+ "pathways_with_any_spectrum": 1125,
+ "pathways_ge_50pct_with_spectra_and_ge4_members": 782
+}
