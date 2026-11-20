@@ -1,0 +1,7 @@
+PREFIX demo: <https://example.org/falcarindiol-demo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?gene
+WHERE {
+ ?gene a demo:Gene .
+ FILTER NOT EXISTS { ?gene rdfs:label ?label . }
+}

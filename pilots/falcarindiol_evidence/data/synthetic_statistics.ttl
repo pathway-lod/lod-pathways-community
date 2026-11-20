@@ -1,0 +1,40 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ALL values below are SYNTHETIC. They are for SHACL tests only.
+demo:SyntheticTranscriptomics a demo:OmicsDataset .
+demo:SyntheticMetabolomics a demo:OmicsDataset .
+demo:SyntheticLagRun a demo:AnalysisRun ;
+    prov:used demo:SyntheticTranscriptomics, demo:SyntheticMetabolomics ;
+    demo:method "Synthetic Pearson lag scan" ;
+    demo:lagSignConvention "Positive lag = transcript signal leads metabolite signal" ;
+    demo:sampleAlignment "Synthetic matched treatment, replicate and time metadata" .
+
+demo:Finding_270_Lag_SYNTHETIC a demo:OmicsFinding, demo:QuantifiedLagFinding ;
+    rdfs:label "SYNTHETIC — never cite as experimentally measured" ;
+    demo:hasGene demo:Solyc12g100270 ;
+    demo:hasMetabolite demo:Falcarindiol ;
+    demo:correlationAtZeroLag "0.22"^^xsd:decimal ;
+    demo:correlationAtBestLag "0.78"^^xsd:decimal ;
+    demo:adjustedPValue "0.03"^^xsd:decimal ;
+    demo:pairedObservations 12 ;
+    demo:lagDirection demo:TranscriptLeadsMetabolite ;
+    demo:bestLag [ a qudt:QuantityValue ;
+                   qudt:numericValue "24"^^xsd:decimal ;
+                   qudt:unit unit:HR ] ;
+    demo:basedOnDataset demo:SyntheticTranscriptomics, demo:SyntheticMetabolomics ;
+    prov:wasGeneratedBy demo:SyntheticLagRun ;
+    demo:interpretationStatus demo:SyntheticDemonstration .
+
+demo:Finding_240_ZeroLag_SYNTHETIC a demo:OmicsFinding, demo:ZeroLagAssociationFinding ;
+    rdfs:label "SYNTHETIC direct association" ;
+    demo:hasGene demo:Solyc12g100240 ;
+    demo:hasMetabolite demo:CrepenynicAcid ;
+    demo:correlationAtZeroLag "0.81"^^xsd:decimal ;
+    demo:basedOnDataset demo:SyntheticTranscriptomics, demo:SyntheticMetabolomics ;
+    prov:wasGeneratedBy demo:SyntheticLagRun ;
+    demo:interpretationStatus demo:SyntheticDemonstration .
