@@ -347,6 +347,10 @@ def build_annotation():
                 g.add((claim, SKOS.closeMatch, URIRef(q)))
         g.add((claim, LODP.anchorTier, Literal("structure_match")))
         g.add((claim, LODP.matchLevel, Literal("connectivity")))
+        g.add((claim, LODP.identityStatus, Literal("unresolved")))
+        g.add((claim, LODP.connectivityKey, Literal(key14)))
+        for k in keys:
+            g.add((claim, LODP.candidateMetabolite, INCHIKEY[k]))
 
         for tier in grp.tier:
             if tier == "consensus_inchi":

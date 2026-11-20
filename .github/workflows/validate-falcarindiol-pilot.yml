@@ -1,0 +1,29 @@
+name: Validate falcarindiol evidence pilot
+on:
+  pull_request:
+    paths:
+      - 'pilots/falcarindiol_evidence/**'
+      - '.github/workflows/validate-falcarindiol-pilot.yml'
+  push:
+    paths:
+      - 'pilots/falcarindiol_evidence/**'
+      - '.github/workflows/validate-falcarindiol-pilot.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r pilots/falcarindiol_evidence/requirements.txt
+      - name: Test and validate
+        working-directory: pilots/falcarindiol_evidence
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/run.py validate
+          if python scripts/run.py validate --broken; then
+            echo 'ERROR: deliberately broken graph unexpectedly passed SHACL'
+            exit 1
+          fi

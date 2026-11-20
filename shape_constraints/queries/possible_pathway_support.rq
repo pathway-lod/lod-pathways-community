@@ -1,0 +1,13 @@
+# Run against annotation RDF plus the PlantMetWiki graph.
+# Candidate membership supplies possible support only, not pathway detection.
+PREFIX lodp: <https://example.org/lod-pathways/pilot/>
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?feature ?pathway ("possible support" AS ?supportStatus)
+WHERE {
+  ?annotation a lodp:MetaboliteAnnotation ;
+      lodp:identityStatus "unresolved" ;
+      lodp:feature ?feature ; lodp:candidateMetabolite ?candidate .
+  ?metabolite wp:bdbInChIKey ?candidate ; dcterms:isPartOf ?pathway .
+  ?pathway a wp:Pathway .
+}

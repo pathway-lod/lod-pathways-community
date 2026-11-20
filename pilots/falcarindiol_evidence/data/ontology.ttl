@@ -1,0 +1,46 @@
+@prefix demo: <https://example.org/falcarindiol-demo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Educational extension: NOT an adopted community ontology or persistent namespace.
+demo:Gene a owl:Class .
+demo:Protein a owl:Class .
+demo:Metabolite a owl:Class .
+demo:Pathway a owl:Class .
+demo:Reaction a owl:Class .
+demo:CharacterizedReaction a owl:Class ; rdfs:subClassOf demo:Reaction .
+demo:GenomicCluster a owl:Class .
+demo:ExpressionModule a owl:Class .
+demo:ScientificClaim a owl:Class ; rdfs:subClassOf prov:Entity .
+demo:GenePathwayClaim a owl:Class ; rdfs:subClassOf demo:ScientificClaim .
+demo:BiochemicalReactionClaim a owl:Class ; rdfs:subClassOf demo:ScientificClaim .
+demo:ProposedFunctionClaim a owl:Class ; rdfs:subClassOf demo:ScientificClaim .
+demo:Evidence a owl:Class ; rdfs:subClassOf prov:Entity .
+demo:LiteratureEvidence a owl:Class ; rdfs:subClassOf demo:Evidence .
+demo:GeneticEvidence a owl:Class ; rdfs:subClassOf demo:Evidence .
+demo:BiochemicalEvidence a owl:Class ; rdfs:subClassOf demo:Evidence .
+demo:ComputationalEvidence a owl:Class ; rdfs:subClassOf demo:Evidence .
+demo:OmicsFinding a owl:Class ; rdfs:subClassOf demo:Evidence .
+demo:CoexpressionFinding a owl:Class ; rdfs:subClassOf demo:OmicsFinding .
+demo:ModuleAffinityFinding a owl:Class ; rdfs:subClassOf demo:OmicsFinding .
+demo:QualitativeLagFinding a owl:Class ; rdfs:subClassOf demo:OmicsFinding .
+demo:QuantifiedLagFinding a owl:Class ; rdfs:subClassOf demo:OmicsFinding .
+demo:ZeroLagAssociationFinding a owl:Class ; rdfs:subClassOf demo:OmicsFinding .
+demo:OmicsDataset a owl:Class ; rdfs:subClassOf prov:Entity .
+demo:AnalysisRun a owl:Class ; rdfs:subClassOf prov:Activity .
+
+demo:encodes a owl:ObjectProperty ; rdfs:domain demo:Gene ; rdfs:range demo:Protein .
+demo:hasGene a owl:ObjectProperty ; rdfs:range demo:Gene .
+demo:hasMetabolite a owl:ObjectProperty ; rdfs:range demo:Metabolite .
+demo:hasPathway a owl:ObjectProperty ; rdfs:range demo:Pathway .
+demo:hasMemberGene a owl:ObjectProperty ; rdfs:range demo:Gene .
+demo:hasSubstrate a owl:ObjectProperty ; rdfs:domain demo:Reaction ; rdfs:range demo:Metabolite .
+demo:hasProduct a owl:ObjectProperty ; rdfs:domain demo:Reaction ; rdfs:range demo:Metabolite .
+demo:catalyzedBy a owl:ObjectProperty ; rdfs:range demo:Protein .
+demo:supportedBy a owl:ObjectProperty ; rdfs:range demo:Evidence .
+demo:basedOnDataset a owl:ObjectProperty ; rdfs:range demo:OmicsDataset .
+
+# The remaining predicates are intentionally local placeholders. See proposal for mappings.

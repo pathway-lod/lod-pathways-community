@@ -46,6 +46,7 @@ Open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kernel an
 ## Outputs
 
 - [`explore_results.ipynb`](explore_results.ipynb) holds the results with written interpretation.
+- [`results/association_interpretations.csv`](results/association_interpretations.csv): curation worksheet for unique transcript–feature pairs, with signed statistics, mapping context and unassigned biological interpretations. See [curation instructions](results/INTERPRETATIONS.md).
 - `results/cluster_pairs.csv`: every gene–metabolite pair in a functional cluster (DR 10), with correlation, mutual rank, cluster statistics and its PlantMetWiki mapping.
 - `results/gene_pathway_map.csv` and `results/metabolite_pathway_map.csv`: how each gene and each feature reaches PlantMetWiki.
 - `results/associations.ttl`: a **draft** RDF export of the associations from significant clusters. It does not conform to the [shape constraints](../../shape_constraints/) (for example, it has no anchor tier) and is superseded by `build_rdf.py association` there, which writes validated RDF.
