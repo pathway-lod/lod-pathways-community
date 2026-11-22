@@ -16,6 +16,8 @@ The genes `Solyc08g068730` (THT1-3) and `Solyc08g068710` code for putative **tyr
 
 ![The links that exist between one MEANtools association and a PlantMetWiki pathway](notebooks/figures/tht_schema.png)
 
+A one-page summary of the claim, the evidence and the avenues is in the [claim card](cards/tht_caffeoyltyramine_card.html) ([PNG](cards/tht_caffeoyltyramine_card.png)).
+
 *Solid green: tiers that reach the pathway. Red ✗: direct tiers that fail. Dotted: analogy only.*
 
 ## 3. What each step shows
