@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body { margin: 0; }</style>
+<title>MIPRIMO Term Placement</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,560&display=swap">
+<style>
+/* Layout: a narrow reading column; each term is one card with its ancestor diagram, filter bar sticks on top. */
+:root {
+  --bg: #f5f7f4; --surface: #ffffff; --fg: #1d2a24; --muted: #5d6b64; --line: #d8e0da;
+  --accent: #2f6b4f; --accent-soft: #e2efe7; --warn: #9a5b12; --warn-soft: #f8ecd9; --bad: #9b2f2f; --bad-soft: #f6e1e1;
+  --display: "Fraunces", Georgia, serif; --body: "IBM Plex Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121815; --surface: #1a221e; --fg: #e3ebe6; --muted: #9aa8a0; --line: #2d3a33;
+  --accent: #7fc4a0; --accent-soft: #20362b; --warn: #e2b06a; --warn-soft: #3a2c17; --bad: #ec9a9a; --bad-soft: #3b2020; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121815; --surface: #1a221e; --fg: #e3ebe6; --muted: #9aa8a0; --line: #2d3a33;
+  --accent: #7fc4a0; --accent-soft: #20362b; --warn: #e2b06a; --warn-soft: #3a2c17; --bad: #ec9a9a; --bad-soft: #3b2020; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 2rem 4rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1 { font-family: var(--display); font-weight: 560; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; margin: 0 0 .5rem; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 560; font-size: 1.4rem; margin: 3rem 0 .75rem; }
+.lede { max-width: 65ch; color: var(--muted); margin: 0 0 1.25rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .85rem; color: var(--muted); margin-bottom: 1.5rem; }
+.legend b { color: var(--fg); font-weight: 600; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: .75rem; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: .6rem; }
+.search { width: 100%; box-sizing: border-box; font: inherit; padding: .55rem .8rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--fg); }
+.search:focus-visible, .chip:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip { font: 500 .8rem var(--body); padding: .3rem .7rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.chip span { color: var(--muted); font-variant-numeric: tabular-nums; margin-left: .2rem; }
+.chip.on { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip.on span { color: var(--bg); opacity: .8; }
+.status { font-size: .8rem; color: var(--muted); }
+.list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+.term { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem; min-width: 0; scroll-margin-top: 9rem; }
+.term[data-source="MIPRIMO"] { border-color: var(--accent); }
+.term header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .75rem; }
+.term h3 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.curie { font-family: var(--mono); font-size: .85rem; color: var(--accent); }
+.kind { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.def { margin: .4rem 0 0; max-width: 75ch; }
+.was { margin: .3rem 0 0; font-size: .85rem; color: var(--muted); }
+.muted { color: var(--muted); }
+code { font-family: var(--mono); font-size: .85em; }
+.diagram { overflow-x: auto; margin: .8rem 0 .4rem; padding: .5rem; border-radius: 6px; background: var(--bg); }
+.diagram pre { margin: 0; background: transparent; }
+details summary { cursor: pointer; font-size: .85rem; color: var(--muted); }
+.rows { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; flex-direction: column; gap: .4rem; font-size: .85rem; }
+.rows li { display: flex; flex-wrap: wrap; gap: .2rem .5rem; align-items: baseline; }
+.row { font-family: var(--mono); font-weight: 500; }
+.uc { color: var(--muted); }
+.req { flex-basis: 100%; color: var(--muted); }
+.dec { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; padding: .05rem .45rem; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.dec-open { background: var(--warn-soft); color: var(--warn); }
+.dec-rejected { background: var(--bad-soft); color: var(--bad); }
+.miss { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: .75rem 1rem; margin-bottom: .6rem; }
+.miss summary { font-size: .95rem; color: var(--fg); font-weight: 500; }
+.count { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 400; margin-left: .3rem; }
+.tablewrap { overflow-x: auto; margin-top: .6rem; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+th, td { text-align: left; padding: .35rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.empty { padding: 1.5rem; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; }
+footer { margin-top: 3rem; font-size: .8rem; color: var(--muted); max-width: 70ch; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <h1>Where each term sits in MIPRIMO</h1>
+  <p class="lede">One diagram per term: the term itself (thick border) and every class or relation above it, up to BFO. Arrows point from a term to its parent: <em>is a</em> for classes, <em>sub-property of</em> for relations. Use it to check whether a term is placed where you expect, and note anything that looks wrong.</p>
+  <div class="legend"><span><b>67</b> terms placed</span><span><b>16</b> new MIPRIMO terms (replacing <code>lodp:</code> placeholders)</span><span><b>121</b> spreadsheet rows not in MIPRIMO, listed at the end</span></div>
+
+  <div class="bar">
+    <input class="search" id="q" type="search" placeholder="Search by label, ID, spreadsheet row (e.g. T071) or use case" aria-label="Search terms">
+    <div class="chips" role="group" aria-label="Filter by source ontology"><button type="button" class="chip on" data-filter="all" id="f-all">All <span>67</span></button><button type="button" class="chip" data-filter="MIPRIMO" id="f-MIPRIMO">MIPRIMO (new) <span>16</span></button><button type="button" class="chip" data-filter="BFO" id="f-BFO">BFO <span>1</span></button><button type="button" class="chip" data-filter="RO" id="f-RO">RO <span>1</span></button><button type="button" class="chip" data-filter="OBI" id="f-OBI">OBI <span>7</span></button><button type="button" class="chip" data-filter="ECO" id="f-ECO">ECO <span>26</span></button><button type="button" class="chip" data-filter="STATO" id="f-STATO">STATO <span>14</span></button><button type="button" class="chip" data-filter="SO" id="f-SO">SO <span>1</span></button><button type="button" class="chip" data-filter="PO" id="f-PO">PO <span>1</span></button></div>
+    <div class="status" id="status" aria-live="polite">Showing all 67 terms</div>
+  </div>
+
+  <div class="list" id="list">
+<article class="term" id="MIPRIMO-0000013" data-source="MIPRIMO" data-search="annotates feature miprimo:0000013 lodp:feature">
+  <header><h3>annotates feature</h3><span class="curie">MIPRIMO:0000013</span><span class="kind">relation</span></header>
+  <p class="def">Relates a metabolite annotation to the metabolite feature it annotates.</p>
+  <p class="was">Replaces <code>lodp:feature</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;annotates feature&lt;br/&gt;&lt;small&gt;MIPRIMO:0000013&lt;/small&gt;&quot;]
+  n1[&quot;is about&lt;br/&gt;&lt;small&gt;IAO:0000136&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: IAO:0000136</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000010" data-source="MIPRIMO" data-search="annotation tool run miprimo:0000010 lodp:annotationtoolrun">
+  <header><h3>annotation tool run</h3><span class="curie">MIPRIMO:0000010</span><span class="kind">class</span></header>
+  <p class="def">A run of a metabolite annotation tool (for example SIRIUS, MS2Query, DreaMS or a GNPS library search) that proposes structures for metabolite features.</p>
+  <p class="was">Replaces <code>lodp:AnnotationToolRun</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;annotation tool run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000010&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;data transformation&lt;br/&gt;&lt;small&gt;OBI:0200000&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n7[&quot;run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000007&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n0 --&gt; n7
+  n1 --&gt; n5
+  n2 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: OBI:0200000, MIPRIMO:0000007</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000001" data-source="MIPRIMO" data-search="claim miprimo:0000001 lodp:claim">
+  <header><h3>claim</h3><span class="curie">MIPRIMO:0000001</span><span class="kind">class</span></header>
+  <p class="def">An information content entity that states a relation between biological entities or data items (for example a gene and a metabolite, or a spectral feature and a chemical structure), produced by a tool or a curator and supported by one or more evidence items.</p>
+  <p class="was">Replaces <code>lodp:Claim</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;claim&lt;br/&gt;&lt;small&gt;MIPRIMO:0000001&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n4[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n4
+  n1 --&gt; n2
+  n3 --&gt; n1
+  n4 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: IAO:0000030</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000011" data-source="MIPRIMO" data-search="consensus annotation run miprimo:0000011 lodp:consensusannotationrun">
+  <header><h3>consensus annotation run</h3><span class="curie">MIPRIMO:0000011</span><span class="kind">class</span></header>
+  <p class="def">A run that combines the results of several annotation tool runs into consensus metabolite annotations.</p>
+  <p class="was">Replaces <code>lodp:ConsensusAnnotationRun</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;consensus annotation run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000011&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;data transformation&lt;br/&gt;&lt;small&gt;OBI:0200000&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n7[&quot;run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000007&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n0 --&gt; n7
+  n1 --&gt; n5
+  n2 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: OBI:0200000, MIPRIMO:0000007</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000002" data-source="MIPRIMO" data-search="gene-metabolite association miprimo:0000002 lodp:genemetaboliteassociation">
+  <header><h3>gene-metabolite association</h3><span class="curie">MIPRIMO:0000002</span><span class="kind">class</span></header>
+  <p class="def">A claim that a gene and a metabolite feature are associated, because they fall into the same functional cluster of a paired-omics analysis.</p>
+  <p class="was">Replaces <code>lodp:GeneMetaboliteAssociation</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;gene-metabolite association&lt;br/&gt;&lt;small&gt;MIPRIMO:0000002&lt;/small&gt;&quot;]
+  n1[&quot;claim&lt;br/&gt;&lt;small&gt;MIPRIMO:0000001&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n5
+  n2 --&gt; n3
+  n4 --&gt; n2
+  n5 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: MIPRIMO:0000001</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000016" data-source="MIPRIMO" data-search="has mibig match evidence miprimo:0000016 lodp:mibigmatchevidence">
+  <header><h3>has MIBiG match evidence</h3><span class="curie">MIPRIMO:0000016</span><span class="kind">relation</span></header>
+  <p class="def">Relates a biosynthetic gene cluster to the evidence for its similarity to a MIBiG reference cluster, such as a KnownClusterBLAST result.</p>
+  <p class="was">Replaces <code>lodp:mibigMatchEvidence</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;has MIBiG match evidence&lt;br/&gt;&lt;small&gt;MIPRIMO:0000016&lt;/small&gt;&quot;]
+  n1[&quot;has evidence&lt;br/&gt;&lt;small&gt;RO:0002558&lt;/small&gt;&quot;]
+  n2[&quot;related via evidence or inference to&lt;br/&gt;&lt;small&gt;RO:0002616&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: RO:0002558</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000015" data-source="MIPRIMO" data-search="has parameter file miprimo:0000015 lodp:batchfile t182 metabolomics">
+  <header><h3>has parameter file</h3><span class="curie">MIPRIMO:0000015</span><span class="kind">relation</span></header>
+  <p class="def">Relates a run to the parameter file it used, for example an mzmine batch file.</p>
+  <p class="was">Replaces <code>lodp:batchFile</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;has parameter file&lt;br/&gt;&lt;small&gt;MIPRIMO:0000015&lt;/small&gt;&quot;]
+  n1[&quot;has participant&lt;br/&gt;&lt;small&gt;RO:0000057&lt;/small&gt;&quot;]
+  n2[&quot;has specified input&lt;br/&gt;&lt;small&gt;OBI:0000293&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n2 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: OBI:0000293</summary><ul class="rows"><li><span class="row">T182</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Feature detection and alignment run (mzmine batch) that produced the feature table</span></li></ul></details>
+</article><article class="term" id="MIPRIMO-0000006" data-source="MIPRIMO" data-search="mass2motif miprimo:0000006 lodp:mass2motif t188 metabolomics">
+  <header><h3>Mass2Motif</h3><span class="curie">MIPRIMO:0000006</span><span class="kind">class</span></header>
+  <p class="def">A data entity produced by an MS2LDA topic model: a set of fragment and neutral-loss m/z values, with weights, that co-occur in MS/MS spectra.</p>
+  <p class="was">Replaces <code>lodp:Mass2Motif</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;Mass2Motif&lt;br/&gt;&lt;small&gt;MIPRIMO:0000006&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: IAO:0000027</summary><ul class="rows"><li><span class="row">T188</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">A Mass2Motif (MS2LDA pattern of fragments and neutral losses) is assigned to a feature with a probability</span></li></ul></details>
+</article><article class="term" id="MIPRIMO-0000009" data-source="MIPRIMO" data-search="meantools run miprimo:0000009 lodp:meantoolsrun">
+  <header><h3>MEANtools run</h3><span class="curie">MIPRIMO:0000009</span><span class="kind">class</span></header>
+  <p class="def">A run of MEANtools that predicts links between metabolite features and genes from paired transcriptomics and metabolomics data.</p>
+  <p class="was">Replaces <code>lodp:MEANtoolsRun</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;MEANtools run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000009&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;data transformation&lt;br/&gt;&lt;small&gt;OBI:0200000&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n7[&quot;run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000007&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n0 --&gt; n7
+  n1 --&gt; n5
+  n2 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: OBI:0200000, MIPRIMO:0000007</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000003" data-source="MIPRIMO" data-search="metabolite annotation miprimo:0000003 lodp:metaboliteannotation t062 metabolomics">
+  <header><h3>metabolite annotation</h3><span class="curie">MIPRIMO:0000003</span><span class="kind">class</span></header>
+  <p class="def">A claim that a metabolite feature corresponds to a given chemical structure, as proposed by an annotation tool.</p>
+  <p class="was">Replaces <code>lodp:MetaboliteAnnotation</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;metabolite annotation&lt;br/&gt;&lt;small&gt;MIPRIMO:0000003&lt;/small&gt;&quot;]
+  n1[&quot;claim&lt;br/&gt;&lt;small&gt;MIPRIMO:0000001&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n5
+  n2 --&gt; n3
+  n4 --&gt; n2
+  n5 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: MIPRIMO:0000001</summary><ul class="rows"><li><span class="row">T062</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">An MS feature is annotated as a PlantMetWiki metabolite</span></li></ul></details>
+</article><article class="term" id="MIPRIMO-0000005" data-source="MIPRIMO" data-search="metabolite feature miprimo:0000005 lodp:metabolitefeature t071 metabolomics">
+  <header><h3>metabolite feature</h3><span class="curie">MIPRIMO:0000005</span><span class="kind">class</span></header>
+  <p class="def">A measurement datum from untargeted mass spectrometry that records one detected ion signal by its m/z value and retention time in a dataset.</p>
+  <p class="was">Replaces <code>lodp:MetaboliteFeature</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;metabolite feature&lt;br/&gt;&lt;small&gt;MIPRIMO:0000005&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n6[&quot;measurement datum&lt;br/&gt;&lt;small&gt;IAO:0000109&lt;/small&gt;&quot;]
+  n0 --&gt; n6
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  n6 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: IAO:0000109</summary><ul class="rows"><li><span class="row">T071</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">An untargeted MS feature as a resource (m/z, retention time, scan polarity, dataset)</span></li></ul></details>
+</article><article class="term" id="MIPRIMO-0000014" data-source="MIPRIMO" data-search="part of dataset miprimo:0000014 lodp:dataset t079 metabolomics t128 unsupervised t166 transcriptomics">
+  <header><h3>part of dataset</h3><span class="curie">MIPRIMO:0000014</span><span class="kind">relation</span></header>
+  <p class="def">Relates a data item, such as a metabolite feature, to the dataset it is part of.</p>
+  <p class="was">Replaces <code>lodp:dataset</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;part of dataset&lt;br/&gt;&lt;small&gt;MIPRIMO:0000014&lt;/small&gt;&quot;]
+  n1[&quot;mereotopologically related to&lt;br/&gt;&lt;small&gt;RO:0002323&lt;/small&gt;&quot;]
+  n2[&quot;overlaps&lt;br/&gt;&lt;small&gt;RO:0002131&lt;/small&gt;&quot;]
+  n3[&quot;part of&lt;br/&gt;&lt;small&gt;BFO:0000050&lt;/small&gt;&quot;]
+  n0 --&gt; n3
+  n2 --&gt; n1
+  n3 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (3) · direct parent: BFO:0000050</summary><ul class="rows"><li><span class="row">T079</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">The study or dataset a feature comes from</span></li><li><span class="row">T128</span> <span class="uc">unsupervised</span> <span class="dec dec-open">open</span><span class="req">The benchmark dataset the model was trained and evaluated on</span></li><li><span class="row">T166</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">The sequencing dataset the expression values come from (BioProject, SRA or GEO accession)</span></li></ul></details>
+</article><article class="term" id="MIPRIMO-0000004" data-source="MIPRIMO" data-search="pathway membership claim miprimo:0000004 lodp:pathwaymembershipclaim">
+  <header><h3>pathway membership claim</h3><span class="curie">MIPRIMO:0000004</span><span class="kind">class</span></header>
+  <p class="def">A claim by a curator that a gene, enzyme or metabolite takes part in a given pathway.</p>
+  <p class="was">Replaces <code>lodp:PathwayMembershipClaim</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;pathway membership claim&lt;br/&gt;&lt;small&gt;MIPRIMO:0000004&lt;/small&gt;&quot;]
+  n1[&quot;claim&lt;br/&gt;&lt;small&gt;MIPRIMO:0000001&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n5
+  n2 --&gt; n3
+  n4 --&gt; n2
+  n5 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: MIPRIMO:0000001</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000012" data-source="MIPRIMO" data-search="plantcyc curation miprimo:0000012 lodp:plantcyccuration">
+  <header><h3>PlantCyc curation</h3><span class="curie">MIPRIMO:0000012</span><span class="kind">class</span></header>
+  <p class="def">A run in which PlantCyc curators assert pathway membership from the literature.</p>
+  <p class="was">Replaces <code>lodp:PlantCycCuration</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;PlantCyc curation&lt;br/&gt;&lt;small&gt;MIPRIMO:0000012&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n4[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n5[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n6[&quot;run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000007&lt;/small&gt;&quot;]
+  n0 --&gt; n6
+  n1 --&gt; n4
+  n3 --&gt; n2
+  n4 --&gt; n5
+  n5 --&gt; n3
+  n6 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: MIPRIMO:0000007</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000008" data-source="MIPRIMO" data-search="plantismash run miprimo:0000008 lodp:plantismashrun">
+  <header><h3>plantiSMASH run</h3><span class="curie">MIPRIMO:0000008</span><span class="kind">class</span></header>
+  <p class="def">A run of plantiSMASH that detects biosynthetic gene clusters in a plant genome.</p>
+  <p class="was">Replaces <code>lodp:PlantiSMASHRun</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;plantiSMASH run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000008&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;data transformation&lt;br/&gt;&lt;small&gt;OBI:0200000&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n7[&quot;run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000007&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n0 --&gt; n7
+  n1 --&gt; n5
+  n2 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (0) · direct parent: OBI:0200000, MIPRIMO:0000007</summary><p class="muted">Not a spreadsheet row of its own.</p></details>
+</article><article class="term" id="MIPRIMO-0000007" data-source="MIPRIMO" data-search="run miprimo:0000007 lodp:run t009 common">
+  <header><h3>run</h3><span class="curie">MIPRIMO:0000007</span><span class="kind">class</span></header>
+  <p class="def">A planned process in which a tool, a pipeline or a curator produces claims or evidence; a run records the software, its version and the input data it used.</p>
+  <p class="was">Replaces <code>lodp:Run</code></p>
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;run&lt;br/&gt;&lt;small&gt;MIPRIMO:0000007&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n4[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n5[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n4
+  n3 --&gt; n2
+  n4 --&gt; n5
+  n5 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: COB:0000035</summary><ul class="rows"><li><span class="row">T009</span> <span class="uc">common</span> <span class="dec dec-proposed">proposed</span><span class="req">Kinds of run are distinguished (prediction tool, linking, consensus, curation)</span></li></ul></details>
+</article><article class="term" id="BFO-0000051" data-source="BFO" data-search="has part bfo:0000051  t031 bgc">
+  <header><h3>has part</h3><span class="curie">BFO:0000051</span><span class="kind">relation</span></header>
+  <p class="def">a core relation that holds between a whole and its part</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;has part&lt;br/&gt;&lt;small&gt;BFO:0000051&lt;/small&gt;&quot;]
+  n1[&quot;mereotopologically related to&lt;br/&gt;&lt;small&gt;RO:0002323&lt;/small&gt;&quot;]
+  n2[&quot;overlaps&lt;br/&gt;&lt;small&gt;RO:0002131&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n2 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: RO:0002131</summary><ul class="rows"><li><span class="row">T031</span> <span class="uc">bgc</span> <span class="dec dec-proposed">proposed</span><span class="req">A BGC has genes as parts</span></li></ul></details>
+</article><article class="term" id="ECO-0000304" data-source="ECO" data-search="author statement supported by traceable reference used in manual assertion eco:0000304  t019 plantcyc">
+  <header><h3>author statement supported by traceable reference used in manual assertion</h3><span class="curie">ECO:0000304</span><span class="kind">class</span></header>
+  <p class="def">A type of author statement supported by traceable reference that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;author statement supported by traceable reference used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0000304&lt;/small&gt;&quot;]
+  n1[&quot;author statement&lt;br/&gt;&lt;small&gt;ECO:0000204&lt;/small&gt;&quot;]
+  n2[&quot;author statement supported by traceable reference&lt;br/&gt;&lt;small&gt;ECO:0000033&lt;/small&gt;&quot;]
+  n3[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n4[&quot;documented statement evidence&lt;br/&gt;&lt;small&gt;ECO:0006151&lt;/small&gt;&quot;]
+  n5[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n6[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n7[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n8[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n4
+  n2 --&gt; n1
+  n3 --&gt; n5
+  n4 --&gt; n6
+  n6 --&gt; n8
+  n7 --&gt; n3
+  n8 --&gt; n7
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000033</summary><ul class="rows"><li><span class="row">T019</span> <span class="uc">plantcyc</span> <span class="dec dec-proposed">proposed</span><span class="req">Author statement with traceable support (EV-EXP-TAS, EV-AS-TAS)</span></li></ul></details>
+</article><article class="term" id="ECO-0007653" data-source="ECO" data-search="automatically integrated combinatorial computational evidence used in automatic assertion eco:0007653  t049 metabolomics">
+  <header><h3>automatically integrated combinatorial computational evidence used in automatic assertion</h3><span class="curie">ECO:0007653</span><span class="kind">class</span></header>
+  <p class="def">A type of automatically integrated combinatorial computational evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;automatically integrated combinatorial computational evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007653&lt;/small&gt;&quot;]
+  n1[&quot;automatically integrated combinatorial computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007651&lt;/small&gt;&quot;]
+  n2[&quot;automatically integrated combinatorial evidence&lt;br/&gt;&lt;small&gt;ECO:0007673&lt;/small&gt;&quot;]
+  n3[&quot;combinatorial evidence&lt;br/&gt;&lt;small&gt;ECO:0000212&lt;/small&gt;&quot;]
+  n4[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n5[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n6[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n7[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n8[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n3
+  n3 --&gt; n6
+  n4 --&gt; n5
+  n6 --&gt; n8
+  n7 --&gt; n4
+  n8 --&gt; n7
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0007651</summary><ul class="rows"><li><span class="row">T049</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Several tools were combined automatically (consensus annotation)</span></li></ul></details>
+</article><article class="term" id="ECO-0007829" data-source="ECO" data-search="combinatorial computational and experimental evidence used in automatic assertion eco:0007829  t084 paired_omics">
+  <header><h3>combinatorial computational and experimental evidence used in automatic assertion</h3><span class="curie">ECO:0007829</span><span class="kind">class</span></header>
+  <p class="def">A type of combinatorial computational and experimental evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;combinatorial computational and experimental evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007829&lt;/small&gt;&quot;]
+  n1[&quot;combinatorial computational and experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0007661&lt;/small&gt;&quot;]
+  n2[&quot;combinatorial evidence&lt;br/&gt;&lt;small&gt;ECO:0000212&lt;/small&gt;&quot;]
+  n3[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n5
+  n3 --&gt; n4
+  n5 --&gt; n7
+  n6 --&gt; n3
+  n7 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0007661</summary><ul class="rows"><li><span class="row">T084</span> <span class="uc">paired_omics</span> <span class="dec dec-open">open</span><span class="req">Evidence: transcript and metabolite abundances are correlated</span></li></ul></details>
+</article><article class="term" id="ECO-0007679" data-source="ECO" data-search="combinatorial computational evidence used in automatic assertion eco:0007679  t046 bgc">
+  <header><h3>combinatorial computational evidence used in automatic assertion</h3><span class="curie">ECO:0007679</span><span class="kind">class</span></header>
+  <p class="def">A type of combinatorial computational evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;combinatorial computational evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007679&lt;/small&gt;&quot;]
+  n1[&quot;combinatorial computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007677&lt;/small&gt;&quot;]
+  n2[&quot;combinatorial evidence&lt;br/&gt;&lt;small&gt;ECO:0000212&lt;/small&gt;&quot;]
+  n3[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n5
+  n3 --&gt; n4
+  n5 --&gt; n7
+  n6 --&gt; n3
+  n7 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0007677</summary><ul class="rows"><li><span class="row">T046</span> <span class="uc">bgc</span> <span class="dec dec-proposed">proposed</span><span class="req">The BGC-pathway link is itself a computed claim with evidence</span></li></ul></details>
+</article><article class="term" id="ECO-0007669" data-source="ECO" data-search="computational evidence used in automatic assertion eco:0007669  t024 plantcyc t050 metabolomics">
+  <header><h3>computational evidence used in automatic assertion</h3><span class="curie">ECO:0007669</span><span class="kind">class</span></header>
+  <p class="def">A type of computational evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;computational evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007669&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n4
+  n2 --&gt; n3
+  n4 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: ECO:0007672</summary><ul class="rows"><li><span class="row">T024</span> <span class="uc">plantcyc</span> <span class="dec dec-open">open</span><span class="req">Computational inference without human oversight (EV-COMP-AINF)</span></li><li><span class="row">T050</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">A single in-silico tool proposed the structure (SIRIUS, MS2Query, DreaMS)</span></li></ul></details>
+</article><article class="term" id="ECO-0007668" data-source="ECO" data-search="computational evidence used in manual assertion eco:0007668  t022 plantcyc">
+  <header><h3>computational evidence used in manual assertion</h3><span class="curie">ECO:0007668</span><span class="kind">class</span></header>
+  <p class="def">A type of computational evidence that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;computational evidence used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0007668&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n4
+  n2 --&gt; n3
+  n4 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0007672</summary><ul class="rows"><li><span class="row">T022</span> <span class="uc">plantcyc</span> <span class="dec dec-open">open</span><span class="req">Computational inference reviewed by a curator (EV-COMP-HINF)</span></li></ul></details>
+</article><article class="term" id="ECO-0000363" data-source="ECO" data-search="computational inference used in automatic assertion eco:0000363  t025 plantcyc">
+  <header><h3>computational inference used in automatic assertion</h3><span class="curie">ECO:0000363</span><span class="kind">class</span></header>
+  <p class="def">A type of evidence based on computational logical inference that is used in automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;computational inference used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0000363&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;computational inference&lt;br/&gt;&lt;small&gt;ECO:0000362&lt;/small&gt;&quot;]
+  n3[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;inferential evidence&lt;br/&gt;&lt;small&gt;ECO:0000361&lt;/small&gt;&quot;]
+  n8[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n5
+  n2 --&gt; n7
+  n2 --&gt; n1
+  n3 --&gt; n4
+  n5 --&gt; n8
+  n6 --&gt; n3
+  n7 --&gt; n5
+  n8 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000362</summary><ul class="rows"><li><span class="row">T025</span> <span class="uc">plantcyc</span> <span class="dec dec-open">open</span><span class="req">Computational inference without human oversight (EV-COMP-AINF)</span></li></ul></details>
+</article><article class="term" id="ECO-0007631" data-source="ECO" data-search="computational inference used in manual assertion eco:0007631  t023 plantcyc">
+  <header><h3>computational inference used in manual assertion</h3><span class="curie">ECO:0007631</span><span class="kind">class</span></header>
+  <p class="def">A type of evidence based on computational logical inference that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;computational inference used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0007631&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;computational inference&lt;br/&gt;&lt;small&gt;ECO:0000362&lt;/small&gt;&quot;]
+  n3[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;inferential evidence&lt;br/&gt;&lt;small&gt;ECO:0000361&lt;/small&gt;&quot;]
+  n8[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n5
+  n2 --&gt; n7
+  n2 --&gt; n1
+  n3 --&gt; n4
+  n5 --&gt; n8
+  n6 --&gt; n3
+  n7 --&gt; n5
+  n8 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000362</summary><ul class="rows"><li><span class="row">T023</span> <span class="uc">plantcyc</span> <span class="dec dec-open">open</span><span class="req">Computational inference reviewed by a curator (EV-COMP-HINF)</span></li></ul></details>
+</article><article class="term" id="ECO-0000305" data-source="ECO" data-search="curator inference used in manual assertion eco:0000305  t020 plantcyc">
+  <header><h3>curator inference used in manual assertion</h3><span class="curie">ECO:0000305</span><span class="kind">class</span></header>
+  <p class="def">A type of curator inference that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;curator inference used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0000305&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;curator inference&lt;br/&gt;&lt;small&gt;ECO:0000205&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;inferential evidence&lt;br/&gt;&lt;small&gt;ECO:0000361&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n3
+  n2 --&gt; n6
+  n4 --&gt; n7
+  n5 --&gt; n1
+  n6 --&gt; n4
+  n7 --&gt; n5
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000205</summary><ul class="rows"><li><span class="row">T020</span> <span class="uc">plantcyc</span> <span class="dec dec-proposed">proposed</span><span class="req">Inferred by a curator (EV-IC)</span></li></ul></details>
+</article><article class="term" id="ECO-0008006" data-source="ECO" data-search="deep learning neural network method evidence used in automatic assertion eco:0008006  t052 metabolomics t116 unsupervised">
+  <header><h3>deep learning neural network method evidence used in automatic assertion</h3><span class="curie">ECO:0008006</span><span class="kind">class</span></header>
+  <p class="def">A type of deep learning neural network method evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;deep learning neural network method evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0008006&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;deep learning neural network method evidence&lt;br/&gt;&lt;small&gt;ECO:0008001&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n8[&quot;machine learning method evidence&lt;br/&gt;&lt;small&gt;ECO:0008000&lt;/small&gt;&quot;]
+  n9[&quot;neural network method evidence&lt;br/&gt;&lt;small&gt;ECO:0008013&lt;/small&gt;&quot;]
+  n0 --&gt; n3
+  n1 --&gt; n5
+  n2 --&gt; n4
+  n3 --&gt; n9
+  n5 --&gt; n7
+  n6 --&gt; n2
+  n7 --&gt; n6
+  n8 --&gt; n1
+  n9 --&gt; n8
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: ECO:0008001</summary><ul class="rows"><li><span class="row">T052</span> <span class="uc">metabolomics</span> <span class="dec dec-open">open</span><span class="req">A single in-silico tool proposed the structure (SIRIUS, MS2Query, DreaMS)</span></li><li><span class="row">T116</span> <span class="uc">unsupervised</span> <span class="dec dec-open">open</span><span class="req">Evidence: a machine-learning model predicted the link</span></li></ul></details>
+</article><article class="term" id="ECO-0000314" data-source="ECO" data-search="direct assay evidence used in manual assertion eco:0000314  t016 plantcyc">
+  <header><h3>direct assay evidence used in manual assertion</h3><span class="curie">ECO:0000314</span><span class="kind">class</span></header>
+  <p class="def">A type of direct assay evidence that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;direct assay evidence used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0000314&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;direct assay evidence&lt;br/&gt;&lt;small&gt;ECO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n7
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000002</summary><ul class="rows"><li><span class="row">T016</span> <span class="uc">plantcyc</span> <span class="dec dec-proposed">proposed</span><span class="req">Experimental evidence: direct assay (EV-EXP-IDA and its purified / unpurified-protein variants)</span></li></ul></details>
+</article><article class="term" id="ECO-0000000" data-source="ECO" data-search="evidence eco:0000000  t003 common">
+  <header><h3>evidence</h3><span class="curie">ECO:0000000</span><span class="kind">class</span></header>
+  <p class="def">A type of information that is used to support an assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n4[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n4
+  n1 --&gt; n2
+  n3 --&gt; n1
+  n4 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: IAO:0000030</summary><ul class="rows"><li><span class="row">T003</span> <span class="uc">common</span> <span class="dec dec-proposed">proposed</span><span class="req">The type of evidence is stated with a controlled class</span></li></ul></details>
+</article><article class="term" id="ECO-0000006" data-source="ECO" data-search="experimental evidence eco:0000006  t018 plantcyc">
+  <header><h3>experimental evidence</h3><span class="curie">ECO:0000006</span><span class="kind">class</span></header>
+  <p class="def">A type of evidence that is the output of a scientific procedure performed to make a discovery, test a hypothesis, or demonstrate a known fact.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n3
+  n1 --&gt; n2
+  n3 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000000</summary><ul class="rows"><li><span class="row">T018</span> <span class="uc">plantcyc</span> <span class="dec dec-proposed">proposed</span><span class="req">Experimental evidence, not further specified (EV-EXP)</span></li></ul></details>
+</article><article class="term" id="ECO-0007298" data-source="ECO" data-search="expression pattern evidence used in automatic assertion eco:0007298  t083 paired_omics">
+  <header><h3>expression pattern evidence used in automatic assertion</h3><span class="curie">ECO:0007298</span><span class="kind">class</span></header>
+  <p class="def">A type of expression pattern evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;expression pattern evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007298&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0000008&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n5
+  n1 --&gt; n2
+  n3 --&gt; n7
+  n4 --&gt; n3
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000008</summary><ul class="rows"><li><span class="row">T083</span> <span class="uc">paired_omics</span> <span class="dec dec-open">open</span><span class="req">Evidence: transcript and metabolite abundances are correlated</span></li></ul></details>
+</article><article class="term" id="ECO-0000270" data-source="ECO" data-search="expression pattern evidence used in manual assertion eco:0000270  t017 plantcyc">
+  <header><h3>expression pattern evidence used in manual assertion</h3><span class="curie">ECO:0000270</span><span class="kind">class</span></header>
+  <p class="def">A type of expression pattern evidence that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;expression pattern evidence used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0000270&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0000008&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n5
+  n1 --&gt; n2
+  n3 --&gt; n7
+  n4 --&gt; n3
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000008</summary><ul class="rows"><li><span class="row">T017</span> <span class="uc">plantcyc</span> <span class="dec dec-proposed">proposed</span><span class="req">Experimental evidence: expression pattern (EV-EXP-IEP)</span></li></ul></details>
+</article><article class="term" id="ECO-0007327" data-source="ECO" data-search="genomic context evidence used in automatic assertion eco:0007327  t033 bgc">
+  <header><h3>genomic context evidence used in automatic assertion</h3><span class="curie">ECO:0007327</span><span class="kind">class</span></header>
+  <p class="def">A type of genomic context evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;genomic context evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007327&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;genomic context evidence&lt;br/&gt;&lt;small&gt;ECO:0000177&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000041&lt;/small&gt;&quot;]
+  n0 --&gt; n5
+  n1 --&gt; n2
+  n3 --&gt; n6
+  n4 --&gt; n1
+  n5 --&gt; n7
+  n6 --&gt; n4
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000177</summary><ul class="rows"><li><span class="row">T033</span> <span class="uc">bgc</span> <span class="dec dec-proposed">proposed</span><span class="req">The prediction is based on the co-location of genes in the genome</span></li></ul></details>
+</article><article class="term" id="ECO-0007590" data-source="ECO" data-search="high throughput expression pattern evidence used in automatic assertion eco:0007590  t082 paired_omics">
+  <header><h3>high throughput expression pattern evidence used in automatic assertion</h3><span class="curie">ECO:0007590</span><span class="kind">class</span></header>
+  <p class="def">A type of high throughput expression pattern evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;high throughput expression pattern evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0007590&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0000008&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;high throughput evidence&lt;br/&gt;&lt;small&gt;ECO:0006055&lt;/small&gt;&quot;]
+  n8[&quot;high throughput expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0007006&lt;/small&gt;&quot;]
+  n9[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n0 --&gt; n8
+  n1 --&gt; n2
+  n3 --&gt; n9
+  n4 --&gt; n3
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n3
+  n8 --&gt; n5
+  n8 --&gt; n7
+  n9 --&gt; n6
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0007006</summary><ul class="rows"><li><span class="row">T082</span> <span class="uc">paired_omics</span> <span class="dec dec-proposed">proposed</span><span class="req">Evidence: transcript and metabolite abundances are correlated</span></li></ul></details>
+</article><article class="term" id="ECO-0001580" data-source="ECO" data-search="liquid chromatography coupled with tandem mass spectrometry evidence eco:0001580  t048 metabolomics">
+  <header><h3>liquid chromatography coupled with tandem mass spectrometry evidence</h3><span class="curie">ECO:0001580</span><span class="kind">class</span></header>
+  <p class="def">A type of mass spectrometry evidence where liquid chromatography is used to separate particles in solution, followed by fragmentation and measurement of the mass-to-charge ratio of the resulting particles to identify the amount and type of material entities present in a sample.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;liquid chromatography coupled with tandem mass spectrometry evidence&lt;br/&gt;&lt;small&gt;ECO:0001580&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;mass spectrometry evidence&lt;br/&gt;&lt;small&gt;ECO:0001096&lt;/small&gt;&quot;]
+  n8[&quot;spectrometry evidence&lt;br/&gt;&lt;small&gt;ECO:0005504&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n2
+  n3 --&gt; n6
+  n4 --&gt; n3
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n8
+  n8 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0001096</summary><ul class="rows"><li><span class="row">T048</span> <span class="uc">metabolomics</span> <span class="dec dec-open">open</span><span class="req">The annotation comes from LC-MS/MS data</span></li></ul></details>
+</article><article class="term" id="ECO-0008004" data-source="ECO" data-search="machine learning method evidence used in automatic assertion eco:0008004  t051 metabolomics t117 unsupervised">
+  <header><h3>machine learning method evidence used in automatic assertion</h3><span class="curie">ECO:0008004</span><span class="kind">class</span></header>
+  <p class="def">A type of machine learning method evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;machine learning method evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0008004&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;machine learning method evidence&lt;br/&gt;&lt;small&gt;ECO:0008000&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n4
+  n2 --&gt; n3
+  n4 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: ECO:0008000</summary><ul class="rows"><li><span class="row">T051</span> <span class="uc">metabolomics</span> <span class="dec dec-open">open</span><span class="req">A single in-silico tool proposed the structure (SIRIUS, MS2Query, DreaMS)</span></li><li><span class="row">T117</span> <span class="uc">unsupervised</span> <span class="dec dec-open">open</span><span class="req">Evidence: a machine-learning model predicted the link</span></li></ul></details>
+</article><article class="term" id="ECO-0001096" data-source="ECO" data-search="mass spectrometry evidence eco:0001096  t191 metabolomics">
+  <header><h3>mass spectrometry evidence</h3><span class="curie">ECO:0001096</span><span class="kind">class</span></header>
+  <p class="def">A type of spectrometry evidence resulting from identifying the amount and type of material entities present in a sample by fragmenting it and measuring the mass-to-charge ratio of the resulting particles.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;mass spectrometry evidence&lt;br/&gt;&lt;small&gt;ECO:0001096&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;spectrometry evidence&lt;br/&gt;&lt;small&gt;ECO:0005504&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n2
+  n3 --&gt; n6
+  n4 --&gt; n3
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0005504</summary><ul class="rows"><li><span class="row">T191</span> <span class="uc">metabolomics</span> <span class="dec dec-open">open</span><span class="req">The annotation rests on the accurate mass of an MS1 feature only (no fragment spectrum)</span></li></ul></details>
+</article><article class="term" id="ECO-0000256" data-source="ECO" data-search="match to sequence model evidence used in automatic assertion eco:0000256  t032 bgc">
+  <header><h3>match to sequence model evidence used in automatic assertion</h3><span class="curie">ECO:0000256</span><span class="kind">class</span></header>
+  <p class="def">A type of match to sequence model evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;match to sequence model evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0000256&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;match to sequence model evidence&lt;br/&gt;&lt;small&gt;ECO:0000202&lt;/small&gt;&quot;]
+  n8[&quot;sequence similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000044&lt;/small&gt;&quot;]
+  n9[&quot;similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000041&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n4
+  n2 --&gt; n3
+  n4 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  n7 --&gt; n8
+  n8 --&gt; n9
+  n8 --&gt; n1
+  n9 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000202</summary><ul class="rows"><li><span class="row">T032</span> <span class="uc">bgc</span> <span class="dec dec-proposed">proposed</span><span class="req">The BGC was predicted computationally by sequence-model (pHMM) rules</span></li></ul></details>
+</article><article class="term" id="ECO-0000295" data-source="ECO" data-search="rna-sequencing evidence eco:0000295  t134 transcriptomics">
+  <header><h3>RNA-sequencing evidence</h3><span class="curie">ECO:0000295</span><span class="kind">class</span></header>
+  <p class="def">A type of transcript evidence based on high-throughput (HT) sequencing of fragmented cDNA molecules.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;RNA-sequencing evidence&lt;br/&gt;&lt;small&gt;ECO:0000295&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0000008&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n8[&quot;transcript expression evidence&lt;br/&gt;&lt;small&gt;ECO:0000009&lt;/small&gt;&quot;]
+  n0 --&gt; n8
+  n1 --&gt; n2
+  n3 --&gt; n7
+  n4 --&gt; n3
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n6
+  n8 --&gt; n5
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000009</summary><ul class="rows"><li><span class="row">T134</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Evidence: the statement is based on RNA-seq expression data</span></li></ul></details>
+</article><article class="term" id="ECO-0006069" data-source="ECO" data-search="rna-sequencing evidence used in automatic assertion eco:0006069  t132 transcriptomics">
+  <header><h3>RNA-sequencing evidence used in automatic assertion</h3><span class="curie">ECO:0006069</span><span class="kind">class</span></header>
+  <p class="def">A type of high throughput nucleotide sequencing assay evidence used in an automatic assertion based on high-throughput (HT) sequencing of fragmented cDNA molecules.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;RNA-sequencing evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0006069&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0000008&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n8[&quot;RNA-sequencing evidence&lt;br/&gt;&lt;small&gt;ECO:0000295&lt;/small&gt;&quot;]
+  n9[&quot;transcript expression evidence&lt;br/&gt;&lt;small&gt;ECO:0000009&lt;/small&gt;&quot;]
+  n0 --&gt; n8
+  n1 --&gt; n2
+  n3 --&gt; n7
+  n4 --&gt; n3
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n6
+  n8 --&gt; n9
+  n9 --&gt; n5
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000295</summary><ul class="rows"><li><span class="row">T132</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Evidence: the statement is based on RNA-seq expression data</span></li></ul></details>
+</article><article class="term" id="ECO-0006068" data-source="ECO" data-search="rna-sequencing evidence used in manual assertion eco:0006068  t133 transcriptomics">
+  <header><h3>RNA-sequencing evidence used in manual assertion</h3><span class="curie">ECO:0006068</span><span class="kind">class</span></header>
+  <p class="def">A type of high throughput nucleotide sequencing assay evidence used in a manual assertion based on high-throughput (HT) sequencing of fragmented cDNA molecules.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;RNA-sequencing evidence used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0006068&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n4[&quot;experimental evidence&lt;br/&gt;&lt;small&gt;ECO:0000006&lt;/small&gt;&quot;]
+  n5[&quot;expression pattern evidence&lt;br/&gt;&lt;small&gt;ECO:0000008&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n8[&quot;RNA-sequencing evidence&lt;br/&gt;&lt;small&gt;ECO:0000295&lt;/small&gt;&quot;]
+  n9[&quot;transcript expression evidence&lt;br/&gt;&lt;small&gt;ECO:0000009&lt;/small&gt;&quot;]
+  n0 --&gt; n8
+  n1 --&gt; n2
+  n3 --&gt; n7
+  n4 --&gt; n3
+  n5 --&gt; n4
+  n6 --&gt; n1
+  n7 --&gt; n6
+  n8 --&gt; n9
+  n9 --&gt; n5
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000295</summary><ul class="rows"><li><span class="row">T133</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Evidence: the statement is based on RNA-seq expression data</span></li></ul></details>
+</article><article class="term" id="ECO-0000266" data-source="ECO" data-search="sequence orthology evidence used in manual assertion eco:0000266  t021 plantcyc">
+  <header><h3>sequence orthology evidence used in manual assertion</h3><span class="curie">ECO:0000266</span><span class="kind">class</span></header>
+  <p class="def">A type of sequence orthology evidence that is used in a manual assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;sequence orthology evidence used in manual assertion&lt;br/&gt;&lt;small&gt;ECO:0000266&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;sequence orthology evidence&lt;br/&gt;&lt;small&gt;ECO:0000201&lt;/small&gt;&quot;]
+  n8[&quot;sequence similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000044&lt;/small&gt;&quot;]
+  n9[&quot;similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000041&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n4
+  n2 --&gt; n3
+  n4 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  n7 --&gt; n8
+  n8 --&gt; n9
+  n8 --&gt; n1
+  n9 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000201</summary><ul class="rows"><li><span class="row">T021</span> <span class="uc">plantcyc</span> <span class="dec dec-proposed">proposed</span><span class="req">Computational: sequence orthology, reviewed (EV-COMP-HINF-SEQ-ORTHOLOGY)</span></li></ul></details>
+</article><article class="term" id="ECO-0000249" data-source="ECO" data-search="sequence similarity evidence used in automatic assertion eco:0000249  t039 bgc">
+  <header><h3>sequence similarity evidence used in automatic assertion</h3><span class="curie">ECO:0000249</span><span class="kind">class</span></header>
+  <p class="def">A type of sequence similarity evidence that is used in an automatic assertion.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;sequence similarity evidence used in automatic assertion&lt;br/&gt;&lt;small&gt;ECO:0000249&lt;/small&gt;&quot;]
+  n1[&quot;computational evidence&lt;br/&gt;&lt;small&gt;ECO:0007672&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;evidence&lt;br/&gt;&lt;small&gt;ECO:0000000&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;sequence similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000044&lt;/small&gt;&quot;]
+  n8[&quot;similarity evidence&lt;br/&gt;&lt;small&gt;ECO:0000041&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n4
+  n2 --&gt; n3
+  n4 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  n7 --&gt; n8
+  n7 --&gt; n1
+  n8 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: ECO:0000044</summary><ul class="rows"><li><span class="row">T039</span> <span class="uc">bgc</span> <span class="dec dec-proposed">proposed</span><span class="req">The MIBiG match is supported by gene similarity (KnownClusterBLAST)</span></li></ul></details>
+</article><article class="term" id="OBI-0200036" data-source="OBI" data-search="benjamini and hochberg false discovery rate correction method obi:0200036  t153 transcriptomics">
+  <header><h3>Benjamini and Hochberg false discovery rate correction method</h3><span class="curie">OBI:0200036</span><span class="kind">class</span></header>
+  <p class="def">A data transformation process in which the Benjamini and Hochberg method sequential p-value procedure  is applied with the aim of correcting false discovery rate</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;Benjamini and Hochberg false discovery rate correction method&lt;br/&gt;&lt;small&gt;OBI:0200036&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;data transformation&lt;br/&gt;&lt;small&gt;OBI:0200000&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n5
+  n2 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: OBI:0200000</summary><ul class="rows"><li><span class="row">T153</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Multiple-testing correction method (Benjamini-Hochberg, the DESeq2 default)</span></li></ul></details>
+</article><article class="term" id="OBI-0000198" data-source="OBI" data-search="biological replicate role obi:0000198  t161 transcriptomics">
+  <header><h3>biological replicate role</h3><span class="curie">OBI:0000198</span><span class="kind">class</span></header>
+  <p class="def">a reference participant role realized by equivalent treatment of participants</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;biological replicate role&lt;br/&gt;&lt;small&gt;OBI:0000198&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;participant under investigation role&lt;br/&gt;&lt;small&gt;OBI:0000097&lt;/small&gt;&quot;]
+  n4[&quot;realizable entity&lt;br/&gt;&lt;small&gt;BFO:0000017&lt;/small&gt;&quot;]
+  n5[&quot;reference subject role&lt;br/&gt;&lt;small&gt;OBI:0000220&lt;/small&gt;&quot;]
+  n6[&quot;role&lt;br/&gt;&lt;small&gt;BFO:0000023&lt;/small&gt;&quot;]
+  n7[&quot;specifically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000020&lt;/small&gt;&quot;]
+  n0 --&gt; n5
+  n1 --&gt; n2
+  n3 --&gt; n6
+  n4 --&gt; n7
+  n5 --&gt; n3
+  n6 --&gt; n4
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: OBI:0000220</summary><ul class="rows"><li><span class="row">T161</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Replicates of a condition</span></li></ul></details>
+</article><article class="term" id="OBI-0001265" data-source="OBI" data-search="fwer adjusted p-value obi:0001265  t088 paired_omics t152 transcriptomics">
+  <header><h3>FWER adjusted p-value</h3><span class="curie">OBI:0001265</span><span class="kind">class</span></header>
+  <p class="def">A quantitative confidence value resulting from a multiple testing error correction method which adjusts the p-value used as input to control for Type I error in the context of multiple pairwise tests</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;FWER adjusted p-value&lt;br/&gt;&lt;small&gt;OBI:0001265&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n6[&quot;quantitative confidence value&lt;br/&gt;&lt;small&gt;OBI:0000071&lt;/small&gt;&quot;]
+  n0 --&gt; n6
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  n6 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: OBI:0000071</summary><ul class="rows"><li><span class="row">T088</span> <span class="uc">paired_omics</span> <span class="dec dec-open">open</span><span class="req">Significance of the correlation</span></li><li><span class="row">T152</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Adjusted p-value of a differential expression result (DESeq2 padj)</span></li></ul></details>
+</article><article class="term" id="OBI-0000175" data-source="OBI" data-search="p-value obi:0000175  t087 paired_omics t095 paired_omics">
+  <header><h3>p-value</h3><span class="curie">OBI:0000175</span><span class="kind">class</span></header>
+  <p class="def">A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;p-value&lt;br/&gt;&lt;small&gt;OBI:0000175&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n6[&quot;quantitative confidence value&lt;br/&gt;&lt;small&gt;OBI:0000071&lt;/small&gt;&quot;]
+  n0 --&gt; n6
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  n6 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: OBI:0000071</summary><ul class="rows"><li><span class="row">T087</span> <span class="uc">paired_omics</span> <span class="dec dec-proposed">proposed</span><span class="req">Significance of the correlation</span></li><li><span class="row">T095</span> <span class="uc">paired_omics</span> <span class="dec dec-open">open</span><span class="req">Significance of the functional cluster</span></li></ul></details>
+</article><article class="term" id="OBI-0001177" data-source="OBI" data-search="rna sequencing assay obi:0001177  t130 transcriptomics">
+  <header><h3>RNA sequencing assay</h3><span class="curie">OBI:0001177</span><span class="kind">class</span></header>
+  <p class="def">An assay that determines the sequence of an RNA molecule.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;RNA sequencing assay&lt;br/&gt;&lt;small&gt;OBI:0001177&lt;/small&gt;&quot;]
+  n1[&quot;assay&lt;br/&gt;&lt;small&gt;OBI:0000070&lt;/small&gt;&quot;]
+  n2[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n7[&quot;sequencing assay&lt;br/&gt;&lt;small&gt;OBI:0600047&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n1 --&gt; n2
+  n2 --&gt; n5
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  n7 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: OBI:0600047</summary><ul class="rows"><li><span class="row">T130</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Expression was measured by RNA sequencing</span></li></ul></details>
+</article><article class="term" id="OBI-0002588" data-source="OBI" data-search="supervised machine learning obi:0002588  t119 unsupervised">
+  <header><h3>supervised machine learning</h3><span class="curie">OBI:0002588</span><span class="kind">class</span></header>
+  <p class="def">A machine learning process using a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;supervised machine learning&lt;br/&gt;&lt;small&gt;OBI:0002588&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;machine learning&lt;br/&gt;&lt;small&gt;OBI:0002587&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n0 --&gt; n3
+  n1 --&gt; n5
+  n3 --&gt; n1
+  n4 --&gt; n2
+  n5 --&gt; n6
+  n6 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: OBI:0002587</summary><ul class="rows"><li><span class="row">T119</span> <span class="uc">unsupervised</span> <span class="dec dec-open">open</span><span class="req">Training procedure (supervised learning on known links)</span></li></ul></details>
+</article><article class="term" id="OBI-0200022" data-source="OBI" data-search="variance stabilizing transformation obi:0200022  t139 transcriptomics">
+  <header><h3>variance stabilizing transformation</h3><span class="curie">OBI:0200022</span><span class="kind">class</span></header>
+  <p class="def">A variance stabilizing transformation is a data transformation, described in PMID 12169536, whose input is a matrix [y_ik] and whose output is a matrix obtained by applying formula (6) in this paper. One of the goals is to obtain an output matrix whose rows have equal variances. The method relies on various assumptions described in the paper.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;variance stabilizing transformation&lt;br/&gt;&lt;small&gt;OBI:0200022&lt;/small&gt;&quot;]
+  n1[&quot;completely executed planned process&lt;br/&gt;&lt;small&gt;COB:0000035&lt;/small&gt;&quot;]
+  n2[&quot;data transformation&lt;br/&gt;&lt;small&gt;OBI:0200000&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;occurrent&lt;br/&gt;&lt;small&gt;BFO:0000003&lt;/small&gt;&quot;]
+  n5[&quot;planned process&lt;br/&gt;&lt;small&gt;COB:0000082&lt;/small&gt;&quot;]
+  n6[&quot;process&lt;br/&gt;&lt;small&gt;BFO:0000015&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n5
+  n2 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n6
+  n6 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: OBI:0200000</summary><ul class="rows"><li><span class="row">T139</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Normalisation method (library-size normalisation, TMM, variance-stabilising transformation)</span></li></ul></details>
+</article><article class="term" id="PO-0009011" data-source="PO" data-search="plant structure po:0009011  t163 transcriptomics t184 metabolomics">
+  <header><h3>plant structure</h3><span class="curie">PO:0009011</span><span class="kind">class</span></header>
+  <p class="def">A plant anatomical entity (PO:0025131) that is, or was, part of a plant, or was derived from a part of a plant.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;plant structure&lt;br/&gt;&lt;small&gt;PO:0009011&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n3[&quot;independent continuant&lt;br/&gt;&lt;small&gt;BFO:0000004&lt;/small&gt;&quot;]
+  n4[&quot;material entity&lt;br/&gt;&lt;small&gt;BFO:0000040&lt;/small&gt;&quot;]
+  n5[&quot;plant anatomical entity&lt;br/&gt;&lt;small&gt;PO:0025131&lt;/small&gt;&quot;]
+  n0 --&gt; n5
+  n1 --&gt; n2
+  n3 --&gt; n1
+  n4 --&gt; n3
+  n5 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: PO:0025131</summary><ul class="rows"><li><span class="row">T163</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Plant structure (tissue or organ) the sample was taken from</span></li><li><span class="row">T184</span> <span class="uc">metabolomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Organism and plant structure of the sample in which a feature was measured</span></li></ul></details>
+</article><article class="term" id="RO-0002131" data-source="RO" data-search="overlaps ro:0002131  t042 bgc">
+  <header><h3>overlaps</h3><span class="curie">RO:0002131</span><span class="kind">relation</span></header>
+  <p class="def">x overlaps y if and only if there exists some z such that x has part z and z part of y</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;overlaps&lt;br/&gt;&lt;small&gt;RO:0002131&lt;/small&gt;&quot;]
+  n1[&quot;mereotopologically related to&lt;br/&gt;&lt;small&gt;RO:0002323&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: RO:0002323</summary><ul class="rows"><li><span class="row">T042</span> <span class="uc">bgc</span> <span class="dec dec-open">open</span><span class="req">The BGC overlaps a PlantMetWiki pathway</span></li></ul></details>
+</article><article class="term" id="SO-0002357" data-source="SO" data-search="biosynthetic_gene_cluster so:0002357  t030 bgc">
+  <header><h3>biosynthetic_gene_cluster</h3><span class="curie">SO:0002357</span><span class="kind">class</span></header>
+  <p class="def">A physically clustered group of two or more genes in a particular genome that together encode a biosynthetic pathway for the production of a specialized metabolite (including its chemical variants).</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;biosynthetic_gene_cluster&lt;br/&gt;&lt;small&gt;SO:0002357&lt;/small&gt;&quot;]
+  n1[&quot;biological_region&lt;br/&gt;&lt;small&gt;SO:0001411&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;region&lt;br/&gt;&lt;small&gt;SO:0000001&lt;/small&gt;&quot;]
+  n6[&quot;sequence_feature&lt;br/&gt;&lt;small&gt;SO:0000110&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n5
+  n2 --&gt; n3
+  n4 --&gt; n2
+  n5 --&gt; n6
+  n6 --&gt; n4
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: SO:0001411</summary><ul class="rows"><li><span class="row">T030</span> <span class="uc">bgc</span> <span class="dec dec-proposed">proposed</span><span class="req">There is a biosynthetic gene cluster</span></li></ul></details>
+</article><article class="term" id="STATO-0000691" data-source="STATO" data-search="area under the precision-recall curve stato:0000691  t124 unsupervised">
+  <header><h3>area under the precision-recall curve</h3><span class="curie">STATO:0000691</span><span class="kind">class</span></header>
+  <p class="def">An area under the curve where the curve is the precision and the domain of interest is the recall.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;area under the precision-recall curve&lt;br/&gt;&lt;small&gt;STATO:0000691&lt;/small&gt;&quot;]
+  n1[&quot;area under curve&lt;br/&gt;&lt;small&gt;STATO:0000209&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n7
+  n2 --&gt; n4
+  n3 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000209</summary><ul class="rows"><li><span class="row">T124</span> <span class="uc">unsupervised</span> <span class="dec dec-open">open</span><span class="req">Model performance on the benchmark (area under the ROC curve, area under the precision-recall curve)</span></li></ul></details>
+</article><article class="term" id="STATO-0000608" data-source="STATO" data-search="area under the receiver operator characteristic curve stato:0000608  t123 unsupervised">
+  <header><h3>area under the receiver operator characteristic curve</h3><span class="curie">STATO:0000608</span><span class="kind">class</span></header>
+  <p class="def">An area under the curve where the curve is the true positive rate and the range of interest is the false positive rate.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;area under the receiver operator characteristic curve&lt;br/&gt;&lt;small&gt;STATO:0000608&lt;/small&gt;&quot;]
+  n1[&quot;area under curve&lt;br/&gt;&lt;small&gt;STATO:0000209&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n1
+  n1 --&gt; n7
+  n2 --&gt; n4
+  n3 --&gt; n6
+  n5 --&gt; n2
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000209</summary><ul class="rows"><li><span class="row">T123</span> <span class="uc">unsupervised</span> <span class="dec dec-open">open</span><span class="req">Model performance on the benchmark (area under the ROC curve, area under the precision-recall curve)</span></li></ul></details>
+</article><article class="term" id="STATO-0000169" data-source="STATO" data-search="fold change stato:0000169  t145 transcriptomics">
+  <header><h3>fold change</h3><span class="curie">STATO:0000169</span><span class="kind">class</span></header>
+  <p class="def">Fold change is a number describing how much a quantity changes going from an initial to a final value or one condition to another condition</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;fold change&lt;br/&gt;&lt;small&gt;STATO:0000169&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;dimensionless ratio&lt;br/&gt;&lt;small&gt;STATO:0000300&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;ratio&lt;br/&gt;&lt;small&gt;STATO:0000184&lt;/small&gt;&quot;]
+  n8[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n3
+  n1 --&gt; n4
+  n2 --&gt; n6
+  n3 --&gt; n7
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n8
+  n8 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000300</summary><ul class="rows"><li><span class="row">T145</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Fold change between two conditions (log2 fold change of a DESeq2 result)</span></li></ul></details>
+</article><article class="term" id="STATO-0000172" data-source="STATO" data-search="fpkm-fragments per kilobase of transcript per million fragments mapped stato:0000172  t137 transcriptomics">
+  <header><h3>FPKM-fragments per kilobase of transcript per million fragments mapped</h3><span class="curie">STATO:0000172</span><span class="kind">class</span></header>
+  <p class="def">FPKM, which is the expected fragments per kilobase of transcript per million fragments mapped is a metric used to report transcript expression event as generated by RNA-Seq using paired-end library. The calculated value results from 2 types of normalization, one to take into account the difference in reads counts associated with transcript length (at equal abundance, longer transcripts will have more reads than shorter transcripts) , (hence the &#x27;per kilobase of transcript&#x27;) and the other one to take into account different sequencing depth during distinct sequencing runs (hence the &#x27;per millions mapped fragment&#x27;. The metric is specifically produced by cufflink software.\n\nRecommended use:\n\n-FPKM measure may be used for gene count comparisons within a sample. \n\n-FPKM measure is NOT suited for between sample comparisons.\n-FPKM measure is NOT suited for Differential Expression analysis.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;FPKM-fragments per kilobase of transcript per million fragments mapped&lt;br/&gt;&lt;small&gt;STATO:0000172&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;count&lt;br/&gt;&lt;small&gt;STATO:0000047&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n4
+  n2 --&gt; n7
+  n3 --&gt; n6
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000047</summary><ul class="rows"><li><span class="row">T137</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Normalised expression value with its unit (TPM, FPKM or RPKM)</span></li></ul></details>
+</article><article class="term" id="STATO-0000280" data-source="STATO" data-search="pearson&#x27;s correlation coefficient stato:0000280  t085 paired_omics t154 transcriptomics">
+  <header><h3>Pearson&#x27;s correlation coefficient</h3><span class="curie">STATO:0000280</span><span class="kind">class</span></header>
+  <p class="def">The Pearson&#x27;s correlation coefficient is a correlation coefficient which evaluates two continuous variables for association strength in a data sample. It assumes that both variables are normally distributed and linearity exists. \nThe coefficient is calculated by dividing their covariance with the product of their individual standard deviations. It is a normalized measurement of how the two are linearly related.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;Pearson&#x27;s correlation coefficient&lt;br/&gt;&lt;small&gt;STATO:0000280&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;correlation coefficient&lt;br/&gt;&lt;small&gt;STATO:0000142&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;effect size estimate&lt;br/&gt;&lt;small&gt;STATO:0000085&lt;/small&gt;&quot;]
+  n5[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n6[&quot;estimate&lt;br/&gt;&lt;small&gt;STATO:0000471&lt;/small&gt;&quot;]
+  n7[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n8[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n9[&quot;measure of association&lt;br/&gt;&lt;small&gt;STATO:0000610&lt;/small&gt;&quot;]
+  n10[&quot;measure of correlation&lt;br/&gt;&lt;small&gt;STATO:0000611&lt;/small&gt;&quot;]
+  n11[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n5
+  n2 --&gt; n4
+  n2 --&gt; n10
+  n3 --&gt; n8
+  n4 --&gt; n6
+  n6 --&gt; n11
+  n7 --&gt; n1
+  n8 --&gt; n7
+  n9 --&gt; n11
+  n10 --&gt; n9
+  n11 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: STATO:0000142</summary><ul class="rows"><li><span class="row">T085</span> <span class="uc">paired_omics</span> <span class="dec dec-proposed">proposed</span><span class="req">Correlation coefficient of the pair</span></li><li><span class="row">T154</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Correlation of the expression profiles of two genes (or of a gene and a metabolite)</span></li></ul></details>
+</article><article class="term" id="STATO-0000206" data-source="STATO" data-search="rpkm-reads per kilobase of transcript per million fragments mapped stato:0000206  t138 transcriptomics">
+  <header><h3>RPKM-reads per kilobase of transcript per million fragments mapped</h3><span class="curie">STATO:0000206</span><span class="kind">class</span></header>
+  <p class="def">RPKM is a kind of count which numbers the sequence reads found per kilobase of transcript reported to million of sequence reads. RPKM is a metric generated by ERANGE software tool as reported by Mortazi et al, in 2008.\nThe metric has been enhanced and replaced by FPKM to better take into account splice variant. FKPM uses a statistical model to perform the computation.\n\nRecommended use:\n\n-RPKM measure may be used for gene count comparisons within a sample. \n\n-RPKM measure is NOT suited for between sample comparisons.\n-RPKM measure is NOT suited for Differential Expression analysis.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;RPKM-reads per kilobase of transcript per million fragments mapped&lt;br/&gt;&lt;small&gt;STATO:0000206&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;count&lt;br/&gt;&lt;small&gt;STATO:0000047&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n4
+  n2 --&gt; n7
+  n3 --&gt; n6
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000047</summary><ul class="rows"><li><span class="row">T138</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Normalised expression value with its unit (TPM, FPKM or RPKM)</span></li></ul></details>
+</article><article class="term" id="STATO-0000401" data-source="STATO" data-search="sample mean stato:0000401  t149 transcriptomics">
+  <header><h3>sample mean</h3><span class="curie">STATO:0000401</span><span class="kind">class</span></header>
+  <p class="def">the sample mean of sample of size n with n observations is an arithmetic mean computed over n number of observations on a statistical sample.\nThe sample mean, denoted x¯ and read “x-bar,” is simply the average of the n data points x1, x2, ..., xn:\n\nx¯=x1+x2+⋯+xnn=1n∑i=1nxi\nThe sample mean summarizes the &quot;location&quot; or &quot;center&quot; of the data.\n\nthe sample mean is a measure of dispersion of the observations made on the sample and provides an unbias estimate of the population mean</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;sample mean&lt;br/&gt;&lt;small&gt;STATO:0000401&lt;/small&gt;&quot;]
+  n1[&quot;average value&lt;br/&gt;&lt;small&gt;STATO:0000573&lt;/small&gt;&quot;]
+  n2[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;estimate&lt;br/&gt;&lt;small&gt;STATO:0000471&lt;/small&gt;&quot;]
+  n6[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n7[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n8[&quot;measure of central tendency&lt;br/&gt;&lt;small&gt;STATO:0000029&lt;/small&gt;&quot;]
+  n9[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n5
+  n0 --&gt; n1
+  n1 --&gt; n8
+  n2 --&gt; n4
+  n3 --&gt; n7
+  n5 --&gt; n9
+  n6 --&gt; n2
+  n7 --&gt; n6
+  n8 --&gt; n9
+  n9 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000471, STATO:0000573</summary><ul class="rows"><li><span class="row">T149</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Mean of the normalised counts across samples (DESeq2 baseMean)</span></li></ul></details>
+</article><article class="term" id="STATO-0000064" data-source="STATO" data-search="sequence read count stato:0000064  t135 transcriptomics">
+  <header><h3>sequence read count</h3><span class="curie">STATO:0000064</span><span class="kind">class</span></header>
+  <p class="def">sequence read count is a data item determining how many sequence reads have been generated by a DNA sequencing assay for a given stretch of DNA</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;sequence read count&lt;br/&gt;&lt;small&gt;STATO:0000064&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;count&lt;br/&gt;&lt;small&gt;STATO:0000047&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n4
+  n2 --&gt; n7
+  n3 --&gt; n6
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000047</summary><ul class="rows"><li><span class="row">T135</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Raw read count of a gene in a sample</span></li></ul></details>
+</article><article class="term" id="STATO-0000201" data-source="STATO" data-search="spearman&#x27;s rank correlation coefficient stato:0000201  t086 paired_omics t155 transcriptomics">
+  <header><h3>Spearman&#x27;s rank correlation coefficient</h3><span class="curie">STATO:0000201</span><span class="kind">class</span></header>
+  <p class="def">Spearman&#x27;s rank correlation coefficient is a correlation coefficient which is a nonparametric measure of statistical dependence between two ranked variables. It assesses how well the relationship between two variables can be described using a monotonic function. If there are no repeated data values, a perfect Spearman correlation of +1 or −1 occurs when each of the variables is a perfect monotone function of the other.\nSpearman&#x27;s coefficient may be used when the conditions for computing Pearson&#x27;s correlation are not met (e.g linearity, normality of the 2 continuous variables) but may require a ranking transformation of the variables</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;Spearman&#x27;s rank correlation coefficient&lt;br/&gt;&lt;small&gt;STATO:0000201&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;correlation coefficient&lt;br/&gt;&lt;small&gt;STATO:0000142&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;effect size estimate&lt;br/&gt;&lt;small&gt;STATO:0000085&lt;/small&gt;&quot;]
+  n5[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n6[&quot;estimate&lt;br/&gt;&lt;small&gt;STATO:0000471&lt;/small&gt;&quot;]
+  n7[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n8[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n9[&quot;measure of association&lt;br/&gt;&lt;small&gt;STATO:0000610&lt;/small&gt;&quot;]
+  n10[&quot;measure of correlation&lt;br/&gt;&lt;small&gt;STATO:0000611&lt;/small&gt;&quot;]
+  n11[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n5
+  n2 --&gt; n4
+  n2 --&gt; n10
+  n3 --&gt; n8
+  n4 --&gt; n6
+  n6 --&gt; n11
+  n7 --&gt; n1
+  n8 --&gt; n7
+  n9 --&gt; n11
+  n10 --&gt; n9
+  n11 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (2) · direct parent: STATO:0000142</summary><ul class="rows"><li><span class="row">T086</span> <span class="uc">paired_omics</span> <span class="dec dec-open">open</span><span class="req">Correlation coefficient of the pair</span></li><li><span class="row">T155</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Correlation of the expression profiles of two genes (or of a gene and a metabolite)</span></li></ul></details>
+</article><article class="term" id="STATO-0000562" data-source="STATO" data-search="standard error of estimate stato:0000562  t148 transcriptomics">
+  <header><h3>standard error of estimate</h3><span class="curie">STATO:0000562</span><span class="kind">class</span></header>
+  <p class="def">The standard error is a measure of dispersion applied to estimates across hypothetical repeated random samples.\n\nIt is a measure of how precise an estimate of a statistical parameter is.\n\nThe standard error is the estimated standard deviation of an estimate.\n\nIt measures the uncertainty associated with the estimate. Compared with the standard deviations of the underlying distribution, which are usually unknown, standard errors can be calculated from observed data.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;standard error of estimate&lt;br/&gt;&lt;small&gt;STATO:0000562&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;estimate&lt;br/&gt;&lt;small&gt;STATO:0000471&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;measure of dispersion&lt;br/&gt;&lt;small&gt;STATO:0000028&lt;/small&gt;&quot;]
+  n8[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n7
+  n0 --&gt; n4
+  n1 --&gt; n3
+  n2 --&gt; n6
+  n4 --&gt; n8
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n8
+  n8 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000028, STATO:0000471</summary><ul class="rows"><li><span class="row">T148</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Standard error of the log2 fold change (DESeq2 lfcSE)</span></li></ul></details>
+</article><article class="term" id="STATO-0000591" data-source="STATO" data-search="tmm-trimmed mean of m-values corrected count stato:0000591  t140 transcriptomics">
+  <header><h3>TMM-trimmed mean of M-values corrected count</h3><span class="curie">STATO:0000591</span><span class="kind">class</span></header>
+  <p class="def">TMM or Trimmed Mean of M-Values is a  measurement datum which is the output of the TMM normalization procedure for RNA-Seq data proposed by Robinson and Oshlack (2010). A scaling normalization method for differential expression analysis of RNA-seq data.\nThe TMM procedure is doubly trimmed, by log-fold-changes  (sample k relative to sample r for gene g) and by absolute intensity (A g ).\n\nIt was first release as part of the R package edgeR, 10.1093/bioinformatics/btp616\n\n\nRecommended use:\n\n-TMM measure is suited for gene count comparisons within a sample or between samples of the same sample group. \n\n-TMM measure is suited for Differential Expression analysis.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;TMM-trimmed mean of M-values corrected count&lt;br/&gt;&lt;small&gt;STATO:0000591&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;count&lt;br/&gt;&lt;small&gt;STATO:0000047&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n4
+  n2 --&gt; n7
+  n3 --&gt; n6
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000047</summary><ul class="rows"><li><span class="row">T140</span> <span class="uc">transcriptomics</span> <span class="dec dec-open">open</span><span class="req">Normalisation method (library-size normalisation, TMM, variance-stabilising transformation)</span></li></ul></details>
+</article><article class="term" id="STATO-0000589" data-source="STATO" data-search="tpm-transcript per million stato:0000589  t136 transcriptomics">
+  <header><h3>TPM-transcript per million</h3><span class="curie">STATO:0000589</span><span class="kind">class</span></header>
+  <p class="def">TPM, which stands for Transcript Per Million,  is a data item produced during a normilization procedure of RNA-Seq data (i.e. transcription profiling reads produced by nucleic acid sequencing) and corresponds to the count per length of transcript (kb) per million reads mapped.\n\n-TPM considers the gene length and sequencing depth for normalization\n-TPM proposed as an alternative to RPKM due to inaccuracy in RPKM measurement (Wagner et al., 2012)\n-TPM is suitable for sequencing protocols where reads sequencing depends on gene length\n\n-TPM is RPKM scaled by a constant to make sure the sum of all values is 1 million.\n\n-TPM (transcript per million) = 1,000,000*θi/(ℓi*c), where c is a constant value, sum_[j](θj/ℓj), sum_[i]TPM=1,000,000\n\n\nRecommended use:\n\n-TPM measure is suited for gene count comparisons within a sample or between samples of the same sample group. \n\n-TPM measure is NOT suited for Differential Expression analysis.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;TPM-transcript per million&lt;br/&gt;&lt;small&gt;STATO:0000589&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;count&lt;br/&gt;&lt;small&gt;STATO:0000047&lt;/small&gt;&quot;]
+  n3[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n4[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n5[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n6[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n2
+  n1 --&gt; n4
+  n2 --&gt; n7
+  n3 --&gt; n6
+  n5 --&gt; n1
+  n6 --&gt; n5
+  n7 --&gt; n3
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000047</summary><ul class="rows"><li><span class="row">T136</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Normalised expression value with its unit (TPM, FPKM or RPKM)</span></li></ul></details>
+</article><article class="term" id="STATO-0000584" data-source="STATO" data-search="wald statistic stato:0000584  t147 transcriptomics">
+  <header><h3>Wald statistic</h3><span class="curie">STATO:0000584</span><span class="kind">class</span></header>
+  <p class="def">the Wald statistic is a statistic is used during a Wald test, a test of significance of the regression coefficient; it is based on the asymptotic normality property of maximum likelihood estimates, and is computed as:\n\nW = b * 1/Var(b) * b\n\nIn this formula, b stands for the parameter estimates, and Var(b) stands for the asymptotic variance of the parameter estimates. The Wald statistic is tested against the Chi-square distribution in the Wald test.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;Wald statistic&lt;br/&gt;&lt;small&gt;STATO:0000584&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n6[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n6
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  n6 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000039</summary><ul class="rows"><li><span class="row">T147</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">Test statistic of the differential expression test (DESeq2 Wald statistic)</span></li></ul></details>
+</article><article class="term" id="STATO-0000104" data-source="STATO" data-search="z-score stato:0000104  t141 transcriptomics">
+  <header><h3>z-score</h3><span class="curie">STATO:0000104</span><span class="kind">class</span></header>
+  <p class="def">A z-score (also known as z-value, standard score, or normal score) is a measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value.</p>
+  
+  <div class="diagram"><pre class="mermaid">graph BT
+  n0[&quot;z-score&lt;br/&gt;&lt;small&gt;STATO:0000104&lt;/small&gt;&quot;]
+  n1[&quot;continuant&lt;br/&gt;&lt;small&gt;BFO:0000002&lt;/small&gt;&quot;]
+  n2[&quot;data entity&lt;br/&gt;&lt;small&gt;IAO:0000027&lt;/small&gt;&quot;]
+  n3[&quot;entity&lt;br/&gt;&lt;small&gt;BFO:0000001&lt;/small&gt;&quot;]
+  n4[&quot;generically dependent continuant&lt;br/&gt;&lt;small&gt;BFO:0000031&lt;/small&gt;&quot;]
+  n5[&quot;information content entity&lt;br/&gt;&lt;small&gt;IAO:0000030&lt;/small&gt;&quot;]
+  n6[&quot;measure of hypothesis testing&lt;br/&gt;&lt;small&gt;STATO:0000609&lt;/small&gt;&quot;]
+  n7[&quot;statistic&lt;br/&gt;&lt;small&gt;STATO:0000039&lt;/small&gt;&quot;]
+  n0 --&gt; n6
+  n1 --&gt; n3
+  n2 --&gt; n5
+  n4 --&gt; n1
+  n5 --&gt; n4
+  n6 --&gt; n7
+  n7 --&gt; n2
+  class n0 focus
+  classDef focus stroke-width:3px</pre></div>
+  <details><summary>Spreadsheet rows (1) · direct parent: STATO:0000609</summary><ul class="rows"><li><span class="row">T141</span> <span class="uc">transcriptomics</span> <span class="dec dec-proposed">proposed</span><span class="req">z-score of an expression value (standardised across samples or conditions)</span></li></ul></details>
+</article>
+    <p class="empty" id="empty" hidden>No term matches. Clear the search or pick another source.</p>
+  </div>
+
+  <h2>Spreadsheet rows not in MIPRIMO</h2>
+  <p class="lede">Rows of the pathway-lod term spreadsheet that have no place in the ontology yet, grouped by why.</p>
+  <details class="miss"><summary>Project term not minted yet (datatype properties, value sets, open rows) <span class="count">30</span></summary><div class="tablewrap"><table><thead><tr><th>Row</th><th>Term</th><th>Label</th><th>Type</th><th>Decision</th></tr></thead><tbody><tr><td class="num">T007</td><td><code>lodp:software</code></td><td>software</td><td>property</td><td>proposed</td></tr><tr><td class="num">T026</td><td><code>lodp:originalEvidenceCode</code></td><td>original evidence code</td><td>property</td><td>proposed</td></tr><tr><td class="num">T034</td><td><code>lodp:detectionRule</code></td><td>detection rule</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T035</td><td><code>lodp:coreDomain</code></td><td>core domain</td><td>property</td><td>proposed</td></tr><tr><td class="num">T040</td><td><code>lodp:percentGenesSimilar</code></td><td>percent genes similar</td><td>property</td><td>proposed</td></tr><tr><td class="num">T047</td><td><code>lodp:genomeAssembly</code></td><td>genome assembly</td><td>property</td><td>proposed</td></tr><tr><td class="num">T064</td><td><code>lodp:matchType</code></td><td>match type</td><td>property</td><td>proposed</td></tr><tr><td class="num">T065</td><td><code>lodp:agreementScore</code></td><td>agreement score</td><td>property</td><td>proposed</td></tr><tr><td class="num">T066</td><td><code>lodp:agreeingTool</code></td><td>agreeing tool</td><td>property</td><td>proposed</td></tr><tr><td class="num">T067</td><td><code>lodp:siriusConfidenceApprox</code></td><td>SIRIUS approximate confidence</td><td>property</td><td>proposed</td></tr><tr><td class="num">T068</td><td><code>lodp:ms2queryModelScore</code></td><td>MS2Query model score</td><td>property</td><td>proposed</td></tr><tr><td class="num">T069</td><td><code>lodp:dreamsSimilarity</code></td><td>DreaMS similarity</td><td>property</td><td>proposed</td></tr><tr><td class="num">T072</td><td><code>lodp:featureId</code></td><td>feature identifier</td><td>property</td><td>proposed</td></tr><tr><td class="num">T089</td><td><code>lodp:mutualRank</code></td><td>mutual rank</td><td>property</td><td>proposed</td></tr><tr><td class="num">T090</td><td><code>lodp:edgeWeight</code></td><td>edge weight</td><td>property</td><td>proposed</td></tr><tr><td class="num">T091</td><td><code>lodp:decayRate</code></td><td>decay rate</td><td>property</td><td>proposed</td></tr><tr><td class="num">T092</td><td><code>lodp:functionalCluster</code></td><td>functional cluster</td><td>class</td><td>proposed</td></tr><tr><td class="num">T094</td><td><code>lodp:clusterPValue</code></td><td>cluster p-value</td><td>property</td><td>proposed</td></tr><tr><td class="num">T099</td><td><code>lodp:solycLocus</code></td><td>Solyc locus</td><td>identifier</td><td>proposed</td></tr><tr><td class="num">T121</td><td><code>lodp:predictionScore</code></td><td>prediction score</td><td>property</td><td>open</td></tr><tr><td class="num">T146</td><td><code>lodp:log2FoldChange</code></td><td>log2 fold change</td><td>property</td><td>open</td></tr><tr><td class="num">T151</td><td><code>lodp:adjustedPValue</code></td><td>adjusted p-value</td><td>property</td><td>open</td></tr><tr><td class="num">T157</td><td><code>lodp:mutualRank</code></td><td>mutual rank</td><td>property</td><td>proposed</td></tr><tr><td class="num">T158</td><td><code>lodp:contrast</code></td><td>contrast</td><td>other</td><td>open</td></tr><tr><td class="num">T167</td><td><code>lodp:solycLocus</code></td><td>Solyc locus</td><td>identifier</td><td>proposed</td></tr><tr><td class="num">T187</td><td><code>lodp:matchCategory</code></td><td>match category</td><td>property</td><td>proposed</td></tr><tr><td class="num">T189</td><td><code>lodp:hasMass2Motif</code></td><td>has Mass2Motif</td><td>relation</td><td>proposed</td></tr><tr><td class="num">T190</td><td><code>lodp:motifProbability</code></td><td>motif probability</td><td>property</td><td>proposed</td></tr><tr><td class="num">T193</td><td><code>lodp:massErrorPpm</code></td><td>mass error (ppm)</td><td>property</td><td>proposed</td></tr><tr><td class="num">T194</td><td><code>lodp:massTolerancePpm</code></td><td>mass tolerance (ppm)</td><td>property</td><td>proposed</td></tr></tbody></table></div></details><details class="miss"><summary>Vocabulary not imported (used in the data or through mappings) <span class="count">69</span></summary><div class="tablewrap"><table><thead><tr><th>Row</th><th>Term</th><th>Label</th><th>Type</th><th>Decision</th></tr></thead><tbody><tr><td class="num">T001</td><td><code>SIO:000772</code></td><td>has evidence</td><td>relation</td><td>proposed</td></tr><tr><td class="num">T002</td><td><code>SEPIO:0000189</code></td><td>has_evidence</td><td>relation</td><td>open</td></tr><tr><td class="num">T004</td><td><code>prov:wasGeneratedBy</code></td><td>was generated by</td><td>relation</td><td>proposed</td></tr><tr><td class="num">T005</td><td><code>prov:used</code></td><td>used</td><td>relation</td><td>proposed</td></tr><tr><td class="num">T006</td><td><code>SWO:0004000</code></td><td>has version</td><td>property</td><td>proposed</td></tr><tr><td class="num">T008</td><td><code>SWO:0000001</code></td><td>software</td><td>property</td><td>open</td></tr><tr><td class="num">T011</td><td><code>SIO:000628</code></td><td>refers to</td><td>relation</td><td>open</td></tr><tr><td class="num">T014</td><td><code>rdf:Statement</code></td><td>Statement</td><td>class</td><td>open</td></tr><tr><td class="num">T015</td><td><code>wp:organism</code></td><td>organism</td><td>property</td><td>proposed</td></tr><tr><td class="num">T027</td><td><code>dcterms:references</code></td><td>References</td><td>relation</td><td>proposed</td></tr><tr><td class="num">T036</td><td><code>SWO:0004000</code></td><td>has version</td><td>property</td><td>proposed</td></tr><tr><td class="num">T037</td><td><code>skos:exactMatch</code></td><td>has exact match</td><td>relation</td><td>open</td></tr><tr><td class="num">T038</td><td><code>skos:closeMatch</code></td><td>has close match</td><td>relation</td><td>open</td></tr><tr><td class="num">T053</td><td><code>MS:1001031</code></td><td>spectral library search</td><td>evidence_type</td><td>open</td></tr><tr><td class="num">T054</td><td><code>EDAM:operation_3801</code></td><td>Spectral library search</td><td>evidence_type</td><td>open</td></tr><tr><td class="num">T055</td><td><code>MS:1002896</code></td><td>compound identification confidence level</td><td>property</td><td>open</td></tr><tr><td class="num">T056</td><td><code>MS:1002955</code></td><td>hr-ms compound identification confidence level</td><td>property</td><td>open</td></tr><tr><td class="num">T057</td><td><code>NCIT:C181006</code></td><td>Metabolite Identification Confidence Level</td><td>property</td><td>open</td></tr><tr><td class="num">T058</td><td><code>CHEMINF:000059</code></td><td>InChIKey</td><td>identifier</td><td>proposed</td></tr><tr><td class="num">T061</td><td><code>skos:closeMatch</code></td><td>has close match</td><td>relation</td><td>open</td></tr><tr><td class="num">T063</td><td><code>skos:relatedMatch</code></td><td>has related match</td><td>relation</td><td>open</td></tr><tr><td class="num">T070</td><td><code>SIO:000765</code></td><td>probability value</td><td>property</td><td>open</td></tr><tr><td class="num">T073</td><td><code>MS:1000894</code></td><td>retention time</td><td>property</td><td>open</td></tr><tr><td class="num">T074</td><td><code>MS:1000465</code></td><td>scan polarity</td><td>property</td><td>proposed</td></tr><tr><td class="num">T075</td><td><code>MS:1000130</code></td><td>positive scan</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T076</td><td><code>MS:1000077</code></td><td>positive polarity acquisition</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T077</td><td><code>MS:1000353</code></td><td>adduct ion</td><td>property</td><td>open</td></tr><tr><td class="num">T078</td><td><code>MS:1002807</code></td><td>positive mode adduct ion</td><td>property</td><td>open</td></tr><tr><td class="num">T080</td><td><code>SIO:001257</code></td><td>chemical-gene association</td><td>class</td><td>proposed</td></tr><tr><td class="num">T081</td><td><code>SIO:000628</code></td><td>refers to</td><td>relation</td><td>proposed</td></tr><tr><td class="num">T093</td><td><code>EDAM:data_3768</code></td><td>Clustered expression profiles</td><td>class</td><td>open</td></tr><tr><td class="num">T096</td><td><code>EDAM:operation_3463</code></td><td>Expression correlation analysis</td><td>method</td><td>proposed</td></tr><tr><td class="num">T097</td><td><code>EDAM:operation_3432</code></td><td>Clustering</td><td>method</td><td>proposed</td></tr><tr><td class="num">T098</td><td><code>EDAM:operation_3766</code></td><td>Weighted correlation network analysis</td><td>method</td><td>open</td></tr><tr><td class="num">T112</td><td><code>SWO:0004000</code></td><td>has version</td><td>property</td><td>proposed</td></tr><tr><td class="num">T113</td><td><code>dcterms:source</code></td><td>Source</td><td>identifier</td><td>open</td></tr><tr><td class="num">T114</td><td><code>SIO:000897</code></td><td>association</td><td>class</td><td>open</td></tr><tr><td class="num">T115</td><td><code>rdf:Statement</code></td><td>Statement</td><td>class</td><td>open</td></tr><tr><td class="num">T118</td><td><code>AIO:GraphConvolutionalNetwork</code></td><td>Graph Convolutional Network</td><td>class</td><td>open</td></tr><tr><td class="num">T120</td><td><code>SWO:0004000</code></td><td>has version</td><td>property</td><td>open</td></tr><tr><td class="num">T122</td><td><code>SIO:000765</code></td><td>probability value</td><td>property</td><td>open</td></tr><tr><td class="num">T131</td><td><code>EDAM:topic_3170</code></td><td>RNA-Seq</td><td>method</td><td>open</td></tr><tr><td class="num">T142</td><td><code>SIO:001245</code></td><td>standard score</td><td>property</td><td>open</td></tr><tr><td class="num">T143</td><td><code>NCIT:C68741</code></td><td>Z-Score</td><td>property</td><td>open</td></tr><tr><td class="num">T144</td><td><code>EDAM:operation_3223</code></td><td>Differential gene expression profiling</td><td>method</td><td>proposed</td></tr><tr><td class="num">T150</td><td><code>EDAM:data_3932</code></td><td>Q-value</td><td>property</td><td>open</td></tr><tr><td class="num">T156</td><td><code>INO:0000231</code></td><td>co-expression</td><td>relation</td><td>open</td></tr><tr><td class="num">T159</td><td><code>EFO:0000727</code></td><td>treatment</td><td>other</td><td>open</td></tr><tr><td class="num">T160</td><td><code>EFO:0000683</code></td><td>replicate</td><td>class</td><td>proposed</td></tr><tr><td class="num">T162</td><td><code>SIO:001418</code></td><td>replicate</td><td>class</td><td>open</td></tr><tr><td class="num">T164</td><td><code>EFO:0000727</code></td><td>treatment</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T165</td><td><code>AGRO:00000322</code></td><td>treatment</td><td>value_set</td><td>open</td></tr><tr><td class="num">T168</td><td><code>MS:1000129</code></td><td>negative scan</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T169</td><td><code>MS:1000076</code></td><td>negative polarity acquisition</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T170</td><td><code>MS:1000031</code></td><td>instrument model</td><td>property</td><td>proposed</td></tr><tr><td class="num">T171</td><td><code>MS:1003095</code></td><td>Orbitrap Exploris 120</td><td>value_set</td><td>proposed</td></tr><tr><td class="num">T172</td><td><code>MS:1000073</code></td><td>electrospray ionization</td><td>method</td><td>open</td></tr><tr><td class="num">T173</td><td><code>MS:1003221</code></td><td>data-dependent acquisition</td><td>method</td><td>proposed</td></tr><tr><td class="num">T174</td><td><code>MS:1002481</code></td><td>higher energy beam-type collision-induced dissociation</td><td>method</td><td>proposed</td></tr><tr><td class="num">T175</td><td><code>MS:1000138</code></td><td>normalized collision energy</td><td>property</td><td>proposed</td></tr><tr><td class="num">T176</td><td><code>MS:1000501</code></td><td>scan window lower limit</td><td>property</td><td>proposed</td></tr><tr><td class="num">T177</td><td><code>MS:1000500</code></td><td>scan window upper limit</td><td>property</td><td>proposed</td></tr><tr><td class="num">T178</td><td><code>MS:1000011</code></td><td>mass resolution</td><td>property</td><td>proposed</td></tr><tr><td class="num">T180</td><td><code>MS:1002342</code></td><td>mzmine</td><td>method</td><td>proposed</td></tr><tr><td class="num">T181</td><td><code>MS:1000745</code></td><td>retention time alignment</td><td>method</td><td>open</td></tr><tr><td class="num">T183</td><td><code>wp:organism</code></td><td>organism</td><td>property</td><td>proposed</td></tr><tr><td class="num">T185</td><td><code>MSIO:0000191</code></td><td>peak area</td><td>property</td><td>open</td></tr><tr><td class="num">T192</td><td><code>MS:4000072</code></td><td>observed mass accuracy</td><td>property</td><td>open</td></tr><tr><td class="num">T195</td><td><code>MS:1000579</code></td><td>MS1 spectrum</td><td>property</td><td>open</td></tr></tbody></table></div></details><details class="miss"><summary>No term chosen yet <span class="count">9</span></summary><div class="tablewrap"><table><thead><tr><th>Row</th><th>Term</th><th>Label</th><th>Type</th><th>Decision</th></tr></thead><tbody><tr><td class="num">T028</td><td><code>—</code></td><td></td><td>other</td><td>open</td></tr><tr><td class="num">T029</td><td><code>—</code></td><td></td><td>other</td><td>open</td></tr><tr><td class="num">T125</td><td><code>—</code></td><td></td><td>property</td><td>open</td></tr><tr><td class="num">T126</td><td><code>—</code></td><td></td><td>value_set</td><td>open</td></tr><tr><td class="num">T127</td><td><code>—</code></td><td></td><td>other</td><td>open</td></tr><tr><td class="num">T129</td><td><code>—</code></td><td></td><td>value_set</td><td>open</td></tr><tr><td class="num">T179</td><td><code>—</code></td><td></td><td>other</td><td>open</td></tr><tr><td class="num">T186</td><td><code>—</code></td><td></td><td>other</td><td>open</td></tr><tr><td class="num">T197</td><td><code>—</code></td><td></td><td>evidence_type</td><td>open</td></tr></tbody></table></div></details><details class="miss"><summary>Rejected in the spreadsheet <span class="count">13</span></summary><div class="tablewrap"><table><thead><tr><th>Row</th><th>Term</th><th>Label</th><th>Type</th><th>Decision</th></tr></thead><tbody><tr><td class="num">T010</td><td><code>lodp:anchoredInPathway</code></td><td>anchored in pathway</td><td>relation</td><td>rejected</td></tr><tr><td class="num">T012</td><td><code>lodp:anchoredToMetabolite</code></td><td>anchored to metabolite</td><td>relation</td><td>rejected</td></tr><tr><td class="num">T013</td><td><code>lodp:anchorTier</code></td><td>anchor tier</td><td>value_set</td><td>rejected</td></tr><tr><td class="num">T041</td><td><code>GENEPIO:0100602</code></td><td>sequence identity percentage</td><td>property</td><td>rejected</td></tr><tr><td class="num">T043</td><td><code>lodp:linkTier</code></td><td>link tier</td><td>value_set</td><td>rejected</td></tr><tr><td class="num">T044</td><td><code>lodp:nSharedGenes</code></td><td>number of shared genes</td><td>property</td><td>rejected</td></tr><tr><td class="num">T045</td><td><code>lodp:fractionPathwayGenes</code></td><td>fraction of pathway genes</td><td>property</td><td>rejected</td></tr><tr><td class="num">T059</td><td><code>identifiers.org:inchikey</code></td><td>InChIKey IRI</td><td>identifier</td><td>rejected</td></tr><tr><td class="num">T060</td><td><code>lodp:matchLevel</code></td><td>match level</td><td>value_set</td><td>rejected</td></tr><tr><td class="num">T100</td><td><code>lodp:anchoredSide</code></td><td>anchored side</td><td>value_set</td><td>rejected</td></tr><tr><td class="num">T101</td><td><code>lodp:geneAnchorTier</code></td><td>gene anchor tier</td><td>value_set</td><td>rejected</td></tr><tr><td class="num">T102</td><td><code>lodp:metaboliteAnchorTier</code></td><td>metabolite anchor tier</td><td>value_set</td><td>rejected</td></tr><tr><td class="num">T196</td><td><code>lodp:candidateCount</code></td><td>candidate count</td><td>property</td><td>rejected</td></tr></tbody></table></div></details>
+
+  <footer>Draft for review, generated from the MIPRIMO release and the pathway-lod term spreadsheet. Source: MIPRIMO commit 0f48473 (branch review-evidence-model). Imported terms keep only their parents, not their other axioms. MIPRIMO IDs use a placeholder namespace until the final one is chosen.</footer>
+</div>
+
+<script>
+(function () {
+  var q = document.getElementById("q"), status = document.getElementById("status"), empty = document.getElementById("empty");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".term"));
+  var chips = Array.prototype.slice.call(document.querySelectorAll(".chip"));
+  var source = "all";
+  function apply() {
+    var s = q.value.trim().toLowerCase(), n = 0;
+    cards.forEach(function (c) {
+      var ok = (source === "all" || c.dataset.source === source) && (!s || c.dataset.search.indexOf(s) !== -1 || c.textContent.toLowerCase().indexOf(s) !== -1);
+      c.hidden = !ok; if (ok) n++;
+    });
+    empty.hidden = n !== 0;
+    status.textContent = n === cards.length ? "Showing all " + n + " terms" : "Showing " + n + " of " + cards.length + " terms";
+  }
+  chips.forEach(function (b) {
+    b.addEventListener("click", function () {
+      source = b.dataset.filter;
+      chips.forEach(function (x) { x.classList.toggle("on", x === b); });
+      apply();
+    });
+  });
+  q.addEventListener("input", apply);
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: "strict",
+  theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default" });</script>
+</body>
+</html>
