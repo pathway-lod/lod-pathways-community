@@ -100,7 +100,7 @@ def add_term(rows, req_id, form, issue):
     new.update({"row_id": f"T{nid:03d}", "role": role, "curie": term, "label": "", "ontology": code, "iri": "",
                 "coverage": coverage, "decision": "proposed", "action": "review", "used_in": "", "value_of": "",
                 "notes": one_line(form.get("Why this term", "")) + f" (suggested in issue #{issue['number']})",
-                "source": f"issue #{issue['number']}", "owner": "", "issue_url": issue.get("html_url", ""), "verified": ""})
+                "source": f"issue #{issue['number']}", "owner": "", "issue_url": issue.get("html_url", ""), "verified": "", "placement": ""})
     rows.append(new)
     return new["row_id"], term
 
