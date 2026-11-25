@@ -1,0 +1,16 @@
+species,metabolite,tissues,bait_r_with_metabolite,bait_r_if_tissues_swapped,transcripts_r_ge_0.75_and_expr_ge_50,transcripts_expr_ge_50,expected_by_chance_r_ge_0.75,p_at_r_0.75_two_sided
+Ci,Secologanin,6,0.98,0.18,389,5923,255,0.0859
+Ci,DAII,6,0.94,0.27,502,5923,255,0.0859
+Ci,DAI,6,0.72,0.47,664,5923,255,0.0859
+Ci,6-O-Me-DAIIA,6,0.71,0.39,772,5923,255,0.0859
+Ci,Ipecoside,6,0.95,-0.12,269,5923,255,0.0859
+Ci,Protoemetine,6,0.94,0.04,295,5923,255,0.0859
+Ci,Cephaeline,6,0.97,0.03,494,5923,255,0.0859
+Ci,Emetine,6,0.56,-0.02,2,5923,255,0.0859
+As,Secologanic acid,12,0.76,0.78,868,7170,18,0.005
+As,DAIIA,12,0.65,0.65,429,7170,18,0.005
+As,DAIA,12,0.41,0.41,96,7170,18,0.005
+As,6-O-Me-DAIIA,12,0.26,0.24,17,7170,18,0.005
+As,6-O-Me-DAIA,12,0.42,0.42,176,7170,18,0.005
+As,Protoemetine,12,0.73,0.73,750,7170,18,0.005
+As,Cephaeline,12,0.2,0.17,821,7170,18,0.005
