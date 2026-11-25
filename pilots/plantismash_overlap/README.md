@@ -48,7 +48,6 @@ Then open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kern
 - [`explore_results.ipynb`](explore_results.ipynb) holds the results with written interpretation.
 - `results/plantismash_clusters.csv.gz`: one row per BGC (type, rules, core domains, MIBiG match).
 - `results/bgc_pathway_links.csv.gz`: one row per BGC × pathway, with tier, linking genes and overlap values.
-- `build_tomato_bgc.py` writes `results/bgc_tomato.ttl`: the genes of the 63 tomato clusters (`Solanum_lycopersicum_GCF_036512215.1`) as Ensembl Plants gene IRIs with a Solyc locus, the same identifiers as the MEANtools associations of [`pairedomics_overlap`](../pairedomics_overlap/). The RefSeq proteins of the clusters are mapped to UniProt with the UniProt ID mapping service, and the Ensembl Plants cross-reference gives the Solyc locus: 619 of the 1,409 cluster genes get one (503 gene-cluster links in the graph), so it is a lower bound. It is a supporting graph (not a claim graph) read by the [minimum-information tiers](../../minimum_information/) of gene clusters and co-expression. Only 6 of the 350 genes of the MEANtools associations are in a tomato cluster.
 - `results/bgc_evidence.ttl`: a **draft** RDF export of the 448 BGC–pathway links of the direct and UniProt tiers and the 57 BGCs they involve. It does not conform to the [shape constraints](../../shape_constraints/) (for example, it has no anchor tier and attributes the link to plantiSMASH itself) and is superseded by `build_rdf.py bgc` there, which writes validated RDF.
 
 ## Results (2026-09-29)

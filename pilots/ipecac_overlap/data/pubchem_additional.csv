@@ -1,5 +1,0 @@
-name,pubchem,smiles,note
-Protoemetinol,11162971,CC[C@H]1CN2CCC3=CC(=C(C=C3[C@@H]2C[C@@H]1CCO)OC)OC,"PubChem CID given by the author of the data set (2026-11); SMILES from PubChem"
-10-O-demethyl-protoemetinol,13855673,CC[C@H]1CN2CCC3=CC(=C(C=C3[C@@H]2C[C@@H]1CCO)O)OC,"PubChem CID given by the author of the data set (2026-11); SMILES from PubChem"
-10-O-demethylprotoemetinol,13855673,CC[C@H]1CN2CCC3=CC(=C(C=C3[C@@H]2C[C@@H]1CCO)O)OC,"Spelling of the Fig. 3c labels; PubChem CID given by the author of the data set (2026-11); SMILES from PubChem"
-7-O-Me-DAIA,178183434,COC1=C(C=C2CCN[C@@H](C2=C1)C[C@H]3[C@H]([C@@H](OC=C3C(=O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)C=C)O,"PubChem title: 7-O-Me-deacetylipecosidic acid; CID given by the author (2026-11); SMILES from PubChem"

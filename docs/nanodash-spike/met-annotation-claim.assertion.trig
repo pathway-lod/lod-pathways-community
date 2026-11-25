@@ -1,0 +1,75 @@
+# DRAFT, NOT PUBLISHED, NOT TESTED IN NANODASH.
+#
+# The assertion part of a Nanodash template (nt:AssertionTemplate) for one metabolite annotation claim
+# of the MET use case: a feature, the PlantMetWiki metabolite it is anchored to, how the match was made,
+# and one evidence node with its type, tier and run. Tool scores (MET-12) are tool-specific and are left out of this first draft.
+#
+# Modelled on a published template that uses the same constructs (a GuidedChoicePlaceholder with
+# nt:possibleValuesFromApi pointing at the Ontology Lookup Service):
+#   https://w3id.org/np/RAYPTZVeBhqbabhNwh9aB0AoK_bz_Uk5Z3bEh-8gs0QiU
+# Placeholder kinds and constraints used here: nt:GuidedChoicePlaceholder (picker backed by OLS),
+# nt:RestrictedChoicePlaceholder + nt:possibleValue (closed list), nt:hasRegex, nt:hasDatatype.
+#
+# Still to do in the spike: wrap it in a nanopublication (Head, provenance, publication info), publish it
+# (this is signed, public and permanent), then fill it in with feature neg 589 and compare the result with
+# examples/sample_evidence_graph.ttl. The lodp: terms are the placeholder vocabulary of this repository.
+
+@prefix sub:  <https://example.org/draft-template/met-annotation-claim#> .
+@prefix nt:   <https://w3id.org/np/o/ntemplate/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sio:  <http://semanticscience.org/resource/> .
+@prefix lodp: <https://example.org/lod-pathways/pilot/> .
+
+sub:assertion {
+
+  sub:assertion a nt:AssertionTemplate ;
+    rdfs:label "Annotating an MS feature as a PlantMetWiki metabolite, with its evidence" ;
+    dct:description "A claim that a feature of an untargeted metabolomics dataset is annotated as a metabolite of PlantMetWiki, with the evidence for it and the run that produced it." ;
+    nt:hasNanopubLabelPattern "${feature} annotated as ${metabolite}" ;
+    nt:hasStatement sub:st0, sub:st1, sub:st2, sub:st3, sub:st4, sub:st5, sub:st6, sub:st7, sub:st8 ;
+    nt:hasTag "Metabolomics" .
+
+  # ---- resources made by this nanopublication
+  sub:claim a nt:IntroducedResource, nt:LocalResource ;
+    rdfs:label "this annotation claim" .
+  sub:evidence a nt:LocalResource ;
+    rdfs:label "the evidence of the claim" .
+
+  # ---- placeholders
+  sub:feature a nt:UriPlaceholder ;
+    rdfs:label "the feature (IRI of the feature in its dataset)" .
+
+  sub:metabolite a nt:UriPlaceholder ;
+    rdfs:label "the PlantMetWiki metabolite (identifiers.org InChIKey IRI)" ;
+    nt:hasRegex "^https://identifiers\\.org/inchikey/[A-Z]{14}-[A-Z]{10}-[A-Z]$" .
+
+  sub:matchLevel a nt:RestrictedChoicePlaceholder ;
+    rdfs:label "what the structure match compared" ;
+    nt:possibleValue "connectivity", "full" .
+
+  sub:evidenceType a nt:GuidedChoicePlaceholder ;
+    rdfs:label "the type of evidence (an ECO class)" ;
+    nt:possibleValuesFromApi "https://www.ebi.ac.uk/ols/api/select?ontology=eco&fieldList=iri,label,description&q=" .
+
+  sub:tier a nt:RestrictedChoicePlaceholder ;
+    rdfs:label "the identification tier" ;
+    nt:possibleValue "gnps_library", "consensus_inchi", "sirius", "ms2query_exact", "dreams" .
+
+  sub:run a nt:UriPlaceholder ;
+    rdfs:label "the run that produced the evidence (IRI of a tool run with software, version and input data)" .
+
+  # ---- statements
+  sub:st0 rdf:subject sub:claim ; rdf:predicate rdf:type ; rdf:object lodp:MetaboliteAnnotation .
+  sub:st1 rdf:subject sub:claim ; rdf:predicate lodp:feature ; rdf:object sub:feature .
+  sub:st2 rdf:subject sub:claim ; rdf:predicate lodp:anchoredToMetabolite ; rdf:object sub:metabolite .
+  sub:st3 rdf:subject sub:claim ; rdf:predicate lodp:anchorTier ; rdf:object "structure_match" .
+  sub:st4 rdf:subject sub:claim ; rdf:predicate lodp:matchLevel ; rdf:object sub:matchLevel .
+  sub:st5 rdf:subject sub:claim ; rdf:predicate sio:SIO_000772 ; rdf:object sub:evidence .
+  sub:st6 rdf:subject sub:evidence ; rdf:predicate rdf:type ; rdf:object sub:evidenceType .
+  sub:st7 rdf:subject sub:evidence ; rdf:predicate lodp:identificationTier ; rdf:object sub:tier .
+  sub:st8 rdf:subject sub:evidence ; rdf:predicate prov:wasGeneratedBy ; rdf:object sub:run .
+}
