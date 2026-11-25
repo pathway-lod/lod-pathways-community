@@ -64,6 +64,25 @@ The graph can also propose a **new reaction inside the pathway**, not only a pat
 
 How specific is step 3's mass inference? A random mass finds a PlantMetWiki compound as the implied acid in 0.9 % of cases; 41 of 1,131 features (3.6 %) do, so it is selective but not unique. The reaction is a **hypothesis** that needs a standard or MS/MS; the gene side (THT genes) supports the enzyme class but not the substrate specificity.
 
+## 4c. Is the putative reaction known? Rhea and the literature
+
+**Rhea.** A text search for "caffeoyl" in Rhea (27 reactions, checked 2026-11-22) has **no reaction with tyramine** and none with N-caffeoyltyramine as product, so the ghost edge is still missing from Rhea. The closest reactions are other N-acylations with caffeoyl-CoA, which show that caffeoyl-CoA is an accepted donor for amine transferases, but with another amine and another EC:
+
+| Rhea | Reaction | EC |
+|---|---|---|
+| RHEA:12436 | (E)-caffeoyl-CoA + putrescine = N-caffeoylputrescine + CoA + H+ | 2.3.1.138 (putrescine N-hydroxycinnamoyltransferase) |
+| RHEA:66936 | 5-hydroxyanthranilate + (E)-caffeoyl-CoA = avenanthramide C + CoA | 2.3.1.302 |
+| RHEA:22344 | (2R)-3-(3,4-dihydroxyphenyl)lactate + (E)-caffeoyl-CoA = (R)-rosmarinate + CoA (an O-ester, less close) | 2.3.1.140 |
+
+The other caffeoyl-CoA reactions of the list are neighbouring steps (methylation to feruloyl-CoA, formation from caffeate, quinate, shikimate and glucoside conjugates) and not the claim.
+
+**Literature** (a quick web search, not a systematic review; nothing below validates this feature):
+- **Supports the enzyme class.** THT makes hydroxycinnamic acid amides and is induced by pathogens, wounding and elicitors; tomato THT is a multigene family; overexpression raises coumaroyltyramine; the *C. fulvum* interaction involves amide accumulation. The amides reported in tomato are coumaroyl- and feruloyltyramine.
+- **Caffeoyl-CoA as donor.** Recombinant potato THT accepted caffeoyl-CoA, with the highest affinity for tyramine. Tobacco and poppy THT are reported not to use caffeoyl-CoA, so whether the *tomato* enzymes do is **open**, and which homolog `Solyc08g068730` is was not settled by the sources found.
+- **Not found.** No source reporting caffeoyltyramine in tomato or in the *C. fulvum* interaction, nor the MEANtools annotation of this feature. The compound is therefore **not validated**; it needs MS/MS or a standard, and an assay of the tomato THT with caffeoyl-CoA.
+
+**What it means for the claim.** The reaction is chemically plausible and has close analogues (Rhea, potato THT), but it stays a hypothesis at identification level 3-4. The literature check should be repeated with targeted searches (N-caffeoyltyramine in tomato and Solanaceae, the potato THT substrate study, the MEANtools supplement).
+
 ## 5. How to read a MEANtools association
 
 ![Reading guide](notebooks/figures/tht_how_to_read.png)
