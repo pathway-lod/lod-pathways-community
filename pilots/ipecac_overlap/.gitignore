@@ -1,0 +1,8 @@
+# Downloaded inputs (Zenodo 10.5281/zenodo.23661892, ~37 MB) and their cached copies; recreated by match_ipecac.py
+data/*.xlsx
+data/*.pkl
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+# Supplementary Information and Source Data of the paper (see the README for where to get them)
+supplementaries/

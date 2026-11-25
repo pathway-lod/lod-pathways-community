@@ -1,0 +1,10 @@
+pyoxigraph
+rdflib
+requests
+pandas
+ipykernel
+nbclient
+nbformat
+matplotlib
+rdkit
+biopython

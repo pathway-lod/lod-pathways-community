@@ -48,6 +48,10 @@ Open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kernel an
 - [`explore_results.ipynb`](explore_results.ipynb) holds the results with written interpretation.
 - `results/cluster_pairs.csv`: every gene–metabolite pair in a functional cluster (DR 10), with correlation, mutual rank, cluster statistics and its PlantMetWiki mapping.
 - `results/gene_pathway_map.csv` and `results/metabolite_pathway_map.csv`: how each gene and each feature reaches PlantMetWiki.
+- `build_gene_annotation.py` writes two **supporting graphs** that the [minimum-information tiers](../../minimum_information/) read (not claim graphs: they do not follow the shapes):
+  - `results/gene_annotation.ttl`: for each gene of the evidence graph its UniProt entry (`lodp:uniprot`), its EC numbers (`lodp:ecNumber`) and its orthologs among the enzymes that PlantMetWiki lists in pathways (`lodp:orthologOf`, OrthoDB groups queried live). 315 of the 350 genes have a UniProt entry, 98 an EC number and 23 an ortholog.
+  - `results/feature_annotation.ttl`: the MS1 (mass only) annotation of the 43 features that match a PlantMetWiki metabolite, in the format of the annotation graph.
+  Run `python build_gene_annotation.py` (internet, about 5 min). Without these graphs the gene tiers find almost nothing, because the evidence graph has only the Solyc locus of each gene.
 - `results/associations.ttl`: a **draft** RDF export of the associations from significant clusters. It does not conform to the [shape constraints](../../shape_constraints/) (for example, it has no anchor tier) and is superseded by `build_rdf.py association` there, which writes validated RDF.
 
 ## First results (2026-09-29, fungal treatment, decay rate 10)
@@ -84,3 +88,11 @@ Open [`explore_results.ipynb`](explore_results.ipynb) with the `.venv` kernel an
 - [ ] Match at reaction level: gene EC and metabolite in the *same* reaction.
 - [ ] Request the ECO term; define the `lodp:` properties in a small vocabulary.
 - [ ] Report the `NPDB_annotations` issue to the MEANtools authors.
+
+## Orphan features (use case, draft)
+
+`orphan_features.py` (baseline) and `orphan_features_v2.py` (specificity weighting, mass-delta tier, mass-defect gate) rank PlantMetWiki pathways for MEANtools features that have no PlantMetWiki compound, through their correlated genes; results in `results/orphan_*.csv`, OrthoDB caches in `data/orthodb_*.json`. Summary and negative result: [`minimum_information/orphan-features-usecase.md`](../../minimum_information/orphan-features-usecase.md).
+
+## Sequence tier and funnel for all correlated genes (draft)
+
+`sequence_transfer.py` transfers an EC number to each tomato gene from proteins of the same UniRef50 cluster (at least 50 % identical; clusters with more than 3,000 members are skipped) and `funnel_all_genes.py` counts, for all 5,380 correlated genes, which tiers reach a pathway (`results/gene_seq_ec.csv`, `results/funnel_all_genes.csv`). The two large UniProt caches (`data/uniref50_ec_*.json`, about 10 MB) are not committed; the scripts rebuild them (about 15 minutes, needs internet).

@@ -1,0 +1,12 @@
+tier,clustered_350,all_5380,Solyc08g068730,Solyc08g068710
+genes with a MEANtools correlation/association,350,5380,yes,yes
+with a UniProt entry,315,4776,yes,yes
+with an EC number of its own,98,1035,no,no
+with an EC number transferred from a similar protein (UniRef50),124,1457,yes,yes
+reach a pathway: own EC (0.40),45,409,no,no
+"reach a pathway: transferred EC, sequence similarity (0.50)",61,688,yes,yes
+reach a pathway: ortholog of a pathway enzyme (0.50),22,238,no,no
+reach a pathway: UniProt entry listed (0.80),0,2,no,no
+reach a pathway: Solyc locus listed (0.90),0,16,no,no
+reach a pathway: any tier,67,777,yes,yes
+"gene AND an annotated correlated feature in the same pathway (MR <= 10, r > 0)",1,7,no,no
