@@ -20,10 +20,10 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|
 | **PMN** | PlantCyc computationally inferred | Plant Metabolic Network (PlantCyc and the other Cyc databases) | 14 | PMN-01 to PMN-14 |
 | **BGC** | plantiSMASH BGCs | biosynthetic gene cluster | 16 | BGC-01 to BGC-16 |
-| **MET** | Metabolomics data | metabolomics | 31 | MET-01 to MET-31 |
+| **MET** | Metabolomics data | metabolomics | 33 | MET-01 to MET-33 |
 | **PO** | Paired omics data | paired omics (transcriptomics and metabolomics of the same samples) | 12 | PO-01 to PO-12 |
 | **UN** | Unsupervised predictions | unsupervised (machine-learning) predictions | 12 | UN-01 to UN-12 |
-| **TX** | Transcriptomics data | transcriptomics | 22 | TX-01 to TX-22 |
+| **TX** | Transcriptomics data | transcriptomics | 24 | TX-01 to TX-24 |
 | **COM** | Shared by all use cases | common to all use cases | 12 | COM-01 to COM-12 |
 <!-- END:usecases -->
 
@@ -72,18 +72,18 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|---|---|
 | PMN - PlantCyc computationally inferred | 14 | 10 | 1 | 3 | 5 | 1 |
 | BGC - plantiSMASH BGCs | 16 | 8 | 2 | 6 | 3 | 7 |
-| MET - Metabolomics data | 31 | 15 | 5 | 11 | 18 | 19 |
+| MET - Metabolomics data | 33 | 16 | 6 | 11 | 19 | 19 |
 | PO - Paired omics data | 12 | 5 | 1 | 6 | 6 | 9 |
 | UN - Unsupervised predictions | 12 | 3 | 3 | 6 | 12 | 2 |
-| TX - Transcriptomics data | 22 | 12 | 6 | 4 | 13 | 6 |
+| TX - Transcriptomics data | 24 | 13 | 7 | 4 | 14 | 6 |
 | COM - Shared by all use cases | 12 | 6 | 1 | 5 | 4 | 5 |
-| **All** | **119** | **59** | **19** | **41** | **61** | **45** |
+| **All** | **123** | **61** | **21** | **41** | **63** | **45** |
 <!-- END:overview -->
 
 ### Decisions needed
 
 <!-- BEGIN:decisions -->
-61 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
+63 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
 
 | ID | Use case | Requirement | Owner | Action | Why it is open |
 |---|---|---|---|---|---|
@@ -117,6 +117,7 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **MET-28** | MET - Metabolomics data | The annotation rests on the accurate mass of an MS1 feature only (no fragment spectrum) | - | review | General MS evidence, used when no fragment spectrum supports the annotation (MET-01 is MS/MS-specific). |
 | **MET-29** | MET - Metabolomics data | Mass error and tolerance of a mass match | - | review, local_term | A QC metric of a run, not of one match. |
 | **MET-30** | MET - Metabolomics data | The feature has only an MS1 spectrum, or also MS/MS spectra | - | review | The MEANtools XCMS table has only m/z and retention time per feature. |
+| **MET-33** | MET - Metabolomics data | Growth conditions of the plants the sample was taken from (light, temperature, humidity, growth facility) | - | reuse, review | Same term as TX-24. |
 | **PMN-07** | PMN - PlantCyc computationally inferred | Computational inference reviewed by a curator (EV-COMP-HINF) | - | review | Not present in the PlantMetWiki snapshot; confirm the mapping with the PlantCyc curators. |
 | **PMN-08** | PMN - PlantCyc computationally inferred | Computational inference without human oversight (EV-COMP-AINF) | - | review | Not present in the PlantMetWiki snapshot. |
 | **PMN-14** | PMN - PlantCyc computationally inferred | Which Cyc database a statement or prediction comes from | - | review | 'A related resource from which the described resource is derived'. |
@@ -138,6 +139,7 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **TX-17** | TX - Transcriptomics data | The comparison a differential result refers to (treatment against control, tissue, time point) | - | local_term, review | Names the two conditions and their direction, so that the sign of a fold change is defined. |
 | **TX-18** | TX - Transcriptomics data | Replicates of a condition | - | reuse, review | 'biological replicate role'. |
 | **TX-20** | TX - Transcriptomics data | Treatment or condition applied to the plants | - | reuse, review | Agronomy Ontology 'treatment'. |
+| **TX-24** | TX - Transcriptomics data | Growth conditions of the plants the sample was taken from (light, temperature, humidity, growth facility) | - | reuse, review | Use this instead if the air temperature itself is recorded, not the exposure. |
 | **UN-01** | UN - Unsupervised predictions | A predicted link between two existing PlantMetWiki nodes that is not in the curated graph (for example 'this enzyme catalyses this reaction') | - | review | 'A relationship between two or more entities derived by some informational analysis'. |
 | **UN-02** | UN - Unsupervised predictions | Evidence: a machine-learning model predicted the link | - | review | Deep-learning neural network method evidence used in automatic assertion; fits a graph neural network. |
 | **UN-03** | UN - Unsupervised predictions | Type of the model (graph neural network and its architecture) | - | review | One family of graph neural networks. |
@@ -305,6 +307,8 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-29** | Mass error and tolerance of a mass match | - | `MS:4000072` observed mass accuracy (stand-in) | `lodp:massErrorPpm` mass error (ppm)<br>`lodp:massTolerancePpm` mass tolerance (ppm) | 🟡 partial | 🟠 open | review, local_term | - |
 | **MET-30** | The feature has only an MS1 spectrum, or also MS/MS spectra | `MS:1000579` MS1 spectrum | - | - | 🟢 covered | 🟠 open | review | - |
 | **MET-31** | Several PlantMetWiki metabolites match one feature by mass | - | - | `lodp:candidateCount` candidate count | 🔴 gap | 🔵 proposed | local_term | - |
+| **MET-32** | Developmental stage of the plants the sample was taken from | `PO:0009012` plant structure development stage | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **MET-33** | Growth conditions of the plants the sample was taken from (light, temperature, humidity, growth facility) | `PECO:0007078` light quantity exposure<br>`PECO:0007224` light intensity exposure<br>`PECO:0007175` temperature exposure<br>`PECO:0007197` humidity exposure<br>`PECO:0007269` growth chamber study<br>`PECO:0007248` greenhouse study | `ENVO:09200001` temperature of air (alternative)<br>`AGRO:00000637` relative humidity (alternative)<br>`AGRO:00000363` greenhouse (alternative) | - | 🟡 partial | 🟠 open | reuse, review | - |
 <!-- END:terms:metabolomics -->
 
 ---
@@ -422,6 +426,8 @@ Expression measurements and the statistics derived from them serve as evidence f
 | **TX-20** | Treatment or condition applied to the plants | `EFO:0000727` treatment | `AGRO:00000322` treatment (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **TX-21** | The sequencing dataset the expression values come from (BioProject, SRA or GEO accession) | - | - | `lodp:dataset` dataset | 🔴 gap | 🔵 proposed | local_term | - |
 | **TX-22** | Gene identifiers: expression tables and PlantMetWiki use different gene IDs | - | - | `lodp:solycLocus` Solyc locus | 🔴 gap | 🔵 proposed | local_term | - |
+| **TX-23** | Developmental stage of the plants the sample was taken from | `PO:0009012` plant structure development stage | - | - | 🟢 covered | 🔵 proposed | reuse | - |
+| **TX-24** | Growth conditions of the plants the sample was taken from (light, temperature, humidity, growth facility) | `PECO:0007078` light quantity exposure<br>`PECO:0007224` light intensity exposure<br>`PECO:0007175` temperature exposure<br>`PECO:0007197` humidity exposure<br>`PECO:0007269` growth chamber study<br>`PECO:0007248` greenhouse study | `ENVO:09200001` temperature of air (alternative)<br>`AGRO:00000637` relative humidity (alternative)<br>`AGRO:00000363` greenhouse (alternative) | - | 🟡 partial | 🟠 open | reuse, review | - |
 <!-- END:terms:transcriptomics -->
 
 ---
@@ -461,7 +467,7 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **BGC-11** | BGC - plantiSMASH BGCs | Percentage of the MIBiG cluster's genes that have a similar gene in the BGC | 🔴 gap | local_term | Integer, 0-100. |
 | **BGC-13** | BGC - plantiSMASH BGCs | How the overlap was established (same gene, same UniProt enzyme, or same EC number) | 🔴 gap | local_term | Values: gene_direct, gene_uniprot, gene_ec. |
 | **BGC-14** | BGC - plantiSMASH BGCs | Amount of overlap (shared genes, fraction of the pathway's genes or ECs) | 🔴 gap | local_term | Count of genes the BGC shares with the pathway. |
-| **BGC-16** | BGC - plantiSMASH BGCs | The genome assembly the BGC was predicted on | 🔴 gap | local_term | NCBI assembly accession, e.g. GCF_000001735.4. |
+| **BGC-16** | BGC - plantiSMASH BGCs | The genome assembly the BGC was predicted on | 🔴 gap | local_term | NCBI assembly accession, e.g. GCF_000001735.4. The closest existing term, MS:1002644 (genome reference version), is not an accession. |
 | **COM-06** | COM - Shared by all use cases | A run records the name of the software | 🔴 gap | local_term, review | A plain string. |
 | **COM-07** | COM - Shared by all use cases | Kinds of run are distinguished (prediction tool, linking, consensus, curation) | 🔴 gap | local_term | Subclass of prov:Activity; subclasses per kind of run are defined in shape_constraints/vocab/lodp.ttl. |
 | **COM-08** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki pathway | 🔴 gap | local_term, review | Gives one query that works across all use cases. |
@@ -505,6 +511,7 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **MET-10** | MET - Metabolomics data | A related compound (MS2Query analogue with a different mass) is not a detection | 🟡 partial | review | Analogue hits are currently left out of the generated RDF. |
 | **MET-28** | MET - Metabolomics data | The annotation rests on the accurate mass of an MS1 feature only (no fragment spectrum) | 🟡 partial | review | - |
 | **MET-29** | MET - Metabolomics data | Mass error and tolerance of a mass match | 🟡 partial | review, local_term | A QC metric of a run, not of one match. |
+| **MET-33** | MET - Metabolomics data | Growth conditions of the plants the sample was taken from (light, temperature, humidity, growth facility) | 🟡 partial | reuse, review | - |
 | **PMN-14** | PMN - PlantCyc computationally inferred | Which Cyc database a statement or prediction comes from | 🟡 partial | review | 'A related resource from which the described resource is derived'. Today the sample graph names the database in lodp:software ('PlantCyc'), which stretches that property. |
 | **PO-03** | PO - Paired omics data | Evidence: transcript and metabolite abundances are correlated | 🟡 partial | request_term, review | Request to ECO (github.com/evidenceontology/evidenceontology/issues): 'metabolite-transcript correlation evidence used in automatic assertion', as a child of 'expression pattern evidence'. ECO:0007590 is the closest class in the meantime. |
 | **TX-05** | TX - Transcriptomics data | Normalisation method (library-size normalisation, TMM, variance-stabilising transformation) | 🟡 partial | review | Variance stabilizing transformation (as in DESeq2 'vst'). |
@@ -513,6 +520,7 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **TX-11** | TX - Transcriptomics data | Mean of the normalised counts across samples (DESeq2 baseMean) | 🟡 partial | review | 'sample mean'; the counts it is computed from (normalised) have to be stated. |
 | **TX-12** | TX - Transcriptomics data | Adjusted p-value of a differential expression result (DESeq2 padj) | 🟡 partial | review, local_term | Q-value. The raw p-value is OBI:0000175 (PO-05). |
 | **TX-15** | TX - Transcriptomics data | Two genes are co-expressed | 🟡 partial | review | 'co-expression' in the Interaction Network Ontology; check that it describes a statistical association, not a physical interaction. |
+| **TX-24** | TX - Transcriptomics data | Growth conditions of the plants the sample was taken from (light, temperature, humidity, growth facility) | 🟡 partial | reuse, review | - |
 | **UN-03** | UN - Unsupervised predictions | Type of the model (graph neural network and its architecture) | 🟡 partial | review | One family of graph neural networks. A search of the Artificial Intelligence Ontology for 'graph neural network' returns only this class; confirm the architectures that were used. |
 | **UN-04** | UN - Unsupervised predictions | Training procedure (supervised learning on known links) | 🟡 partial | review | - |
 | **UN-05** | UN - Unsupervised predictions | Version of the model code and the training run (hyperparameters, random seed) | 🟡 partial | review | - |
@@ -550,15 +558,17 @@ Number of requirements per ontology and use case (a requirement counts once per 
 | [OBI](https://obi-ontology.org/): Ontology for Biomedical Investigations | - | - | - | 2 | 1 | 5 | - | 8 |
 | [EDAM](https://edamontology.org/): EDAM (data analysis and management) | - | - | 1 | 2 | - | 3 | - | 6 |
 | [SWO](https://github.com/allysonlister/swo): Software Ontology | 1 | 1 | - | - | 1 | - | 2 | 5 |
+| [PO](https://planteome.org/): Plant Ontology | - | - | 2 | - | - | 2 | - | 4 |
 | [SKOS](https://www.w3.org/TR/skos-reference/): SKOS (mapping relations) | - | 2 | 2 | - | - | - | - | 4 |
+| [AGRO](https://github.com/AgriculturalSemantics/agro): Agronomy Ontology | - | - | 1 | - | - | 2 | - | 3 |
 | [EFO](https://www.ebi.ac.uk/efo/): Experimental Factor Ontology | - | - | - | - | - | 3 | - | 3 |
 | [DCTERMS](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/): Dublin Core Terms | 2 | - | - | - | - | - | - | 2 |
+| [ENVO](https://sites.google.com/site/environmentontology/): Environment Ontology | - | - | 1 | - | - | 1 | - | 2 |
 | [NCIT](https://ncithesaurus.nci.nih.gov/): NCI Thesaurus | - | - | 1 | - | - | 1 | - | 2 |
-| [PO](https://planteome.org/): Plant Ontology | - | - | 1 | - | - | 1 | - | 2 |
+| [PECO](https://planteome.org/): Plant Experimental Conditions Ontology | - | - | 1 | - | - | 1 | - | 2 |
 | [PROV](https://www.w3.org/TR/prov-o/): PROV-O (provenance) | - | - | - | - | - | - | 2 | 2 |
 | [RDF](https://www.w3.org/TR/rdf11-concepts/): RDF | - | - | - | - | 1 | - | 1 | 2 |
 | [WP](https://vocabularies.wikipathways.org/wp): WikiPathways vocabulary | - | - | 1 | - | - | - | 1 | 2 |
-| [AGRO](https://github.com/AgriculturalSemantics/agro): Agronomy Ontology | - | - | - | - | - | 1 | - | 1 |
 | [AIO](https://github.com/berkeleybop/artificial-intelligence-ontology): Artificial Intelligence Ontology | - | - | - | - | 1 | - | - | 1 |
 | [BFO](https://basic-formal-ontology.org/): Basic Formal Ontology | - | 1 | - | - | - | - | - | 1 |
 | [CHEMINF](https://github.com/semanticchemistry/semanticchemistry): Chemical Information Ontology | - | - | 1 | - | - | - | - | 1 |

@@ -82,6 +82,8 @@ ONTOLOGIES = {
     "EFO": ("Experimental Factor Ontology", "https://www.ebi.ac.uk/efo/", "EFO", True),
     "INO": ("Interaction Network Ontology", "https://github.com/INO-ontology/ino", "INO", True),
     "AGRO": ("Agronomy Ontology", "https://github.com/AgriculturalSemantics/agro", "AGRO", True),
+    "PECO": ("Plant Experimental Conditions Ontology", "https://planteome.org/", "PECO", True),
+    "ENVO": ("Environment Ontology", "https://sites.google.com/site/environmentontology/", "ENVO", True),
     "PROV": ("PROV-O (provenance)", "https://www.w3.org/TR/prov-o/", "prov", False),
     "SKOS": ("SKOS (mapping relations)", "https://www.w3.org/TR/skos-reference/", "skos", False),
     "DCTERMS": ("Dublin Core Terms", "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/", "dcterms", False),
