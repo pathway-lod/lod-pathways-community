@@ -1,0 +1,5 @@
+term,parent,parent_label,confidence,reason
+ECO:0000000,sulo:InformationObject,information object,sure,ECO defines evidence as a type of information that is used to support an assertion.
+SO:0000110,sulo:SpatialObject,spatial object,discuss,A sequence feature is a region of DNA molecule. It can also be seen as an information (a sequence).
+edam:operation_0004,sulo:Process,process,discuss,"In our data an EDAM operation types a tool run, which is already a sulo:Process. EDAM itself defines as an operation as a function."
+

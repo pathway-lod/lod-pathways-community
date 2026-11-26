@@ -1,0 +1,12 @@
+# Top classes of shared ontologies placed in SULO
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#sure: ECO defines evidence as a type of information that is used to support an assertion.
+<http://purl.obolibrary.org/obo/ECO_0000000> rdfs:subClassOf <https://w3id.org/sulo/InformationObject> . #information object
+
+#discuss: A sequence feature is a region of DNA molecule. It can also be seen as an information (a sequence).
+<http://purl.obolibrary.org/obo/SO_0000110> rdfs:subClassOf <https://w3id.org/sulo/SpatialObject> . #spatial object
+
+#discuss: In our data an EDAM operation types a tool run, which is already a sulo:Process. EDAM itself defines as an operation as a function.
+<http://edamontology.org/operation_0004> rdfs:subClassOf <https://w3id.org/sulo/Process> . #process
+

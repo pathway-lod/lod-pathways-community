@@ -1,0 +1,46 @@
+property,label,used_in_data,value_types,solid_class,new_class_name
+lodp:adjustedPValue,adjusted p-value,0,double,sulo:Quantity,lodp:AdjustedPValue
+lodp:agreeingTool,agreeing tool,597,string,sulo:InformationObject,lodp:AgreeingTool
+lodp:agreementScore,agreement score,286,double,sulo:Quantity,lodp:AgreementScore
+lodp:anchorTier,anchor tier,4827,string,sulo:InformationObject,lodp:AnchorTier
+lodp:anchoredSide,anchored side,1293,string,sulo:InformationObject,lodp:AnchoredSide
+lodp:candidateCount,candidate count,0,integer,sulo:Quantity,lodp:CandidateCount
+lodp:clusterPValue,cluster p-value,1293,double,sulo:Quantity,lodp:ClusterPValue
+lodp:coreDomain,core domain,240,string,sulo:InformationObject,lodp:CoreDomain
+lodp:decayRate,decay rate,1,integer,sulo:Quantity,lodp:DecayRate
+lodp:detectionRule,detection rule,75,string,sulo:InformationObject,lodp:DetectionRule
+lodp:dreamsSimilarity,DreaMS similarity,1798,double,sulo:Quantity,lodp:DreamsSimilarity
+lodp:edgeWeight,edge weight,1293,double,sulo:Quantity,lodp:EdgeWeight
+lodp:featureId,feature identifier,2470,string,sulo:InformationObject,lodp:FeatureId
+lodp:fractionPathwayECs,fraction of pathway ECs,147,double,sulo:Quantity,lodp:FractionPathwayECs
+lodp:fractionPathwayGenes,fraction of pathway genes,350,double,sulo:Quantity,lodp:FractionPathwayGenes
+lodp:functionalCluster,functional cluster,1293,string,sulo:InformationObject,lodp:FunctionalCluster
+lodp:geneAnchorTier,gene anchor tier,212,string,sulo:InformationObject,lodp:GeneAnchorTier
+lodp:genomeAssembly,genome assembly,57,string,sulo:InformationObject,lodp:GenomeAssembly
+lodp:identificationTier,identification tier,3650,string,sulo:InformationObject,lodp:IdentificationTier
+lodp:libraryCompoundName,library compound name,139,string,sulo:InformationObject,lodp:LibraryCompoundName
+lodp:linkTier,link tier,448,string,sulo:InformationObject,lodp:LinkTier
+lodp:linkingEC,linking EC,172,string,sulo:InformationObject,lodp:LinkingEC
+lodp:linkingGene,linking gene,383,string,sulo:InformationObject,lodp:LinkingGene
+lodp:linkingProtein,linking protein,189,string,sulo:InformationObject,lodp:LinkingProtein
+lodp:log2FoldChange,log2 fold change,0,double,sulo:Quantity,lodp:Log2FoldChange
+lodp:massErrorPpm,mass error (ppm),0,double,sulo:Quantity,lodp:MassErrorPpm
+lodp:massTolerancePpm,mass tolerance (ppm),0,double,sulo:Quantity,lodp:MassTolerancePpm
+lodp:matchCategory,match category,0,string,sulo:InformationObject,lodp:MatchCategory
+lodp:matchLevel,match level,2722,string,sulo:InformationObject,lodp:MatchLevel
+lodp:matchType,match type,286,string,sulo:InformationObject,lodp:MatchType
+lodp:metaboliteAnchorTier,metabolite anchor tier,1144,string,sulo:InformationObject,lodp:MetaboliteAnchorTier
+lodp:motifProbability,motif probability,0,double,sulo:Quantity,lodp:MotifProbability
+lodp:ms2queryModelScore,MS2Query model score,838,double,sulo:Quantity,lodp:Ms2queryModelScore
+lodp:mutualRank,mutual rank,1293,double,sulo:Quantity,lodp:MutualRank
+lodp:nPathwayGenes,number of pathway genes,350,integer,sulo:Quantity,lodp:NPathwayGenes
+lodp:nSharedEC,number of shared ECs,147,integer,sulo:Quantity,lodp:NSharedEC
+lodp:nSharedGenes,number of shared genes,448,integer,sulo:Quantity,lodp:NSharedGenes
+lodp:originalEvidenceCode,original evidence code,409,string,sulo:InformationObject,lodp:OriginalEvidenceCode
+lodp:percentGenesSimilar,percent genes similar,16,integer,sulo:Quantity,lodp:PercentGenesSimilar
+lodp:precursorMzDifference,precursor m/z difference,838,double,sulo:Quantity,lodp:PrecursorMzDifference
+lodp:predictionScore,prediction score,0,double,sulo:Quantity,lodp:PredictionScore
+lodp:siriusConfidenceApprox,SIRIUS approximate confidence,585,double,sulo:Quantity,lodp:SiriusConfidenceApprox
+lodp:software,software,9,string,sulo:InformationObject,lodp:Software
+lodp:solycLocus,Solyc locus,0,string,sulo:InformationObject,lodp:SolycLocus
+lodp:usesTool,uses tool,3,string,sulo:InformationObject,lodp:UsesTool

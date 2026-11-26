@@ -1,0 +1,46 @@
+
+#lodp:annotation_MTBLS14270_neg_1040_TZPBMNKOLMSJPF a lodp:MetaboliteAnnotation ;
+#    sio:SIO_000772 [ a obo:ECO_0001580,
+#                obo:ECO_0007669 ;
+#            prov:wasGeneratedBy lodp:run_sirius ;
+#            lodp:identificationTier "sirius" ;
+#            lodp:siriusConfidenceApprox 7.27e-01 ] ;
+#    skos:closeMatch <http://www.wikidata.org/entity/Q96575530>,
+#        <https://identifiers.org/inchikey/TZPBMNKOLMSJPF-BZNQNGANSA-M> ;
+#    lodp:anchorTier "structure_match" ;
+#    lodp:anchoredToMetabolite <https://identifiers.org/inchikey/TZPBMNKOLMSJPF-BZNQNGANSA-M> ;
+#    lodp:feature lodp:feature_MTBLS14270_neg_1040 ;
+#    lodp:matchLevel "connectivity" .
+
+
+@prefix lodp: <https://example.org/lod-pathways/pilot/> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <https://example.org/solid-example/> .
+
+
+ex:annotation a lodp:MetaboliteAnnotation ;
+    lodp:anchoredToMetabolite <https://identifiers.org/inchikey/TZPBMNKOLMSJPF-BZNQNGANSA-M> ;
+    lodp:feature lodp:feature_MTBLS14270_neg_1040 ;
+    sulo:hasFeature ex:anchor_tier, ex:match_level ;
+    sio:SIO_000772 ex:evidence .
+
+ex:anchor_tier a lodp:AnchorTier, sulo:InformationObject;
+    sulo:hasValue "structure_match" .
+
+ex:match_level a lodp:MatchLevel, sulo:InformationObject;
+    sulo:hasValue "connectivity" .
+
+ex:evidence a obo:ECO_0001580, obo:ECO_0007669;
+    prov:wasGeneratedBy lodp:run_sirius;
+    sulo:hasFeature ex:identification_tier, ex:sirius_confidence .
+
+ex:identification_tier a lodp:IdentificationTier, sulo:InformationObject ;
+    sulo:hasValue "sirius" .
+
+ex:sirius_confidence a lodp:SiriusConfidenceApprox, sulo:Quantity;
+    sulo:hasValue "0.727"^^xsd:double;
+    sulo:refersTo ex:annotation .

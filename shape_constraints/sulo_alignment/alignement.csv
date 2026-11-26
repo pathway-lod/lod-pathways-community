@@ -1,0 +1,23 @@
+term,kind,parent,parent_label,confidence,reason
+lodp:Claim,class,sulo:InformationObject,information object,sure,"A claim is information: a statement that refers to a pathway or a metabolite, not a thing and not an event."
+lodp:BGCPathwayLink,class,,,inherits,Already a subclass of lodp:Claim.
+lodp:GeneMetaboliteAssociation,class,,,inherits,Already a subclass of lodp:Claim.
+lodp:MetaboliteAnnotation,class,,,inherits,Already a subclass of lodp:Claim.
+lodp:PathwayMembershipClaim,class,,,inherits,Already a subclass of lodp:Claim.
+lodp:MetaboliteFeature,class,sulo:InformationObject,information object,sure,A measured MS feature is a record of a measurement. Not a sulo:Quality despite the word feature.
+lodp:Mass2Motif,class,sulo:InformationObject,information object,discuss,A pattern learned by a model from many spectra; could also be classified as a sulo:Collection.
+lodp:Run,class,sulo:Process,process,sure,"A run starts, takes time and ends; software and input files take part in it."
+lodp:AnnotationToolRun,class,,,inherits,Already a subclass of lodp:Run.
+lodp:ConsensusAnnotationRun,class,,,inherits,Already a subclass of lodp:Run.
+lodp:LinkingRun,class,,,inherits,Already a subclass of lodp:Run.
+lodp:MEANtoolsRun,class,,,inherits,Already a subclass of lodp:Run.
+lodp:PlantiSMASHRun,class,,,inherits,Already a subclass of lodp:Run.
+lodp:PlantCycCuration,class,,,inherits,Already a subclass of lodp:Run.
+lodp:anchoredInPathway,object property,sulo:refersTo,refers to,sure,The claim refers to the pathway it is about.
+lodp:anchoredToMetabolite,object property,sulo:refersTo,refers to,sure,The claim refers to the metabolite it is about.
+lodp:feature,object property,sulo:refersTo,refers to,sure,An annotation refers to the MS feature it annotates.
+lodp:dataset,object property,sulo:isItemIn,is item in,discuss,A feature is one item of a dataset; the dataset becomes a sulo:Collection.
+lodp:mibigMatchEvidence,object property,sulo:isReferredToIn,is referred to in,discuss,The gene cluster is referred to in the evidence of its MIBiG match.
+lodp:batchFile,object property,,,discuss,Not used yet; sulo:hasParticipant would fit if its subject is a run.
+lodp:hasMass2Motif,object property,,,discuss,Not used yet; No SULO relation fits clearly.
+lodp:contrast,object property,,,discuss,Transcriptomics;not used yet; decide with the pilot.
