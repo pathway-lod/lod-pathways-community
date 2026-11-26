@@ -1,5 +1,7 @@
 # BioHackathon Project 3: Developing Open Standards for a Semantic Framework in Plant Specialized Metabolism
 
+> **Moved (2026-11-26).** The prioritization use cases of this branch (THT/caffeoyltyramine, orphan features and their benchmark, ipecac positive control; notebooks 06 and 07 and the related scripts in `pilots/pairedomics_overlap`) continue in [pathway-lod/multiomics-prioritization](https://github.com/pathway-lod/multiomics-prioritization). This branch is kept unchanged as the record of where that work started (commit `e4b8524`); new work goes there.
+
 - [Project page and abstract](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/3.md) (ELIXIR BioHackathon Europe 2026)
 - [ELIXIR BioHackathon Europe 2026](https://biohackathon-europe.org/)
 - [BioHackathon Europe 2026 preprints on BioHackrXiv](https://index.biohackrxiv.org/tag/BioHackEU26) (a possible place to archive this work)
