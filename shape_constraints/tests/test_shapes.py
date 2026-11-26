@@ -214,5 +214,88 @@ class BrokenSamples(unittest.TestCase):
                                     "\n".join(f"  {r['severity']}: {r['message'][:110]}" for r in res["results"]))
 
 
+# ---------------------------------------------------------------- case 5: transcriptomics (sample_transcriptomics_graph.ttl)
+TX_SAMPLE = HERE.parent.parent / "examples" / "sample_transcriptomics_graph.ttl"
+RDF_NS = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+EFO = Namespace("http://www.ebi.ac.uk/efo/")
+TX_S1 = LODP["claim_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none"]
+TX_S2 = LODP["claim_G18C3-3_expressionDeviatesIn_meantools_Ct_24"]
+TX_S3A = LODP["claim_HQ293016_correlatedWith_G18C3-3"]
+TX_S3B = LODP["claim_PWY18C3-3_type_CoexpressedGenePathway"]
+TX_S1_EV = LODP["evidence_G18C3-3_differentiallyExpressedIn_EMTAB11876_jasmonate_vs_none_EMTAB11876_nfcore_salmon"]
+TX_S3A_EV = LODP["evidence_HQ293016_correlatedWith_G18C3-3_meantools_rpkm"]
+TX_RUN_S1 = LODP.run_differential_expression_EMTAB11876_nfcore_salmon
+
+
+def tx_swap_subject_object(g):
+    s, o = g.value(TX_S3A, RDF_NS.subject), g.value(TX_S3A, RDF_NS.object)
+    put(g, TX_S3A, RDF_NS.subject, o)
+    put(g, TX_S3A, RDF_NS.object, s)
+
+
+def tx_blank_evidence(g):
+    from rdflib import BNode
+    b = BNode()
+    for p, o in list(g.predicate_objects(TX_S1_EV)):
+        g.add((b, p, o))
+    g.remove((TX_S1_EV, None, None))
+    g.remove((TX_S1, HAS_EVIDENCE, TX_S1_EV))
+    g.add((TX_S1, HAS_EVIDENCE, b))
+
+
+def tx_opposite_evidence(g):
+    """The second gene co-expression evidence node finds a negative correlation (consistent on its own)."""
+    ev = next(e for e in g.objects(TX_S3A, HAS_EVIDENCE) if e != TX_S3A_EV)
+    put(g, ev, OBO.STATO_0000280, D(-0.5))
+    put(g, ev, OBO.STATO_0000201, D(-0.5))
+    put(g, ev, LODP.direction, OBO.RO_0017004)
+
+
+def tx_cases():
+    yield "TX claim with an anchor", lambda g: g.add((TX_S1, LODP.anchoredInPathway, PMW.PC968)), [(V, "has no lodp:anchoredInPathway")]
+    yield "TX gene as an Ensembl IRI", lambda g: put(g, TX_S2, RDF_NS.subject, URIRef("https://plants.ensembl.org/Solanum_lycopersicum/Gene/Summary?g=Solyc12g006460")), [(V, "rdf:subject is one PlantMetWiki gene node")]
+    yield "TX claim without predicate", lambda g: rm(g, TX_S3A, RDF_NS.predicate), [(V, "exactly one rdf:predicate")]
+    yield "TX evidence as a blank node", tx_blank_evidence, [(V, "IRIs, not blank nodes")]
+    yield "differential expression without log2 fold change", lambda g: rm(g, TX_S1_EV, LODP.log2FoldChange), [(V, "lodp:log2FoldChange (TX-08) is required")]
+    yield "differential expression direction against the sign", lambda g: put(g, TX_S1_EV, LODP.direction, OBO.RO_0002246), [(V, "does not match the sign")]
+    yield "differential expression run without BH type is a warning", lambda g: rm(g, TX_RUN_S1, RDF.type, OBO.OBI_0200036), [(W, "multiple-testing correction")]
+    yield "differential expression run without normalisation is a warning", lambda g: rm(g, TX_RUN_S1, LODP.normalisationMethod), [(W, "state its normalisation")]
+    yield "run without input unit is a warning", lambda g: rm(g, TX_RUN_S1, LODP.inputUnit), [(W, "value type of the matrix")]
+    yield "differential expression without reference condition", lambda g: rm(g, TX_S1, LODP.referenceCondition), [(V, "exactly one lodp:referenceCondition")]
+    yield "plant structure that is not PO", lambda g: put(g, TX_S1, LODP.plantStructure, URIRef("http://example.org/root")), [(V, "Plant Ontology IRI")]
+    yield "claim without plant structure is a warning", lambda g: rm(g, TX_S2, LODP.plantStructure), [(W, "which plant structure")]
+    yield "replicate count as text", lambda g: put(g, TX_S1, LODP.testReplicateCount, Literal("three")), [(V, "lodp:testReplicateCount (TX-18)")]
+    yield "response profile with another predicate", lambda g: put(g, TX_S2, RDF_NS.predicate, OBO.RO_0002610), [(V, "predicate of an expression profile claim")]
+    yield "response profile about a gene, not a condition", lambda g: put(g, TX_S2, RDF_NS.object, URIRef("https://identifiers.org/plantcyc/G18C3-2")), [(V, "object of an expression profile claim")]
+    yield "co-expression genes not in alphabetical order", tx_swap_subject_object, [(V, "alphabetical order")]
+    yield "Pearson r above 1", lambda g: put(g, TX_S3A_EV, OBO.STATO_0000280, D(1.94)), [(V, "Pearson's r (obo:STATO_0000280, TX-14)")]
+    yield "co-expression evidence without assay class is a warning", lambda g: [rm(g, ev, RDF.type, OBO.ECO_0006069) for ev in list(g.objects(TX_S3A, HAS_EVIDENCE))], [(W, "which assay")]
+    yield "opposite directions on one claim is a warning", tx_opposite_evidence, [(W, "Conflicting evidence")]
+    yield "pathway co-expression with another object", lambda g: put(g, TX_S3B, RDF_NS.object, LODP.SomethingElse), [(V, "object of a pathway co-expression claim")]
+    yield "pathway co-expression subject is not the pathway referred to", lambda g: put(g, TX_S3B, RDF_NS.subject, URIRef("https://identifiers.org/plantcyc/PWY-0000")), [(V, "rdf:subject is the pathway it refers to")]
+
+
+class TranscriptomicsSampleIsValid(unittest.TestCase):
+    def test_sample_has_no_violations_and_three_warnings(self):
+        res = validate.validate([TX_SAMPLE])
+        self.assertEqual(res["violations"], 0, validate.format_report(res))
+        self.assertEqual(sorted(r["message"][:39] for r in res["results"]),
+                         ["Fewer than 3 replicates in the conditio", "The run should state the value type of ",
+                          "The run should state the value type of "])
+
+
+class BrokenTranscriptomicsSamples(unittest.TestCase):
+    def test_each_break_is_reported(self):
+        for name, edit, expected in tx_cases():
+            with self.subTest(name):
+                g = Graph().parse(str(TX_SAMPLE), format="turtle")
+                edit(g)
+                res = validate.validate(g)
+                for severity, fragment in expected:
+                    found = [r["message"] for r in res["results"] if r["severity"] == severity and fragment in r["message"]]
+                    self.assertTrue(found, f"expected a {severity} containing {fragment!r}; got:\n" +
+                                    "\n".join(f"  {r['severity']}: {r['message'][:110]}" for r in res["results"]))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

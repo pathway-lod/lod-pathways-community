@@ -1,0 +1,25 @@
+{
+  "script": "pilots/transcriptomics_overlap/expression_profile_table.py",
+  "run_on": "2026-11-12",
+  "matrix": "data/downloads/nfcore_shaped/meantools_rpkm/rnaseq/salmon/salmon.merged.gene_tpm.tsv",
+  "matrix_md5": "02bee317cedde0d6091ec1b5438a5e8d",
+  "samplesheet": "data/downloads/nfcore_shaped/meantools_rpkm/differentialabundance/samplesheet.csv",
+  "source_note": "MEANtools rnaseq.rpkm.csv (Zenodo 15697913), RPKM, reshaped by adapters.py",
+  "unit": "RPKM",
+  "factors": [
+    "treatment",
+    "time_h"
+  ],
+  "transform": "log2(x + 1)",
+  "zscore": "per gene: (condition mean - mean of all condition means) / population SD of the condition means, on the transformed values",
+  "samples": 54,
+  "conditions": 27,
+  "genes": 16,
+  "rows": 432,
+  "plantmetwiki_genes": "data/plantmetwiki_tomato_gene_nodes_2026-11-11.tsv",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  }
+}
