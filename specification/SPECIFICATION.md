@@ -72,18 +72,18 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 |---|---|---|---|---|---|---|
 | PMN - PlantCyc computationally inferred | 14 | 10 | 1 | 3 | 5 | 1 |
 | BGC - plantiSMASH BGCs | 16 | 8 | 2 | 6 | 3 | 7 |
-| MET - Metabolomics data | 31 | 15 | 5 | 11 | 18 | 19 |
+| MET - Metabolomics data | 31 | 15 | 5 | 11 | 17 | 19 |
 | PO - Paired omics data | 12 | 5 | 1 | 6 | 6 | 9 |
 | UN - Unsupervised predictions | 12 | 3 | 3 | 6 | 12 | 2 |
 | TX - Transcriptomics data | 22 | 12 | 6 | 4 | 13 | 6 |
 | COM - Shared by all use cases | 12 | 6 | 1 | 5 | 4 | 5 |
-| **All** | **119** | **59** | **19** | **41** | **61** | **45** |
+| **All** | **119** | **59** | **19** | **41** | **60** | **45** |
 <!-- END:overview -->
 
 ### Decisions needed
 
 <!-- BEGIN:decisions -->
-61 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
+60 requirements wait for a decision; 8 have a named owner and are listed first, then the ones that need a term request or a question to someone.
 
 | ID | Use case | Requirement | Owner | Action | Why it is open |
 |---|---|---|---|---|---|
@@ -102,7 +102,7 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **BGC-09** | BGC - plantiSMASH BGCs | Partial match with a MIBiG BGC | - | review | The threshold between complete and partial is a choice (now: 100% of genes similar). |
 | **COM-01** | COM - Shared by all use cases | A claim (prediction, association or annotation) points to the evidence that supports it | - | reuse, review | SEPIO models an assertion, its evidence lines and their strength (SEPIO:0000002, SEPIO:0000132). |
 | **COM-06** | COM - Shared by all use cases | A run records the name of the software | - | local_term, review | SWO:0000001 is the class 'software'. |
-| **COM-08** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki pathway | - | local_term, review | 'refers to' is generic and does not say that the target is an existing PlantMetWiki node. |
+| **COM-08** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki pathway | - | review | 'refers to' is generic and does not say that the target is an existing PlantMetWiki node. |
 | **COM-11** | COM - Shared by all use cases | A statement about an existing PlantMetWiki triple carries evidence (reification) | - | review | Used for PlantCyc evidence on node membership. |
 | **MET-03** | MET - Metabolomics data | A single in-silico tool proposed the structure (SIRIUS, MS2Query, DreaMS) | - | reuse, review | Machine-learning methods. |
 | **MET-05** | MET - Metabolomics data | Confidence level of the identification (MSI or Schymanski level) | - | review | MSI levels. |
@@ -145,7 +145,6 @@ The acronym is also the prefix of the requirement IDs (`PO-03` is the third requ
 | **UN-06** | UN - Unsupervised predictions | Prediction score of the model for a link | - | local_term, review | Number given by the model; whether it is a calibrated probability has to be stated per model. |
 | **UN-07** | UN - Unsupervised predictions | Model performance on the benchmark (area under the ROC curve, area under the precision-recall curve) | - | review | Area under the receiver operator characteristic curve. |
 | **UN-09** | UN - Unsupervised predictions | Data split strategy of the evaluation (random, organism-held-out, pathway-held-out) | - | review | No term found. |
-| **MET-08** | MET - Metabolomics data | What the structure match compared (first InChIKey block, or the full key) | - | local_term | Values: connectivity, full. |
 | **UN-11** | UN - Unsupervised predictions | The benchmark dataset the model was trained and evaluated on | - | local_term | Reuses the local property of MET-18; value is the dataset IRI (for example a Zenodo DOI). |
 | **MET-01** | MET - Metabolomics data | The annotation comes from LC-MS/MS data | - | reuse | MS/MS only. |
 <!-- END:decisions -->
@@ -244,8 +243,8 @@ plantiSMASH predicts biosynthetic gene clusters (BGCs) in plant genomes with rul
 | **BGC-10** | The MIBiG match is supported by gene similarity (KnownClusterBLAST) | `ECO:0000249` sequence similarity evidence used in automatic assertion | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **BGC-11** | Percentage of the MIBiG cluster's genes that have a similar gene in the BGC | - | `GENEPIO:0100602` sequence identity percentage (alternative, rejected) | `lodp:percentGenesSimilar` percent genes similar | 🔴 gap | 🔵 proposed | local_term | - |
 | **BGC-12** | The BGC overlaps a PlantMetWiki pathway | `RO:0002131` overlaps | - | - | 🟢 covered | 🟠 open | review | Elena Del Pup |
-| **BGC-13** | How the overlap was established (same gene, same UniProt enzyme, or same EC number) | - | - | `lodp:linkTier` link tier | 🔴 gap | 🔵 proposed | local_term | - |
-| **BGC-14** | Amount of overlap (shared genes, fraction of the pathway's genes or ECs) | - | - | `lodp:nSharedGenes` number of shared genes<br>`lodp:fractionPathwayGenes` fraction of pathway genes | 🔴 gap | 🔵 proposed | local_term | - |
+| **BGC-13** | How the overlap was established (same gene, same UniProt enzyme, or same EC number) | - | - | `lodp:linkTier` link tier | 🔴 gap | ✅ agreed | - | - |
+| **BGC-14** | Amount of overlap (shared genes, fraction of the pathway's genes or ECs) | - | - | `lodp:nSharedGenes` number of shared genes<br>`lodp:fractionPathwayGenes` fraction of pathway genes | 🔴 gap | ✅ agreed | - | - |
 | **BGC-15** | The BGC-pathway link is itself a computed claim with evidence | `ECO:0007679` combinatorial computational evidence used in automatic assertion | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **BGC-16** | The genome assembly the BGC was predicted on | - | - | `lodp:genomeAssembly` genome assembly | 🔴 gap | 🔵 proposed | local_term | - |
 <!-- END:terms:bgc -->
@@ -281,7 +280,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-05** | Confidence level of the identification (MSI or Schymanski level) | `MS:1002896` compound identification confidence level | `MS:1002955` hr-ms compound identification confidence level (alternative)<br>`NCIT:C181006` Metabolite Identification Confidence Level (alternative) | - | 🟢 covered | 🟠 open | review | - |
 | **MET-06** | The identified structure is given by its InChIKey | `CHEMINF:000059` InChIKey | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **MET-07** | The metabolite in PlantMetWiki is identified by an InChIKey IRI | - | - | - | 🔴 gap | ✅ agreed | - | - |
-| **MET-08** | What the structure match compared (first InChIKey block, or the full key) | - | - | `lodp:matchLevel` match level | 🔴 gap | 🟠 open | local_term | - |
+| **MET-08** | What the structure match compared (first InChIKey block, or the full key) | - | - | `lodp:matchLevel` match level | 🔴 gap | ✅ agreed | - | - |
 | **MET-09** | An MS feature is annotated as a PlantMetWiki metabolite | - | `skos:closeMatch` has close match (stand-in) | `lodp:MetaboliteAnnotation` metabolite annotation | 🟡 partial | 🟠 open | review, local_term | - |
 | **MET-10** | A related compound (MS2Query analogue with a different mass) is not a detection | - | `skos:relatedMatch` has related match (stand-in) | - | 🟡 partial | 🟠 open | review | - |
 | **MET-11** | Agreement between tools (full or partial, score, which tools agree) | - | - | `lodp:matchType` match type<br>`lodp:agreementScore` agreement score<br>`lodp:agreeingTool` agreeing tool<br>`lodp:matchCategory` match category | 🔴 gap | 🔵 proposed | local_term | - |
@@ -304,7 +303,7 @@ Untargeted LC-MS/MS features can be annotated with different tools (GNPS library
 | **MET-28** | The annotation rests on the accurate mass of an MS1 feature only (no fragment spectrum) | `ECO:0001096` mass spectrometry evidence | - | - | 🟡 partial | 🟠 open | review | - |
 | **MET-29** | Mass error and tolerance of a mass match | - | `MS:4000072` observed mass accuracy (stand-in) | `lodp:massErrorPpm` mass error (ppm)<br>`lodp:massTolerancePpm` mass tolerance (ppm) | 🟡 partial | 🟠 open | review, local_term | - |
 | **MET-30** | The feature has only an MS1 spectrum, or also MS/MS spectra | `MS:1000579` MS1 spectrum | - | - | 🟢 covered | 🟠 open | review | - |
-| **MET-31** | Several PlantMetWiki metabolites match one feature by mass | - | - | `lodp:candidateCount` candidate count | 🔴 gap | 🔵 proposed | local_term | - |
+| **MET-31** | Several PlantMetWiki metabolites match one feature by mass | - | - | `lodp:candidateCount` candidate count | 🔴 gap | ✅ agreed | - | - |
 <!-- END:terms:metabolomics -->
 
 ---
@@ -342,7 +341,7 @@ MEANtools correlates metabolite features with gene transcripts and groups genes 
 | **PO-09** | Significance of the functional cluster | - | `OBI:0000175` p-value (alternative) | `lodp:clusterPValue` cluster p-value | 🔴 gap | 🟠 open | local_term, review | - |
 | **PO-10** | Method: expression correlation analysis and clustering | `EDAM:operation_3463` Expression correlation analysis<br>`EDAM:operation_3432` Clustering | `EDAM:operation_3766` Weighted correlation network analysis (alternative) | - | 🟢 covered | 🟠 open | reuse, review | - |
 | **PO-11** | Identity of the tomato gene (Solyc locus) and its PlantMetWiki counterpart | - | - | `lodp:solycLocus` Solyc locus | 🔴 gap | 🔵 proposed | local_term | - |
-| **PO-12** | Which side of the association is found in PlantMetWiki (gene, metabolite or both) | - | - | `lodp:anchoredSide` anchored side<br>`lodp:geneAnchorTier` gene anchor tier<br>`lodp:metaboliteAnchorTier` metabolite anchor tier | 🔴 gap | 🔵 proposed | local_term | - |
+| **PO-12** | Which side of the association is found in PlantMetWiki (gene, metabolite or both) | - | - | `lodp:anchoredSide` anchored side<br>`lodp:geneAnchorTier` gene anchor tier<br>`lodp:metaboliteAnchorTier` metabolite anchor tier | 🔴 gap | ✅ agreed | - | - |
 <!-- END:terms:paired_omics -->
 
 ---
@@ -440,9 +439,9 @@ These requirements come back in every use case: evidence, provenance, how a clai
 | **COM-05** | A run records the version of the software or resource | `SWO:0004000` has version | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 | **COM-06** | A run records the name of the software | - | `SWO:0000001` software (alternative) | `lodp:software` software | 🔴 gap | 🟠 open | local_term, review | - |
 | **COM-07** | Kinds of run are distinguished (prediction tool, linking, consensus, curation) | - | - | `lodp:Run` run | 🔴 gap | 🔵 proposed | local_term | - |
-| **COM-08** | A claim is attached to a PlantMetWiki pathway | - | `SIO:000628` refers to (alternative) | `lodp:anchoredInPathway` anchored in pathway | 🔴 gap | 🟠 open | local_term, review | - |
-| **COM-09** | A claim is attached to a PlantMetWiki metabolite | - | - | `lodp:anchoredToMetabolite` anchored to metabolite | 🔴 gap | 🔵 proposed | local_term | - |
-| **COM-10** | How strong the attachment to PlantMetWiki is (anchor tier) | - | - | `lodp:anchorTier` anchor tier | 🔴 gap | 🔵 proposed | local_term | - |
+| **COM-08** | A claim is attached to a PlantMetWiki pathway | - | `SIO:000628` refers to (alternative) | `lodp:anchoredInPathway` anchored in pathway | 🔴 gap | 🟠 open | review | - |
+| **COM-09** | A claim is attached to a PlantMetWiki metabolite | - | - | `lodp:anchoredToMetabolite` anchored to metabolite | 🔴 gap | ✅ agreed | - | - |
+| **COM-10** | How strong the attachment to PlantMetWiki is (anchor tier) | - | - | `lodp:anchorTier` anchor tier | 🔴 gap | ✅ agreed | - | - |
 | **COM-11** | A statement about an existing PlantMetWiki triple carries evidence (reification) | `rdf:Statement` Statement | - | - | 🟡 partial | 🟠 open | review | - |
 | **COM-12** | The species a claim or prediction refers to | `wp:organism` organism | - | - | 🟢 covered | 🔵 proposed | reuse | - |
 <!-- END:terms:common -->
@@ -459,16 +458,16 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **BGC-05** | BGC - plantiSMASH BGCs | The BGC was detected by rule X (plantiSMASH rule, i.e. BGC type) | 🔴 gap | local_term | 13 values are allowed (the 12 rule types of plantiSMASH 2.0 plus 'putative'); 12 occur in the database (no BGC has the 'phenylpropanoid' rule). No ontology found; a small SKOS scheme is proposed. The MIBiG biosynthetic classes are a candidate to review (not in the Ontology Lookup Service). |
 | **BGC-06** | BGC - plantiSMASH BGCs | The core enzyme domains that triggered the rule | 🔴 gap | local_term | String with the domain name (e.g. SQHop_cyclase_N). Pfam / InterPro accessions are candidates to review (not in the Ontology Lookup Service). |
 | **BGC-11** | BGC - plantiSMASH BGCs | Percentage of the MIBiG cluster's genes that have a similar gene in the BGC | 🔴 gap | local_term | Integer, 0-100. |
-| **BGC-13** | BGC - plantiSMASH BGCs | How the overlap was established (same gene, same UniProt enzyme, or same EC number) | 🔴 gap | local_term | Values: gene_direct, gene_uniprot, gene_ec. |
-| **BGC-14** | BGC - plantiSMASH BGCs | Amount of overlap (shared genes, fraction of the pathway's genes or ECs) | 🔴 gap | local_term | Count of genes the BGC shares with the pathway. |
+| **BGC-13** | BGC - plantiSMASH BGCs | How the overlap was established (same gene, same UniProt enzyme, or same EC number) | 🔴 gap | - | Values: gene_direct, gene_uniprot, gene_ec. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
+| **BGC-14** | BGC - plantiSMASH BGCs | Amount of overlap (shared genes, fraction of the pathway's genes or ECs) | 🔴 gap | - | Count of genes the BGC shares with the pathway. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
 | **BGC-16** | BGC - plantiSMASH BGCs | The genome assembly the BGC was predicted on | 🔴 gap | local_term | NCBI assembly accession, e.g. GCF_000001735.4. |
 | **COM-06** | COM - Shared by all use cases | A run records the name of the software | 🔴 gap | local_term, review | A plain string. |
 | **COM-07** | COM - Shared by all use cases | Kinds of run are distinguished (prediction tool, linking, consensus, curation) | 🔴 gap | local_term | Subclass of prov:Activity; subclasses per kind of run are defined in shape_constraints/vocab/lodp.ttl. |
-| **COM-08** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki pathway | 🔴 gap | local_term, review | Gives one query that works across all use cases. |
-| **COM-09** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki metabolite | 🔴 gap | local_term | The value is the identifiers.org InChIKey IRI that PlantMetWiki uses for metabolites. |
-| **COM-10** | COM - Shared by all use cases | How strong the attachment to PlantMetWiki is (anchor tier) | 🔴 gap | local_term | Values, strongest first: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec, mass_match. Weak tiers raise warnings in the shapes. |
+| **COM-08** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki pathway | 🔴 gap | review | Gives one query that works across all use cases. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
+| **COM-09** | COM - Shared by all use cases | A claim is attached to a PlantMetWiki metabolite | 🔴 gap | - | The value is the identifiers.org InChIKey IRI that PlantMetWiki uses for metabolites. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
+| **COM-10** | COM - Shared by all use cases | How strong the attachment to PlantMetWiki is (anchor tier) | 🔴 gap | - | Values, strongest first: curated, gene_direct, gene_locus, structure_match, gene_uniprot, gene_ec, mass_match. Weak tiers raise warnings in the shapes. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
 | **MET-07** | MET - Metabolomics data | The metabolite in PlantMetWiki is identified by an InChIKey IRI | 🔴 gap | - | - |
-| **MET-08** | MET - Metabolomics data | What the structure match compared (first InChIKey block, or the full key) | 🔴 gap | local_term | Values: connectivity, full. |
+| **MET-08** | MET - Metabolomics data | What the structure match compared (first InChIKey block, or the full key) | 🔴 gap | - | Values: connectivity, full. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
 | **MET-11** | MET - Metabolomics data | Agreement between tools (full or partial, score, which tools agree) | 🔴 gap | local_term | Values: full (3 of 3 tools), partial (2 of 3). |
 | **MET-12** | MET - Metabolomics data | Tool-specific scores (SIRIUS confidence, MS2Query model score, DreaMS similarity, precursor m/z difference) | 🔴 gap | local_term, review | Four annotations have a SIRIUS confidence of -Infinity (not computed); the value is left out of the RDF. |
 | **MET-13** | MET - Metabolomics data | An untargeted MS feature as a resource (m/z, retention time, scan polarity, dataset) | 🔴 gap | local_term | No ontology class for an untargeted feature was found. |
@@ -477,7 +476,7 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **MET-22** | MET - Metabolomics data | List of precursor masses excluded from fragmentation during acquisition | 🔴 gap | request_term | S1 holds one mass exclusion list per mode (m/z, 15 min RT, 30 min window, 5 ppm). Searches in the Ontology Lookup Service for exclusion list and dynamic exclusion found no term. Request to PSI-MS: 'precursor exclusion list' (an acquisition setting of data-dependent MS/MS). |
 | **MET-26** | MET - Metabolomics data | Compound class of the structure proposed for a feature (ClassyFire, NPClassifier) | 🔴 gap | request_term | S5 and S6 give ClassyFire and NPClassifier class, superclass and pathway with probabilities (canopus_*, ms2query_cf_*, dreams_*_results). Neither classification is in the Ontology Lookup Service. NPClassifier pathways could be linked to PlantCyc pathway classes. |
 | **MET-27** | MET - Metabolomics data | A Mass2Motif (MS2LDA pattern of fragments and neutral losses) is assigned to a feature with a probability | 🔴 gap | local_term | A topic of the MS2LDA model: a set of fragment and neutral-loss m/z values with weights, optionally with an automatic structure annotation (Spec2Vec, cosine >= 0.90). 400 motifs per mode. |
-| **MET-31** | MET - Metabolomics data | Several PlantMetWiki metabolites match one feature by mass | 🔴 gap | local_term | Number of PlantMetWiki metabolites that match the same feature and adduct. One claim per candidate; none of them is asserted as the identity. |
+| **MET-31** | MET - Metabolomics data | Several PlantMetWiki metabolites match one feature by mass | 🔴 gap | - | Number of PlantMetWiki metabolites that match the same feature and adduct. One claim per candidate; none of them is asserted as the identity. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
 | **PMN-09** | PMN - PlantCyc computationally inferred | The original PlantCyc evidence code is kept next to the ECO class | 🔴 gap | local_term | Keeps the claim traceable to PlantCyc's own vocabulary. |
 | **PMN-11** | PMN - PlantCyc computationally inferred | Prediction method and confidence of the extended PlantCyc predictions | 🔴 gap | review | TODO(Elena): which method produces the predictions and what scores or confidence they carry. |
 | **PMN-12** | PMN - PlantCyc computationally inferred | A reusable crosswalk between PlantCyc EV- codes and ECO | 🔴 gap | request_term | No ECO or PlantCyc crosswalk found (searching the codes in the Ontology Lookup Service returns nothing). The mapping in this table could be contributed. |
@@ -486,7 +485,7 @@ Requirements that are not fully covered by an existing term, sorted from gap to 
 | **PO-08** | PO - Paired omics data | Functional cluster (module) of genes and metabolites | 🔴 gap | local_term, review | Cluster id as an attribute of the association; a cluster node of its own is an open choice. |
 | **PO-09** | PO - Paired omics data | Significance of the functional cluster | 🔴 gap | local_term, review | ClusterONE p-value; most clusters are not significant. |
 | **PO-11** | PO - Paired omics data | Identity of the tomato gene (Solyc locus) and its PlantMetWiki counterpart | 🔴 gap | local_term | PlantMetWiki stores Solyc loci only as properties of pathway nodes (about 20 tomato loci). |
-| **PO-12** | PO - Paired omics data | Which side of the association is found in PlantMetWiki (gene, metabolite or both) | 🔴 gap | local_term | Support from PlantMetWiki can be partial. |
+| **PO-12** | PO - Paired omics data | Which side of the association is found in PlantMetWiki (gene, metabolite or both) | 🔴 gap | - | Support from PlantMetWiki can be partial. Rejected: links to PlantMetWiki (and how they were matched) are not stored in the knowledge graph but computed by SPARQL queries, so that evidence scoring stays flexible and new types of evidence can be added later. |
 | **TX-16** | TX - Transcriptomics data | Mutual rank of a pair based on correlation ranks (co-expression network, MEANtools) | 🔴 gap | request_term | Request to STATO: 'mutual rank'. No term found in STATO, OBI or SIO (searched 'mutual rank' twice); lodp:mutualRank is used until a term exists. Same term as PO-06. |
 | **TX-17** | TX - Transcriptomics data | The comparison a differential result refers to (treatment against control, tissue, time point) | 🔴 gap | local_term, review | Names the two conditions and their direction, so that the sign of a fold change is defined. |
 | **TX-21** | TX - Transcriptomics data | The sequencing dataset the expression values come from (BioProject, SRA or GEO accession) | 🔴 gap | local_term | Same local property as MET-18. The tomato data: BioProject PRJNA509154. |
@@ -567,7 +566,7 @@ Number of requirements per ontology and use case (a requirement counts once per 
 | [RO](https://oborel.github.io/): Relation Ontology | - | 1 | - | - | - | - | - | 1 |
 | [SEPIO](https://github.com/monarch-initiative/SEPIO-ontology): Scientific Evidence and Provenance Information Ontology | - | - | - | - | - | - | 1 | 1 |
 | [SO](http://www.sequenceontology.org/): Sequence Ontology | - | 1 | - | - | - | - | - | 1 |
-| lodp: Local placeholder vocabulary (draft) | 1 | 6 | 11 | 6 | 2 | 6 | 5 | 37 |
+| lodp: Local placeholder vocabulary (draft) | 1 | 4 | 9 | 5 | 2 | 6 | 2 | 29 |
 <!-- END:ontologies -->
 
 ## Open questions for discussion
